@@ -3,7 +3,7 @@
 
     <groupId>com.penalara.ghc</groupId>
     <artifactId>engineOutputGHCFile</artifactId>
-    <version>3.0.0</version>
+    <version>3.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>EngineOuputGHCFile</name>
@@ -118,7 +118,7 @@
 	  <connection>scm:git:ssh://git@github.com/penalara/engineOutputGHCFile.git</connection>
 	  <developerConnection>scm:git:ssh://git@github.com/penalara/engineOutputGHCFile.git</developerConnection>
 	  <url>https://github.com/penalara/engineOutputGHCFile/tree/main</url>
-  	  <tag>jsonGhcFiles-3.0.0</tag>
+  	  <tag>jsonGhcFiles-2.0.0-alpha-SNAPSHOT</tag>
   	</scm>
   	
   	
