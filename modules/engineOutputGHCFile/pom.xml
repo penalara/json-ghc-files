@@ -118,7 +118,7 @@
 	  <connection>scm:git:ssh://git@github.com/penalara/engineOutputGHCFile.git</connection>
 	  <developerConnection>scm:git:ssh://git@github.com/penalara/engineOutputGHCFile.git</developerConnection>
 	  <url>https://github.com/penalara/engineOutputGHCFile/tree/main</url>
-  	  <tag>jsonGhcFiles-2.0.0-alpha-SNAPSHOT</tag>
+  	  <tag>HEAD</tag>
   	</scm>
   	
   	

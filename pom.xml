@@ -146,11 +146,12 @@
     </build>
     
     <!-- Configuracion de Control de versiones (Git)-->
-    <scm>
-	    <connection>scm:git:ssh://git@github.com/penalara/json-ghc-files.git</connection>
-	    <developerConnection>scm:git:ssh://git@github.com/penalara/json-ghc-files.git</developerConnection>
-	    <url>https://github.com/penalara/json-ghc-files</url>
-	    <tag>jsonGhcFiles-2.0.0-alpha-SNAPSHOT</tag>
- 	</scm>
+	<scm>
+	  <connection>scm:git:ssh://git@github.com/penalara/json-ghc-files.git</connection>
+	  <developerConnection>scm:git:ssh://git@github.com/penalara/json-ghc-files.git</developerConnection>
+	  <url>https://github.com/penalara/json-ghc-files/tree/main</url>
+	  <tag>HEAD</tag>
+	</scm>
+
 
 </project>
