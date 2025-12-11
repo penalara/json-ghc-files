@@ -1,0 +1,251 @@
+{
+	"$id": "https://github.com/penalara/jsonGhcSchemas/blob/main/schemas/common/ghcEngineOutput.schema.json",
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "title": "EngineOutputGHCSchema",
+    "description": "Schema document to format in Json the timetable created by PenalaraGHC.",
+    "type": "object",
+    "required": [
+		"weight",
+        "timetable"
+    ],
+	"additionalProperties": false,
+    "properties": {
+        "date": {
+            "title": "JsonGenerationDate",
+            "description": "Date of result creation.",
+            "type": "string",
+            "format": "date-time"
+        },
+		"weight": {
+            "title": "ResultWeight",
+            "description": "Weight of the result according to the non-mandatory conditions not fulfilled.",
+            "type": "integer"
+        },
+        "timetable": {
+            "title": "GeneratedJsonTimetable",
+            "description": "Object with timetable specification resolved.",
+            "type": "object",
+            "required": [
+                "assignedSections"
+            ],
+			"additionalProperties": false,
+            "properties": {
+				"anonymousClassRooms": {
+					"title": "SetOfAnonymousClassRooms",
+					"description": "Collection with anonymous classrooms created by the engine. The classrooms are grouped by set of classrooms.",
+					"type": "array",
+					"additionalItems": false,
+					"items": {
+						"title": "AnonymousClassRoom",
+						"description": "Object with anonymous classrooms created in a set of classrooms.",
+						"type": "object",
+						"required": [
+							"refClassRoomsSet",
+							"classRoomsCreated"
+						],
+						"properties": {
+							"refClassRoomsSet": {
+								"description": "Identifier of the ClassRooms group.",
+								"type": "string"
+							},
+							"classRoomsCreated": {
+								"title": "ListOfAnonymousRooms",
+								"description": "List of anonymous classroom created in one set of classrooms.",
+								"type": "array",
+								"additionalItems": false,
+								"items": {
+									"title": "AnonymousRoom",
+									"description": "Identifier of the anonymous classroom.",
+									"type": "string"
+								}
+							}
+						},
+						"additionalProperties": false
+					}
+				},				
+                "assignedSections": {
+                    "title": "AssignedSections",
+                    "description": "List of sections assigned in the Timetable.",
+                    "type": "array",
+                    "additionalItems": false,
+                    "items": {
+                        "title": "AssignedSection",
+                        "description": "Section with one class units (or on call hours) assigned.",
+                        "type": "object",
+                        "required": [
+                            "refFrame",
+                            "day",
+                            "realIndex",
+                            "fictionalIndex",
+							"startTime",
+							"endTime",
+                            "assignment"
+                        ],
+						"additionalProperties": false,
+                        "properties": {
+                            "refFrame": {
+                                "description": "Frame timetable section with assignment.",
+                                "type": "string"
+                            },
+                            "day": {
+                                "description": "Day of the week when the section is located.",
+                                "type": "integer"
+                            },
+                            "realIndex": {
+                                "description": "Position on the day, of the real section, in the frame.",
+                                "type": "integer"
+                            },
+                            "fictionalIndex": {
+                                "description": "Position on the day, of the fictional section, in the frame.",
+                                "type": "integer",
+                                "$comment": "The engine make the fictional sections, as a division of Real Sections."
+                            },
+							"startTime": {
+								"description": "Start time of the section with a fictional index where sessions are assigned.",
+								"type": "string",
+								"format": "time"
+							},
+							"endTime": {
+								"description": "End time of the section with a fictional index where sessions are assigned.",
+								"type": "string",
+								"format": "time"
+							},
+							"assignment": {
+								"title": "Assignment",
+								"description": "Object with list of each type of session can be assigned in the section (teaching session, meetings, complementary activities, on call services).",
+								"type": "object",
+								"additionalProperties": false,
+								"properties": {
+									"teachingSessions": {
+										"title": "TeachingSessions",
+										"description": "List of teaching sessions assigned in the section.",
+										"type": "array",
+										"additionalItems": false,
+										"items": {
+											"title": "AssignedTeachingSession",
+											"description": "Class unit or on call hour assigned in the timetable.",
+											"type": "object",
+											"required": [
+												"refSession",
+												"refClassRomms"
+											],
+											"additionalProperties": false,
+											"properties": {
+												"refSession": {
+													"description": "Identifier of the teaching session assigned.",
+													"type": "integer"
+												},
+												"refClassRomms": {
+													"$ref": "#/definitions/refClassRomms"
+												},
+												"refTeachers": {
+													"title": "RefTeachers",
+													"description": "Optional. List of teachers assigned to the class unit. If the field is not informed, the teachers configured in the session are taken. The first is always the main teacher. It is used only in the case that alternative teachers have been configured.",
+													"type": "array",
+													"additionalItems": false,
+													"items": {
+														"title": "RefTeacher",
+														"description": "Identifier of the teacher in the input file.",
+														"type": "string"
+													}
+												}
+											}
+										}
+									},
+									"meetings": {
+										"title": "AssignedMeetings",
+										"description": "List of meetings assigned in the section.",
+										"type": "array",
+										"additionalItems": false,
+										"items": {
+											"title": "AssignedMeeting",
+											"description": "Meeting of teachers assigned in the timetable.",
+											"type": "object",
+											"required": [
+												"refMeeting"
+											],
+											"additionalProperties": false,
+											"properties": {
+												"refMeeting": {
+													"description": "Identifier of the meeting assigned.",
+													"type": "string"
+												},
+												"refClassRomms": {
+													"$ref": "#/definitions/refClassRomms"
+												}
+											}
+										}
+									},
+									"complementaryActivities": {
+										"title": "ComplementaryActivitiesAssigned",
+										"description": "List of meetings assigned in the section.",
+										"type": "array",
+										"additionalItems": false,
+										"items": {
+											"title": "AssignedComplementary",
+											"description": "Teacher's complementary activity assigned in the timetable.",
+											"type": "object",
+											"required": [
+												"refComplementary"
+											],
+											"additionalProperties": false,
+											"properties": {
+												"refComplementary": {
+													"description": "Identifier of the Complementary Activity assigned.",
+													"type": "string"
+												},
+												"refClassRomms": {
+													"$ref": "#/definitions/refClassRomms"
+												}
+											}
+										}
+									},
+									"onCallServices":{
+										"title": "OnCallServices",
+										"description": "List of teaching on call hours assigned in the section.",
+										"type": "array",
+										"additionalItems": false,
+										"items": {
+											"title": "AssignedOnCallService",
+											"description": "Call hour assigned in the timetable.",
+											"type": "object",
+											"required": [
+												"refOnCall",
+												"refTeacher"
+											],
+											"additionalProperties": false,
+											"properties": {
+												"refOnCall": {
+													"description": "Identifier of the teaching session assigned.",
+													"type": "string"
+												},
+												"refTeacher": {
+													"title": "RefTeachers",
+													"description": "Teacher assigned in section on call service.",
+													"type": "string"
+												}
+											}
+										}
+									}
+								}
+							}
+                        }
+                    }
+                }
+			}
+		}
+    },
+    "definitions": {
+		"refClassRomms": {
+			"title": "RefclassRomms",
+			"description": "List of classrooms assigned to teach the class unit.",
+			"type": "array",
+			"additionalItems": false,
+			"items": {
+				"title": "RefclassRomm",
+				"description": "Identifier of the classroom in the input file.",
+				"type": "string"
+			}
+		}
+	}
+}

@@ -1,0 +1,2497 @@
+{
+    "versionJson": "0.1",
+    "date": "2013-10-21T13:28:06.419Z",
+    "ghcData" : {
+        "frames": [
+            {
+                "id":"A",
+                "days":[
+					{
+						"day": 0,
+						"sections":[
+							{
+								"index":0,
+								"entryTime": "08:30:00",
+								"exitTime": "09:20:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":1,
+								"entryTime": "09:25:00",
+								"exitTime": "10:15:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":2,
+								"entryTime": "10:15:00",
+								"exitTime": "10:30:00",
+								"duration": 15,
+								"type":"break"
+							},
+							{
+								"index":3,
+								"entryTime": "10:30:00",
+								"exitTime": "11:20:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":4,
+								"entryTime": "11:25:00",
+								"exitTime": "12:15:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":5,
+								"entryTime": "12:15:00",
+								"exitTime": "12:30:00",
+								"duration": 15,
+								"type":"break"
+							},
+							{
+								"index":6,
+								"entryTime": "12:30:00",
+								"exitTime": "13:20:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":7,
+								"entryTime": "13:25:00",
+								"exitTime": "14:15:00",
+								"duration": 60,
+								"type":"teaching"
+							}
+						]
+					},
+					{
+						"day": 1,
+						"sections":[
+							{
+								"index":0,
+								"entryTime": "08:30:00",
+								"exitTime": "09:20:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":1,
+								"entryTime": "09:25:00",
+								"exitTime": "10:15:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":2,
+								"entryTime": "10:15:00",
+								"exitTime": "10:30:00",
+								"duration": 15,
+								"type":"break"
+							},
+							{
+								"index":3,
+								"entryTime": "10:30:00",
+								"exitTime": "11:20:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":4,
+								"entryTime": "11:25:00",
+								"exitTime": "12:15:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":5,
+								"entryTime": "12:15:00",
+								"exitTime": "12:30:00",
+								"duration": 15,
+								"type":"break"
+							},
+							{
+								"index":6,
+								"entryTime": "12:30:00",
+								"exitTime": "13:20:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":7,
+								"entryTime": "13:25:00",
+								"exitTime": "14:15:00",
+								"duration": 60,
+								"type":"teaching"
+							}
+						]
+					},
+					{
+						"day": 2,
+						"sections":[
+							{
+								"index":0,
+								"entryTime": "08:30:00",
+								"exitTime": "09:20:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":1,
+								"entryTime": "09:25:00",
+								"exitTime": "10:15:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":2,
+								"entryTime": "10:15:00",
+								"exitTime": "10:30:00",
+								"duration": 15,
+								"type":"break"
+							},
+							{
+								"index":3,
+								"entryTime": "10:30:00",
+								"exitTime": "11:20:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":4,
+								"entryTime": "11:25:00",
+								"exitTime": "12:15:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":5,
+								"entryTime": "12:15:00",
+								"exitTime": "12:30:00",
+								"duration": 15,
+								"type":"break"
+							},
+							{
+								"index":6,
+								"entryTime": "12:30:00",
+								"exitTime": "13:20:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":7,
+								"entryTime": "13:25:00",
+								"exitTime": "14:15:00",
+								"duration": 60,
+								"type":"teaching"
+							}
+						]
+					},
+					{
+						"day": 3,
+						"sections":[
+							{
+								"index":0,
+								"entryTime": "08:30:00",
+								"exitTime": "09:20:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":1,
+								"entryTime": "09:25:00",
+								"exitTime": "10:15:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":2,
+								"entryTime": "10:15:00",
+								"exitTime": "10:30:00",
+								"duration": 15,
+								"type":"break"
+							},
+							{
+								"index":3,
+								"entryTime": "10:30:00",
+								"exitTime": "11:20:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":4,
+								"entryTime": "11:25:00",
+								"exitTime": "12:15:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":5,
+								"entryTime": "12:15:00",
+								"exitTime": "12:30:00",
+								"duration": 15,
+								"type":"break"
+							},
+							{
+								"index":6,
+								"entryTime": "12:30:00",
+								"exitTime": "13:20:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":7,
+								"entryTime": "13:25:00",
+								"exitTime": "14:15:00",
+								"duration": 60,
+								"type":"teaching"
+							}
+						]
+					},
+					{
+						"day": 4,
+						"sections":[
+							{
+								"index":0,
+								"entryTime": "08:30:00",
+								"exitTime": "09:20:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":1,
+								"entryTime": "09:25:00",
+								"exitTime": "10:15:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":2,
+								"entryTime": "10:15:00",
+								"exitTime": "10:30:00",
+								"duration": 15,
+								"type":"break"
+							},
+							{
+								"index":3,
+								"entryTime": "10:30:00",
+								"exitTime": "11:20:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":4,
+								"entryTime": "11:25:00",
+								"exitTime": "12:15:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":5,
+								"entryTime": "12:15:00",
+								"exitTime": "12:30:00",
+								"duration": 15,
+								"type":"break"
+							},
+							{
+								"index":6,
+								"entryTime": "12:30:00",
+								"exitTime": "13:20:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":7,
+								"entryTime": "13:25:00",
+								"exitTime": "14:15:00",
+								"duration": 60,
+								"type":"teaching"
+							}
+						]
+					}
+				]
+            },
+			{
+				"id":"B",
+				"days": [
+					{
+						"day": 0,
+						"sections":[
+							{
+								"index":0,
+								"entryTime": "09:00:00",
+								"exitTime": "09:50:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":1,
+								"entryTime": "09:55:00",
+								"exitTime": "10:45:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":2,
+								"entryTime": "10:45:00",
+								"exitTime": "11:00:00",
+								"duration": 15,
+								"type":"break"
+							},
+							{
+								"index":3,
+								"entryTime": "11:00:00",
+								"exitTime": "11:50:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":4,
+								"entryTime": "11:55:00",
+								"exitTime": "12:45:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":5,
+								"entryTime": "12:50:00",
+								"exitTime": "13:40:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":6,
+								"entryTime": "13:40:00",
+								"exitTime": "16:00:00",
+								"duration": 140,
+								"type":"midday"
+							},
+							{
+								"index":7,
+								"entryTime": "16:00:00",
+								"exitTime": "16:50:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":8,
+								"entryTime": "16:55:00",
+								"exitTime": "17:45:00",
+								"duration": 60,
+								"type":"teaching"
+							}
+						]
+					},
+					{
+						"day": 1,
+						"sections":[
+							{
+								"index":0,
+								"entryTime": "09:00:00",
+								"exitTime": "09:50:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":1,
+								"entryTime": "09:55:00",
+								"exitTime": "10:45:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":2,
+								"entryTime": "10:45:00",
+								"exitTime": "11:00:00",
+								"duration": 15,
+								"type":"break"
+							},
+							{
+								"index":3,
+								"entryTime": "11:00:00",
+								"exitTime": "11:50:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":4,
+								"entryTime": "11:55:00",
+								"exitTime": "12:45:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":5,
+								"entryTime": "12:50:00",
+								"exitTime": "13:40:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":6,
+								"entryTime": "13:40:00",
+								"exitTime": "16:00:00",
+								"duration": 140,
+								"type":"midday"
+							},
+							{
+								"index":7,
+								"entryTime": "16:00:00",
+								"exitTime": "16:50:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":8,
+								"entryTime": "16:55:00",
+								"exitTime": "17:45:00",
+								"duration": 60,
+								"type":"teaching"
+							}
+						]
+					},
+					{
+						"day": 2,
+						"sections":[
+							{
+								"index":0,
+								"entryTime": "09:00:00",
+								"exitTime": "09:50:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":1,
+								"entryTime": "09:55:00",
+								"exitTime": "10:45:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":2,
+								"entryTime": "10:45:00",
+								"exitTime": "11:00:00",
+								"duration": 15,
+								"type":"break"
+							},
+							{
+								"index":3,
+								"entryTime": "11:00:00",
+								"exitTime": "11:50:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":4,
+								"entryTime": "11:55:00",
+								"exitTime": "12:45:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":5,
+								"entryTime": "12:50:00",
+								"exitTime": "13:40:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":6,
+								"entryTime": "13:40:00",
+								"exitTime": "16:00:00",
+								"duration": 140,
+								"type":"midday"
+							},
+							{
+								"index":7,
+								"entryTime": "16:00:00",
+								"exitTime": "16:50:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":8,
+								"entryTime": "16:55:00",
+								"exitTime": "17:45:00",
+								"duration": 60,
+								"type":"teaching"
+							}
+						]
+					},
+					{
+						"day": 3,
+						"sections":[
+							{
+								"index":0,
+								"entryTime": "09:00:00",
+								"exitTime": "09:50:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":1,
+								"entryTime": "09:55:00",
+								"exitTime": "10:45:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":2,
+								"entryTime": "10:45:00",
+								"exitTime": "11:00:00",
+								"duration": 15,
+								"type":"break"
+							},
+							{
+								"index":3,
+								"entryTime": "11:00:00",
+								"exitTime": "11:50:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":4,
+								"entryTime": "11:55:00",
+								"exitTime": "12:45:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":5,
+								"entryTime": "12:50:00",
+								"exitTime": "13:40:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":6,
+								"entryTime": "13:40:00",
+								"exitTime": "16:00:00",
+								"duration": 140,
+								"type":"midday"
+							},
+							{
+								"index":7,
+								"entryTime": "16:00:00",
+								"exitTime": "16:50:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":8,
+								"entryTime": "16:55:00",
+								"exitTime": "17:45:00",
+								"duration": 60,
+								"type":"teaching"
+							}
+						]
+					},
+					{
+						"day": 4,
+						"sections":[
+							{
+								"index":0,
+								"entryTime": "09:00:00",
+								"exitTime": "09:50:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":1,
+								"entryTime": "09:55:00",
+								"exitTime": "10:45:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":2,
+								"entryTime": "10:45:00",
+								"exitTime": "11:00:00",
+								"duration": 15,
+								"type":"break"
+							},
+							{
+								"index":3,
+								"entryTime": "11:00:00",
+								"exitTime": "11:50:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":4,
+								"entryTime": "11:55:00",
+								"exitTime": "12:45:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":5,
+								"entryTime": "12:50:00",
+								"exitTime": "13:40:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":6,
+								"entryTime": "13:40:00",
+								"exitTime": "16:00:00",
+								"duration": 140,
+								"type":"midday"
+							},
+							{
+								"index":7,
+								"entryTime": "16:00:00",
+								"exitTime": "16:50:00",
+								"duration": 60,
+								"type":"teaching"
+							},
+							{
+								"index":8,
+								"entryTime": "16:55:00",
+								"exitTime": "17:45:00",
+								"duration": 60,
+								"type":"teaching"
+							}
+						]
+					}
+				]
+			}
+        ],
+        "classRooms": [
+            {
+                "id":"A-23"
+            },
+            {
+                "id":"A-31"
+            },
+            {
+                "id":"Gym"
+            },
+			{
+                "id":"Music room"
+            }
+        ],
+        "classRoomsSets": [
+            {
+                "id":"general",
+                "anonymousRooms":3
+            },
+            {
+                "id":"Workshops",
+                "rooms":["A-23","A-31","Music room"]
+            }
+        ],
+        "tasks": [
+            {
+                "id": "LEC"
+            },
+            {
+                "id": "G"
+            },
+            {
+                "id": "MAN"
+            },
+            {
+                "id": "RDP"
+            }
+        ],
+        "teachers":[
+            {
+                "id": "Alice",
+                "frameTemplate":[
+                    {
+                        "day":0,
+                        "index":0,
+                        "frame":"A",
+                        "type":"weak-non-preferred"
+                    },
+                    {
+                        "day":1,
+                        "index":0,
+                        "frame":"A",
+                        "type":"weak-non-preferred"
+                    },
+                    {
+                        "day":2,
+                        "index":0,
+                        "frame":"A",
+                        "type":"weak-non-preferred"
+                    },
+                    {
+                        "day":3,
+                        "index":0,
+                        "frame":"A",
+                        "type":"weak-non-preferred"
+                    },
+                    {
+                        "day":4,
+                        "index":0,
+                        "frame":"A",
+                        "type":"weak-non-preferred"
+                    }
+                ],
+                "generalSettings": {
+                    "weeklyStay": {
+                        "strict": 5400,
+                        "preferable": 1800
+                    },
+                    "dailyStay": {
+                        "strict": 1320,
+                        "preferable": 420
+                    },
+                    "avoidGapsBetweenSesions": true,
+                    "maxContinuousTeaching": {
+                        "type": "avoid",
+                        "minutes": 300
+                    }
+                }
+            },
+            {
+                "id": "Andrew",
+                "generalSettings": {
+                    "weeklyStay": {
+                        "strict": 5400,
+                        "preferable": 1800
+                    },
+                    "dailyStay": {
+                        "strict": 600,
+                        "preferable": 420
+                    },
+                    "avoidGapsBetweenSesions": true
+                }
+            },
+            {
+                "id": "Ernest",
+                "frameTemplate":[
+                    {
+                        "day":0,
+                        "index":0,
+                        "frame":"A",
+                        "type":"strong-non-preferred"
+                    },
+                    {
+                        "day":1,
+                        "index":0,
+                        "frame":"A",
+                        "type":"strong-non-preferred"
+                    }
+                ]
+            },
+			{
+                "id": "James"
+            },
+			{
+                "id": "Margaret",
+				"generalSettings": {
+                    "maxContinuousTeaching": {
+                        "type": "avoid",
+                        "minutes": 120
+                    }
+                }
+            },
+			{
+                "id": "Nuria",
+                "frameTemplate":[
+                    {
+                        "day":4,
+                        "index":6,
+                        "frame":"A",
+                        "type":"banned"
+                    },
+                    {
+                        "day":4,
+                        "index":7,
+                        "frame":"A",
+                        "type":"banned"
+                    },
+                    {
+                        "day":4,
+                        "index":4,
+                        "frame":"B",
+                        "type":"banned"
+                    },
+                    {
+                        "day":4,
+                        "index":5,
+                        "frame":"B",
+                        "type":"banned"
+                    }
+                ]
+            },
+			{
+                "id": "Peter"
+            },
+			{
+                "id": "Philip",
+				"frameTemplate":[
+                    {
+                        "day":3,
+                        "index":0,
+                        "frame":"A",
+                        "type":"banned"
+                    },
+                    {
+                        "day":4,
+                        "index":0,
+                        "frame":"A",
+                        "type":"banned"
+                    },
+					{
+                        "day":3,
+                        "index":0,
+                        "frame":"B",
+                        "type":"strong-non-preferred"
+                    }
+                ],
+				"generalSettings": {
+                    "maxContinuousTeaching": {
+                        "type": "avoid",
+                        "minutes": 180
+                    }
+                }
+            },
+			{
+                "id": "Rachel",
+				"frameTemplate":[
+					{
+                        "day":0,
+                        "index":0,
+                        "frame":"A",
+                        "type":"strong-non-preferred"
+                    },
+                    {
+                        "day":0,
+                        "index":4,
+                        "frame":"B",
+                        "type":"banned"
+                    },
+					{
+                        "day":0,
+                        "index":5,
+                        "frame":"B",
+                        "type":"banned"
+                    },
+                    {
+                        "day":0,
+                        "index":6,
+                        "frame":"A",
+                        "type":"banned"
+                    },
+                    {
+                        "day":0,
+                        "index":7,
+                        "frame":"A",
+                        "type":"banned"
+                    },
+					{
+                        "day":1,
+                        "index":0,
+                        "frame":"A",
+                        "type":"strong-non-preferred"
+                    },
+                    {
+                        "day":1,
+                        "index":4,
+                        "frame":"B",
+                        "type":"banned"
+                    },
+					{
+                        "day":1,
+                        "index":5,
+                        "frame":"B",
+                        "type":"banned"
+                    },
+                    {
+                        "day":1,
+                        "index":6,
+                        "frame":"A",
+                        "type":"banned"
+                    },
+                    {
+                        "day":1,
+                        "index":7,
+                        "frame":"A",
+                        "type":"banned"
+                    },
+					{
+                        "day":2,
+                        "index":0,
+                        "frame":"A",
+                        "type":"strong-non-preferred"
+                    },
+                    {
+                        "day":2,
+                        "index":4,
+                        "frame":"B",
+                        "type":"banned"
+                    },
+					{
+                        "day":2,
+                        "index":5,
+                        "frame":"B",
+                        "type":"banned"
+                    },
+                    {
+                        "day":2,
+                        "index":6,
+                        "frame":"A",
+                        "type":"banned"
+                    },
+                    {
+                        "day":2,
+                        "index":7,
+                        "frame":"A",
+                        "type":"banned"
+                    },
+					{
+                        "day":3,
+                        "index":0,
+                        "frame":"A",
+                        "type":"strong-non-preferred"
+                    },
+                    {
+                        "day":3,
+                        "index":4,
+                        "frame":"B",
+                        "type":"banned"
+                    },
+					{
+                        "day":3,
+                        "index":5,
+                        "frame":"B",
+                        "type":"banned"
+                    },
+                    {
+                        "day":3,
+                        "index":6,
+                        "frame":"A",
+                        "type":"banned"
+                    },
+                    {
+                        "day":3,
+                        "index":7,
+                        "frame":"A",
+                        "type":"banned"
+                    },
+					{
+                        "day":4,
+                        "index":0,
+                        "frame":"A",
+                        "type":"strong-non-preferred"
+                    },
+                    {
+                        "day":4,
+                        "index":4,
+                        "frame":"B",
+                        "type":"banned"
+                    },
+					{
+                        "day":4,
+                        "index":5,
+                        "frame":"B",
+                        "type":"banned"
+                    },
+                    {
+                        "day":4,
+                        "index":6,
+                        "frame":"A",
+                        "type":"banned"
+                    },
+                    {
+                        "day":4,
+                        "index":7,
+                        "frame":"A",
+                        "type":"banned"
+                    }
+                ]
+            },
+			{
+                "id": "Rodolphus"
+            }
+        ],
+        "subjects": [
+		    {
+                "id": "Career Couns"
+            },
+			{
+                "id": "Classical"
+            },
+			{
+                "id": "Computing"
+            },
+			{
+                "id": "English"
+            },
+			{
+                "id": "French"
+            },
+			{
+                "id": "History"
+            },			
+            {
+                "id": "Mathematics"
+            },
+			{
+                "id": "Music",
+                "frameTemplate":[
+                    {
+                        "day":0,
+                        "index":0,
+                        "frame":"A",
+                        "type":"banned"
+                    },
+					{
+                        "day":0,
+                        "index":1,
+                        "frame":"A",
+                        "type":"banned"
+                    },
+					{
+                        "day":0,
+                        "index":3,
+                        "frame":"A",
+                        "type":"banned"
+                    },
+					{
+                        "day":0,
+                        "index":4,
+                        "frame":"A",
+                        "type":"banned"
+                    },
+					{
+                        "day":0,
+                        "index":6,
+                        "frame":"A",
+                        "type":"banned"
+                    },
+					{
+                        "day":1,
+                        "index":0,
+                        "frame":"A",
+                        "type":"banned"
+                    },
+					{
+                        "day":1,
+                        "index":1,
+                        "frame":"A",
+                        "type":"banned"
+                    },
+					{
+                        "day":1,
+                        "index":3,
+                        "frame":"A",
+                        "type":"banned"
+                    },
+					{
+                        "day":1,
+                        "index":4,
+                        "frame":"A",
+                        "type":"banned"
+                    },
+					{
+                        "day":1,
+                        "index":6,
+                        "frame":"A",
+                        "type":"banned"
+                    },
+					{
+                        "day":2,
+                        "index":0,
+                        "frame":"A",
+                        "type":"banned"
+                    },
+					{
+                        "day":2,
+                        "index":1,
+                        "frame":"A",
+                        "type":"banned"
+                    },
+					{
+                        "day":2,
+                        "index":3,
+                        "frame":"A",
+                        "type":"banned"
+                    },
+					{
+                        "day":2,
+                        "index":4,
+                        "frame":"A",
+                        "type":"banned"
+                    },
+					{
+                        "day":2,
+                        "index":6,
+                        "frame":"A",
+                        "type":"banned"
+                    },
+					{
+                        "day":3,
+                        "index":0,
+                        "frame":"A",
+                        "type":"banned"
+                    },
+					{
+                        "day":3,
+                        "index":1,
+                        "frame":"A",
+                        "type":"banned"
+                    },
+					{
+                        "day":3,
+                        "index":3,
+                        "frame":"A",
+                        "type":"banned"
+                    },
+					{
+                        "day":3,
+                        "index":4,
+                        "frame":"A",
+                        "type":"banned"
+                    },
+					{
+                        "day":3,
+                        "index":6,
+                        "frame":"A",
+                        "type":"banned"
+                    },
+					{
+                        "day":4,
+                        "index":0,
+                        "frame":"A",
+                        "type":"banned"
+                    },
+					{
+                        "day":4,
+                        "index":1,
+                        "frame":"A",
+                        "type":"banned"
+                    },
+					{
+                        "day":4,
+                        "index":3,
+                        "frame":"A",
+                        "type":"banned"
+                    },
+					{
+                        "day":4,
+                        "index":4,
+                        "frame":"A",
+                        "type":"banned"
+                    },
+					{
+                        "day":4,
+                        "index":6,
+                        "frame":"A",
+                        "type":"banned"
+                    }
+                ]
+            },
+			{
+                "id": "Natural"
+            },
+			{
+                "id": "Physical edu"
+            },
+			{
+                "id": "Art"
+            },
+			{
+                "id": "Practices1"
+            },
+			{
+                "id": "Practices2"
+            },
+			{
+                "id": "Practices3"
+            },
+			{
+                "id": "Social"
+            },
+			{
+                "id": "Spanish"
+            },
+			{
+                "id": "Technology"
+            },
+			{
+                "id": "Mentoring",
+				"student-mentoring": true
+            }
+        ],
+        "groups": [
+            {
+                "id": "1º FLA",
+                "refFrame": "B",
+                "frameTemplate":[
+                    {
+                        "day":0,
+                        "index":4,
+                        "frame":"B",
+                        "type":"weak-non-preferred"
+                    },
+					{
+                        "day":0,
+                        "index":5,
+                        "frame":"B",
+                        "type":"banned"
+                    },
+					{
+                        "day":1,
+                        "index":4,
+                        "frame":"B",
+                        "type":"weak-non-preferred"
+                    },
+					{
+                        "day":1,
+                        "index":5,
+                        "frame":"B",
+                        "type":"banned"
+                    },
+					{
+                        "day":2,
+                        "index":4,
+                        "frame":"B",
+                        "type":"weak-non-preferred"
+                    },
+					{
+                        "day":2,
+                        "index":5,
+                        "frame":"B",
+                        "type":"banned"
+                    },
+					{
+                        "day":3,
+                        "index":4,
+                        "frame":"B",
+                        "type":"weak-non-preferred"
+                    },
+					{
+                        "day":3,
+                        "index":5,
+                        "frame":"B",
+                        "type":"banned"
+                    },
+					{
+                        "day":4,
+                        "index":4,
+                        "frame":"B",
+                        "type":"weak-non-preferred"
+                    },
+					{
+                        "day":4,
+                        "index":5,
+                        "frame":"B",
+                        "type":"banned"
+                    }
+                ],
+                "gapsAlwaysInNonPreferred": false
+            },
+            {
+                "id": "1º FLB",
+                "refFrame": "B",
+				"frameTemplate":[
+                    {
+                        "day":0,
+                        "index":4,
+                        "frame":"B",
+                        "type":"weak-non-preferred"
+                    },
+					{
+                        "day":0,
+                        "index":5,
+                        "frame":"B",
+                        "type":"banned"
+                    },
+					{
+                        "day":1,
+                        "index":4,
+                        "frame":"B",
+                        "type":"weak-non-preferred"
+                    },
+					{
+                        "day":1,
+                        "index":5,
+                        "frame":"B",
+                        "type":"banned"
+                    },
+					{
+                        "day":2,
+                        "index":4,
+                        "frame":"B",
+                        "type":"weak-non-preferred"
+                    },
+					{
+                        "day":2,
+                        "index":5,
+                        "frame":"B",
+                        "type":"banned"
+                    },
+					{
+                        "day":3,
+                        "index":4,
+                        "frame":"B",
+                        "type":"weak-non-preferred"
+                    },
+					{
+                        "day":3,
+                        "index":5,
+                        "frame":"B",
+                        "type":"banned"
+                    },
+					{
+                        "day":4,
+                        "index":4,
+                        "frame":"B",
+                        "type":"weak-non-preferred"
+                    },
+					{
+                        "day":4,
+                        "index":5,
+                        "frame":"B",
+                        "type":"banned"
+                    }
+                ],
+                "numStudents": 30,
+				"gapsAlwaysInNonPreferred": false
+            },
+            {
+                "id": "3º A",
+                "refFrame": "A"
+            },
+			{
+                "id": "3º B",
+                "refFrame": "A"
+            }
+        ],
+        "sessions": [
+            {
+                "id": 0,
+                "refFrame": "B",
+                "refMainTask": "LEC",
+                "refMainTeacher": "Philip",
+                "refMainSubject": "Career Couns",
+                "refMainGroup": {
+					"refIdGroup": "1º FLA"
+				},                               
+                "distribution": {
+                    "stablePeriods": {
+						"weeklyStable": [60,60]
+                    }
+                },
+                "sessionClassRooms": {
+                    "classRoomsToAssign": [
+                        {
+                            "classRoomsSetsList": ["general"]
+                        }
+                    ]
+                },
+                "sessionSettings": {
+                    "avoidFirstHourSessions": true,
+                    "avoidLastHourSessions": "true",
+					"sameHourPreference": "avoid",
+					"avoidAfternoonSessions": true,
+					"avoidSectionsAfterBreak": true,
+					"followedDaysPreference": "attempt"
+                }
+            },
+            {
+                "id": 1,
+                "refFrame": "B",
+                "refMainTask": "LEC",
+                "refMainTeacher": "James",
+                "refMainSubject": "Career Couns",
+                "refMainGroup": {
+					"refIdGroup": "1º FLB"
+				},
+                "distribution": {
+                    "stablePeriods": {
+						"weeklyStable": [60,60]
+                    }
+                },
+                "sessionClassRooms": {
+                    "classRoomsToAssign": [
+                        {
+                            "classRoomsSetsList": ["general"]
+                        }
+                    ]
+                },
+                "sessionSettings": {
+                    "avoidFirstHourSessions": true,
+                    "avoidLastHourSessions": "true",
+					"sameHourPreference": "avoid",
+					"avoidAfternoonSessions": true,
+					"avoidSectionsAfterBreak": true,
+					"followedDaysPreference": "attempt"
+                }
+			},
+			{
+                "id": 2,
+                "refFrame": "A",
+                "refMainTask": "LEC",
+                "refMainTeacher": "Margaret",
+                "refMainSubject": "Classical",
+                "refMainGroup": {
+					"refIdGroup": "3º A"
+				},
+				"otherElementsInClassRooms": [
+					{
+						"refGroup": {
+							"refIdGroup": "3º B"
+						}
+					}
+				],                    
+                "distribution": {
+                    "stablePeriods": {
+						"weeklyStable": [60]
+                    }
+                },
+                "sessionClassRooms": {
+                    "classRoomsToAssign": [
+                        {
+                            "classRoomsSetsList": ["general"]
+                        }
+                    ]
+                },
+				"sessionRelations": {
+                    "refSimultaneusGroup": 1,
+					"differentDays": {
+						"refSesions": [8],
+                        "daysSetting": "nonConsecutiveDaysPreferred"
+                    }
+                }
+            },
+			{
+                "id": 4,
+                "refFrame": "A",
+                "refMainTask": "LEC",
+                "refMainTeacher": "Philip",
+                "refMainSubject": "Computing",
+                "refMainGroup": {
+					"refIdGroup": "3º A"
+				},
+				"otherElementsInClassRooms": [
+					{
+						"refGroup": {
+							"refIdGroup": "3º B"
+						}
+					}
+				],  				
+                "distribution": {
+                    "stablePeriods": {
+						"weeklyStable": [60]
+                    }
+                },
+                "sessionClassRooms": {
+                    "classRoomsToAssign": [
+                        {
+                            "classRoomsSetsList": ["general"]
+                        }
+                    ]
+                },
+				"sessionRelations": {
+                    "refSimultaneusGroup": 1,
+					"differentDays": {
+						"refSesions": [8],
+                        "daysSetting": "nonConsecutiveDaysPreferred"
+                    }
+                }
+            },
+			{
+                "id": 6,
+                "refFrame": "A",
+                "refMainTask": "LEC",
+                "refMainTeacher": "Alice",
+                "refMainSubject": "French",
+                "refMainGroup": {
+					"refIdGroup": "3º A"
+				},
+				"otherElementsInClassRooms": [
+					{
+						"refGroup": {
+							"refIdGroup": "3º B"
+						}
+					}
+				],                
+                "distribution": {
+                    "stablePeriods": {
+						"weeklyStable": [60]
+                    }
+                },
+                "sessionClassRooms": {
+                    "classRoomsToAssign": [
+                        {
+							"classRoomsList": ["A-31"]
+                        }
+                    ]
+                },
+				"sessionRelations": {
+                    "refSimultaneusGroup": 1,
+					"differentDays": {
+						"refSesions": [8],
+                        "daysSetting": "nonConsecutiveDaysPreferred"
+                    }
+                }
+            },
+			{
+                "id": 8,
+                "refFrame": "A",
+                "refMainTask": "LEC",
+                "refMainTeacher": "Rachel",
+                "refMainSubject": "Classical",
+                "refMainGroup": {
+					"refIdGroup": "3º A"
+				},
+				"otherElementsInClassRooms": [
+					{
+						"refGroup": {
+							"refIdGroup": "3º B"
+						}
+					}
+				],				
+                "distribution": {
+                    "stablePeriods": {
+						"weeklyStable": [60]
+                    }
+                },
+                "sessionClassRooms": {
+                    "classRoomsToAssign": [
+                        {
+							"classRoomsList": ["A-31"]
+                        }
+                    ]
+                },
+				"sessionRelations": {
+                    "refSimultaneusGroup": 2,
+					"differentDays": {
+						"refSesions": [2],
+                        "daysSetting": "nonConsecutiveDaysPreferred"
+                    }
+                }
+            },
+			{
+                "id": 10,
+                "refFrame": "A",
+                "refMainTask": "LEC",
+                "refMainTeacher": "Philip",
+                "refMainSubject": "Computing",
+                "refMainGroup":{
+					"refIdGroup": "3º A"
+				},
+                "distribution": {
+                    "stablePeriods": {
+						"weeklyStable": [60]
+                    }
+                },
+                "sessionClassRooms": {
+                    "classRoomsToAssign": [
+                        {
+							"classRoomsSetsList": ["general"]
+                        }
+                    ]
+                },
+				"sessionRelations": {
+                    "refSimultaneusGroup": 2,
+					"differentDays": {
+						"refSesions": [2],
+                        "daysSetting": "nonConsecutiveDaysPreferred"
+                    }
+                }
+            },
+			{
+                "id": 12,
+                "refFrame": "A",
+                "refMainTask": "LEC",
+                "refMainTeacher": "Alice",
+                "refMainSubject": "French",
+                "refMainGroup": {
+					"refIdGroup": "3º B"
+				},               
+                "distribution": {
+                    "stablePeriods": {
+						"weeklyStable": [60]
+                    }
+                },
+                "sessionClassRooms": {
+                    "classRoomsToAssign": [
+                        {
+							"classRoomsSetsList": ["general"]
+                        }
+                    ]
+                },
+				"sessionRelations": {
+                    "refSimultaneusGroup": 2,
+					"differentDays": {
+						"refSesions": [2],
+                        "daysSetting": "nonConsecutiveDaysPreferred"
+                    }
+                }
+            },
+			{
+                "id": 14,
+                "refFrame": "A",
+                "refMainTask": "LEC",
+                "refMainTeacher": "James",
+                "refMainSubject": "English",
+                "refMainGroup": {
+					"refIdGroup": "3º A"
+				},                
+                "distribution": {
+                    "stablePeriods": {
+						"weeklyStable": [60,60,60]
+                    }
+                },
+                "sessionClassRooms": {
+                    "classRoomsToAssign": [
+                        {
+							"classRoomsSetsList": ["general"]
+                        }
+                    ]
+                }
+            },
+			{
+                "id": 15,
+                "refFrame": "A",
+                "refMainTask": "LEC",
+                "refMainTeacher": "James",
+                "refMainSubject": "English",
+                "refMainGroup": {
+					"refIdGroup": "3º B"
+				},                
+                "distribution": {
+                    "stablePeriods": {
+						"weeklyStable": [60,60,60]
+                    }
+                },
+                "sessionClassRooms": {
+                    "classRoomsToAssign": [
+                        {
+							"classRoomsSetsList": ["general"]
+                        }
+                    ]
+                }
+            },
+			{
+                "id": 16,
+                "refFrame": "A",
+                "refMainTask": "LEC",
+                "refMainTeacher": "Rodolphus",
+                "refMainSubject": "History",
+                "refMainGroup": {
+					"refIdGroup": "3º A"
+				},              
+                "distribution": {
+                    "stablePeriods": {
+						"weeklyStable": [60,60]
+                    }
+                },
+                "sessionClassRooms": {
+                    "classRoomsToAssign": [
+                        {
+							"classRoomsSetsList": ["general"]
+                        }
+                    ]
+                }
+            },
+			{
+                "id": 17,
+                "refFrame": "A",
+                "refMainTask": "LEC",
+                "refMainTeacher": "Andrew",
+                "refMainSubject": "History",
+                "refMainGroup": {
+					"refIdGroup": "3º B"
+				},               
+                "distribution": {
+                    "stablePeriods": {
+						"weeklyStable": [60,60]
+                    }
+                },
+                "sessionClassRooms": {
+                    "classRoomsToAssign": [
+                        {
+							"classRoomsSetsList": ["general"]
+                        }
+                    ]
+                }
+            },
+			{
+                "id": 18,
+                "refFrame": "A",
+                "refMainTask": "LEC",
+                "refMainTeacher": "Ernest",
+                "refMainSubject": "Mathematics",
+                "refMainGroup": {
+					"refIdGroup": "3º A"
+				},              
+                "distribution": {
+                    "stablePeriods": {
+						"weeklyStable": [60,60,60]
+                    }
+                },
+                "sessionClassRooms": {
+                    "classRoomsToAssign": [
+                        {
+							"classRoomsSetsList": ["general"]
+                        }
+                    ]
+                }
+            },
+			{
+                "id": 19,
+                "refFrame": "A",
+                "refMainTask": "LEC",
+                "refMainTeacher": "Ernest",
+                "refMainSubject": "Mathematics",
+                "refMainGroup":{
+					"refIdGroup": "3º B"
+				},                
+                "distribution": {
+                    "stablePeriods": {
+						"weeklyStable": [60,60,60]
+                    }
+                },
+                "sessionClassRooms": {
+                    "classRoomsToAssign": [
+                        {
+							"classRoomsSetsList": ["general"]
+                        }
+                    ]
+                }
+            },
+			{
+                "id": 20,
+                "refFrame": "A",
+                "refMainTask": "LEC",
+                "refMainTeacher": "Margaret",
+                "refMainSubject": "Music",
+                "refMainGroup": {
+					"refIdGroup": "3º A"
+				},                
+                "distribution": {
+                    "stablePeriods": {
+						"weeklyStable": [60,60]
+                    }
+                },
+                "sessionClassRooms": {
+                    "classRoomsToAssign": [
+                        {
+							"classRoomsList": ["Music room"]
+                        }
+                    ]
+                }
+            },
+			{
+                "id": 21,
+                "refFrame": "A",
+                "refMainTask": "LEC",
+                "refMainTeacher": "Margaret",
+                "refMainSubject": "Music",
+                "refMainGroup":  {
+					"refIdGroup": "3º B"
+				},                
+                "distribution": {
+                    "stablePeriods": {
+						"weeklyStable": [60,60]
+                    }
+                },
+                "sessionClassRooms": {
+                    "classRoomsToAssign": [
+                        {
+							"classRoomsList": ["Music room"]
+                        }
+                    ]
+                }
+            },
+			{
+                "id": 22,
+                "refFrame": "A",
+                "refMainTask": "LEC",
+                "refMainTeacher": "Nuria",
+                "refMainSubject": "Natural",
+                "refMainGroup": {
+					"refIdGroup": "3º A"
+				},               
+                "distribution": {
+                    "stablePeriods": {
+						"weeklyStable": [60,60,60,60]
+                    }
+                },
+                "sessionClassRooms": {
+                    "classRoomsToAssign": [
+                        {
+							"classRoomsSetsList": ["general"]
+                        }
+                    ]
+                },
+				"sessionRelations": {
+					"differentDays": {
+						"refSesions": [44],
+                        "daysSetting": "nonConsecutiveDaysPreferred"
+                    }
+                }
+            },
+			{
+                "id": 23,
+                "refFrame": "A",
+                "refMainTask": "LEC",
+                "refMainTeacher": "Nuria",
+                "refMainSubject": "Natural",
+                "refMainGroup": {
+					"refIdGroup": "3º B"
+				},             
+                "distribution": {
+                    "stablePeriods": {
+						"weeklyStable": [60,60,60,60]
+                    }
+                },
+                "sessionClassRooms": {
+                    "classRoomsToAssign": [
+                        {
+							"classRoomsSetsList": ["general"]
+                        }
+                    ]
+                }
+            },
+			{
+                "id": 24,
+                "refFrame": "A",
+                "refMainTask": "LEC",
+                "refMainTeacher": "Rachel",
+                "refMainSubject": "Physical edu",
+                "refMainGroup": {
+					"refIdGroup": "3º A"
+				},               
+                "distribution": {
+                    "stablePeriods": {
+						"weeklyStable": [60,60]
+                    }
+                },
+                "sessionClassRooms": {
+                    "classRoomsToAssign": [
+                        {
+							"classRoomsList": ["Gym"]
+                        }
+                    ]
+                }
+            },
+			{
+                "id": 25,
+                "refFrame": "A",
+                "refMainTask": "LEC",
+                "refMainTeacher": "Rachel",
+                "refMainSubject": "Physical edu",
+                "refMainGroup":  {
+					"refIdGroup": "3º B"
+				},               
+                "distribution": {
+                    "stablePeriods": {
+						"weeklyStable": [60,60]
+                    }
+                },
+                "sessionClassRooms": {
+                    "classRoomsToAssign": [
+                        {
+							"classRoomsList": ["Gym"]
+                        }
+                    ]
+                }
+            },
+			{
+                "id": 26,
+                "refFrame": "A",
+                "refMainTask": "LEC",
+                "refMainTeacher": "Margaret",
+                "refMainSubject": "Art",
+                "refMainGroup": {
+					"refIdGroup": "3º A"
+				},               
+                "distribution": {
+                    "stablePeriods": {
+						"weeklyStable": [60,60]
+                    }
+                },
+                "sessionClassRooms": {
+                    "classRoomsToAssign": [
+                        {
+							"classRoomsSetsList": ["general"]
+                        }
+                    ]
+                }
+            },
+			{
+                "id": 27,
+                "refFrame": "A",
+                "refMainTask": "LEC",
+                "refMainTeacher": "Margaret",
+                "refMainSubject": "Art",
+                "refMainGroup": {
+					"refIdGroup": "3º B"
+				},                
+                "distribution": {
+                    "stablePeriods": {
+						"weeklyStable": [60,60]
+                    }
+                },
+                "sessionClassRooms": {
+                    "classRoomsToAssign": [
+                        {
+							"classRoomsSetsList": ["general"]
+                        }
+                    ]
+                }
+            },
+			{
+                "id": 28,
+                "refFrame": "B",
+                "refMainTask": "LEC",
+                "refMainTeacher": "Alice",
+                "refMainSubject": "Practices1",
+                "refMainGroup": {
+					"refIdGroup": "1º FLA"
+				},               
+                "distribution": {
+                    "stablePeriods": {
+						"weeklyVariable": {
+                            "minutesAmount": 540,
+                            "maxMinutesDaily":180,
+                            "avoidMaxDuration": true,
+                            "allowDiscontinuity": false
+                        }
+                    }
+                },
+                "sessionClassRooms": {
+                    "classRoomsToAssign": [
+                        {
+							"classRoomsList": ["A-23"]
+                        }
+                    ]
+                },
+				"sessionSettings": {
+					"nonBreakInTheMiddleOfSession": true
+				}
+            },
+			{
+                "id": 29,
+                "refFrame": "B",
+                "refMainTask": "LEC",
+                "refMainTeacher": "Peter",
+                "refMainSubject": "Practices1",
+                "refMainGroup": {
+					"refIdGroup": "1º FLB"
+				},               
+                "distribution": {
+                    "stablePeriods": {
+						"weeklyVariable": {
+                            "minutesAmount": 540,
+                            "maxMinutesDaily":180,
+                            "avoidMaxDuration": true,
+                            "allowDiscontinuity": false
+                        }
+                    }
+                },
+                "sessionClassRooms": {
+                    "classRoomsToAssign": [
+                        {
+							"classRoomsList": ["A-23"]
+                        }
+                    ]
+                }
+            },
+			{
+                "id": 30,
+                "refFrame": "B",
+                "refMainTask": "LEC",
+                "refMainTeacher": "Rodolphus",
+                "refMainSubject": "Practices2",
+                "refMainGroup": {
+					"refIdGroup": "1º FLA"
+				},               
+                "distribution": {
+                    "stablePeriods": {
+						"weeklyVariable": {
+                            "minutesAmount": 420,
+                            "maxMinutesDaily":120
+                        }
+                    }
+                },
+                "sessionClassRooms": {
+                    "classRoomsToAssign": [
+                        {
+							"classRoomsList": ["A-23"],
+							"classRoomsSetsList": ["Workshops"]
+                        }
+                    ]
+                },
+				"sessionSettings": {
+					"nonBreakInTheMiddleOfSession": true
+				}
+            },
+			{
+                "id": 31,
+                "refFrame": "B",
+                "refMainTask": "LEC",
+                "refMainTeacher": "Andrew",
+                "refMainSubject": "Practices2",
+                "refMainGroup": {
+					"refIdGroup": "1º FLB"
+				},              
+                "distribution": {
+                    "stablePeriods": {
+						"weeklyVariable": {
+                            "minutesAmount": 420,
+                            "maxMinutesDaily":120
+                        }
+                    }
+                },
+                "sessionClassRooms": {
+                    "classRoomsToAssign": [
+                        {
+							"classRoomsList": ["A-23"],
+							"classRoomsSetsList": ["Workshops"]
+                        }
+                    ]
+                },
+				"sessionSettings": {
+					"nonBreakInTheMiddleOfSession": true
+				}
+            },
+			{
+                "id": 32,
+                "refFrame": "B",
+                "refMainTask": "LEC",
+                "refMainTeacher": "Philip",
+                "refMainSubject": "Practices3",
+                "refMainGroup":{
+					"refIdGroup": "1º FLA"
+				},               
+                "distribution": {
+                    "stablePeriods": {
+						"weeklyVariable": {
+                            "minutesAmount": 540,
+                            "maxMinutesDaily":180,
+							"avoidMaxDuration": true
+                        }
+                    }
+                },
+                "sessionClassRooms": {
+                    "classRoomsToAssign": [
+                        {
+							"classRoomsSetsList": ["Workshops"]
+                        }
+                    ]
+                },
+				"sessionSettings": {
+					"nonBreakInTheMiddleOfSession": true
+				}
+            },
+			{
+                "id": 33,
+                "refFrame": "B",
+                "refMainTask": "LEC",
+                "refMainTeacher": "James",
+                "refMainSubject": "Practices3",
+                "refMainGroup": {
+					"refIdGroup": "1º FLB"
+				},               
+                "distribution": {
+                    "stablePeriods": {
+						"weeklyVariable": {
+                            "minutesAmount": 540,
+                            "maxMinutesDaily":180,
+							"avoidMaxDuration": true,
+							"avoidMinDuration": true
+                        }
+                    }
+                },
+                "sessionClassRooms": {
+                    "classRoomsToAssign": [
+                        {
+							"classRoomsSetsList": ["Workshops"]
+                        }
+                    ]
+                },
+				"sessionSettings": {
+					"nonBreakInTheMiddleOfSession": true
+				}
+            },
+			{
+                "id": 34,
+                "refFrame": "A",
+                "refMainTask": "LEC",
+                "refMainTeacher": "Peter",
+                "refMainSubject": "Social",
+                "refMainGroup":{
+					"refIdGroup": "3º A"
+				},                
+                "distribution": {
+                    "stablePeriods": {
+						"weeklyStable": [60,60,60]
+                    }
+                },
+                "sessionClassRooms": {
+                    "classRoomsToAssign": [
+                        {
+							"classRoomsSetsList": ["general"]
+                        }
+                    ]
+                }
+            },
+			{
+                "id": 35,
+                "refFrame": "A",
+                "refMainTask": "LEC",
+                "refMainTeacher": "Peter",
+                "refMainSubject": "Social",
+                "refMainGroup":{
+					"refIdGroup": "3º B"
+				},                
+                "distribution": {
+                    "stablePeriods": {
+						"weeklyStable": [60,60,60]
+                    }
+                },
+                "sessionClassRooms": {
+                    "classRoomsToAssign": [
+                        {
+							"classRoomsSetsList": ["general"]
+                        }
+                    ]
+                }
+            },
+			{
+                "id": 36,
+                "refFrame": "A",
+                "refMainTask": "LEC",
+                "refMainTeacher": "Alice",
+                "refMainSubject": "Spanish",
+                "refMainGroup":{
+					"refIdGroup": "3º A"
+				},               
+                "distribution": {
+                    "stablePeriods": {
+						"weeklyStable": [60,60,60]
+                    }
+                },
+                "sessionClassRooms": {
+                    "classRoomsToAssign": [
+                        {
+							"classRoomsSetsList": ["general"]
+                        }
+                    ]
+                }
+            },
+			{
+                "id": 37,
+                "refFrame": "A",
+                "refMainTask": "LEC",
+                "refMainTeacher": "Alice",
+                "refMainSubject": "Spanish",
+                "refMainGroup":{
+					"refIdGroup": "3º B"
+				},               
+                "distribution": {
+                    "stablePeriods": {
+						"weeklyStable": [60,60,60]
+                    }
+                },
+                "sessionClassRooms": {
+                    "classRoomsToAssign": [
+                        {
+							"classRoomsSetsList": ["general"]
+                        }
+                    ]
+                },
+				"sessionRelations": {
+					"differentDays": {
+						"refSesions": [45],
+                        "daysSetting": "nonConsecutiveDaysPreferred"
+                    }
+                }
+            },
+			{
+                "id": 38,
+                "refFrame": "A",
+                "refMainTask": "LEC",
+                "refMainTeacher": "Ernest",
+                "refMainSubject": "Technology",
+                "refMainGroup": {
+					"refIdGroup": "3º A"
+				},               
+                "distribution": {
+                    "stablePeriods": {
+						"weeklyStable": [60]
+                    }
+                },
+                "sessionClassRooms": {
+                    "classRoomsToAssign": [
+                        {
+							"classRoomsSetsList": ["general"]
+                        }
+                    ]
+                }
+            },
+			{
+                "id": 39,
+                "refFrame": "A",
+                "refMainTask": "LEC",
+                "refMainTeacher": "Ernest",
+                "refMainSubject": "Technology",
+                "refMainGroup": {
+					"refIdGroup": "3º B"
+				},              
+                "distribution": {
+                    "stablePeriods": {
+						"weeklyStable": [120]
+                    }
+                },
+                "sessionClassRooms": {
+                    "classRoomsToAssign": [
+                        {
+							"classRoomsSetsList": ["general"]
+                        }
+                    ]
+                },
+				"sessionRelations": {
+                    "refSimultaneusGroup": 3
+                }
+            },
+			{
+                "id": 41,
+                "refFrame": "A",
+                "refMainTask": "LEC",
+                "refMainTeacher": "Nuria",
+                "refMainSubject": "Technology",
+                "refMainGroup": {
+					"refIdGroup": "3º A"
+				},               
+                "distribution": {
+                    "stablePeriods": {
+						"weeklyStable": [120]
+                    }
+                },
+                "sessionClassRooms": {
+                    "classRoomsToAssign": [
+                        {
+							"classRoomsList": ["A-23"]
+                        }
+                    ]
+                },
+				"sessionRelations": {
+                    "refSimultaneusGroup": 3
+                }
+            },
+			{
+                "id": 43,
+                "refFrame": "A",
+                "refMainTask": "LEC",
+                "refMainTeacher": "Ernest",
+                "refMainSubject": "Technology",
+                "refMainGroup": {
+					"refIdGroup": "3º B"
+				},              
+                "distribution": {
+                    "stablePeriods": {
+						"weeklyStable": [60]
+                    }
+                },
+                "sessionClassRooms": {
+                    "classRoomsToAssign": [
+                        {
+							"classRoomsSetsList": ["general"]
+                        }
+                    ]
+                }
+            },
+			{
+                "id": 44,
+                "refFrame": "A",
+                "refMainTask": "LEC",
+                "refMainTeacher": "Ernest",
+                "refMainSubject": "Mentoring",
+                "refMainGroup":{
+					"refIdGroup": "3º A"
+				},               
+                "distribution": {
+                    "stablePeriods": {
+						"weeklyStable": [60]
+                    }
+                },
+                "sessionClassRooms": {
+                    "classRoomsToAssign": [
+                        {
+							"classRoomsSetsList": ["general"]
+                        }
+                    ]
+                },
+				"sessionRelations": {
+					"differentDays": {
+						"refSesions": [22],
+                        "daysSetting": "nonConsecutiveDaysPreferred"
+                    }
+                }
+            },
+			{
+                "id": 45,
+                "refFrame": "A",
+                "refMainTask": "LEC",
+                "refMainTeacher": "Philip",
+                "refMainSubject": "Mentoring",
+                "refMainGroup": {
+					"refIdGroup": "3º B"
+				},               
+                "distribution": {
+                    "stablePeriods": {
+						"weeklyStable": [60]
+                    }
+                },
+                "sessionClassRooms": {
+                    "classRoomsToAssign": [
+                        {
+							"classRoomsSetsList": ["general"]
+                        }
+                    ]
+                },
+				"sessionRelations": {
+					"differentDays": {
+						"refSesions": [37],
+                        "daysSetting": "nonConsecutiveDaysPreferred"
+                    }
+                }
+            },
+			{
+                "id": 46,
+                "refFrame": "A",
+                "refMainTask": "RDP",
+                "refMainTeacher": "Alice",
+                "distribution": {
+                    "stablePeriods": {
+						"weeklyStable": [60]
+                    }
+                }
+            },
+			{
+                "id": 47,
+                "refFrame": "A",
+                "refMainTask": "RDP",
+                "refMainTeacher": "Philip",
+				"otherElementsInClassRooms": [
+					{
+						"refTeacher": "Ernest"
+					},
+					{
+						"refTeacher": "Nuria"
+					}
+				],
+                "distribution": {
+                    "stablePeriods": {
+						"weeklyStable": [60]
+                    }
+                }
+            },
+			{
+                "id": 48,
+                "refFrame": "A",
+                "refMainTask": "MAN",
+                "refMainTeacher": "Andrew",
+                "distribution": {
+					"stablePeriods": {
+						"weeklyVariable": {
+							"minutesAmount": 300,
+							"maxMinutesDaily":180
+						}
+					}
+                }
+            },
+			{
+                "id": 49,
+                "refFrame": "A",
+                "refMainTask": "MAN",
+                "refMainTeacher": "Margaret",
+                "distribution": {
+					"stablePeriods": {
+						"weeklyVariable": {
+							"minutesAmount": 300,
+							"maxMinutesDaily":180
+						}
+					}
+                }
+            },
+			{
+                "id": 60,
+                "refFrame": "A",
+                "refMainTask": "MAN",
+                "refMainTeacher": "Nuria",
+                "distribution": {
+					"stablePeriods": {
+						"weeklyVariable": {
+							"minutesAmount": 300,
+							"maxMinutesDaily":180
+						}
+					}
+                }
+            }
+        ],
+        "onCallServices": [
+            {
+               "id": 61,
+               "refFrame": "B",
+               "refTask": "G",
+               "teachersEachSection": {
+                    "byDefault": 1
+               },
+               "refTeachers": [
+                   {
+                    "teacherId": "Alice",
+					"numOfSections": 2
+                   },
+                   {
+                    "teacherId": "Rodolphus",
+					"numOfSections":2
+                   },
+				   {
+                    "teacherId": "Philip"
+                   },
+				   {
+                    "teacherId": "James",
+					"numOfSections": 2
+                   },
+                   {
+                    "teacherId": "Ernest",
+					"numOfSections": 5
+                   },
+				   {
+                    "teacherId": "Andrew",
+					"numOfSections": 5
+                   },
+				   {
+                    "teacherId": "Margaret",
+					"numOfSections": 8
+                   },
+                   {
+                    "teacherId": "Nuria"
+                   },
+				   {
+                    "teacherId": "Peter"
+                   },
+                   {
+                    "teacherId": "Rachel",
+					"numOfSections": 3
+                   }
+                ]
+            }
+        ],
+        "optimizationWeights": {
+            "timetableGaps": {
+                "groupGaps": 8
+            },
+            "nonPreferredPositions": {
+                "inTeachers": 5
+            }
+        },
+        "engineSettings": {
+            "teacherBalance": true
+        }
+    }
+}

@@ -1,0 +1,115 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "GhcMultiplatformSchema",
+	"description": "Schema with the structure of the GHC Multiplatform files",
+	"type": "object",
+	"required": [
+        "meta",
+		"specifications"
+    ],
+    "additionalProperties": false,
+	"properties": {
+		"id":{
+			"title": "IdFile",
+			"description":"Indicates the id number of the file at the Penalara Server.",
+			"type":"integer"
+		},
+		"meta": {
+			"title": "FileMetadata",
+            "description": "Information about the file.",
+            "type": "object",
+            "required": [
+                "name",
+                "versionJson",
+                "createdDate",
+                "lastModifiedDate",
+                "refUser",
+				"source"
+            ],
+			"additionalProperties": false,
+            "properties": {
+				"name":{
+					"title": "TimetableName",
+					"description":"Name of the Timetable",
+					"type":"string"
+				},
+				"versionJson": {
+					"title": "SchemaVersion",
+					"description":"Version of multiplatformGHCSchema used",
+					"type":"string"
+				},
+				"createdDate": {
+					"title": "JsonCreatedDate",
+					"description": "Json generation date.",
+					"type": "string",
+					"format": "date-time"
+				},
+				"lastModifiedDate": {
+					"title": "JsonGenerationDate",
+					"description": "Json last modification date.",
+					"type": "string",
+					"format": "date-time"
+				},
+				"refUser":{
+					"title": "UserReference",
+					"description":"Contains a user reference who owns the file.",
+					"type":"string"
+				},
+				"source":{
+					"title": "SourceModule",
+					"description": "Indicates the GHCMultiplatform module that generated the file.",
+					"enum": ["horarios", "je","examenes"]
+				},
+				"fullMode":{
+					"title": "FullPlannerMode",
+					"description":"Indicates if the planner must use the full mode.",
+					"type":"boolean",
+					"default": false
+				}
+			}
+		},
+		"specifications": {
+			"title": "Specifications",
+			"description": "List of specification versions of the scheduling plan and the results associated with each one, if it has been resolved by the ghc engine.",
+			"type": "array",
+			"additionalItems": false,
+			"items": {
+				"title": "PlannerSpecification",
+				"description": "GHC scheduling plan specification, which may or may not contain results depending on whether it was executed in the ghc engine.",
+			    "type": "object",
+				"required": [
+					"modifiedDate",
+					"planningData"
+				],
+				"additionalProperties": false,
+				"properties": {
+					"modifiedDate": {
+						"title": "PlanningModificationDate",
+						"description": "Planning modification date",
+						"type": "string",
+						"format": "date-time"
+					},
+					"planningData": {
+						"title": "PlanningGhcData",
+						"description": "Description of the elements that will be part of the schedule and their participation in the sessions that need to be assigned to resolve it.",
+						"$ref":"../common/planningData.schema.json",
+						"type": "object"
+					},
+					"results": {
+						"title": "EngineResults",
+						"description": "Tables of the timetable that contain sections where the class units are located.",
+						"type": "array",
+						"additionalItems": false,
+						"items": {
+							"title": "EngineResult",
+							"description": "GHC engine result from specification.",
+							"$ref": "../common/ghcEngineOutput.schema.json",
+							"type": "object"
+
+						}
+					}
+				}				
+			}
+		}
+	}
+}

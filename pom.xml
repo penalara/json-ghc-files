@@ -1,0 +1,156 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	  <modelVersion>4.0.0</modelVersion>
+	  
+      <groupId>com.penalara.ghc</groupId>
+	  <artifactId>jsonGhcFiles</artifactId>
+	  <version>2.0.0-alpha-SNAPSHOT.2</version>
+      <packaging>pom</packaging>
+	  
+
+	<!-- Version ejecucion JAVA -->
+	<name>Json Ghc Files</name>
+	<description>Proyecto para generar las clases POJO Java del formato JSON de GHC a traves del jsonSchema.</description>
+	<url>https://github.com/penalara/</url>
+    <organization>
+        <name>Peñalara Software S.L.</name>
+        <url>https://www.penalara.com</url>
+     </organization>
+	
+	<!-- License for the project -->
+    <licenses>
+        <license>
+            <name>GNU Lesser General Public License v2.1</name>
+            <url>https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html</url>
+        </license>
+    </licenses>
+    
+	<!-- Developers on project -->
+	<developers>
+	   	<developer>
+	      <name>David B.</name>
+	      <email>dburgos@penalara.com</email>
+	      <organization>${project.organization.name}</organization>
+	      <organizationUrl>${project.organization.url}</organizationUrl>
+	    </developer>
+  	</developers>
+	
+	
+	<!-- Version ejecucion JAVA -->
+	<properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>21</java.version>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+	</properties>
+	
+    <!-- Project modules-->
+    <modules>        
+        <module>modules/plannerGHCFile</module>
+        <module>modules/engineGHCFile</module>
+        <module>modules/engineInputGHCFile</module>
+        <module>modules/engineOutputGHCFile</module>
+    </modules>	
+	
+
+	<!-- Configuracion de Plugin de jsonschema2pojo para Generar clases Java en Subproyectos -->
+    <build>
+        <plugins>
+			<plugin>
+			    <groupId>org.jsonschema2pojo</groupId>
+			    <artifactId>jsonschema2pojo-maven-plugin</artifactId>
+			    <version>1.2.2</version>
+			    <executions>
+			     	<!-- Ejecución para engineInputGHCFile -->
+			        <execution>
+			          <id>generar-ghc-engine-input-file</id>
+			          <phase>generate-sources</phase>
+			          <goals>
+			            <goal>generate</goal>
+			          </goals>
+			          <configuration>
+			            <sourceDirectory>${basedir}/src/main/resources/schemas/engine</sourceDirectory>
+			            <includes>engineSpecification.schema.json</includes>
+			            <targetPackage>com.penalara.ghc.jsonghcfile</targetPackage>
+			            <outputDirectory>${basedir}/modules/engineInputGHCFile/src/main/java</outputDirectory>
+    				    <removeOldOutput>true</removeOldOutput>
+					    <includeHashcodeAndEquals>false</includeHashcodeAndEquals>
+					    <includeToString>false</includeToString>
+					    <includeAdditionalProperties>true</includeAdditionalProperties>
+					    <useTitleAsClassname>true</useTitleAsClassname>
+					    <includeGeneratedAnnotation>false</includeGeneratedAnnotation>
+			          </configuration>
+	    			</execution>
+			     	<!-- Ejecución para engineOutputGHCFile -->
+			        <execution>
+			          <id>generar-ghc-engine-output-file</id>
+			          <phase>generate-sources</phase>
+			          <goals>
+			            <goal>generate</goal>
+			          </goals>
+			          <configuration>
+			            <sourceDirectory>${basedir}/src/main/resources/schemas/common</sourceDirectory>
+			            <includes>ghcEngineOutput.schema.json</includes>
+			            <targetPackage>com.penalara.ghc.jsonghcfile</targetPackage>
+			            <outputDirectory>${basedir}/modules/engineOutputGHCFile/src/main/java</outputDirectory>
+    				    <removeOldOutput>true</removeOldOutput>
+					    <includeHashcodeAndEquals>false</includeHashcodeAndEquals>
+					    <includeToString>false</includeToString>
+					    <includeAdditionalProperties>true</includeAdditionalProperties>
+					    <useTitleAsClassname>true</useTitleAsClassname>
+					    <includeGeneratedAnnotation>false</includeGeneratedAnnotation>
+			          </configuration>
+	    			</execution>
+				     <!-- Ejecución para engineghcfile -->
+			        <execution>
+			          <id>generar-ghc-engine-file</id>
+			          <phase>generate-sources</phase>
+			          <goals>
+			            <goal>generate</goal>
+			          </goals>
+			          <configuration>
+			            <sourceDirectory>${basedir}/src/main/resources/schemas/engine</sourceDirectory>
+			            <includes>ghcEngine.schema.json</includes>
+			            <targetPackage>com.penalara.ghc.jsonghcfile</targetPackage>
+			            <outputDirectory>${basedir}/modules/engineGHCFile/src/main/java</outputDirectory>
+    				    <removeOldOutput>true</removeOldOutput>
+					    <includeHashcodeAndEquals>false</includeHashcodeAndEquals>
+					    <includeToString>false</includeToString>
+					    <includeAdditionalProperties>true</includeAdditionalProperties>
+					    <useTitleAsClassname>true</useTitleAsClassname>
+					    <includeGeneratedAnnotation>false</includeGeneratedAnnotation>
+			          </configuration>
+	    			</execution>
+			     	<!-- Ejecución para Planner -->
+			        <execution>
+			          <id>generar-ghc-planner-file</id>
+			          <phase>generate-sources</phase>
+			          <goals>
+			            <goal>generate</goal>
+			          </goals>
+			          <configuration>
+			            <sourceDirectory>${basedir}/src/main/resources/schemas/planner</sourceDirectory>
+			            <includes>ghcMultiplatform.schema.json</includes>
+			            <targetPackage>com.penalara.ghc.jsonghcfile</targetPackage>
+			            <outputDirectory>${basedir}/modules/plannerGHCFile/src/main/java</outputDirectory>
+    				    <removeOldOutput>true</removeOldOutput>
+					    <includeHashcodeAndEquals>false</includeHashcodeAndEquals>
+					    <includeToString>false</includeToString>
+					    <includeAdditionalProperties>true</includeAdditionalProperties>
+					    <useTitleAsClassname>true</useTitleAsClassname>
+					    <includeGeneratedAnnotation>false</includeGeneratedAnnotation>
+			          </configuration>
+	    			</execution>
+			    </executions>
+			</plugin>
+        </plugins>
+    </build>
+    
+    <!-- Configuracion de Control de versiones (Git)-->
+    <scm>
+	    <connection>scm:git:ssh://git@github.com/penalara/json-ghc-files.git</connection>
+	    <developerConnection>scm:git:ssh://git@github.com/penalara/json-ghc-files.git</developerConnection>
+	    <url>https://github.com/penalara/json-ghc-files</url>
+	    <tag>jsonGhcFiles-2.0.0-alpha-SNAPSHOT.2</tag>
+ 	</scm>
+
+</project>

@@ -1,0 +1,2062 @@
+{
+    "$id": "https://github.com/penalara/jsonGhcSchemas/blob/main/schemas/engine/engineSpecification.schema.json",
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "title": "EngineInputGHCSchema",
+    "description": "Schema of the object that contains the timetable planning data.",
+    "type": "object",
+    "properties": {
+        "periods": {
+            "title": "Periods",
+            "description": "Weeks or periods with different assignments which contains the timetable.",
+            "$comment": "If there are no defined periods, the engine will create a single period with all the days of the timetable.",
+            "type": "object",
+            "required": [
+                "periodsList"
+            ],
+            "properties": {
+                "followedPeriods": {
+                    "title": "FollowedPeriods",
+                    "description": "It indicates whether periods or weeks consider the last day of the previous period or week as consecutive days with the first day of the following period or week.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "periodsList": {
+                    "title": "PeriodsList",
+                    "description": "List of periods.",
+                    "type": "array",
+                    "additionalItems": false,
+                    "items": {
+                        "title": "Period",
+                        "type": "object",
+                        "required": [
+                            "id",
+                            "lastDay"
+                        ],
+                        "properties": {
+                            "id": {
+                                "description": "Period identifier.",
+                                "type": "string"
+                            },
+                            "lastDay": {
+                                "description": "The end day of the period (included).",
+                                "type": "integer"
+                            }
+                        }
+                    }
+                }
+            },
+            "additionalProperties": false
+        },
+        "frames": {
+            "title": "Frames",
+            "description": "Tables of the timetable that contain sections where the class units are located.",
+            "type": "array",
+            "additionalItems": false,
+            "items": {
+                "title": "Frame",
+                "type": "object",
+                "required": [
+                    "id",
+                    "days"
+                ],
+                "properties": {
+                    "id": {
+                        "description": "Frame identifier.",
+                        "type": "string"
+                    },
+                    "days": {
+                        "title": "Days",
+                        "description": "List of the days in the frame",
+                        "type": "array",
+                        "additionalItems": false,
+                        "items": {
+                            "required": [
+                                "day",
+                                "sections"
+                            ],
+                            "title": "FrameDay",
+                            "description": "Day with its sections.",
+                            "type": "object",
+                            "properties": {
+                                "day": {
+                                    "description": "Day of the week.",
+                                    "type": "integer"
+                                },
+                                "sections": {
+                                    "title": "Sections",
+                                    "description": "Timetable cells where class units are located.",
+                                    "type": "array",
+                                    "additionalItems": false,
+                                    "items": {
+                                        "required": [
+                                            "index",
+                                            "entryTime",
+                                            "exitTime",
+                                            "duration",
+                                            "type"
+                                        ],
+                                        "title": "Section",
+                                        "type": "object",
+                                        "properties": {
+                                            "index": {
+                                                "description": "Index built into the day where the section is located.",
+                                                "type": "integer"
+                                            },
+                                            "entryTime": {
+                                                "description": "Start time of the section.",
+                                                "type": "string",
+                                                "format": "time"
+                                            },
+                                            "exitTime": {
+                                                "description": "End time of the section.",
+                                                "type": "string",
+                                                "format": "time"
+                                            },
+                                            "duration": {
+                                                "description": "It indicates the duration (real or proportional) of the section in minutes.",
+                                                "type": "integer",
+                                                "$comment": "This indicates the duration of the section that the engine will use to assign class units. It can be the actual duration between check-in and check-out, or it can be a proportional time to simplify (hour, half hour, three-quarters of an hour...). The distribution of class units will be consistent with this duration."
+                                            },
+                                            "type": {
+                                                "title": "SectionType",
+                                                "description": "Kind of section.",
+                                                "enum": [
+                                                    "teaching",
+                                                    "break",
+                                                    "midday"
+                                                ]
+                                            },
+                                            "allowed": {
+                                                "description": "It indicates if the section is available to assign.",
+                                                "type": "boolean",
+                                                "default": true
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "buildings": {
+            "title": "Buildings",
+            "description": "It contains the school or educational institution buildings.",
+            "type": "array",
+            "additionalItems": false,
+            "items": {
+                "required": [
+                    "id"
+                ],
+                "title": "Building",
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "Building identifier.",
+                        "type": "string"
+                    },
+                    "distances": {
+                        "title": "Distances",
+                        "description": "Distance in minutes to another school building.",
+                        "type": "array",
+                        "additionalItems": false,
+                        "items": {
+                            "title": "Distance",
+                            "type": "object",
+                            "required": [
+                                "refBuilding",
+                                "minutes"
+                            ],
+                            "properties": {
+                                "refBuilding": {
+                                    "description": "Identifier of the other building that refers to the distance.",
+                                    "type": "string"
+                                },
+                                "minutes": {
+                                    "description": "Distance in minutes from the building of the referred building.",
+                                    "type": "integer"
+                                }
+                            },
+                            "additionalProperties": false
+                        }
+                    }
+                }
+            }
+        },
+        "classRooms": {
+            "title": "ClassRooms",
+            "description": "It contains the classrooms to organize the class units.",
+            "type": "array",
+            "additionalItems": false,
+            "items": {
+                "title": "Classroom",
+                "type": "object",
+                "required": [
+                    "id"
+                ],
+                "properties": {
+                    "id": {
+                        "description": "Identifier name of the classroom.",
+                        "type": "string"
+                    },
+                    "capacity": {
+                        "description": "The maximum number of students the classroom can hold.",
+                        "type": "integer"
+                    },
+                    "frameTemplate": {
+                        "title": "BannedFrameTemplate",
+                        "description": "Template with only banned preferences.",
+                        "$comment": "It is used when the element cannot have non-preferred sections.",
+                        "type": "array",
+                        "additionalItems": false,
+                        "items": {
+                            "title": "BannedSectionPreference",
+                            "description": "Template with only banned section assignment preference.",
+                            "type": "object",
+                            "required": [
+                                "day",
+                                "index",
+                                "frame"
+                            ],
+                            "properties": {
+                                "day": {
+                                    "description": "Day of the week when the section is located.",
+                                    "type": "integer"
+                                },
+                                "index": {
+                                    "description": "Index built into the day where the section is located.",
+                                    "type": "integer"
+                                },
+                                "frame": {
+                                    "description": "Frame identifier.",
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "refBuilding": {
+                        "description": "Building identifier where the class is located.",
+                        "type": "string"
+                    },
+                    "fullDay": {
+                        "description": "This indicates whether the classroom should be booked all day after holding a subject.",
+                        "type": "boolean",
+                        "default": false
+                    }
+                }
+            }
+        },
+        "classRoomsSets": {
+            "title": "ClassRoomsSets",
+            "description": "A division of the classrooms, grouped by organizational characteristics or needs.",
+            "type": "array",
+            "additionalItems": false,
+            "items": {
+                "title": "ClassRoomSet",
+                "type": "object",
+                "required": [
+                    "id",
+                    "rooms"
+                ],
+                "properties": {
+                    "id": {
+                        "description": "ClassRooms group identifier.",
+                        "type": "string"
+                    },
+                    "rooms": {
+                        "title": "ClassRoomEntries",
+                        "description": "Classrooms identifiers which contain the group.",
+                        "type": "array",
+                        "additionalItems": false,
+                        "items": {
+                            "title": "ClassRoomRef",
+                            "description": "Classroom identifier.",
+                            "type": "string"
+                        }
+                    },
+                    "anonymousRooms": {
+                        "description": "Number of non-specific defined classrooms that the group contains.",
+                        "type": "integer",
+                        "default": 0
+                    }
+                }
+            }
+        },
+        "tasks": {
+            "title": "Tasks",
+            "description": "Types of tasks or activities for the teachers.",
+            "type": "array",
+            "additionalItems": false,
+            "items": {
+                "title": "Task",
+                "description": "Teacher activity type.",
+                "type": "object",
+                "required": [
+                    "id"
+                ],
+                "properties": {
+                    "id": {
+                        "description": "Task identifier.",
+                        "type": "string"
+                    },
+                    "frameTemplate": {
+                        "$ref": "#/definitions/frameTemplate"
+                    }
+                }
+            }
+        },
+        "teachers": {
+            "title": "Teachers",
+            "description": "Teachers list of the timetable.",
+            "type": "array",
+            "additionalItems": false,
+            "items": {
+                "title": "Teacher",
+                "description": "Object with personal information and teachers' preferences.",
+                "type": "object",
+                "required": [
+                    "id"
+                ],
+                "properties": {
+                    "id": {
+                        "description": "Identifier of the teacher.",
+                        "type": "string"
+                    },
+                    "associationIdentifier": {
+                        "description": "Group or association of teachers who should have similar check-in and check-out times, if possible. This is useful for teachers who share transport.",
+                        "type": "string"
+                    },
+                    "overlappedAssessment": {
+                        "description": "Number of overlapped evaluation sessions.",
+                        "type": "integer",
+                        "default": 1,
+                        "minimum": 1,
+                        "$comment": "The engine only process it into account when the SourceModule is 'je'"
+                    },
+                    "frameTemplate": {
+                        "$ref": "#/definitions/frameTemplate"
+                    },
+                    "generalSettings": {
+                        "title": "GeneralSettings",
+                        "description": "Strict and measurable teacher's conditions for the timetable. If there are not single periods, these conditions are the default, but can be specified individually for each period in the 'periodSettings' tag.",
+                        "type": "object",
+                        "properties": {
+                            "weeklyStay": {
+                                "$ref": "#/definitions/weeklyStay"
+                            },
+                            "dailyStay": {
+                                "$ref": "#/definitions/dailyStay"
+                            },
+                            "avoidGapsBetweenSesions": {
+                                "$ref": "#/definitions/avoidGapsBetweenSesions"
+                            },
+                            "maxContinuousTeaching": {
+                                "$ref": "#/definitions/maxContinuousTeaching"
+                            },
+                            "avoidClassesAroundBreak": {
+                                "$ref": "#/definitions/avoidClassesAroundBreak"
+                            },
+                            "freeTimes": {
+                                "$ref": "#/definitions/freeTimes"
+                            },
+                            "freePartTimes": {
+                                "$ref": "#/definitions/freePartTimes"
+                            },
+                            "incompatibilities": {
+                                "$ref": "#/definitions/incompatibilities"
+                            },
+                            "dailyOcupation": {
+                                "$ref": "#/definitions/dailyOcupation"
+                            },
+                            "middayReference": {
+                                "$ref": "#/definitions/middayReference"
+                            },
+                            "dailyBuildingTransfers": {
+                                "$ref": "#/definitions/dailyBuildingTransfers"
+                            }
+                        },
+                        "additionalProperties": false
+                    },
+                    "periodSettings": {
+                        "title": "PeriodsSettings",
+                        "description": "Strict and measurable teacher's conditions customized by week/period",
+                        "type": "array",
+                        "additionalItems": false,
+                        "items": {
+                            "title": "PeriodSetting",
+                            "type": "object",
+                            "required": [
+                                "refPeriod"
+                            ],
+                            "properties": {
+                                "refPeriod": {
+                                    "description": "Identifier of the period to which the settings affect.",
+                                    "type": "string"
+                                },
+                                "weeklyStay": {
+                                    "$ref": "#/definitions/weeklyStay"
+                                },
+                                "dailyStay": {
+                                    "$ref": "#/definitions/dailyStay"
+                                },
+                                "avoidGapsBetweenSesions": {
+                                    "$ref": "#/definitions/avoidGapsBetweenSesions"
+                                },
+                                "maxContinuousTeaching": {
+                                    "$ref": "#/definitions/maxContinuousTeaching"
+                                },
+                                "avoidClassesAroundBreak": {
+                                    "$ref": "#/definitions/avoidClassesAroundBreak"
+                                },
+                                "freeTimes": {
+                                    "$ref": "#/definitions/freeTimes"
+                                },
+                                "freePartTimes": {
+                                    "$ref": "#/definitions/freePartTimes"
+                                },
+                                "incompatibilities": {
+                                    "$ref": "#/definitions/incompatibilities"
+                                },
+                                "dailyOcupation": {
+                                    "$ref": "#/definitions/dailyOcupation"
+                                },
+                                "middayReference": {
+                                    "$ref": "#/definitions/middayReference"
+                                },
+                                "dailyBuildingTransfers": {
+                                    "$ref": "#/definitions/dailyBuildingTransfers"
+                                }
+                            },
+                            "additionalProperties": false
+                        }
+                    }
+                }
+            }
+        },
+        "subjects": {
+            "title": "Subjects",
+            "description": "School subjects taught in the class units.",
+            "type": "array",
+            "additionalItems": false,
+            "items": {
+                "title": "Subject",
+                "type": "object",
+                "required": [
+                    "id"
+                ],
+                "properties": {
+                    "id": {
+                        "description": "Subject identifier.",
+                        "type": "string"
+                    },
+                    "isStudentMentoring": {
+                        "description": "It indicates whether the subject is a tutorial.",
+                        "type": "boolean",
+                        "default": false
+                    },
+                    "frameTemplate": {
+                        "$ref": "#/definitions/frameTemplate"
+                    }
+                }
+            }
+        },
+        "groups": {
+            "title": "Groups",
+            "description": "Sets of students.",
+            "type": "array",
+            "additionalItems": false,
+            "items": {
+                "title": "Group",
+                "type": "object",
+                "required": [
+                    "id",
+                    "refFrame"
+                ],
+                "properties": {
+                    "id": {
+                        "description": "Group identifier.",
+                        "type": "string"
+                    },
+                    "refFrame": {
+                        "description": "Group's frame identifier.",
+                        "type": "string"
+                    },
+                    "frameTemplate": {
+                        "$ref": "#/definitions/frameTemplate"
+                    },
+                    "numStudents": {
+                        "description": "Number of students in the group.",
+                        "type": "integer"
+                    },
+                    "freeAfternoons": {
+                        "description": "Stric number of free afternoons for the group.",
+                        "type": "integer"
+                    },
+                    "notGaps": {
+                        "$ref": "#/definitions/conditionType",
+                        "description": "It indicates if the group can have gaps in its timetable."
+                    },
+                    "gapsAlwaysInNonPreferred": {
+                        "description": "This indicates whether the engine should be in the positions marked as non-preferred in the template for free intervals or gaps.",
+                        "type": "boolean"
+                    }
+                }
+            }
+        },
+        "sessions": {
+            "title": "Sessions",
+            "description": "Definition of the teacher class units. These may be with groups of students, meetings with other teachers or complementary activities.",
+            "type": "array",
+            "additionalItems": false,
+            "items": {
+                "title": "Session",
+                "type": "object",
+                "required": [
+                    "id",
+                    "refFrame",
+                    "refMainTask",
+                    "refMainTeacher",
+                    "refMainSubject",
+                    "refMainGroup",
+                    "distribution",
+                    "sessionClassRooms"
+                ],
+                "properties": {
+                    "id": {
+                        "description": "Session identifier.",
+                        "type": "integer"
+                    },
+                    "refFrame": {
+                        "description": "Session's frame identifier.",
+                        "type": "string"
+                    },
+                    "refMainTask": {
+                        "title": "RefMainTask",
+                        "description": "Main Task identifier.",
+                        "type": "string"
+                    },
+                    "refMainTeacher": {
+                        "title": "RefMainTeacher",
+                        "description": "Main Teacher identifier.",
+                        "type": "string"
+                    },
+                    "refMainSubject": {
+                        "title": "RefMainSubject",
+                        "description": "Identifier name of the main subject.",
+                        "type": "string"
+                    },
+                    "refMainGroup": {
+                        "$ref": "#/definitions/refGroup"
+                    },
+                    "otherElementsInClassRooms": {
+                        "title": "OtherElementsInClassRoomsList",
+                        "description": "List of other time elements in the classroom related to each other.",
+                        "type": "array",
+                        "additionalItems": false,
+                        "items": {
+                            "title": "OtherElementsInClassRooms",
+                            "description": "It contains interrelated elements that are present in the session in addition to the main ones.",
+                            "type": "object",
+                            "$comment": "If a subject reference is not included, or of the other elements of the session (teacher and/or group), the relationship is understood by default with the corresponding main element of the session.",
+                            "properties": {
+                                "refSubject": {
+                                    "title": "SubjectReference",
+                                    "description": "Identifier name of other subject in the classroom.",
+                                    "type": "string"
+                                },
+                                "refTeacher": {
+                                    "title": "TeacherReference",
+                                    "description": "Identifier name of other teacher in the classroom.",
+                                    "type": "string"
+                                },
+                                "refGroup": {
+                                    "$ref": "#/definitions/refGroup"
+                                },
+                                "refTask": {
+                                    "title": "TaskReference",
+                                    "description": "Identifier name of the task of the other teacher.",
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "distribution": {
+                        "$ref": "#/definitions/distribution"
+                    },
+                    "sessionClassRooms": {
+                        "title": "SessionClassRooms",
+                        "description": "It contains the information about the classrooms for the class units. At least one classroom is required for the class units.",
+                        "type": "object",
+                        "required": [
+                            "classRoomsToAssign"
+                        ],
+                        "properties": {
+                            "classRoomsToAssign": {
+                                "title": "ClassRoomsToAssign",
+                                "description": "List of classrooms to the session. Each object in the list represent one classroom that must be assigned.",
+                                "type": "array",
+                                "additionalItems": false,
+                                "items": {
+                                    "$ref": "#/definitions/refClassRoomToAssign"
+                                }
+                            },
+                            "capacityPreference": {
+                                "description": "Preference on whether the engine should assess the capacity of the classroom to allocate each class unit.",
+                                "enum": [
+                                    "attempt",
+                                    "strict",
+                                    "ignore"
+                                ],
+                                "default": "ignore"
+                            },
+                            "capacityType": {
+                                "description": "It indicates whether all students in the class units should fit in each classroom, or in the amount of all classrooms.",
+                                "enum": [
+                                    "individual",
+                                    "collective"
+                                ],
+                                "default": "individual"
+                            },
+                            "alwaysSameClassRoom": {
+                                "description": "Indicates if the session must be always in the same classroom the hole week or it can be given on different classrooms during the week.",
+                                "type": "boolean",
+                                "default": false
+                            }
+                        },
+                        "additionalProperties": false
+                    },
+                    "frameTemplate": {
+                        "$ref": "#/definitions/sessionFrameTemplate"
+                    },
+                    "sessionSettings": {
+                        "title": "SessionSettings",
+                        "description": "Conditions on the position of the class unit.",
+                        "type": "object",
+                        "properties": {
+                            "avoidFirstHourSessions": {
+                                "description": "It penalises the position of the class units if more than 50% of the class units are at first hour.",
+                                "type": "boolean",
+                                "default": true
+                            },
+                            "avoidLastHourSessions": {
+                                "description": "It penalises the position of the class units if more than 50% of the class units are at last hour.",
+                                "type": "boolean",
+                                "default": true
+                            },
+                            "avoidAssingLastHourAndFirstNextDay": {
+                                "description": "It penalises if the last hour and the first hour of the following day match.",
+                                "type": "boolean",
+                                "default": true
+                            },
+                            "sameHourPreference": {
+                                "description": "Preference over class units that coincide in the same time slot.",
+                                "enum": [
+                                    "ignore",
+                                    "avoid",
+                                    "same"
+                                ],
+                                "default": "ignore"
+                            },
+                            "avoidAfternoonSessions": {
+                                "description": "It penalises if there is more than one class unit after noon stop..",
+                                "type": "boolean",
+                                "default": true
+                            },
+                            "avoidAfterBreakSessions": {
+                                "description": "It penalises if more than 50% of the class unit are after the last break of the day.",
+                                "type": "boolean",
+                                "default": true
+                            },
+                            "nonBreakInTheMiddleOfConsecutiveSession": {
+                                "description": "Do not allow breaks between consecutive class units (class duration of more than one section).",
+                                "type": "boolean",
+                                "default": true
+                            },
+                            "nonBreakInTheMiddleOfSession": {
+                                "description": "Do not allow breaks between class units of multiple duration (class duration of more than one section).",
+                                "type": "boolean",
+                                "default": false
+                            },
+                            "followedDaysPreference": {
+                                "description": "If the class unit has more than one lesson, indicates the preference on assigning them on consecutive days.",
+                                "enum": [
+                                    "ignore",
+                                    "attempt",
+                                    "avoid",
+                                    "strict",
+                                    "forbidden"
+                                ],
+                                "default": "ignore"
+                            },
+                            "consecutiveWeeksBorders": {
+                                "description": "It considers the end-of-week day, and the start-of-week day, as consecutive days for 'followedDaysPreference'.",
+                                "type": "boolean",
+                                "default": false
+                            },
+                            "samePositionEveryPeriod": {
+                                "$ref": "#/definitions/samePositionEveryPeriod"
+                            }
+                        },
+                        "additionalProperties": false
+                    },
+                    "sessionRelations": {
+                        "title": "SessionRelations",
+                        "description": "It contains information on the relationships between this and other class units. These conditions can only apply to class units with students.",
+                        "type": "object",
+                        "properties": {
+                            "refSimultaneusGroup": {
+                                "title": "RefSimultaneusGroup",
+                                "description": "Identifier of the group of simultaneous class units of the subject. Indicates that the class units are to be taught at the same time as the group class units. ",
+                                "type": "integer"
+                            },
+                            "differentDays": {
+                                "title": "DifferentDays",
+                                "description": "Conditions on this and another class unit cannot coincide on the same day.",
+                                "type": "object",
+                                "required": [
+                                    "refSesions"
+                                ],
+                                "properties": {
+                                    "refSesions": {
+                                        "title": "RefSesions",
+                                        "description": " Sessions identifiers which class units should not be assigned on the same day.",
+                                        "type": "array",
+                                        "minItems": 1,
+                                        "additionalItems": false,
+                                        "items": {
+                                            "title": "SessionRef",
+                                            "description": "Session identifier.",
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "daysSetting": {
+                                        "description": "Keep the same position each week or period for the class units.",
+                                        "enum": [
+                                            "nonConsecutiveDaysPreferred",
+                                            "indifferentDaysPreferred",
+                                            "strictNonConsecutiveDays",
+                                            "strictConsecutiveDays"
+                                        ],
+                                        "default": "indifferentDaysPreferred"
+                                    }
+                                },
+                                "additionalProperties": false
+                            },
+                            "consecutiveGroup": {
+                                "title": "ConsecutiveGroup",
+                                "description": "Contains the references of a continuous sessions group.",
+                                "type": "object",
+                                "required": [
+                                    "id",
+                                    "refSessions"
+                                ],
+                                "properties": {
+                                    "id": {
+                                        "description": "Continuous sessions group identifier.",
+                                        "type": "integer"
+                                    },
+                                    "refSessions": {
+                                        "title": "SessionRefs",
+                                        "description": "List of the consecutive sessions. Must contain the sesion itself and the proper order of continuity (see 'order' property).",
+                                        "type": "array",
+                                        "minItems": 1,
+                                        "additionalItems": false,
+                                        "items": {
+                                            "title": "SessionRef",
+                                            "description": "Session identifier.",
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "order": {
+                                        "description": "Indicates if the sessions must be 'ordered', 'unordered' or 'sameDay'  (it does not matter as long as they are allocated on the same day).",
+                                        "enum": [
+                                            "unordered",
+                                            "ordered",
+                                            "sameDay"
+                                        ],
+                                        "default": "unordered"
+                                    },
+                                    "allowBreakBetweenSessions": {
+                                        "description": "Indicates if break between sessions is allowed to keep the relation.",
+                                        "type": "boolean",
+                                        "default": false
+                                    }
+                                },
+                                "additionalProperties": false
+                            },
+                            "nonConsecutiveSessions": {
+                                "title": "NonConsecutiveSessions",
+                                "description": "Identifiers of the sessions which class units must not be consecutive. This is a strict condition.",
+                                "type": "array",
+                                "minItems": 1,
+                                "additionalItems": false,
+                                "items": {
+                                    "title": "SessionRef",
+                                    "description": "Session identifier.",
+                                    "type": "integer"
+                                }
+                            },
+                            "nonSimultaneus": {
+                                "title": "NonSimultaneus",
+                                "description": "Identifiers of the sessions that they should not be assigned at the same time. It is a strict condition.",
+                                "type": "array",
+                                "minItems": 1,
+                                "additionalItems": false,
+                                "items": {
+                                    "title": "SessionRef",
+                                    "description": "Session identifier.",
+                                    "type": "integer"
+                                }
+                            },
+                            "previousTo": {
+                                "title": "PreviousTo",
+                                "description": "This indicates that this class unit must be allocated on a previous day to the class units in the list. This is a strict condition.",
+                                "type": "array",
+                                "minItems": 1,
+                                "additionalItems": false,
+                                "items": {
+                                    "title": "SessionRef",
+                                    "description": "Session identifier.",
+                                    "type": "integer"
+                                }
+                            },
+                            "afterTo": {
+                                "title": "AfterTo",
+                                "description": "This indicates that this class unit must be allocated on a subsequent day to the class units in the list. This is a strict condition.",
+                                "type": "array",
+                                "minItems": 1,
+                                "additionalItems": false,
+                                "items": {
+                                    "title": "SessionRef",
+                                    "description": "Session identifier.",
+                                    "type": "integer"
+                                }
+                            },
+                            "maximumSeparationTo": {
+                                "title": "MaximumSeparationTo",
+                                "description": "It contains class units to be taught within a maximum number of days of the current class units.",
+                                "type": "array",
+                                "minItems": 1,
+                                "additionalItems": false,
+                                "items": {
+                                    "title": "MaximumSeparationToSession",
+                                    "description": "It contains the session identifier of the class unit to be taught with a number of days in between, and maximum days.",
+                                    "type": "object",
+                                    "required": [
+                                        "refSessions",
+                                        "days"
+                                    ],
+                                    "properties": {
+                                        "refSessions": {
+                                            "title": "SessionRefs",
+                                            "description": "List of sessions references.",
+                                            "type": "array",
+                                            "minItems": 1,
+                                            "additionalItems": false,
+                                            "items": {
+                                                "title": "SessionRef",
+                                                "description": "Session identifier.",
+                                                "type": "integer"
+                                            }
+                                        },
+                                        "days": {
+                                            "description": "Days of separation condition.",
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "additionalProperties": false
+                                }
+                            },
+                            "minimumSeparationTo": {
+                                "title": "MinimumSeparationTo",
+                                "description": "It contains class units that must be taught at least a minimum number of days apart from the current class unit. .",
+                                "type": "array",
+                                "minItems": 1,
+                                "additionalItems": false,
+                                "items": {
+                                    "title": "MinimumSeparationToSession",
+                                    "description": "It contains session identifier of the class unit to be taught with a number of days apart, and the minimum days.",
+                                    "type": "object",
+                                    "required": [
+                                        "refSessions",
+                                        "days"
+                                    ],
+                                    "properties": {
+                                        "refSessions": {
+                                            "title": "SessionRefs",
+                                            "description": "List of sessions references.",
+                                            "type": "array",
+                                            "minItems": 1,
+                                            "additionalItems": false,
+                                            "items": {
+                                                "title": "SessionRef",
+                                                "description": "Session identifier.",
+                                                "type": "integer"
+                                            }
+                                        },
+                                        "days": {
+                                            "description": "Days of separation condition. If the value is 0 or 1 it is equivalent to the condition 'DifferentDays'.",
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "additionalProperties": false
+                                }
+                            }
+                        },
+                        "additionalProperties": false
+                    }
+                }
+            }
+        },
+        "meetings": {
+            "title": "Meetings",
+            "description": "List of meetings between teachers defined in the timetable.",
+            "type": "array",
+            "additionalItems": false,
+            "items": {
+                "title": "Meeting",
+                "description": "Sevice of meeting between teachers.",
+                "type": "object",
+                "$comment": "It is incompatible set at same time refClassRoomToAssign and refBuilding.",
+                "required": [
+                    "id",
+                    "refFrame",
+                    "refTask",
+                    "refTeachers",
+                    "distribution"
+                ],
+                "properties": {
+                    "id": {
+                        "description": "Session identifier.",
+                        "type": "string"
+                    },
+                    "refFrame": {
+                        "description": "Session's frame identifier.",
+                        "type": "string"
+                    },
+                    "refTask": {
+                        "title": "RefTask",
+                        "description": "Task identifier.",
+                        "type": "string"
+                    },
+                    "refTeachers": {
+                        "title": "RefTeachers",
+                        "description": "List of teachers who in the service.",
+                        "type": "array",
+                        "additionalItems": false,
+                        "items": {
+                            "title": "RefTeacher",
+                            "description": "Teacher identifier.",
+                            "type": "string"
+                        }
+                    },
+                    "distribution": {
+                        "$ref": "#/definitions/distribution"
+                    },
+                    "frameTemplate": {
+                        "$ref": "#/definitions/sessionFrameTemplate"
+                    },
+                    "refClassRoomToAssign": {
+                        "$ref": "#/definitions/refClassRoomToAssign"
+                    },
+                    "refBuilding": {
+                        "description": "Building identifier of the building where the class unit takes place. This is used to know the moving time and the number of moves between buildings for teachers without specifying a classroom.",
+                        "type": "string",
+                        "$comment": "It is incompatible with the other properties of 'sessionClassRooms' object."
+                    },
+                    "settings": {
+                        "$ref": "#/definitions/nonClassSessionSettings"
+                    }
+                }
+            }
+        },
+        "complementaryActivities": {
+            "title": "ComplementaryActivities",
+            "description": "List of complementary activities of the teachers.",
+            "type": "array",
+            "additionalItems": false,
+            "items": {
+                "title": "Complementary",
+                "description": "Service of teacher`s complementary activity.",
+                "type": "object",
+                "$comment": "It is incompatible set at same time refClassRoomToAssign and refBuilding.",
+                "required": [
+                    "id",
+                    "refFrame",
+                    "refTask",
+                    "refTeacher",
+                    "distribution"
+                ],
+                "properties": {
+                    "id": {
+                        "description": "Session identifier.",
+                        "type": "integer"
+                    },
+                    "refFrame": {
+                        "description": "Session's frame identifier.",
+                        "type": "string"
+                    },
+                    "refTask": {
+                        "title": "RefTask",
+                        "description": "Task identifier.",
+                        "type": "string"
+                    },
+                    "refTeacher": {
+                        "title": "RefTeacher",
+                        "description": "Teacher identifier.",
+                        "type": "string"
+                    },
+                    "distribution": {
+                        "$ref": "#/definitions/distribution"
+                    },
+                    "frameTemplate": {
+                        "$ref": "#/definitions/sessionFrameTemplate"
+                    },
+                    "refClassRoomToAssign": {
+                        "$ref": "#/definitions/refClassRoomToAssign"
+                    },
+                    "refBuilding": {
+                        "description": "Building identifier of the building where the class unit takes place. This is used to know the moving time and the number of moves between buildings for teachers without specifying a classroom.",
+                        "type": "string",
+                        "$comment": "It is incompatible with the other properties of 'sessionClassRooms' object."
+                    },
+                    "settings": {
+                        "$ref": "#/definitions/nonClassSessionSettings"
+                    }
+                }
+            }
+        },
+        "onCallServices": {
+            "title": "OnCallServices",
+            "description": "List of on-call services of teachers defined in the timetable.",
+            "type": "array",
+            "additionalItems": false,
+            "items": {
+                "title": "OnCallService",
+                "description": "On-call service of teachers who supervise the free time of students.",
+                "type": "object",
+                "$comment": "Property 'refPeriods' is required if there are more than one period in the timetable.",
+                "required": [
+                    "id",
+                    "refFrame",
+                    "refTask",
+                    "teachersEachSection",
+                    "refTeachers"
+                ],
+                "properties": {
+                    "id": {
+                        "description": "On-Call service identifier.",
+                        "$comment": "This identifier can not be equals to any session identifier.",
+                        "type": "string"
+                    },
+                    "refFrame": {
+                        "description": "Identifier of the frame where the service will be set.",
+                        "type": "string"
+                    },
+                    "refPeriods": {
+                        "title": "RefPeriods",
+                        "description": "List of Periods when the service must be set.",
+                        "type": "array",
+                        "additionalItems": false,
+                        "items": {
+                            "title": "RefPeriod",
+                            "description": "Period identifier.",
+                            "type": "string"
+                        }
+                    },
+                    "refTask": {
+                        "description": "Task identifier.",
+                        "type": "string"
+                    },
+                    "inBreak": {
+                        "description": "It indicates whether it is a break supervision.",
+                        "type": "boolean",
+                        "default": false
+                    },
+                    "teachersEachSection": {
+                        "title": "TeachersEachSection",
+                        "description": "Information about number of teacher in all sections.",
+                        "type": "object",
+                        "$comment": "The value 'byDefault' shall be used for all sections, if the field 'bySection' is not informed. This value is also used when a section is not informed in 'bySection'.",
+                        "properties": {
+                            "byDefault": {
+                                "description": "Default value for number of teacher in all sections.",
+                                "type": "integer"
+                            },
+                            "bySection": {
+                                "title": "TeachersBySections",
+                                "description": "Custom number of teachers in each section.",
+                                "type": "array",
+                                "additionalItems": false,
+                                "items": {
+                                    "title": "TeachersBySection",
+                                    "description": "Custom number of teachers in one timetable section.",
+                                    "type": "object",
+                                    "required": [
+                                        "day",
+                                        "index",
+                                        "numTeachers"
+                                    ],
+                                    "properties": {
+                                        "day": {
+                                            "description": "Day of the week.",
+                                            "type": "integer"
+                                        },
+                                        "index": {
+                                            "description": "Index of the section.",
+                                            "type": "integer"
+                                        },
+                                        "numTeachers": {
+                                            "description": "Custom number of teachers to be assigned in the section.",
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "additionalProperties": false
+                                }
+                            }
+                        },
+                        "additionalProperties": false
+                    },
+                    "refTeachers": {
+                        "title": "RefTeachersOnCall",
+                        "description": "List of teachers who in the service.",
+                        "type": "array",
+                        "additionalItems": false,
+                        "items": {
+                            "title": "RefTeacher",
+                            "description": "It contains a teacher reference and the number of section oversight .",
+                            "type": "object",
+                            "required": [
+                                "teacherId"
+                            ],
+                            "properties": {
+                                "teacherId": {
+                                    "description": "Teacher identifier.",
+                                    "type": "string"
+                                },
+                                "numOfSections": {
+                                    "description": "Number of on-call services to be done weekly by the teacher.",
+                                    "type": "integer",
+                                    "default": 1
+                                },
+                                "teacherFrameTemplate": {
+                                    "$ref": "#/definitions/onCallServiceframeTemplate"
+                                }
+                            },
+                            "additionalProperties": false
+                        }
+                    },
+                    "frameTemplate": {
+                        "$ref": "#/definitions/onCallServiceframeTemplate"
+                    },
+                    "refBuilding": {
+                        "description": "Identifier of the building where the service is located. It is used to know the transfer time and the number of transfers between buildings for teachers.",
+                        "type": "string"
+                    },
+                    "settings": {
+                        "$ref": "#/definitions/nonClassSessionSettings"
+                    }
+                },
+                "additionalProperties": false
+            }
+        },
+        "optimizationWeights": {
+            "title": "OptimizationWeights",
+            "description": "This indicates the weights that the weighting options will have for the engine optimisation process. The engine shall apply default values for elements that have not been specified.",
+            "type": "object",
+            "properties": {
+                "timetableGaps": {
+                    "title": "TimetableGaps",
+                    "description": "It contains options related to timetable-gaps weights.",
+                    "type": "object",
+                    "properties": {
+                        "groupGaps": {
+                            "description": "It indicates the weight given to the fact of leaving gaps in groups' timetables.",
+                            "type": "integer",
+                            "default": 5
+                        },
+                        "teacherGaps": {
+                            "description": "It indicates the weight given to the fact of leaving gaps in teachers' timetables.",
+                            "type": "integer",
+                            "default": 2
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "nonPreferredPositions": {
+                    "title": "NonPreferredPositionsOptimization",
+                    "description": "It contains options related to allocation in non-preferred sections.",
+                    "type": "object",
+                    "properties": {
+                        "inGroups": {
+                            "description": "It indicates the weight to be placed in a non-preferential section of a group.",
+                            "type": "integer",
+                            "default": 4
+                        },
+                        "inTeachers": {
+                            "description": "It indicates the weight to be placed in a non-preferential section of a teacher.",
+                            "type": "integer",
+                            "default": 3
+                        },
+                        "inSubjectsAndTask": {
+                            "description": "It indicates the weight to be placed in a non-preferential section of a subject or a task.",
+                            "type": "integer",
+                            "default": 1
+                        },
+                        "inSessions": {
+                            "description": "Indicates the weight to be placed in a non-preferential section of a session.",
+                            "type": "integer",
+                            "default": 2
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "sessions": {
+                    "title": "SessionsOptimization",
+                    "description": "It contains options related to optimisable conditions for sessions.",
+                    "type": "object",
+                    "properties": {
+                        "nonPreferredClassRoom": {
+                            "description": "It indicates the weight if the class units are configured with a preferred classroom and with a set of alternative classrooms, the weight placed in one of the alternative classrooms will be penalised.",
+                            "type": "integer",
+                            "default": 3
+                        },
+                        "samePositionEveryPeriod": {
+                            "description": "It indicates the weight of placing the entities of a class unit belonging to several periods in the same positions or not (also affects on-call services).",
+                            "type": "integer",
+                            "default": 1
+                        },
+                        "consecutiveDays": {
+                            "description": "It indicates the weight of the condition that has been set in each case on the properties of each class unit to place two or three class units, that is, all of them on consecutive days.",
+                            "type": "integer",
+                            "default": 3
+                        },
+                        "bordersTimetable": {
+                            "description": "It indicates the weight of the class units assigned at the ends of the timetable.",
+                            "type": "integer",
+                            "default": 2
+                        },
+                        "afternoonOrAfterBreakClasses": {
+                            "description": "It indicates the weight of the penalty of having class units after the last break or in the afternoon.",
+                            "type": "integer",
+                            "default": 3
+                        },
+                        "sameHourSessionClasses": {
+                            "description": "It indicates the weight of the penalty for not complying with the preference allocation on consecutive days.",
+                            "type": "integer",
+                            "default": 3
+                        },
+                        "classRoomsChanges": {
+                            "description": "It indicates the weight of all class units of each subject not taught in the same classroom, and also to avoid classroom changes of groups. This means a change of classrooms of a group only between consecutive intervals, not those divided by a break.",
+                            "type": "integer",
+                            "default": 3
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "teachers": {
+                    "title": "TeachersOptimization",
+                    "description": "It contains options related to optimisable conditions for teachers.",
+                    "type": "object",
+                    "properties": {
+                        "teacherIncompatibities": {
+                            "description": "It indicates the weight of the teacher's incompatibilities that can be optimised.",
+                            "type": "integer",
+                            "default": 3
+                        },
+                        "uniformDailyDistribution": {
+                            "description": "It indicates the weight of placing a teacher's class units in a non-uniform way during the week.",
+                            "type": "integer",
+                            "default": 3
+                        },
+                        "excessContinuousTeaching": {
+                            "description": "It indicates the weight of placing more continuous class units than those declared in the settings.",
+                            "type": "integer",
+                            "default": 2
+                        },
+                        "excessPermanence": {
+                            "description": "It indicates the weight of assigning more daily or weekly stay than the declared in the settings.",
+                            "type": "integer",
+                            "default": 2
+                        },
+                        "continuousSessionsWithGroup": {
+                            "description": "It indicates the weight of having consecutive class units taught to the same group.",
+                            "type": "integer",
+                            "default": 1
+                        },
+                        "onCallSectionsOnBorders": {
+                            "description": "It indicates the weight of the teacher being assigned an on-call hour within the limits of his or her timetable, thus trying to fit it into the gaps in his or her class units.",
+                            "type": "integer",
+                            "default": 1
+                        },
+                        "teacherOrder": {
+                            "description": "It indicates the weight of the teacher order not being assigned with a preference besides other teachers.",
+                            "type": "integer",
+                            "default": 1
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            },
+            "additionalProperties": false
+        },
+        "engineSettings": {
+            "title": "EngineSettings",
+            "description": "Customised engine configuration parameters.",
+            "type": "object",
+            "properties": {
+                "teacherBalance": {
+                    "description": "It indicates whether the optimiser should balance the timetables of different teachers, to avoid very bad timetables for a particular teacher.",
+                    "type": "boolean",
+                    "default": true
+                },
+                "countGapsAroundMidday": {
+                    "description": "It indicates, in the case of a split day (with a noon pause), that the unoccupied intervals between the morning and afternoon class units should be counted. This option affects the weighting in the teacher's optimisation of the gaps in their timetable.",
+                    "type": "boolean",
+                    "default": true
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+    "definitions": {
+        "conditionType": {
+            "title": "ConditionType",
+            "description": "Indicate whether the incompatibility is strict, avoid (penalisable in optimisation) or ignored.",
+            "javaType": "com.penalara.ghc.jsonghcfile.engineghcfile.ConditionType",
+            "enum": [
+                "ignore",
+                "avoid",
+                "strict"
+            ]
+        },
+        "conditionTypeWithTime": {
+            "title": "ConditionTypeWithTime",
+            "description": "Indicate condition with time wich can be strict, avoid (penalisable in optimisation) or ignored.",
+            "javaType": "com.penalara.ghc.jsonghcfile.engineghcfile.ConditionTypeWithTime",
+            "type": "object",
+            "required": [
+                "type"
+            ],
+            "properties": {
+                "type": {
+                    "$ref": "#/definitions/conditionType"
+                },
+                "minutes": {
+                    "description": "Custom time in minutes for condition.",
+                    "type": "integer"
+                }
+            }
+        },
+        "conditionOcupancy": {
+            "title": "ConditionOcupancy",
+            "description": "Indicates the condition type, the total minutes, the variation with the asisted time and if the ocupancy also takes the free days or not",
+            "type": "object",
+            "properties": {
+                "type": {
+                    "$ref": "#/definitions/conditionType"
+                },
+                "minutes": {
+                    "description": "Custom total time in minutes for the ocupancy.",
+                    "type": "integer"
+                },
+                "isAssisted": {
+                    "description": "Indicates if the field is assigned manualy or with the assisted mode",
+                    "type": "boolean"
+                },
+                "variationTime": {
+                    "description": "time in minutes you add to the assisted time so you generate the total time",
+                    "type": "integer"
+                }
+            }
+        },
+        "frameTemplate": {
+            "title": "FrameTemplate",
+            "description": "Templates with frame sections assignment preferences.",
+            "type": "array",
+            "additionalItems": false,
+            "items": {
+                "title": "SectionPreference",
+                "description": "Template with a section assignment preference.",
+                "type": "object",
+                "required": [
+                    "day",
+                    "index",
+                    "frame",
+                    "type"
+                ],
+                "properties": {
+                    "day": {
+                        "description": "Day of the week when is located the section.",
+                        "type": "integer"
+                    },
+                    "index": {
+                        "description": "Index inside the day where is located the section.",
+                        "type": "integer"
+                    },
+                    "frame": {
+                        "description": "Identifier name of the frame.",
+                        "type": "string"
+                    },
+                    "type": {
+                        "title": "SectionPreferenceTypeWithOutPreset",
+                        "description": "Element availability to be assigned to the section.",
+                        "enum": [
+                            "banned",
+                            "strong-non-preferred",
+                            "weak-non-preferred"
+                        ]
+                    }
+                }
+            }
+        },
+        "sessionFrameTemplate": {
+            "title": "SessionFrameTemplate",
+            "description": "Complete template of preferences.",
+            "$comment": "It have non-preferred sections.",
+            "type": "array",
+            "additionalItems": false,
+            "items": {
+                "title": "SessionSectionPreference",
+                "description": "Section assignment preference.",
+                "type": "object",
+                "required": [
+                    "day",
+                    "index",
+                    "frame",
+                    "type"
+                ],
+                "properties": {
+                    "day": {
+                        "description": "Day of the week when the section is located.",
+                        "type": "integer"
+                    },
+                    "index": {
+                        "description": "Index built into the day where the section is located.",
+                        "type": "integer"
+                    },
+                    "frame": {
+                        "description": "Frame identifier.",
+                        "type": "string"
+                    },
+                    "type": {
+                        "title": "SectionPreferenceTypeWithPreset",
+                        "description": "Session availability to be assigned to the section.",
+                        "enum": [
+                            "banned",
+                            "strong-non-preferred",
+                            "weak-non-preferred",
+                            "preset"
+                        ]
+                    }
+                }
+            }
+        },
+        "onCallServiceframeTemplate": {
+            "title": "OnCallTemplate",
+            "description": "Template with teacher's preferences in the on-call service.",
+            "type": "array",
+            "additionalItems": false,
+            "items": {
+                "title": "OnCallSectionPreference",
+                "description": "Template with a teacher section assignment preference about the service.",
+                "type": "object",
+                "required": [
+                    "day",
+                    "index",
+                    "frame",
+                    "type"
+                ],
+                "properties": {
+                    "day": {
+                        "description": "Day of the week when is located the section.",
+                        "type": "integer"
+                    },
+                    "index": {
+                        "description": "Index inside the day where is located the section.",
+                        "type": "integer"
+                    },
+                    "frame": {
+                        "description": "Identifier name of the frame.",
+                        "type": "string"
+                    },
+                    "type": {
+                        "title": "SectionPreferenceTypeBannedPreset",
+                        "description": "Teacher availability to be assigned to the section.",
+                        "enum": [
+                            "banned",
+                            "preset"
+                        ]
+                    }
+                }
+            }
+        },
+        "weeklyStay": {
+            "title": "WeeklyStay",
+            "description": "It indicates the maximum preferential and strict teacher's stay, for the weekly stay that the teacher can be in the academic institution.",
+            "type": "object",
+            "properties": {
+                "strict": {
+                    "description": "Strict time in minutes of maximum weekly stay.",
+                    "type": "integer"
+                },
+                "preferable": {
+                    "description": "Ponderable Time in minutes of maximum weeekly stay.",
+                    "type": "integer"
+                },
+                "countAroundMidday": {
+                    "description": "It indicates, in the case of split shifts, that the unoccupied intervals between the morning and afternoon class units are counted each day.",
+                    "type": "boolean",
+                    "default": true
+                }
+            },
+            "additionalProperties": false
+        },
+        "dailyStay": {
+            "title": "DailyStay",
+            "description": "This indicates the maximum preferential and strict time of stay of the teacher, for the daily stay that the teacher can be in the educational institution.",
+            "type": "object",
+            "properties": {
+                "strict": {
+                    "description": "Strict time in minutes of maximum daily stay.",
+                    "type": "integer"
+                },
+                "preferable": {
+                    "description": "Ponderable Time in minutes of maximum daily stay.",
+                    "type": "integer"
+                },
+                "countAroundMidday": {
+                    "description": "It indicates, in the case of split shifts, that the unoccupied intervals between the morning and afternoon class units are counted each day.",
+                    "type": "boolean",
+                    "default": true
+                }
+            },
+            "additionalProperties": false
+        },
+        "avoidGapsBetweenSesions": {
+            "description": "It indicates whether gaps between class units for the teacher should be avoided. This is a weighting condition.",
+            "$comment": "If did not specify, the engine will assign a true value.",
+            "type": "boolean",
+            "default": true
+        },
+        "maxContinuousTeaching": {
+            "title": "MaxContinuousTeaching",
+            "description": "It indicates the maximum continuous time of class units, which are allowed without having a gap or a non-class units between them.",
+            "type": "object",
+            "properties": {
+                "type": {
+                    "$ref": "#/definitions/conditionType"
+                },
+                "minutes": {
+                    "description": "Maximum continuous teaching time in minutes.",
+                    "type": "integer"
+                },
+                "minBreak": {
+                    "description": "Minimum time period to be considered as break time",
+                    "type": "integer",
+                    "$comment": "If not specified, the engine will assign the general value or the default time of 30 minutes."
+                }
+            },
+            "additionalProperties": false
+        },
+        "avoidClassesAroundBreak": {
+            "$ref": "#/definitions/conditionType",
+            "description": "It indicates whether the existence of class units on both sides of a playground supervision taught by this teacher will be penalised or forbidden.",
+            "default": "ignore"
+        },
+        "freeTimes": {
+            "title": "FreeTimes",
+            "description": "It contains the free time spaces that the teacher must have.",
+            "type": "object",
+            "properties": {
+                "fullDay": {
+                    "title": "FullDaysFreeTimes",
+                    "description": "Teacher's full days of free time.",
+                    "type": "object",
+                    "properties": {
+                        "strictDays": {
+                            "description": "Number of strict days when teacher should be free.",
+                            "type": "integer",
+                            "default": 0
+                        },
+                        "preferredDays": {
+                            "description": "Number of preferred days when teacher should be free.",
+                            "type": "integer",
+                            "default": 0
+                        }
+                    }
+                },
+                "firstMinutes": {
+                    "title": "FirstMinutesFreeTimes",
+                    "description": "Teacher's free intervals at the beginning of the day.",
+                    "type": "object",
+                    "required": [
+                        "minutes"
+                    ],
+                    "properties": {
+                        "strictDays": {
+                            "description": "Strict number of days on which the teacher must have the interval free at the beginning of the day.",
+                            "type": "integer",
+                            "default": 0
+                        },
+                        "preferredDays": {
+                            "description": "Preferred number of days on which the teacher should have the interval free at the beginning of the day.",
+                            "type": "integer",
+                            "default": 0
+                        },
+                        "minutes": {
+                            "description": "Minutes of free time at the beginning of the day.",
+                            "type": "integer"
+                        }
+                    }
+                },
+                "lastMinutes": {
+                    "title": "LastMinutesFreeTimes",
+                    "description": "Teacher's free intervals at the end of the day.",
+                    "type": "object",
+                    "required": [
+                        "minutes"
+                    ],
+                    "properties": {
+                        "strictDays": {
+                            "description": "Strict number of days on which the teacher must have the interval free at the end of the day.",
+                            "type": "integer",
+                            "default": 0
+                        },
+                        "preferredDays": {
+                            "description": "Preferred number of days on which the teacher should have the interval free at the end of the day. .",
+                            "type": "integer",
+                            "default": 0
+                        },
+                        "minutes": {
+                            "description": "Minutes of free time at the end of the day.",
+                            "type": "integer"
+                        }
+                    }
+                },
+                "consecutiveAnyTime": {
+                    "title": "ConsecutiveAnyTimeFreeTimes",
+                    "description": "Teacher's free intervals at any time of the day.",
+                    "type": "object",
+                    "required": [
+                        "minutes"
+                    ],
+                    "properties": {
+                        "strictDays": {
+                            "description": "Strict number of days on which the teacher must have the interval free. ",
+                            "type": "integer",
+                            "default": 0
+                        },
+                        "preferredDays": {
+                            "description": "Preferred number of days on which the teacher should have the interval free. ",
+                            "type": "integer",
+                            "default": 0
+                        },
+                        "minutes": {
+                            "description": "Minutes of free time interval.",
+                            "type": "integer"
+                        }
+                    }
+                }
+            },
+            "additionalProperties": false
+        },
+        "freePartTimes": {
+            "title": "FreePartTime",
+            "description": "Free half-time periods .",
+            "type": "object",
+            "properties": {
+                "mornings": {
+                    "title": "MorningsFreePartTimes",
+                    "description": "Mornings off.",
+                    "type": "object",
+                    "properties": {
+                        "strict": {
+                            "description": "Strict number of mornings off.",
+                            "type": "integer"
+                        },
+                        "preferable": {
+                            "description": "Preferable number of mornings off.",
+                            "type": "integer"
+                        }
+                    }
+                },
+                "afternoons": {
+                    "title": "AfternoonFreePartTimes",
+                    "description": "Afternoons off.",
+                    "type": "object",
+                    "properties": {
+                        "strict": {
+                            "description": "Strict number of afternoons off..",
+                            "type": "integer"
+                        },
+                        "preferable": {
+                            "description": "Preferable number of afternoons off.",
+                            "type": "integer"
+                        }
+                    }
+                },
+                "indistinctly": {
+                    "title": "IndistinctlyFreePartTimes",
+                    "description": "Free mornings or evenings indistinctly.",
+                    "type": "object",
+                    "properties": {
+                        "strict": {
+                            "description": "Strict number of mornings or afternoons indistinctly off.",
+                            "type": "integer"
+                        },
+                        "preferable": {
+                            "description": "Preferable number of mornings or afternoons indistinctly off.",
+                            "type": "integer"
+                        }
+                    }
+                }
+            },
+            "additionalProperties": false
+        },
+        "incompatibilities": {
+            "title": "Incompatibilities",
+            "description": "It contains the teacher's incompatibilities on the allocation of class units and rest periods.",
+            "type": "object",
+            "properties": {
+                "freeTimeBetweenDayBeforeAndCurrent": {
+                    "title": "FreeTimeBetweenDays",
+                    "description": "Minutes between departure and arrival of the following day.",
+                    "$ref": "#/definitions/conditionTypeWithTime"
+                },
+                "freeTimeBetweenEndWeekAndStartWeekDays": {
+                    "title": "FreeTimeBetweenWeeksBorders",
+                    "description": "Minutes between the end time of the last day of the week and the start time of the following week.",
+                    "$ref": "#/definitions/conditionTypeWithTime"
+                },
+                "freeTimeFirstOrLastHoursDay": {
+                    "title": "FreeTimeFirstOrLastHoursDay",
+                    "description": "Minutes of free time at first or last hours of the day.",
+                    "$ref": "#/definitions/conditionTypeWithTime"
+                },
+                "doNotFinishAtLastAfternoonSectionIfStartedAtFirstAfternoonSection": {
+                    "title": "DoNotFinishAtLastAfternoonSection",
+                    "description": "o not finish at the last hour of the evening and start at the first.",
+                    "enum": [
+                        "ignore",
+                        "avoid",
+                        "strict"
+                    ]
+                },
+                "doNotFinishAtLastMorningSectionIfStartedAtFirstMorningSection": {
+                    "title": "DoNotFinishAtLastMorningSection",
+                    "description": "Do not start at the first hour and finish at the last hour of the morning.",
+                    "enum": [
+                        "ignore",
+                        "avoid",
+                        "strict"
+                    ]
+                },
+                "doNotFinishAtLastMorningSectionIfStartAtFirstAfternoonSection": {
+                    "title": "DoNotFinishAtLastMorningSectionIfStartAtFirstAfternoon",
+                    "description": "Do not finish at the last hour of the morning and start at the first hour of the evening.",
+                    "enum": [
+                        "ignore",
+                        "avoid",
+                        "strict"
+                    ]
+                },
+                "doNotFinishAtLastMorningSectionIfHasAfternoonAssignment": {
+                    "title": "DoNotFinishAtLastMorningSectionIfHasAfternoon",
+                    "description": "Do not finish at the last hour in the morning and have the evening busy.",
+                    "enum": [
+                        "ignore",
+                        "avoid",
+                        "strict"
+                    ]
+                },
+                "doNotStartAtFirstMorningSectionIfHasAfternoonAssignment": {
+                    "title": "DoNotStartAtFirstMorningSection",
+                    "description": "Do not start at the first hour and keep the evening busy.",
+                    "enum": [
+                        "ignore",
+                        "avoid",
+                        "strict"
+                    ]
+                },
+                "freeTimeAroundMidday": {
+                    "title": "FreeTimeAroundMidday",
+                    "description": "Do not have less than a custom free time around noon pause.",
+                    "$ref": "#/definitions/conditionTypeWithTime"
+                }
+            },
+            "additionalProperties": false
+        },
+        "dailyOcupation": {
+            "title": "DailyOcupation",
+            "description": "Maximum and minimum values of teaching or activity time for teachers. This object indicates the type of condition (strict or weighting) and whether the automatic calculation in minutes in the engine should be set.",
+            "type": "object",
+            "properties": {
+                "allowFreeDays": {
+                    "description": "It indicates whether checking of minimums is omitted in the case of non-assigned days. Forbidden days are never checked.",
+                    "type": "boolean"
+                },
+                "minimumTeaching": {
+                    "title": "MinimumTeaching",
+                    "description": "Minimum teaching time of the teacher with students.",
+                    "$ref": "#/definitions/conditionOcupancy"
+                },
+                "maximumTeaching": {
+                    "title": "MaximumTeaching",
+                    "description": "Maximun teaching time of the teacher with students.",
+                    "$ref": "#/definitions/conditionOcupancy"
+                },
+                "minimumOccupancy": {
+                    "title": "MinimumOccupancy",
+                    "description": "Minimum teaching time of the teacher with students and other non-teaching activities indicated as eligible for calculation.",
+                    "$ref": "#/definitions/conditionOcupancy"
+                },
+                "maximumOccupancy": {
+                    "title": "MaximumOccupancy",
+                    "description": "Maximum teaching time of the teacher with students and other non-teaching activities indicated as eligible for calculation.",
+                    "$ref": "#/definitions/conditionOcupancy"
+                }
+            },
+            "additionalProperties": false
+        },
+        "middayReference": {
+            "title": "MiddayReference",
+            "description": "It indicate the frame where the teacher takes noon pause.",
+            "type": "object",
+            "properties": {
+                "refFrame": {
+                    "description": "Identifier of a frame where the teacher takes noon pause. If not specified, the engine shall take the noon pause of the frame with the highest allocation.",
+                    "type": "string"
+                },
+                "strict": {
+                    "description": "It indicates whether the teacher's noon pause should be respected without placing his or her class units in sections of other frameworks that overlap with his or her noon pause.",
+                    "type": "boolean",
+                    "default": true
+                }
+            },
+            "additionalProperties": false
+        },
+        "dailyBuildingTransfers": {
+            "title": "DailyBuildingTransfers",
+            "description": "Maximum number of movements between buildings that the teacher can make per day.",
+            "type": "object",
+            "properties": {
+                "strict": {
+                    "description": "Strict maximum number of movements per day.",
+                    "type": "integer"
+                },
+                "preferable": {
+                    "description": "Maximum number of movements per day that can be weighted/preferred.",
+                    "type": "integer"
+                }
+            },
+            "additionalProperties": false
+        },
+        "refGroup": {
+            "title": "GroupReferenceType",
+            "description": "Contains the reference to a group of the session, and optionally, the number of students of the group that attend the session.",
+            "type": "object",
+            "required": [
+                "refIdGroup"
+            ],
+            "properties": {
+                "refIdGroup": {
+                    "description": "Group identifier.",
+                    "type": "string"
+                },
+                "numStudents": {
+                    "description": "Custom number of students that are in the class units. If it is not specified, the engine defaults to the value of the Group object.",
+                    "type": "integer"
+                }
+            }
+        },
+        "stableTiming": {
+            "title": "StableTiming",
+            "description": "It contains the fixed way of allocating time across the days of the period.",
+            "type": "array",
+            "additionalItems": false,
+            "items": {
+                "title": "DailyMinutes",
+                "description": "Indicates the number of minutes to be allocated on a given day.",
+                "type": "integer"
+            }
+        },
+        "variableTiming": {
+            "title": "VariableTiming",
+            "description": "It defines the allocating time as a total of time, maximum and minimun range of sections per day.",
+            "type": "object",
+            "required": [
+                "minutesAmount",
+                "maxMinutesDaily"
+            ],
+            "properties": {
+                "minutesAmount": {
+                    "description": "Total of session's minutes.",
+                    "type": "integer"
+                },
+                "maxMinutesDaily": {
+                    "description": "Maximum of minutes per day.",
+                    "type": "integer"
+                },
+                "minMinutesDaily": {
+                    "description": "Minimun of minutes per day.",
+                    "type": "integer"
+                },
+                "avoidMaxDuration": {
+                    "description": "It indicates the preference for class units of maximum duration.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "avoidMinDuration": {
+                    "description": "It indicates the preference for class units of minimun duration.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "allowDiscontinuity": {
+                    "description": "It indicates whether discontinuous sections are allowed, that is, having sections of other class units or breaks in between them.",
+                    "type": "boolean",
+                    "default": false
+                }
+            },
+            "additionalProperties": false
+        },
+        "distribution": {
+            "title": "Distribution",
+            "description": "It contains information on how the class units of the session are distributed throughout the week. It must contain only one element between 'stablePeriods' and 'variablePeriods'.",
+            "type": "object",
+            "javaType": "com.penalara.ghc.jsonghcfile.engineghcfile.Distribution",
+            "$comment": "The 'periods' property is required if there is more than one period in the timetable. The 'stablePeriods' and 'variablePeriods' properties are mutually exclusive.",
+            "properties": {
+                "periods": {
+                    "title": "RefPeriods",
+                    "description": "List of periods or weeks in which the class unit must be assigned.",
+                    "type": "array",
+                    "additionalItems": false,
+                    "items": {
+                        "title": "RefPeriod",
+                        "description": "Period identifier.",
+                        "type": "string"
+                    }
+                },
+                "stablePeriods": {
+                    "title": "StablePeriods",
+                    "description": "The allocation of the class unit of the session is the same in each period.",
+                    "type": "object",
+                    "$comment": "Only one property must be specified.",
+                    "properties": {
+                        "stableTiming": {
+                            "$ref": "#/definitions/stableTiming"
+                        },
+                        "variableTiming": {
+                            "$ref": "#/definitions/variableTiming"
+                        },
+                        "stableTimingList": {
+                            "title": "StableTimingList",
+                            "description": "It contains an array of 'StableTiming' distributions.",
+                            "type": "array",
+                            "additionalItems": false,
+                            "items": {
+                                "$ref": "#/definitions/stableTiming"
+                            }
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "variablePeriods": {
+                    "title": "VariablePeriods",
+                    "description": "The total of the class units of the distribution are allocation between the periods.",
+                    "type": "object",
+                    "$comment": "Properties 'weeklyStable' and 'weeklyVariable' are mutually exclusive.",
+                    "required": [
+                        "timing"
+                    ],
+                    "properties": {
+                        "timing": {
+                            "title": "TimeAllocation",
+                            "description": "Contains the specification of how the total time must be allocated within the days of the framework and should be distributed across the period or periods.",
+                            "type": "object",
+                            "$comment": "Only one property must be specified.",
+                            "properties": {
+                                "stableTiming": {
+                                    "$ref": "#/definitions/stableTiming"
+                                },
+                                "variableTiming": {
+                                    "$ref": "#/definitions/variableTiming"
+                                }
+                            }
+                        },
+                        "maximunTimeInPeriod": {
+                            "description": "Maximum number of minutes to be allocated in each Period. If not defined, it is considered that there is no maximum limit.",
+                            "type": "integer"
+                        },
+                        "minimnunTimeInPeriod": {
+                            "description": "Minimum number of minutes to be allocated in each Period.",
+                            "type": "integer",
+                            "default": 0
+                        },
+						"maximumTimeframe": {
+                            "description": "Indicates the maximum interval of periods that can be used to assign the session, counting from the first period with a session assignment to the last period with a session assignment. That is, the periods in between are also considered even if they do not have a session assigned.",
+                            "type": "integer"
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            },
+            "additionalProperties": false
+        },
+        "samePositionEveryPeriod": {
+            "title": "SamePositionEveryPeriod",
+            "description": "Keep the same position every week or period for the class units.",
+            "javaType": "com.penalara.ghc.jsonghcfile.engineghcfile.SamePositionEveryPeriod",
+            "enum": [
+                "ignore",
+                "attempt",
+                "avoid",
+                "strict",
+                "forbidden"
+            ],
+            "default": "ignore"
+        },
+        "refClassRoomToAssign": {
+            "title": "RefClassRoomToAssign",
+            "description": "Object, with classrooms and/or set of classrooms, where the engine should assign classroom to each class unit of the session.",
+            "type": "object",
+            "properties": {
+                "classRoom": {
+                    "title": "ClassRoomRef",
+                    "description": "Classroom identifier.",
+                    "type": "string"
+                },
+                "classRoomsSetsList": {
+                    "title": "ClassRoomsSetsList",
+                    "description": "Classroom set list where one classroom could be taken to assign to session.",
+                    "type": "array",
+                    "additionalItems": false,
+                    "items": {
+                        "title": "ClassRoomSetRef",
+                        "description": "Classroom set identifier.",
+                        "type": "string"
+                    }
+                }
+            },
+            "additionalProperties": false
+        },
+        "nonClassSessionSettings": {
+            "title": "NonClassSessionSettings",
+            "description": "Settings of the meeting.",
+            "type": "object",
+            "properties": {
+                "computeForMaxMinOccupancy": {
+                    "description": " It indicates whether the class unit counts for the maximum and minimum daily teacher occupancy. By default, the engine computes class units with students.",
+                    "type": "boolean",
+                    "default": false
+                },
+                "samePositionEveryPeriod": {
+                    "$ref": "#/definitions/samePositionEveryPeriod"
+                }
+            },
+            "additionalProperties": false
+        }
+    }
+}

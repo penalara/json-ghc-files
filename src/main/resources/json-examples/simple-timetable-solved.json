@@ -1,0 +1,4013 @@
+{
+	"id": 1,
+	"meta": {
+		"name": "horario_2019-2020",
+		"versionJson": "0.1",
+		"createdDate": 1561028399000,
+		"lastModifiedDate": 1683016829877,
+		"refUser": "UG-43524",
+		"source": "horarios",
+		"fullMode": true
+	},
+	"specifications": {
+		"periods": {
+			"followedPeriods": false,
+			"periodsList": [
+				{
+					"id": "PrimerCuatri",
+					"lastDay": 4
+				},
+				{
+					"id": "SegundoCuatri",
+					"lastDay": 9
+				}
+			]
+		},
+		"frames": [
+			{
+				"id": "A",
+				"days": [
+					{
+						"day": 0,
+						"sections": [
+							{
+								"index": 0,
+								"entryTime": "08:17:00",
+								"exitTime": "09:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": false
+							},
+							{
+								"index": 1,
+								"entryTime": "09:25:00",
+								"exitTime": "10:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 2,
+								"entryTime": "10:15:00",
+								"exitTime": "10:30:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 3,
+								"entryTime": "10:30:00",
+								"exitTime": "11:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": false
+							},
+							{
+								"index": 4,
+								"entryTime": "11:25:00",
+								"exitTime": "12:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 5,
+								"entryTime": "12:15:00",
+								"exitTime": "12:30:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 6,
+								"entryTime": "12:30:00",
+								"exitTime": "13:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 7,
+								"entryTime": "13:25:00",
+								"exitTime": "14:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 8,
+								"entryTime": "14:15:00",
+								"exitTime": "14:45:00",
+								"duration": 30,
+								"type": "midday",
+								"allowed": true
+							},
+							{
+								"index": 9,
+								"entryTime": "14:45:00",
+								"exitTime": "15:10:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 10,
+								"entryTime": "15:10:00",
+								"exitTime": "15:59:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							}
+						]
+					},
+					{
+						"day": 1,
+						"sections": [
+							{
+								"index": 0,
+								"entryTime": "08:17:00",
+								"exitTime": "09:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 1,
+								"entryTime": "09:25:00",
+								"exitTime": "10:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 2,
+								"entryTime": "10:15:00",
+								"exitTime": "10:30:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 3,
+								"entryTime": "10:30:00",
+								"exitTime": "11:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 4,
+								"entryTime": "11:25:00",
+								"exitTime": "12:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 5,
+								"entryTime": "12:15:00",
+								"exitTime": "12:30:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 6,
+								"entryTime": "12:30:00",
+								"exitTime": "13:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 7,
+								"entryTime": "13:25:00",
+								"exitTime": "14:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 8,
+								"entryTime": "14:15:00",
+								"exitTime": "14:45:00",
+								"duration": 30,
+								"type": "midday",
+								"allowed": true
+							},
+							{
+								"index": 9,
+								"entryTime": "14:45:00",
+								"exitTime": "15:10:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 10,
+								"entryTime": "15:10:00",
+								"exitTime": "15:59:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							}
+						]
+					},
+					{
+						"day": 2,
+						"sections": [
+							{
+								"index": 0,
+								"entryTime": "08:17:00",
+								"exitTime": "09:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": false
+							},
+							{
+								"index": 1,
+								"entryTime": "09:25:00",
+								"exitTime": "10:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 2,
+								"entryTime": "10:15:00",
+								"exitTime": "10:30:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 3,
+								"entryTime": "10:30:00",
+								"exitTime": "11:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 4,
+								"entryTime": "11:25:00",
+								"exitTime": "12:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 5,
+								"entryTime": "12:15:00",
+								"exitTime": "12:30:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 6,
+								"entryTime": "12:30:00",
+								"exitTime": "13:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 7,
+								"entryTime": "13:25:00",
+								"exitTime": "14:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 8,
+								"entryTime": "14:15:00",
+								"exitTime": "14:45:00",
+								"duration": 30,
+								"type": "midday",
+								"allowed": true
+							},
+							{
+								"index": 9,
+								"entryTime": "14:45:00",
+								"exitTime": "15:10:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 10,
+								"entryTime": "15:10:00",
+								"exitTime": "15:59:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							}
+						]
+					},
+					{
+						"day": 3,
+						"sections": [
+							{
+								"index": 0,
+								"entryTime": "08:17:00",
+								"exitTime": "09:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": false
+							},
+							{
+								"index": 1,
+								"entryTime": "09:25:00",
+								"exitTime": "10:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 2,
+								"entryTime": "10:15:00",
+								"exitTime": "10:30:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 3,
+								"entryTime": "10:30:00",
+								"exitTime": "11:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 4,
+								"entryTime": "11:25:00",
+								"exitTime": "12:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 5,
+								"entryTime": "12:15:00",
+								"exitTime": "12:30:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 6,
+								"entryTime": "12:30:00",
+								"exitTime": "13:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 7,
+								"entryTime": "13:25:00",
+								"exitTime": "14:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 8,
+								"entryTime": "14:15:00",
+								"exitTime": "14:45:00",
+								"duration": 30,
+								"type": "midday",
+								"allowed": true
+							},
+							{
+								"index": 9,
+								"entryTime": "14:45:00",
+								"exitTime": "15:10:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 10,
+								"entryTime": "15:10:00",
+								"exitTime": "15:59:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							}
+						]
+					},
+					{
+						"day": 4,
+						"sections": [
+							{
+								"index": 0,
+								"entryTime": "08:17:00",
+								"exitTime": "09:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 1,
+								"entryTime": "09:25:00",
+								"exitTime": "10:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 2,
+								"entryTime": "10:15:00",
+								"exitTime": "10:30:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 3,
+								"entryTime": "10:30:00",
+								"exitTime": "11:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 4,
+								"entryTime": "11:25:00",
+								"exitTime": "12:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 5,
+								"entryTime": "12:15:00",
+								"exitTime": "12:30:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 6,
+								"entryTime": "12:30:00",
+								"exitTime": "13:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 7,
+								"entryTime": "13:25:00",
+								"exitTime": "14:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 8,
+								"entryTime": "14:15:00",
+								"exitTime": "14:45:00",
+								"duration": 30,
+								"type": "midday",
+								"allowed": true
+							},
+							{
+								"index": 9,
+								"entryTime": "14:45:00",
+								"exitTime": "15:10:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 10,
+								"entryTime": "15:10:00",
+								"exitTime": "15:59:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							}
+						]
+					},
+					{
+						"day": 5,
+						"sections": [
+							{
+								"index": 0,
+								"entryTime": "08:17:00",
+								"exitTime": "09:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": false
+							},
+							{
+								"index": 1,
+								"entryTime": "09:25:00",
+								"exitTime": "10:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 2,
+								"entryTime": "10:15:00",
+								"exitTime": "10:30:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 3,
+								"entryTime": "10:30:00",
+								"exitTime": "11:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 4,
+								"entryTime": "11:25:00",
+								"exitTime": "12:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 5,
+								"entryTime": "12:15:00",
+								"exitTime": "12:30:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 6,
+								"entryTime": "12:30:00",
+								"exitTime": "13:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 7,
+								"entryTime": "13:25:00",
+								"exitTime": "14:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 8,
+								"entryTime": "14:15:00",
+								"exitTime": "14:45:00",
+								"duration": 30,
+								"type": "midday",
+								"allowed": true
+							},
+							{
+								"index": 9,
+								"entryTime": "14:45:00",
+								"exitTime": "15:10:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 10,
+								"entryTime": "15:10:00",
+								"exitTime": "15:59:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							}
+						]
+					},
+					{
+						"day": 6,
+						"sections": [
+							{
+								"index": 0,
+								"entryTime": "08:17:00",
+								"exitTime": "09:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": false
+							},
+							{
+								"index": 1,
+								"entryTime": "09:25:00",
+								"exitTime": "10:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 2,
+								"entryTime": "10:15:00",
+								"exitTime": "10:30:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 3,
+								"entryTime": "10:30:00",
+								"exitTime": "11:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 4,
+								"entryTime": "11:25:00",
+								"exitTime": "12:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 5,
+								"entryTime": "12:15:00",
+								"exitTime": "12:30:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 6,
+								"entryTime": "12:30:00",
+								"exitTime": "13:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 7,
+								"entryTime": "13:25:00",
+								"exitTime": "14:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 8,
+								"entryTime": "14:15:00",
+								"exitTime": "14:45:00",
+								"duration": 30,
+								"type": "midday",
+								"allowed": true
+							},
+							{
+								"index": 9,
+								"entryTime": "14:45:00",
+								"exitTime": "15:10:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 10,
+								"entryTime": "15:10:00",
+								"exitTime": "15:59:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							}
+						]
+					},
+					{
+						"day": 7,
+						"sections": [
+							{
+								"index": 0,
+								"entryTime": "08:17:00",
+								"exitTime": "09:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": false
+							},
+							{
+								"index": 1,
+								"entryTime": "09:25:00",
+								"exitTime": "10:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 2,
+								"entryTime": "10:15:00",
+								"exitTime": "10:30:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 3,
+								"entryTime": "10:30:00",
+								"exitTime": "11:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 4,
+								"entryTime": "11:25:00",
+								"exitTime": "12:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 5,
+								"entryTime": "12:15:00",
+								"exitTime": "12:30:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 6,
+								"entryTime": "12:30:00",
+								"exitTime": "13:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 7,
+								"entryTime": "13:25:00",
+								"exitTime": "14:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 8,
+								"entryTime": "14:15:00",
+								"exitTime": "14:45:00",
+								"duration": 30,
+								"type": "midday",
+								"allowed": true
+							},
+							{
+								"index": 9,
+								"entryTime": "14:45:00",
+								"exitTime": "15:10:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 10,
+								"entryTime": "15:10:00",
+								"exitTime": "15:59:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							}
+						]
+					},
+					{
+						"day": 8,
+						"sections": [
+							{
+								"index": 0,
+								"entryTime": "08:17:00",
+								"exitTime": "09:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": false
+							},
+							{
+								"index": 1,
+								"entryTime": "09:25:00",
+								"exitTime": "10:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 2,
+								"entryTime": "10:15:00",
+								"exitTime": "10:30:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 3,
+								"entryTime": "10:30:00",
+								"exitTime": "11:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 4,
+								"entryTime": "11:25:00",
+								"exitTime": "12:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 5,
+								"entryTime": "12:15:00",
+								"exitTime": "12:30:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 6,
+								"entryTime": "12:30:00",
+								"exitTime": "13:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 7,
+								"entryTime": "13:25:00",
+								"exitTime": "14:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 8,
+								"entryTime": "14:15:00",
+								"exitTime": "14:45:00",
+								"duration": 30,
+								"type": "midday",
+								"allowed": true
+							},
+							{
+								"index": 9,
+								"entryTime": "14:45:00",
+								"exitTime": "15:10:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 10,
+								"entryTime": "15:10:00",
+								"exitTime": "15:59:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							}
+						]
+					},
+					{
+						"day": 9,
+						"sections": [
+							{
+								"index": 0,
+								"entryTime": "08:17:00",
+								"exitTime": "09:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": false
+							},
+							{
+								"index": 1,
+								"entryTime": "09:25:00",
+								"exitTime": "10:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 2,
+								"entryTime": "10:15:00",
+								"exitTime": "10:30:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 3,
+								"entryTime": "10:30:00",
+								"exitTime": "11:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 4,
+								"entryTime": "11:25:00",
+								"exitTime": "12:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 5,
+								"entryTime": "12:15:00",
+								"exitTime": "12:30:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 6,
+								"entryTime": "12:30:00",
+								"exitTime": "13:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 7,
+								"entryTime": "13:25:00",
+								"exitTime": "14:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 8,
+								"entryTime": "14:15:00",
+								"exitTime": "14:45:00",
+								"duration": 30,
+								"type": "midday",
+								"allowed": true
+							},
+							{
+								"index": 9,
+								"entryTime": "14:45:00",
+								"exitTime": "15:10:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 10,
+								"entryTime": "15:10:00",
+								"exitTime": "15:59:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "B",
+				"days": [
+					{
+						"day": 0,
+						"sections": [
+							{
+								"index": 0,
+								"entryTime": "08:30:00",
+								"exitTime": "09:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 1,
+								"entryTime": "09:25:00",
+								"exitTime": "10:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 2,
+								"entryTime": "10:15:00",
+								"exitTime": "10:30:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 3,
+								"entryTime": "10:30:00",
+								"exitTime": "11:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 4,
+								"entryTime": "11:25:00",
+								"exitTime": "12:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 5,
+								"entryTime": "12:15:00",
+								"exitTime": "12:30:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 6,
+								"entryTime": "12:30:00",
+								"exitTime": "13:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 7,
+								"entryTime": "13:25:00",
+								"exitTime": "14:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							}
+						]
+					},
+					{
+						"day": 1,
+						"sections": [
+							{
+								"index": 0,
+								"entryTime": "08:30:00",
+								"exitTime": "09:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 1,
+								"entryTime": "09:25:00",
+								"exitTime": "10:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 2,
+								"entryTime": "10:15:00",
+								"exitTime": "10:30:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 3,
+								"entryTime": "10:30:00",
+								"exitTime": "11:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 4,
+								"entryTime": "11:25:00",
+								"exitTime": "12:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 5,
+								"entryTime": "12:15:00",
+								"exitTime": "12:30:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 6,
+								"entryTime": "12:30:00",
+								"exitTime": "13:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 7,
+								"entryTime": "13:25:00",
+								"exitTime": "14:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							}
+						]
+					},
+					{
+						"day": 2,
+						"sections": [
+							{
+								"index": 0,
+								"entryTime": "08:30:00",
+								"exitTime": "09:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 1,
+								"entryTime": "09:25:00",
+								"exitTime": "10:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 2,
+								"entryTime": "10:15:00",
+								"exitTime": "10:30:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 3,
+								"entryTime": "10:30:00",
+								"exitTime": "11:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 4,
+								"entryTime": "11:25:00",
+								"exitTime": "12:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 5,
+								"entryTime": "12:15:00",
+								"exitTime": "12:30:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 6,
+								"entryTime": "12:30:00",
+								"exitTime": "13:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 7,
+								"entryTime": "13:25:00",
+								"exitTime": "14:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							}
+						]
+					},
+					{
+						"day": 3,
+						"sections": [
+							{
+								"index": 0,
+								"entryTime": "08:30:00",
+								"exitTime": "09:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 1,
+								"entryTime": "09:25:00",
+								"exitTime": "10:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 2,
+								"entryTime": "10:15:00",
+								"exitTime": "10:30:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 3,
+								"entryTime": "10:30:00",
+								"exitTime": "11:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 4,
+								"entryTime": "11:25:00",
+								"exitTime": "12:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 5,
+								"entryTime": "12:15:00",
+								"exitTime": "12:30:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 6,
+								"entryTime": "12:30:00",
+								"exitTime": "13:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 7,
+								"entryTime": "13:25:00",
+								"exitTime": "14:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							}
+						]
+					},
+					{
+						"day": 4,
+						"sections": [
+							{
+								"index": 0,
+								"entryTime": "08:30:00",
+								"exitTime": "09:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 1,
+								"entryTime": "09:25:00",
+								"exitTime": "10:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": false
+							},
+							{
+								"index": 2,
+								"entryTime": "10:15:00",
+								"exitTime": "10:30:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 3,
+								"entryTime": "10:30:00",
+								"exitTime": "11:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 4,
+								"entryTime": "11:25:00",
+								"exitTime": "12:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 5,
+								"entryTime": "12:15:00",
+								"exitTime": "12:30:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 6,
+								"entryTime": "12:30:00",
+								"exitTime": "13:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 7,
+								"entryTime": "13:25:00",
+								"exitTime": "14:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							}
+						]
+					},
+					{
+						"day": 5,
+						"sections": [
+							{
+								"index": 0,
+								"entryTime": "08:30:00",
+								"exitTime": "09:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 1,
+								"entryTime": "09:25:00",
+								"exitTime": "10:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 2,
+								"entryTime": "10:15:00",
+								"exitTime": "10:30:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 3,
+								"entryTime": "10:30:00",
+								"exitTime": "11:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 4,
+								"entryTime": "11:25:00",
+								"exitTime": "12:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 5,
+								"entryTime": "12:15:00",
+								"exitTime": "12:30:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 6,
+								"entryTime": "12:30:00",
+								"exitTime": "13:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 7,
+								"entryTime": "13:25:00",
+								"exitTime": "14:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							}
+						]
+					},
+					{
+						"day": 6,
+						"sections": [
+							{
+								"index": 0,
+								"entryTime": "08:30:00",
+								"exitTime": "09:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 1,
+								"entryTime": "09:25:00",
+								"exitTime": "10:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 2,
+								"entryTime": "10:15:00",
+								"exitTime": "10:30:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 3,
+								"entryTime": "10:30:00",
+								"exitTime": "11:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 4,
+								"entryTime": "11:25:00",
+								"exitTime": "12:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 5,
+								"entryTime": "12:15:00",
+								"exitTime": "12:30:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 6,
+								"entryTime": "12:30:00",
+								"exitTime": "13:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 7,
+								"entryTime": "13:25:00",
+								"exitTime": "14:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							}
+						]
+					},
+					{
+						"day": 7,
+						"sections": [
+							{
+								"index": 0,
+								"entryTime": "08:30:00",
+								"exitTime": "09:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 1,
+								"entryTime": "09:25:00",
+								"exitTime": "10:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 2,
+								"entryTime": "10:15:00",
+								"exitTime": "10:30:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 3,
+								"entryTime": "10:30:00",
+								"exitTime": "11:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 4,
+								"entryTime": "11:25:00",
+								"exitTime": "12:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 5,
+								"entryTime": "12:15:00",
+								"exitTime": "12:30:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 6,
+								"entryTime": "12:30:00",
+								"exitTime": "13:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 7,
+								"entryTime": "13:25:00",
+								"exitTime": "14:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							}
+						]
+					},
+					{
+						"day": 8,
+						"sections": [
+							{
+								"index": 0,
+								"entryTime": "08:30:00",
+								"exitTime": "09:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 1,
+								"entryTime": "09:25:00",
+								"exitTime": "10:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 2,
+								"entryTime": "10:15:00",
+								"exitTime": "10:30:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 3,
+								"entryTime": "10:30:00",
+								"exitTime": "11:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 4,
+								"entryTime": "11:25:00",
+								"exitTime": "12:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 5,
+								"entryTime": "12:15:00",
+								"exitTime": "12:30:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 6,
+								"entryTime": "12:30:00",
+								"exitTime": "13:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 7,
+								"entryTime": "13:25:00",
+								"exitTime": "14:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							}
+						]
+					},
+					{
+						"day": 9,
+						"sections": [
+							{
+								"index": 0,
+								"entryTime": "08:30:00",
+								"exitTime": "09:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 1,
+								"entryTime": "09:25:00",
+								"exitTime": "10:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 2,
+								"entryTime": "10:15:00",
+								"exitTime": "10:30:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 3,
+								"entryTime": "10:30:00",
+								"exitTime": "11:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 4,
+								"entryTime": "11:25:00",
+								"exitTime": "12:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 5,
+								"entryTime": "12:15:00",
+								"exitTime": "12:30:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 6,
+								"entryTime": "12:30:00",
+								"exitTime": "13:20:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 7,
+								"entryTime": "13:25:00",
+								"exitTime": "14:15:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							}
+						]
+					}
+				]
+			},
+			{
+				"id": "D",
+				"days": [
+					{
+						"day": 0,
+						"sections": [
+							{
+								"index": 0,
+								"entryTime": "08:30:00",
+								"exitTime": "09:25:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 1,
+								"entryTime": "09:30:00",
+								"exitTime": "10:25:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 2,
+								"entryTime": "10:30:00",
+								"exitTime": "10:45:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 3,
+								"entryTime": "10:50:00",
+								"exitTime": "11:45:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							}
+						]
+					},
+					{
+						"day": 1,
+						"sections": [
+							{
+								"index": 0,
+								"entryTime": "08:30:00",
+								"exitTime": "09:25:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 1,
+								"entryTime": "09:30:00",
+								"exitTime": "10:25:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 2,
+								"entryTime": "10:30:00",
+								"exitTime": "10:45:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 3,
+								"entryTime": "10:50:00",
+								"exitTime": "11:45:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 4,
+								"entryTime": "11:50:00",
+								"exitTime": "12:45:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 5,
+								"entryTime": "12:50:00",
+								"exitTime": "13:45:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							}
+						]
+					},
+					{
+						"day": 2,
+						"sections": [
+							{
+								"index": 0,
+								"entryTime": "08:30:00",
+								"exitTime": "09:25:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 1,
+								"entryTime": "09:30:00",
+								"exitTime": "10:25:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 2,
+								"entryTime": "10:30:00",
+								"exitTime": "10:45:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 3,
+								"entryTime": "10:50:00",
+								"exitTime": "11:45:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							}
+						]
+					},
+					{
+						"day": 3,
+						"sections": [
+							{
+								"index": 0,
+								"entryTime": "08:30:00",
+								"exitTime": "09:25:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 1,
+								"entryTime": "09:30:00",
+								"exitTime": "10:25:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 2,
+								"entryTime": "10:30:00",
+								"exitTime": "10:45:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 3,
+								"entryTime": "10:50:00",
+								"exitTime": "11:45:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							}
+						]
+					},
+					{
+						"day": 4,
+						"sections": [
+							{
+								"index": 0,
+								"entryTime": "08:30:00",
+								"exitTime": "09:25:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 1,
+								"entryTime": "09:30:00",
+								"exitTime": "10:25:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 2,
+								"entryTime": "10:30:00",
+								"exitTime": "10:45:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 3,
+								"entryTime": "10:50:00",
+								"exitTime": "11:45:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							}
+						]
+					},
+					{
+						"day": 5,
+						"sections": [
+							{
+								"index": 0,
+								"entryTime": "08:30:00",
+								"exitTime": "09:25:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 1,
+								"entryTime": "09:30:00",
+								"exitTime": "10:25:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 2,
+								"entryTime": "10:30:00",
+								"exitTime": "10:45:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 3,
+								"entryTime": "10:50:00",
+								"exitTime": "11:45:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							}
+						]
+					},
+					{
+						"day": 6,
+						"sections": [
+							{
+								"index": 0,
+								"entryTime": "08:30:00",
+								"exitTime": "09:25:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 1,
+								"entryTime": "09:30:00",
+								"exitTime": "10:25:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 2,
+								"entryTime": "10:30:00",
+								"exitTime": "10:45:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 3,
+								"entryTime": "10:50:00",
+								"exitTime": "11:45:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							}
+						]
+					},
+					{
+						"day": 7,
+						"sections": [
+							{
+								"index": 0,
+								"entryTime": "08:30:00",
+								"exitTime": "09:25:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 1,
+								"entryTime": "09:30:00",
+								"exitTime": "10:25:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 2,
+								"entryTime": "10:30:00",
+								"exitTime": "10:45:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 3,
+								"entryTime": "10:50:00",
+								"exitTime": "11:45:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							}
+						]
+					},
+					{
+						"day": 8,
+						"sections": [
+							{
+								"index": 0,
+								"entryTime": "08:30:00",
+								"exitTime": "09:25:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 1,
+								"entryTime": "09:30:00",
+								"exitTime": "10:25:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 2,
+								"entryTime": "10:30:00",
+								"exitTime": "10:45:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 3,
+								"entryTime": "10:50:00",
+								"exitTime": "11:45:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							}
+						]
+					},
+					{
+						"day": 9,
+						"sections": [
+							{
+								"index": 0,
+								"entryTime": "08:30:00",
+								"exitTime": "09:25:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 1,
+								"entryTime": "09:30:00",
+								"exitTime": "10:25:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							},
+							{
+								"index": 2,
+								"entryTime": "10:30:00",
+								"exitTime": "10:45:00",
+								"duration": 60,
+								"type": "break",
+								"allowed": true
+							},
+							{
+								"index": 3,
+								"entryTime": "10:50:00",
+								"exitTime": "11:45:00",
+								"duration": 60,
+								"type": "teaching",
+								"allowed": true
+							}
+						]
+					}
+				]
+			}
+		],
+		"buildings": [
+			{
+				"id": "EdP",
+				"distances": [
+					{
+						"refBuilding": "EdE",
+						"minutes": 24
+					},
+					{
+						"refBuilding": "EdT",
+						"minutes": 5
+					}
+				]
+			},
+			{
+				"id": "EdE",
+				"distances": [
+					{
+						"refBuilding": "EdP",
+						"minutes": 24
+					},
+					{
+						"refBuilding": "EdT",
+						"minutes": 15
+					}
+				]
+			},
+			{
+				"id": "EdT",
+				"distances": [
+					{
+						"refBuilding": "EdP",
+						"minutes": 5
+					},
+					{
+						"refBuilding": "EdE",
+						"minutes": 15
+					}
+				]
+			}
+		],
+		"classRooms": [
+			{
+				"id": "A1",
+				"capacity": 20,
+				"frameTemplate": [
+					{
+						"day": 4,
+						"index": 1,
+						"frame": "A"
+					},
+					{
+						"day": 0,
+						"index": 3,
+						"frame": "B"
+					}
+				],
+				"refBuilding": "EdP",
+				"fullDay": false,
+				"isDedicated": false,
+				"shortName": "A1abv"
+			},
+			{
+				"id": "A2",
+				"capacity": 25,
+				"frameTemplate": [],
+				"refBuilding": "EdP",
+				"fullDay": false,
+				"isDedicated": true
+			},
+			{
+				"id": "A3",
+				"capacity": 30,
+				"frameTemplate": [],
+				"refBuilding": "EdE",
+				"fullDay": false,
+				"isDedicated": false
+			}
+		],
+		"classRoomsSets": [
+			{
+				"id": "General",
+				"rooms": [
+					"A1"
+				],
+				"anonymousRooms": 4
+			},
+			{
+				"id": "Dedicated",
+				"rooms": [
+					"A1",
+					"A3"
+				],
+				"anonymousRooms": 1
+			}
+		],
+		"tasks": [
+			{
+				"id": "G",
+				"frameTemplate": [],
+				"fullName": "Guardia de aula"
+			},
+			{
+				"id": "RDP",
+				"frameTemplate": [
+					{
+						"day": 4,
+						"index": 9,
+						"frame": "A",
+						"type": "banned"
+					},
+					{
+						"day": 4,
+						"index": 10,
+						"frame": "A",
+						"type": "banned"
+					}
+				],
+				"fullName": "Reunión de departamento"
+			},
+			{
+				"id": "DIR",
+				"frameTemplate": [],
+				"fullName": "Labores de dirección del centro"
+			},
+			{
+				"id": "LEC",
+				"frameTemplate": []
+			},
+			{
+				"id": "COORD",
+				"frameTemplate": []
+			},
+			{
+				"id": "SUPPORT",
+				"frameTemplate": []
+			},
+			{
+				"id": "SUPERVISION",
+				"frameTemplate": []
+			}
+		],
+		"teachers": [
+			{
+				"id": "DavH",
+				"associationIdentifier": "",
+				"overlapped": false,
+				"frameTemplate": [
+					{
+						"day": 0,
+						"index": 3,
+						"frame": "A",
+						"type": "weak-non-preferred"
+					},
+					{
+						"day": 4,
+						"index": 0,
+						"frame": "A",
+						"type": "banned"
+					}
+				],
+				"periodSettings": [],
+				"fullName": "David Humes",
+				"shortName": "DaHu"
+			},
+			{
+				"id": "Bur",
+				"associationIdentifier": "",
+				"overlapped": false,
+				"frameTemplate": [],
+				"generalSettings": {
+					"avoidGapsBetweenSesions": true,
+					"avoidClassesAroundBreak": true
+				},
+				"periodSettings": [],
+				"fullName": "David Burgos"
+			},
+			{
+				"id": "Carlos",
+				"associationIdentifier": "",
+				"overlapped": false,
+				"frameTemplate": [],
+				"periodSettings": []
+			},
+			{
+				"id": "Paco",
+				"associationIdentifier": "",
+				"overlapped": false,
+				"frameTemplate": [],
+				"generalSettings": {
+					"avoidGapsBetweenSesions": true,
+					"avoidClassesAroundBreak": true
+				},
+				"periodSettings": []
+			},
+			{
+				"id": "Prof",
+				"associationIdentifier": "",
+				"overlapped": false,
+				"frameTemplate": [],
+				"generalSettings": {
+					"avoidGapsBetweenSesions": true,
+					"avoidClassesAroundBreak": true
+				},
+				"periodSettings": []
+			},
+			{
+				"id": "gfdf",
+				"overlapped": false,
+				"frameTemplate": [],
+				"generalSettings": {
+					"avoidClassesAroundBreak": false
+				},
+				"periodSettings": []
+			}
+		],
+		"subjects": [
+			{
+				"id": "BMaths",
+				"isStudentMentoring": false,
+				"frameTemplate": [
+					{
+						"day": 0,
+						"index": 10,
+						"frame": "A",
+						"type": "banned"
+					},
+					{
+						"day": 1,
+						"index": 10,
+						"frame": "A",
+						"type": "banned"
+					},
+					{
+						"day": 2,
+						"index": 10,
+						"frame": "A",
+						"type": "banned"
+					},
+					{
+						"day": 3,
+						"index": 10,
+						"frame": "A",
+						"type": "banned"
+					},
+					{
+						"day": 4,
+						"index": 10,
+						"frame": "A",
+						"type": "banned"
+					},
+					{
+						"day": 5,
+						"index": 10,
+						"frame": "A",
+						"type": "banned"
+					},
+					{
+						"day": 6,
+						"index": 10,
+						"frame": "A",
+						"type": "banned"
+					},
+					{
+						"day": 7,
+						"index": 10,
+						"frame": "A",
+						"type": "banned"
+					},
+					{
+						"day": 8,
+						"index": 10,
+						"frame": "A",
+						"type": "banned"
+					},
+					{
+						"day": 9,
+						"index": 10,
+						"frame": "A",
+						"type": "banned"
+					}
+				]
+			},
+			{
+				"id": "Computing",
+				"isStudentMentoring": false,
+				"frameTemplate": []
+			},
+			{
+				"id": "BMaths S",
+				"isStudentMentoring": false,
+				"frameTemplate": []
+			},
+			{
+				"id": "Spanish",
+				"isStudentMentoring": false,
+				"frameTemplate": [],
+				"fullName": "Spanish  (Castellano)",
+				"shortName": "ESP"
+			},
+			{
+				"id": "French",
+				"isStudentMentoring": false,
+				"frameTemplate": [],
+				"fullName": "Gabacho"
+			}
+		],
+		"groups": [
+			{
+				"id": "1AESO",
+				"refFrame": "A",
+				"frameTemplate": [
+					{
+						"day": 2,
+						"index": 3,
+						"frame": "A",
+						"type": "weak-non-preferred"
+					}
+				],
+				"numStudents": 30,
+				"freeAfternoons": 4,
+				"notGaps": true,
+				"gapsAlwaysInNonPreferred": false
+			},
+			{
+				"id": "1BESO",
+				"refFrame": "A",
+				"frameTemplate": [],
+				"numStudents": 30,
+				"freeAfternoons": 0,
+				"notGaps": false,
+				"gapsAlwaysInNonPreferred": false
+			},
+			{
+				"id": "1CESO",
+				"refFrame": "A",
+				"frameTemplate": [],
+				"numStudents": 30,
+				"freeAfternoons": 0,
+				"notGaps": false,
+				"gapsAlwaysInNonPreferred": false
+			},
+			{
+				"id": "Prueba",
+				"refFrame": "B",
+				"frameTemplate": [],
+				"numStudents": 0,
+				"freeAfternoons": 0,
+				"notGaps": false,
+				"gapsAlwaysInNonPreferred": false
+			},
+			{
+				"id": "sdfsdfsdfsd",
+				"refFrame": "A",
+				"frameTemplate": [],
+				"numStudents": 0,
+				"freeAfternoons": 0,
+				"notGaps": false,
+				"gapsAlwaysInNonPreferred": false
+			},
+			{
+				"id": "sdfsd",
+				"refFrame": "A",
+				"frameTemplate": [],
+				"numStudents": 0,
+				"freeAfternoons": 0,
+				"notGaps": false,
+				"gapsAlwaysInNonPreferred": false
+			},
+			{
+				"id": "fdgfdg",
+				"refFrame": "A",
+				"frameTemplate": [],
+				"numStudents": 0,
+				"freeAfternoons": 0,
+				"notGaps": false,
+				"gapsAlwaysInNonPreferred": false
+			},
+			{
+				"id": "fsfsdfs",
+				"refFrame": "A",
+				"frameTemplate": [],
+				"numStudents": 0,
+				"freeAfternoons": 0,
+				"notGaps": false,
+				"gapsAlwaysInNonPreferred": false
+			}
+		],
+		"sessions": [
+			{
+				"id": 0,
+				"refFrame": "A",
+				"refMainTask": "LEC",
+				"refMainTeacher": "DavH",
+				"refMainSubject": "BMaths",
+				"refMainGroup": {
+					"refIdGroup": "1BESO",
+					"numStudents": 0
+				},
+				"otherElementsInClassRooms": [],
+				"distribution": {
+					"periods": [
+						"SegundoCuatri"
+					],
+					"stablePeriods": {
+						"weeklyStable": [
+							60,
+							60,
+							60,
+							120
+						],
+						"weeklyCustom": []
+					}
+				},
+				"sessionClassRooms": {
+					"classRoomsToAssign": [
+						{
+							"classRoom": "A1",
+							"classRoomsSetsList": [
+								"General"
+							]
+						}
+					],
+					"capacityPreference": "ignore",
+					"capacityType": "individual"
+				},
+				"frameTemplate": [
+					{
+						"day": 0,
+						"index": 3,
+						"frame": "A",
+						"type": "preset"
+					},
+					{
+						"day": 4,
+						"index": 0,
+						"frame": "A",
+						"type": "banned"
+					},
+					{
+						"day": 4,
+						"index": 1,
+						"frame": "A",
+						"type": "preset"
+					}
+				],
+				"sessionSettings": {
+					"avoidFirstHourSessions": true,
+					"avoidLastHourSessions": true,
+					"avoidAssingLastHourAndFirstNextDay": true,
+					"sameHourPreference": "avoid",
+					"avoidAfternoonSessions": true,
+					"avoidSectionsAfterBreak": true,
+					"nonBreakInTheMiddleOfSession": false,
+					"followedDaysPreference": "ignore",
+					"consecutiveWeeksBorders": false,
+					"samePositionEveryPeriod": "ignore"
+				},
+				"sessionRelations": {
+					"consecutiveGroup": {
+						"id": 1,
+						"refSessions": [
+							0,
+							2
+						],
+						"order": "ordered",
+						"allowBreakBetweenSessions": false
+					},
+					"nonConsecutiveSessions": [],
+					"nonSimultaneus": [],
+					"previousTo": [],
+					"afterTo": [],
+					"maximumSeparationTo": [],
+					"minimumSeparationTo": []
+				}
+			},
+			{
+				"id": 2,
+				"refFrame": "A",
+				"refMainTask": "LEC",
+				"refMainTeacher": "DavH",
+				"refMainSubject": "BMaths",
+				"refMainGroup": {
+					"refIdGroup": "1AESO",
+					"numStudents": 10
+				},
+				"otherElementsInClassRooms": [],
+				"distribution": {
+					"periods": [
+						"SegundoCuatri"
+					],
+					"stablePeriods": {
+						"weeklyStable": [
+							60,
+							60,
+							60
+						],
+						"weeklyCustom": []
+					}
+				},
+				"sessionClassRooms": {
+					"classRoomsToAssign": [
+						{
+							"classRoom": "A1",
+							"classRoomsSetsList": []
+						},
+						{
+							"classRoomsSetsList": [
+								"Dedicated"
+							]
+						}
+					],
+					"capacityPreference": "ignore",
+					"capacityType": "individual"
+				},
+				"frameTemplate": [],
+				"sessionRelations": {
+					"consecutiveGroup": {
+						"id": 1,
+						"refSessions": [
+							0,
+							2
+						],
+						"order": "ordered",
+						"allowBreakBetweenSessions": false
+					},
+					"nonConsecutiveSessions": [],
+					"nonSimultaneus": [],
+					"previousTo": [],
+					"afterTo": [],
+					"maximumSeparationTo": [],
+					"minimumSeparationTo": []
+				}
+			},
+			{
+				"id": 3,
+				"refFrame": "A",
+				"refMainTask": "LEC",
+				"refMainTeacher": "DavH",
+				"refMainSubject": "Computing",
+				"refMainGroup": {
+					"refIdGroup": "1BESO",
+					"numStudents": 0
+				},
+				"otherElementsInClassRooms": [],
+				"distribution": {
+					"periods": [
+						"SegundoCuatri"
+					],
+					"stablePeriods": {
+						"weeklyStable": [
+							120,
+							120,
+							60
+						],
+						"weeklyCustom": []
+					}
+				},
+				"sessionClassRooms": {
+					"classRoomsToAssign": [
+						{
+							"classRoom": "A1",
+							"classRoomsSetsList": [
+								"General"
+							]
+						}
+					],
+					"capacityPreference": "ignore",
+					"capacityType": "individual"
+				},
+				"frameTemplate": [],
+				"sessionRelations": {
+					"refSimultaneusGroup": 3,
+					"nonConsecutiveSessions": [],
+					"nonSimultaneus": [],
+					"previousTo": [],
+					"afterTo": [],
+					"maximumSeparationTo": [],
+					"minimumSeparationTo": []
+				}
+			},
+			{
+				"id": 1,
+				"refFrame": "A",
+				"refMainTask": "LEC",
+				"refMainTeacher": "Bur",
+				"refMainSubject": "Computing",
+				"refMainGroup": {
+					"refIdGroup": "1BESO",
+					"numStudents": 0
+				},
+				"otherElementsInClassRooms": [],
+				"distribution": {
+					"periods": [
+						"SegundoCuatri"
+					],
+					"stablePeriods": {
+						"weeklyStable": [],
+						"weeklyVariable": {
+							"minutesAmount": 260,
+							"maxMinutesDaily": 120,
+							"avoidMaxDuration": false,
+							"avoidMinDuration": false,
+							"allowDiscontinuity": false
+						},
+						"weeklyCustom": []
+					}
+				},
+				"sessionClassRooms": {
+					"classRoomsToAssign": [
+						{
+							"classRoomsSetsList": [
+								"General"
+							]
+						}
+					],
+					"capacityPreference": "strict",
+					"capacityType": "individual"
+				},
+				"frameTemplate": [
+					{
+						"day": 0,
+						"index": 1,
+						"frame": "A",
+						"type": "preset"
+					}
+				]
+			},
+			{
+				"id": 4,
+				"refFrame": "A",
+				"refMainTask": "LEC",
+				"refMainTeacher": "Bur",
+				"refMainSubject": "Computing",
+				"refMainGroup": {
+					"refIdGroup": "1CESO",
+					"numStudents": 0
+				},
+				"otherElementsInClassRooms": [],
+				"distribution": {
+					"periods": [
+						"SegundoCuatri"
+					],
+					"stablePeriods": {
+						"weeklyStable": [
+							120,
+							120,
+							60
+						],
+						"weeklyCustom": []
+					}
+				},
+				"sessionClassRooms": {
+					"classRoomsToAssign": [
+						{
+							"classRoomsSetsList": [
+								"General"
+							]
+						},
+						{
+							"classRoomsSetsList": [
+								"Dedicated"
+							]
+						}
+					],
+					"capacityPreference": "ignore",
+					"capacityType": "individual"
+				},
+				"frameTemplate": [],
+				"sessionRelations": {
+					"refSimultaneusGroup": 3,
+					"nonConsecutiveSessions": [],
+					"nonSimultaneus": [],
+					"previousTo": [],
+					"afterTo": [],
+					"maximumSeparationTo": [],
+					"minimumSeparationTo": []
+				}
+			}
+		],
+		"meetings": [
+			{
+				"id": "Reunion coordinacion",
+				"refFrame": "A",
+				"refTask": "RDP",
+				"refTeachers": [
+					"DavH",
+					"Carlos",
+					"Bur"
+				],
+				"distribution": {
+					"periods": [
+						"SegundoCuatri"
+					],
+					"stablePeriods": {
+						"weeklyStable": [
+							120,
+							120,
+							120
+						],
+						"weeklyCustom": []
+					}
+				},
+				"frameTemplate": [
+					{
+						"day": 0,
+						"index": 3,
+						"frame": "A",
+						"type": "preset"
+					}
+				]
+			},
+			{
+				"id": "Reunion departamento",
+				"refFrame": "B",
+				"refTask": "RDP",
+				"refTeachers": [
+					"DavH",
+					"Bur"
+				],
+				"distribution": {
+					"periods": [
+						"SegundoCuatri"
+					],
+					"stablePeriods": {
+						"weeklyStable": [
+							60
+						],
+						"weeklyCustom": []
+					}
+				},
+				"frameTemplate": []
+			},
+			{
+				"id": "Reunion vacia",
+				"refFrame": "A",
+				"refTask": "RDP",
+				"refTeachers": [],
+				"distribution": {
+					"periods": [
+						"SegundoCuatri"
+					],
+					"stablePeriods": {
+						"weeklyStable": [
+							120,
+							120,
+							60
+						],
+						"weeklyCustom": []
+					}
+				},
+				"frameTemplate": []
+			},
+			{
+				"id": "Nueva reunion",
+				"refFrame": "A",
+				"refTask": "DIR",
+				"refTeachers": [],
+				"distribution": {
+					"periods": [
+						"PrimerCuatri"
+					],
+					"stablePeriods": {
+						"weeklyStable": [
+							60
+						],
+						"weeklyCustom": []
+					}
+				},
+				"frameTemplate": []
+			},
+			{
+				"id": "dsa",
+				"refFrame": "A",
+				"refTask": "DIR",
+				"refTeachers": [],
+				"distribution": {
+					"periods": [
+						"PrimerCuatri",
+						"SegundoCuatri"
+					],
+					"stablePeriods": {
+						"weeklyStable": [
+							60,
+							60,
+							120
+						],
+						"weeklyCustom": []
+					}
+				},
+				"frameTemplate": []
+			},
+			{
+				"id": "fdsfds",
+				"refFrame": "B",
+				"refTask": "RDP",
+				"refTeachers": [],
+				"distribution": {
+					"periods": [
+						"PrimerCuatri",
+						"SegundoCuatri"
+					],
+					"stablePeriods": {
+						"weeklyStable": [
+							180
+						],
+						"weeklyCustom": []
+					}
+				},
+				"frameTemplate": []
+			}
+		],
+		"complementaryActivities": [],
+		"onCallServices": [],
+		"complementary": [
+			{
+				"distribution": {
+					"periods": [
+						"PrimerCuatri",
+						"SegundoCuatri"
+					],
+					"stablePeriods": {
+						"weeklyStable": [
+							60,
+							60
+						]
+					}
+				},
+				"frameTemplate": [],
+				"id": "Prueba",
+				"refFrame": "A",
+				"refTask": "COORD",
+				"refTeacher": "Bur"
+			}
+		]
+	},
+	"results": [
+		{
+			"date": 1683220874948,
+			"weight": 10,
+			"timetable": {
+				"anonymousClassRooms": [
+					{
+						"refClassRoomsSet": "General",
+						"classRoomsCreated": [
+							"#A_An2",
+							"#A_An1",
+							"#A_An3"
+						]
+					},
+					{
+						"refClassRoomsSet": "Dedicated",
+						"classRoomsCreated": [
+							"#A_An5"
+						]
+					}
+				],
+				"assignedSections": [
+					{
+						"refFrame": "A",
+						"day": 8,
+						"realIndex": 3,
+						"fictionalIndex": 3,
+						"assignment": {
+							"teachingSessions": [
+								{
+									"refSession": 0,
+									"refClassRomms": [
+										"A1"
+									],
+									"refTeachers": [
+										"DavH"
+									]
+								}
+							],
+							"meetings": [],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					},
+					{
+						"refFrame": "A",
+						"day": 8,
+						"realIndex": 6,
+						"fictionalIndex": 6,
+						"assignment": {
+							"teachingSessions": [],
+							"meetings": [
+								{
+									"refMeeting": "Reunion coordinacion",
+									"refClassRomms": []
+								}
+							],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					},
+					{
+						"refFrame": "A",
+						"day": 7,
+						"realIndex": 9,
+						"fictionalIndex": 9,
+						"assignment": {
+							"teachingSessions": [
+								{
+									"refSession": 0,
+									"refClassRomms": [
+										"A1"
+									],
+									"refTeachers": [
+										"DavH"
+									]
+								}
+							],
+							"meetings": [],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					},
+					{
+						"refFrame": "A",
+						"day": 8,
+						"realIndex": 4,
+						"fictionalIndex": 4,
+						"assignment": {
+							"teachingSessions": [
+								{
+									"refSession": 2,
+									"refClassRomms": [
+										"A1",
+										"#A_An5"
+									],
+									"refTeachers": [
+										"DavH"
+									]
+								}
+							],
+							"meetings": [],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					},
+					{
+						"refFrame": "A",
+						"day": 5,
+						"realIndex": 9,
+						"fictionalIndex": 9,
+						"assignment": {
+							"teachingSessions": [
+								{
+									"refSession": 1,
+									"refClassRomms": [
+										"#A_An2"
+									],
+									"refTeachers": [
+										"Bur"
+									]
+								}
+							],
+							"meetings": [],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					},
+					{
+						"refFrame": "A",
+						"day": 8,
+						"realIndex": 7,
+						"fictionalIndex": 7,
+						"assignment": {
+							"teachingSessions": [],
+							"meetings": [
+								{
+									"refMeeting": "Reunion coordinacion",
+									"refClassRomms": []
+								}
+							],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					},
+					{
+						"refFrame": "A",
+						"day": 5,
+						"realIndex": 10,
+						"fictionalIndex": 10,
+						"assignment": {
+							"teachingSessions": [
+								{
+									"refSession": 1,
+									"refClassRomms": [
+										"#A_An2"
+									],
+									"refTeachers": [
+										"Bur"
+									]
+								}
+							],
+							"meetings": [],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					},
+					{
+						"refFrame": "A",
+						"day": 9,
+						"realIndex": 6,
+						"fictionalIndex": 6,
+						"assignment": {
+							"teachingSessions": [
+								{
+									"refSession": 3,
+									"refClassRomms": [
+										"A1"
+									],
+									"refTeachers": [
+										"DavH"
+									]
+								},
+								{
+									"refSession": 4,
+									"refClassRomms": [
+										"#A_An2",
+										"A3"
+									],
+									"refTeachers": [
+										"Bur"
+									]
+								}
+							],
+							"meetings": [],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					},
+					{
+						"refFrame": "A",
+						"day": 6,
+						"realIndex": 3,
+						"fictionalIndex": 3,
+						"assignment": {
+							"teachingSessions": [],
+							"meetings": [
+								{
+									"refMeeting": "Reunion coordinacion",
+									"refClassRomms": []
+								}
+							],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					},
+					{
+						"refFrame": "A",
+						"day": 8,
+						"realIndex": 9,
+						"fictionalIndex": 9,
+						"assignment": {
+							"teachingSessions": [
+								{
+									"refSession": 3,
+									"refClassRomms": [
+										"A1"
+									],
+									"refTeachers": [
+										"DavH"
+									]
+								},
+								{
+									"refSession": 4,
+									"refClassRomms": [
+										"#A_An1",
+										"#A_An5"
+									],
+									"refTeachers": [
+										"Bur"
+									]
+								}
+							],
+							"meetings": [],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					},
+					{
+						"refFrame": "A",
+						"day": 7,
+						"realIndex": 6,
+						"fictionalIndex": 6,
+						"assignment": {
+							"teachingSessions": [],
+							"meetings": [
+								{
+									"refMeeting": "Reunion coordinacion",
+									"refClassRomms": []
+								}
+							],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					},
+					{
+						"refFrame": "A",
+						"day": 6,
+						"realIndex": 7,
+						"fictionalIndex": 7,
+						"assignment": {
+							"teachingSessions": [
+								{
+									"refSession": 2,
+									"refClassRomms": [
+										"A1",
+										"#A_An5"
+									],
+									"refTeachers": [
+										"DavH"
+									]
+								}
+							],
+							"meetings": [],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					},
+					{
+						"refFrame": "A",
+						"day": 7,
+						"realIndex": 7,
+						"fictionalIndex": 7,
+						"assignment": {
+							"teachingSessions": [],
+							"meetings": [
+								{
+									"refMeeting": "Reunion coordinacion",
+									"refClassRomms": []
+								}
+							],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					},
+					{
+						"refFrame": "A",
+						"day": 6,
+						"realIndex": 6,
+						"fictionalIndex": 6,
+						"assignment": {
+							"teachingSessions": [
+								{
+									"refSession": 0,
+									"refClassRomms": [
+										"A1"
+									],
+									"refTeachers": [
+										"DavH"
+									]
+								}
+							],
+							"meetings": [],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					},
+					{
+						"refFrame": "A",
+						"day": 8,
+						"realIndex": 10,
+						"fictionalIndex": 10,
+						"assignment": {
+							"teachingSessions": [
+								{
+									"refSession": 3,
+									"refClassRomms": [
+										"A1"
+									],
+									"refTeachers": [
+										"DavH"
+									]
+								},
+								{
+									"refSession": 4,
+									"refClassRomms": [
+										"#A_An1",
+										"#A_An5"
+									],
+									"refTeachers": [
+										"Bur"
+									]
+								}
+							],
+							"meetings": [],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					},
+					{
+						"refFrame": "A",
+						"day": 6,
+						"realIndex": 4,
+						"fictionalIndex": 4,
+						"assignment": {
+							"teachingSessions": [
+								{
+									"refSession": 0,
+									"refClassRomms": [
+										"A1"
+									],
+									"refTeachers": [
+										"DavH"
+									]
+								}
+							],
+							"meetings": [],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					},
+					{
+						"refFrame": "A",
+						"day": 5,
+						"realIndex": 7,
+						"fictionalIndex": 7,
+						"assignment": {
+							"teachingSessions": [
+								{
+									"refSession": 2,
+									"refClassRomms": [
+										"A1",
+										"#A_An5"
+									],
+									"refTeachers": [
+										"DavH"
+									]
+								}
+							],
+							"meetings": [],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					},
+					{
+						"refFrame": "A",
+						"day": 9,
+						"realIndex": 4,
+						"fictionalIndex": 4,
+						"assignment": {
+							"teachingSessions": [
+								{
+									"refSession": 3,
+									"refClassRomms": [
+										"A1"
+									],
+									"refTeachers": [
+										"DavH"
+									]
+								},
+								{
+									"refSession": 4,
+									"refClassRomms": [
+										"#A_An2",
+										"A3"
+									],
+									"refTeachers": [
+										"Bur"
+									]
+								}
+							],
+							"meetings": [],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					},
+					{
+						"refFrame": "B",
+						"day": 9,
+						"realIndex": 7,
+						"fictionalIndex": 7,
+						"assignment": {
+							"teachingSessions": [],
+							"meetings": [
+								{
+									"refMeeting": "Reunion departamento",
+									"refClassRomms": []
+								}
+							],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					},
+					{
+						"refFrame": "A",
+						"day": 6,
+						"realIndex": 1,
+						"fictionalIndex": 1,
+						"assignment": {
+							"teachingSessions": [],
+							"meetings": [
+								{
+									"refMeeting": "Reunion coordinacion",
+									"refClassRomms": []
+								}
+							],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					},
+					{
+						"refFrame": "A",
+						"day": 7,
+						"realIndex": 4,
+						"fictionalIndex": 4,
+						"assignment": {
+							"teachingSessions": [
+								{
+									"refSession": 3,
+									"refClassRomms": [
+										"A1"
+									],
+									"refTeachers": [
+										"DavH"
+									]
+								},
+								{
+									"refSession": 4,
+									"refClassRomms": [
+										"#A_An1",
+										"#A_An5"
+									],
+									"refTeachers": [
+										"Bur"
+									]
+								}
+							],
+							"meetings": [],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					},
+					{
+						"refFrame": "A",
+						"day": 5,
+						"realIndex": 6,
+						"fictionalIndex": 6,
+						"assignment": {
+							"teachingSessions": [
+								{
+									"refSession": 0,
+									"refClassRomms": [
+										"A1"
+									],
+									"refTeachers": [
+										"DavH"
+									]
+								}
+							],
+							"meetings": [],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					},
+					{
+						"refFrame": "A",
+						"day": 7,
+						"realIndex": 1,
+						"fictionalIndex": 1,
+						"assignment": {
+							"teachingSessions": [
+								{
+									"refSession": 1,
+									"refClassRomms": [
+										"#A_An3"
+									],
+									"refTeachers": [
+										"Bur"
+									]
+								}
+							],
+							"meetings": [],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					},
+					{
+						"refFrame": "A",
+						"day": 7,
+						"realIndex": 3,
+						"fictionalIndex": 3,
+						"assignment": {
+							"teachingSessions": [
+								{
+									"refSession": 1,
+									"refClassRomms": [
+										"#A_An3"
+									],
+									"refTeachers": [
+										"Bur"
+									]
+								}
+							],
+							"meetings": [],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					}
+				]
+			}
+		},
+		{
+			"date": 1683220875629,
+			"weight": 10,
+			"timetable": {
+				"anonymousClassRooms": [
+					{
+						"refClassRoomsSet": "General",
+						"classRoomsCreated": [
+							"#A_An1",
+							"#A_An2"
+						]
+					},
+					{
+						"refClassRoomsSet": "Dedicated",
+						"classRoomsCreated": [
+							"#A_An5"
+						]
+					}
+				],
+				"assignedSections": [
+					{
+						"refFrame": "A",
+						"day": 8,
+						"realIndex": 3,
+						"fictionalIndex": 3,
+						"assignment": {
+							"teachingSessions": [
+								{
+									"refSession": 0,
+									"refClassRomms": [
+										"A1"
+									],
+									"refTeachers": [
+										"DavH"
+									]
+								}
+							],
+							"meetings": [],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					},
+					{
+						"refFrame": "A",
+						"day": 8,
+						"realIndex": 6,
+						"fictionalIndex": 6,
+						"assignment": {
+							"teachingSessions": [],
+							"meetings": [
+								{
+									"refMeeting": "Reunion coordinacion",
+									"refClassRomms": []
+								}
+							],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					},
+					{
+						"refFrame": "A",
+						"day": 9,
+						"realIndex": 7,
+						"fictionalIndex": 7,
+						"assignment": {
+							"teachingSessions": [
+								{
+									"refSession": 3,
+									"refClassRomms": [
+										"A1"
+									],
+									"refTeachers": [
+										"DavH"
+									]
+								},
+								{
+									"refSession": 4,
+									"refClassRomms": [
+										"#A_An1",
+										"#A_An5"
+									],
+									"refTeachers": [
+										"Bur"
+									]
+								}
+							],
+							"meetings": [],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					},
+					{
+						"refFrame": "A",
+						"day": 8,
+						"realIndex": 4,
+						"fictionalIndex": 4,
+						"assignment": {
+							"teachingSessions": [
+								{
+									"refSession": 2,
+									"refClassRomms": [
+										"A1",
+										"#A_An5"
+									],
+									"refTeachers": [
+										"DavH"
+									]
+								}
+							],
+							"meetings": [],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					},
+					{
+						"refFrame": "A",
+						"day": 5,
+						"realIndex": 9,
+						"fictionalIndex": 9,
+						"assignment": {
+							"teachingSessions": [
+								{
+									"refSession": 3,
+									"refClassRomms": [
+										"A1"
+									],
+									"refTeachers": [
+										"DavH"
+									]
+								},
+								{
+									"refSession": 4,
+									"refClassRomms": [
+										"#A_An2",
+										"A3"
+									],
+									"refTeachers": [
+										"Bur"
+									]
+								}
+							],
+							"meetings": [],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					},
+					{
+						"refFrame": "A",
+						"day": 8,
+						"realIndex": 7,
+						"fictionalIndex": 7,
+						"assignment": {
+							"teachingSessions": [],
+							"meetings": [
+								{
+									"refMeeting": "Reunion coordinacion",
+									"refClassRomms": []
+								}
+							],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					},
+					{
+						"refFrame": "A",
+						"day": 5,
+						"realIndex": 10,
+						"fictionalIndex": 10,
+						"assignment": {
+							"teachingSessions": [
+								{
+									"refSession": 3,
+									"refClassRomms": [
+										"A1"
+									],
+									"refTeachers": [
+										"DavH"
+									]
+								},
+								{
+									"refSession": 4,
+									"refClassRomms": [
+										"#A_An2",
+										"A3"
+									],
+									"refTeachers": [
+										"Bur"
+									]
+								}
+							],
+							"meetings": [],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					},
+					{
+						"refFrame": "A",
+						"day": 9,
+						"realIndex": 6,
+						"fictionalIndex": 6,
+						"assignment": {
+							"teachingSessions": [
+								{
+									"refSession": 3,
+									"refClassRomms": [
+										"A1"
+									],
+									"refTeachers": [
+										"DavH"
+									]
+								},
+								{
+									"refSession": 4,
+									"refClassRomms": [
+										"#A_An1",
+										"#A_An5"
+									],
+									"refTeachers": [
+										"Bur"
+									]
+								}
+							],
+							"meetings": [],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					},
+					{
+						"refFrame": "A",
+						"day": 6,
+						"realIndex": 3,
+						"fictionalIndex": 3,
+						"assignment": {
+							"teachingSessions": [
+								{
+									"refSession": 1,
+									"refClassRomms": [
+										"A1"
+									],
+									"refTeachers": [
+										"Bur"
+									]
+								}
+							],
+							"meetings": [],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					},
+					{
+						"refFrame": "A",
+						"day": 8,
+						"realIndex": 9,
+						"fictionalIndex": 9,
+						"assignment": {
+							"teachingSessions": [
+								{
+									"refSession": 3,
+									"refClassRomms": [
+										"A1"
+									],
+									"refTeachers": [
+										"DavH"
+									]
+								},
+								{
+									"refSession": 4,
+									"refClassRomms": [
+										"#A_An1",
+										"#A_An5"
+									],
+									"refTeachers": [
+										"Bur"
+									]
+								}
+							],
+							"meetings": [],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					},
+					{
+						"refFrame": "A",
+						"day": 7,
+						"realIndex": 6,
+						"fictionalIndex": 6,
+						"assignment": {
+							"teachingSessions": [
+								{
+									"refSession": 1,
+									"refClassRomms": [
+										"A1"
+									],
+									"refTeachers": [
+										"Bur"
+									]
+								}
+							],
+							"meetings": [],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					},
+					{
+						"refFrame": "A",
+						"day": 6,
+						"realIndex": 7,
+						"fictionalIndex": 7,
+						"assignment": {
+							"teachingSessions": [
+								{
+									"refSession": 2,
+									"refClassRomms": [
+										"A1",
+										"#A_An5"
+									],
+									"refTeachers": [
+										"DavH"
+									]
+								}
+							],
+							"meetings": [],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					},
+					{
+						"refFrame": "A",
+						"day": 5,
+						"realIndex": 4,
+						"fictionalIndex": 4,
+						"assignment": {
+							"teachingSessions": [
+								{
+									"refSession": 2,
+									"refClassRomms": [
+										"A1",
+										"#A_An5"
+									],
+									"refTeachers": [
+										"DavH"
+									]
+								},
+								{
+									"refSession": 1,
+									"refClassRomms": [
+										"#A_An1"
+									],
+									"refTeachers": [
+										"Bur"
+									]
+								}
+							],
+							"meetings": [],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					},
+					{
+						"refFrame": "A",
+						"day": 7,
+						"realIndex": 7,
+						"fictionalIndex": 7,
+						"assignment": {
+							"teachingSessions": [
+								{
+									"refSession": 1,
+									"refClassRomms": [
+										"A1"
+									],
+									"refTeachers": [
+										"Bur"
+									]
+								}
+							],
+							"meetings": [],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					},
+					{
+						"refFrame": "A",
+						"day": 6,
+						"realIndex": 6,
+						"fictionalIndex": 6,
+						"assignment": {
+							"teachingSessions": [
+								{
+									"refSession": 0,
+									"refClassRomms": [
+										"A1"
+									],
+									"refTeachers": [
+										"DavH"
+									]
+								}
+							],
+							"meetings": [],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					},
+					{
+						"refFrame": "A",
+						"day": 6,
+						"realIndex": 4,
+						"fictionalIndex": 4,
+						"assignment": {
+							"teachingSessions": [
+								{
+									"refSession": 0,
+									"refClassRomms": [
+										"A1"
+									],
+									"refTeachers": [
+										"DavH"
+									]
+								}
+							],
+							"meetings": [],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					},
+					{
+						"refFrame": "A",
+						"day": 5,
+						"realIndex": 7,
+						"fictionalIndex": 7,
+						"assignment": {
+							"teachingSessions": [],
+							"meetings": [
+								{
+									"refMeeting": "Reunion coordinacion",
+									"refClassRomms": []
+								}
+							],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					},
+					{
+						"refFrame": "A",
+						"day": 9,
+						"realIndex": 4,
+						"fictionalIndex": 4,
+						"assignment": {
+							"teachingSessions": [],
+							"meetings": [
+								{
+									"refMeeting": "Reunion coordinacion",
+									"refClassRomms": []
+								}
+							],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					},
+					{
+						"refFrame": "B",
+						"day": 7,
+						"realIndex": 3,
+						"fictionalIndex": 3,
+						"assignment": {
+							"teachingSessions": [],
+							"meetings": [
+								{
+									"refMeeting": "Reunion departamento",
+									"refClassRomms": []
+								}
+							],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					},
+					{
+						"refFrame": "A",
+						"day": 9,
+						"realIndex": 3,
+						"fictionalIndex": 3,
+						"assignment": {
+							"teachingSessions": [],
+							"meetings": [
+								{
+									"refMeeting": "Reunion coordinacion",
+									"refClassRomms": []
+								}
+							],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					},
+					{
+						"refFrame": "A",
+						"day": 7,
+						"realIndex": 4,
+						"fictionalIndex": 4,
+						"assignment": {
+							"teachingSessions": [
+								{
+									"refSession": 0,
+									"refClassRomms": [
+										"A1"
+									],
+									"refTeachers": [
+										"DavH"
+									]
+								}
+							],
+							"meetings": [],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					},
+					{
+						"refFrame": "A",
+						"day": 5,
+						"realIndex": 6,
+						"fictionalIndex": 6,
+						"assignment": {
+							"teachingSessions": [],
+							"meetings": [
+								{
+									"refMeeting": "Reunion coordinacion",
+									"refClassRomms": []
+								}
+							],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					},
+					{
+						"refFrame": "A",
+						"day": 5,
+						"realIndex": 3,
+						"fictionalIndex": 3,
+						"assignment": {
+							"teachingSessions": [
+								{
+									"refSession": 0,
+									"refClassRomms": [
+										"A1"
+									],
+									"refTeachers": [
+										"DavH"
+									]
+								}
+							],
+							"meetings": [],
+							"complementaryActivities": [],
+							"onCallServices": []
+						}
+					}
+				]
+			}
+		}
+	]
+}
