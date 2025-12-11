@@ -1,0 +1,23 @@
+# Ignorar todos los directorios target en cualquier subcarpeta
+**/target/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+
+# VS Code
+.vscode/
+
+# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Logs
+*.log
+
+# Archivos temporales y backups
+*~
