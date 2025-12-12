@@ -55,6 +55,26 @@
 	<!-- Configuracion de Plugin de jsonschema2pojo para Generar clases Java en Subproyectos -->
     <build>
         <plugins>
+            <!-- Cargar variable de archivo de propiedades en el Pom -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>properties-maven-plugin</artifactId>
+				<version>1.2.0</version>
+				<executions>
+				  <execution>
+				    <phase>initialize</phase>
+				    <goals>
+				      <goal>read-project-properties</goal>
+				    </goals>
+				    <configuration>
+				      <files>
+				        <file>conf/build.properties</file>
+				      </files>
+				    </configuration>
+				  </execution>
+				</executions>
+			</plugin>
+        	<!-- Generacion de clases Java-->
 			<plugin>
 			    <groupId>org.jsonschema2pojo</groupId>
 			    <artifactId>jsonschema2pojo-maven-plugin</artifactId>
@@ -141,6 +161,44 @@
 			          </configuration>
 	    			</execution>
 			    </executions>
+			</plugin>
+			<!-- Generacion Interfaz Json para GHCMP en Typescript-->
+			<!-- IMPORTANTE: Requiere instalacion en CL de https://github.com/glideapps/quicktype -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>3.1.0</version>
+				<executions>
+				  <execution>
+					<id>generate-ts-classes</id>
+					<phase>package</phase>
+					<goals>
+					  <goal>exec</goal>
+					</goals>
+					<configuration>
+					  <executable>quicktype</executable>
+					  <arguments>
+	  					<!-- Indicamos que la entrada es un schema -->
+						<argument>--src-lang</argument>
+						<argument>schema</argument>
+						<!-- Schema de Datos de planificacion -->
+						<argument>--src</argument>
+						<argument>${basedir}/src/main/resources/schemas/common/planningData.schema.json</argument>
+						<!-- Lenguaje de salida -->
+						<argument>--lang</argument>
+						<argument>ts</argument>
+						<!-- Solo interfaces -->
+						<argument>--just-types</argument>
+						<!-- Nombre de la interfaz raíz -->
+						<argument>--top-level</argument>
+						<argument>PlanningGhcData</argument>
+						<!-- Archivo destino -->
+						<argument>--out</argument>
+						<argument>${interface.output.dir}/planning-ghc-data.interface.ts</argument>
+					  </arguments>
+					</configuration>
+				  </execution>
+				</executions>
 			</plugin>
         </plugins>
     </build>
