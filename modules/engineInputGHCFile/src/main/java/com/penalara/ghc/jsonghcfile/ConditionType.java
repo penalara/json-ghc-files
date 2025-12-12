@@ -1,5 +1,5 @@
 
-package com.penalara.ghc.jsonghcfile.engineghcfile;
+package com.penalara.ghc.jsonghcfile;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -8,28 +8,26 @@ import com.fasterxml.jackson.annotation.JsonValue;
 
 
 /**
- * SamePositionEveryPeriod
+ * ConditionType
  * <p>
- * Keep the same position every week or period for the class units.
+ * Indicate whether the incompatibility is strict, avoid (penalisable in optimisation) or ignored.
  * 
  */
-public enum SamePositionEveryPeriod {
+public enum ConditionType {
 
     IGNORE("ignore"),
-    ATTEMPT("attempt"),
     AVOID("avoid"),
-    STRICT("strict"),
-    FORBIDDEN("forbidden");
+    STRICT("strict");
     private final String value;
-    private final static Map<String, SamePositionEveryPeriod> CONSTANTS = new HashMap<String, SamePositionEveryPeriod>();
+    private final static Map<String, ConditionType> CONSTANTS = new HashMap<String, ConditionType>();
 
     static {
-        for (SamePositionEveryPeriod c: values()) {
+        for (ConditionType c: values()) {
             CONSTANTS.put(c.value, c);
         }
     }
 
-    SamePositionEveryPeriod(String value) {
+    ConditionType(String value) {
         this.value = value;
     }
 
@@ -44,8 +42,8 @@ public enum SamePositionEveryPeriod {
     }
 
     @JsonCreator
-    public static SamePositionEveryPeriod fromValue(String value) {
-        SamePositionEveryPeriod constant = CONSTANTS.get(value);
+    public static ConditionType fromValue(String value) {
+        ConditionType constant = CONSTANTS.get(value);
         if (constant == null) {
             throw new IllegalArgumentException(value);
         } else {

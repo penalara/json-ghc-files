@@ -1,5 +1,5 @@
 
-package com.penalara.ghc.jsonghcfile.engineghcfile;
+package com.penalara.ghc.jsonghcfile;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

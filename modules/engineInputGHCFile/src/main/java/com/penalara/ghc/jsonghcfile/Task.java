@@ -23,7 +23,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "id",
-    "frameTemplate"
+    "frameTemplate",
+    "fullName",
+    "exKey"
 })
 public class Task {
 
@@ -44,6 +46,20 @@ public class Task {
     @JsonProperty("frameTemplate")
     @JsonPropertyDescription("Templates with frame sections assignment preferences.")
     private List<SectionPreference> frameTemplate = new ArrayList<SectionPreference>();
+    /**
+     * Complete name of the task.
+     * 
+     */
+    @JsonProperty("fullName")
+    @JsonPropertyDescription("Complete name of the task.")
+    private String fullName;
+    /**
+     * External key of the task
+     * 
+     */
+    @JsonProperty("exKey")
+    @JsonPropertyDescription("External key of the task")
+    private String exKey;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
@@ -87,6 +103,42 @@ public class Task {
     @JsonProperty("frameTemplate")
     public void setFrameTemplate(List<SectionPreference> frameTemplate) {
         this.frameTemplate = frameTemplate;
+    }
+
+    /**
+     * Complete name of the task.
+     * 
+     */
+    @JsonProperty("fullName")
+    public String getFullName() {
+        return fullName;
+    }
+
+    /**
+     * Complete name of the task.
+     * 
+     */
+    @JsonProperty("fullName")
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    /**
+     * External key of the task
+     * 
+     */
+    @JsonProperty("exKey")
+    public String getExKey() {
+        return exKey;
+    }
+
+    /**
+     * External key of the task
+     * 
+     */
+    @JsonProperty("exKey")
+    public void setExKey(String exKey) {
+        this.exKey = exKey;
     }
 
     @JsonAnyGetter

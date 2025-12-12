@@ -12,7 +12,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.penalara.ghc.jsonghcfile.engineghcfile.ConditionType;
 
 
 /**
@@ -24,12 +23,19 @@ import com.penalara.ghc.jsonghcfile.engineghcfile.ConditionType;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "id",
+    "shortName",
+    "fullName",
+    "exKey",
     "refFrame",
     "frameTemplate",
     "numStudents",
     "freeAfternoons",
     "notGaps",
-    "gapsAlwaysInNonPreferred"
+    "gapsAlwaysInNonPreferred",
+    "refCourse",
+    "includedGroups",
+    "refTeacher",
+    "refClassroom"
 })
 public class Group {
 
@@ -41,6 +47,27 @@ public class Group {
     @JsonProperty("id")
     @JsonPropertyDescription("Group identifier.")
     private String id;
+    /**
+     * Short name of the group.
+     * 
+     */
+    @JsonProperty("shortName")
+    @JsonPropertyDescription("Short name of the group.")
+    private String shortName;
+    /**
+     * Complete name of the group.
+     * 
+     */
+    @JsonProperty("fullName")
+    @JsonPropertyDescription("Complete name of the group.")
+    private String fullName;
+    /**
+     * External key of the subject
+     * 
+     */
+    @JsonProperty("exKey")
+    @JsonPropertyDescription("External key of the subject")
+    private String exKey;
     /**
      * Group's frame identifier.
      * (Required)
@@ -88,6 +115,34 @@ public class Group {
     @JsonProperty("gapsAlwaysInNonPreferred")
     @JsonPropertyDescription("This indicates whether the engine should be in the positions marked as non-preferred in the template for free intervals or gaps.")
     private Boolean gapsAlwaysInNonPreferred;
+    /**
+     * Course identifier to which the group belongs.
+     * 
+     */
+    @JsonProperty("refCourse")
+    @JsonPropertyDescription("Course identifier to which the group belongs.")
+    private String refCourse;
+    /**
+     * Allows to indicate its a circunstancial group, formed by oficial groups to recibe optional or main subjects.
+     * 
+     */
+    @JsonProperty("includedGroups")
+    @JsonPropertyDescription("Allows to indicate its a circunstancial group, formed by oficial groups to recibe optional or main subjects.")
+    private List<String> includedGroups = new ArrayList<String>();
+    /**
+     * Id of the tutor teacher assigned to the group
+     * 
+     */
+    @JsonProperty("refTeacher")
+    @JsonPropertyDescription("Id of the tutor teacher assigned to the group")
+    private String refTeacher;
+    /**
+     * Id of the classroom assigned to the group
+     * 
+     */
+    @JsonProperty("refClassroom")
+    @JsonPropertyDescription("Id of the classroom assigned to the group")
+    private String refClassroom;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
@@ -109,6 +164,60 @@ public class Group {
     @JsonProperty("id")
     public void setId(String id) {
         this.id = id;
+    }
+
+    /**
+     * Short name of the group.
+     * 
+     */
+    @JsonProperty("shortName")
+    public String getShortName() {
+        return shortName;
+    }
+
+    /**
+     * Short name of the group.
+     * 
+     */
+    @JsonProperty("shortName")
+    public void setShortName(String shortName) {
+        this.shortName = shortName;
+    }
+
+    /**
+     * Complete name of the group.
+     * 
+     */
+    @JsonProperty("fullName")
+    public String getFullName() {
+        return fullName;
+    }
+
+    /**
+     * Complete name of the group.
+     * 
+     */
+    @JsonProperty("fullName")
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    /**
+     * External key of the subject
+     * 
+     */
+    @JsonProperty("exKey")
+    public String getExKey() {
+        return exKey;
+    }
+
+    /**
+     * External key of the subject
+     * 
+     */
+    @JsonProperty("exKey")
+    public void setExKey(String exKey) {
+        this.exKey = exKey;
     }
 
     /**
@@ -227,6 +336,78 @@ public class Group {
     @JsonProperty("gapsAlwaysInNonPreferred")
     public void setGapsAlwaysInNonPreferred(Boolean gapsAlwaysInNonPreferred) {
         this.gapsAlwaysInNonPreferred = gapsAlwaysInNonPreferred;
+    }
+
+    /**
+     * Course identifier to which the group belongs.
+     * 
+     */
+    @JsonProperty("refCourse")
+    public String getRefCourse() {
+        return refCourse;
+    }
+
+    /**
+     * Course identifier to which the group belongs.
+     * 
+     */
+    @JsonProperty("refCourse")
+    public void setRefCourse(String refCourse) {
+        this.refCourse = refCourse;
+    }
+
+    /**
+     * Allows to indicate its a circunstancial group, formed by oficial groups to recibe optional or main subjects.
+     * 
+     */
+    @JsonProperty("includedGroups")
+    public List<String> getIncludedGroups() {
+        return includedGroups;
+    }
+
+    /**
+     * Allows to indicate its a circunstancial group, formed by oficial groups to recibe optional or main subjects.
+     * 
+     */
+    @JsonProperty("includedGroups")
+    public void setIncludedGroups(List<String> includedGroups) {
+        this.includedGroups = includedGroups;
+    }
+
+    /**
+     * Id of the tutor teacher assigned to the group
+     * 
+     */
+    @JsonProperty("refTeacher")
+    public String getRefTeacher() {
+        return refTeacher;
+    }
+
+    /**
+     * Id of the tutor teacher assigned to the group
+     * 
+     */
+    @JsonProperty("refTeacher")
+    public void setRefTeacher(String refTeacher) {
+        this.refTeacher = refTeacher;
+    }
+
+    /**
+     * Id of the classroom assigned to the group
+     * 
+     */
+    @JsonProperty("refClassroom")
+    public String getRefClassroom() {
+        return refClassroom;
+    }
+
+    /**
+     * Id of the classroom assigned to the group
+     * 
+     */
+    @JsonProperty("refClassroom")
+    public void setRefClassroom(String refClassroom) {
+        this.refClassroom = refClassroom;
     }
 
     @JsonAnyGetter

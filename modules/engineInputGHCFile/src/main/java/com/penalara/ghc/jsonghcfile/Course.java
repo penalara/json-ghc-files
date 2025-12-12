@@ -15,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
 /**
- * Frame
+ * Course
  * <p>
  * 
  * 
@@ -23,41 +23,46 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "id",
+    "fullName",
     "exKey",
-    "days"
+    "courseSubjects"
 })
-public class Frame {
+public class Course {
 
     /**
-     * Frame identifier.
+     * Course identifier.
      * (Required)
      * 
      */
     @JsonProperty("id")
-    @JsonPropertyDescription("Frame identifier.")
+    @JsonPropertyDescription("Course identifier.")
     private String id;
     /**
-     * External key of the frame.
+     * Full name of the course.
+     * 
+     */
+    @JsonProperty("fullName")
+    @JsonPropertyDescription("Full name of the course.")
+    private String fullName;
+    /**
+     * External key of the course
      * 
      */
     @JsonProperty("exKey")
-    @JsonPropertyDescription("External key of the frame.")
+    @JsonPropertyDescription("External key of the course")
     private String exKey;
     /**
-     * Days
-     * <p>
-     * List of the days in the frame
-     * (Required)
+     * List of subjects assigned to the course.
      * 
      */
-    @JsonProperty("days")
-    @JsonPropertyDescription("List of the days in the frame")
-    private List<FrameDay> days = new ArrayList<FrameDay>();
+    @JsonProperty("courseSubjects")
+    @JsonPropertyDescription("List of subjects assigned to the course.")
+    private List<CourseSubject> courseSubjects = new ArrayList<CourseSubject>();
     @JsonIgnore
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
     /**
-     * Frame identifier.
+     * Course identifier.
      * (Required)
      * 
      */
@@ -67,7 +72,7 @@ public class Frame {
     }
 
     /**
-     * Frame identifier.
+     * Course identifier.
      * (Required)
      * 
      */
@@ -77,7 +82,25 @@ public class Frame {
     }
 
     /**
-     * External key of the frame.
+     * Full name of the course.
+     * 
+     */
+    @JsonProperty("fullName")
+    public String getFullName() {
+        return fullName;
+    }
+
+    /**
+     * Full name of the course.
+     * 
+     */
+    @JsonProperty("fullName")
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    /**
+     * External key of the course
      * 
      */
     @JsonProperty("exKey")
@@ -86,7 +109,7 @@ public class Frame {
     }
 
     /**
-     * External key of the frame.
+     * External key of the course
      * 
      */
     @JsonProperty("exKey")
@@ -95,27 +118,21 @@ public class Frame {
     }
 
     /**
-     * Days
-     * <p>
-     * List of the days in the frame
-     * (Required)
+     * List of subjects assigned to the course.
      * 
      */
-    @JsonProperty("days")
-    public List<FrameDay> getDays() {
-        return days;
+    @JsonProperty("courseSubjects")
+    public List<CourseSubject> getCourseSubjects() {
+        return courseSubjects;
     }
 
     /**
-     * Days
-     * <p>
-     * List of the days in the frame
-     * (Required)
+     * List of subjects assigned to the course.
      * 
      */
-    @JsonProperty("days")
-    public void setDays(List<FrameDay> days) {
-        this.days = days;
+    @JsonProperty("courseSubjects")
+    public void setCourseSubjects(List<CourseSubject> courseSubjects) {
+        this.courseSubjects = courseSubjects;
     }
 
     @JsonAnyGetter

@@ -12,7 +12,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import com.penalara.ghc.jsonghcfile.engineghcfile.Distribution;
 
 
 /**
@@ -34,7 +33,8 @@ import com.penalara.ghc.jsonghcfile.engineghcfile.Distribution;
     "sessionClassRooms",
     "frameTemplate",
     "sessionSettings",
-    "sessionRelations"
+    "sessionRelations",
+    "department"
 })
 public class Session {
 
@@ -150,6 +150,13 @@ public class Session {
     @JsonProperty("sessionRelations")
     @JsonPropertyDescription("It contains information on the relationships between this and other class units. These conditions can only apply to class units with students.")
     private SessionRelations sessionRelations;
+    /**
+     * Contains the reference of the department of the session.
+     * 
+     */
+    @JsonProperty("department")
+    @JsonPropertyDescription("Contains the reference of the department of the session.")
+    private String department;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
@@ -423,6 +430,24 @@ public class Session {
     @JsonProperty("sessionRelations")
     public void setSessionRelations(SessionRelations sessionRelations) {
         this.sessionRelations = sessionRelations;
+    }
+
+    /**
+     * Contains the reference of the department of the session.
+     * 
+     */
+    @JsonProperty("department")
+    public String getDepartment() {
+        return department;
+    }
+
+    /**
+     * Contains the reference of the department of the session.
+     * 
+     */
+    @JsonProperty("department")
+    public void setDepartment(String department) {
+        this.department = department;
     }
 
     @JsonAnyGetter

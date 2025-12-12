@@ -23,6 +23,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "id",
+    "shortName",
+    "fullName",
+    "exKey",
     "associationIdentifier",
     "overlappedAssessment",
     "frameTemplate",
@@ -39,6 +42,27 @@ public class Teacher {
     @JsonProperty("id")
     @JsonPropertyDescription("Identifier of the teacher.")
     private String id;
+    /**
+     * Short name of the teacher.
+     * 
+     */
+    @JsonProperty("shortName")
+    @JsonPropertyDescription("Short name of the teacher.")
+    private String shortName;
+    /**
+     * Complete name of the teacher.
+     * 
+     */
+    @JsonProperty("fullName")
+    @JsonPropertyDescription("Complete name of the teacher.")
+    private String fullName;
+    /**
+     * External key of the teacher
+     * 
+     */
+    @JsonProperty("exKey")
+    @JsonPropertyDescription("External key of the teacher")
+    private String exKey;
     /**
      * Group or association of teachers who should have similar check-in and check-out times, if possible. This is useful for teachers who share transport.
      * 
@@ -101,6 +125,60 @@ public class Teacher {
     @JsonProperty("id")
     public void setId(String id) {
         this.id = id;
+    }
+
+    /**
+     * Short name of the teacher.
+     * 
+     */
+    @JsonProperty("shortName")
+    public String getShortName() {
+        return shortName;
+    }
+
+    /**
+     * Short name of the teacher.
+     * 
+     */
+    @JsonProperty("shortName")
+    public void setShortName(String shortName) {
+        this.shortName = shortName;
+    }
+
+    /**
+     * Complete name of the teacher.
+     * 
+     */
+    @JsonProperty("fullName")
+    public String getFullName() {
+        return fullName;
+    }
+
+    /**
+     * Complete name of the teacher.
+     * 
+     */
+    @JsonProperty("fullName")
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    /**
+     * External key of the teacher
+     * 
+     */
+    @JsonProperty("exKey")
+    public String getExKey() {
+        return exKey;
+    }
+
+    /**
+     * External key of the teacher
+     * 
+     */
+    @JsonProperty("exKey")
+    public void setExKey(String exKey) {
+        this.exKey = exKey;
     }
 
     /**

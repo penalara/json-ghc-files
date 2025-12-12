@@ -23,7 +23,11 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "id",
+    "shortName",
+    "fullName",
+    "exKey",
     "isStudentMentoring",
+    "technicalTeacher",
     "frameTemplate"
 })
 public class Subject {
@@ -37,12 +41,40 @@ public class Subject {
     @JsonPropertyDescription("Subject identifier.")
     private String id;
     /**
+     * Short name of the subject.
+     * 
+     */
+    @JsonProperty("shortName")
+    @JsonPropertyDescription("Short name of the subject.")
+    private String shortName;
+    /**
+     * Complete name of the subject.
+     * 
+     */
+    @JsonProperty("fullName")
+    @JsonPropertyDescription("Complete name of the subject.")
+    private String fullName;
+    /**
+     * External key of the subject
+     * 
+     */
+    @JsonProperty("exKey")
+    @JsonPropertyDescription("External key of the subject")
+    private String exKey;
+    /**
      * It indicates whether the subject is a tutorial.
      * 
      */
     @JsonProperty("isStudentMentoring")
     @JsonPropertyDescription("It indicates whether the subject is a tutorial.")
     private Boolean isStudentMentoring = false;
+    /**
+     * It indicates whether the subject is teach by technical teacher.
+     * 
+     */
+    @JsonProperty("technicalTeacher")
+    @JsonPropertyDescription("It indicates whether the subject is teach by technical teacher.")
+    private Boolean technicalTeacher = false;
     /**
      * FrameTemplate
      * <p>
@@ -76,6 +108,60 @@ public class Subject {
     }
 
     /**
+     * Short name of the subject.
+     * 
+     */
+    @JsonProperty("shortName")
+    public String getShortName() {
+        return shortName;
+    }
+
+    /**
+     * Short name of the subject.
+     * 
+     */
+    @JsonProperty("shortName")
+    public void setShortName(String shortName) {
+        this.shortName = shortName;
+    }
+
+    /**
+     * Complete name of the subject.
+     * 
+     */
+    @JsonProperty("fullName")
+    public String getFullName() {
+        return fullName;
+    }
+
+    /**
+     * Complete name of the subject.
+     * 
+     */
+    @JsonProperty("fullName")
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    /**
+     * External key of the subject
+     * 
+     */
+    @JsonProperty("exKey")
+    public String getExKey() {
+        return exKey;
+    }
+
+    /**
+     * External key of the subject
+     * 
+     */
+    @JsonProperty("exKey")
+    public void setExKey(String exKey) {
+        this.exKey = exKey;
+    }
+
+    /**
      * It indicates whether the subject is a tutorial.
      * 
      */
@@ -91,6 +177,24 @@ public class Subject {
     @JsonProperty("isStudentMentoring")
     public void setIsStudentMentoring(Boolean isStudentMentoring) {
         this.isStudentMentoring = isStudentMentoring;
+    }
+
+    /**
+     * It indicates whether the subject is teach by technical teacher.
+     * 
+     */
+    @JsonProperty("technicalTeacher")
+    public Boolean getTechnicalTeacher() {
+        return technicalTeacher;
+    }
+
+    /**
+     * It indicates whether the subject is teach by technical teacher.
+     * 
+     */
+    @JsonProperty("technicalTeacher")
+    public void setTechnicalTeacher(Boolean technicalTeacher) {
+        this.technicalTeacher = technicalTeacher;
     }
 
     /**

@@ -23,6 +23,10 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "id",
+    "shortName",
+    "fullName",
+    "isDedicated",
+    "exKey",
     "capacity",
     "frameTemplate",
     "refBuilding",
@@ -38,6 +42,34 @@ public class Classroom {
     @JsonProperty("id")
     @JsonPropertyDescription("Identifier name of the classroom.")
     private String id;
+    /**
+     * Short name of the classroom
+     * 
+     */
+    @JsonProperty("shortName")
+    @JsonPropertyDescription("Short name of the classroom")
+    private String shortName;
+    /**
+     * Complete name of the classroom.
+     * 
+     */
+    @JsonProperty("fullName")
+    @JsonPropertyDescription("Complete name of the classroom.")
+    private String fullName;
+    /**
+     * Indicates if the classroom is of a special-dedicated type, or is it a general purpose classroom
+     * 
+     */
+    @JsonProperty("isDedicated")
+    @JsonPropertyDescription("Indicates if the classroom is of a special-dedicated type, or is it a general purpose classroom")
+    private Boolean isDedicated;
+    /**
+     * External key of the classroom
+     * 
+     */
+    @JsonProperty("exKey")
+    @JsonPropertyDescription("External key of the classroom")
+    private String exKey;
     /**
      * The maximum number of students the classroom can hold.
      * 
@@ -89,6 +121,78 @@ public class Classroom {
     @JsonProperty("id")
     public void setId(String id) {
         this.id = id;
+    }
+
+    /**
+     * Short name of the classroom
+     * 
+     */
+    @JsonProperty("shortName")
+    public String getShortName() {
+        return shortName;
+    }
+
+    /**
+     * Short name of the classroom
+     * 
+     */
+    @JsonProperty("shortName")
+    public void setShortName(String shortName) {
+        this.shortName = shortName;
+    }
+
+    /**
+     * Complete name of the classroom.
+     * 
+     */
+    @JsonProperty("fullName")
+    public String getFullName() {
+        return fullName;
+    }
+
+    /**
+     * Complete name of the classroom.
+     * 
+     */
+    @JsonProperty("fullName")
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    /**
+     * Indicates if the classroom is of a special-dedicated type, or is it a general purpose classroom
+     * 
+     */
+    @JsonProperty("isDedicated")
+    public Boolean getIsDedicated() {
+        return isDedicated;
+    }
+
+    /**
+     * Indicates if the classroom is of a special-dedicated type, or is it a general purpose classroom
+     * 
+     */
+    @JsonProperty("isDedicated")
+    public void setIsDedicated(Boolean isDedicated) {
+        this.isDedicated = isDedicated;
+    }
+
+    /**
+     * External key of the classroom
+     * 
+     */
+    @JsonProperty("exKey")
+    public String getExKey() {
+        return exKey;
+    }
+
+    /**
+     * External key of the classroom
+     * 
+     */
+    @JsonProperty("exKey")
+    public void setExKey(String exKey) {
+        this.exKey = exKey;
     }
 
     /**

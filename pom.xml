@@ -68,8 +68,8 @@
 			            <goal>generate</goal>
 			          </goals>
 			          <configuration>
-			            <sourceDirectory>${basedir}/src/main/resources/schemas/engine</sourceDirectory>
-			            <includes>engineSpecification.schema.json</includes>
+			            <sourceDirectory>${basedir}/src/main/resources/schemas/common</sourceDirectory>
+			            <includes>planningData.schema.json</includes>
 			            <targetPackage>com.penalara.ghc.jsonghcfile</targetPackage>
 			            <outputDirectory>${basedir}/modules/engineInputGHCFile/src/main/java</outputDirectory>
     				    <removeOldOutput>true</removeOldOutput>

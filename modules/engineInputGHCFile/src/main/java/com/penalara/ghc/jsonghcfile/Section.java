@@ -26,6 +26,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
     "index",
     "entryTime",
     "exitTime",
+    "exKey",
     "duration",
     "type",
     "allowed"
@@ -56,6 +57,13 @@ public class Section {
     @JsonProperty("exitTime")
     @JsonPropertyDescription("End time of the section.")
     private String exitTime;
+    /**
+     * External key of the section.
+     * 
+     */
+    @JsonProperty("exKey")
+    @JsonPropertyDescription("External key of the section.")
+    private String exKey;
     /**
      * It indicates the duration (real or proportional) of the section in minutes.This indicates the duration of the section that the engine will use to assign class units. It can be the actual duration between check-in and check-out, or it can be a proportional time to simplify (hour, half hour, three-quarters of an hour...). The distribution of class units will be consistent with this duration.
      * (Required)
@@ -142,6 +150,24 @@ public class Section {
     @JsonProperty("exitTime")
     public void setExitTime(String exitTime) {
         this.exitTime = exitTime;
+    }
+
+    /**
+     * External key of the section.
+     * 
+     */
+    @JsonProperty("exKey")
+    public String getExKey() {
+        return exKey;
+    }
+
+    /**
+     * External key of the section.
+     * 
+     */
+    @JsonProperty("exKey")
+    public void setExKey(String exKey) {
+        this.exKey = exKey;
     }
 
     /**

@@ -23,6 +23,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "id",
+    "fullName",
     "distances"
 })
 public class Building {
@@ -35,6 +36,13 @@ public class Building {
     @JsonProperty("id")
     @JsonPropertyDescription("Building identifier.")
     private String id;
+    /**
+     * Building full name.
+     * 
+     */
+    @JsonProperty("fullName")
+    @JsonPropertyDescription("Building full name.")
+    private String fullName;
     /**
      * Distances
      * <p>
@@ -65,6 +73,24 @@ public class Building {
     @JsonProperty("id")
     public void setId(String id) {
         this.id = id;
+    }
+
+    /**
+     * Building full name.
+     * 
+     */
+    @JsonProperty("fullName")
+    public String getFullName() {
+        return fullName;
+    }
+
+    /**
+     * Building full name.
+     * 
+     */
+    @JsonProperty("fullName")
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     /**

@@ -15,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
 /**
- * EngineInputGHCSchema
+ * PlanningGhcData
  * <p>
  * Schema of the object that contains the timetable planning data.
  * 
@@ -31,6 +31,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "teachers",
     "subjects",
     "groups",
+    "courses",
+    "departments",
     "sessions",
     "meetings",
     "complementaryActivities",
@@ -38,7 +40,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "optimizationWeights",
     "engineSettings"
 })
-public class EngineInputGHCSchema {
+public class PlanningGhcData {
 
     /**
      * Periods
@@ -121,6 +123,24 @@ public class EngineInputGHCSchema {
     @JsonProperty("groups")
     @JsonPropertyDescription("Sets of students.")
     private List<Group> groups = new ArrayList<Group>();
+    /**
+     * Courses
+     * <p>
+     * Sets of courses.
+     * 
+     */
+    @JsonProperty("courses")
+    @JsonPropertyDescription("Sets of courses.")
+    private List<Course> courses = new ArrayList<Course>();
+    /**
+     * Departments
+     * <p>
+     * Sets of departments.
+     * 
+     */
+    @JsonProperty("departments")
+    @JsonPropertyDescription("Sets of departments.")
+    private List<Department> departments = new ArrayList<Department>();
     /**
      * Sessions
      * <p>
@@ -374,6 +394,50 @@ public class EngineInputGHCSchema {
     @JsonProperty("groups")
     public void setGroups(List<Group> groups) {
         this.groups = groups;
+    }
+
+    /**
+     * Courses
+     * <p>
+     * Sets of courses.
+     * 
+     */
+    @JsonProperty("courses")
+    public List<Course> getCourses() {
+        return courses;
+    }
+
+    /**
+     * Courses
+     * <p>
+     * Sets of courses.
+     * 
+     */
+    @JsonProperty("courses")
+    public void setCourses(List<Course> courses) {
+        this.courses = courses;
+    }
+
+    /**
+     * Departments
+     * <p>
+     * Sets of departments.
+     * 
+     */
+    @JsonProperty("departments")
+    public List<Department> getDepartments() {
+        return departments;
+    }
+
+    /**
+     * Departments
+     * <p>
+     * Sets of departments.
+     * 
+     */
+    @JsonProperty("departments")
+    public void setDepartments(List<Department> departments) {
+        this.departments = departments;
     }
 
     /**
