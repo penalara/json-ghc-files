@@ -543,6 +543,22 @@
                         "type": "boolean",
                         "default": false
                     },
+                    "type": {
+                        "description": "Type of the the subject",
+                        "type": "string"
+                    },
+                    "refClassRoom": { 
+                        "description": "Id of the classroom assigned to teach this subject.",
+                        "type": "string" 
+                    },
+                    "refAlternativeClassRoomSet": { 
+                        "description": "Id of the set of alternative classrooms assigned to schedule this subject.",
+                        "type": "string" 
+                    }, 
+                    "refColor": { 
+                        "description": "Color's code used to represent this subject in the result.",
+                        "type": "string" 
+                    },
                     "frameTemplate": {
                         "$ref": "#/definitions/frameTemplate"
                     }
@@ -623,6 +639,10 @@
                     "refClassroom": {
                         "description": "Id of the classroom assigned to the group",
                         "type": "string"
+                    },
+                    "refAlternativeClassRoomSet": { 
+                        "description": "Id of the set of alternative classrooms assigned to the group.",
+                        "type": "string" 
                     }
                 }
             }
@@ -774,6 +794,11 @@
                     "refMainGroup": {
                         "$ref": "#/definitions/refGroup"
                     },
+                    "refColor": {
+                        "title": "RefColor",
+                        "description": "Color's code for the session in the result.",
+                        "type": "string"
+                    },    
                     "otherElementsInClassRooms": {
                         "title": "OtherElementsInClassRoomsList",
                         "description": "List of other time elements in the classroom related to each other.",
