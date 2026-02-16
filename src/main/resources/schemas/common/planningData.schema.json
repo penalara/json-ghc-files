@@ -533,21 +533,21 @@
                         "description": "External key of the subject",
                         "type": "string"
                     },
-                    "isStudentMentoring": {
-                        "description": "It indicates whether the subject is a tutorial.",
-                        "type": "boolean",
-                        "default": false
-                    },
                     "technicalTeacher": {
                         "description": "It indicates whether the subject is teach by technical teacher.",
                         "type": "boolean",
                         "default": false
                     },
                     "type": {
-                        "description": "Type of the the subject",
-                        "type": "string"
+                        "description": "Type of the subject",
+                        "enum": [
+                            "core",
+                            "specific",
+                            "elective",
+                            "mentoring"
+                        ]
                     },
-                    "refClassRoom": { 
+                    "refClassroom": { 
                         "description": "Id of the classroom assigned to teach this subject.",
                         "type": "string" 
                     },
@@ -555,7 +555,7 @@
                         "description": "Id of the set of alternative classrooms assigned to schedule this subject.",
                         "type": "string" 
                     }, 
-                    "refColor": { 
+                    "refColorInResult": { 
                         "description": "Color's code used to represent this subject in the result.",
                         "type": "string" 
                     },
@@ -794,7 +794,7 @@
                     "refMainGroup": {
                         "$ref": "#/definitions/refGroup"
                     },
-                    "refColor": {
+                    "refColorInResult": {
                         "title": "RefColor",
                         "description": "Color's code for the session in the result.",
                         "type": "string"
