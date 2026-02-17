@@ -548,15 +548,15 @@
                         ]
                     },
                     "refClassroom": { 
-                        "description": "Id of the classroom assigned to teach this subject.",
+                        "description": "Id of the classroom assigned to teach the subject.",
                         "type": "string" 
                     },
                     "refAlternativeClassRoomSet": { 
-                        "description": "Id of the set of alternative classrooms assigned to schedule this subject.",
+                        "description": "Id of the set of alternative classrooms assigned to schedule the subject.",
                         "type": "string" 
                     }, 
                     "refColorInResult": { 
-                        "description": "Color's code used to represent this subject in the result.",
+                        "description": "Color's code used to represent the subject in the result.",
                         "type": "string" 
                     },
                     "frameTemplate": {
@@ -796,7 +796,7 @@
                     },
                     "refColorInResult": {
                         "title": "RefColor",
-                        "description": "Color's code for the session in the result.",
+                        "description": "Color's code used to represent the session in the result.",
                         "type": "string"
                     },    
                     "otherElementsInClassRooms": {
