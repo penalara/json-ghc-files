@@ -36,34 +36,38 @@
                                 "description": "Period identifier.",
                                 "type": "string"
                             },
+                            "alias":{
+                                "description": “Identifier assigned to the period based on how it corresponds to the dates in a calendar. It is an interval that indicates which actual calendar day the first and the last day correspond to.”,
+                                "type": "string"
+                            },
                             "lastDay": {
                                 "description": "The end day of the period (included).",
                                 "type": "integer"
                             },
-							"dayAliases": {
-								"title": "AliasDayList",
-								"description": "Alias for each day of the period. It is an optional definition.",
-								"type": "array",
-								"additionalItems": false,
-								"items": {
-									"title": "AliasDayDeifinition",
-									"type": "object",
-									"required": [
-										"dayId",
-										"alias"
-									],
-									"properties": {
-										"dayId": {
-											"description": "Identifier of the day of the week, it is unique across all weeks.",
-											"type": "integer"
-										},
-										"alias": {
-											"description": "Header to identify the day in the results table and the frame column.",
-											"type": "string"
-										}
-									}
-								}
-							}
+                            "dayAliases": {
+                                "title": "AliasDayList",
+                                "description": "Alias for each day of the period. It is an optional definition.",
+                                "type": "array",
+                                "additionalItems": false,
+                                "items": {
+                                    "title": "AliasDayDeifinition",
+                                    "type": "object",
+                                    "required": [
+                                        "dayId",
+                                        "alias"
+                                    ],
+                                    "properties": {
+                                        "dayId": {
+                                            "description": "Identifier of the day of the week, it is unique across all weeks.",
+                                            "type": "integer"
+                                        },
+                                        "alias": {
+                                            "description": "Header to identify the day in the results table and the frame column.",
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
