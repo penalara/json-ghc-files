@@ -23,6 +23,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "id",
+    "alias",
     "lastDay",
     "dayAliases"
 })
@@ -36,6 +37,13 @@ public class Period {
     @JsonProperty("id")
     @JsonPropertyDescription("Period identifier.")
     private String id;
+    /**
+     * Identifier assigned to the period based on how it corresponds to the dates in a calendar. It is an interval that indicates which actual calendar day the first and the last day correspond to.
+     * 
+     */
+    @JsonProperty("alias")
+    @JsonPropertyDescription("Identifier assigned to the period based on how it corresponds to the dates in a calendar. It is an interval that indicates which actual calendar day the first and the last day correspond to.")
+    private String alias;
     /**
      * The end day of the period (included).
      * (Required)
@@ -74,6 +82,24 @@ public class Period {
     @JsonProperty("id")
     public void setId(String id) {
         this.id = id;
+    }
+
+    /**
+     * Identifier assigned to the period based on how it corresponds to the dates in a calendar. It is an interval that indicates which actual calendar day the first and the last day correspond to.
+     * 
+     */
+    @JsonProperty("alias")
+    public String getAlias() {
+        return alias;
+    }
+
+    /**
+     * Identifier assigned to the period based on how it corresponds to the dates in a calendar. It is an interval that indicates which actual calendar day the first and the last day correspond to.
+     * 
+     */
+    @JsonProperty("alias")
+    public void setAlias(String alias) {
+        this.alias = alias;
     }
 
     /**

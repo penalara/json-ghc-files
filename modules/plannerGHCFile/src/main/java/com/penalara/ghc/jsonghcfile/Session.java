@@ -28,6 +28,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "refMainTeacher",
     "refMainSubject",
     "refMainGroup",
+    "refColorInResult",
     "otherElementsInClassRooms",
     "distribution",
     "sessionClassRooms",
@@ -94,6 +95,15 @@ public class Session {
     @JsonProperty("refMainGroup")
     @JsonPropertyDescription("Contains the reference to a group of the session, and optionally, the number of students of the group that attend the session.")
     private GroupReferenceType refMainGroup;
+    /**
+     * RefColor
+     * <p>
+     * Color's code used to represent the session in the result.
+     * 
+     */
+    @JsonProperty("refColorInResult")
+    @JsonPropertyDescription("Color's code used to represent the session in the result.")
+    private String refColorInResult;
     /**
      * OtherElementsInClassRoomsList
      * <p>
@@ -294,6 +304,28 @@ public class Session {
     @JsonProperty("refMainGroup")
     public void setRefMainGroup(GroupReferenceType refMainGroup) {
         this.refMainGroup = refMainGroup;
+    }
+
+    /**
+     * RefColor
+     * <p>
+     * Color's code used to represent the session in the result.
+     * 
+     */
+    @JsonProperty("refColorInResult")
+    public String getRefColorInResult() {
+        return refColorInResult;
+    }
+
+    /**
+     * RefColor
+     * <p>
+     * Color's code used to represent the session in the result.
+     * 
+     */
+    @JsonProperty("refColorInResult")
+    public void setRefColorInResult(String refColorInResult) {
+        this.refColorInResult = refColorInResult;
     }
 
     /**

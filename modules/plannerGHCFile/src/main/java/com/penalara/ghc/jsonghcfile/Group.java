@@ -35,7 +35,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "refCourse",
     "includedGroups",
     "refTeacher",
-    "refClassroom"
+    "refClassroom",
+    "refAlternativeClassRoomSet"
 })
 public class Group {
 
@@ -143,6 +144,13 @@ public class Group {
     @JsonProperty("refClassroom")
     @JsonPropertyDescription("Id of the classroom assigned to the group")
     private String refClassroom;
+    /**
+     * Id of the set of alternative classrooms assigned to the group.
+     * 
+     */
+    @JsonProperty("refAlternativeClassRoomSet")
+    @JsonPropertyDescription("Id of the set of alternative classrooms assigned to the group.")
+    private String refAlternativeClassRoomSet;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
@@ -408,6 +416,24 @@ public class Group {
     @JsonProperty("refClassroom")
     public void setRefClassroom(String refClassroom) {
         this.refClassroom = refClassroom;
+    }
+
+    /**
+     * Id of the set of alternative classrooms assigned to the group.
+     * 
+     */
+    @JsonProperty("refAlternativeClassRoomSet")
+    public String getRefAlternativeClassRoomSet() {
+        return refAlternativeClassRoomSet;
+    }
+
+    /**
+     * Id of the set of alternative classrooms assigned to the group.
+     * 
+     */
+    @JsonProperty("refAlternativeClassRoomSet")
+    public void setRefAlternativeClassRoomSet(String refAlternativeClassRoomSet) {
+        this.refAlternativeClassRoomSet = refAlternativeClassRoomSet;
     }
 
     @JsonAnyGetter
