@@ -3,7 +3,7 @@
 	  
       <groupId>com.penalara.ghc</groupId>
 	  <artifactId>jsonGhcFiles</artifactId>
-	  <version>3.1.1-SNAPSHOT</version>
+	  <version>3.1.1</version>
       <packaging>pom</packaging>
 	  
 
@@ -150,7 +150,7 @@
 	  <connection>scm:git:ssh://git@github.com/penalara/json-ghc-files.git</connection>
 	  <developerConnection>scm:git:ssh://git@github.com/penalara/json-ghc-files.git</developerConnection>
 	  <url>https://github.com/penalara/json-ghc-files/tree/main</url>
-	  <tag>HEAD</tag>
+	  <tag>jsonGhcFiles-3.1.1</tag>
 	</scm>
 
 
