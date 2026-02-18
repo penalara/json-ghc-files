@@ -37,7 +37,7 @@
                                 "type": "string"
                             },
                             "alias":{
-                                "description": “Identifier assigned to the period based on how it corresponds to the dates in a calendar. It is an interval that indicates which actual calendar day the first and the last day correspond to.”,
+                                "description": "Identifier assigned to the period based on how it corresponds to the dates in a calendar. It is an interval that indicates which actual calendar day the first and the last day correspond to.",
                                 "type": "string"
                             },
                             "lastDay": {
