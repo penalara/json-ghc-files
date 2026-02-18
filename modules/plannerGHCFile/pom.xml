@@ -109,6 +109,7 @@
 	          <configuration>
 	            <publishingServerId>central</publishingServerId>
 				<skipPublishing>false</skipPublishing>
+				<autoPublish>true</autoPublish> <!-- opcional, publica sin intervención manual -->
 	          </configuration>
 	        </plugin>			
         </plugins>
