@@ -108,6 +108,7 @@
 	          <extensions>true</extensions>
 	          <configuration>
 	            <publishingServerId>central</publishingServerId>
+				<skipPublishing>false</skipPublishing>
 	          </configuration>
 	        </plugin>			
         </plugins>
@@ -120,17 +121,5 @@
 	  <url>https://github.com/penalara/plannerGHCFile</url>
   	  <tag>HEAD</tag>
   	</scm>
-
-	<!-- Distribution Information -->
-	<distributionManagement>
-		<repository>
-			<id>central</id>
-			<url>https://central.sonatype.com/repository/maven-releases/</url>
-		</repository>
-		<snapshotRepository>
-			<id>central</id>
-			<url>https://central.sonatype.com/repository/maven-snapshots/</url>
-		</snapshotRepository>
-	</distributionManagement>
   
 </project>
