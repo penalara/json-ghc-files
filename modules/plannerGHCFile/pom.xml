@@ -3,7 +3,7 @@
 
     <groupId>com.penalara.ghc</groupId>
     <artifactId>plannerGHCFile</artifactId>
-    <version>3.1.1</version>
+    <version>3.1.2-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>PlannerGHCFile</name>
@@ -118,7 +118,7 @@
 	  <connection>scm:git:ssh://git@github.com/penalara/plannerGHCFile.git</connection>
 	  <developerConnection>scm:git:ssh://git@github.com/penalara/plannerGHCFile.git</developerConnection>
 	  <url>https://github.com/penalara/plannerGHCFile</url>
-  	  <tag>jsonGhcFiles-3.1.1</tag>
+  	  <tag>HEAD</tag>
   	</scm>
   
 </project>
