@@ -70,7 +70,34 @@
                             }
                         }
                     }
-                }
+                },
+				"periodSets": {
+				    "title": "PeriodsSets",
+				    "description": "List of sets of periods, which are groupings of multiple periods to make it easier to assign periods to sessions in batches, and many of them overlap by sharing several weeks in common.",
+				    "type": "array",
+				    "additionalItems": false,
+				    "items": {
+				        "title": "PeriodsSet",
+				        "type": "object",
+				        "required": [
+				            "id",
+				            "periodList"
+				        ],
+				        "properties": {
+				            "id": {
+				                "description": "Period identifier.",
+				                "type": "string"
+				            },
+				            "periodList":{
+				                "description": "List of identifiers of the weeks that belong to the set.",
+								"type": "array",
+								"items": {
+								    "type": "string"
+								}
+				            }
+				        }
+				    }
+				},
             },
             "additionalProperties": false
         },
