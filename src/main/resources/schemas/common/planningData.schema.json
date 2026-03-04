@@ -588,7 +588,14 @@
                     },
                     "refClassRoomSetsList": { 
                         "description": "List of alternative classroom sets assigned to schedule the subject.",
-                        "type": "array" 
+                        "type": "array",
+                        "additionalItems": false,
+                        "items": {
+                            "title": "ClassRoomSetRef",
+                            "description": "Classroom set identifier.",
+                            "type": "string",
+                            "additionalProperties": false
+                        } 
                     }, 
                     "refColourInResult": { 
                         "description": "Colour code used to represent the subject in the result.",
@@ -677,7 +684,14 @@
                     },
                     "refClassRoomSetsList": { 
                         "description": "List of classroom sets assigned to the group.",
-                        "type": "array" 
+                        "type": "array",
+                        "additionalItems": false,
+                        "items": {
+                            "title": "ClassRoomSetRef",
+                            "description": "Classroom set identifier.",
+                            "type": "string",
+                            "additionalProperties": false
+                        }
                     }
                 }
             }
