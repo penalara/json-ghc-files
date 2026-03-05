@@ -18,7 +18,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "followedPeriods",
-    "periodsList"
+    "periodsList",
+    "periodSets"
 })
 public class Periods {
 
@@ -41,6 +42,15 @@ public class Periods {
     @JsonProperty("periodsList")
     @JsonPropertyDescription("List of periods.")
     private List<Period> periodsList = new ArrayList<Period>();
+    /**
+     * PeriodsSets
+     * <p>
+     * List of sets of periods, which are groupings of multiple periods to make it easier to assign periods to sessions in batches, and many of them overlap by sharing several weeks in common.
+     * 
+     */
+    @JsonProperty("periodSets")
+    @JsonPropertyDescription("List of sets of periods, which are groupings of multiple periods to make it easier to assign periods to sessions in batches, and many of them overlap by sharing several weeks in common.")
+    private List<PeriodsSet> periodSets = new ArrayList<PeriodsSet>();
 
     /**
      * FollowedPeriods
@@ -86,6 +96,28 @@ public class Periods {
     @JsonProperty("periodsList")
     public void setPeriodsList(List<Period> periodsList) {
         this.periodsList = periodsList;
+    }
+
+    /**
+     * PeriodsSets
+     * <p>
+     * List of sets of periods, which are groupings of multiple periods to make it easier to assign periods to sessions in batches, and many of them overlap by sharing several weeks in common.
+     * 
+     */
+    @JsonProperty("periodSets")
+    public List<PeriodsSet> getPeriodSets() {
+        return periodSets;
+    }
+
+    /**
+     * PeriodsSets
+     * <p>
+     * List of sets of periods, which are groupings of multiple periods to make it easier to assign periods to sessions in batches, and many of them overlap by sharing several weeks in common.
+     * 
+     */
+    @JsonProperty("periodSets")
+    public void setPeriodSets(List<PeriodsSet> periodSets) {
+        this.periodSets = periodSets;
     }
 
 }

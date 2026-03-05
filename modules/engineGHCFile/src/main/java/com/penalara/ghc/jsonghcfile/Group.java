@@ -36,7 +36,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "includedGroups",
     "refTeacher",
     "refClassroom",
-    "refAlternativeClassRoomSet"
+    "refClassRoomSetsList"
 })
 public class Group {
 
@@ -145,12 +145,12 @@ public class Group {
     @JsonPropertyDescription("Id of the classroom assigned to the group")
     private String refClassroom;
     /**
-     * Id of the set of alternative classrooms assigned to the group.
+     * List of classroom sets assigned to the group.
      * 
      */
-    @JsonProperty("refAlternativeClassRoomSet")
-    @JsonPropertyDescription("Id of the set of alternative classrooms assigned to the group.")
-    private String refAlternativeClassRoomSet;
+    @JsonProperty("refClassRoomSetsList")
+    @JsonPropertyDescription("List of classroom sets assigned to the group.")
+    private List<String> refClassRoomSetsList = new ArrayList<String>();
     @JsonIgnore
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
@@ -419,21 +419,21 @@ public class Group {
     }
 
     /**
-     * Id of the set of alternative classrooms assigned to the group.
+     * List of classroom sets assigned to the group.
      * 
      */
-    @JsonProperty("refAlternativeClassRoomSet")
-    public String getRefAlternativeClassRoomSet() {
-        return refAlternativeClassRoomSet;
+    @JsonProperty("refClassRoomSetsList")
+    public List<String> getRefClassRoomSetsList() {
+        return refClassRoomSetsList;
     }
 
     /**
-     * Id of the set of alternative classrooms assigned to the group.
+     * List of classroom sets assigned to the group.
      * 
      */
-    @JsonProperty("refAlternativeClassRoomSet")
-    public void setRefAlternativeClassRoomSet(String refAlternativeClassRoomSet) {
-        this.refAlternativeClassRoomSet = refAlternativeClassRoomSet;
+    @JsonProperty("refClassRoomSetsList")
+    public void setRefClassRoomSetsList(List<String> refClassRoomSetsList) {
+        this.refClassRoomSetsList = refClassRoomSetsList;
     }
 
     @JsonAnyGetter

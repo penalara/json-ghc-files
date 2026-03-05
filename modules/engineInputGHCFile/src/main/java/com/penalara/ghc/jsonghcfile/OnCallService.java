@@ -24,6 +24,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "inBreak",
     "teachersEachSection",
     "refTeachers",
+    "refColourInResult",
     "frameTemplate",
     "refBuilding",
     "settings"
@@ -90,6 +91,13 @@ public class OnCallService {
     @JsonProperty("refTeachers")
     @JsonPropertyDescription("List of teachers who in the service.")
     private List<RefTeacher> refTeachers = new ArrayList<RefTeacher>();
+    /**
+     * Colour code used to represent the on-call service in the result.
+     * 
+     */
+    @JsonProperty("refColourInResult")
+    @JsonPropertyDescription("Colour code used to represent the on-call service in the result.")
+    private String refColourInResult;
     /**
      * OnCallTemplate
      * <p>
@@ -262,6 +270,24 @@ public class OnCallService {
     @JsonProperty("refTeachers")
     public void setRefTeachers(List<RefTeacher> refTeachers) {
         this.refTeachers = refTeachers;
+    }
+
+    /**
+     * Colour code used to represent the on-call service in the result.
+     * 
+     */
+    @JsonProperty("refColourInResult")
+    public String getRefColourInResult() {
+        return refColourInResult;
+    }
+
+    /**
+     * Colour code used to represent the on-call service in the result.
+     * 
+     */
+    @JsonProperty("refColourInResult")
+    public void setRefColourInResult(String refColourInResult) {
+        this.refColourInResult = refColourInResult;
     }
 
     /**

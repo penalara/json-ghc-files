@@ -32,8 +32,8 @@ import com.fasterxml.jackson.annotation.JsonValue;
     "technicalTeacher",
     "type",
     "refClassroom",
-    "refAlternativeClassRoomSet",
-    "refColorInResult",
+    "refClassRoomSetsList",
+    "refColourInResult",
     "frameTemplate"
 })
 public class Subject {
@@ -89,19 +89,19 @@ public class Subject {
     @JsonPropertyDescription("Id of the classroom assigned to teach the subject.")
     private String refClassroom;
     /**
-     * Id of the set of alternative classrooms assigned to schedule the subject.
+     * List of alternative classroom sets assigned to schedule the subject.
      * 
      */
-    @JsonProperty("refAlternativeClassRoomSet")
-    @JsonPropertyDescription("Id of the set of alternative classrooms assigned to schedule the subject.")
-    private String refAlternativeClassRoomSet;
+    @JsonProperty("refClassRoomSetsList")
+    @JsonPropertyDescription("List of alternative classroom sets assigned to schedule the subject.")
+    private List<String> refClassRoomSetsList = new ArrayList<String>();
     /**
-     * Color's code used to represent the subject in the result.
+     * Colour code used to represent the subject in the result.
      * 
      */
-    @JsonProperty("refColorInResult")
-    @JsonPropertyDescription("Color's code used to represent the subject in the result.")
-    private String refColorInResult;
+    @JsonProperty("refColourInResult")
+    @JsonPropertyDescription("Colour code used to represent the subject in the result.")
+    private String refColourInResult;
     /**
      * FrameTemplate
      * <p>
@@ -243,39 +243,39 @@ public class Subject {
     }
 
     /**
-     * Id of the set of alternative classrooms assigned to schedule the subject.
+     * List of alternative classroom sets assigned to schedule the subject.
      * 
      */
-    @JsonProperty("refAlternativeClassRoomSet")
-    public String getRefAlternativeClassRoomSet() {
-        return refAlternativeClassRoomSet;
+    @JsonProperty("refClassRoomSetsList")
+    public List<String> getRefClassRoomSetsList() {
+        return refClassRoomSetsList;
     }
 
     /**
-     * Id of the set of alternative classrooms assigned to schedule the subject.
+     * List of alternative classroom sets assigned to schedule the subject.
      * 
      */
-    @JsonProperty("refAlternativeClassRoomSet")
-    public void setRefAlternativeClassRoomSet(String refAlternativeClassRoomSet) {
-        this.refAlternativeClassRoomSet = refAlternativeClassRoomSet;
+    @JsonProperty("refClassRoomSetsList")
+    public void setRefClassRoomSetsList(List<String> refClassRoomSetsList) {
+        this.refClassRoomSetsList = refClassRoomSetsList;
     }
 
     /**
-     * Color's code used to represent the subject in the result.
+     * Colour code used to represent the subject in the result.
      * 
      */
-    @JsonProperty("refColorInResult")
-    public String getRefColorInResult() {
-        return refColorInResult;
+    @JsonProperty("refColourInResult")
+    public String getRefColourInResult() {
+        return refColourInResult;
     }
 
     /**
-     * Color's code used to represent the subject in the result.
+     * Colour code used to represent the subject in the result.
      * 
      */
-    @JsonProperty("refColorInResult")
-    public void setRefColorInResult(String refColorInResult) {
-        this.refColorInResult = refColorInResult;
+    @JsonProperty("refColourInResult")
+    public void setRefColourInResult(String refColourInResult) {
+        this.refColourInResult = refColourInResult;
     }
 
     /**

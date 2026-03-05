@@ -28,7 +28,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "refMainTeacher",
     "refMainSubject",
     "refMainGroup",
-    "refColorInResult",
+    "refColourInResult",
     "otherElementsInClassRooms",
     "distribution",
     "sessionClassRooms",
@@ -96,14 +96,14 @@ public class Session {
     @JsonPropertyDescription("Contains the reference to a group of the session, and optionally, the number of students of the group that attend the session.")
     private GroupReferenceType refMainGroup;
     /**
-     * RefColor
+     * RefColourInResult
      * <p>
-     * Color's code used to represent the session in the result.
+     * Colour code used to represent the session in the result.
      * 
      */
-    @JsonProperty("refColorInResult")
-    @JsonPropertyDescription("Color's code used to represent the session in the result.")
-    private String refColorInResult;
+    @JsonProperty("refColourInResult")
+    @JsonPropertyDescription("Colour code used to represent the session in the result.")
+    private String refColourInResult;
     /**
      * OtherElementsInClassRoomsList
      * <p>
@@ -307,25 +307,25 @@ public class Session {
     }
 
     /**
-     * RefColor
+     * RefColourInResult
      * <p>
-     * Color's code used to represent the session in the result.
+     * Colour code used to represent the session in the result.
      * 
      */
-    @JsonProperty("refColorInResult")
-    public String getRefColorInResult() {
-        return refColorInResult;
+    @JsonProperty("refColourInResult")
+    public String getRefColourInResult() {
+        return refColourInResult;
     }
 
     /**
-     * RefColor
+     * RefColourInResult
      * <p>
-     * Color's code used to represent the session in the result.
+     * Colour code used to represent the session in the result.
      * 
      */
-    @JsonProperty("refColorInResult")
-    public void setRefColorInResult(String refColorInResult) {
-        this.refColorInResult = refColorInResult;
+    @JsonProperty("refColourInResult")
+    public void setRefColourInResult(String refColourInResult) {
+        this.refColourInResult = refColourInResult;
     }
 
     /**

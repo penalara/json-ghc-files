@@ -25,7 +25,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "id",
     "frameTemplate",
     "fullName",
-    "exKey"
+    "exKey",
+    "refColourInResult"
 })
 public class Task {
 
@@ -60,6 +61,13 @@ public class Task {
     @JsonProperty("exKey")
     @JsonPropertyDescription("External key of the task")
     private String exKey;
+    /**
+     * Colour code used to represent the task in the result.
+     * 
+     */
+    @JsonProperty("refColourInResult")
+    @JsonPropertyDescription("Colour code used to represent the task in the result.")
+    private String refColourInResult;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
@@ -139,6 +147,24 @@ public class Task {
     @JsonProperty("exKey")
     public void setExKey(String exKey) {
         this.exKey = exKey;
+    }
+
+    /**
+     * Colour code used to represent the task in the result.
+     * 
+     */
+    @JsonProperty("refColourInResult")
+    public String getRefColourInResult() {
+        return refColourInResult;
+    }
+
+    /**
+     * Colour code used to represent the task in the result.
+     * 
+     */
+    @JsonProperty("refColourInResult")
+    public void setRefColourInResult(String refColourInResult) {
+        this.refColourInResult = refColourInResult;
     }
 
     @JsonAnyGetter
