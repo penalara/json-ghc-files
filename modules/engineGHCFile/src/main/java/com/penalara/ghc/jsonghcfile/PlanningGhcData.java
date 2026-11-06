@@ -31,6 +31,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "teachers",
     "subjects",
     "groups",
+    "groupSetRelations",
     "courses",
     "departments",
     "sessions",
@@ -117,12 +118,21 @@ public class PlanningGhcData {
     /**
      * Groups
      * <p>
-     * Sets of students.
+     * Sets of students. A group with includedGroups is considered a group set.
      * 
      */
     @JsonProperty("groups")
-    @JsonPropertyDescription("Sets of students.")
+    @JsonPropertyDescription("Sets of students. A group with includedGroups is considered a group set.")
     private List<Group> groups = new ArrayList<Group>();
+    /**
+     * GroupSetRelations
+     * <p>
+     * Relationships between group sets that indicate whether their included groups can be scheduled simultaneously.
+     * 
+     */
+    @JsonProperty("groupSetRelations")
+    @JsonPropertyDescription("Relationships between group sets that indicate whether their included groups can be scheduled simultaneously.")
+    private List<GroupSetRelation> groupSetRelations = new ArrayList<GroupSetRelation>();
     /**
      * Courses
      * <p>
@@ -377,7 +387,7 @@ public class PlanningGhcData {
     /**
      * Groups
      * <p>
-     * Sets of students.
+     * Sets of students. A group with includedGroups is considered a group set.
      * 
      */
     @JsonProperty("groups")
@@ -388,12 +398,34 @@ public class PlanningGhcData {
     /**
      * Groups
      * <p>
-     * Sets of students.
+     * Sets of students. A group with includedGroups is considered a group set.
      * 
      */
     @JsonProperty("groups")
     public void setGroups(List<Group> groups) {
         this.groups = groups;
+    }
+
+    /**
+     * GroupSetRelations
+     * <p>
+     * Relationships between group sets that indicate whether their included groups can be scheduled simultaneously.
+     * 
+     */
+    @JsonProperty("groupSetRelations")
+    public List<GroupSetRelation> getGroupSetRelations() {
+        return groupSetRelations;
+    }
+
+    /**
+     * GroupSetRelations
+     * <p>
+     * Relationships between group sets that indicate whether their included groups can be scheduled simultaneously.
+     * 
+     */
+    @JsonProperty("groupSetRelations")
+    public void setGroupSetRelations(List<GroupSetRelation> groupSetRelations) {
+        this.groupSetRelations = groupSetRelations;
     }
 
     /**

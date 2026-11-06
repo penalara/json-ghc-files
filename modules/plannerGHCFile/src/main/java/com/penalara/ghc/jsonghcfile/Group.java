@@ -36,7 +36,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "includedGroups",
     "refTeacher",
     "refClassroom",
-    "refAlternativeClassRoomSet"
+    "refClassRoomSetsList"
 })
 public class Group {
 
@@ -124,11 +124,11 @@ public class Group {
     @JsonPropertyDescription("Course identifier to which the group belongs.")
     private String refCourse;
     /**
-     * Allows to indicate its a circunstancial group, formed by oficial groups to recibe optional or main subjects.
+     * Identifiers of the groups included in this group. A group that defines this property is considered a group set.
      * 
      */
     @JsonProperty("includedGroups")
-    @JsonPropertyDescription("Allows to indicate its a circunstancial group, formed by oficial groups to recibe optional or main subjects.")
+    @JsonPropertyDescription("Identifiers of the groups included in this group. A group that defines this property is considered a group set.")
     private List<String> includedGroups = new ArrayList<String>();
     /**
      * Id of the tutor teacher assigned to the group
@@ -145,12 +145,12 @@ public class Group {
     @JsonPropertyDescription("Id of the classroom assigned to the group")
     private String refClassroom;
     /**
-     * Id of the set of alternative classrooms assigned to the group.
+     * List of classroom sets assigned to the group.
      * 
      */
-    @JsonProperty("refAlternativeClassRoomSet")
-    @JsonPropertyDescription("Id of the set of alternative classrooms assigned to the group.")
-    private String refAlternativeClassRoomSet;
+    @JsonProperty("refClassRoomSetsList")
+    @JsonPropertyDescription("List of classroom sets assigned to the group.")
+    private List<Object> refClassRoomSetsList = new ArrayList<Object>();
     @JsonIgnore
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
@@ -365,7 +365,7 @@ public class Group {
     }
 
     /**
-     * Allows to indicate its a circunstancial group, formed by oficial groups to recibe optional or main subjects.
+     * Identifiers of the groups included in this group. A group that defines this property is considered a group set.
      * 
      */
     @JsonProperty("includedGroups")
@@ -374,7 +374,7 @@ public class Group {
     }
 
     /**
-     * Allows to indicate its a circunstancial group, formed by oficial groups to recibe optional or main subjects.
+     * Identifiers of the groups included in this group. A group that defines this property is considered a group set.
      * 
      */
     @JsonProperty("includedGroups")
@@ -419,21 +419,21 @@ public class Group {
     }
 
     /**
-     * Id of the set of alternative classrooms assigned to the group.
+     * List of classroom sets assigned to the group.
      * 
      */
-    @JsonProperty("refAlternativeClassRoomSet")
-    public String getRefAlternativeClassRoomSet() {
-        return refAlternativeClassRoomSet;
+    @JsonProperty("refClassRoomSetsList")
+    public List<Object> getRefClassRoomSetsList() {
+        return refClassRoomSetsList;
     }
 
     /**
-     * Id of the set of alternative classrooms assigned to the group.
+     * List of classroom sets assigned to the group.
      * 
      */
-    @JsonProperty("refAlternativeClassRoomSet")
-    public void setRefAlternativeClassRoomSet(String refAlternativeClassRoomSet) {
-        this.refAlternativeClassRoomSet = refAlternativeClassRoomSet;
+    @JsonProperty("refClassRoomSetsList")
+    public void setRefClassRoomSetsList(List<Object> refClassRoomSetsList) {
+        this.refClassRoomSetsList = refClassRoomSetsList;
     }
 
     @JsonAnyGetter

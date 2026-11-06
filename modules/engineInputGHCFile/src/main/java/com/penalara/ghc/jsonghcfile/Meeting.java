@@ -26,6 +26,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "refFrame",
     "refTask",
     "refTeachers",
+    "refColourInResult",
     "distribution",
     "frameTemplate",
     "refClassRoomToAssign",
@@ -70,6 +71,13 @@ public class Meeting {
     @JsonProperty("refTeachers")
     @JsonPropertyDescription("List of teachers who in the service.")
     private List<String> refTeachers = new ArrayList<String>();
+    /**
+     * Colour code used to represent the meeting in the result.
+     * 
+     */
+    @JsonProperty("refColourInResult")
+    @JsonPropertyDescription("Colour code used to represent the meeting in the result.")
+    private String refColourInResult;
     /**
      * Distribution
      * <p>
@@ -203,6 +211,24 @@ public class Meeting {
     @JsonProperty("refTeachers")
     public void setRefTeachers(List<String> refTeachers) {
         this.refTeachers = refTeachers;
+    }
+
+    /**
+     * Colour code used to represent the meeting in the result.
+     * 
+     */
+    @JsonProperty("refColourInResult")
+    public String getRefColourInResult() {
+        return refColourInResult;
+    }
+
+    /**
+     * Colour code used to represent the meeting in the result.
+     * 
+     */
+    @JsonProperty("refColourInResult")
+    public void setRefColourInResult(String refColourInResult) {
+        this.refColourInResult = refColourInResult;
     }
 
     /**

@@ -26,6 +26,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "refFrame",
     "refTask",
     "refTeacher",
+    "refColourInResult",
     "distribution",
     "frameTemplate",
     "refClassRoomToAssign",
@@ -70,6 +71,13 @@ public class Complementary {
     @JsonProperty("refTeacher")
     @JsonPropertyDescription("Teacher identifier.")
     private String refTeacher;
+    /**
+     * Colour code used to represent the complementary activity in the result.
+     * 
+     */
+    @JsonProperty("refColourInResult")
+    @JsonPropertyDescription("Colour code used to represent the complementary activity in the result.")
+    private String refColourInResult;
     /**
      * Distribution
      * <p>
@@ -203,6 +211,24 @@ public class Complementary {
     @JsonProperty("refTeacher")
     public void setRefTeacher(String refTeacher) {
         this.refTeacher = refTeacher;
+    }
+
+    /**
+     * Colour code used to represent the complementary activity in the result.
+     * 
+     */
+    @JsonProperty("refColourInResult")
+    public String getRefColourInResult() {
+        return refColourInResult;
+    }
+
+    /**
+     * Colour code used to represent the complementary activity in the result.
+     * 
+     */
+    @JsonProperty("refColourInResult")
+    public void setRefColourInResult(String refColourInResult) {
+        this.refColourInResult = refColourInResult;
     }
 
     /**
