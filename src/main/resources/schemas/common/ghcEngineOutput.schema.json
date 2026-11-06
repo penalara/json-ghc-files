@@ -1,6 +1,6 @@
 {
 	"$id": "https://github.com/penalara/jsonGhcSchemas/blob/main/schemas/common/ghcEngineOutput.schema.json",
-    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
     "title": "EngineOutputGHCSchema",
     "description": "Schema document to format in Json the timetable created by PenalaraGHC.",
     "type": "object",
@@ -34,7 +34,6 @@
 					"title": "SetOfAnonymousClassRooms",
 					"description": "Collection with anonymous classrooms created by the engine. The classrooms are grouped by set of classrooms.",
 					"type": "array",
-					"additionalItems": false,
 					"items": {
 						"title": "AnonymousClassRoom",
 						"description": "Object with anonymous classrooms created in a set of classrooms.",
@@ -52,7 +51,6 @@
 								"title": "ListOfAnonymousRooms",
 								"description": "List of anonymous classroom created in one set of classrooms.",
 								"type": "array",
-								"additionalItems": false,
 								"items": {
 									"title": "AnonymousRoom",
 									"description": "Identifier of the anonymous classroom.",
@@ -67,7 +65,6 @@
                     "title": "AssignedSections",
                     "description": "List of sections assigned in the Timetable.",
                     "type": "array",
-                    "additionalItems": false,
                     "items": {
                         "title": "AssignedSection",
                         "description": "Section with one class units (or on call hours) assigned.",
@@ -120,7 +117,6 @@
 										"title": "TeachingSessions",
 										"description": "List of teaching sessions assigned in the section.",
 										"type": "array",
-										"additionalItems": false,
 										"items": {
 											"title": "AssignedTeachingSession",
 											"description": "Class unit or on call hour assigned in the timetable.",
@@ -136,13 +132,12 @@
 													"type": "integer"
 												},
 												"refClassRomms": {
-													"$ref": "#/definitions/refClassRomms"
+													"$ref": "#/$defs/refClassRomms"
 												},
 												"refTeachers": {
 													"title": "RefTeachers",
 													"description": "Optional. List of teachers assigned to the class unit. If the field is not informed, the teachers configured in the session are taken. The first is always the main teacher. It is used only in the case that alternative teachers have been configured.",
 													"type": "array",
-													"additionalItems": false,
 													"items": {
 														"title": "RefTeacher",
 														"description": "Identifier of the teacher in the input file.",
@@ -156,7 +151,6 @@
 										"title": "AssignedMeetings",
 										"description": "List of meetings assigned in the section.",
 										"type": "array",
-										"additionalItems": false,
 										"items": {
 											"title": "AssignedMeeting",
 											"description": "Meeting of teachers assigned in the timetable.",
@@ -171,7 +165,7 @@
 													"type": "string"
 												},
 												"refClassRomms": {
-													"$ref": "#/definitions/refClassRomms"
+													"$ref": "#/$defs/refClassRomms"
 												}
 											}
 										}
@@ -180,7 +174,6 @@
 										"title": "ComplementaryActivitiesAssigned",
 										"description": "List of meetings assigned in the section.",
 										"type": "array",
-										"additionalItems": false,
 										"items": {
 											"title": "AssignedComplementary",
 											"description": "Teacher's complementary activity assigned in the timetable.",
@@ -195,7 +188,7 @@
 													"type": "string"
 												},
 												"refClassRomms": {
-													"$ref": "#/definitions/refClassRomms"
+													"$ref": "#/$defs/refClassRomms"
 												}
 											}
 										}
@@ -204,7 +197,6 @@
 										"title": "OnCallServices",
 										"description": "List of teaching on call hours assigned in the section.",
 										"type": "array",
-										"additionalItems": false,
 										"items": {
 											"title": "AssignedOnCallService",
 											"description": "Call hour assigned in the timetable.",
@@ -235,12 +227,11 @@
 			}
 		}
     },
-    "definitions": {
+    "$defs": {
 		"refClassRomms": {
 			"title": "RefclassRomms",
 			"description": "List of classrooms assigned to teach the class unit.",
 			"type": "array",
-			"additionalItems": false,
 			"items": {
 				"title": "RefclassRomm",
 				"description": "Identifier of the classroom in the input file.",

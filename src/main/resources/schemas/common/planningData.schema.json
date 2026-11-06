@@ -1,5 +1,5 @@
 {
-    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
     "title": "PlanningGhcData",
     "description": "Schema of the object that contains the timetable planning data.",
     "type": "object",
@@ -23,7 +23,6 @@
                     "title": "PeriodsList",
                     "description": "List of periods.",
                     "type": "array",
-                    "additionalItems": false,
                     "items": {
                         "title": "Period",
                         "type": "object",
@@ -48,7 +47,6 @@
                                 "title": "AliasDayList",
                                 "description": "Alias for each day of the period. It is an optional definition.",
                                 "type": "array",
-                                "additionalItems": false,
                                 "items": {
                                     "title": "AliasDayDeifinition",
                                     "type": "object",
@@ -75,7 +73,6 @@
 				    "title": "PeriodsSets",
 				    "description": "List of sets of periods, which are groupings of multiple periods to make it easier to assign periods to sessions in batches, and many of them overlap by sharing several weeks in common.",
 				    "type": "array",
-				    "additionalItems": false,
 				    "items": {
 				        "title": "PeriodsSet",
 				        "type": "object",
@@ -105,7 +102,6 @@
             "title": "Frames",
             "description": "Tables of the timetable that contain sections where the class units are located.",
             "type": "array",
-            "additionalItems": false,
             "items": {
                 "title": "Frame",
                 "type": "object",
@@ -126,7 +122,6 @@
                         "title": "Days",
                         "description": "List of the days in the frame",
                         "type": "array",
-                        "additionalItems": false,
                         "items": {
                             "required": [
                                 "day",
@@ -144,7 +139,6 @@
                                     "title": "Sections",
                                     "description": "Timetable cells where class units are located.",
                                     "type": "array",
-                                    "additionalItems": false,
                                     "items": {
                                         "required": [
                                             "index",
@@ -206,7 +200,6 @@
             "title": "Buildings",
             "description": "It contains the school or educational institution buildings.",
             "type": "array",
-            "additionalItems": false,
             "items": {
                 "required": [
                     "id"
@@ -226,7 +219,6 @@
                         "title": "Distances",
                         "description": "Distance in minutes to another school building.",
                         "type": "array",
-                        "additionalItems": false,
                         "items": {
                             "title": "Distance",
                             "type": "object",
@@ -254,7 +246,6 @@
             "title": "ClassRooms",
             "description": "It contains the classrooms to organize the class units.",
             "type": "array",
-            "additionalItems": false,
             "items": {
                 "title": "Classroom",
                 "type": "object",
@@ -291,7 +282,6 @@
                         "description": "Template with only banned preferences.",
                         "$comment": "It is used when the element cannot have non-preferred sections.",
                         "type": "array",
-                        "additionalItems": false,
                         "items": {
                             "title": "BannedSectionPreference",
                             "description": "Template with only banned section assignment preference.",
@@ -333,7 +323,6 @@
             "title": "ClassRoomsSets",
             "description": "A division of the classrooms, grouped by organizational characteristics or needs.",
             "type": "array",
-            "additionalItems": false,
             "items": {
                 "title": "ClassRoomSet",
                 "type": "object",
@@ -350,7 +339,6 @@
                         "title": "ClassRoomEntries",
                         "description": "Classrooms identifiers which contain the group.",
                         "type": "array",
-                        "additionalItems": false,
                         "items": {
                             "title": "ClassRoomRef",
                             "description": "Classroom identifier.",
@@ -369,7 +357,6 @@
             "title": "Tasks",
             "description": "Types of tasks or activities for the teachers.",
             "type": "array",
-            "additionalItems": false,
             "items": {
                 "title": "Task",
                 "description": "Teacher activity type.",
@@ -383,7 +370,7 @@
                         "type": "string"
                     },
                     "frameTemplate": {
-                        "$ref": "#/definitions/frameTemplate"
+                        "$ref": "#/$defs/frameTemplate"
                     },
                     "fullName": {
                         "description": "Complete name of the task.",
@@ -404,7 +391,6 @@
             "title": "Teachers",
             "description": "Teachers list of the timetable.",
             "type": "array",
-            "additionalItems": false,
             "items": {
                 "title": "Teacher",
                 "description": "Object with personal information and teachers' preferences.",
@@ -441,7 +427,7 @@
                         "$comment": "The engine only process it into account when the SourceModule is 'je'"
                     },
                     "frameTemplate": {
-                        "$ref": "#/definitions/frameTemplate"
+                        "$ref": "#/$defs/frameTemplate"
                     },
                     "generalSettings": {
                         "title": "GeneralSettings",
@@ -449,37 +435,37 @@
                         "type": "object",
                         "properties": {
                             "weeklyStay": {
-                                "$ref": "#/definitions/weeklyStay"
+                                "$ref": "#/$defs/weeklyStay"
                             },
                             "dailyStay": {
-                                "$ref": "#/definitions/dailyStay"
+                                "$ref": "#/$defs/dailyStay"
                             },
                             "avoidGapsBetweenSesions": {
-                                "$ref": "#/definitions/avoidGapsBetweenSesions"
+                                "$ref": "#/$defs/avoidGapsBetweenSesions"
                             },
                             "maxContinuousTeaching": {
-                                "$ref": "#/definitions/maxContinuousTeaching"
+                                "$ref": "#/$defs/maxContinuousTeaching"
                             },
                             "avoidClassesAroundBreak": {
-                                "$ref": "#/definitions/avoidClassesAroundBreak"
+                                "$ref": "#/$defs/avoidClassesAroundBreak"
                             },
                             "freeTimes": {
-                                "$ref": "#/definitions/freeTimes"
+                                "$ref": "#/$defs/freeTimes"
                             },
                             "freePartTimes": {
-                                "$ref": "#/definitions/freePartTimes"
+                                "$ref": "#/$defs/freePartTimes"
                             },
                             "incompatibilities": {
-                                "$ref": "#/definitions/incompatibilities"
+                                "$ref": "#/$defs/incompatibilities"
                             },
                             "dailyOcupation": {
-                                "$ref": "#/definitions/dailyOcupation"
+                                "$ref": "#/$defs/dailyOcupation"
                             },
                             "middayReference": {
-                                "$ref": "#/definitions/middayReference"
+                                "$ref": "#/$defs/middayReference"
                             },
                             "dailyBuildingTransfers": {
-                                "$ref": "#/definitions/dailyBuildingTransfers"
+                                "$ref": "#/$defs/dailyBuildingTransfers"
                             }
                         },
                         "additionalProperties": false
@@ -488,7 +474,6 @@
                         "title": "PeriodsSettings",
                         "description": "Strict and measurable teacher's conditions customized by week/period",
                         "type": "array",
-                        "additionalItems": false,
                         "items": {
                             "title": "PeriodSetting",
                             "type": "object",
@@ -501,37 +486,37 @@
                                     "type": "string"
                                 },
                                 "weeklyStay": {
-                                    "$ref": "#/definitions/weeklyStay"
+                                    "$ref": "#/$defs/weeklyStay"
                                 },
                                 "dailyStay": {
-                                    "$ref": "#/definitions/dailyStay"
+                                    "$ref": "#/$defs/dailyStay"
                                 },
                                 "avoidGapsBetweenSesions": {
-                                    "$ref": "#/definitions/avoidGapsBetweenSesions"
+                                    "$ref": "#/$defs/avoidGapsBetweenSesions"
                                 },
                                 "maxContinuousTeaching": {
-                                    "$ref": "#/definitions/maxContinuousTeaching"
+                                    "$ref": "#/$defs/maxContinuousTeaching"
                                 },
                                 "avoidClassesAroundBreak": {
-                                    "$ref": "#/definitions/avoidClassesAroundBreak"
+                                    "$ref": "#/$defs/avoidClassesAroundBreak"
                                 },
                                 "freeTimes": {
-                                    "$ref": "#/definitions/freeTimes"
+                                    "$ref": "#/$defs/freeTimes"
                                 },
                                 "freePartTimes": {
-                                    "$ref": "#/definitions/freePartTimes"
+                                    "$ref": "#/$defs/freePartTimes"
                                 },
                                 "incompatibilities": {
-                                    "$ref": "#/definitions/incompatibilities"
+                                    "$ref": "#/$defs/incompatibilities"
                                 },
                                 "dailyOcupation": {
-                                    "$ref": "#/definitions/dailyOcupation"
+                                    "$ref": "#/$defs/dailyOcupation"
                                 },
                                 "middayReference": {
-                                    "$ref": "#/definitions/middayReference"
+                                    "$ref": "#/$defs/middayReference"
                                 },
                                 "dailyBuildingTransfers": {
-                                    "$ref": "#/definitions/dailyBuildingTransfers"
+                                    "$ref": "#/$defs/dailyBuildingTransfers"
                                 }
                             },
                             "additionalProperties": false
@@ -544,7 +529,6 @@
             "title": "Subjects",
             "description": "School subjects taught in the class units.",
             "type": "array",
-            "additionalItems": false,
             "items": {
                 "title": "Subject",
                 "type": "object",
@@ -595,16 +579,15 @@
                         "type": "string" 
                     },
                     "frameTemplate": {
-                        "$ref": "#/definitions/frameTemplate"
+                        "$ref": "#/$defs/frameTemplate"
                     }
                 }
             }
         },
         "groups": {
             "title": "Groups",
-            "description": "Sets of students.",
+            "description": "Sets of students. A group with includedGroups is considered a group set.",
             "type": "array",
-            "additionalItems": false,
             "items": {
                 "title": "Group",
                 "type": "object",
@@ -634,7 +617,7 @@
                         "type": "string"
                     },
                     "frameTemplate": {
-                        "$ref": "#/definitions/frameTemplate"
+                        "$ref": "#/$defs/frameTemplate"
                     },
                     "numStudents": {
                         "description": "Number of students in the group.",
@@ -645,7 +628,7 @@
                         "type": "integer"
                     },
                     "notGaps": {
-                        "$ref": "#/definitions/conditionType",
+                        "$ref": "#/$defs/conditionType",
                         "description": "It indicates if the group can have gaps in its timetable."
                     },
                     "gapsAlwaysInNonPreferred": {
@@ -657,9 +640,8 @@
                         "type": "string"
                     },
                     "includedGroups": {
-                        "description": "Allows to indicate its a circunstancial group, formed by oficial groups to recibe optional or main subjects.",
+                        "description": "Identifiers of the groups included in this group. A group that defines this property is considered a group set.",
                         "type": "array",
-                        "additionalItems": false,
                         "items": {
                             "title": "refGroups",
                             "description": "Groups identifier.",
@@ -682,11 +664,18 @@
                 }
             }
         },
+        "groupSetRelations": {
+            "title": "GroupSetRelations",
+            "description": "Relationships between group sets that indicate whether their included groups can be scheduled simultaneously.",
+            "type": "array",
+            "items": {
+                "$ref": "#/$defs/groupSetRelation"
+            }
+        },
         "courses": {
             "title": "Courses",
             "description": "Sets of courses.",
             "type": "array",
-            "additionalItems": false,
             "items": {
                 "title": "Course",
                 "type": "object",
@@ -735,7 +724,6 @@
             "title": "Departments",
             "description": "Sets of departments.",
             "type": "array",
-            "additionalItems": false,
             "items": {
                 "title": "Department",
                 "type": "object",
@@ -788,7 +776,6 @@
             "title": "Sessions",
             "description": "Definition of the teacher class units. These may be with groups of students, meetings with other teachers or complementary activities.",
             "type": "array",
-            "additionalItems": false,
             "items": {
                 "title": "Session",
                 "type": "object",
@@ -827,7 +814,7 @@
                         "type": "string"
                     },
                     "refMainGroup": {
-                        "$ref": "#/definitions/refGroup"
+                        "$ref": "#/$defs/refGroup"
                     },
                     "refColourInResult": {
                         "title": "RefColourInResult",
@@ -838,7 +825,6 @@
                         "title": "OtherElementsInClassRoomsList",
                         "description": "List of other time elements in the classroom related to each other.",
                         "type": "array",
-                        "additionalItems": false,
                         "items": {
                             "title": "OtherElementsInClassRooms",
                             "description": "It contains interrelated elements that are present in the session in addition to the main ones.",
@@ -856,7 +842,7 @@
                                     "type": "string"
                                 },
                                 "refGroup": {
-                                    "$ref": "#/definitions/refGroup"
+                                    "$ref": "#/$defs/refGroup"
                                 },
                                 "refTask": {
                                     "title": "TaskReference",
@@ -867,7 +853,7 @@
                         }
                     },
                     "distribution": {
-                        "$ref": "#/definitions/distribution"
+                        "$ref": "#/$defs/distribution"
                     },
                     "sessionClassRooms": {
                         "title": "SessionClassRooms",
@@ -881,9 +867,8 @@
                                 "title": "ClassRoomsToAssign",
                                 "description": "List of classrooms to the session. Each object in the list represent one classroom that must be assigned.",
                                 "type": "array",
-                                "additionalItems": false,
                                 "items": {
-                                    "$ref": "#/definitions/refClassRoomToAssign"
+                                    "$ref": "#/$defs/refClassRoomToAssign"
                                 }
                             },
                             "capacityPreference": {
@@ -912,7 +897,7 @@
                         "additionalProperties": false
                     },
                     "frameTemplate": {
-                        "$ref": "#/definitions/sessionFrameTemplate"
+                        "$ref": "#/$defs/sessionFrameTemplate"
                     },
                     "sessionSettings": {
                         "title": "SessionSettings",
@@ -980,7 +965,7 @@
                                 "default": false
                             },
                             "samePositionEveryPeriod": {
-                                "$ref": "#/definitions/samePositionEveryPeriod"
+                                "$ref": "#/$defs/samePositionEveryPeriod"
                             }
                         },
                         "additionalProperties": false
@@ -1008,7 +993,6 @@
                                         "description": " Sessions identifiers which class units should not be assigned on the same day.",
                                         "type": "array",
                                         "minItems": 1,
-                                        "additionalItems": false,
                                         "items": {
                                             "title": "SessionRef",
                                             "description": "Session identifier.",
@@ -1046,7 +1030,6 @@
                                         "description": "List of the consecutive sessions. Must contain the sesion itself and the proper order of continuity (see 'order' property).",
                                         "type": "array",
                                         "minItems": 1,
-                                        "additionalItems": false,
                                         "items": {
                                             "title": "SessionRef",
                                             "description": "Session identifier.",
@@ -1075,7 +1058,6 @@
                                 "description": "Identifiers of the sessions which class units must not be consecutive. This is a strict condition.",
                                 "type": "array",
                                 "minItems": 1,
-                                "additionalItems": false,
                                 "items": {
                                     "title": "SessionRef",
                                     "description": "Session identifier.",
@@ -1087,7 +1069,6 @@
                                 "description": "Identifiers of the sessions that they should not be assigned at the same time. It is a strict condition.",
                                 "type": "array",
                                 "minItems": 1,
-                                "additionalItems": false,
                                 "items": {
                                     "title": "SessionRef",
                                     "description": "Session identifier.",
@@ -1099,7 +1080,6 @@
                                 "description": "This indicates that this class unit must be allocated on a previous day to the class units in the list. This is a strict condition.",
                                 "type": "array",
                                 "minItems": 1,
-                                "additionalItems": false,
                                 "items": {
                                     "title": "SessionRef",
                                     "description": "Session identifier.",
@@ -1111,7 +1091,6 @@
                                 "description": "This indicates that this class unit must be allocated on a subsequent day to the class units in the list. This is a strict condition.",
                                 "type": "array",
                                 "minItems": 1,
-                                "additionalItems": false,
                                 "items": {
                                     "title": "SessionRef",
                                     "description": "Session identifier.",
@@ -1123,7 +1102,6 @@
                                 "description": "It contains class units to be taught within a maximum number of days of the current class units.",
                                 "type": "array",
                                 "minItems": 1,
-                                "additionalItems": false,
                                 "items": {
                                     "title": "MaximumSeparationToSession",
                                     "description": "It contains the session identifier of the class unit to be taught with a number of days in between, and maximum days.",
@@ -1138,7 +1116,6 @@
                                             "description": "List of sessions references.",
                                             "type": "array",
                                             "minItems": 1,
-                                            "additionalItems": false,
                                             "items": {
                                                 "title": "SessionRef",
                                                 "description": "Session identifier.",
@@ -1158,7 +1135,6 @@
                                 "description": "It contains class units that must be taught at least a minimum number of days apart from the current class unit. .",
                                 "type": "array",
                                 "minItems": 1,
-                                "additionalItems": false,
                                 "items": {
                                     "title": "MinimumSeparationToSession",
                                     "description": "It contains session identifier of the class unit to be taught with a number of days apart, and the minimum days.",
@@ -1173,7 +1149,6 @@
                                             "description": "List of sessions references.",
                                             "type": "array",
                                             "minItems": 1,
-                                            "additionalItems": false,
                                             "items": {
                                                 "title": "SessionRef",
                                                 "description": "Session identifier.",
@@ -1202,7 +1177,6 @@
             "title": "Meetings",
             "description": "List of meetings between teachers defined in the timetable.",
             "type": "array",
-            "additionalItems": false,
             "items": {
                 "title": "Meeting",
                 "description": "Sevice of meeting between teachers.",
@@ -1233,7 +1207,6 @@
                         "title": "RefTeachers",
                         "description": "List of teachers who in the service.",
                         "type": "array",
-                        "additionalItems": false,
                         "items": {
                             "title": "RefTeacher",
                             "description": "Teacher identifier.",
@@ -1245,13 +1218,13 @@
                         "type": "string" 
                     },
                     "distribution": {
-                        "$ref": "#/definitions/distribution"
+                        "$ref": "#/$defs/distribution"
                     },
                     "frameTemplate": {
-                        "$ref": "#/definitions/sessionFrameTemplate"
+                        "$ref": "#/$defs/sessionFrameTemplate"
                     },
                     "refClassRoomToAssign": {
-                        "$ref": "#/definitions/refClassRoomToAssign"
+                        "$ref": "#/$defs/refClassRoomToAssign"
                     },
                     "refBuilding": {
                         "description": "Building identifier of the building where the class unit takes place. This is used to know the moving time and the number of moves between buildings for teachers without specifying a classroom.",
@@ -1259,7 +1232,7 @@
                         "$comment": "It is incompatible with the other properties of 'sessionClassRooms' object."
                     },
                     "settings": {
-                        "$ref": "#/definitions/nonClassSessionSettings"
+                        "$ref": "#/$defs/nonClassSessionSettings"
                     }
                 }
             }
@@ -1268,7 +1241,6 @@
             "title": "ComplementaryActivities",
             "description": "List of complementary activities of the teachers.",
             "type": "array",
-            "additionalItems": false,
             "items": {
                 "title": "Complementary",
                 "description": "Service of teacher`s complementary activity.",
@@ -1305,13 +1277,13 @@
                         "type": "string" 
                     },
                     "distribution": {
-                        "$ref": "#/definitions/distribution"
+                        "$ref": "#/$defs/distribution"
                     },
                     "frameTemplate": {
-                        "$ref": "#/definitions/sessionFrameTemplate"
+                        "$ref": "#/$defs/sessionFrameTemplate"
                     },
                     "refClassRoomToAssign": {
-                        "$ref": "#/definitions/refClassRoomToAssign"
+                        "$ref": "#/$defs/refClassRoomToAssign"
                     },
                     "refBuilding": {
                         "description": "Building identifier of the building where the class unit takes place. This is used to know the moving time and the number of moves between buildings for teachers without specifying a classroom.",
@@ -1319,7 +1291,7 @@
                         "$comment": "It is incompatible with the other properties of 'sessionClassRooms' object."
                     },
                     "settings": {
-                        "$ref": "#/definitions/nonClassSessionSettings"
+                        "$ref": "#/$defs/nonClassSessionSettings"
                     }
                 }
             }
@@ -1328,7 +1300,6 @@
             "title": "OnCallServices",
             "description": "List of on-call services of teachers defined in the timetable.",
             "type": "array",
-            "additionalItems": false,
             "items": {
                 "title": "OnCallService",
                 "description": "On-call service of teachers who supervise the free time of students.",
@@ -1355,7 +1326,6 @@
                         "title": "RefPeriods",
                         "description": "List of Periods when the service must be set.",
                         "type": "array",
-                        "additionalItems": false,
                         "items": {
                             "title": "RefPeriod",
                             "description": "Period identifier.",
@@ -1385,7 +1355,6 @@
                                 "title": "TeachersBySections",
                                 "description": "Custom number of teachers in each section.",
                                 "type": "array",
-                                "additionalItems": false,
                                 "items": {
                                     "title": "TeachersBySection",
                                     "description": "Custom number of teachers in one timetable section.",
@@ -1419,7 +1388,6 @@
                         "title": "RefTeachersOnCall",
                         "description": "List of teachers who in the service.",
                         "type": "array",
-                        "additionalItems": false,
                         "items": {
                             "title": "RefTeacher",
                             "description": "It contains a teacher reference and the number of section oversight .",
@@ -1438,7 +1406,7 @@
                                     "default": 1
                                 },
                                 "teacherFrameTemplate": {
-                                    "$ref": "#/definitions/onCallServiceframeTemplate"
+                                    "$ref": "#/$defs/onCallServiceframeTemplate"
                                 }
                             },
                             "additionalProperties": false
@@ -1449,14 +1417,14 @@
                         "type": "string" 
                     },
                     "frameTemplate": {
-                        "$ref": "#/definitions/onCallServiceframeTemplate"
+                        "$ref": "#/$defs/onCallServiceframeTemplate"
                     },
                     "refBuilding": {
                         "description": "Identifier of the building where the service is located. It is used to know the transfer time and the number of transfers between buildings for teachers.",
                         "type": "string"
                     },
                     "settings": {
-                        "$ref": "#/definitions/nonClassSessionSettings"
+                        "$ref": "#/$defs/nonClassSessionSettings"
                     }
                 },
                 "additionalProperties": false
@@ -1621,7 +1589,7 @@
             "additionalProperties": false
         }
     },
-    "definitions": {
+    "$defs": {
         "conditionType": {
             "title": "ConditionType",
             "description": "Indicate whether the incompatibility is strict, avoid (penalisable in optimisation) or ignored.",
@@ -1642,7 +1610,7 @@
             ],
             "properties": {
                 "type": {
-                    "$ref": "#/definitions/conditionType"
+                    "$ref": "#/$defs/conditionType"
                 },
                 "minutes": {
                     "description": "Custom time in minutes for condition.",
@@ -1656,7 +1624,7 @@
             "type": "object",
             "properties": {
                 "type": {
-                    "$ref": "#/definitions/conditionType"
+                    "$ref": "#/$defs/conditionType"
                 },
                 "minutes": {
                     "description": "Custom total time in minutes for the ocupancy.",
@@ -1676,7 +1644,6 @@
             "title": "FrameTemplate",
             "description": "Templates with frame sections assignment preferences.",
             "type": "array",
-            "additionalItems": false,
             "items": {
                 "title": "SectionPreference",
                 "description": "Template with a section assignment preference.",
@@ -1717,7 +1684,6 @@
             "description": "Complete template of preferences.",
             "$comment": "It have non-preferred sections.",
             "type": "array",
-            "additionalItems": false,
             "items": {
                 "title": "SessionSectionPreference",
                 "description": "Section assignment preference.",
@@ -1758,7 +1724,6 @@
             "title": "OnCallTemplate",
             "description": "Template with teacher's preferences in the on-call service.",
             "type": "array",
-            "additionalItems": false,
             "items": {
                 "title": "OnCallSectionPreference",
                 "description": "Template with a teacher section assignment preference about the service.",
@@ -1847,7 +1812,7 @@
             "type": "object",
             "properties": {
                 "type": {
-                    "$ref": "#/definitions/conditionType"
+                    "$ref": "#/$defs/conditionType"
                 },
                 "minutes": {
                     "description": "Maximum continuous teaching time in minutes.",
@@ -1862,7 +1827,7 @@
             "additionalProperties": false
         },
         "avoidClassesAroundBreak": {
-            "$ref": "#/definitions/conditionType",
+            "$ref": "#/$defs/conditionType",
             "description": "It indicates whether the existence of class units on both sides of a playground supervision taught by this teacher will be penalised or forbidden.",
             "default": "ignore"
         },
@@ -2024,17 +1989,17 @@
                 "freeTimeBetweenDayBeforeAndCurrent": {
                     "title": "FreeTimeBetweenDays",
                     "description": "Minutes between departure and arrival of the following day.",
-                    "$ref": "#/definitions/conditionTypeWithTime"
+                    "$ref": "#/$defs/conditionTypeWithTime"
                 },
                 "freeTimeBetweenEndWeekAndStartWeekDays": {
                     "title": "FreeTimeBetweenWeeksBorders",
                     "description": "Minutes between the end time of the last day of the week and the start time of the following week.",
-                    "$ref": "#/definitions/conditionTypeWithTime"
+                    "$ref": "#/$defs/conditionTypeWithTime"
                 },
                 "freeTimeFirstOrLastHoursDay": {
                     "title": "FreeTimeFirstOrLastHoursDay",
                     "description": "Minutes of free time at first or last hours of the day.",
-                    "$ref": "#/definitions/conditionTypeWithTime"
+                    "$ref": "#/$defs/conditionTypeWithTime"
                 },
                 "doNotFinishAtLastAfternoonSectionIfStartedAtFirstAfternoonSection": {
                     "title": "DoNotFinishAtLastAfternoonSection",
@@ -2084,7 +2049,7 @@
                 "freeTimeAroundMidday": {
                     "title": "FreeTimeAroundMidday",
                     "description": "Do not have less than a custom free time around noon pause.",
-                    "$ref": "#/definitions/conditionTypeWithTime"
+                    "$ref": "#/$defs/conditionTypeWithTime"
                 }
             },
             "additionalProperties": false
@@ -2101,22 +2066,22 @@
                 "minimumTeaching": {
                     "title": "MinimumTeaching",
                     "description": "Minimum teaching time of the teacher with students.",
-                    "$ref": "#/definitions/conditionOcupancy"
+                    "$ref": "#/$defs/conditionOcupancy"
                 },
                 "maximumTeaching": {
                     "title": "MaximumTeaching",
                     "description": "Maximun teaching time of the teacher with students.",
-                    "$ref": "#/definitions/conditionOcupancy"
+                    "$ref": "#/$defs/conditionOcupancy"
                 },
                 "minimumOccupancy": {
                     "title": "MinimumOccupancy",
                     "description": "Minimum teaching time of the teacher with students and other non-teaching activities indicated as eligible for calculation.",
-                    "$ref": "#/definitions/conditionOcupancy"
+                    "$ref": "#/$defs/conditionOcupancy"
                 },
                 "maximumOccupancy": {
                     "title": "MaximumOccupancy",
                     "description": "Maximum teaching time of the teacher with students and other non-teaching activities indicated as eligible for calculation.",
-                    "$ref": "#/definitions/conditionOcupancy"
+                    "$ref": "#/$defs/conditionOcupancy"
                 }
             },
             "additionalProperties": false
@@ -2154,6 +2119,68 @@
             },
             "additionalProperties": false
         },
+        "groupSetRelation": {
+            "title": "GroupSetRelation",
+            "description": "Relationship between group sets represented by Group objects with includedGroups.",
+            "type": "object",
+            "required": [
+                "id",
+                "expression"
+            ],
+            "properties": {
+                "id": {
+                    "description": "Group set relationship identifier.",
+                    "type": "integer"
+                },
+                "alias": {
+                    "description": "Optional name used to identify the group set relationship.",
+                    "type": "string"
+                },
+                "expression": {
+                    "$ref": "#/$defs/groupSetRelationExpression"
+                }
+            },
+            "additionalProperties": false
+        },
+        "groupSetRelationExpression": {
+            "title": "GroupSetRelationExpression",
+            "description": "Expression that indicates whether its referenced group sets or nested expressions can be scheduled simultaneously.",
+            "type": "object",
+            "required": [
+                "operator"
+            ],
+            "minProperties": 2,
+            "properties": {
+                "operator": {
+                    "description": "Relationship between the referenced group sets. COMPATIBLE allows their included groups to be scheduled simultaneously; EXCLUSIVE prevents them from coinciding.",
+                    "enum": [
+                        "COMPATIBLE",
+                        "EXCLUSIVE"
+                    ]
+                },
+                "refGroupSet": {
+                    "title": "GroupSetRelationMembers",
+                    "description": "List of group set identifiers.",
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "title": "GroupSetReference",
+                        "description": "Identifier of a Group that represents a group set through its includedGroups property.",
+                        "type": "string"
+                    }
+                },
+                "nestedRelationExpressions": {
+                    "title": "NestedRelationExpressions",
+                    "description": "Nested expressions that relate other group sets or group set relationship expressions.",
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "$ref": "#/$defs/groupSetRelationExpression"
+                    }
+                }
+            },
+            "additionalProperties": false
+        },
         "refGroup": {
             "title": "GroupReferenceType",
             "description": "Contains the reference to a group of the session, and optionally, the number of students of the group that attend the session.",
@@ -2176,7 +2203,6 @@
             "title": "StableTiming",
             "description": "It contains the fixed way of allocating time across the days of the period.",
             "type": "array",
-            "additionalItems": false,
             "items": {
                 "title": "DailyMinutes",
                 "description": "Indicates the number of minutes to be allocated on a given day.",
@@ -2233,7 +2259,6 @@
                     "title": "RefPeriods",
                     "description": "List of periods or weeks in which the class unit must be assigned.",
                     "type": "array",
-                    "additionalItems": false,
                     "items": {
                         "title": "RefPeriod",
                         "description": "Period identifier.",
@@ -2247,18 +2272,17 @@
                     "$comment": "Only one property must be specified.",
                     "properties": {
                         "stableTiming": {
-                            "$ref": "#/definitions/stableTiming"
+                            "$ref": "#/$defs/stableTiming"
                         },
                         "variableTiming": {
-                            "$ref": "#/definitions/variableTiming"
+                            "$ref": "#/$defs/variableTiming"
                         },
                         "stableTimingList": {
                             "title": "StableTimingList",
                             "description": "It contains an array of 'StableTiming' distributions.",
                             "type": "array",
-                            "additionalItems": false,
                             "items": {
-                                "$ref": "#/definitions/stableTiming"
+                                "$ref": "#/$defs/stableTiming"
                             }
                         }
                     },
@@ -2280,10 +2304,10 @@
                             "$comment": "Only one property must be specified.",
                             "properties": {
                                 "stableTiming": {
-                                    "$ref": "#/definitions/stableTiming"
+                                    "$ref": "#/$defs/stableTiming"
                                 },
                                 "variableTiming": {
-                                    "$ref": "#/definitions/variableTiming"
+                                    "$ref": "#/$defs/variableTiming"
                                 }
                             }
                         },
@@ -2333,7 +2357,6 @@
                     "title": "ClassRoomsSetsList",
                     "description": "Classroom set list where one classroom could be taken to assign to session.",
                     "type": "array",
-                    "additionalItems": false,
                     "items": {
                         "title": "ClassRoomSetRef",
                         "description": "Classroom set identifier.",
@@ -2354,7 +2377,7 @@
                     "default": false
                 },
                 "samePositionEveryPeriod": {
-                    "$ref": "#/definitions/samePositionEveryPeriod"
+                    "$ref": "#/$defs/samePositionEveryPeriod"
                 }
             },
             "additionalProperties": false

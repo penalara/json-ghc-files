@@ -72,7 +72,6 @@
 			"title": "Specifications",
 			"description": "List of specification versions of the scheduling plan and the results associated with each one, if it has been resolved by the ghc engine.",
 			"type": "array",
-			"additionalItems": false,
 			"items": {
 				"title": "PlannerSpecification",
 				"description": "GHC scheduling plan specification, which may or may not contain results depending on whether it was executed in the ghc engine.",
@@ -99,7 +98,6 @@
 						"title": "EngineResults",
 						"description": "Tables of the timetable that contain sections where the class units are located.",
 						"type": "array",
-						"additionalItems": false,
 						"items": {
 							"title": "EngineResult",
 							"description": "GHC engine result from specification.",

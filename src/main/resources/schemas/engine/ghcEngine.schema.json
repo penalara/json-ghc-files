@@ -71,14 +71,12 @@
 		},
 		"planningData": {
 		   "$ref":"../common/planningData.schema.json",
-           "type": "object",
-           "required": true			
+           "type": "object"
 		},
 		"results": {
 			"title": "EngineResults",
 			"description": "Tables of the timetable that contain sections where the class units are located.",
 			"type": "array",
-			"additionalItems": false,
 			"items": {
 				"title": "EngineResult",
 				"description": "GHC engine result from specification.",
