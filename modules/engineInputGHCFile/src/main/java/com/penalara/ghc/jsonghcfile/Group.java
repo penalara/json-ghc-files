@@ -150,7 +150,7 @@ public class Group {
      */
     @JsonProperty("refClassRoomSetsList")
     @JsonPropertyDescription("List of classroom sets assigned to the group.")
-    private List<Object> refClassRoomSetsList = new ArrayList<Object>();
+    private List<String> refClassRoomSetsList = new ArrayList<String>();
     @JsonIgnore
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
 
@@ -423,7 +423,7 @@ public class Group {
      * 
      */
     @JsonProperty("refClassRoomSetsList")
-    public List<Object> getRefClassRoomSetsList() {
+    public List<String> getRefClassRoomSetsList() {
         return refClassRoomSetsList;
     }
 
@@ -432,7 +432,7 @@ public class Group {
      * 
      */
     @JsonProperty("refClassRoomSetsList")
-    public void setRefClassRoomSetsList(List<Object> refClassRoomSetsList) {
+    public void setRefClassRoomSetsList(List<String> refClassRoomSetsList) {
         this.refClassRoomSetsList = refClassRoomSetsList;
     }
 

@@ -94,7 +94,7 @@ public class Subject {
      */
     @JsonProperty("refClassRoomSetsList")
     @JsonPropertyDescription("List of alternative classroom sets assigned to schedule the subject.")
-    private List<Object> refClassRoomSetsList = new ArrayList<Object>();
+    private List<String> refClassRoomSetsList = new ArrayList<String>();
     /**
      * Colour code used to represent the subject in the result.
      * 
@@ -247,7 +247,7 @@ public class Subject {
      * 
      */
     @JsonProperty("refClassRoomSetsList")
-    public List<Object> getRefClassRoomSetsList() {
+    public List<String> getRefClassRoomSetsList() {
         return refClassRoomSetsList;
     }
 
@@ -256,7 +256,7 @@ public class Subject {
      * 
      */
     @JsonProperty("refClassRoomSetsList")
-    public void setRefClassRoomSetsList(List<Object> refClassRoomSetsList) {
+    public void setRefClassRoomSetsList(List<String> refClassRoomSetsList) {
         this.refClassRoomSetsList = refClassRoomSetsList;
     }
 
