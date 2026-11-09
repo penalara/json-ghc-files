@@ -552,6 +552,11 @@
                         "description": "External key of the subject",
                         "type": "string"
                     },
+					"isStudentMentoring": {
+					    "description": "Indicates whether the subject is a tutoring session with students",
+					    "type": "boolean",
+					    "default": false
+					},
                     "technicalTeacher": {
                         "description": "It indicates whether the subject is teach by technical teacher.",
                         "type": "boolean",
