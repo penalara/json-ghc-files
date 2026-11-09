@@ -11,11 +11,11 @@
         - [1.2.1.4.1. PlanningGhcData > periods > periodsList > Period > dayAliases > AliasDayDeifinition](#periods_periodsList_items_dayAliases_items)
           - [1.2.1.4.1.1. Property `PlanningGhcData > periods > periodsList > Period > dayAliases > AliasDayDeifinition > dayId`](#periods_periodsList_items_dayAliases_items_dayId)
           - [1.2.1.4.1.2. Property `PlanningGhcData > periods > periodsList > Period > dayAliases > AliasDayDeifinition > alias`](#periods_periodsList_items_dayAliases_items_alias)
-  - [1.3. Property `PlanningGhcData > periods > periodSets`](#periods_periodSets)
-    - [1.3.1. PlanningGhcData > periods > periodSets > PeriodsSet](#periods_periodSets_items)
-      - [1.3.1.1. Property `PlanningGhcData > periods > periodSets > PeriodsSet > id`](#periods_periodSets_items_id)
-      - [1.3.1.2. Property `PlanningGhcData > periods > periodSets > PeriodsSet > periodList`](#periods_periodSets_items_periodList)
-        - [1.3.1.2.1. PlanningGhcData > periods > periodSets > PeriodsSet > periodList > periodList items](#periods_periodSets_items_periodList_items)
+  - [1.3. Property `PlanningGhcData > periods > periodsSets`](#periods_periodsSets)
+    - [1.3.1. PlanningGhcData > periods > periodsSets > PeriodsSet](#periods_periodsSets_items)
+      - [1.3.1.1. Property `PlanningGhcData > periods > periodsSets > PeriodsSet > id`](#periods_periodsSets_items_id)
+      - [1.3.1.2. Property `PlanningGhcData > periods > periodsSets > PeriodsSet > periodList`](#periods_periodsSets_items_periodList)
+        - [1.3.1.2.1. PlanningGhcData > periods > periodsSets > PeriodsSet > periodList > periodList items](#periods_periodsSets_items_periodList_items)
 - [2. Property `PlanningGhcData > frames`](#frames)
   - [2.1. PlanningGhcData > frames > Frame](#frames_items)
     - [2.1.1. Property `PlanningGhcData > frames > Frame > id`](#frames_items_id)
@@ -169,34 +169,33 @@
       - [7.1.8.11. Property `PlanningGhcData > teachers > Teacher > generalSettings > dailyBuildingTransfers`](#teachers_items_generalSettings_dailyBuildingTransfers)
         - [7.1.8.11.1. Property `PlanningGhcData > teachers > Teacher > generalSettings > dailyBuildingTransfers > strict`](#teachers_items_generalSettings_dailyBuildingTransfers_strict)
         - [7.1.8.11.2. Property `PlanningGhcData > teachers > Teacher > generalSettings > dailyBuildingTransfers > preferable`](#teachers_items_generalSettings_dailyBuildingTransfers_preferable)
-    - [7.1.9. Property `PlanningGhcData > teachers > Teacher > periodSettings`](#teachers_items_periodSettings)
-      - [7.1.9.1. PlanningGhcData > teachers > Teacher > periodSettings > PeriodSetting](#teachers_items_periodSettings_items)
-        - [7.1.9.1.1. Property `PlanningGhcData > teachers > Teacher > periodSettings > PeriodSetting > refPeriod`](#teachers_items_periodSettings_items_refPeriod)
-        - [7.1.9.1.2. Property `PlanningGhcData > teachers > Teacher > periodSettings > PeriodSetting > weeklyStay`](#teachers_items_periodSettings_items_weeklyStay)
-        - [7.1.9.1.3. Property `PlanningGhcData > teachers > Teacher > periodSettings > PeriodSetting > dailyStay`](#teachers_items_periodSettings_items_dailyStay)
-        - [7.1.9.1.4. Property `PlanningGhcData > teachers > Teacher > periodSettings > PeriodSetting > avoidGapsBetweenSesions`](#teachers_items_periodSettings_items_avoidGapsBetweenSesions)
-        - [7.1.9.1.5. Property `PlanningGhcData > teachers > Teacher > periodSettings > PeriodSetting > maxContinuousTeaching`](#teachers_items_periodSettings_items_maxContinuousTeaching)
-        - [7.1.9.1.6. Property `PlanningGhcData > teachers > Teacher > periodSettings > PeriodSetting > avoidClassesAroundBreak`](#teachers_items_periodSettings_items_avoidClassesAroundBreak)
-        - [7.1.9.1.7. Property `PlanningGhcData > teachers > Teacher > periodSettings > PeriodSetting > freeTimes`](#teachers_items_periodSettings_items_freeTimes)
-        - [7.1.9.1.8. Property `PlanningGhcData > teachers > Teacher > periodSettings > PeriodSetting > freePartTimes`](#teachers_items_periodSettings_items_freePartTimes)
-        - [7.1.9.1.9. Property `PlanningGhcData > teachers > Teacher > periodSettings > PeriodSetting > incompatibilities`](#teachers_items_periodSettings_items_incompatibilities)
-        - [7.1.9.1.10. Property `PlanningGhcData > teachers > Teacher > periodSettings > PeriodSetting > dailyOcupation`](#teachers_items_periodSettings_items_dailyOcupation)
-        - [7.1.9.1.11. Property `PlanningGhcData > teachers > Teacher > periodSettings > PeriodSetting > middayReference`](#teachers_items_periodSettings_items_middayReference)
-        - [7.1.9.1.12. Property `PlanningGhcData > teachers > Teacher > periodSettings > PeriodSetting > dailyBuildingTransfers`](#teachers_items_periodSettings_items_dailyBuildingTransfers)
+    - [7.1.9. Property `PlanningGhcData > teachers > Teacher > periodsSettings`](#teachers_items_periodsSettings)
+      - [7.1.9.1. PlanningGhcData > teachers > Teacher > periodsSettings > PeriodsSetting](#teachers_items_periodsSettings_items)
+        - [7.1.9.1.1. Property `PlanningGhcData > teachers > Teacher > periodsSettings > PeriodsSetting > refPeriod`](#teachers_items_periodsSettings_items_refPeriod)
+        - [7.1.9.1.2. Property `PlanningGhcData > teachers > Teacher > periodsSettings > PeriodsSetting > weeklyStay`](#teachers_items_periodsSettings_items_weeklyStay)
+        - [7.1.9.1.3. Property `PlanningGhcData > teachers > Teacher > periodsSettings > PeriodsSetting > dailyStay`](#teachers_items_periodsSettings_items_dailyStay)
+        - [7.1.9.1.4. Property `PlanningGhcData > teachers > Teacher > periodsSettings > PeriodsSetting > avoidGapsBetweenSesions`](#teachers_items_periodsSettings_items_avoidGapsBetweenSesions)
+        - [7.1.9.1.5. Property `PlanningGhcData > teachers > Teacher > periodsSettings > PeriodsSetting > maxContinuousTeaching`](#teachers_items_periodsSettings_items_maxContinuousTeaching)
+        - [7.1.9.1.6. Property `PlanningGhcData > teachers > Teacher > periodsSettings > PeriodsSetting > avoidClassesAroundBreak`](#teachers_items_periodsSettings_items_avoidClassesAroundBreak)
+        - [7.1.9.1.7. Property `PlanningGhcData > teachers > Teacher > periodsSettings > PeriodsSetting > freeTimes`](#teachers_items_periodsSettings_items_freeTimes)
+        - [7.1.9.1.8. Property `PlanningGhcData > teachers > Teacher > periodsSettings > PeriodsSetting > freePartTimes`](#teachers_items_periodsSettings_items_freePartTimes)
+        - [7.1.9.1.9. Property `PlanningGhcData > teachers > Teacher > periodsSettings > PeriodsSetting > incompatibilities`](#teachers_items_periodsSettings_items_incompatibilities)
+        - [7.1.9.1.10. Property `PlanningGhcData > teachers > Teacher > periodsSettings > PeriodsSetting > dailyOcupation`](#teachers_items_periodsSettings_items_dailyOcupation)
+        - [7.1.9.1.11. Property `PlanningGhcData > teachers > Teacher > periodsSettings > PeriodsSetting > middayReference`](#teachers_items_periodsSettings_items_middayReference)
+        - [7.1.9.1.12. Property `PlanningGhcData > teachers > Teacher > periodsSettings > PeriodsSetting > dailyBuildingTransfers`](#teachers_items_periodsSettings_items_dailyBuildingTransfers)
 - [8. Property `PlanningGhcData > subjects`](#subjects)
   - [8.1. PlanningGhcData > subjects > Subject](#subjects_items)
     - [8.1.1. Property `PlanningGhcData > subjects > Subject > id`](#subjects_items_id)
     - [8.1.2. Property `PlanningGhcData > subjects > Subject > shortName`](#subjects_items_shortName)
     - [8.1.3. Property `PlanningGhcData > subjects > Subject > fullName`](#subjects_items_fullName)
     - [8.1.4. Property `PlanningGhcData > subjects > Subject > exKey`](#subjects_items_exKey)
-    - [8.1.5. Property `PlanningGhcData > subjects > Subject > isStudentMentoring`](#subjects_items_isStudentMentoring)
-    - [8.1.6. Property `PlanningGhcData > subjects > Subject > technicalTeacher`](#subjects_items_technicalTeacher)
-    - [8.1.7. Property `PlanningGhcData > subjects > Subject > type`](#subjects_items_type)
-    - [8.1.8. Property `PlanningGhcData > subjects > Subject > refClassroom`](#subjects_items_refClassroom)
-    - [8.1.9. Property `PlanningGhcData > subjects > Subject > refClassRoomSetsList`](#subjects_items_refClassRoomSetsList)
-      - [8.1.9.1. PlanningGhcData > subjects > Subject > refClassRoomSetsList > ClassRoomSetRef](#subjects_items_refClassRoomSetsList_items)
-    - [8.1.10. Property `PlanningGhcData > subjects > Subject > refColourInResult`](#subjects_items_refColourInResult)
-    - [8.1.11. Property `PlanningGhcData > subjects > Subject > frameTemplate`](#subjects_items_frameTemplate)
+    - [8.1.5. Property `PlanningGhcData > subjects > Subject > technicalTeacher`](#subjects_items_technicalTeacher)
+    - [8.1.6. Property `PlanningGhcData > subjects > Subject > type`](#subjects_items_type)
+    - [8.1.7. Property `PlanningGhcData > subjects > Subject > refClassroom`](#subjects_items_refClassroom)
+    - [8.1.8. Property `PlanningGhcData > subjects > Subject > refClassRoomSetsList`](#subjects_items_refClassRoomSetsList)
+      - [8.1.8.1. PlanningGhcData > subjects > Subject > refClassRoomSetsList > ClassRoomSetRef](#subjects_items_refClassRoomSetsList_items)
+    - [8.1.9. Property `PlanningGhcData > subjects > Subject > refColourInResult`](#subjects_items_refColourInResult)
+    - [8.1.10. Property `PlanningGhcData > subjects > Subject > frameTemplate`](#subjects_items_frameTemplate)
 - [9. Property `PlanningGhcData > groups`](#groups)
   - [9.1. PlanningGhcData > groups > Group](#groups_items)
     - [9.1.1. Property `PlanningGhcData > groups > Group > id`](#groups_items_id)
@@ -431,11 +430,11 @@
 
 **Title:** PlanningGhcData
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 **Description:** Schema of the object that contains the timetable planning data.
 
@@ -476,7 +475,7 @@
 | ---------------------------------------------- | ------- | --------------- | ---------- | ---------- | ----------------- |
 | - [followedPeriods](#periods_followedPeriods ) | No      | boolean         | No         | -          | FollowedPeriods   |
 | + [periodsList](#periods_periodsList )         | No      | array of object | No         | -          | PeriodsList       |
-| - [periodSets](#periods_periodSets )           | No      | array of object | No         | -          | PeriodsSets       |
+| - [periodsSets](#periods_periodsSets )         | No      | array of object | No         | -          | PeriodsSets       |
 
 ### <a name="periods_followedPeriods"></a>1.1. Property `PlanningGhcData > periods > followedPeriods`
 
@@ -517,11 +516,11 @@
 
 **Title:** Period
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 | Property                                               | Pattern | Type            | Deprecated | Definition | Title/Description                                                                                                                                                                              |
 | ------------------------------------------------------ | ------- | --------------- | ---------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -584,11 +583,11 @@
 
 **Title:** AliasDayDeifinition
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 | Property                                                      | Pattern | Type    | Deprecated | Definition | Title/Description                                                     |
 | ------------------------------------------------------------- | ------- | ------- | ---------- | ---------- | --------------------------------------------------------------------- |
@@ -613,7 +612,7 @@
 
 **Description:** Header to identify the day in the results table and the frame column.
 
-### <a name="periods_periodSets"></a>1.3. Property `PlanningGhcData > periods > periodSets`
+### <a name="periods_periodsSets"></a>1.3. Property `PlanningGhcData > periods > periodsSets`
 
 **Title:** PeriodsSets
 
@@ -632,26 +631,26 @@
 | **Additional items** | False              |
 | **Tuple validation** | See below          |
 
-| Each item of this array must be         | Description |
-| --------------------------------------- | ----------- |
-| [PeriodsSet](#periods_periodSets_items) | -           |
+| Each item of this array must be          | Description |
+| ---------------------------------------- | ----------- |
+| [PeriodsSet](#periods_periodsSets_items) | -           |
 
-#### <a name="periods_periodSets_items"></a>1.3.1. PlanningGhcData > periods > periodSets > PeriodsSet
+#### <a name="periods_periodsSets_items"></a>1.3.1. PlanningGhcData > periods > periodsSets > PeriodsSet
 
 **Title:** PeriodsSet
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
-| Property                                              | Pattern | Type            | Deprecated | Definition | Title/Description                                        |
-| ----------------------------------------------------- | ------- | --------------- | ---------- | ---------- | -------------------------------------------------------- |
-| + [id](#periods_periodSets_items_id )                 | No      | string          | No         | -          | Period identifier.                                       |
-| + [periodList](#periods_periodSets_items_periodList ) | No      | array of string | No         | -          | List of identifiers of the weeks that belong to the set. |
+| Property                                               | Pattern | Type            | Deprecated | Definition | Title/Description                                        |
+| ------------------------------------------------------ | ------- | --------------- | ---------- | ---------- | -------------------------------------------------------- |
+| + [id](#periods_periodsSets_items_id )                 | No      | string          | No         | -          | Period identifier.                                       |
+| + [periodList](#periods_periodsSets_items_periodList ) | No      | array of string | No         | -          | List of identifiers of the weeks that belong to the set. |
 
-##### <a name="periods_periodSets_items_id"></a>1.3.1.1. Property `PlanningGhcData > periods > periodSets > PeriodsSet > id`
+##### <a name="periods_periodsSets_items_id"></a>1.3.1.1. Property `PlanningGhcData > periods > periodsSets > PeriodsSet > id`
 
 |              |          |
 | ------------ | -------- |
@@ -660,7 +659,7 @@
 
 **Description:** Period identifier.
 
-##### <a name="periods_periodSets_items_periodList"></a>1.3.1.2. Property `PlanningGhcData > periods > periodSets > PeriodsSet > periodList`
+##### <a name="periods_periodsSets_items_periodList"></a>1.3.1.2. Property `PlanningGhcData > periods > periodsSets > PeriodsSet > periodList`
 
 |              |                   |
 | ------------ | ----------------- |
@@ -677,11 +676,11 @@
 | **Additional items** | False              |
 | **Tuple validation** | See below          |
 
-| Each item of this array must be                                | Description |
-| -------------------------------------------------------------- | ----------- |
-| [periodList items](#periods_periodSets_items_periodList_items) | -           |
+| Each item of this array must be                                 | Description |
+| --------------------------------------------------------------- | ----------- |
+| [periodList items](#periods_periodsSets_items_periodList_items) | -           |
 
-###### <a name="periods_periodSets_items_periodList_items"></a>1.3.1.2.1. PlanningGhcData > periods > periodSets > PeriodsSet > periodList > periodList items
+###### <a name="periods_periodsSets_items_periodList_items"></a>1.3.1.2.1. PlanningGhcData > periods > periodsSets > PeriodsSet > periodList > periodList items
 
 |              |          |
 | ------------ | -------- |
@@ -715,11 +714,11 @@
 
 **Title:** Frame
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 | Property                        | Pattern | Type            | Deprecated | Definition | Title/Description          |
 | ------------------------------- | ------- | --------------- | ---------- | ---------- | -------------------------- |
@@ -772,11 +771,11 @@
 
 **Title:** FrameDay
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 **Description:** Day with its sections.
 
@@ -821,11 +820,11 @@
 
 **Title:** Section
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 | Property                                                          | Pattern | Type             | Deprecated | Definition | Title/Description                                                           |
 | ----------------------------------------------------------------- | ------- | ---------------- | ---------- | ---------- | --------------------------------------------------------------------------- |
@@ -937,11 +936,11 @@ Must be one of:
 
 **Title:** Building
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 | Property                                   | Pattern | Type            | Deprecated | Definition | Title/Description    |
 | ------------------------------------------ | ------- | --------------- | ---------- | ---------- | -------------------- |
@@ -1050,11 +1049,11 @@ Must be one of:
 
 **Title:** Classroom
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 | Property                                            | Pattern | Type            | Deprecated | Definition | Title/Description                                                                               |
 | --------------------------------------------------- | ------- | --------------- | ---------- | ---------- | ----------------------------------------------------------------------------------------------- |
@@ -1149,11 +1148,11 @@ Must be one of:
 
 **Title:** BannedSectionPreference
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 **Description:** Template with only banned section assignment preference.
 
@@ -1236,11 +1235,11 @@ Must be one of:
 
 **Title:** ClassRoomSet
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 | Property                                                  | Pattern | Type            | Deprecated | Definition | Title/Description                                                  |
 | --------------------------------------------------------- | ------- | --------------- | ---------- | ---------- | ------------------------------------------------------------------ |
@@ -1328,11 +1327,11 @@ Must be one of:
 
 **Title:** Task
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 **Description:** Teacher activity type.
 
@@ -1381,11 +1380,11 @@ Must be one of:
 
 **Title:** SectionPreference
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 **Description:** Template with a section assignment preference.
 
@@ -1493,11 +1492,11 @@ Must be one of:
 
 **Title:** Teacher
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 **Description:** Object with personal information and teachers' preferences.
 
@@ -1511,7 +1510,7 @@ Must be one of:
 | - [overlappedAssessment](#teachers_items_overlappedAssessment )   | No      | integer         | No         | -                                                    | Number of overlapped evaluation sessions.                                                                                                            |
 | - [frameTemplate](#teachers_items_frameTemplate )                 | No      | array of object | No         | Same as [frameTemplate](#tasks_items_frameTemplate ) | FrameTemplate                                                                                                                                        |
 | - [generalSettings](#teachers_items_generalSettings )             | No      | object          | No         | -                                                    | GeneralSettings                                                                                                                                      |
-| - [periodSettings](#teachers_items_periodSettings )               | No      | array of object | No         | -                                                    | PeriodsSettings                                                                                                                                      |
+| - [periodsSettings](#teachers_items_periodsSettings )             | No      | array of object | No         | -                                                    | PeriodsSettings                                                                                                                                      |
 
 #### <a name="teachers_items_id"></a>7.1.1. Property `PlanningGhcData > teachers > Teacher > id`
 
@@ -1811,11 +1810,11 @@ Must be one of:
 
 **Title:** FullDaysFreeTimes
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 **Description:** Teacher's full days of free time.
 
@@ -1848,11 +1847,11 @@ Must be one of:
 
 **Title:** FirstMinutesFreeTimes
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 **Description:** Teacher's free intervals at the beginning of the day.
 
@@ -1895,11 +1894,11 @@ Must be one of:
 
 **Title:** LastMinutesFreeTimes
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 **Description:** Teacher's free intervals at the end of the day.
 
@@ -1942,11 +1941,11 @@ Must be one of:
 
 **Title:** ConsecutiveAnyTimeFreeTimes
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 **Description:** Teacher's free intervals at any time of the day.
 
@@ -2008,11 +2007,11 @@ Must be one of:
 
 **Title:** MorningsFreePartTimes
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 **Description:** Mornings off.
 
@@ -2043,11 +2042,11 @@ Must be one of:
 
 **Title:** AfternoonFreePartTimes
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 **Description:** Afternoons off.
 
@@ -2078,11 +2077,11 @@ Must be one of:
 
 **Title:** IndistinctlyFreePartTimes
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 **Description:** Free mornings or evenings indistinctly.
 
@@ -2142,7 +2141,7 @@ Must be one of:
 | ------------------------- | ----------------------------- |
 | **Type**                  | `object`                      |
 | **Required**              | No                            |
-| **Additional properties** | Any type allowed              |
+| **Additional properties** | Not allowed                   |
 | **Defined in**            | #/$defs/conditionTypeWithTime |
 
 **Description:** Minutes between departure and arrival of the following day.
@@ -2181,7 +2180,7 @@ Must be one of:
 | ------------------------- | ----------------------------- |
 | **Type**                  | `object`                      |
 | **Required**              | No                            |
-| **Additional properties** | Any type allowed              |
+| **Additional properties** | Not allowed                   |
 | **Defined in**            | #/$defs/conditionTypeWithTime |
 
 **Description:** Minutes between the end time of the last day of the week and the start time of the following week.
@@ -2220,7 +2219,7 @@ Must be one of:
 | ------------------------- | ----------------------------- |
 | **Type**                  | `object`                      |
 | **Required**              | No                            |
-| **Additional properties** | Any type allowed              |
+| **Additional properties** | Not allowed                   |
 | **Defined in**            | #/$defs/conditionTypeWithTime |
 
 **Description:** Minutes of free time at first or last hours of the day.
@@ -2339,7 +2338,7 @@ Must be one of:
 | ------------------------- | ----------------------------- |
 | **Type**                  | `object`                      |
 | **Required**              | No                            |
-| **Additional properties** | Any type allowed              |
+| **Additional properties** | Not allowed                   |
 | **Defined in**            | #/$defs/conditionTypeWithTime |
 
 **Description:** Do not have less than a custom free time around noon pause.
@@ -2408,7 +2407,7 @@ Must be one of:
 | ------------------------- | ------------------------- |
 | **Type**                  | `object`                  |
 | **Required**              | No                        |
-| **Additional properties** | Any type allowed          |
+| **Additional properties** | Not allowed               |
 | **Defined in**            | #/$defs/conditionOcupancy |
 
 **Description:** Minimum teaching time of the teacher with students.
@@ -2467,7 +2466,7 @@ Must be one of:
 | ------------------------- | ------------------------- |
 | **Type**                  | `object`                  |
 | **Required**              | No                        |
-| **Additional properties** | Any type allowed          |
+| **Additional properties** | Not allowed               |
 | **Defined in**            | #/$defs/conditionOcupancy |
 
 **Description:** Maximun teaching time of the teacher with students.
@@ -2526,7 +2525,7 @@ Must be one of:
 | ------------------------- | ------------------------- |
 | **Type**                  | `object`                  |
 | **Required**              | No                        |
-| **Additional properties** | Any type allowed          |
+| **Additional properties** | Not allowed               |
 | **Defined in**            | #/$defs/conditionOcupancy |
 
 **Description:** Minimum teaching time of the teacher with students and other non-teaching activities indicated as eligible for calculation.
@@ -2585,7 +2584,7 @@ Must be one of:
 | ------------------------- | ------------------------- |
 | **Type**                  | `object`                  |
 | **Required**              | No                        |
-| **Additional properties** | Any type allowed          |
+| **Additional properties** | Not allowed               |
 | **Defined in**            | #/$defs/conditionOcupancy |
 
 **Description:** Maximum teaching time of the teacher with students and other non-teaching activities indicated as eligible for calculation.
@@ -2709,7 +2708,7 @@ Must be one of:
 
 **Description:** Maximum number of movements per day that can be weighted/preferred.
 
-#### <a name="teachers_items_periodSettings"></a>7.1.9. Property `PlanningGhcData > teachers > Teacher > periodSettings`
+#### <a name="teachers_items_periodsSettings"></a>7.1.9. Property `PlanningGhcData > teachers > Teacher > periodsSettings`
 
 **Title:** PeriodsSettings
 
@@ -2728,13 +2727,13 @@ Must be one of:
 | **Additional items** | False              |
 | **Tuple validation** | See below          |
 
-| Each item of this array must be                       | Description |
-| ----------------------------------------------------- | ----------- |
-| [PeriodSetting](#teachers_items_periodSettings_items) | -           |
+| Each item of this array must be                         | Description |
+| ------------------------------------------------------- | ----------- |
+| [PeriodsSetting](#teachers_items_periodsSettings_items) | -           |
 
-##### <a name="teachers_items_periodSettings_items"></a>7.1.9.1. PlanningGhcData > teachers > Teacher > periodSettings > PeriodSetting
+##### <a name="teachers_items_periodsSettings_items"></a>7.1.9.1. PlanningGhcData > teachers > Teacher > periodsSettings > PeriodsSetting
 
-**Title:** PeriodSetting
+**Title:** PeriodsSetting
 
 |                           |             |
 | ------------------------- | ----------- |
@@ -2742,22 +2741,22 @@ Must be one of:
 | **Required**              | No          |
 | **Additional properties** | Not allowed |
 
-| Property                                                                                   | Pattern | Type             | Deprecated | Definition                                                                                  | Title/Description                                                                                               |
-| ------------------------------------------------------------------------------------------ | ------- | ---------------- | ---------- | ------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| + [refPeriod](#teachers_items_periodSettings_items_refPeriod )                             | No      | string           | No         | -                                                                                           | Identifier of the period to which the settings affect.                                                          |
-| - [weeklyStay](#teachers_items_periodSettings_items_weeklyStay )                           | No      | object           | No         | Same as [weeklyStay](#teachers_items_generalSettings_weeklyStay )                           | WeeklyStay                                                                                                      |
-| - [dailyStay](#teachers_items_periodSettings_items_dailyStay )                             | No      | object           | No         | Same as [dailyStay](#teachers_items_generalSettings_dailyStay )                             | DailyStay                                                                                                       |
-| - [avoidGapsBetweenSesions](#teachers_items_periodSettings_items_avoidGapsBetweenSesions ) | No      | boolean          | No         | Same as [avoidGapsBetweenSesions](#teachers_items_generalSettings_avoidGapsBetweenSesions ) | It indicates whether gaps between class units for the teacher should be avoided. This is a weighting condition. |
-| - [maxContinuousTeaching](#teachers_items_periodSettings_items_maxContinuousTeaching )     | No      | object           | No         | Same as [maxContinuousTeaching](#teachers_items_generalSettings_maxContinuousTeaching )     | MaxContinuousTeaching                                                                                           |
-| - [avoidClassesAroundBreak](#teachers_items_periodSettings_items_avoidClassesAroundBreak ) | No      | enum (of string) | No         | Same as [avoidClassesAroundBreak](#teachers_items_generalSettings_avoidClassesAroundBreak ) | ConditionType                                                                                                   |
-| - [freeTimes](#teachers_items_periodSettings_items_freeTimes )                             | No      | object           | No         | Same as [freeTimes](#teachers_items_generalSettings_freeTimes )                             | FreeTimes                                                                                                       |
-| - [freePartTimes](#teachers_items_periodSettings_items_freePartTimes )                     | No      | object           | No         | Same as [freePartTimes](#teachers_items_generalSettings_freePartTimes )                     | FreePartTime                                                                                                    |
-| - [incompatibilities](#teachers_items_periodSettings_items_incompatibilities )             | No      | object           | No         | Same as [incompatibilities](#teachers_items_generalSettings_incompatibilities )             | Incompatibilities                                                                                               |
-| - [dailyOcupation](#teachers_items_periodSettings_items_dailyOcupation )                   | No      | object           | No         | Same as [dailyOcupation](#teachers_items_generalSettings_dailyOcupation )                   | DailyOcupation                                                                                                  |
-| - [middayReference](#teachers_items_periodSettings_items_middayReference )                 | No      | object           | No         | Same as [middayReference](#teachers_items_generalSettings_middayReference )                 | MiddayReference                                                                                                 |
-| - [dailyBuildingTransfers](#teachers_items_periodSettings_items_dailyBuildingTransfers )   | No      | object           | No         | Same as [dailyBuildingTransfers](#teachers_items_generalSettings_dailyBuildingTransfers )   | DailyBuildingTransfers                                                                                          |
+| Property                                                                                    | Pattern | Type             | Deprecated | Definition                                                                                  | Title/Description                                                                                               |
+| ------------------------------------------------------------------------------------------- | ------- | ---------------- | ---------- | ------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| + [refPeriod](#teachers_items_periodsSettings_items_refPeriod )                             | No      | string           | No         | -                                                                                           | Identifier of the period to which the settings affect.                                                          |
+| - [weeklyStay](#teachers_items_periodsSettings_items_weeklyStay )                           | No      | object           | No         | Same as [weeklyStay](#teachers_items_generalSettings_weeklyStay )                           | WeeklyStay                                                                                                      |
+| - [dailyStay](#teachers_items_periodsSettings_items_dailyStay )                             | No      | object           | No         | Same as [dailyStay](#teachers_items_generalSettings_dailyStay )                             | DailyStay                                                                                                       |
+| - [avoidGapsBetweenSesions](#teachers_items_periodsSettings_items_avoidGapsBetweenSesions ) | No      | boolean          | No         | Same as [avoidGapsBetweenSesions](#teachers_items_generalSettings_avoidGapsBetweenSesions ) | It indicates whether gaps between class units for the teacher should be avoided. This is a weighting condition. |
+| - [maxContinuousTeaching](#teachers_items_periodsSettings_items_maxContinuousTeaching )     | No      | object           | No         | Same as [maxContinuousTeaching](#teachers_items_generalSettings_maxContinuousTeaching )     | MaxContinuousTeaching                                                                                           |
+| - [avoidClassesAroundBreak](#teachers_items_periodsSettings_items_avoidClassesAroundBreak ) | No      | enum (of string) | No         | Same as [avoidClassesAroundBreak](#teachers_items_generalSettings_avoidClassesAroundBreak ) | ConditionType                                                                                                   |
+| - [freeTimes](#teachers_items_periodsSettings_items_freeTimes )                             | No      | object           | No         | Same as [freeTimes](#teachers_items_generalSettings_freeTimes )                             | FreeTimes                                                                                                       |
+| - [freePartTimes](#teachers_items_periodsSettings_items_freePartTimes )                     | No      | object           | No         | Same as [freePartTimes](#teachers_items_generalSettings_freePartTimes )                     | FreePartTime                                                                                                    |
+| - [incompatibilities](#teachers_items_periodsSettings_items_incompatibilities )             | No      | object           | No         | Same as [incompatibilities](#teachers_items_generalSettings_incompatibilities )             | Incompatibilities                                                                                               |
+| - [dailyOcupation](#teachers_items_periodsSettings_items_dailyOcupation )                   | No      | object           | No         | Same as [dailyOcupation](#teachers_items_generalSettings_dailyOcupation )                   | DailyOcupation                                                                                                  |
+| - [middayReference](#teachers_items_periodsSettings_items_middayReference )                 | No      | object           | No         | Same as [middayReference](#teachers_items_generalSettings_middayReference )                 | MiddayReference                                                                                                 |
+| - [dailyBuildingTransfers](#teachers_items_periodsSettings_items_dailyBuildingTransfers )   | No      | object           | No         | Same as [dailyBuildingTransfers](#teachers_items_generalSettings_dailyBuildingTransfers )   | DailyBuildingTransfers                                                                                          |
 
-###### <a name="teachers_items_periodSettings_items_refPeriod"></a>7.1.9.1.1. Property `PlanningGhcData > teachers > Teacher > periodSettings > PeriodSetting > refPeriod`
+###### <a name="teachers_items_periodsSettings_items_refPeriod"></a>7.1.9.1.1. Property `PlanningGhcData > teachers > Teacher > periodsSettings > PeriodsSetting > refPeriod`
 
 |              |          |
 | ------------ | -------- |
@@ -2766,7 +2765,7 @@ Must be one of:
 
 **Description:** Identifier of the period to which the settings affect.
 
-###### <a name="teachers_items_periodSettings_items_weeklyStay"></a>7.1.9.1.2. Property `PlanningGhcData > teachers > Teacher > periodSettings > PeriodSetting > weeklyStay`
+###### <a name="teachers_items_periodsSettings_items_weeklyStay"></a>7.1.9.1.2. Property `PlanningGhcData > teachers > Teacher > periodsSettings > PeriodsSetting > weeklyStay`
 
 **Title:** WeeklyStay
 
@@ -2779,7 +2778,7 @@ Must be one of:
 
 **Description:** It indicates the maximum preferential and strict teacher's stay, for the weekly stay that the teacher can be in the academic institution.
 
-###### <a name="teachers_items_periodSettings_items_dailyStay"></a>7.1.9.1.3. Property `PlanningGhcData > teachers > Teacher > periodSettings > PeriodSetting > dailyStay`
+###### <a name="teachers_items_periodsSettings_items_dailyStay"></a>7.1.9.1.3. Property `PlanningGhcData > teachers > Teacher > periodsSettings > PeriodsSetting > dailyStay`
 
 **Title:** DailyStay
 
@@ -2792,7 +2791,7 @@ Must be one of:
 
 **Description:** This indicates the maximum preferential and strict time of stay of the teacher, for the daily stay that the teacher can be in the educational institution.
 
-###### <a name="teachers_items_periodSettings_items_avoidGapsBetweenSesions"></a>7.1.9.1.4. Property `PlanningGhcData > teachers > Teacher > periodSettings > PeriodSetting > avoidGapsBetweenSesions`
+###### <a name="teachers_items_periodsSettings_items_avoidGapsBetweenSesions"></a>7.1.9.1.4. Property `PlanningGhcData > teachers > Teacher > periodsSettings > PeriodsSetting > avoidGapsBetweenSesions`
 
 |                        |                                                                                    |
 | ---------------------- | ---------------------------------------------------------------------------------- |
@@ -2803,7 +2802,7 @@ Must be one of:
 
 **Description:** It indicates whether gaps between class units for the teacher should be avoided. This is a weighting condition.
 
-###### <a name="teachers_items_periodSettings_items_maxContinuousTeaching"></a>7.1.9.1.5. Property `PlanningGhcData > teachers > Teacher > periodSettings > PeriodSetting > maxContinuousTeaching`
+###### <a name="teachers_items_periodsSettings_items_maxContinuousTeaching"></a>7.1.9.1.5. Property `PlanningGhcData > teachers > Teacher > periodsSettings > PeriodsSetting > maxContinuousTeaching`
 
 **Title:** MaxContinuousTeaching
 
@@ -2816,7 +2815,7 @@ Must be one of:
 
 **Description:** It indicates the maximum continuous time of class units, which are allowed without having a gap or a non-class units between them.
 
-###### <a name="teachers_items_periodSettings_items_avoidClassesAroundBreak"></a>7.1.9.1.6. Property `PlanningGhcData > teachers > Teacher > periodSettings > PeriodSetting > avoidClassesAroundBreak`
+###### <a name="teachers_items_periodsSettings_items_avoidClassesAroundBreak"></a>7.1.9.1.6. Property `PlanningGhcData > teachers > Teacher > periodsSettings > PeriodsSetting > avoidClassesAroundBreak`
 
 **Title:** ConditionType
 
@@ -2829,7 +2828,7 @@ Must be one of:
 
 **Description:** It indicates whether the existence of class units on both sides of a playground supervision taught by this teacher will be penalised or forbidden.
 
-###### <a name="teachers_items_periodSettings_items_freeTimes"></a>7.1.9.1.7. Property `PlanningGhcData > teachers > Teacher > periodSettings > PeriodSetting > freeTimes`
+###### <a name="teachers_items_periodsSettings_items_freeTimes"></a>7.1.9.1.7. Property `PlanningGhcData > teachers > Teacher > periodsSettings > PeriodsSetting > freeTimes`
 
 **Title:** FreeTimes
 
@@ -2842,7 +2841,7 @@ Must be one of:
 
 **Description:** It contains the free time spaces that the teacher must have.
 
-###### <a name="teachers_items_periodSettings_items_freePartTimes"></a>7.1.9.1.8. Property `PlanningGhcData > teachers > Teacher > periodSettings > PeriodSetting > freePartTimes`
+###### <a name="teachers_items_periodsSettings_items_freePartTimes"></a>7.1.9.1.8. Property `PlanningGhcData > teachers > Teacher > periodsSettings > PeriodsSetting > freePartTimes`
 
 **Title:** FreePartTime
 
@@ -2855,7 +2854,7 @@ Must be one of:
 
 **Description:** Free half-time periods .
 
-###### <a name="teachers_items_periodSettings_items_incompatibilities"></a>7.1.9.1.9. Property `PlanningGhcData > teachers > Teacher > periodSettings > PeriodSetting > incompatibilities`
+###### <a name="teachers_items_periodsSettings_items_incompatibilities"></a>7.1.9.1.9. Property `PlanningGhcData > teachers > Teacher > periodsSettings > PeriodsSetting > incompatibilities`
 
 **Title:** Incompatibilities
 
@@ -2868,7 +2867,7 @@ Must be one of:
 
 **Description:** It contains the teacher's incompatibilities on the allocation of class units and rest periods.
 
-###### <a name="teachers_items_periodSettings_items_dailyOcupation"></a>7.1.9.1.10. Property `PlanningGhcData > teachers > Teacher > periodSettings > PeriodSetting > dailyOcupation`
+###### <a name="teachers_items_periodsSettings_items_dailyOcupation"></a>7.1.9.1.10. Property `PlanningGhcData > teachers > Teacher > periodsSettings > PeriodsSetting > dailyOcupation`
 
 **Title:** DailyOcupation
 
@@ -2881,7 +2880,7 @@ Must be one of:
 
 **Description:** Maximum and minimum values of teaching or activity time for teachers. This object indicates the type of condition (strict or weighting) and whether the automatic calculation in minutes in the engine should be set.
 
-###### <a name="teachers_items_periodSettings_items_middayReference"></a>7.1.9.1.11. Property `PlanningGhcData > teachers > Teacher > periodSettings > PeriodSetting > middayReference`
+###### <a name="teachers_items_periodsSettings_items_middayReference"></a>7.1.9.1.11. Property `PlanningGhcData > teachers > Teacher > periodsSettings > PeriodsSetting > middayReference`
 
 **Title:** MiddayReference
 
@@ -2894,7 +2893,7 @@ Must be one of:
 
 **Description:** It indicate the frame where the teacher takes noon pause.
 
-###### <a name="teachers_items_periodSettings_items_dailyBuildingTransfers"></a>7.1.9.1.12. Property `PlanningGhcData > teachers > Teacher > periodSettings > PeriodSetting > dailyBuildingTransfers`
+###### <a name="teachers_items_periodsSettings_items_dailyBuildingTransfers"></a>7.1.9.1.12. Property `PlanningGhcData > teachers > Teacher > periodsSettings > PeriodsSetting > dailyBuildingTransfers`
 
 **Title:** DailyBuildingTransfers
 
@@ -2934,11 +2933,11 @@ Must be one of:
 
 **Title:** Subject
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 | Property                                                        | Pattern | Type             | Deprecated | Definition                                           | Title/Description                                                    |
 | --------------------------------------------------------------- | ------- | ---------------- | ---------- | ---------------------------------------------------- | -------------------------------------------------------------------- |
@@ -2946,9 +2945,8 @@ Must be one of:
 | - [shortName](#subjects_items_shortName )                       | No      | string           | No         | -                                                    | Short name of the subject.                                           |
 | - [fullName](#subjects_items_fullName )                         | No      | string           | No         | -                                                    | Complete name of the subject.                                        |
 | - [exKey](#subjects_items_exKey )                               | No      | string           | No         | -                                                    | External key of the subject                                          |
-| - [isStudentMentoring](#subjects_items_isStudentMentoring )     | No      | boolean          | No         | -                                                    | Indicates whether the subject is a tutoring session with students    |
 | - [technicalTeacher](#subjects_items_technicalTeacher )         | No      | boolean          | No         | -                                                    | It indicates whether the subject is teach by technical teacher.      |
-| - [type](#subjects_items_type )                                 | No      | enum (of string) | No         | -                                                    | Type of the subject                                                  |
+| - [type](#subjects_items_type )                                 | No      | enum (of string) | No         | -                                                    | SubjectType                                                          |
 | - [refClassroom](#subjects_items_refClassroom )                 | No      | string           | No         | -                                                    | Id of the classroom assigned to teach the subject.                   |
 | - [refClassRoomSetsList](#subjects_items_refClassRoomSetsList ) | No      | array of string  | No         | -                                                    | List of alternative classroom sets assigned to schedule the subject. |
 | - [refColourInResult](#subjects_items_refColourInResult )       | No      | string           | No         | -                                                    | Colour code used to represent the subject in the result.             |
@@ -2990,17 +2988,7 @@ Must be one of:
 
 **Description:** External key of the subject
 
-#### <a name="subjects_items_isStudentMentoring"></a>8.1.5. Property `PlanningGhcData > subjects > Subject > isStudentMentoring`
-
-|              |           |
-| ------------ | --------- |
-| **Type**     | `boolean` |
-| **Required** | No        |
-| **Default**  | `false`   |
-
-**Description:** Indicates whether the subject is a tutoring session with students
-
-#### <a name="subjects_items_technicalTeacher"></a>8.1.6. Property `PlanningGhcData > subjects > Subject > technicalTeacher`
+#### <a name="subjects_items_technicalTeacher"></a>8.1.5. Property `PlanningGhcData > subjects > Subject > technicalTeacher`
 
 |              |           |
 | ------------ | --------- |
@@ -3010,7 +2998,9 @@ Must be one of:
 
 **Description:** It indicates whether the subject is teach by technical teacher.
 
-#### <a name="subjects_items_type"></a>8.1.7. Property `PlanningGhcData > subjects > Subject > type`
+#### <a name="subjects_items_type"></a>8.1.6. Property `PlanningGhcData > subjects > Subject > type`
+
+**Title:** SubjectType
 
 |              |                    |
 | ------------ | ------------------ |
@@ -3025,7 +3015,7 @@ Must be one of:
 * "elective"
 * "mentoring"
 
-#### <a name="subjects_items_refClassroom"></a>8.1.8. Property `PlanningGhcData > subjects > Subject > refClassroom`
+#### <a name="subjects_items_refClassroom"></a>8.1.7. Property `PlanningGhcData > subjects > Subject > refClassroom`
 
 |              |          |
 | ------------ | -------- |
@@ -3034,7 +3024,7 @@ Must be one of:
 
 **Description:** Id of the classroom assigned to teach the subject.
 
-#### <a name="subjects_items_refClassRoomSetsList"></a>8.1.9. Property `PlanningGhcData > subjects > Subject > refClassRoomSetsList`
+#### <a name="subjects_items_refClassRoomSetsList"></a>8.1.8. Property `PlanningGhcData > subjects > Subject > refClassRoomSetsList`
 
 |              |                   |
 | ------------ | ----------------- |
@@ -3055,7 +3045,7 @@ Must be one of:
 | ------------------------------------------------------------- | ------------------------- |
 | [ClassRoomSetRef](#subjects_items_refClassRoomSetsList_items) | Classroom set identifier. |
 
-##### <a name="subjects_items_refClassRoomSetsList_items"></a>8.1.9.1. PlanningGhcData > subjects > Subject > refClassRoomSetsList > ClassRoomSetRef
+##### <a name="subjects_items_refClassRoomSetsList_items"></a>8.1.8.1. PlanningGhcData > subjects > Subject > refClassRoomSetsList > ClassRoomSetRef
 
 **Title:** ClassRoomSetRef
 
@@ -3066,7 +3056,7 @@ Must be one of:
 
 **Description:** Classroom set identifier.
 
-#### <a name="subjects_items_refColourInResult"></a>8.1.10. Property `PlanningGhcData > subjects > Subject > refColourInResult`
+#### <a name="subjects_items_refColourInResult"></a>8.1.9. Property `PlanningGhcData > subjects > Subject > refColourInResult`
 
 |              |          |
 | ------------ | -------- |
@@ -3075,7 +3065,7 @@ Must be one of:
 
 **Description:** Colour code used to represent the subject in the result.
 
-#### <a name="subjects_items_frameTemplate"></a>8.1.11. Property `PlanningGhcData > subjects > Subject > frameTemplate`
+#### <a name="subjects_items_frameTemplate"></a>8.1.10. Property `PlanningGhcData > subjects > Subject > frameTemplate`
 
 **Title:** FrameTemplate
 
@@ -3114,11 +3104,11 @@ Must be one of:
 
 **Title:** Group
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 | Property                                                              | Pattern | Type             | Deprecated | Definition                                                                  | Title/Description                                                                                                                |
 | --------------------------------------------------------------------- | ------- | ---------------- | ---------- | --------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
@@ -3514,11 +3504,11 @@ Must be one of:
 
 **Title:** Course
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 | Property                                           | Pattern | Type            | Deprecated | Definition | Title/Description                        |
 | -------------------------------------------------- | ------- | --------------- | ---------- | ---------- | ---------------------------------------- |
@@ -3579,11 +3569,11 @@ Must be one of:
 
 **Title:** CourseSubject
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 | Property                                                        | Pattern | Type    | Deprecated | Definition | Title/Description                                                 |
 | --------------------------------------------------------------- | ------- | ------- | ---------- | ---------- | ----------------------------------------------------------------- |
@@ -3635,11 +3625,11 @@ Must be one of:
 
 **Title:** Department
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 | Property                                                         | Pattern | Type            | Deprecated | Definition | Title/Description                                                                                 |
 | ---------------------------------------------------------------- | ------- | --------------- | ---------- | ---------- | ------------------------------------------------------------------------------------------------- |
@@ -3789,11 +3779,11 @@ Must be one of:
 
 **Title:** Session
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 | Property                                                                  | Pattern | Type            | Deprecated | Definition                      | Title/Description                                        |
 | ------------------------------------------------------------------------- | ------- | --------------- | ---------- | ------------------------------- | -------------------------------------------------------- |
@@ -3871,7 +3861,7 @@ Must be one of:
 | ------------------------- | ---------------- |
 | **Type**                  | `object`         |
 | **Required**              | Yes              |
-| **Additional properties** | Any type allowed |
+| **Additional properties** | Not allowed      |
 | **Defined in**            | #/$defs/refGroup |
 
 **Description:** Contains the reference to a group of the session, and optionally, the number of students of the group that attend the session.
@@ -3937,11 +3927,11 @@ Must be one of:
 
 **Title:** OtherElementsInClassRooms
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 **Description:** It contains interrelated elements that are present in the session in addition to the main ones.
 
@@ -3982,7 +3972,7 @@ Must be one of:
 | ------------------------- | -------------------------------------------- |
 | **Type**                  | `object`                                     |
 | **Required**              | No                                           |
-| **Additional properties** | Any type allowed                             |
+| **Additional properties** | Not allowed                                  |
 | **Same definition as**    | [refMainGroup](#sessions_items_refMainGroup) |
 
 **Description:** Contains the reference to a group of the session, and optionally, the number of students of the group that attend the session.
@@ -4241,11 +4231,11 @@ Must be one of:
 
 **Title:** TimeAllocation
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | Yes              |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | Yes         |
+| **Additional properties** | Not allowed |
 
 **Description:** Contains the specification of how the total time must be allocated within the days of the framework and should be distributed across the period or periods.
 
@@ -4479,11 +4469,11 @@ Must be one of:
 
 **Title:** SessionSectionPreference
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 **Description:** Section assignment preference.
 
@@ -4746,7 +4736,7 @@ Must be one of:
 | Property                                                                     | Pattern | Type             | Deprecated | Definition | Title/Description                                               |
 | ---------------------------------------------------------------------------- | ------- | ---------------- | ---------- | ---------- | --------------------------------------------------------------- |
 | + [refSesions](#sessions_items_sessionRelations_differentDays_refSesions )   | No      | array of integer | No         | -          | RefSesions                                                      |
-| - [daysSetting](#sessions_items_sessionRelations_differentDays_daysSetting ) | No      | enum (of string) | No         | -          | Keep the same position each week or period for the class units. |
+| + [daysSetting](#sessions_items_sessionRelations_differentDays_daysSetting ) | No      | enum (of string) | No         | -          | Keep the same position each week or period for the class units. |
 
 ###### <a name="sessions_items_sessionRelations_differentDays_refSesions"></a>13.1.13.2.1. Property `PlanningGhcData > sessions > Session > sessionRelations > differentDays > refSesions`
 
@@ -4787,7 +4777,7 @@ Must be one of:
 |              |                              |
 | ------------ | ---------------------------- |
 | **Type**     | `enum (of string)`           |
-| **Required** | No                           |
+| **Required** | Yes                          |
 | **Default**  | `"indifferentDaysPreferred"` |
 
 **Description:** Keep the same position each week or period for the class units.
@@ -5223,11 +5213,11 @@ Must be one of:
 
 **Title:** Meeting
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 **Description:** Sevice of meeting between teachers.
 
@@ -5431,11 +5421,11 @@ Must be one of:
 
 **Title:** Complementary
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 **Description:** Service of teacher`s complementary activity.
 
@@ -5813,7 +5803,7 @@ Must be one of:
 | Property                                                                                | Pattern | Type            | Deprecated | Definition                            | Title/Description                                            |
 | --------------------------------------------------------------------------------------- | ------- | --------------- | ---------- | ------------------------------------- | ------------------------------------------------------------ |
 | + [teacherId](#onCallServices_items_refTeachers_items_teacherId )                       | No      | string          | No         | -                                     | Teacher identifier.                                          |
-| - [numOfSections](#onCallServices_items_refTeachers_items_numOfSections )               | No      | integer         | No         | -                                     | Number of on-call services to be done weekly by the teacher. |
+| + [numOfSections](#onCallServices_items_refTeachers_items_numOfSections )               | No      | integer         | No         | -                                     | Number of on-call services to be done weekly by the teacher. |
 | - [teacherFrameTemplate](#onCallServices_items_refTeachers_items_teacherFrameTemplate ) | No      | array of object | No         | In #/$defs/onCallServiceframeTemplate | OnCallTemplate                                               |
 
 ###### <a name="onCallServices_items_refTeachers_items_teacherId"></a>16.1.7.1.1. Property `PlanningGhcData > onCallServices > OnCallService > refTeachers > RefTeacher > teacherId`
@@ -5830,7 +5820,7 @@ Must be one of:
 |              |           |
 | ------------ | --------- |
 | **Type**     | `integer` |
-| **Required** | No        |
+| **Required** | Yes       |
 | **Default**  | `1`       |
 
 **Description:** Number of on-call services to be done weekly by the teacher.
@@ -5863,11 +5853,11 @@ Must be one of:
 
 **Title:** OnCallSectionPreference
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 **Description:** Template with a teacher section assignment preference about the service.
 
@@ -6300,4 +6290,4 @@ Must be one of:
 **Description:** It indicates, in the case of a split day (with a noon pause), that the unoccupied intervals between the morning and afternoon class units should be counted. This option affects the weighting in the teacher's optimisation of the gaps in their timetable.
 
 ----------------------------------------------------------------------------------------------------------------------------
-Generated using [json-schema-for-humans](https://github.com/coveooss/json-schema-for-humans) on 2026-11-09 at 11:34:13 +0100
+Generated using [json-schema-for-humans](https://github.com/coveooss/json-schema-for-humans) on 2026-11-09 at 14:56:28 +0100

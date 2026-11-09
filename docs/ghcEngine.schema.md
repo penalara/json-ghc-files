@@ -21,11 +21,11 @@
           - [3.1.2.1.4.1. GhcEngineSchema > planningData > periods > periodsList > Period > dayAliases > AliasDayDeifinition](#planningData_periods_periodsList_items_dayAliases_items)
             - [3.1.2.1.4.1.1. Property `GhcEngineSchema > planningData > periods > periodsList > Period > dayAliases > AliasDayDeifinition > dayId`](#planningData_periods_periodsList_items_dayAliases_items_dayId)
             - [3.1.2.1.4.1.2. Property `GhcEngineSchema > planningData > periods > periodsList > Period > dayAliases > AliasDayDeifinition > alias`](#planningData_periods_periodsList_items_dayAliases_items_alias)
-    - [3.1.3. Property `GhcEngineSchema > planningData > periods > periodSets`](#planningData_periods_periodSets)
-      - [3.1.3.1. GhcEngineSchema > planningData > periods > periodSets > PeriodsSet](#planningData_periods_periodSets_items)
-        - [3.1.3.1.1. Property `GhcEngineSchema > planningData > periods > periodSets > PeriodsSet > id`](#planningData_periods_periodSets_items_id)
-        - [3.1.3.1.2. Property `GhcEngineSchema > planningData > periods > periodSets > PeriodsSet > periodList`](#planningData_periods_periodSets_items_periodList)
-          - [3.1.3.1.2.1. GhcEngineSchema > planningData > periods > periodSets > PeriodsSet > periodList > periodList items](#planningData_periods_periodSets_items_periodList_items)
+    - [3.1.3. Property `GhcEngineSchema > planningData > periods > periodsSets`](#planningData_periods_periodsSets)
+      - [3.1.3.1. GhcEngineSchema > planningData > periods > periodsSets > PeriodsSet](#planningData_periods_periodsSets_items)
+        - [3.1.3.1.1. Property `GhcEngineSchema > planningData > periods > periodsSets > PeriodsSet > id`](#planningData_periods_periodsSets_items_id)
+        - [3.1.3.1.2. Property `GhcEngineSchema > planningData > periods > periodsSets > PeriodsSet > periodList`](#planningData_periods_periodsSets_items_periodList)
+          - [3.1.3.1.2.1. GhcEngineSchema > planningData > periods > periodsSets > PeriodsSet > periodList > periodList items](#planningData_periods_periodsSets_items_periodList_items)
   - [3.2. Property `GhcEngineSchema > planningData > frames`](#planningData_frames)
     - [3.2.1. GhcEngineSchema > planningData > frames > Frame](#planningData_frames_items)
       - [3.2.1.1. Property `GhcEngineSchema > planningData > frames > Frame > id`](#planningData_frames_items_id)
@@ -179,34 +179,33 @@
         - [3.7.1.8.11. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyBuildingTransfers`](#planningData_teachers_items_generalSettings_dailyBuildingTransfers)
           - [3.7.1.8.11.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyBuildingTransfers > strict`](#planningData_teachers_items_generalSettings_dailyBuildingTransfers_strict)
           - [3.7.1.8.11.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyBuildingTransfers > preferable`](#planningData_teachers_items_generalSettings_dailyBuildingTransfers_preferable)
-      - [3.7.1.9. Property `GhcEngineSchema > planningData > teachers > Teacher > periodSettings`](#planningData_teachers_items_periodSettings)
-        - [3.7.1.9.1. GhcEngineSchema > planningData > teachers > Teacher > periodSettings > PeriodSetting](#planningData_teachers_items_periodSettings_items)
-          - [3.7.1.9.1.1. Property `GhcEngineSchema > planningData > teachers > Teacher > periodSettings > PeriodSetting > refPeriod`](#planningData_teachers_items_periodSettings_items_refPeriod)
-          - [3.7.1.9.1.2. Property `GhcEngineSchema > planningData > teachers > Teacher > periodSettings > PeriodSetting > weeklyStay`](#planningData_teachers_items_periodSettings_items_weeklyStay)
-          - [3.7.1.9.1.3. Property `GhcEngineSchema > planningData > teachers > Teacher > periodSettings > PeriodSetting > dailyStay`](#planningData_teachers_items_periodSettings_items_dailyStay)
-          - [3.7.1.9.1.4. Property `GhcEngineSchema > planningData > teachers > Teacher > periodSettings > PeriodSetting > avoidGapsBetweenSesions`](#planningData_teachers_items_periodSettings_items_avoidGapsBetweenSesions)
-          - [3.7.1.9.1.5. Property `GhcEngineSchema > planningData > teachers > Teacher > periodSettings > PeriodSetting > maxContinuousTeaching`](#planningData_teachers_items_periodSettings_items_maxContinuousTeaching)
-          - [3.7.1.9.1.6. Property `GhcEngineSchema > planningData > teachers > Teacher > periodSettings > PeriodSetting > avoidClassesAroundBreak`](#planningData_teachers_items_periodSettings_items_avoidClassesAroundBreak)
-          - [3.7.1.9.1.7. Property `GhcEngineSchema > planningData > teachers > Teacher > periodSettings > PeriodSetting > freeTimes`](#planningData_teachers_items_periodSettings_items_freeTimes)
-          - [3.7.1.9.1.8. Property `GhcEngineSchema > planningData > teachers > Teacher > periodSettings > PeriodSetting > freePartTimes`](#planningData_teachers_items_periodSettings_items_freePartTimes)
-          - [3.7.1.9.1.9. Property `GhcEngineSchema > planningData > teachers > Teacher > periodSettings > PeriodSetting > incompatibilities`](#planningData_teachers_items_periodSettings_items_incompatibilities)
-          - [3.7.1.9.1.10. Property `GhcEngineSchema > planningData > teachers > Teacher > periodSettings > PeriodSetting > dailyOcupation`](#planningData_teachers_items_periodSettings_items_dailyOcupation)
-          - [3.7.1.9.1.11. Property `GhcEngineSchema > planningData > teachers > Teacher > periodSettings > PeriodSetting > middayReference`](#planningData_teachers_items_periodSettings_items_middayReference)
-          - [3.7.1.9.1.12. Property `GhcEngineSchema > planningData > teachers > Teacher > periodSettings > PeriodSetting > dailyBuildingTransfers`](#planningData_teachers_items_periodSettings_items_dailyBuildingTransfers)
+      - [3.7.1.9. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings`](#planningData_teachers_items_periodsSettings)
+        - [3.7.1.9.1. GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting](#planningData_teachers_items_periodsSettings_items)
+          - [3.7.1.9.1.1. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > refPeriod`](#planningData_teachers_items_periodsSettings_items_refPeriod)
+          - [3.7.1.9.1.2. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > weeklyStay`](#planningData_teachers_items_periodsSettings_items_weeklyStay)
+          - [3.7.1.9.1.3. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > dailyStay`](#planningData_teachers_items_periodsSettings_items_dailyStay)
+          - [3.7.1.9.1.4. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > avoidGapsBetweenSesions`](#planningData_teachers_items_periodsSettings_items_avoidGapsBetweenSesions)
+          - [3.7.1.9.1.5. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > maxContinuousTeaching`](#planningData_teachers_items_periodsSettings_items_maxContinuousTeaching)
+          - [3.7.1.9.1.6. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > avoidClassesAroundBreak`](#planningData_teachers_items_periodsSettings_items_avoidClassesAroundBreak)
+          - [3.7.1.9.1.7. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > freeTimes`](#planningData_teachers_items_periodsSettings_items_freeTimes)
+          - [3.7.1.9.1.8. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > freePartTimes`](#planningData_teachers_items_periodsSettings_items_freePartTimes)
+          - [3.7.1.9.1.9. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > incompatibilities`](#planningData_teachers_items_periodsSettings_items_incompatibilities)
+          - [3.7.1.9.1.10. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > dailyOcupation`](#planningData_teachers_items_periodsSettings_items_dailyOcupation)
+          - [3.7.1.9.1.11. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > middayReference`](#planningData_teachers_items_periodsSettings_items_middayReference)
+          - [3.7.1.9.1.12. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > dailyBuildingTransfers`](#planningData_teachers_items_periodsSettings_items_dailyBuildingTransfers)
   - [3.8. Property `GhcEngineSchema > planningData > subjects`](#planningData_subjects)
     - [3.8.1. GhcEngineSchema > planningData > subjects > Subject](#planningData_subjects_items)
       - [3.8.1.1. Property `GhcEngineSchema > planningData > subjects > Subject > id`](#planningData_subjects_items_id)
       - [3.8.1.2. Property `GhcEngineSchema > planningData > subjects > Subject > shortName`](#planningData_subjects_items_shortName)
       - [3.8.1.3. Property `GhcEngineSchema > planningData > subjects > Subject > fullName`](#planningData_subjects_items_fullName)
       - [3.8.1.4. Property `GhcEngineSchema > planningData > subjects > Subject > exKey`](#planningData_subjects_items_exKey)
-      - [3.8.1.5. Property `GhcEngineSchema > planningData > subjects > Subject > isStudentMentoring`](#planningData_subjects_items_isStudentMentoring)
-      - [3.8.1.6. Property `GhcEngineSchema > planningData > subjects > Subject > technicalTeacher`](#planningData_subjects_items_technicalTeacher)
-      - [3.8.1.7. Property `GhcEngineSchema > planningData > subjects > Subject > type`](#planningData_subjects_items_type)
-      - [3.8.1.8. Property `GhcEngineSchema > planningData > subjects > Subject > refClassroom`](#planningData_subjects_items_refClassroom)
-      - [3.8.1.9. Property `GhcEngineSchema > planningData > subjects > Subject > refClassRoomSetsList`](#planningData_subjects_items_refClassRoomSetsList)
-        - [3.8.1.9.1. GhcEngineSchema > planningData > subjects > Subject > refClassRoomSetsList > ClassRoomSetRef](#planningData_subjects_items_refClassRoomSetsList_items)
-      - [3.8.1.10. Property `GhcEngineSchema > planningData > subjects > Subject > refColourInResult`](#planningData_subjects_items_refColourInResult)
-      - [3.8.1.11. Property `GhcEngineSchema > planningData > subjects > Subject > frameTemplate`](#planningData_subjects_items_frameTemplate)
+      - [3.8.1.5. Property `GhcEngineSchema > planningData > subjects > Subject > technicalTeacher`](#planningData_subjects_items_technicalTeacher)
+      - [3.8.1.6. Property `GhcEngineSchema > planningData > subjects > Subject > type`](#planningData_subjects_items_type)
+      - [3.8.1.7. Property `GhcEngineSchema > planningData > subjects > Subject > refClassroom`](#planningData_subjects_items_refClassroom)
+      - [3.8.1.8. Property `GhcEngineSchema > planningData > subjects > Subject > refClassRoomSetsList`](#planningData_subjects_items_refClassRoomSetsList)
+        - [3.8.1.8.1. GhcEngineSchema > planningData > subjects > Subject > refClassRoomSetsList > ClassRoomSetRef](#planningData_subjects_items_refClassRoomSetsList_items)
+      - [3.8.1.9. Property `GhcEngineSchema > planningData > subjects > Subject > refColourInResult`](#planningData_subjects_items_refColourInResult)
+      - [3.8.1.10. Property `GhcEngineSchema > planningData > subjects > Subject > frameTemplate`](#planningData_subjects_items_frameTemplate)
   - [3.9. Property `GhcEngineSchema > planningData > groups`](#planningData_groups)
     - [3.9.1. GhcEngineSchema > planningData > groups > Group](#planningData_groups_items)
       - [3.9.1.1. Property `GhcEngineSchema > planningData > groups > Group > id`](#planningData_groups_items_id)
@@ -440,42 +439,45 @@
     - [3.18.2. Property `GhcEngineSchema > planningData > engineSettings > countGapsAroundMidday`](#planningData_engineSettings_countGapsAroundMidday)
 - [4. Property `GhcEngineSchema > results`](#results)
   - [4.1. GhcEngineSchema > results > EngineResult](#results_items)
-    - [4.1.1. Property `GhcEngineSchema > results > EngineOutputGHCSchema > date`](#results_items_date)
-    - [4.1.2. Property `GhcEngineSchema > results > EngineOutputGHCSchema > weight`](#results_items_weight)
-    - [4.1.3. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable`](#results_items_timetable)
-      - [4.1.3.1. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > anonymousClassRooms`](#results_items_timetable_anonymousClassRooms)
-        - [4.1.3.1.1. GhcEngineSchema > results > EngineOutputGHCSchema > timetable > anonymousClassRooms > AnonymousClassRoom](#results_items_timetable_anonymousClassRooms_items)
-          - [4.1.3.1.1.1. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > anonymousClassRooms > AnonymousClassRoom > refClassRoomsSet`](#results_items_timetable_anonymousClassRooms_items_refClassRoomsSet)
-          - [4.1.3.1.1.2. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > anonymousClassRooms > AnonymousClassRoom > classRoomsCreated`](#results_items_timetable_anonymousClassRooms_items_classRoomsCreated)
-            - [4.1.3.1.1.2.1. GhcEngineSchema > results > EngineOutputGHCSchema > timetable > anonymousClassRooms > AnonymousClassRoom > classRoomsCreated > AnonymousRoom](#results_items_timetable_anonymousClassRooms_items_classRoomsCreated_items)
-      - [4.1.3.2. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections`](#results_items_timetable_assignedSections)
-        - [4.1.3.2.1. GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection](#results_items_timetable_assignedSections_items)
-          - [4.1.3.2.1.1. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > refFrame`](#results_items_timetable_assignedSections_items_refFrame)
-          - [4.1.3.2.1.2. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > day`](#results_items_timetable_assignedSections_items_day)
-          - [4.1.3.2.1.3. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > realIndex`](#results_items_timetable_assignedSections_items_realIndex)
-          - [4.1.3.2.1.4. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > fictionalIndex`](#results_items_timetable_assignedSections_items_fictionalIndex)
-          - [4.1.3.2.1.5. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > startTime`](#results_items_timetable_assignedSections_items_startTime)
-          - [4.1.3.2.1.6. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > endTime`](#results_items_timetable_assignedSections_items_endTime)
-          - [4.1.3.2.1.7. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment`](#results_items_timetable_assignedSections_items_assignment)
-            - [4.1.3.2.1.7.1. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > teachingSessions`](#results_items_timetable_assignedSections_items_assignment_teachingSessions)
-              - [4.1.3.2.1.7.1.1. GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items)
-                - [4.1.3.2.1.7.1.1.1. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refSession`](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refSession)
-                - [4.1.3.2.1.7.1.1.2. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refClassRomms`](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refClassRomms)
-                  - [4.1.3.2.1.7.1.1.2.1. GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refClassRomms > RefclassRomm](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refClassRomms_items)
-                - [4.1.3.2.1.7.1.1.3. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refTeachers`](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refTeachers)
-                  - [4.1.3.2.1.7.1.1.3.1. GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refTeachers > RefTeacher](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refTeachers_items)
-            - [4.1.3.2.1.7.2. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > meetings`](#results_items_timetable_assignedSections_items_assignment_meetings)
-              - [4.1.3.2.1.7.2.1. GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > meetings > AssignedMeeting](#results_items_timetable_assignedSections_items_assignment_meetings_items)
-                - [4.1.3.2.1.7.2.1.1. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > meetings > AssignedMeeting > refMeeting`](#results_items_timetable_assignedSections_items_assignment_meetings_items_refMeeting)
-                - [4.1.3.2.1.7.2.1.2. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > meetings > AssignedMeeting > refClassRomms`](#results_items_timetable_assignedSections_items_assignment_meetings_items_refClassRomms)
-            - [4.1.3.2.1.7.3. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > complementaryActivities`](#results_items_timetable_assignedSections_items_assignment_complementaryActivities)
-              - [4.1.3.2.1.7.3.1. GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > complementaryActivities > AssignedComplementary](#results_items_timetable_assignedSections_items_assignment_complementaryActivities_items)
-                - [4.1.3.2.1.7.3.1.1. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > complementaryActivities > AssignedComplementary > refComplementary`](#results_items_timetable_assignedSections_items_assignment_complementaryActivities_items_refComplementary)
-                - [4.1.3.2.1.7.3.1.2. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > complementaryActivities > AssignedComplementary > refClassRomms`](#results_items_timetable_assignedSections_items_assignment_complementaryActivities_items_refClassRomms)
-            - [4.1.3.2.1.7.4. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > onCallServices`](#results_items_timetable_assignedSections_items_assignment_onCallServices)
-              - [4.1.3.2.1.7.4.1. GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > onCallServices > AssignedOnCallService](#results_items_timetable_assignedSections_items_assignment_onCallServices_items)
-                - [4.1.3.2.1.7.4.1.1. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > onCallServices > AssignedOnCallService > refOnCall`](#results_items_timetable_assignedSections_items_assignment_onCallServices_items_refOnCall)
-                - [4.1.3.2.1.7.4.1.2. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > onCallServices > AssignedOnCallService > refTeacher`](#results_items_timetable_assignedSections_items_assignment_onCallServices_items_refTeacher)
+    - [4.1.1. Property `GhcEngineSchema > results > GhcResult > date`](#results_items_date)
+    - [4.1.2. Property `GhcEngineSchema > results > GhcResult > weight`](#results_items_weight)
+    - [4.1.3. Property `GhcEngineSchema > results > GhcResult > timetable`](#results_items_timetable)
+      - [4.1.3.1. Property `GhcEngineSchema > results > GhcResult > timetable > anonymousClassRooms`](#results_items_timetable_anonymousClassRooms)
+        - [4.1.3.1.1. GhcEngineSchema > results > GhcResult > timetable > anonymousClassRooms > AnonymousClassRoom](#results_items_timetable_anonymousClassRooms_items)
+          - [4.1.3.1.1.1. Property `GhcEngineSchema > results > GhcResult > timetable > anonymousClassRooms > AnonymousClassRoom > refClassRoomsSet`](#results_items_timetable_anonymousClassRooms_items_refClassRoomsSet)
+          - [4.1.3.1.1.2. Property `GhcEngineSchema > results > GhcResult > timetable > anonymousClassRooms > AnonymousClassRoom > classRoomsCreated`](#results_items_timetable_anonymousClassRooms_items_classRoomsCreated)
+            - [4.1.3.1.1.2.1. GhcEngineSchema > results > GhcResult > timetable > anonymousClassRooms > AnonymousClassRoom > classRoomsCreated > AnonymousRoom](#results_items_timetable_anonymousClassRooms_items_classRoomsCreated_items)
+      - [4.1.3.2. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections`](#results_items_timetable_assignedSections)
+        - [4.1.3.2.1. GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection](#results_items_timetable_assignedSections_items)
+          - [4.1.3.2.1.1. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > refFrame`](#results_items_timetable_assignedSections_items_refFrame)
+          - [4.1.3.2.1.2. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > day`](#results_items_timetable_assignedSections_items_day)
+          - [4.1.3.2.1.3. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > realIndex`](#results_items_timetable_assignedSections_items_realIndex)
+          - [4.1.3.2.1.4. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > fictionalIndex`](#results_items_timetable_assignedSections_items_fictionalIndex)
+          - [4.1.3.2.1.5. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > startTime`](#results_items_timetable_assignedSections_items_startTime)
+          - [4.1.3.2.1.6. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > endTime`](#results_items_timetable_assignedSections_items_endTime)
+          - [4.1.3.2.1.7. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment`](#results_items_timetable_assignedSections_items_assignment)
+            - [4.1.3.2.1.7.1. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions`](#results_items_timetable_assignedSections_items_assignment_teachingSessions)
+              - [4.1.3.2.1.7.1.1. GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items)
+                - [4.1.3.2.1.7.1.1.1. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refSession`](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refSession)
+                - [4.1.3.2.1.7.1.1.2. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refClassRomms`](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refClassRomms)
+                  - [4.1.3.2.1.7.1.1.2.1. GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refClassRomms > RefclassRomm](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refClassRomms_items)
+                - [4.1.3.2.1.7.1.1.3. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refTeachers`](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refTeachers)
+                  - [4.1.3.2.1.7.1.1.3.1. GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refTeachers > RefTeacher](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refTeachers_items)
+                - [4.1.3.2.1.7.1.1.4. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refContinuosBlock`](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refContinuosBlock)
+            - [4.1.3.2.1.7.2. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > meetings`](#results_items_timetable_assignedSections_items_assignment_meetings)
+              - [4.1.3.2.1.7.2.1. GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > meetings > AssignedMeeting](#results_items_timetable_assignedSections_items_assignment_meetings_items)
+                - [4.1.3.2.1.7.2.1.1. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > meetings > AssignedMeeting > refMeeting`](#results_items_timetable_assignedSections_items_assignment_meetings_items_refMeeting)
+                - [4.1.3.2.1.7.2.1.2. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > meetings > AssignedMeeting > refClassRomms`](#results_items_timetable_assignedSections_items_assignment_meetings_items_refClassRomms)
+                - [4.1.3.2.1.7.2.1.3. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > meetings > AssignedMeeting > refContinuosBlock`](#results_items_timetable_assignedSections_items_assignment_meetings_items_refContinuosBlock)
+            - [4.1.3.2.1.7.3. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > complementaryActivities`](#results_items_timetable_assignedSections_items_assignment_complementaryActivities)
+              - [4.1.3.2.1.7.3.1. GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > complementaryActivities > AssignedComplementary](#results_items_timetable_assignedSections_items_assignment_complementaryActivities_items)
+                - [4.1.3.2.1.7.3.1.1. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > complementaryActivities > AssignedComplementary > refComplementary`](#results_items_timetable_assignedSections_items_assignment_complementaryActivities_items_refComplementary)
+                - [4.1.3.2.1.7.3.1.2. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > complementaryActivities > AssignedComplementary > refClassRomms`](#results_items_timetable_assignedSections_items_assignment_complementaryActivities_items_refClassRomms)
+                - [4.1.3.2.1.7.3.1.3. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > complementaryActivities > AssignedComplementary > refContinuosBlock`](#results_items_timetable_assignedSections_items_assignment_complementaryActivities_items_refContinuosBlock)
+            - [4.1.3.2.1.7.4. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > onCallServices`](#results_items_timetable_assignedSections_items_assignment_onCallServices)
+              - [4.1.3.2.1.7.4.1. GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > onCallServices > AssignedOnCallService](#results_items_timetable_assignedSections_items_assignment_onCallServices_items)
+                - [4.1.3.2.1.7.4.1.1. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > onCallServices > AssignedOnCallService > refOnCall`](#results_items_timetable_assignedSections_items_assignment_onCallServices_items_refOnCall)
+                - [4.1.3.2.1.7.4.1.2. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > onCallServices > AssignedOnCallService > refTeacher`](#results_items_timetable_assignedSections_items_assignment_onCallServices_items_refTeacher)
 
 **Title:** GhcEngineSchema
 
@@ -620,7 +622,7 @@ Must be one of:
 | ------------------------- | ---------------------------------- |
 | **Type**                  | `object`                           |
 | **Required**              | Yes                                |
-| **Additional properties** | Any type allowed                   |
+| **Additional properties** | Not allowed                        |
 | **Defined in**            | ../common/planningData.schema.json |
 
 **Description:** Schema of the object that contains the timetable planning data.
@@ -662,7 +664,7 @@ Must be one of:
 | ----------------------------------------------------------- | ------- | --------------- | ---------- | ---------- | ----------------- |
 | - [followedPeriods](#planningData_periods_followedPeriods ) | No      | boolean         | No         | -          | FollowedPeriods   |
 | + [periodsList](#planningData_periods_periodsList )         | No      | array of object | No         | -          | PeriodsList       |
-| - [periodSets](#planningData_periods_periodSets )           | No      | array of object | No         | -          | PeriodsSets       |
+| - [periodsSets](#planningData_periods_periodsSets )         | No      | array of object | No         | -          | PeriodsSets       |
 
 #### <a name="planningData_periods_followedPeriods"></a>3.1.1. Property `GhcEngineSchema > planningData > periods > followedPeriods`
 
@@ -703,11 +705,11 @@ Must be one of:
 
 **Title:** Period
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 | Property                                                            | Pattern | Type            | Deprecated | Definition | Title/Description                                                                                                                                                                              |
 | ------------------------------------------------------------------- | ------- | --------------- | ---------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -770,11 +772,11 @@ Must be one of:
 
 **Title:** AliasDayDeifinition
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 | Property                                                                   | Pattern | Type    | Deprecated | Definition | Title/Description                                                     |
 | -------------------------------------------------------------------------- | ------- | ------- | ---------- | ---------- | --------------------------------------------------------------------- |
@@ -799,7 +801,7 @@ Must be one of:
 
 **Description:** Header to identify the day in the results table and the frame column.
 
-#### <a name="planningData_periods_periodSets"></a>3.1.3. Property `GhcEngineSchema > planningData > periods > periodSets`
+#### <a name="planningData_periods_periodsSets"></a>3.1.3. Property `GhcEngineSchema > planningData > periods > periodsSets`
 
 **Title:** PeriodsSets
 
@@ -818,26 +820,26 @@ Must be one of:
 | **Additional items** | False              |
 | **Tuple validation** | See below          |
 
-| Each item of this array must be                      | Description |
-| ---------------------------------------------------- | ----------- |
-| [PeriodsSet](#planningData_periods_periodSets_items) | -           |
+| Each item of this array must be                       | Description |
+| ----------------------------------------------------- | ----------- |
+| [PeriodsSet](#planningData_periods_periodsSets_items) | -           |
 
-##### <a name="planningData_periods_periodSets_items"></a>3.1.3.1. GhcEngineSchema > planningData > periods > periodSets > PeriodsSet
+##### <a name="planningData_periods_periodsSets_items"></a>3.1.3.1. GhcEngineSchema > planningData > periods > periodsSets > PeriodsSet
 
 **Title:** PeriodsSet
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
-| Property                                                           | Pattern | Type            | Deprecated | Definition | Title/Description                                        |
-| ------------------------------------------------------------------ | ------- | --------------- | ---------- | ---------- | -------------------------------------------------------- |
-| + [id](#planningData_periods_periodSets_items_id )                 | No      | string          | No         | -          | Period identifier.                                       |
-| + [periodList](#planningData_periods_periodSets_items_periodList ) | No      | array of string | No         | -          | List of identifiers of the weeks that belong to the set. |
+| Property                                                            | Pattern | Type            | Deprecated | Definition | Title/Description                                        |
+| ------------------------------------------------------------------- | ------- | --------------- | ---------- | ---------- | -------------------------------------------------------- |
+| + [id](#planningData_periods_periodsSets_items_id )                 | No      | string          | No         | -          | Period identifier.                                       |
+| + [periodList](#planningData_periods_periodsSets_items_periodList ) | No      | array of string | No         | -          | List of identifiers of the weeks that belong to the set. |
 
-###### <a name="planningData_periods_periodSets_items_id"></a>3.1.3.1.1. Property `GhcEngineSchema > planningData > periods > periodSets > PeriodsSet > id`
+###### <a name="planningData_periods_periodsSets_items_id"></a>3.1.3.1.1. Property `GhcEngineSchema > planningData > periods > periodsSets > PeriodsSet > id`
 
 |              |          |
 | ------------ | -------- |
@@ -846,7 +848,7 @@ Must be one of:
 
 **Description:** Period identifier.
 
-###### <a name="planningData_periods_periodSets_items_periodList"></a>3.1.3.1.2. Property `GhcEngineSchema > planningData > periods > periodSets > PeriodsSet > periodList`
+###### <a name="planningData_periods_periodsSets_items_periodList"></a>3.1.3.1.2. Property `GhcEngineSchema > planningData > periods > periodsSets > PeriodsSet > periodList`
 
 |              |                   |
 | ------------ | ----------------- |
@@ -863,11 +865,11 @@ Must be one of:
 | **Additional items** | False              |
 | **Tuple validation** | See below          |
 
-| Each item of this array must be                                             | Description |
-| --------------------------------------------------------------------------- | ----------- |
-| [periodList items](#planningData_periods_periodSets_items_periodList_items) | -           |
+| Each item of this array must be                                              | Description |
+| ---------------------------------------------------------------------------- | ----------- |
+| [periodList items](#planningData_periods_periodsSets_items_periodList_items) | -           |
 
-###### <a name="planningData_periods_periodSets_items_periodList_items"></a>3.1.3.1.2.1. GhcEngineSchema > planningData > periods > periodSets > PeriodsSet > periodList > periodList items
+###### <a name="planningData_periods_periodsSets_items_periodList_items"></a>3.1.3.1.2.1. GhcEngineSchema > planningData > periods > periodsSets > PeriodsSet > periodList > periodList items
 
 |              |          |
 | ------------ | -------- |
@@ -901,11 +903,11 @@ Must be one of:
 
 **Title:** Frame
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 | Property                                     | Pattern | Type            | Deprecated | Definition | Title/Description          |
 | -------------------------------------------- | ------- | --------------- | ---------- | ---------- | -------------------------- |
@@ -958,11 +960,11 @@ Must be one of:
 
 **Title:** FrameDay
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 **Description:** Day with its sections.
 
@@ -1007,11 +1009,11 @@ Must be one of:
 
 **Title:** Section
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 | Property                                                                       | Pattern | Type             | Deprecated | Definition | Title/Description                                                           |
 | ------------------------------------------------------------------------------ | ------- | ---------------- | ---------- | ---------- | --------------------------------------------------------------------------- |
@@ -1123,11 +1125,11 @@ Must be one of:
 
 **Title:** Building
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 | Property                                                | Pattern | Type            | Deprecated | Definition | Title/Description    |
 | ------------------------------------------------------- | ------- | --------------- | ---------- | ---------- | -------------------- |
@@ -1236,11 +1238,11 @@ Must be one of:
 
 **Title:** Classroom
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 | Property                                                         | Pattern | Type            | Deprecated | Definition | Title/Description                                                                               |
 | ---------------------------------------------------------------- | ------- | --------------- | ---------- | ---------- | ----------------------------------------------------------------------------------------------- |
@@ -1335,11 +1337,11 @@ Must be one of:
 
 **Title:** BannedSectionPreference
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 **Description:** Template with only banned section assignment preference.
 
@@ -1422,11 +1424,11 @@ Must be one of:
 
 **Title:** ClassRoomSet
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 | Property                                                               | Pattern | Type            | Deprecated | Definition | Title/Description                                                  |
 | ---------------------------------------------------------------------- | ------- | --------------- | ---------- | ---------- | ------------------------------------------------------------------ |
@@ -1514,11 +1516,11 @@ Must be one of:
 
 **Title:** Task
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 **Description:** Teacher activity type.
 
@@ -1567,11 +1569,11 @@ Must be one of:
 
 **Title:** SectionPreference
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 **Description:** Template with a section assignment preference.
 
@@ -1679,11 +1681,11 @@ Must be one of:
 
 **Title:** Teacher
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 **Description:** Object with personal information and teachers' preferences.
 
@@ -1697,7 +1699,7 @@ Must be one of:
 | - [overlappedAssessment](#planningData_teachers_items_overlappedAssessment )   | No      | integer         | No         | -                                                                 | Number of overlapped evaluation sessions.                                                                                                            |
 | - [frameTemplate](#planningData_teachers_items_frameTemplate )                 | No      | array of object | No         | Same as [frameTemplate](#planningData_tasks_items_frameTemplate ) | FrameTemplate                                                                                                                                        |
 | - [generalSettings](#planningData_teachers_items_generalSettings )             | No      | object          | No         | -                                                                 | GeneralSettings                                                                                                                                      |
-| - [periodSettings](#planningData_teachers_items_periodSettings )               | No      | array of object | No         | -                                                                 | PeriodsSettings                                                                                                                                      |
+| - [periodsSettings](#planningData_teachers_items_periodsSettings )             | No      | array of object | No         | -                                                                 | PeriodsSettings                                                                                                                                      |
 
 ##### <a name="planningData_teachers_items_id"></a>3.7.1.1. Property `GhcEngineSchema > planningData > teachers > Teacher > id`
 
@@ -1997,11 +1999,11 @@ Must be one of:
 
 **Title:** FullDaysFreeTimes
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 **Description:** Teacher's full days of free time.
 
@@ -2034,11 +2036,11 @@ Must be one of:
 
 **Title:** FirstMinutesFreeTimes
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 **Description:** Teacher's free intervals at the beginning of the day.
 
@@ -2081,11 +2083,11 @@ Must be one of:
 
 **Title:** LastMinutesFreeTimes
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 **Description:** Teacher's free intervals at the end of the day.
 
@@ -2128,11 +2130,11 @@ Must be one of:
 
 **Title:** ConsecutiveAnyTimeFreeTimes
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 **Description:** Teacher's free intervals at any time of the day.
 
@@ -2194,11 +2196,11 @@ Must be one of:
 
 **Title:** MorningsFreePartTimes
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 **Description:** Mornings off.
 
@@ -2229,11 +2231,11 @@ Must be one of:
 
 **Title:** AfternoonFreePartTimes
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 **Description:** Afternoons off.
 
@@ -2264,11 +2266,11 @@ Must be one of:
 
 **Title:** IndistinctlyFreePartTimes
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 **Description:** Free mornings or evenings indistinctly.
 
@@ -2328,7 +2330,7 @@ Must be one of:
 | ------------------------- | ----------------------------- |
 | **Type**                  | `object`                      |
 | **Required**              | No                            |
-| **Additional properties** | Any type allowed              |
+| **Additional properties** | Not allowed                   |
 | **Defined in**            | #/$defs/conditionTypeWithTime |
 
 **Description:** Minutes between departure and arrival of the following day.
@@ -2367,7 +2369,7 @@ Must be one of:
 | ------------------------- | ----------------------------- |
 | **Type**                  | `object`                      |
 | **Required**              | No                            |
-| **Additional properties** | Any type allowed              |
+| **Additional properties** | Not allowed                   |
 | **Defined in**            | #/$defs/conditionTypeWithTime |
 
 **Description:** Minutes between the end time of the last day of the week and the start time of the following week.
@@ -2406,7 +2408,7 @@ Must be one of:
 | ------------------------- | ----------------------------- |
 | **Type**                  | `object`                      |
 | **Required**              | No                            |
-| **Additional properties** | Any type allowed              |
+| **Additional properties** | Not allowed                   |
 | **Defined in**            | #/$defs/conditionTypeWithTime |
 
 **Description:** Minutes of free time at first or last hours of the day.
@@ -2525,7 +2527,7 @@ Must be one of:
 | ------------------------- | ----------------------------- |
 | **Type**                  | `object`                      |
 | **Required**              | No                            |
-| **Additional properties** | Any type allowed              |
+| **Additional properties** | Not allowed                   |
 | **Defined in**            | #/$defs/conditionTypeWithTime |
 
 **Description:** Do not have less than a custom free time around noon pause.
@@ -2594,7 +2596,7 @@ Must be one of:
 | ------------------------- | ------------------------- |
 | **Type**                  | `object`                  |
 | **Required**              | No                        |
-| **Additional properties** | Any type allowed          |
+| **Additional properties** | Not allowed               |
 | **Defined in**            | #/$defs/conditionOcupancy |
 
 **Description:** Minimum teaching time of the teacher with students.
@@ -2653,7 +2655,7 @@ Must be one of:
 | ------------------------- | ------------------------- |
 | **Type**                  | `object`                  |
 | **Required**              | No                        |
-| **Additional properties** | Any type allowed          |
+| **Additional properties** | Not allowed               |
 | **Defined in**            | #/$defs/conditionOcupancy |
 
 **Description:** Maximun teaching time of the teacher with students.
@@ -2712,7 +2714,7 @@ Must be one of:
 | ------------------------- | ------------------------- |
 | **Type**                  | `object`                  |
 | **Required**              | No                        |
-| **Additional properties** | Any type allowed          |
+| **Additional properties** | Not allowed               |
 | **Defined in**            | #/$defs/conditionOcupancy |
 
 **Description:** Minimum teaching time of the teacher with students and other non-teaching activities indicated as eligible for calculation.
@@ -2771,7 +2773,7 @@ Must be one of:
 | ------------------------- | ------------------------- |
 | **Type**                  | `object`                  |
 | **Required**              | No                        |
-| **Additional properties** | Any type allowed          |
+| **Additional properties** | Not allowed               |
 | **Defined in**            | #/$defs/conditionOcupancy |
 
 **Description:** Maximum teaching time of the teacher with students and other non-teaching activities indicated as eligible for calculation.
@@ -2895,7 +2897,7 @@ Must be one of:
 
 **Description:** Maximum number of movements per day that can be weighted/preferred.
 
-##### <a name="planningData_teachers_items_periodSettings"></a>3.7.1.9. Property `GhcEngineSchema > planningData > teachers > Teacher > periodSettings`
+##### <a name="planningData_teachers_items_periodsSettings"></a>3.7.1.9. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings`
 
 **Title:** PeriodsSettings
 
@@ -2914,13 +2916,13 @@ Must be one of:
 | **Additional items** | False              |
 | **Tuple validation** | See below          |
 
-| Each item of this array must be                                    | Description |
-| ------------------------------------------------------------------ | ----------- |
-| [PeriodSetting](#planningData_teachers_items_periodSettings_items) | -           |
+| Each item of this array must be                                      | Description |
+| -------------------------------------------------------------------- | ----------- |
+| [PeriodsSetting](#planningData_teachers_items_periodsSettings_items) | -           |
 
-###### <a name="planningData_teachers_items_periodSettings_items"></a>3.7.1.9.1. GhcEngineSchema > planningData > teachers > Teacher > periodSettings > PeriodSetting
+###### <a name="planningData_teachers_items_periodsSettings_items"></a>3.7.1.9.1. GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting
 
-**Title:** PeriodSetting
+**Title:** PeriodsSetting
 
 |                           |             |
 | ------------------------- | ----------- |
@@ -2928,22 +2930,22 @@ Must be one of:
 | **Required**              | No          |
 | **Additional properties** | Not allowed |
 
-| Property                                                                                                | Pattern | Type             | Deprecated | Definition                                                                                               | Title/Description                                                                                               |
-| ------------------------------------------------------------------------------------------------------- | ------- | ---------------- | ---------- | -------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| + [refPeriod](#planningData_teachers_items_periodSettings_items_refPeriod )                             | No      | string           | No         | -                                                                                                        | Identifier of the period to which the settings affect.                                                          |
-| - [weeklyStay](#planningData_teachers_items_periodSettings_items_weeklyStay )                           | No      | object           | No         | Same as [weeklyStay](#planningData_teachers_items_generalSettings_weeklyStay )                           | WeeklyStay                                                                                                      |
-| - [dailyStay](#planningData_teachers_items_periodSettings_items_dailyStay )                             | No      | object           | No         | Same as [dailyStay](#planningData_teachers_items_generalSettings_dailyStay )                             | DailyStay                                                                                                       |
-| - [avoidGapsBetweenSesions](#planningData_teachers_items_periodSettings_items_avoidGapsBetweenSesions ) | No      | boolean          | No         | Same as [avoidGapsBetweenSesions](#planningData_teachers_items_generalSettings_avoidGapsBetweenSesions ) | It indicates whether gaps between class units for the teacher should be avoided. This is a weighting condition. |
-| - [maxContinuousTeaching](#planningData_teachers_items_periodSettings_items_maxContinuousTeaching )     | No      | object           | No         | Same as [maxContinuousTeaching](#planningData_teachers_items_generalSettings_maxContinuousTeaching )     | MaxContinuousTeaching                                                                                           |
-| - [avoidClassesAroundBreak](#planningData_teachers_items_periodSettings_items_avoidClassesAroundBreak ) | No      | enum (of string) | No         | Same as [avoidClassesAroundBreak](#planningData_teachers_items_generalSettings_avoidClassesAroundBreak ) | ConditionType                                                                                                   |
-| - [freeTimes](#planningData_teachers_items_periodSettings_items_freeTimes )                             | No      | object           | No         | Same as [freeTimes](#planningData_teachers_items_generalSettings_freeTimes )                             | FreeTimes                                                                                                       |
-| - [freePartTimes](#planningData_teachers_items_periodSettings_items_freePartTimes )                     | No      | object           | No         | Same as [freePartTimes](#planningData_teachers_items_generalSettings_freePartTimes )                     | FreePartTime                                                                                                    |
-| - [incompatibilities](#planningData_teachers_items_periodSettings_items_incompatibilities )             | No      | object           | No         | Same as [incompatibilities](#planningData_teachers_items_generalSettings_incompatibilities )             | Incompatibilities                                                                                               |
-| - [dailyOcupation](#planningData_teachers_items_periodSettings_items_dailyOcupation )                   | No      | object           | No         | Same as [dailyOcupation](#planningData_teachers_items_generalSettings_dailyOcupation )                   | DailyOcupation                                                                                                  |
-| - [middayReference](#planningData_teachers_items_periodSettings_items_middayReference )                 | No      | object           | No         | Same as [middayReference](#planningData_teachers_items_generalSettings_middayReference )                 | MiddayReference                                                                                                 |
-| - [dailyBuildingTransfers](#planningData_teachers_items_periodSettings_items_dailyBuildingTransfers )   | No      | object           | No         | Same as [dailyBuildingTransfers](#planningData_teachers_items_generalSettings_dailyBuildingTransfers )   | DailyBuildingTransfers                                                                                          |
+| Property                                                                                                 | Pattern | Type             | Deprecated | Definition                                                                                               | Title/Description                                                                                               |
+| -------------------------------------------------------------------------------------------------------- | ------- | ---------------- | ---------- | -------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| + [refPeriod](#planningData_teachers_items_periodsSettings_items_refPeriod )                             | No      | string           | No         | -                                                                                                        | Identifier of the period to which the settings affect.                                                          |
+| - [weeklyStay](#planningData_teachers_items_periodsSettings_items_weeklyStay )                           | No      | object           | No         | Same as [weeklyStay](#planningData_teachers_items_generalSettings_weeklyStay )                           | WeeklyStay                                                                                                      |
+| - [dailyStay](#planningData_teachers_items_periodsSettings_items_dailyStay )                             | No      | object           | No         | Same as [dailyStay](#planningData_teachers_items_generalSettings_dailyStay )                             | DailyStay                                                                                                       |
+| - [avoidGapsBetweenSesions](#planningData_teachers_items_periodsSettings_items_avoidGapsBetweenSesions ) | No      | boolean          | No         | Same as [avoidGapsBetweenSesions](#planningData_teachers_items_generalSettings_avoidGapsBetweenSesions ) | It indicates whether gaps between class units for the teacher should be avoided. This is a weighting condition. |
+| - [maxContinuousTeaching](#planningData_teachers_items_periodsSettings_items_maxContinuousTeaching )     | No      | object           | No         | Same as [maxContinuousTeaching](#planningData_teachers_items_generalSettings_maxContinuousTeaching )     | MaxContinuousTeaching                                                                                           |
+| - [avoidClassesAroundBreak](#planningData_teachers_items_periodsSettings_items_avoidClassesAroundBreak ) | No      | enum (of string) | No         | Same as [avoidClassesAroundBreak](#planningData_teachers_items_generalSettings_avoidClassesAroundBreak ) | ConditionType                                                                                                   |
+| - [freeTimes](#planningData_teachers_items_periodsSettings_items_freeTimes )                             | No      | object           | No         | Same as [freeTimes](#planningData_teachers_items_generalSettings_freeTimes )                             | FreeTimes                                                                                                       |
+| - [freePartTimes](#planningData_teachers_items_periodsSettings_items_freePartTimes )                     | No      | object           | No         | Same as [freePartTimes](#planningData_teachers_items_generalSettings_freePartTimes )                     | FreePartTime                                                                                                    |
+| - [incompatibilities](#planningData_teachers_items_periodsSettings_items_incompatibilities )             | No      | object           | No         | Same as [incompatibilities](#planningData_teachers_items_generalSettings_incompatibilities )             | Incompatibilities                                                                                               |
+| - [dailyOcupation](#planningData_teachers_items_periodsSettings_items_dailyOcupation )                   | No      | object           | No         | Same as [dailyOcupation](#planningData_teachers_items_generalSettings_dailyOcupation )                   | DailyOcupation                                                                                                  |
+| - [middayReference](#planningData_teachers_items_periodsSettings_items_middayReference )                 | No      | object           | No         | Same as [middayReference](#planningData_teachers_items_generalSettings_middayReference )                 | MiddayReference                                                                                                 |
+| - [dailyBuildingTransfers](#planningData_teachers_items_periodsSettings_items_dailyBuildingTransfers )   | No      | object           | No         | Same as [dailyBuildingTransfers](#planningData_teachers_items_generalSettings_dailyBuildingTransfers )   | DailyBuildingTransfers                                                                                          |
 
-###### <a name="planningData_teachers_items_periodSettings_items_refPeriod"></a>3.7.1.9.1.1. Property `GhcEngineSchema > planningData > teachers > Teacher > periodSettings > PeriodSetting > refPeriod`
+###### <a name="planningData_teachers_items_periodsSettings_items_refPeriod"></a>3.7.1.9.1.1. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > refPeriod`
 
 |              |          |
 | ------------ | -------- |
@@ -2952,7 +2954,7 @@ Must be one of:
 
 **Description:** Identifier of the period to which the settings affect.
 
-###### <a name="planningData_teachers_items_periodSettings_items_weeklyStay"></a>3.7.1.9.1.2. Property `GhcEngineSchema > planningData > teachers > Teacher > periodSettings > PeriodSetting > weeklyStay`
+###### <a name="planningData_teachers_items_periodsSettings_items_weeklyStay"></a>3.7.1.9.1.2. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > weeklyStay`
 
 **Title:** WeeklyStay
 
@@ -2965,7 +2967,7 @@ Must be one of:
 
 **Description:** It indicates the maximum preferential and strict teacher's stay, for the weekly stay that the teacher can be in the academic institution.
 
-###### <a name="planningData_teachers_items_periodSettings_items_dailyStay"></a>3.7.1.9.1.3. Property `GhcEngineSchema > planningData > teachers > Teacher > periodSettings > PeriodSetting > dailyStay`
+###### <a name="planningData_teachers_items_periodsSettings_items_dailyStay"></a>3.7.1.9.1.3. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > dailyStay`
 
 **Title:** DailyStay
 
@@ -2978,7 +2980,7 @@ Must be one of:
 
 **Description:** This indicates the maximum preferential and strict time of stay of the teacher, for the daily stay that the teacher can be in the educational institution.
 
-###### <a name="planningData_teachers_items_periodSettings_items_avoidGapsBetweenSesions"></a>3.7.1.9.1.4. Property `GhcEngineSchema > planningData > teachers > Teacher > periodSettings > PeriodSetting > avoidGapsBetweenSesions`
+###### <a name="planningData_teachers_items_periodsSettings_items_avoidGapsBetweenSesions"></a>3.7.1.9.1.4. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > avoidGapsBetweenSesions`
 
 |                        |                                                                                                 |
 | ---------------------- | ----------------------------------------------------------------------------------------------- |
@@ -2989,7 +2991,7 @@ Must be one of:
 
 **Description:** It indicates whether gaps between class units for the teacher should be avoided. This is a weighting condition.
 
-###### <a name="planningData_teachers_items_periodSettings_items_maxContinuousTeaching"></a>3.7.1.9.1.5. Property `GhcEngineSchema > planningData > teachers > Teacher > periodSettings > PeriodSetting > maxContinuousTeaching`
+###### <a name="planningData_teachers_items_periodsSettings_items_maxContinuousTeaching"></a>3.7.1.9.1.5. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > maxContinuousTeaching`
 
 **Title:** MaxContinuousTeaching
 
@@ -3002,7 +3004,7 @@ Must be one of:
 
 **Description:** It indicates the maximum continuous time of class units, which are allowed without having a gap or a non-class units between them.
 
-###### <a name="planningData_teachers_items_periodSettings_items_avoidClassesAroundBreak"></a>3.7.1.9.1.6. Property `GhcEngineSchema > planningData > teachers > Teacher > periodSettings > PeriodSetting > avoidClassesAroundBreak`
+###### <a name="planningData_teachers_items_periodsSettings_items_avoidClassesAroundBreak"></a>3.7.1.9.1.6. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > avoidClassesAroundBreak`
 
 **Title:** ConditionType
 
@@ -3015,7 +3017,7 @@ Must be one of:
 
 **Description:** It indicates whether the existence of class units on both sides of a playground supervision taught by this teacher will be penalised or forbidden.
 
-###### <a name="planningData_teachers_items_periodSettings_items_freeTimes"></a>3.7.1.9.1.7. Property `GhcEngineSchema > planningData > teachers > Teacher > periodSettings > PeriodSetting > freeTimes`
+###### <a name="planningData_teachers_items_periodsSettings_items_freeTimes"></a>3.7.1.9.1.7. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > freeTimes`
 
 **Title:** FreeTimes
 
@@ -3028,7 +3030,7 @@ Must be one of:
 
 **Description:** It contains the free time spaces that the teacher must have.
 
-###### <a name="planningData_teachers_items_periodSettings_items_freePartTimes"></a>3.7.1.9.1.8. Property `GhcEngineSchema > planningData > teachers > Teacher > periodSettings > PeriodSetting > freePartTimes`
+###### <a name="planningData_teachers_items_periodsSettings_items_freePartTimes"></a>3.7.1.9.1.8. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > freePartTimes`
 
 **Title:** FreePartTime
 
@@ -3041,7 +3043,7 @@ Must be one of:
 
 **Description:** Free half-time periods .
 
-###### <a name="planningData_teachers_items_periodSettings_items_incompatibilities"></a>3.7.1.9.1.9. Property `GhcEngineSchema > planningData > teachers > Teacher > periodSettings > PeriodSetting > incompatibilities`
+###### <a name="planningData_teachers_items_periodsSettings_items_incompatibilities"></a>3.7.1.9.1.9. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > incompatibilities`
 
 **Title:** Incompatibilities
 
@@ -3054,7 +3056,7 @@ Must be one of:
 
 **Description:** It contains the teacher's incompatibilities on the allocation of class units and rest periods.
 
-###### <a name="planningData_teachers_items_periodSettings_items_dailyOcupation"></a>3.7.1.9.1.10. Property `GhcEngineSchema > planningData > teachers > Teacher > periodSettings > PeriodSetting > dailyOcupation`
+###### <a name="planningData_teachers_items_periodsSettings_items_dailyOcupation"></a>3.7.1.9.1.10. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > dailyOcupation`
 
 **Title:** DailyOcupation
 
@@ -3067,7 +3069,7 @@ Must be one of:
 
 **Description:** Maximum and minimum values of teaching or activity time for teachers. This object indicates the type of condition (strict or weighting) and whether the automatic calculation in minutes in the engine should be set.
 
-###### <a name="planningData_teachers_items_periodSettings_items_middayReference"></a>3.7.1.9.1.11. Property `GhcEngineSchema > planningData > teachers > Teacher > periodSettings > PeriodSetting > middayReference`
+###### <a name="planningData_teachers_items_periodsSettings_items_middayReference"></a>3.7.1.9.1.11. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > middayReference`
 
 **Title:** MiddayReference
 
@@ -3080,7 +3082,7 @@ Must be one of:
 
 **Description:** It indicate the frame where the teacher takes noon pause.
 
-###### <a name="planningData_teachers_items_periodSettings_items_dailyBuildingTransfers"></a>3.7.1.9.1.12. Property `GhcEngineSchema > planningData > teachers > Teacher > periodSettings > PeriodSetting > dailyBuildingTransfers`
+###### <a name="planningData_teachers_items_periodsSettings_items_dailyBuildingTransfers"></a>3.7.1.9.1.12. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > dailyBuildingTransfers`
 
 **Title:** DailyBuildingTransfers
 
@@ -3120,11 +3122,11 @@ Must be one of:
 
 **Title:** Subject
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 | Property                                                                     | Pattern | Type             | Deprecated | Definition                                                        | Title/Description                                                    |
 | ---------------------------------------------------------------------------- | ------- | ---------------- | ---------- | ----------------------------------------------------------------- | -------------------------------------------------------------------- |
@@ -3132,9 +3134,8 @@ Must be one of:
 | - [shortName](#planningData_subjects_items_shortName )                       | No      | string           | No         | -                                                                 | Short name of the subject.                                           |
 | - [fullName](#planningData_subjects_items_fullName )                         | No      | string           | No         | -                                                                 | Complete name of the subject.                                        |
 | - [exKey](#planningData_subjects_items_exKey )                               | No      | string           | No         | -                                                                 | External key of the subject                                          |
-| - [isStudentMentoring](#planningData_subjects_items_isStudentMentoring )     | No      | boolean          | No         | -                                                                 | Indicates whether the subject is a tutoring session with students    |
 | - [technicalTeacher](#planningData_subjects_items_technicalTeacher )         | No      | boolean          | No         | -                                                                 | It indicates whether the subject is teach by technical teacher.      |
-| - [type](#planningData_subjects_items_type )                                 | No      | enum (of string) | No         | -                                                                 | Type of the subject                                                  |
+| - [type](#planningData_subjects_items_type )                                 | No      | enum (of string) | No         | -                                                                 | SubjectType                                                          |
 | - [refClassroom](#planningData_subjects_items_refClassroom )                 | No      | string           | No         | -                                                                 | Id of the classroom assigned to teach the subject.                   |
 | - [refClassRoomSetsList](#planningData_subjects_items_refClassRoomSetsList ) | No      | array of string  | No         | -                                                                 | List of alternative classroom sets assigned to schedule the subject. |
 | - [refColourInResult](#planningData_subjects_items_refColourInResult )       | No      | string           | No         | -                                                                 | Colour code used to represent the subject in the result.             |
@@ -3176,17 +3177,7 @@ Must be one of:
 
 **Description:** External key of the subject
 
-##### <a name="planningData_subjects_items_isStudentMentoring"></a>3.8.1.5. Property `GhcEngineSchema > planningData > subjects > Subject > isStudentMentoring`
-
-|              |           |
-| ------------ | --------- |
-| **Type**     | `boolean` |
-| **Required** | No        |
-| **Default**  | `false`   |
-
-**Description:** Indicates whether the subject is a tutoring session with students
-
-##### <a name="planningData_subjects_items_technicalTeacher"></a>3.8.1.6. Property `GhcEngineSchema > planningData > subjects > Subject > technicalTeacher`
+##### <a name="planningData_subjects_items_technicalTeacher"></a>3.8.1.5. Property `GhcEngineSchema > planningData > subjects > Subject > technicalTeacher`
 
 |              |           |
 | ------------ | --------- |
@@ -3196,7 +3187,9 @@ Must be one of:
 
 **Description:** It indicates whether the subject is teach by technical teacher.
 
-##### <a name="planningData_subjects_items_type"></a>3.8.1.7. Property `GhcEngineSchema > planningData > subjects > Subject > type`
+##### <a name="planningData_subjects_items_type"></a>3.8.1.6. Property `GhcEngineSchema > planningData > subjects > Subject > type`
+
+**Title:** SubjectType
 
 |              |                    |
 | ------------ | ------------------ |
@@ -3211,7 +3204,7 @@ Must be one of:
 * "elective"
 * "mentoring"
 
-##### <a name="planningData_subjects_items_refClassroom"></a>3.8.1.8. Property `GhcEngineSchema > planningData > subjects > Subject > refClassroom`
+##### <a name="planningData_subjects_items_refClassroom"></a>3.8.1.7. Property `GhcEngineSchema > planningData > subjects > Subject > refClassroom`
 
 |              |          |
 | ------------ | -------- |
@@ -3220,7 +3213,7 @@ Must be one of:
 
 **Description:** Id of the classroom assigned to teach the subject.
 
-##### <a name="planningData_subjects_items_refClassRoomSetsList"></a>3.8.1.9. Property `GhcEngineSchema > planningData > subjects > Subject > refClassRoomSetsList`
+##### <a name="planningData_subjects_items_refClassRoomSetsList"></a>3.8.1.8. Property `GhcEngineSchema > planningData > subjects > Subject > refClassRoomSetsList`
 
 |              |                   |
 | ------------ | ----------------- |
@@ -3241,7 +3234,7 @@ Must be one of:
 | -------------------------------------------------------------------------- | ------------------------- |
 | [ClassRoomSetRef](#planningData_subjects_items_refClassRoomSetsList_items) | Classroom set identifier. |
 
-###### <a name="planningData_subjects_items_refClassRoomSetsList_items"></a>3.8.1.9.1. GhcEngineSchema > planningData > subjects > Subject > refClassRoomSetsList > ClassRoomSetRef
+###### <a name="planningData_subjects_items_refClassRoomSetsList_items"></a>3.8.1.8.1. GhcEngineSchema > planningData > subjects > Subject > refClassRoomSetsList > ClassRoomSetRef
 
 **Title:** ClassRoomSetRef
 
@@ -3252,7 +3245,7 @@ Must be one of:
 
 **Description:** Classroom set identifier.
 
-##### <a name="planningData_subjects_items_refColourInResult"></a>3.8.1.10. Property `GhcEngineSchema > planningData > subjects > Subject > refColourInResult`
+##### <a name="planningData_subjects_items_refColourInResult"></a>3.8.1.9. Property `GhcEngineSchema > planningData > subjects > Subject > refColourInResult`
 
 |              |          |
 | ------------ | -------- |
@@ -3261,7 +3254,7 @@ Must be one of:
 
 **Description:** Colour code used to represent the subject in the result.
 
-##### <a name="planningData_subjects_items_frameTemplate"></a>3.8.1.11. Property `GhcEngineSchema > planningData > subjects > Subject > frameTemplate`
+##### <a name="planningData_subjects_items_frameTemplate"></a>3.8.1.10. Property `GhcEngineSchema > planningData > subjects > Subject > frameTemplate`
 
 **Title:** FrameTemplate
 
@@ -3300,11 +3293,11 @@ Must be one of:
 
 **Title:** Group
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 | Property                                                                           | Pattern | Type             | Deprecated | Definition                                                                               | Title/Description                                                                                                                |
 | ---------------------------------------------------------------------------------- | ------- | ---------------- | ---------- | ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
@@ -3700,11 +3693,11 @@ Must be one of:
 
 **Title:** Course
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 | Property                                                        | Pattern | Type            | Deprecated | Definition | Title/Description                        |
 | --------------------------------------------------------------- | ------- | --------------- | ---------- | ---------- | ---------------------------------------- |
@@ -3765,11 +3758,11 @@ Must be one of:
 
 **Title:** CourseSubject
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 | Property                                                                     | Pattern | Type    | Deprecated | Definition | Title/Description                                                 |
 | ---------------------------------------------------------------------------- | ------- | ------- | ---------- | ---------- | ----------------------------------------------------------------- |
@@ -3821,11 +3814,11 @@ Must be one of:
 
 **Title:** Department
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 | Property                                                                      | Pattern | Type            | Deprecated | Definition | Title/Description                                                                                 |
 | ----------------------------------------------------------------------------- | ------- | --------------- | ---------- | ---------- | ------------------------------------------------------------------------------------------------- |
@@ -3975,11 +3968,11 @@ Must be one of:
 
 **Title:** Session
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 | Property                                                                               | Pattern | Type            | Deprecated | Definition                      | Title/Description                                        |
 | -------------------------------------------------------------------------------------- | ------- | --------------- | ---------- | ------------------------------- | -------------------------------------------------------- |
@@ -4057,7 +4050,7 @@ Must be one of:
 | ------------------------- | ---------------- |
 | **Type**                  | `object`         |
 | **Required**              | Yes              |
-| **Additional properties** | Any type allowed |
+| **Additional properties** | Not allowed      |
 | **Defined in**            | #/$defs/refGroup |
 
 **Description:** Contains the reference to a group of the session, and optionally, the number of students of the group that attend the session.
@@ -4123,11 +4116,11 @@ Must be one of:
 
 **Title:** OtherElementsInClassRooms
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 **Description:** It contains interrelated elements that are present in the session in addition to the main ones.
 
@@ -4168,7 +4161,7 @@ Must be one of:
 | ------------------------- | --------------------------------------------------------- |
 | **Type**                  | `object`                                                  |
 | **Required**              | No                                                        |
-| **Additional properties** | Any type allowed                                          |
+| **Additional properties** | Not allowed                                               |
 | **Same definition as**    | [refMainGroup](#planningData_sessions_items_refMainGroup) |
 
 **Description:** Contains the reference to a group of the session, and optionally, the number of students of the group that attend the session.
@@ -4427,11 +4420,11 @@ Must be one of:
 
 **Title:** TimeAllocation
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | Yes              |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | Yes         |
+| **Additional properties** | Not allowed |
 
 **Description:** Contains the specification of how the total time must be allocated within the days of the framework and should be distributed across the period or periods.
 
@@ -4665,11 +4658,11 @@ Must be one of:
 
 **Title:** SessionSectionPreference
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 **Description:** Section assignment preference.
 
@@ -4932,7 +4925,7 @@ Must be one of:
 | Property                                                                                  | Pattern | Type             | Deprecated | Definition | Title/Description                                               |
 | ----------------------------------------------------------------------------------------- | ------- | ---------------- | ---------- | ---------- | --------------------------------------------------------------- |
 | + [refSesions](#planningData_sessions_items_sessionRelations_differentDays_refSesions )   | No      | array of integer | No         | -          | RefSesions                                                      |
-| - [daysSetting](#planningData_sessions_items_sessionRelations_differentDays_daysSetting ) | No      | enum (of string) | No         | -          | Keep the same position each week or period for the class units. |
+| + [daysSetting](#planningData_sessions_items_sessionRelations_differentDays_daysSetting ) | No      | enum (of string) | No         | -          | Keep the same position each week or period for the class units. |
 
 ###### <a name="planningData_sessions_items_sessionRelations_differentDays_refSesions"></a>3.13.1.13.2.1. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > differentDays > refSesions`
 
@@ -4973,7 +4966,7 @@ Must be one of:
 |              |                              |
 | ------------ | ---------------------------- |
 | **Type**     | `enum (of string)`           |
-| **Required** | No                           |
+| **Required** | Yes                          |
 | **Default**  | `"indifferentDaysPreferred"` |
 
 **Description:** Keep the same position each week or period for the class units.
@@ -5409,11 +5402,11 @@ Must be one of:
 
 **Title:** Meeting
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 **Description:** Sevice of meeting between teachers.
 
@@ -5617,11 +5610,11 @@ Must be one of:
 
 **Title:** Complementary
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 **Description:** Service of teacher`s complementary activity.
 
@@ -5999,7 +5992,7 @@ Must be one of:
 | Property                                                                                             | Pattern | Type            | Deprecated | Definition                            | Title/Description                                            |
 | ---------------------------------------------------------------------------------------------------- | ------- | --------------- | ---------- | ------------------------------------- | ------------------------------------------------------------ |
 | + [teacherId](#planningData_onCallServices_items_refTeachers_items_teacherId )                       | No      | string          | No         | -                                     | Teacher identifier.                                          |
-| - [numOfSections](#planningData_onCallServices_items_refTeachers_items_numOfSections )               | No      | integer         | No         | -                                     | Number of on-call services to be done weekly by the teacher. |
+| + [numOfSections](#planningData_onCallServices_items_refTeachers_items_numOfSections )               | No      | integer         | No         | -                                     | Number of on-call services to be done weekly by the teacher. |
 | - [teacherFrameTemplate](#planningData_onCallServices_items_refTeachers_items_teacherFrameTemplate ) | No      | array of object | No         | In #/$defs/onCallServiceframeTemplate | OnCallTemplate                                               |
 
 ###### <a name="planningData_onCallServices_items_refTeachers_items_teacherId"></a>3.16.1.7.1.1. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refTeachers > RefTeacher > teacherId`
@@ -6016,7 +6009,7 @@ Must be one of:
 |              |           |
 | ------------ | --------- |
 | **Type**     | `integer` |
-| **Required** | No        |
+| **Required** | Yes       |
 | **Default**  | `1`       |
 
 **Description:** Number of on-call services to be done weekly by the teacher.
@@ -6049,11 +6042,11 @@ Must be one of:
 
 **Title:** OnCallSectionPreference
 
-|                           |                  |
-| ------------------------- | ---------------- |
-| **Type**                  | `object`         |
-| **Required**              | No               |
-| **Additional properties** | Any type allowed |
+|                           |             |
+| ------------------------- | ----------- |
+| **Type**                  | `object`    |
+| **Required**              | No          |
+| **Additional properties** | Not allowed |
 
 **Description:** Template with a teacher section assignment preference about the service.
 
@@ -6525,21 +6518,20 @@ Must be one of:
 | ---------------------------------------- | ------- | ------- | ---------- | ---------- | ---------------------- |
 | - [date](#results_items_date )           | No      | string  | No         | -          | JsonGenerationDate     |
 | + [weight](#results_items_weight )       | No      | integer | No         | -          | ResultWeight           |
-| + [timetable](#results_items_timetable ) | No      | object  | No         | -          | GeneratedJsonTimetable |
+| + [timetable](#results_items_timetable ) | No      | object  | No         | -          | GeneratedJSONTimetable |
 
-#### <a name="results_items_date"></a>4.1.1. Property `GhcEngineSchema > results > EngineOutputGHCSchema > date`
+#### <a name="results_items_date"></a>4.1.1. Property `GhcEngineSchema > results > GhcResult > date`
 
 **Title:** JsonGenerationDate
 
-|              |             |
-| ------------ | ----------- |
-| **Type**     | `string`    |
-| **Required** | No          |
-| **Format**   | `date-time` |
+|              |          |
+| ------------ | -------- |
+| **Type**     | `string` |
+| **Required** | No       |
 
 **Description:** Date of result creation.
 
-#### <a name="results_items_weight"></a>4.1.2. Property `GhcEngineSchema > results > EngineOutputGHCSchema > weight`
+#### <a name="results_items_weight"></a>4.1.2. Property `GhcEngineSchema > results > GhcResult > weight`
 
 **Title:** ResultWeight
 
@@ -6550,9 +6542,9 @@ Must be one of:
 
 **Description:** Weight of the result according to the non-mandatory conditions not fulfilled.
 
-#### <a name="results_items_timetable"></a>4.1.3. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable`
+#### <a name="results_items_timetable"></a>4.1.3. Property `GhcEngineSchema > results > GhcResult > timetable`
 
-**Title:** GeneratedJsonTimetable
+**Title:** GeneratedJSONTimetable
 
 |                           |             |
 | ------------------------- | ----------- |
@@ -6567,7 +6559,7 @@ Must be one of:
 | - [anonymousClassRooms](#results_items_timetable_anonymousClassRooms ) | No      | array of object | No         | -          | SetOfAnonymousClassRooms |
 | + [assignedSections](#results_items_timetable_assignedSections )       | No      | array of object | No         | -          | AssignedSections         |
 
-##### <a name="results_items_timetable_anonymousClassRooms"></a>4.1.3.1. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > anonymousClassRooms`
+##### <a name="results_items_timetable_anonymousClassRooms"></a>4.1.3.1. Property `GhcEngineSchema > results > GhcResult > timetable > anonymousClassRooms`
 
 **Title:** SetOfAnonymousClassRooms
 
@@ -6590,7 +6582,7 @@ Must be one of:
 | ------------------------------------------------------------------------ | ---------------------------------------------------------------- |
 | [AnonymousClassRoom](#results_items_timetable_anonymousClassRooms_items) | Object with anonymous classrooms created in a set of classrooms. |
 
-###### <a name="results_items_timetable_anonymousClassRooms_items"></a>4.1.3.1.1. GhcEngineSchema > results > EngineOutputGHCSchema > timetable > anonymousClassRooms > AnonymousClassRoom
+###### <a name="results_items_timetable_anonymousClassRooms_items"></a>4.1.3.1.1. GhcEngineSchema > results > GhcResult > timetable > anonymousClassRooms > AnonymousClassRoom
 
 **Title:** AnonymousClassRoom
 
@@ -6607,7 +6599,7 @@ Must be one of:
 | + [refClassRoomsSet](#results_items_timetable_anonymousClassRooms_items_refClassRoomsSet )   | No      | string          | No         | -          | Identifier of the ClassRooms group. |
 | + [classRoomsCreated](#results_items_timetable_anonymousClassRooms_items_classRoomsCreated ) | No      | array of string | No         | -          | ListOfAnonymousRooms                |
 
-###### <a name="results_items_timetable_anonymousClassRooms_items_refClassRoomsSet"></a>4.1.3.1.1.1. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > anonymousClassRooms > AnonymousClassRoom > refClassRoomsSet`
+###### <a name="results_items_timetable_anonymousClassRooms_items_refClassRoomsSet"></a>4.1.3.1.1.1. Property `GhcEngineSchema > results > GhcResult > timetable > anonymousClassRooms > AnonymousClassRoom > refClassRoomsSet`
 
 |              |          |
 | ------------ | -------- |
@@ -6616,7 +6608,7 @@ Must be one of:
 
 **Description:** Identifier of the ClassRooms group.
 
-###### <a name="results_items_timetable_anonymousClassRooms_items_classRoomsCreated"></a>4.1.3.1.1.2. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > anonymousClassRooms > AnonymousClassRoom > classRoomsCreated`
+###### <a name="results_items_timetable_anonymousClassRooms_items_classRoomsCreated"></a>4.1.3.1.1.2. Property `GhcEngineSchema > results > GhcResult > timetable > anonymousClassRooms > AnonymousClassRoom > classRoomsCreated`
 
 **Title:** ListOfAnonymousRooms
 
@@ -6639,7 +6631,7 @@ Must be one of:
 | ------------------------------------------------------------------------------------------- | -------------------------------------- |
 | [AnonymousRoom](#results_items_timetable_anonymousClassRooms_items_classRoomsCreated_items) | Identifier of the anonymous classroom. |
 
-###### <a name="results_items_timetable_anonymousClassRooms_items_classRoomsCreated_items"></a>4.1.3.1.1.2.1. GhcEngineSchema > results > EngineOutputGHCSchema > timetable > anonymousClassRooms > AnonymousClassRoom > classRoomsCreated > AnonymousRoom
+###### <a name="results_items_timetable_anonymousClassRooms_items_classRoomsCreated_items"></a>4.1.3.1.1.2.1. GhcEngineSchema > results > GhcResult > timetable > anonymousClassRooms > AnonymousClassRoom > classRoomsCreated > AnonymousRoom
 
 **Title:** AnonymousRoom
 
@@ -6650,7 +6642,7 @@ Must be one of:
 
 **Description:** Identifier of the anonymous classroom.
 
-##### <a name="results_items_timetable_assignedSections"></a>4.1.3.2. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections`
+##### <a name="results_items_timetable_assignedSections"></a>4.1.3.2. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections`
 
 **Title:** AssignedSections
 
@@ -6673,7 +6665,7 @@ Must be one of:
 | ------------------------------------------------------------------ | --------------------------------------------------------- |
 | [AssignedSection](#results_items_timetable_assignedSections_items) | Section with one class units (or on call hours) assigned. |
 
-###### <a name="results_items_timetable_assignedSections_items"></a>4.1.3.2.1. GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection
+###### <a name="results_items_timetable_assignedSections_items"></a>4.1.3.2.1. GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection
 
 **Title:** AssignedSection
 
@@ -6685,17 +6677,17 @@ Must be one of:
 
 **Description:** Section with one class units (or on call hours) assigned.
 
-| Property                                                                            | Pattern | Type    | Deprecated | Definition | Title/Description                                                             |
-| ----------------------------------------------------------------------------------- | ------- | ------- | ---------- | ---------- | ----------------------------------------------------------------------------- |
-| + [refFrame](#results_items_timetable_assignedSections_items_refFrame )             | No      | string  | No         | -          | Frame timetable section with assignment.                                      |
-| + [day](#results_items_timetable_assignedSections_items_day )                       | No      | integer | No         | -          | Day of the week when the section is located.                                  |
-| + [realIndex](#results_items_timetable_assignedSections_items_realIndex )           | No      | integer | No         | -          | Position on the day, of the real section, in the frame.                       |
-| + [fictionalIndex](#results_items_timetable_assignedSections_items_fictionalIndex ) | No      | integer | No         | -          | Position on the day, of the fictional section, in the frame.                  |
-| + [startTime](#results_items_timetable_assignedSections_items_startTime )           | No      | string  | No         | -          | Start time of the section with a fictional index where sessions are assigned. |
-| + [endTime](#results_items_timetable_assignedSections_items_endTime )               | No      | string  | No         | -          | End time of the section with a fictional index where sessions are assigned.   |
-| + [assignment](#results_items_timetable_assignedSections_items_assignment )         | No      | object  | No         | -          | Assignment                                                                    |
+| Property                                                                            | Pattern | Type    | Deprecated | Definition | Title/Description                                                            |
+| ----------------------------------------------------------------------------------- | ------- | ------- | ---------- | ---------- | ---------------------------------------------------------------------------- |
+| + [refFrame](#results_items_timetable_assignedSections_items_refFrame )             | No      | string  | No         | -          | Frame timetable section with assignment.                                     |
+| + [day](#results_items_timetable_assignedSections_items_day )                       | No      | integer | No         | -          | Day of the week when the section is located.                                 |
+| + [realIndex](#results_items_timetable_assignedSections_items_realIndex )           | No      | integer | No         | -          | Position on the day, of the real section, in the frame.                      |
+| + [fictionalIndex](#results_items_timetable_assignedSections_items_fictionalIndex ) | No      | integer | No         | -          | Position on the day, of the fictional section, in the frame.                 |
+| + [startTime](#results_items_timetable_assignedSections_items_startTime )           | No      | string  | No         | -          | Start time of the section with a fictional index where sessions are assigned |
+| + [endTime](#results_items_timetable_assignedSections_items_endTime )               | No      | string  | No         | -          | End time of the section with a fictional index where sessions are assigned.  |
+| + [assignment](#results_items_timetable_assignedSections_items_assignment )         | No      | object  | No         | -          | Assignment                                                                   |
 
-###### <a name="results_items_timetable_assignedSections_items_refFrame"></a>4.1.3.2.1.1. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > refFrame`
+###### <a name="results_items_timetable_assignedSections_items_refFrame"></a>4.1.3.2.1.1. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > refFrame`
 
 |              |          |
 | ------------ | -------- |
@@ -6704,7 +6696,7 @@ Must be one of:
 
 **Description:** Frame timetable section with assignment.
 
-###### <a name="results_items_timetable_assignedSections_items_day"></a>4.1.3.2.1.2. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > day`
+###### <a name="results_items_timetable_assignedSections_items_day"></a>4.1.3.2.1.2. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > day`
 
 |              |           |
 | ------------ | --------- |
@@ -6713,7 +6705,7 @@ Must be one of:
 
 **Description:** Day of the week when the section is located.
 
-###### <a name="results_items_timetable_assignedSections_items_realIndex"></a>4.1.3.2.1.3. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > realIndex`
+###### <a name="results_items_timetable_assignedSections_items_realIndex"></a>4.1.3.2.1.3. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > realIndex`
 
 |              |           |
 | ------------ | --------- |
@@ -6722,7 +6714,7 @@ Must be one of:
 
 **Description:** Position on the day, of the real section, in the frame.
 
-###### <a name="results_items_timetable_assignedSections_items_fictionalIndex"></a>4.1.3.2.1.4. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > fictionalIndex`
+###### <a name="results_items_timetable_assignedSections_items_fictionalIndex"></a>4.1.3.2.1.4. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > fictionalIndex`
 
 |              |           |
 | ------------ | --------- |
@@ -6731,7 +6723,7 @@ Must be one of:
 
 **Description:** Position on the day, of the fictional section, in the frame.
 
-###### <a name="results_items_timetable_assignedSections_items_startTime"></a>4.1.3.2.1.5. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > startTime`
+###### <a name="results_items_timetable_assignedSections_items_startTime"></a>4.1.3.2.1.5. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > startTime`
 
 |              |          |
 | ------------ | -------- |
@@ -6739,9 +6731,9 @@ Must be one of:
 | **Required** | Yes      |
 | **Format**   | `time`   |
 
-**Description:** Start time of the section with a fictional index where sessions are assigned.
+**Description:** Start time of the section with a fictional index where sessions are assigned
 
-###### <a name="results_items_timetable_assignedSections_items_endTime"></a>4.1.3.2.1.6. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > endTime`
+###### <a name="results_items_timetable_assignedSections_items_endTime"></a>4.1.3.2.1.6. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > endTime`
 
 |              |          |
 | ------------ | -------- |
@@ -6751,7 +6743,7 @@ Must be one of:
 
 **Description:** End time of the section with a fictional index where sessions are assigned.
 
-###### <a name="results_items_timetable_assignedSections_items_assignment"></a>4.1.3.2.1.7. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment`
+###### <a name="results_items_timetable_assignedSections_items_assignment"></a>4.1.3.2.1.7. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment`
 
 **Title:** Assignment
 
@@ -6770,7 +6762,7 @@ Must be one of:
 | - [complementaryActivities](#results_items_timetable_assignedSections_items_assignment_complementaryActivities ) | No      | array of object | No         | -          | ComplementaryActivitiesAssigned |
 | - [onCallServices](#results_items_timetable_assignedSections_items_assignment_onCallServices )                   | No      | array of object | No         | -          | OnCallServices                  |
 
-###### <a name="results_items_timetable_assignedSections_items_assignment_teachingSessions"></a>4.1.3.2.1.7.1. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > teachingSessions`
+###### <a name="results_items_timetable_assignedSections_items_assignment_teachingSessions"></a>4.1.3.2.1.7.1. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions`
 
 **Title:** TeachingSessions
 
@@ -6793,7 +6785,7 @@ Must be one of:
 | ------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------- |
 | [AssignedTeachingSession](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items) | Class unit or on call hour assigned in the timetable. |
 
-###### <a name="results_items_timetable_assignedSections_items_assignment_teachingSessions_items"></a>4.1.3.2.1.7.1.1. GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession
+###### <a name="results_items_timetable_assignedSections_items_assignment_teachingSessions_items"></a>4.1.3.2.1.7.1.1. GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession
 
 **Title:** AssignedTeachingSession
 
@@ -6805,13 +6797,14 @@ Must be one of:
 
 **Description:** Class unit or on call hour assigned in the timetable.
 
-| Property                                                                                                            | Pattern | Type            | Deprecated | Definition               | Title/Description                            |
-| ------------------------------------------------------------------------------------------------------------------- | ------- | --------------- | ---------- | ------------------------ | -------------------------------------------- |
-| + [refSession](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refSession )       | No      | integer         | No         | -                        | Identifier of the teaching session assigned. |
-| + [refClassRomms](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refClassRomms ) | No      | array of string | No         | In #/$defs/refClassRomms | RefclassRomms                                |
-| - [refTeachers](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refTeachers )     | No      | array of string | No         | -                        | RefTeachers                                  |
+| Property                                                                                                                    | Pattern | Type            | Deprecated | Definition               | Title/Description                                                                                                                                                                                               |
+| --------------------------------------------------------------------------------------------------------------------------- | ------- | --------------- | ---------- | ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| + [refSession](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refSession )               | No      | integer         | No         | -                        | Identifier of the teaching session assigned.                                                                                                                                                                    |
+| + [refClassRomms](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refClassRomms )         | No      | array of string | No         | In #/$defs/refClassRomms | RefclassRomms                                                                                                                                                                                                   |
+| - [refTeachers](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refTeachers )             | No      | array of string | No         | -                        | RefTeachers                                                                                                                                                                                                     |
+| - [refContinuosBlock](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refContinuosBlock ) | No      | string          | No         | -                        | Optional. For fixed distribution entities, a common reference is created for the allocation information of the entities that have been placed together in a block due to the temporality of their distribution. |
 
-###### <a name="results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refSession"></a>4.1.3.2.1.7.1.1.1. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refSession`
+###### <a name="results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refSession"></a>4.1.3.2.1.7.1.1.1. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refSession`
 
 |              |           |
 | ------------ | --------- |
@@ -6820,7 +6813,7 @@ Must be one of:
 
 **Description:** Identifier of the teaching session assigned.
 
-###### <a name="results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refClassRomms"></a>4.1.3.2.1.7.1.1.2. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refClassRomms`
+###### <a name="results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refClassRomms"></a>4.1.3.2.1.7.1.1.2. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refClassRomms`
 
 **Title:** RefclassRomms
 
@@ -6844,7 +6837,7 @@ Must be one of:
 | --------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
 | [RefclassRomm](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refClassRomms_items) | Identifier of the classroom in the input file. |
 
-###### <a name="results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refClassRomms_items"></a>4.1.3.2.1.7.1.1.2.1. GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refClassRomms > RefclassRomm
+###### <a name="results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refClassRomms_items"></a>4.1.3.2.1.7.1.1.2.1. GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refClassRomms > RefclassRomm
 
 **Title:** RefclassRomm
 
@@ -6855,7 +6848,7 @@ Must be one of:
 
 **Description:** Identifier of the classroom in the input file.
 
-###### <a name="results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refTeachers"></a>4.1.3.2.1.7.1.1.3. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refTeachers`
+###### <a name="results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refTeachers"></a>4.1.3.2.1.7.1.1.3. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refTeachers`
 
 **Title:** RefTeachers
 
@@ -6878,7 +6871,7 @@ Must be one of:
 | ----------------------------------------------------------------------------------------------------------------- | -------------------------------------------- |
 | [RefTeacher](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refTeachers_items) | Identifier of the teacher in the input file. |
 
-###### <a name="results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refTeachers_items"></a>4.1.3.2.1.7.1.1.3.1. GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refTeachers > RefTeacher
+###### <a name="results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refTeachers_items"></a>4.1.3.2.1.7.1.1.3.1. GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refTeachers > RefTeacher
 
 **Title:** RefTeacher
 
@@ -6889,7 +6882,16 @@ Must be one of:
 
 **Description:** Identifier of the teacher in the input file.
 
-###### <a name="results_items_timetable_assignedSections_items_assignment_meetings"></a>4.1.3.2.1.7.2. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > meetings`
+###### <a name="results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refContinuosBlock"></a>4.1.3.2.1.7.1.1.4. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refContinuosBlock`
+
+|              |          |
+| ------------ | -------- |
+| **Type**     | `string` |
+| **Required** | No       |
+
+**Description:** Optional. For fixed distribution entities, a common reference is created for the allocation information of the entities that have been placed together in a block due to the temporality of their distribution.
+
+###### <a name="results_items_timetable_assignedSections_items_assignment_meetings"></a>4.1.3.2.1.7.2. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > meetings`
 
 **Title:** AssignedMeetings
 
@@ -6912,7 +6914,7 @@ Must be one of:
 | -------------------------------------------------------------------------------------------- | ---------------------------------------------- |
 | [AssignedMeeting](#results_items_timetable_assignedSections_items_assignment_meetings_items) | Meeting of teachers assigned in the timetable. |
 
-###### <a name="results_items_timetable_assignedSections_items_assignment_meetings_items"></a>4.1.3.2.1.7.2.1. GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > meetings > AssignedMeeting
+###### <a name="results_items_timetable_assignedSections_items_assignment_meetings_items"></a>4.1.3.2.1.7.2.1. GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > meetings > AssignedMeeting
 
 **Title:** AssignedMeeting
 
@@ -6924,12 +6926,13 @@ Must be one of:
 
 **Description:** Meeting of teachers assigned in the timetable.
 
-| Property                                                                                                    | Pattern | Type            | Deprecated | Definition                                                                                                                | Title/Description                   |
-| ----------------------------------------------------------------------------------------------------------- | ------- | --------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------- | ----------------------------------- |
-| + [refMeeting](#results_items_timetable_assignedSections_items_assignment_meetings_items_refMeeting )       | No      | string          | No         | -                                                                                                                         | Identifier of the meeting assigned. |
-| - [refClassRomms](#results_items_timetable_assignedSections_items_assignment_meetings_items_refClassRomms ) | No      | array of string | No         | Same as [refClassRomms](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refClassRomms ) | RefclassRomms                       |
+| Property                                                                                                            | Pattern | Type            | Deprecated | Definition                                                                                                                | Title/Description                                                                                                                                                                                               |
+| ------------------------------------------------------------------------------------------------------------------- | ------- | --------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| + [refMeeting](#results_items_timetable_assignedSections_items_assignment_meetings_items_refMeeting )               | No      | string          | No         | -                                                                                                                         | Identifier of the meeting assigned.                                                                                                                                                                             |
+| - [refClassRomms](#results_items_timetable_assignedSections_items_assignment_meetings_items_refClassRomms )         | No      | array of string | No         | Same as [refClassRomms](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refClassRomms ) | RefclassRomms                                                                                                                                                                                                   |
+| - [refContinuosBlock](#results_items_timetable_assignedSections_items_assignment_meetings_items_refContinuosBlock ) | No      | string          | No         | -                                                                                                                         | Optional. For fixed distribution entities, a common reference is created for the allocation information of the entities that have been placed together in a block due to the temporality of their distribution. |
 
-###### <a name="results_items_timetable_assignedSections_items_assignment_meetings_items_refMeeting"></a>4.1.3.2.1.7.2.1.1. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > meetings > AssignedMeeting > refMeeting`
+###### <a name="results_items_timetable_assignedSections_items_assignment_meetings_items_refMeeting"></a>4.1.3.2.1.7.2.1.1. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > meetings > AssignedMeeting > refMeeting`
 
 |              |          |
 | ------------ | -------- |
@@ -6938,7 +6941,7 @@ Must be one of:
 
 **Description:** Identifier of the meeting assigned.
 
-###### <a name="results_items_timetable_assignedSections_items_assignment_meetings_items_refClassRomms"></a>4.1.3.2.1.7.2.1.2. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > meetings > AssignedMeeting > refClassRomms`
+###### <a name="results_items_timetable_assignedSections_items_assignment_meetings_items_refClassRomms"></a>4.1.3.2.1.7.2.1.2. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > meetings > AssignedMeeting > refClassRomms`
 
 **Title:** RefclassRomms
 
@@ -6950,7 +6953,16 @@ Must be one of:
 
 **Description:** List of classrooms assigned to teach the class unit.
 
-###### <a name="results_items_timetable_assignedSections_items_assignment_complementaryActivities"></a>4.1.3.2.1.7.3. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > complementaryActivities`
+###### <a name="results_items_timetable_assignedSections_items_assignment_meetings_items_refContinuosBlock"></a>4.1.3.2.1.7.2.1.3. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > meetings > AssignedMeeting > refContinuosBlock`
+
+|              |          |
+| ------------ | -------- |
+| **Type**     | `string` |
+| **Required** | No       |
+
+**Description:** Optional. For fixed distribution entities, a common reference is created for the allocation information of the entities that have been placed together in a block due to the temporality of their distribution.
+
+###### <a name="results_items_timetable_assignedSections_items_assignment_complementaryActivities"></a>4.1.3.2.1.7.3. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > complementaryActivities`
 
 **Title:** ComplementaryActivitiesAssigned
 
@@ -6973,7 +6985,7 @@ Must be one of:
 | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
 | [AssignedComplementary](#results_items_timetable_assignedSections_items_assignment_complementaryActivities_items) | Teacher's complementary activity assigned in the timetable. |
 
-###### <a name="results_items_timetable_assignedSections_items_assignment_complementaryActivities_items"></a>4.1.3.2.1.7.3.1. GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > complementaryActivities > AssignedComplementary
+###### <a name="results_items_timetable_assignedSections_items_assignment_complementaryActivities_items"></a>4.1.3.2.1.7.3.1. GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > complementaryActivities > AssignedComplementary
 
 **Title:** AssignedComplementary
 
@@ -6985,21 +6997,22 @@ Must be one of:
 
 **Description:** Teacher's complementary activity assigned in the timetable.
 
-| Property                                                                                                                         | Pattern | Type            | Deprecated | Definition                                                                                                                | Title/Description                                  |
-| -------------------------------------------------------------------------------------------------------------------------------- | ------- | --------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- |
-| + [refComplementary](#results_items_timetable_assignedSections_items_assignment_complementaryActivities_items_refComplementary ) | No      | string          | No         | -                                                                                                                         | Identifier of the Complementary Activity assigned. |
-| - [refClassRomms](#results_items_timetable_assignedSections_items_assignment_complementaryActivities_items_refClassRomms )       | No      | array of string | No         | Same as [refClassRomms](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refClassRomms ) | RefclassRomms                                      |
+| Property                                                                                                                           | Pattern | Type            | Deprecated | Definition                                                                                                                | Title/Description                                                                                                                                                                                               |
+| ---------------------------------------------------------------------------------------------------------------------------------- | ------- | --------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| + [refComplementary](#results_items_timetable_assignedSections_items_assignment_complementaryActivities_items_refComplementary )   | No      | integer         | No         | -                                                                                                                         | Identifier of the Complementary Activity assigned.                                                                                                                                                              |
+| - [refClassRomms](#results_items_timetable_assignedSections_items_assignment_complementaryActivities_items_refClassRomms )         | No      | array of string | No         | Same as [refClassRomms](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refClassRomms ) | RefclassRomms                                                                                                                                                                                                   |
+| - [refContinuosBlock](#results_items_timetable_assignedSections_items_assignment_complementaryActivities_items_refContinuosBlock ) | No      | string          | No         | -                                                                                                                         | Optional. For fixed distribution entities, a common reference is created for the allocation information of the entities that have been placed together in a block due to the temporality of their distribution. |
 
-###### <a name="results_items_timetable_assignedSections_items_assignment_complementaryActivities_items_refComplementary"></a>4.1.3.2.1.7.3.1.1. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > complementaryActivities > AssignedComplementary > refComplementary`
+###### <a name="results_items_timetable_assignedSections_items_assignment_complementaryActivities_items_refComplementary"></a>4.1.3.2.1.7.3.1.1. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > complementaryActivities > AssignedComplementary > refComplementary`
 
-|              |          |
-| ------------ | -------- |
-| **Type**     | `string` |
-| **Required** | Yes      |
+|              |           |
+| ------------ | --------- |
+| **Type**     | `integer` |
+| **Required** | Yes       |
 
 **Description:** Identifier of the Complementary Activity assigned.
 
-###### <a name="results_items_timetable_assignedSections_items_assignment_complementaryActivities_items_refClassRomms"></a>4.1.3.2.1.7.3.1.2. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > complementaryActivities > AssignedComplementary > refClassRomms`
+###### <a name="results_items_timetable_assignedSections_items_assignment_complementaryActivities_items_refClassRomms"></a>4.1.3.2.1.7.3.1.2. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > complementaryActivities > AssignedComplementary > refClassRomms`
 
 **Title:** RefclassRomms
 
@@ -7011,7 +7024,16 @@ Must be one of:
 
 **Description:** List of classrooms assigned to teach the class unit.
 
-###### <a name="results_items_timetable_assignedSections_items_assignment_onCallServices"></a>4.1.3.2.1.7.4. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > onCallServices`
+###### <a name="results_items_timetable_assignedSections_items_assignment_complementaryActivities_items_refContinuosBlock"></a>4.1.3.2.1.7.3.1.3. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > complementaryActivities > AssignedComplementary > refContinuosBlock`
+
+|              |          |
+| ------------ | -------- |
+| **Type**     | `string` |
+| **Required** | No       |
+
+**Description:** Optional. For fixed distribution entities, a common reference is created for the allocation information of the entities that have been placed together in a block due to the temporality of their distribution.
+
+###### <a name="results_items_timetable_assignedSections_items_assignment_onCallServices"></a>4.1.3.2.1.7.4. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > onCallServices`
 
 **Title:** OnCallServices
 
@@ -7034,7 +7056,7 @@ Must be one of:
 | -------------------------------------------------------------------------------------------------------- | ------------------------------------ |
 | [AssignedOnCallService](#results_items_timetable_assignedSections_items_assignment_onCallServices_items) | Call hour assigned in the timetable. |
 
-###### <a name="results_items_timetable_assignedSections_items_assignment_onCallServices_items"></a>4.1.3.2.1.7.4.1. GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > onCallServices > AssignedOnCallService
+###### <a name="results_items_timetable_assignedSections_items_assignment_onCallServices_items"></a>4.1.3.2.1.7.4.1. GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > onCallServices > AssignedOnCallService
 
 **Title:** AssignedOnCallService
 
@@ -7051,7 +7073,7 @@ Must be one of:
 | + [refOnCall](#results_items_timetable_assignedSections_items_assignment_onCallServices_items_refOnCall )   | No      | string | No         | -          | Identifier of the teaching session assigned. |
 | + [refTeacher](#results_items_timetable_assignedSections_items_assignment_onCallServices_items_refTeacher ) | No      | string | No         | -          | RefTeachers                                  |
 
-###### <a name="results_items_timetable_assignedSections_items_assignment_onCallServices_items_refOnCall"></a>4.1.3.2.1.7.4.1.1. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > onCallServices > AssignedOnCallService > refOnCall`
+###### <a name="results_items_timetable_assignedSections_items_assignment_onCallServices_items_refOnCall"></a>4.1.3.2.1.7.4.1.1. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > onCallServices > AssignedOnCallService > refOnCall`
 
 |              |          |
 | ------------ | -------- |
@@ -7060,7 +7082,7 @@ Must be one of:
 
 **Description:** Identifier of the teaching session assigned.
 
-###### <a name="results_items_timetable_assignedSections_items_assignment_onCallServices_items_refTeacher"></a>4.1.3.2.1.7.4.1.2. Property `GhcEngineSchema > results > EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > onCallServices > AssignedOnCallService > refTeacher`
+###### <a name="results_items_timetable_assignedSections_items_assignment_onCallServices_items_refTeacher"></a>4.1.3.2.1.7.4.1.2. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > onCallServices > AssignedOnCallService > refTeacher`
 
 **Title:** RefTeachers
 
@@ -7072,4 +7094,4 @@ Must be one of:
 **Description:** Teacher assigned in section on call service.
 
 ----------------------------------------------------------------------------------------------------------------------------
-Generated using [json-schema-for-humans](https://github.com/coveooss/json-schema-for-humans) on 2026-11-09 at 11:34:14 +0100
+Generated using [json-schema-for-humans](https://github.com/coveooss/json-schema-for-humans) on 2026-11-09 at 14:56:28 +0100

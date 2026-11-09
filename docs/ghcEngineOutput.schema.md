@@ -1,43 +1,46 @@
-# EngineOutputGHCSchema
+# GhcResult
 
-- [1. Property `EngineOutputGHCSchema > date`](#date)
-- [2. Property `EngineOutputGHCSchema > weight`](#weight)
-- [3. Property `EngineOutputGHCSchema > timetable`](#timetable)
-  - [3.1. Property `EngineOutputGHCSchema > timetable > anonymousClassRooms`](#timetable_anonymousClassRooms)
-    - [3.1.1. EngineOutputGHCSchema > timetable > anonymousClassRooms > AnonymousClassRoom](#timetable_anonymousClassRooms_items)
-      - [3.1.1.1. Property `EngineOutputGHCSchema > timetable > anonymousClassRooms > AnonymousClassRoom > refClassRoomsSet`](#timetable_anonymousClassRooms_items_refClassRoomsSet)
-      - [3.1.1.2. Property `EngineOutputGHCSchema > timetable > anonymousClassRooms > AnonymousClassRoom > classRoomsCreated`](#timetable_anonymousClassRooms_items_classRoomsCreated)
-        - [3.1.1.2.1. EngineOutputGHCSchema > timetable > anonymousClassRooms > AnonymousClassRoom > classRoomsCreated > AnonymousRoom](#timetable_anonymousClassRooms_items_classRoomsCreated_items)
-  - [3.2. Property `EngineOutputGHCSchema > timetable > assignedSections`](#timetable_assignedSections)
-    - [3.2.1. EngineOutputGHCSchema > timetable > assignedSections > AssignedSection](#timetable_assignedSections_items)
-      - [3.2.1.1. Property `EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > refFrame`](#timetable_assignedSections_items_refFrame)
-      - [3.2.1.2. Property `EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > day`](#timetable_assignedSections_items_day)
-      - [3.2.1.3. Property `EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > realIndex`](#timetable_assignedSections_items_realIndex)
-      - [3.2.1.4. Property `EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > fictionalIndex`](#timetable_assignedSections_items_fictionalIndex)
-      - [3.2.1.5. Property `EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > startTime`](#timetable_assignedSections_items_startTime)
-      - [3.2.1.6. Property `EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > endTime`](#timetable_assignedSections_items_endTime)
-      - [3.2.1.7. Property `EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment`](#timetable_assignedSections_items_assignment)
-        - [3.2.1.7.1. Property `EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > teachingSessions`](#timetable_assignedSections_items_assignment_teachingSessions)
-          - [3.2.1.7.1.1. EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession](#timetable_assignedSections_items_assignment_teachingSessions_items)
-            - [3.2.1.7.1.1.1. Property `EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refSession`](#timetable_assignedSections_items_assignment_teachingSessions_items_refSession)
-            - [3.2.1.7.1.1.2. Property `EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refClassRomms`](#timetable_assignedSections_items_assignment_teachingSessions_items_refClassRomms)
-              - [3.2.1.7.1.1.2.1. EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refClassRomms > RefclassRomm](#timetable_assignedSections_items_assignment_teachingSessions_items_refClassRomms_items)
-            - [3.2.1.7.1.1.3. Property `EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refTeachers`](#timetable_assignedSections_items_assignment_teachingSessions_items_refTeachers)
-              - [3.2.1.7.1.1.3.1. EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refTeachers > RefTeacher](#timetable_assignedSections_items_assignment_teachingSessions_items_refTeachers_items)
-        - [3.2.1.7.2. Property `EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > meetings`](#timetable_assignedSections_items_assignment_meetings)
-          - [3.2.1.7.2.1. EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > meetings > AssignedMeeting](#timetable_assignedSections_items_assignment_meetings_items)
-            - [3.2.1.7.2.1.1. Property `EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > meetings > AssignedMeeting > refMeeting`](#timetable_assignedSections_items_assignment_meetings_items_refMeeting)
-            - [3.2.1.7.2.1.2. Property `EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > meetings > AssignedMeeting > refClassRomms`](#timetable_assignedSections_items_assignment_meetings_items_refClassRomms)
-        - [3.2.1.7.3. Property `EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > complementaryActivities`](#timetable_assignedSections_items_assignment_complementaryActivities)
-          - [3.2.1.7.3.1. EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > complementaryActivities > AssignedComplementary](#timetable_assignedSections_items_assignment_complementaryActivities_items)
-            - [3.2.1.7.3.1.1. Property `EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > complementaryActivities > AssignedComplementary > refComplementary`](#timetable_assignedSections_items_assignment_complementaryActivities_items_refComplementary)
-            - [3.2.1.7.3.1.2. Property `EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > complementaryActivities > AssignedComplementary > refClassRomms`](#timetable_assignedSections_items_assignment_complementaryActivities_items_refClassRomms)
-        - [3.2.1.7.4. Property `EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > onCallServices`](#timetable_assignedSections_items_assignment_onCallServices)
-          - [3.2.1.7.4.1. EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > onCallServices > AssignedOnCallService](#timetable_assignedSections_items_assignment_onCallServices_items)
-            - [3.2.1.7.4.1.1. Property `EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > onCallServices > AssignedOnCallService > refOnCall`](#timetable_assignedSections_items_assignment_onCallServices_items_refOnCall)
-            - [3.2.1.7.4.1.2. Property `EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > onCallServices > AssignedOnCallService > refTeacher`](#timetable_assignedSections_items_assignment_onCallServices_items_refTeacher)
+- [1. Property `GhcResult > date`](#date)
+- [2. Property `GhcResult > weight`](#weight)
+- [3. Property `GhcResult > timetable`](#timetable)
+  - [3.1. Property `GhcResult > timetable > anonymousClassRooms`](#timetable_anonymousClassRooms)
+    - [3.1.1. GhcResult > timetable > anonymousClassRooms > AnonymousClassRoom](#timetable_anonymousClassRooms_items)
+      - [3.1.1.1. Property `GhcResult > timetable > anonymousClassRooms > AnonymousClassRoom > refClassRoomsSet`](#timetable_anonymousClassRooms_items_refClassRoomsSet)
+      - [3.1.1.2. Property `GhcResult > timetable > anonymousClassRooms > AnonymousClassRoom > classRoomsCreated`](#timetable_anonymousClassRooms_items_classRoomsCreated)
+        - [3.1.1.2.1. GhcResult > timetable > anonymousClassRooms > AnonymousClassRoom > classRoomsCreated > AnonymousRoom](#timetable_anonymousClassRooms_items_classRoomsCreated_items)
+  - [3.2. Property `GhcResult > timetable > assignedSections`](#timetable_assignedSections)
+    - [3.2.1. GhcResult > timetable > assignedSections > AssignedSection](#timetable_assignedSections_items)
+      - [3.2.1.1. Property `GhcResult > timetable > assignedSections > AssignedSection > refFrame`](#timetable_assignedSections_items_refFrame)
+      - [3.2.1.2. Property `GhcResult > timetable > assignedSections > AssignedSection > day`](#timetable_assignedSections_items_day)
+      - [3.2.1.3. Property `GhcResult > timetable > assignedSections > AssignedSection > realIndex`](#timetable_assignedSections_items_realIndex)
+      - [3.2.1.4. Property `GhcResult > timetable > assignedSections > AssignedSection > fictionalIndex`](#timetable_assignedSections_items_fictionalIndex)
+      - [3.2.1.5. Property `GhcResult > timetable > assignedSections > AssignedSection > startTime`](#timetable_assignedSections_items_startTime)
+      - [3.2.1.6. Property `GhcResult > timetable > assignedSections > AssignedSection > endTime`](#timetable_assignedSections_items_endTime)
+      - [3.2.1.7. Property `GhcResult > timetable > assignedSections > AssignedSection > assignment`](#timetable_assignedSections_items_assignment)
+        - [3.2.1.7.1. Property `GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions`](#timetable_assignedSections_items_assignment_teachingSessions)
+          - [3.2.1.7.1.1. GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession](#timetable_assignedSections_items_assignment_teachingSessions_items)
+            - [3.2.1.7.1.1.1. Property `GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refSession`](#timetable_assignedSections_items_assignment_teachingSessions_items_refSession)
+            - [3.2.1.7.1.1.2. Property `GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refClassRomms`](#timetable_assignedSections_items_assignment_teachingSessions_items_refClassRomms)
+              - [3.2.1.7.1.1.2.1. GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refClassRomms > RefclassRomm](#timetable_assignedSections_items_assignment_teachingSessions_items_refClassRomms_items)
+            - [3.2.1.7.1.1.3. Property `GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refTeachers`](#timetable_assignedSections_items_assignment_teachingSessions_items_refTeachers)
+              - [3.2.1.7.1.1.3.1. GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refTeachers > RefTeacher](#timetable_assignedSections_items_assignment_teachingSessions_items_refTeachers_items)
+            - [3.2.1.7.1.1.4. Property `GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refContinuosBlock`](#timetable_assignedSections_items_assignment_teachingSessions_items_refContinuosBlock)
+        - [3.2.1.7.2. Property `GhcResult > timetable > assignedSections > AssignedSection > assignment > meetings`](#timetable_assignedSections_items_assignment_meetings)
+          - [3.2.1.7.2.1. GhcResult > timetable > assignedSections > AssignedSection > assignment > meetings > AssignedMeeting](#timetable_assignedSections_items_assignment_meetings_items)
+            - [3.2.1.7.2.1.1. Property `GhcResult > timetable > assignedSections > AssignedSection > assignment > meetings > AssignedMeeting > refMeeting`](#timetable_assignedSections_items_assignment_meetings_items_refMeeting)
+            - [3.2.1.7.2.1.2. Property `GhcResult > timetable > assignedSections > AssignedSection > assignment > meetings > AssignedMeeting > refClassRomms`](#timetable_assignedSections_items_assignment_meetings_items_refClassRomms)
+            - [3.2.1.7.2.1.3. Property `GhcResult > timetable > assignedSections > AssignedSection > assignment > meetings > AssignedMeeting > refContinuosBlock`](#timetable_assignedSections_items_assignment_meetings_items_refContinuosBlock)
+        - [3.2.1.7.3. Property `GhcResult > timetable > assignedSections > AssignedSection > assignment > complementaryActivities`](#timetable_assignedSections_items_assignment_complementaryActivities)
+          - [3.2.1.7.3.1. GhcResult > timetable > assignedSections > AssignedSection > assignment > complementaryActivities > AssignedComplementary](#timetable_assignedSections_items_assignment_complementaryActivities_items)
+            - [3.2.1.7.3.1.1. Property `GhcResult > timetable > assignedSections > AssignedSection > assignment > complementaryActivities > AssignedComplementary > refComplementary`](#timetable_assignedSections_items_assignment_complementaryActivities_items_refComplementary)
+            - [3.2.1.7.3.1.2. Property `GhcResult > timetable > assignedSections > AssignedSection > assignment > complementaryActivities > AssignedComplementary > refClassRomms`](#timetable_assignedSections_items_assignment_complementaryActivities_items_refClassRomms)
+            - [3.2.1.7.3.1.3. Property `GhcResult > timetable > assignedSections > AssignedSection > assignment > complementaryActivities > AssignedComplementary > refContinuosBlock`](#timetable_assignedSections_items_assignment_complementaryActivities_items_refContinuosBlock)
+        - [3.2.1.7.4. Property `GhcResult > timetable > assignedSections > AssignedSection > assignment > onCallServices`](#timetable_assignedSections_items_assignment_onCallServices)
+          - [3.2.1.7.4.1. GhcResult > timetable > assignedSections > AssignedSection > assignment > onCallServices > AssignedOnCallService](#timetable_assignedSections_items_assignment_onCallServices_items)
+            - [3.2.1.7.4.1.1. Property `GhcResult > timetable > assignedSections > AssignedSection > assignment > onCallServices > AssignedOnCallService > refOnCall`](#timetable_assignedSections_items_assignment_onCallServices_items_refOnCall)
+            - [3.2.1.7.4.1.2. Property `GhcResult > timetable > assignedSections > AssignedSection > assignment > onCallServices > AssignedOnCallService > refTeacher`](#timetable_assignedSections_items_assignment_onCallServices_items_refTeacher)
 
-**Title:** EngineOutputGHCSchema
+**Title:** GhcResult
 
 |                           |             |
 | ------------------------- | ----------- |
@@ -51,21 +54,20 @@
 | -------------------------- | ------- | ------- | ---------- | ---------- | ---------------------- |
 | - [date](#date )           | No      | string  | No         | -          | JsonGenerationDate     |
 | + [weight](#weight )       | No      | integer | No         | -          | ResultWeight           |
-| + [timetable](#timetable ) | No      | object  | No         | -          | GeneratedJsonTimetable |
+| + [timetable](#timetable ) | No      | object  | No         | -          | GeneratedJSONTimetable |
 
-## <a name="date"></a>1. Property `EngineOutputGHCSchema > date`
+## <a name="date"></a>1. Property `GhcResult > date`
 
 **Title:** JsonGenerationDate
 
-|              |             |
-| ------------ | ----------- |
-| **Type**     | `string`    |
-| **Required** | No          |
-| **Format**   | `date-time` |
+|              |          |
+| ------------ | -------- |
+| **Type**     | `string` |
+| **Required** | No       |
 
 **Description:** Date of result creation.
 
-## <a name="weight"></a>2. Property `EngineOutputGHCSchema > weight`
+## <a name="weight"></a>2. Property `GhcResult > weight`
 
 **Title:** ResultWeight
 
@@ -76,9 +78,9 @@
 
 **Description:** Weight of the result according to the non-mandatory conditions not fulfilled.
 
-## <a name="timetable"></a>3. Property `EngineOutputGHCSchema > timetable`
+## <a name="timetable"></a>3. Property `GhcResult > timetable`
 
-**Title:** GeneratedJsonTimetable
+**Title:** GeneratedJSONTimetable
 
 |                           |             |
 | ------------------------- | ----------- |
@@ -93,7 +95,7 @@
 | - [anonymousClassRooms](#timetable_anonymousClassRooms ) | No      | array of object | No         | -          | SetOfAnonymousClassRooms |
 | + [assignedSections](#timetable_assignedSections )       | No      | array of object | No         | -          | AssignedSections         |
 
-### <a name="timetable_anonymousClassRooms"></a>3.1. Property `EngineOutputGHCSchema > timetable > anonymousClassRooms`
+### <a name="timetable_anonymousClassRooms"></a>3.1. Property `GhcResult > timetable > anonymousClassRooms`
 
 **Title:** SetOfAnonymousClassRooms
 
@@ -116,7 +118,7 @@
 | ---------------------------------------------------------- | ---------------------------------------------------------------- |
 | [AnonymousClassRoom](#timetable_anonymousClassRooms_items) | Object with anonymous classrooms created in a set of classrooms. |
 
-#### <a name="timetable_anonymousClassRooms_items"></a>3.1.1. EngineOutputGHCSchema > timetable > anonymousClassRooms > AnonymousClassRoom
+#### <a name="timetable_anonymousClassRooms_items"></a>3.1.1. GhcResult > timetable > anonymousClassRooms > AnonymousClassRoom
 
 **Title:** AnonymousClassRoom
 
@@ -133,7 +135,7 @@
 | + [refClassRoomsSet](#timetable_anonymousClassRooms_items_refClassRoomsSet )   | No      | string          | No         | -          | Identifier of the ClassRooms group. |
 | + [classRoomsCreated](#timetable_anonymousClassRooms_items_classRoomsCreated ) | No      | array of string | No         | -          | ListOfAnonymousRooms                |
 
-##### <a name="timetable_anonymousClassRooms_items_refClassRoomsSet"></a>3.1.1.1. Property `EngineOutputGHCSchema > timetable > anonymousClassRooms > AnonymousClassRoom > refClassRoomsSet`
+##### <a name="timetable_anonymousClassRooms_items_refClassRoomsSet"></a>3.1.1.1. Property `GhcResult > timetable > anonymousClassRooms > AnonymousClassRoom > refClassRoomsSet`
 
 |              |          |
 | ------------ | -------- |
@@ -142,7 +144,7 @@
 
 **Description:** Identifier of the ClassRooms group.
 
-##### <a name="timetable_anonymousClassRooms_items_classRoomsCreated"></a>3.1.1.2. Property `EngineOutputGHCSchema > timetable > anonymousClassRooms > AnonymousClassRoom > classRoomsCreated`
+##### <a name="timetable_anonymousClassRooms_items_classRoomsCreated"></a>3.1.1.2. Property `GhcResult > timetable > anonymousClassRooms > AnonymousClassRoom > classRoomsCreated`
 
 **Title:** ListOfAnonymousRooms
 
@@ -165,7 +167,7 @@
 | ----------------------------------------------------------------------------- | -------------------------------------- |
 | [AnonymousRoom](#timetable_anonymousClassRooms_items_classRoomsCreated_items) | Identifier of the anonymous classroom. |
 
-###### <a name="timetable_anonymousClassRooms_items_classRoomsCreated_items"></a>3.1.1.2.1. EngineOutputGHCSchema > timetable > anonymousClassRooms > AnonymousClassRoom > classRoomsCreated > AnonymousRoom
+###### <a name="timetable_anonymousClassRooms_items_classRoomsCreated_items"></a>3.1.1.2.1. GhcResult > timetable > anonymousClassRooms > AnonymousClassRoom > classRoomsCreated > AnonymousRoom
 
 **Title:** AnonymousRoom
 
@@ -176,7 +178,7 @@
 
 **Description:** Identifier of the anonymous classroom.
 
-### <a name="timetable_assignedSections"></a>3.2. Property `EngineOutputGHCSchema > timetable > assignedSections`
+### <a name="timetable_assignedSections"></a>3.2. Property `GhcResult > timetable > assignedSections`
 
 **Title:** AssignedSections
 
@@ -199,7 +201,7 @@
 | ---------------------------------------------------- | --------------------------------------------------------- |
 | [AssignedSection](#timetable_assignedSections_items) | Section with one class units (or on call hours) assigned. |
 
-#### <a name="timetable_assignedSections_items"></a>3.2.1. EngineOutputGHCSchema > timetable > assignedSections > AssignedSection
+#### <a name="timetable_assignedSections_items"></a>3.2.1. GhcResult > timetable > assignedSections > AssignedSection
 
 **Title:** AssignedSection
 
@@ -211,17 +213,17 @@
 
 **Description:** Section with one class units (or on call hours) assigned.
 
-| Property                                                              | Pattern | Type    | Deprecated | Definition | Title/Description                                                             |
-| --------------------------------------------------------------------- | ------- | ------- | ---------- | ---------- | ----------------------------------------------------------------------------- |
-| + [refFrame](#timetable_assignedSections_items_refFrame )             | No      | string  | No         | -          | Frame timetable section with assignment.                                      |
-| + [day](#timetable_assignedSections_items_day )                       | No      | integer | No         | -          | Day of the week when the section is located.                                  |
-| + [realIndex](#timetable_assignedSections_items_realIndex )           | No      | integer | No         | -          | Position on the day, of the real section, in the frame.                       |
-| + [fictionalIndex](#timetable_assignedSections_items_fictionalIndex ) | No      | integer | No         | -          | Position on the day, of the fictional section, in the frame.                  |
-| + [startTime](#timetable_assignedSections_items_startTime )           | No      | string  | No         | -          | Start time of the section with a fictional index where sessions are assigned. |
-| + [endTime](#timetable_assignedSections_items_endTime )               | No      | string  | No         | -          | End time of the section with a fictional index where sessions are assigned.   |
-| + [assignment](#timetable_assignedSections_items_assignment )         | No      | object  | No         | -          | Assignment                                                                    |
+| Property                                                              | Pattern | Type    | Deprecated | Definition | Title/Description                                                            |
+| --------------------------------------------------------------------- | ------- | ------- | ---------- | ---------- | ---------------------------------------------------------------------------- |
+| + [refFrame](#timetable_assignedSections_items_refFrame )             | No      | string  | No         | -          | Frame timetable section with assignment.                                     |
+| + [day](#timetable_assignedSections_items_day )                       | No      | integer | No         | -          | Day of the week when the section is located.                                 |
+| + [realIndex](#timetable_assignedSections_items_realIndex )           | No      | integer | No         | -          | Position on the day, of the real section, in the frame.                      |
+| + [fictionalIndex](#timetable_assignedSections_items_fictionalIndex ) | No      | integer | No         | -          | Position on the day, of the fictional section, in the frame.                 |
+| + [startTime](#timetable_assignedSections_items_startTime )           | No      | string  | No         | -          | Start time of the section with a fictional index where sessions are assigned |
+| + [endTime](#timetable_assignedSections_items_endTime )               | No      | string  | No         | -          | End time of the section with a fictional index where sessions are assigned.  |
+| + [assignment](#timetable_assignedSections_items_assignment )         | No      | object  | No         | -          | Assignment                                                                   |
 
-##### <a name="timetable_assignedSections_items_refFrame"></a>3.2.1.1. Property `EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > refFrame`
+##### <a name="timetable_assignedSections_items_refFrame"></a>3.2.1.1. Property `GhcResult > timetable > assignedSections > AssignedSection > refFrame`
 
 |              |          |
 | ------------ | -------- |
@@ -230,7 +232,7 @@
 
 **Description:** Frame timetable section with assignment.
 
-##### <a name="timetable_assignedSections_items_day"></a>3.2.1.2. Property `EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > day`
+##### <a name="timetable_assignedSections_items_day"></a>3.2.1.2. Property `GhcResult > timetable > assignedSections > AssignedSection > day`
 
 |              |           |
 | ------------ | --------- |
@@ -239,7 +241,7 @@
 
 **Description:** Day of the week when the section is located.
 
-##### <a name="timetable_assignedSections_items_realIndex"></a>3.2.1.3. Property `EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > realIndex`
+##### <a name="timetable_assignedSections_items_realIndex"></a>3.2.1.3. Property `GhcResult > timetable > assignedSections > AssignedSection > realIndex`
 
 |              |           |
 | ------------ | --------- |
@@ -248,7 +250,7 @@
 
 **Description:** Position on the day, of the real section, in the frame.
 
-##### <a name="timetable_assignedSections_items_fictionalIndex"></a>3.2.1.4. Property `EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > fictionalIndex`
+##### <a name="timetable_assignedSections_items_fictionalIndex"></a>3.2.1.4. Property `GhcResult > timetable > assignedSections > AssignedSection > fictionalIndex`
 
 |              |           |
 | ------------ | --------- |
@@ -257,7 +259,7 @@
 
 **Description:** Position on the day, of the fictional section, in the frame.
 
-##### <a name="timetable_assignedSections_items_startTime"></a>3.2.1.5. Property `EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > startTime`
+##### <a name="timetable_assignedSections_items_startTime"></a>3.2.1.5. Property `GhcResult > timetable > assignedSections > AssignedSection > startTime`
 
 |              |          |
 | ------------ | -------- |
@@ -265,9 +267,9 @@
 | **Required** | Yes      |
 | **Format**   | `time`   |
 
-**Description:** Start time of the section with a fictional index where sessions are assigned.
+**Description:** Start time of the section with a fictional index where sessions are assigned
 
-##### <a name="timetable_assignedSections_items_endTime"></a>3.2.1.6. Property `EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > endTime`
+##### <a name="timetable_assignedSections_items_endTime"></a>3.2.1.6. Property `GhcResult > timetable > assignedSections > AssignedSection > endTime`
 
 |              |          |
 | ------------ | -------- |
@@ -277,7 +279,7 @@
 
 **Description:** End time of the section with a fictional index where sessions are assigned.
 
-##### <a name="timetable_assignedSections_items_assignment"></a>3.2.1.7. Property `EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment`
+##### <a name="timetable_assignedSections_items_assignment"></a>3.2.1.7. Property `GhcResult > timetable > assignedSections > AssignedSection > assignment`
 
 **Title:** Assignment
 
@@ -296,7 +298,7 @@
 | - [complementaryActivities](#timetable_assignedSections_items_assignment_complementaryActivities ) | No      | array of object | No         | -          | ComplementaryActivitiesAssigned |
 | - [onCallServices](#timetable_assignedSections_items_assignment_onCallServices )                   | No      | array of object | No         | -          | OnCallServices                  |
 
-###### <a name="timetable_assignedSections_items_assignment_teachingSessions"></a>3.2.1.7.1. Property `EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > teachingSessions`
+###### <a name="timetable_assignedSections_items_assignment_teachingSessions"></a>3.2.1.7.1. Property `GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions`
 
 **Title:** TeachingSessions
 
@@ -319,7 +321,7 @@
 | ---------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
 | [AssignedTeachingSession](#timetable_assignedSections_items_assignment_teachingSessions_items) | Class unit or on call hour assigned in the timetable. |
 
-###### <a name="timetable_assignedSections_items_assignment_teachingSessions_items"></a>3.2.1.7.1.1. EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession
+###### <a name="timetable_assignedSections_items_assignment_teachingSessions_items"></a>3.2.1.7.1.1. GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession
 
 **Title:** AssignedTeachingSession
 
@@ -331,13 +333,14 @@
 
 **Description:** Class unit or on call hour assigned in the timetable.
 
-| Property                                                                                              | Pattern | Type            | Deprecated | Definition               | Title/Description                            |
-| ----------------------------------------------------------------------------------------------------- | ------- | --------------- | ---------- | ------------------------ | -------------------------------------------- |
-| + [refSession](#timetable_assignedSections_items_assignment_teachingSessions_items_refSession )       | No      | integer         | No         | -                        | Identifier of the teaching session assigned. |
-| + [refClassRomms](#timetable_assignedSections_items_assignment_teachingSessions_items_refClassRomms ) | No      | array of string | No         | In #/$defs/refClassRomms | RefclassRomms                                |
-| - [refTeachers](#timetable_assignedSections_items_assignment_teachingSessions_items_refTeachers )     | No      | array of string | No         | -                        | RefTeachers                                  |
+| Property                                                                                                      | Pattern | Type            | Deprecated | Definition               | Title/Description                                                                                                                                                                                               |
+| ------------------------------------------------------------------------------------------------------------- | ------- | --------------- | ---------- | ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| + [refSession](#timetable_assignedSections_items_assignment_teachingSessions_items_refSession )               | No      | integer         | No         | -                        | Identifier of the teaching session assigned.                                                                                                                                                                    |
+| + [refClassRomms](#timetable_assignedSections_items_assignment_teachingSessions_items_refClassRomms )         | No      | array of string | No         | In #/$defs/refClassRomms | RefclassRomms                                                                                                                                                                                                   |
+| - [refTeachers](#timetable_assignedSections_items_assignment_teachingSessions_items_refTeachers )             | No      | array of string | No         | -                        | RefTeachers                                                                                                                                                                                                     |
+| - [refContinuosBlock](#timetable_assignedSections_items_assignment_teachingSessions_items_refContinuosBlock ) | No      | string          | No         | -                        | Optional. For fixed distribution entities, a common reference is created for the allocation information of the entities that have been placed together in a block due to the temporality of their distribution. |
 
-###### <a name="timetable_assignedSections_items_assignment_teachingSessions_items_refSession"></a>3.2.1.7.1.1.1. Property `EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refSession`
+###### <a name="timetable_assignedSections_items_assignment_teachingSessions_items_refSession"></a>3.2.1.7.1.1.1. Property `GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refSession`
 
 |              |           |
 | ------------ | --------- |
@@ -346,7 +349,7 @@
 
 **Description:** Identifier of the teaching session assigned.
 
-###### <a name="timetable_assignedSections_items_assignment_teachingSessions_items_refClassRomms"></a>3.2.1.7.1.1.2. Property `EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refClassRomms`
+###### <a name="timetable_assignedSections_items_assignment_teachingSessions_items_refClassRomms"></a>3.2.1.7.1.1.2. Property `GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refClassRomms`
 
 **Title:** RefclassRomms
 
@@ -370,7 +373,7 @@
 | ------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
 | [RefclassRomm](#timetable_assignedSections_items_assignment_teachingSessions_items_refClassRomms_items) | Identifier of the classroom in the input file. |
 
-###### <a name="timetable_assignedSections_items_assignment_teachingSessions_items_refClassRomms_items"></a>3.2.1.7.1.1.2.1. EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refClassRomms > RefclassRomm
+###### <a name="timetable_assignedSections_items_assignment_teachingSessions_items_refClassRomms_items"></a>3.2.1.7.1.1.2.1. GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refClassRomms > RefclassRomm
 
 **Title:** RefclassRomm
 
@@ -381,7 +384,7 @@
 
 **Description:** Identifier of the classroom in the input file.
 
-###### <a name="timetable_assignedSections_items_assignment_teachingSessions_items_refTeachers"></a>3.2.1.7.1.1.3. Property `EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refTeachers`
+###### <a name="timetable_assignedSections_items_assignment_teachingSessions_items_refTeachers"></a>3.2.1.7.1.1.3. Property `GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refTeachers`
 
 **Title:** RefTeachers
 
@@ -404,7 +407,7 @@
 | --------------------------------------------------------------------------------------------------- | -------------------------------------------- |
 | [RefTeacher](#timetable_assignedSections_items_assignment_teachingSessions_items_refTeachers_items) | Identifier of the teacher in the input file. |
 
-###### <a name="timetable_assignedSections_items_assignment_teachingSessions_items_refTeachers_items"></a>3.2.1.7.1.1.3.1. EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refTeachers > RefTeacher
+###### <a name="timetable_assignedSections_items_assignment_teachingSessions_items_refTeachers_items"></a>3.2.1.7.1.1.3.1. GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refTeachers > RefTeacher
 
 **Title:** RefTeacher
 
@@ -415,7 +418,16 @@
 
 **Description:** Identifier of the teacher in the input file.
 
-###### <a name="timetable_assignedSections_items_assignment_meetings"></a>3.2.1.7.2. Property `EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > meetings`
+###### <a name="timetable_assignedSections_items_assignment_teachingSessions_items_refContinuosBlock"></a>3.2.1.7.1.1.4. Property `GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refContinuosBlock`
+
+|              |          |
+| ------------ | -------- |
+| **Type**     | `string` |
+| **Required** | No       |
+
+**Description:** Optional. For fixed distribution entities, a common reference is created for the allocation information of the entities that have been placed together in a block due to the temporality of their distribution.
+
+###### <a name="timetable_assignedSections_items_assignment_meetings"></a>3.2.1.7.2. Property `GhcResult > timetable > assignedSections > AssignedSection > assignment > meetings`
 
 **Title:** AssignedMeetings
 
@@ -438,7 +450,7 @@
 | ------------------------------------------------------------------------------ | ---------------------------------------------- |
 | [AssignedMeeting](#timetable_assignedSections_items_assignment_meetings_items) | Meeting of teachers assigned in the timetable. |
 
-###### <a name="timetable_assignedSections_items_assignment_meetings_items"></a>3.2.1.7.2.1. EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > meetings > AssignedMeeting
+###### <a name="timetable_assignedSections_items_assignment_meetings_items"></a>3.2.1.7.2.1. GhcResult > timetable > assignedSections > AssignedSection > assignment > meetings > AssignedMeeting
 
 **Title:** AssignedMeeting
 
@@ -450,12 +462,13 @@
 
 **Description:** Meeting of teachers assigned in the timetable.
 
-| Property                                                                                      | Pattern | Type            | Deprecated | Definition                                                                                                  | Title/Description                   |
-| --------------------------------------------------------------------------------------------- | ------- | --------------- | ---------- | ----------------------------------------------------------------------------------------------------------- | ----------------------------------- |
-| + [refMeeting](#timetable_assignedSections_items_assignment_meetings_items_refMeeting )       | No      | string          | No         | -                                                                                                           | Identifier of the meeting assigned. |
-| - [refClassRomms](#timetable_assignedSections_items_assignment_meetings_items_refClassRomms ) | No      | array of string | No         | Same as [refClassRomms](#timetable_assignedSections_items_assignment_teachingSessions_items_refClassRomms ) | RefclassRomms                       |
+| Property                                                                                              | Pattern | Type            | Deprecated | Definition                                                                                                  | Title/Description                                                                                                                                                                                               |
+| ----------------------------------------------------------------------------------------------------- | ------- | --------------- | ---------- | ----------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| + [refMeeting](#timetable_assignedSections_items_assignment_meetings_items_refMeeting )               | No      | string          | No         | -                                                                                                           | Identifier of the meeting assigned.                                                                                                                                                                             |
+| - [refClassRomms](#timetable_assignedSections_items_assignment_meetings_items_refClassRomms )         | No      | array of string | No         | Same as [refClassRomms](#timetable_assignedSections_items_assignment_teachingSessions_items_refClassRomms ) | RefclassRomms                                                                                                                                                                                                   |
+| - [refContinuosBlock](#timetable_assignedSections_items_assignment_meetings_items_refContinuosBlock ) | No      | string          | No         | -                                                                                                           | Optional. For fixed distribution entities, a common reference is created for the allocation information of the entities that have been placed together in a block due to the temporality of their distribution. |
 
-###### <a name="timetable_assignedSections_items_assignment_meetings_items_refMeeting"></a>3.2.1.7.2.1.1. Property `EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > meetings > AssignedMeeting > refMeeting`
+###### <a name="timetable_assignedSections_items_assignment_meetings_items_refMeeting"></a>3.2.1.7.2.1.1. Property `GhcResult > timetable > assignedSections > AssignedSection > assignment > meetings > AssignedMeeting > refMeeting`
 
 |              |          |
 | ------------ | -------- |
@@ -464,7 +477,7 @@
 
 **Description:** Identifier of the meeting assigned.
 
-###### <a name="timetable_assignedSections_items_assignment_meetings_items_refClassRomms"></a>3.2.1.7.2.1.2. Property `EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > meetings > AssignedMeeting > refClassRomms`
+###### <a name="timetable_assignedSections_items_assignment_meetings_items_refClassRomms"></a>3.2.1.7.2.1.2. Property `GhcResult > timetable > assignedSections > AssignedSection > assignment > meetings > AssignedMeeting > refClassRomms`
 
 **Title:** RefclassRomms
 
@@ -476,7 +489,16 @@
 
 **Description:** List of classrooms assigned to teach the class unit.
 
-###### <a name="timetable_assignedSections_items_assignment_complementaryActivities"></a>3.2.1.7.3. Property `EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > complementaryActivities`
+###### <a name="timetable_assignedSections_items_assignment_meetings_items_refContinuosBlock"></a>3.2.1.7.2.1.3. Property `GhcResult > timetable > assignedSections > AssignedSection > assignment > meetings > AssignedMeeting > refContinuosBlock`
+
+|              |          |
+| ------------ | -------- |
+| **Type**     | `string` |
+| **Required** | No       |
+
+**Description:** Optional. For fixed distribution entities, a common reference is created for the allocation information of the entities that have been placed together in a block due to the temporality of their distribution.
+
+###### <a name="timetable_assignedSections_items_assignment_complementaryActivities"></a>3.2.1.7.3. Property `GhcResult > timetable > assignedSections > AssignedSection > assignment > complementaryActivities`
 
 **Title:** ComplementaryActivitiesAssigned
 
@@ -499,7 +521,7 @@
 | --------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
 | [AssignedComplementary](#timetable_assignedSections_items_assignment_complementaryActivities_items) | Teacher's complementary activity assigned in the timetable. |
 
-###### <a name="timetable_assignedSections_items_assignment_complementaryActivities_items"></a>3.2.1.7.3.1. EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > complementaryActivities > AssignedComplementary
+###### <a name="timetable_assignedSections_items_assignment_complementaryActivities_items"></a>3.2.1.7.3.1. GhcResult > timetable > assignedSections > AssignedSection > assignment > complementaryActivities > AssignedComplementary
 
 **Title:** AssignedComplementary
 
@@ -511,21 +533,22 @@
 
 **Description:** Teacher's complementary activity assigned in the timetable.
 
-| Property                                                                                                           | Pattern | Type            | Deprecated | Definition                                                                                                  | Title/Description                                  |
-| ------------------------------------------------------------------------------------------------------------------ | ------- | --------------- | ---------- | ----------------------------------------------------------------------------------------------------------- | -------------------------------------------------- |
-| + [refComplementary](#timetable_assignedSections_items_assignment_complementaryActivities_items_refComplementary ) | No      | string          | No         | -                                                                                                           | Identifier of the Complementary Activity assigned. |
-| - [refClassRomms](#timetable_assignedSections_items_assignment_complementaryActivities_items_refClassRomms )       | No      | array of string | No         | Same as [refClassRomms](#timetable_assignedSections_items_assignment_teachingSessions_items_refClassRomms ) | RefclassRomms                                      |
+| Property                                                                                                             | Pattern | Type            | Deprecated | Definition                                                                                                  | Title/Description                                                                                                                                                                                               |
+| -------------------------------------------------------------------------------------------------------------------- | ------- | --------------- | ---------- | ----------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| + [refComplementary](#timetable_assignedSections_items_assignment_complementaryActivities_items_refComplementary )   | No      | integer         | No         | -                                                                                                           | Identifier of the Complementary Activity assigned.                                                                                                                                                              |
+| - [refClassRomms](#timetable_assignedSections_items_assignment_complementaryActivities_items_refClassRomms )         | No      | array of string | No         | Same as [refClassRomms](#timetable_assignedSections_items_assignment_teachingSessions_items_refClassRomms ) | RefclassRomms                                                                                                                                                                                                   |
+| - [refContinuosBlock](#timetable_assignedSections_items_assignment_complementaryActivities_items_refContinuosBlock ) | No      | string          | No         | -                                                                                                           | Optional. For fixed distribution entities, a common reference is created for the allocation information of the entities that have been placed together in a block due to the temporality of their distribution. |
 
-###### <a name="timetable_assignedSections_items_assignment_complementaryActivities_items_refComplementary"></a>3.2.1.7.3.1.1. Property `EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > complementaryActivities > AssignedComplementary > refComplementary`
+###### <a name="timetable_assignedSections_items_assignment_complementaryActivities_items_refComplementary"></a>3.2.1.7.3.1.1. Property `GhcResult > timetable > assignedSections > AssignedSection > assignment > complementaryActivities > AssignedComplementary > refComplementary`
 
-|              |          |
-| ------------ | -------- |
-| **Type**     | `string` |
-| **Required** | Yes      |
+|              |           |
+| ------------ | --------- |
+| **Type**     | `integer` |
+| **Required** | Yes       |
 
 **Description:** Identifier of the Complementary Activity assigned.
 
-###### <a name="timetable_assignedSections_items_assignment_complementaryActivities_items_refClassRomms"></a>3.2.1.7.3.1.2. Property `EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > complementaryActivities > AssignedComplementary > refClassRomms`
+###### <a name="timetable_assignedSections_items_assignment_complementaryActivities_items_refClassRomms"></a>3.2.1.7.3.1.2. Property `GhcResult > timetable > assignedSections > AssignedSection > assignment > complementaryActivities > AssignedComplementary > refClassRomms`
 
 **Title:** RefclassRomms
 
@@ -537,7 +560,16 @@
 
 **Description:** List of classrooms assigned to teach the class unit.
 
-###### <a name="timetable_assignedSections_items_assignment_onCallServices"></a>3.2.1.7.4. Property `EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > onCallServices`
+###### <a name="timetable_assignedSections_items_assignment_complementaryActivities_items_refContinuosBlock"></a>3.2.1.7.3.1.3. Property `GhcResult > timetable > assignedSections > AssignedSection > assignment > complementaryActivities > AssignedComplementary > refContinuosBlock`
+
+|              |          |
+| ------------ | -------- |
+| **Type**     | `string` |
+| **Required** | No       |
+
+**Description:** Optional. For fixed distribution entities, a common reference is created for the allocation information of the entities that have been placed together in a block due to the temporality of their distribution.
+
+###### <a name="timetable_assignedSections_items_assignment_onCallServices"></a>3.2.1.7.4. Property `GhcResult > timetable > assignedSections > AssignedSection > assignment > onCallServices`
 
 **Title:** OnCallServices
 
@@ -560,7 +592,7 @@
 | ------------------------------------------------------------------------------------------ | ------------------------------------ |
 | [AssignedOnCallService](#timetable_assignedSections_items_assignment_onCallServices_items) | Call hour assigned in the timetable. |
 
-###### <a name="timetable_assignedSections_items_assignment_onCallServices_items"></a>3.2.1.7.4.1. EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > onCallServices > AssignedOnCallService
+###### <a name="timetable_assignedSections_items_assignment_onCallServices_items"></a>3.2.1.7.4.1. GhcResult > timetable > assignedSections > AssignedSection > assignment > onCallServices > AssignedOnCallService
 
 **Title:** AssignedOnCallService
 
@@ -577,7 +609,7 @@
 | + [refOnCall](#timetable_assignedSections_items_assignment_onCallServices_items_refOnCall )   | No      | string | No         | -          | Identifier of the teaching session assigned. |
 | + [refTeacher](#timetable_assignedSections_items_assignment_onCallServices_items_refTeacher ) | No      | string | No         | -          | RefTeachers                                  |
 
-###### <a name="timetable_assignedSections_items_assignment_onCallServices_items_refOnCall"></a>3.2.1.7.4.1.1. Property `EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > onCallServices > AssignedOnCallService > refOnCall`
+###### <a name="timetable_assignedSections_items_assignment_onCallServices_items_refOnCall"></a>3.2.1.7.4.1.1. Property `GhcResult > timetable > assignedSections > AssignedSection > assignment > onCallServices > AssignedOnCallService > refOnCall`
 
 |              |          |
 | ------------ | -------- |
@@ -586,7 +618,7 @@
 
 **Description:** Identifier of the teaching session assigned.
 
-###### <a name="timetable_assignedSections_items_assignment_onCallServices_items_refTeacher"></a>3.2.1.7.4.1.2. Property `EngineOutputGHCSchema > timetable > assignedSections > AssignedSection > assignment > onCallServices > AssignedOnCallService > refTeacher`
+###### <a name="timetable_assignedSections_items_assignment_onCallServices_items_refTeacher"></a>3.2.1.7.4.1.2. Property `GhcResult > timetable > assignedSections > AssignedSection > assignment > onCallServices > AssignedOnCallService > refTeacher`
 
 **Title:** RefTeachers
 
@@ -598,4 +630,4 @@
 **Description:** Teacher assigned in section on call service.
 
 ----------------------------------------------------------------------------------------------------------------------------
-Generated using [json-schema-for-humans](https://github.com/coveooss/json-schema-for-humans) on 2026-11-09 at 11:34:13 +0100
+Generated using [json-schema-for-humans](https://github.com/coveooss/json-schema-for-humans) on 2026-11-09 at 14:56:27 +0100
