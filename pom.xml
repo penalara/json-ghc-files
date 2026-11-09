@@ -154,8 +154,72 @@
 				<skipPublishing>true</skipPublishing>
 	          </configuration>
 	        </plugin>
+            <!-- Maven Release -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>3.3.1</version>
+                <configuration>
+                    <arguments>-Pschema-docs -Djsonschema2pojo.skip=true</arguments>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <!-- Generacion Markdown de la documentacion JSON Schema -->
+        <profile>
+            <id>schema-docs</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>3.6.4</version>
+                        <inherited>false</inherited>
+                        <executions>
+                            <execution>
+                                <id>create-schema-documentation-directory</id>
+                                <phase>generate-resources</phase>
+                                <goals>
+                                    <goal>exec</goal>
+                                </goals>
+                                <configuration>
+                                    <executable>python</executable>
+                                    <arguments>
+                                        <argument>-c</argument>
+                                        <argument>import pathlib, sys; pathlib.Path(sys.argv[1]).mkdir(parents=True, exist_ok=True)</argument>
+                                        <argument>${maven.multiModuleProjectDirectory}/docs</argument>
+                                    </arguments>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>generate-schema-documentation</id>
+                                <phase>generate-resources</phase>
+                                <goals>
+                                    <goal>exec</goal>
+                                </goals>
+                                <configuration>
+                                    <workingDirectory>${maven.multiModuleProjectDirectory}</workingDirectory>
+                                    <executable>python</executable>
+                                    <arguments>
+                                        <argument>-m</argument>
+                                        <argument>json_schema_for_humans.cli</argument>
+                                        <argument>--config</argument>
+                                        <argument>template_name=md</argument>
+                                        <argument>--config</argument>
+                                        <argument>link_to_reused_ref=true</argument>
+                                        <argument>${maven.multiModuleProjectDirectory}/src/main/resources/schemas</argument>
+                                        <argument>${maven.multiModuleProjectDirectory}/docs</argument>
+                                    </arguments>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
     
     <!-- Configuracion de Control de versiones (Git)-->
 	<scm>

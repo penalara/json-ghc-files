@@ -10,3 +10,11 @@ The projects contains:
  - Java POJO classes.
  - Markdown Documentation about classes structure.
 
+## JSON Schema documentation
+
+The documentation is generated from the JSON Schemas using JSON Schema for Humans:
+
+- [Planning data](docs/planningData.schema.md)
+- [Engine input and results](docs/ghcEngine.schema.md)
+- [Engine output](docs/ghcEngineOutput.schema.md)
+- [Multiplatform planner](docs/ghcMultiplatform.schema.md)
