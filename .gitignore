@@ -22,3 +22,4 @@ Thumbs.db
 # Archivos temporales y backups
 *~
 /.metadata/
+/src/main/resources/typescript-interfaces.properties

@@ -1,7 +1,7 @@
 {
 	"$id": "https://github.com/penalara/jsonGhcSchemas/blob/main/schemas/common/ghcEngineOutput.schema.json",
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "title": "EngineOutputGHCSchema",
+    "title": "GhcResult",
     "description": "Schema document to format in Json the timetable created by PenalaraGHC.",
     "type": "object",
     "required": [
@@ -13,8 +13,7 @@
         "date": {
             "title": "JsonGenerationDate",
             "description": "Date of result creation.",
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
         },
 		"weight": {
             "title": "ResultWeight",
@@ -22,7 +21,7 @@
             "type": "integer"
         },
         "timetable": {
-            "title": "GeneratedJsonTimetable",
+            "title": "GeneratedJSONTimetable",
             "description": "Object with timetable specification resolved.",
             "type": "object",
             "required": [
@@ -98,7 +97,7 @@
                                 "$comment": "The engine make the fictional sections, as a division of Real Sections."
                             },
 							"startTime": {
-								"description": "Start time of the section with a fictional index where sessions are assigned.",
+								"description": "Start time of the section with a fictional index where sessions are assigned",
 								"type": "string",
 								"format": "time"
 							},
@@ -143,6 +142,10 @@
 														"description": "Identifier of the teacher in the input file.",
 														"type": "string"
 													}
+												},
+												"refContinuosBlock": {
+													"description": "Optional. For fixed distribution entities, a common reference is created for the allocation information of the entities that have been placed together in a block due to the temporality of their distribution.",
+													"type": "string"
 												}
 											}
 										}
@@ -166,6 +169,10 @@
 												},
 												"refClassRomms": {
 													"$ref": "#/$defs/refClassRomms"
+												},
+												"refContinuosBlock": {
+													"description": "Optional. For fixed distribution entities, a common reference is created for the allocation information of the entities that have been placed together in a block due to the temporality of their distribution.",
+													"type": "string"
 												}
 											}
 										}
@@ -185,10 +192,14 @@
 											"properties": {
 												"refComplementary": {
 													"description": "Identifier of the Complementary Activity assigned.",
-													"type": "string"
+													"type": "integer"
 												},
 												"refClassRomms": {
 													"$ref": "#/$defs/refClassRomms"
+												},
+												"refContinuosBlock": {
+													"description": "Optional. For fixed distribution entities, a common reference is created for the allocation information of the entities that have been placed together in a block due to the temporality of their distribution.",
+													"type": "string"
 												}
 											}
 										}

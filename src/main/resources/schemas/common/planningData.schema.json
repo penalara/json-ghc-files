@@ -63,13 +63,15 @@
                                             "description": "Header to identify the day in the results table and the frame column.",
                                             "type": "string"
                                         }
-                                    }
+                                    },
+                                    "additionalProperties": false
                                 }
                             }
-                        }
+                        },
+                        "additionalProperties": false
                     }
                 },
-				"periodSets": {
+				"periodsSets": {
 				    "title": "PeriodsSets",
 				    "description": "List of sets of periods, which are groupings of multiple periods to make it easier to assign periods to sessions in batches, and many of them overlap by sharing several weeks in common.",
 				    "type": "array",
@@ -92,7 +94,8 @@
 								    "type": "string"
 								}
 				            }
-				        }
+				        },
+				        "additionalProperties": false
 				    }
 				}
             },
@@ -187,13 +190,16 @@
                                                 "type": "boolean",
                                                 "default": true
                                             }
-                                        }
+                                        },
+                                        "additionalProperties": false
                                     }
                                 }
-                            }
+                            },
+                            "additionalProperties": false
                         }
                     }
-                }
+                },
+                "additionalProperties": false
             }
         },
         "buildings": {
@@ -239,7 +245,8 @@
                             "additionalProperties": false
                         }
                     }
-                }
+                },
+                "additionalProperties": false
             }
         },
         "classRooms": {
@@ -304,7 +311,8 @@
                                     "description": "Frame identifier.",
                                     "type": "string"
                                 }
-                            }
+                            },
+                            "additionalProperties": false
                         }
                     },
                     "refBuilding": {
@@ -316,7 +324,8 @@
                         "type": "boolean",
                         "default": false
                     }
-                }
+                },
+                "additionalProperties": false
             }
         },
         "classRoomsSets": {
@@ -350,7 +359,8 @@
                         "type": "integer",
                         "default": 0
                     }
-                }
+                },
+                "additionalProperties": false
             }
         },
         "tasks": {
@@ -384,7 +394,8 @@
                         "description": "Colour code used to represent the task in the result.",
                         "type": "string" 
                     }
-                }
+                },
+                "additionalProperties": false
             }
         },
         "teachers": {
@@ -470,12 +481,12 @@
                         },
                         "additionalProperties": false
                     },
-                    "periodSettings": {
+                    "periodsSettings": {
                         "title": "PeriodsSettings",
                         "description": "Strict and measurable teacher's conditions customized by week/period",
                         "type": "array",
                         "items": {
-                            "title": "PeriodSetting",
+                            "title": "PeriodsSetting",
                             "type": "object",
                             "required": [
                                 "refPeriod"
@@ -522,7 +533,8 @@
                             "additionalProperties": false
                         }
                     }
-                }
+                },
+                "additionalProperties": false
             }
         },
         "subjects": {
@@ -552,17 +564,13 @@
                         "description": "External key of the subject",
                         "type": "string"
                     },
-					"isStudentMentoring": {
-					    "description": "Indicates whether the subject is a tutoring session with students",
-					    "type": "boolean",
-					    "default": false
-					},
                     "technicalTeacher": {
                         "description": "It indicates whether the subject is teach by technical teacher.",
                         "type": "boolean",
                         "default": false
                     },
                     "type": {
+						"title" : "SubjectType",
                         "description": "Type of the subject",
                         "enum": [
                             "core",
@@ -593,7 +601,8 @@
                     "frameTemplate": {
                         "$ref": "#/$defs/frameTemplate"
                     }
-                }
+                },
+                "additionalProperties": false
             }
         },
         "groups": {
@@ -680,7 +689,8 @@
                             "additionalProperties": false
                         }
                     }
-                }
+                },
+                "additionalProperties": false
             }
         },
         "groupSetRelations": {
@@ -733,10 +743,12 @@
                                     "description": "Subject of the course.",
                                     "type": "string"
                                 }
-                            }
+                            },
+                            "additionalProperties": false
                         }
                     }
-                }
+                },
+                "additionalProperties": false
             }
         },
         "departments": {
@@ -788,7 +800,8 @@
                             "type": "string"
                         }
                     }
-                }
+                },
+                "additionalProperties": false
             }
         },
         "sessions": {
@@ -868,7 +881,8 @@
                                     "description": "Identifier name of the task of the other teacher.",
                                     "type": "string"
                                 }
-                            }
+                            },
+                            "additionalProperties": false
                         }
                     },
                     "distribution": {
@@ -1004,7 +1018,8 @@
                                 "description": "Conditions on this and another class unit cannot coincide on the same day.",
                                 "type": "object",
                                 "required": [
-                                    "refSesions"
+                                    "refSesions",
+									"daysSetting"
                                 ],
                                 "properties": {
                                     "refSesions": {
@@ -1189,7 +1204,8 @@
                         "description": "Contains the reference of the department of the session.",
                         "type": "string"
                     }
-                }
+                },
+                "additionalProperties": false
             }
         },
         "meetings": {
@@ -1253,7 +1269,8 @@
                     "settings": {
                         "$ref": "#/$defs/nonClassSessionSettings"
                     }
-                }
+                },
+                "additionalProperties": false
             }
         },
         "complementaryActivities": {
@@ -1312,7 +1329,8 @@
                     "settings": {
                         "$ref": "#/$defs/nonClassSessionSettings"
                     }
-                }
+                },
+                "additionalProperties": false
             }
         },
         "onCallServices": {
@@ -1412,7 +1430,8 @@
                             "description": "It contains a teacher reference and the number of section oversight .",
                             "type": "object",
                             "required": [
-                                "teacherId"
+                                "teacherId",
+								"numOfSections"
                             ],
                             "properties": {
                                 "teacherId": {
@@ -1635,7 +1654,8 @@
                     "description": "Custom time in minutes for condition.",
                     "type": "integer"
                 }
-            }
+            },
+            "additionalProperties": false
         },
         "conditionOcupancy": {
             "title": "ConditionOcupancy",
@@ -1657,7 +1677,8 @@
                     "description": "time in minutes you add to the assisted time so you generate the total time",
                     "type": "integer"
                 }
-            }
+            },
+            "additionalProperties": false
         },
         "frameTemplate": {
             "title": "FrameTemplate",
@@ -1695,7 +1716,8 @@
                             "weak-non-preferred"
                         ]
                     }
-                }
+                },
+                "additionalProperties": false
             }
         },
         "sessionFrameTemplate": {
@@ -1736,7 +1758,8 @@
                             "preset"
                         ]
                     }
-                }
+                },
+                "additionalProperties": false
             }
         },
         "onCallServiceframeTemplate": {
@@ -1774,7 +1797,8 @@
                             "preset"
                         ]
                     }
-                }
+                },
+                "additionalProperties": false
             }
         },
         "weeklyStay": {
@@ -1870,7 +1894,8 @@
                             "type": "integer",
                             "default": 0
                         }
-                    }
+                    },
+                    "additionalProperties": false
                 },
                 "firstMinutes": {
                     "title": "FirstMinutesFreeTimes",
@@ -1894,7 +1919,8 @@
                             "description": "Minutes of free time at the beginning of the day.",
                             "type": "integer"
                         }
-                    }
+                    },
+                    "additionalProperties": false
                 },
                 "lastMinutes": {
                     "title": "LastMinutesFreeTimes",
@@ -1918,7 +1944,8 @@
                             "description": "Minutes of free time at the end of the day.",
                             "type": "integer"
                         }
-                    }
+                    },
+                    "additionalProperties": false
                 },
                 "consecutiveAnyTime": {
                     "title": "ConsecutiveAnyTimeFreeTimes",
@@ -1942,7 +1969,8 @@
                             "description": "Minutes of free time interval.",
                             "type": "integer"
                         }
-                    }
+                    },
+                    "additionalProperties": false
                 }
             },
             "additionalProperties": false
@@ -1965,7 +1993,8 @@
                             "description": "Preferable number of mornings off.",
                             "type": "integer"
                         }
-                    }
+                    },
+                    "additionalProperties": false
                 },
                 "afternoons": {
                     "title": "AfternoonFreePartTimes",
@@ -1980,7 +2009,8 @@
                             "description": "Preferable number of afternoons off.",
                             "type": "integer"
                         }
-                    }
+                    },
+                    "additionalProperties": false
                 },
                 "indistinctly": {
                     "title": "IndistinctlyFreePartTimes",
@@ -1995,7 +2025,8 @@
                             "description": "Preferable number of mornings or afternoons indistinctly off.",
                             "type": "integer"
                         }
-                    }
+                    },
+                    "additionalProperties": false
                 }
             },
             "additionalProperties": false
@@ -2216,7 +2247,8 @@
                     "description": "Custom number of students that are in the class units. If it is not specified, the engine defaults to the value of the Group object.",
                     "type": "integer"
                 }
-            }
+            },
+            "additionalProperties": false
         },
         "stableTiming": {
             "title": "StableTiming",
@@ -2328,7 +2360,8 @@
                                 "variableTiming": {
                                     "$ref": "#/$defs/variableTiming"
                                 }
-                            }
+                            },
+                            "additionalProperties": false
                         },
                         "maximunTimeInPeriod": {
                             "description": "Maximum number of minutes to be allocated in each Period. If not defined, it is considered that there is no maximum limit.",
@@ -2401,5 +2434,6 @@
             },
             "additionalProperties": false
         }
-    }
+    },
+    "additionalProperties": false
 }

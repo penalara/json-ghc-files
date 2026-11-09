@@ -42,6 +42,7 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <autoVersionSubmodules>true</autoVersionSubmodules>
+        <typescript.propertiesFile>${maven.multiModuleProjectDirectory}/src/main/resources/typescript-interfaces.properties</typescript.propertiesFile>
 	</properties>
 	
     <!-- Project modules-->
@@ -211,6 +212,118 @@
                                         <argument>link_to_reused_ref=true</argument>
                                         <argument>${maven.multiModuleProjectDirectory}/src/main/resources/schemas</argument>
                                         <argument>${maven.multiModuleProjectDirectory}/docs</argument>
+                                    </arguments>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <!-- Generacion de interfaces TypeScript desde los JSON Schema comunes -->
+        <profile>
+            <id>typescript-interfaces</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>properties-maven-plugin</artifactId>
+                        <version>1.3.1</version>
+                        <inherited>false</inherited>
+                        <executions>
+                            <execution>
+                                <id>load-typescript-interfaces-properties</id>
+                                <phase>initialize</phase>
+                                <goals>
+                                    <goal>read-project-properties</goal>
+                                </goals>
+                                <configuration>
+                                    <files>
+                                        <file>${typescript.propertiesFile}</file>
+                                    </files>
+                                    <quiet>true</quiet>
+                                    <override>false</override>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>3.6.4</version>
+                        <inherited>false</inherited>
+                        <executions>
+                            <execution>
+                                <id>create-typescript-interfaces-directory</id>
+                                <phase>generate-resources</phase>
+                                <goals>
+                                    <goal>exec</goal>
+                                </goals>
+                                <configuration>
+                                    <executable>python</executable>
+                                    <arguments>
+                                        <argument>-c</argument>
+                                        <argument>import pathlib, sys; destination = sys.argv[1]; destination and not destination.startswith('${') or sys.exit('Set directorioConfigurado with -DdirectorioConfigurado=... or in ' + sys.argv[2]); pathlib.Path(destination).mkdir(parents=True, exist_ok=True)</argument>
+                                        <argument>${directorioConfigurado}</argument>
+                                        <argument>${typescript.propertiesFile}</argument>
+                                    </arguments>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>generate-planning-ghc-data-interface</id>
+                                <phase>generate-resources</phase>
+                                <goals>
+                                    <goal>exec</goal>
+                                </goals>
+                                <configuration>
+                                    <workingDirectory>${maven.multiModuleProjectDirectory}</workingDirectory>
+                                    <executable>npx</executable>
+                                    <arguments>
+                                        <argument>--yes</argument>
+                                        <argument>quicktype@26.0.0</argument>
+                                        <argument>--src-lang</argument>
+                                        <argument>schema</argument>
+                                        <argument>--lang</argument>
+                                        <argument>typescript</argument>
+                                        <argument>--just-types</argument>
+                                        <argument>--no-prefer-unions</argument>
+                                        <argument>--no-maps</argument>
+                                        <argument>--prefer-unknown</argument>
+                                        <argument>--top-level</argument>
+                                        <argument>PlanningGhcData</argument>
+                                        <argument>--out</argument>
+                                        <argument>${directorioConfigurado}/planning-ghc-data.interface.ts</argument>
+                                        <argument>--src</argument>
+                                        <argument>src/main/resources/schemas/common/planningData.schema.json</argument>
+                                    </arguments>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>generate-ghc-result-interface</id>
+                                <phase>generate-resources</phase>
+                                <goals>
+                                    <goal>exec</goal>
+                                </goals>
+                                <configuration>
+                                    <workingDirectory>${maven.multiModuleProjectDirectory}</workingDirectory>
+                                    <executable>npx</executable>
+                                    <arguments>
+                                        <argument>--yes</argument>
+                                        <argument>quicktype@26.0.0</argument>
+                                        <argument>--src-lang</argument>
+                                        <argument>schema</argument>
+                                        <argument>--lang</argument>
+                                        <argument>typescript</argument>
+                                        <argument>--just-types</argument>
+                                        <argument>--no-prefer-unions</argument>
+                                        <argument>--no-maps</argument>
+                                        <argument>--prefer-unknown</argument>
+                                        <argument>--top-level</argument>
+                                        <argument>GhcResult</argument>
+                                        <argument>--out</argument>
+                                        <argument>${directorioConfigurado}/ghc-result.interface.ts</argument>
+                                        <argument>--src</argument>
+                                        <argument>src/main/resources/schemas/common/ghcEngineOutput.schema.json</argument>
                                     </arguments>
                                 </configuration>
                             </execution>
