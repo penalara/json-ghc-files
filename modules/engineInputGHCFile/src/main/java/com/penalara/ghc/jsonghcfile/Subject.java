@@ -29,6 +29,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
     "shortName",
     "fullName",
     "exKey",
+    "isStudentMentoring",
     "technicalTeacher",
     "type",
     "refClassroom",
@@ -67,6 +68,13 @@ public class Subject {
     @JsonProperty("exKey")
     @JsonPropertyDescription("External key of the subject")
     private String exKey;
+    /**
+     * Indicates whether the subject is a tutoring session with students
+     * 
+     */
+    @JsonProperty("isStudentMentoring")
+    @JsonPropertyDescription("Indicates whether the subject is a tutoring session with students")
+    private Boolean isStudentMentoring = false;
     /**
      * It indicates whether the subject is teach by technical teacher.
      * 
@@ -186,6 +194,24 @@ public class Subject {
     @JsonProperty("exKey")
     public void setExKey(String exKey) {
         this.exKey = exKey;
+    }
+
+    /**
+     * Indicates whether the subject is a tutoring session with students
+     * 
+     */
+    @JsonProperty("isStudentMentoring")
+    public Boolean getIsStudentMentoring() {
+        return isStudentMentoring;
+    }
+
+    /**
+     * Indicates whether the subject is a tutoring session with students
+     * 
+     */
+    @JsonProperty("isStudentMentoring")
+    public void setIsStudentMentoring(Boolean isStudentMentoring) {
+        this.isStudentMentoring = isStudentMentoring;
     }
 
     /**
