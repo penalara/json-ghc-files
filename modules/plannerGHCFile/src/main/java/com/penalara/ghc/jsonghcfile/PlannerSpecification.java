@@ -18,12 +18,22 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
+    "alias",
     "modifiedDate",
     "planningData",
     "results"
 })
 public class PlannerSpecification {
 
+    /**
+     * SpecificationAlias
+     * <p>
+     * User-defined name for this planning version.
+     * 
+     */
+    @JsonProperty("alias")
+    @JsonPropertyDescription("User-defined name for this planning version.")
+    private String alias;
     /**
      * PlanningModificationDate
      * <p>
@@ -52,7 +62,29 @@ public class PlannerSpecification {
      */
     @JsonProperty("results")
     @JsonPropertyDescription("Tables of the timetable that contain sections where the class units are located.")
-    private List<EngineOutputGHCSchema> results = new ArrayList<EngineOutputGHCSchema>();
+    private List<GhcResult> results = new ArrayList<GhcResult>();
+
+    /**
+     * SpecificationAlias
+     * <p>
+     * User-defined name for this planning version.
+     * 
+     */
+    @JsonProperty("alias")
+    public String getAlias() {
+        return alias;
+    }
+
+    /**
+     * SpecificationAlias
+     * <p>
+     * User-defined name for this planning version.
+     * 
+     */
+    @JsonProperty("alias")
+    public void setAlias(String alias) {
+        this.alias = alias;
+    }
 
     /**
      * PlanningModificationDate
@@ -109,7 +141,7 @@ public class PlannerSpecification {
      * 
      */
     @JsonProperty("results")
-    public List<EngineOutputGHCSchema> getResults() {
+    public List<GhcResult> getResults() {
         return results;
     }
 
@@ -120,7 +152,7 @@ public class PlannerSpecification {
      * 
      */
     @JsonProperty("results")
-    public void setResults(List<EngineOutputGHCSchema> results) {
+    public void setResults(List<GhcResult> results) {
         this.results = results;
     }
 

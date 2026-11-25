@@ -9,11 +9,6 @@
     ],
     "additionalProperties": false,
 	"properties": {
-		"id":{
-			"title": "IdFile",
-			"description":"Indicates the id number of the file at the Penalara Server.",
-			"type":"integer"
-		},
 		"meta": {
 			"title": "FileMetadata",
             "description": "Information about the file.",
@@ -82,6 +77,11 @@
 				],
 				"additionalProperties": false,
 				"properties": {
+					"alias": {
+						"title": "SpecificationAlias",
+						"description": "User-defined name for this planning version.",
+						"type": "string"
+					},
 					"modifiedDate": {
 						"title": "PlanningModificationDate",
 						"description": "Planning modification date",
@@ -101,7 +101,7 @@
 						"items": {
 							"title": "EngineResult",
 							"description": "GHC engine result from specification.",
-							"$ref": "../common/ghcEngineOutput.schema.json",
+							"$ref": "../common/ghcResult.schema.json",
 							"type": "object"
 
 						}

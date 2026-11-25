@@ -1,483 +1,482 @@
 # GhcEngineSchema
 
-- [1. Property `GhcEngineSchema > id`](#id)
-- [2. Property `GhcEngineSchema > meta`](#meta)
-  - [2.1. Property `GhcEngineSchema > meta > name`](#meta_name)
-  - [2.2. Property `GhcEngineSchema > meta > versionJson`](#meta_versionJson)
-  - [2.3. Property `GhcEngineSchema > meta > createdDate`](#meta_createdDate)
-  - [2.4. Property `GhcEngineSchema > meta > lastModifiedDate`](#meta_lastModifiedDate)
-  - [2.5. Property `GhcEngineSchema > meta > refUser`](#meta_refUser)
-  - [2.6. Property `GhcEngineSchema > meta > source`](#meta_source)
-  - [2.7. Property `GhcEngineSchema > meta > fullMode`](#meta_fullMode)
-- [3. Property `GhcEngineSchema > planningData`](#planningData)
-  - [3.1. Property `GhcEngineSchema > planningData > periods`](#planningData_periods)
-    - [3.1.1. Property `GhcEngineSchema > planningData > periods > followedPeriods`](#planningData_periods_followedPeriods)
-    - [3.1.2. Property `GhcEngineSchema > planningData > periods > periodsList`](#planningData_periods_periodsList)
-      - [3.1.2.1. GhcEngineSchema > planningData > periods > periodsList > Period](#planningData_periods_periodsList_items)
-        - [3.1.2.1.1. Property `GhcEngineSchema > planningData > periods > periodsList > Period > id`](#planningData_periods_periodsList_items_id)
-        - [3.1.2.1.2. Property `GhcEngineSchema > planningData > periods > periodsList > Period > alias`](#planningData_periods_periodsList_items_alias)
-        - [3.1.2.1.3. Property `GhcEngineSchema > planningData > periods > periodsList > Period > lastDay`](#planningData_periods_periodsList_items_lastDay)
-        - [3.1.2.1.4. Property `GhcEngineSchema > planningData > periods > periodsList > Period > dayAliases`](#planningData_periods_periodsList_items_dayAliases)
-          - [3.1.2.1.4.1. GhcEngineSchema > planningData > periods > periodsList > Period > dayAliases > AliasDayDeifinition](#planningData_periods_periodsList_items_dayAliases_items)
-            - [3.1.2.1.4.1.1. Property `GhcEngineSchema > planningData > periods > periodsList > Period > dayAliases > AliasDayDeifinition > dayId`](#planningData_periods_periodsList_items_dayAliases_items_dayId)
-            - [3.1.2.1.4.1.2. Property `GhcEngineSchema > planningData > periods > periodsList > Period > dayAliases > AliasDayDeifinition > alias`](#planningData_periods_periodsList_items_dayAliases_items_alias)
-    - [3.1.3. Property `GhcEngineSchema > planningData > periods > periodsSets`](#planningData_periods_periodsSets)
-      - [3.1.3.1. GhcEngineSchema > planningData > periods > periodsSets > PeriodsSet](#planningData_periods_periodsSets_items)
-        - [3.1.3.1.1. Property `GhcEngineSchema > planningData > periods > periodsSets > PeriodsSet > id`](#planningData_periods_periodsSets_items_id)
-        - [3.1.3.1.2. Property `GhcEngineSchema > planningData > periods > periodsSets > PeriodsSet > periodList`](#planningData_periods_periodsSets_items_periodList)
-          - [3.1.3.1.2.1. GhcEngineSchema > planningData > periods > periodsSets > PeriodsSet > periodList > periodList items](#planningData_periods_periodsSets_items_periodList_items)
-  - [3.2. Property `GhcEngineSchema > planningData > frames`](#planningData_frames)
-    - [3.2.1. GhcEngineSchema > planningData > frames > Frame](#planningData_frames_items)
-      - [3.2.1.1. Property `GhcEngineSchema > planningData > frames > Frame > id`](#planningData_frames_items_id)
-      - [3.2.1.2. Property `GhcEngineSchema > planningData > frames > Frame > exKey`](#planningData_frames_items_exKey)
-      - [3.2.1.3. Property `GhcEngineSchema > planningData > frames > Frame > days`](#planningData_frames_items_days)
-        - [3.2.1.3.1. GhcEngineSchema > planningData > frames > Frame > days > FrameDay](#planningData_frames_items_days_items)
-          - [3.2.1.3.1.1. Property `GhcEngineSchema > planningData > frames > Frame > days > FrameDay > day`](#planningData_frames_items_days_items_day)
-          - [3.2.1.3.1.2. Property `GhcEngineSchema > planningData > frames > Frame > days > FrameDay > sections`](#planningData_frames_items_days_items_sections)
-            - [3.2.1.3.1.2.1. GhcEngineSchema > planningData > frames > Frame > days > FrameDay > sections > Section](#planningData_frames_items_days_items_sections_items)
-              - [3.2.1.3.1.2.1.1. Property `GhcEngineSchema > planningData > frames > Frame > days > FrameDay > sections > Section > index`](#planningData_frames_items_days_items_sections_items_index)
-              - [3.2.1.3.1.2.1.2. Property `GhcEngineSchema > planningData > frames > Frame > days > FrameDay > sections > Section > entryTime`](#planningData_frames_items_days_items_sections_items_entryTime)
-              - [3.2.1.3.1.2.1.3. Property `GhcEngineSchema > planningData > frames > Frame > days > FrameDay > sections > Section > exitTime`](#planningData_frames_items_days_items_sections_items_exitTime)
-              - [3.2.1.3.1.2.1.4. Property `GhcEngineSchema > planningData > frames > Frame > days > FrameDay > sections > Section > exKey`](#planningData_frames_items_days_items_sections_items_exKey)
-              - [3.2.1.3.1.2.1.5. Property `GhcEngineSchema > planningData > frames > Frame > days > FrameDay > sections > Section > duration`](#planningData_frames_items_days_items_sections_items_duration)
-              - [3.2.1.3.1.2.1.6. Property `GhcEngineSchema > planningData > frames > Frame > days > FrameDay > sections > Section > type`](#planningData_frames_items_days_items_sections_items_type)
-              - [3.2.1.3.1.2.1.7. Property `GhcEngineSchema > planningData > frames > Frame > days > FrameDay > sections > Section > allowed`](#planningData_frames_items_days_items_sections_items_allowed)
-  - [3.3. Property `GhcEngineSchema > planningData > buildings`](#planningData_buildings)
-    - [3.3.1. GhcEngineSchema > planningData > buildings > Building](#planningData_buildings_items)
-      - [3.3.1.1. Property `GhcEngineSchema > planningData > buildings > Building > id`](#planningData_buildings_items_id)
-      - [3.3.1.2. Property `GhcEngineSchema > planningData > buildings > Building > fullName`](#planningData_buildings_items_fullName)
-      - [3.3.1.3. Property `GhcEngineSchema > planningData > buildings > Building > distances`](#planningData_buildings_items_distances)
-        - [3.3.1.3.1. GhcEngineSchema > planningData > buildings > Building > distances > Distance](#planningData_buildings_items_distances_items)
-          - [3.3.1.3.1.1. Property `GhcEngineSchema > planningData > buildings > Building > distances > Distance > refBuilding`](#planningData_buildings_items_distances_items_refBuilding)
-          - [3.3.1.3.1.2. Property `GhcEngineSchema > planningData > buildings > Building > distances > Distance > minutes`](#planningData_buildings_items_distances_items_minutes)
-  - [3.4. Property `GhcEngineSchema > planningData > classRooms`](#planningData_classRooms)
-    - [3.4.1. GhcEngineSchema > planningData > classRooms > Classroom](#planningData_classRooms_items)
-      - [3.4.1.1. Property `GhcEngineSchema > planningData > classRooms > Classroom > id`](#planningData_classRooms_items_id)
-      - [3.4.1.2. Property `GhcEngineSchema > planningData > classRooms > Classroom > shortName`](#planningData_classRooms_items_shortName)
-      - [3.4.1.3. Property `GhcEngineSchema > planningData > classRooms > Classroom > fullName`](#planningData_classRooms_items_fullName)
-      - [3.4.1.4. Property `GhcEngineSchema > planningData > classRooms > Classroom > isDedicated`](#planningData_classRooms_items_isDedicated)
-      - [3.4.1.5. Property `GhcEngineSchema > planningData > classRooms > Classroom > exKey`](#planningData_classRooms_items_exKey)
-      - [3.4.1.6. Property `GhcEngineSchema > planningData > classRooms > Classroom > capacity`](#planningData_classRooms_items_capacity)
-      - [3.4.1.7. Property `GhcEngineSchema > planningData > classRooms > Classroom > frameTemplate`](#planningData_classRooms_items_frameTemplate)
-        - [3.4.1.7.1. GhcEngineSchema > planningData > classRooms > Classroom > frameTemplate > BannedSectionPreference](#planningData_classRooms_items_frameTemplate_items)
-          - [3.4.1.7.1.1. Property `GhcEngineSchema > planningData > classRooms > Classroom > frameTemplate > BannedSectionPreference > day`](#planningData_classRooms_items_frameTemplate_items_day)
-          - [3.4.1.7.1.2. Property `GhcEngineSchema > planningData > classRooms > Classroom > frameTemplate > BannedSectionPreference > index`](#planningData_classRooms_items_frameTemplate_items_index)
-          - [3.4.1.7.1.3. Property `GhcEngineSchema > planningData > classRooms > Classroom > frameTemplate > BannedSectionPreference > frame`](#planningData_classRooms_items_frameTemplate_items_frame)
-      - [3.4.1.8. Property `GhcEngineSchema > planningData > classRooms > Classroom > refBuilding`](#planningData_classRooms_items_refBuilding)
-      - [3.4.1.9. Property `GhcEngineSchema > planningData > classRooms > Classroom > fullDay`](#planningData_classRooms_items_fullDay)
-  - [3.5. Property `GhcEngineSchema > planningData > classRoomsSets`](#planningData_classRoomsSets)
-    - [3.5.1. GhcEngineSchema > planningData > classRoomsSets > ClassRoomSet](#planningData_classRoomsSets_items)
-      - [3.5.1.1. Property `GhcEngineSchema > planningData > classRoomsSets > ClassRoomSet > id`](#planningData_classRoomsSets_items_id)
-      - [3.5.1.2. Property `GhcEngineSchema > planningData > classRoomsSets > ClassRoomSet > rooms`](#planningData_classRoomsSets_items_rooms)
-        - [3.5.1.2.1. GhcEngineSchema > planningData > classRoomsSets > ClassRoomSet > rooms > ClassRoomRef](#planningData_classRoomsSets_items_rooms_items)
-      - [3.5.1.3. Property `GhcEngineSchema > planningData > classRoomsSets > ClassRoomSet > anonymousRooms`](#planningData_classRoomsSets_items_anonymousRooms)
-  - [3.6. Property `GhcEngineSchema > planningData > tasks`](#planningData_tasks)
-    - [3.6.1. GhcEngineSchema > planningData > tasks > Task](#planningData_tasks_items)
-      - [3.6.1.1. Property `GhcEngineSchema > planningData > tasks > Task > id`](#planningData_tasks_items_id)
-      - [3.6.1.2. Property `GhcEngineSchema > planningData > tasks > Task > frameTemplate`](#planningData_tasks_items_frameTemplate)
-        - [3.6.1.2.1. GhcEngineSchema > planningData > tasks > Task > frameTemplate > SectionPreference](#planningData_tasks_items_frameTemplate_items)
-          - [3.6.1.2.1.1. Property `GhcEngineSchema > planningData > tasks > Task > frameTemplate > SectionPreference > day`](#planningData_tasks_items_frameTemplate_items_day)
-          - [3.6.1.2.1.2. Property `GhcEngineSchema > planningData > tasks > Task > frameTemplate > SectionPreference > index`](#planningData_tasks_items_frameTemplate_items_index)
-          - [3.6.1.2.1.3. Property `GhcEngineSchema > planningData > tasks > Task > frameTemplate > SectionPreference > frame`](#planningData_tasks_items_frameTemplate_items_frame)
-          - [3.6.1.2.1.4. Property `GhcEngineSchema > planningData > tasks > Task > frameTemplate > SectionPreference > type`](#planningData_tasks_items_frameTemplate_items_type)
-      - [3.6.1.3. Property `GhcEngineSchema > planningData > tasks > Task > fullName`](#planningData_tasks_items_fullName)
-      - [3.6.1.4. Property `GhcEngineSchema > planningData > tasks > Task > exKey`](#planningData_tasks_items_exKey)
-      - [3.6.1.5. Property `GhcEngineSchema > planningData > tasks > Task > refColourInResult`](#planningData_tasks_items_refColourInResult)
-  - [3.7. Property `GhcEngineSchema > planningData > teachers`](#planningData_teachers)
-    - [3.7.1. GhcEngineSchema > planningData > teachers > Teacher](#planningData_teachers_items)
-      - [3.7.1.1. Property `GhcEngineSchema > planningData > teachers > Teacher > id`](#planningData_teachers_items_id)
-      - [3.7.1.2. Property `GhcEngineSchema > planningData > teachers > Teacher > shortName`](#planningData_teachers_items_shortName)
-      - [3.7.1.3. Property `GhcEngineSchema > planningData > teachers > Teacher > fullName`](#planningData_teachers_items_fullName)
-      - [3.7.1.4. Property `GhcEngineSchema > planningData > teachers > Teacher > exKey`](#planningData_teachers_items_exKey)
-      - [3.7.1.5. Property `GhcEngineSchema > planningData > teachers > Teacher > associationIdentifier`](#planningData_teachers_items_associationIdentifier)
-      - [3.7.1.6. Property `GhcEngineSchema > planningData > teachers > Teacher > overlappedAssessment`](#planningData_teachers_items_overlappedAssessment)
-      - [3.7.1.7. Property `GhcEngineSchema > planningData > teachers > Teacher > frameTemplate`](#planningData_teachers_items_frameTemplate)
-      - [3.7.1.8. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings`](#planningData_teachers_items_generalSettings)
-        - [3.7.1.8.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > weeklyStay`](#planningData_teachers_items_generalSettings_weeklyStay)
-          - [3.7.1.8.1.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > weeklyStay > strict`](#planningData_teachers_items_generalSettings_weeklyStay_strict)
-          - [3.7.1.8.1.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > weeklyStay > preferable`](#planningData_teachers_items_generalSettings_weeklyStay_preferable)
-          - [3.7.1.8.1.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > weeklyStay > countAroundMidday`](#planningData_teachers_items_generalSettings_weeklyStay_countAroundMidday)
-        - [3.7.1.8.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyStay`](#planningData_teachers_items_generalSettings_dailyStay)
-          - [3.7.1.8.2.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyStay > strict`](#planningData_teachers_items_generalSettings_dailyStay_strict)
-          - [3.7.1.8.2.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyStay > preferable`](#planningData_teachers_items_generalSettings_dailyStay_preferable)
-          - [3.7.1.8.2.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyStay > countAroundMidday`](#planningData_teachers_items_generalSettings_dailyStay_countAroundMidday)
-        - [3.7.1.8.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > avoidGapsBetweenSesions`](#planningData_teachers_items_generalSettings_avoidGapsBetweenSesions)
-        - [3.7.1.8.4. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > maxContinuousTeaching`](#planningData_teachers_items_generalSettings_maxContinuousTeaching)
-          - [3.7.1.8.4.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > maxContinuousTeaching > type`](#planningData_teachers_items_generalSettings_maxContinuousTeaching_type)
-          - [3.7.1.8.4.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > maxContinuousTeaching > minutes`](#planningData_teachers_items_generalSettings_maxContinuousTeaching_minutes)
-          - [3.7.1.8.4.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > maxContinuousTeaching > minBreak`](#planningData_teachers_items_generalSettings_maxContinuousTeaching_minBreak)
-        - [3.7.1.8.5. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > avoidClassesAroundBreak`](#planningData_teachers_items_generalSettings_avoidClassesAroundBreak)
-        - [3.7.1.8.6. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes`](#planningData_teachers_items_generalSettings_freeTimes)
-          - [3.7.1.8.6.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > fullDay`](#planningData_teachers_items_generalSettings_freeTimes_fullDay)
-            - [3.7.1.8.6.1.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > fullDay > strictDays`](#planningData_teachers_items_generalSettings_freeTimes_fullDay_strictDays)
-            - [3.7.1.8.6.1.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > fullDay > preferredDays`](#planningData_teachers_items_generalSettings_freeTimes_fullDay_preferredDays)
-          - [3.7.1.8.6.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > firstMinutes`](#planningData_teachers_items_generalSettings_freeTimes_firstMinutes)
-            - [3.7.1.8.6.2.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > firstMinutes > strictDays`](#planningData_teachers_items_generalSettings_freeTimes_firstMinutes_strictDays)
-            - [3.7.1.8.6.2.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > firstMinutes > preferredDays`](#planningData_teachers_items_generalSettings_freeTimes_firstMinutes_preferredDays)
-            - [3.7.1.8.6.2.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > firstMinutes > minutes`](#planningData_teachers_items_generalSettings_freeTimes_firstMinutes_minutes)
-          - [3.7.1.8.6.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > lastMinutes`](#planningData_teachers_items_generalSettings_freeTimes_lastMinutes)
-            - [3.7.1.8.6.3.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > lastMinutes > strictDays`](#planningData_teachers_items_generalSettings_freeTimes_lastMinutes_strictDays)
-            - [3.7.1.8.6.3.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > lastMinutes > preferredDays`](#planningData_teachers_items_generalSettings_freeTimes_lastMinutes_preferredDays)
-            - [3.7.1.8.6.3.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > lastMinutes > minutes`](#planningData_teachers_items_generalSettings_freeTimes_lastMinutes_minutes)
-          - [3.7.1.8.6.4. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > consecutiveAnyTime`](#planningData_teachers_items_generalSettings_freeTimes_consecutiveAnyTime)
-            - [3.7.1.8.6.4.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > consecutiveAnyTime > strictDays`](#planningData_teachers_items_generalSettings_freeTimes_consecutiveAnyTime_strictDays)
-            - [3.7.1.8.6.4.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > consecutiveAnyTime > preferredDays`](#planningData_teachers_items_generalSettings_freeTimes_consecutiveAnyTime_preferredDays)
-            - [3.7.1.8.6.4.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > consecutiveAnyTime > minutes`](#planningData_teachers_items_generalSettings_freeTimes_consecutiveAnyTime_minutes)
-        - [3.7.1.8.7. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freePartTimes`](#planningData_teachers_items_generalSettings_freePartTimes)
-          - [3.7.1.8.7.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freePartTimes > mornings`](#planningData_teachers_items_generalSettings_freePartTimes_mornings)
-            - [3.7.1.8.7.1.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freePartTimes > mornings > strict`](#planningData_teachers_items_generalSettings_freePartTimes_mornings_strict)
-            - [3.7.1.8.7.1.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freePartTimes > mornings > preferable`](#planningData_teachers_items_generalSettings_freePartTimes_mornings_preferable)
-          - [3.7.1.8.7.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freePartTimes > afternoons`](#planningData_teachers_items_generalSettings_freePartTimes_afternoons)
-            - [3.7.1.8.7.2.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freePartTimes > afternoons > strict`](#planningData_teachers_items_generalSettings_freePartTimes_afternoons_strict)
-            - [3.7.1.8.7.2.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freePartTimes > afternoons > preferable`](#planningData_teachers_items_generalSettings_freePartTimes_afternoons_preferable)
-          - [3.7.1.8.7.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freePartTimes > indistinctly`](#planningData_teachers_items_generalSettings_freePartTimes_indistinctly)
-            - [3.7.1.8.7.3.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freePartTimes > indistinctly > strict`](#planningData_teachers_items_generalSettings_freePartTimes_indistinctly_strict)
-            - [3.7.1.8.7.3.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freePartTimes > indistinctly > preferable`](#planningData_teachers_items_generalSettings_freePartTimes_indistinctly_preferable)
-        - [3.7.1.8.8. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities`](#planningData_teachers_items_generalSettings_incompatibilities)
-          - [3.7.1.8.8.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeBetweenDayBeforeAndCurrent`](#planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenDayBeforeAndCurrent)
-            - [3.7.1.8.8.1.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeBetweenDayBeforeAndCurrent > type`](#planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenDayBeforeAndCurrent_type)
-            - [3.7.1.8.8.1.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeBetweenDayBeforeAndCurrent > minutes`](#planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenDayBeforeAndCurrent_minutes)
-          - [3.7.1.8.8.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeBetweenEndWeekAndStartWeekDays`](#planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenEndWeekAndStartWeekDays)
-            - [3.7.1.8.8.2.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeBetweenDayBeforeAndCurrent > type`](#planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenDayBeforeAndCurrent_type)
-            - [3.7.1.8.8.2.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeBetweenDayBeforeAndCurrent > minutes`](#planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenDayBeforeAndCurrent_minutes)
-          - [3.7.1.8.8.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeFirstOrLastHoursDay`](#planningData_teachers_items_generalSettings_incompatibilities_freeTimeFirstOrLastHoursDay)
-            - [3.7.1.8.8.3.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeBetweenDayBeforeAndCurrent > type`](#planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenDayBeforeAndCurrent_type)
-            - [3.7.1.8.8.3.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeBetweenDayBeforeAndCurrent > minutes`](#planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenDayBeforeAndCurrent_minutes)
-          - [3.7.1.8.8.4. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > doNotFinishAtLastAfternoonSectionIfStartedAtFirstAfternoonSection`](#planningData_teachers_items_generalSettings_incompatibilities_doNotFinishAtLastAfternoonSectionIfStartedAtFirstAfternoonSection)
-          - [3.7.1.8.8.5. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > doNotFinishAtLastMorningSectionIfStartedAtFirstMorningSection`](#planningData_teachers_items_generalSettings_incompatibilities_doNotFinishAtLastMorningSectionIfStartedAtFirstMorningSection)
-          - [3.7.1.8.8.6. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > doNotFinishAtLastMorningSectionIfStartAtFirstAfternoonSection`](#planningData_teachers_items_generalSettings_incompatibilities_doNotFinishAtLastMorningSectionIfStartAtFirstAfternoonSection)
-          - [3.7.1.8.8.7. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > doNotFinishAtLastMorningSectionIfHasAfternoonAssignment`](#planningData_teachers_items_generalSettings_incompatibilities_doNotFinishAtLastMorningSectionIfHasAfternoonAssignment)
-          - [3.7.1.8.8.8. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > doNotStartAtFirstMorningSectionIfHasAfternoonAssignment`](#planningData_teachers_items_generalSettings_incompatibilities_doNotStartAtFirstMorningSectionIfHasAfternoonAssignment)
-          - [3.7.1.8.8.9. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeAroundMidday`](#planningData_teachers_items_generalSettings_incompatibilities_freeTimeAroundMidday)
-            - [3.7.1.8.8.9.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeBetweenDayBeforeAndCurrent > type`](#planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenDayBeforeAndCurrent_type)
-            - [3.7.1.8.8.9.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeBetweenDayBeforeAndCurrent > minutes`](#planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenDayBeforeAndCurrent_minutes)
-        - [3.7.1.8.9. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation`](#planningData_teachers_items_generalSettings_dailyOcupation)
-          - [3.7.1.8.9.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > allowFreeDays`](#planningData_teachers_items_generalSettings_dailyOcupation_allowFreeDays)
-          - [3.7.1.8.9.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching`](#planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching)
-            - [3.7.1.8.9.2.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > type`](#planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_type)
-            - [3.7.1.8.9.2.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > minutes`](#planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_minutes)
-            - [3.7.1.8.9.2.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > isAssisted`](#planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_isAssisted)
-            - [3.7.1.8.9.2.4. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > variationTime`](#planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_variationTime)
-          - [3.7.1.8.9.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > maximumTeaching`](#planningData_teachers_items_generalSettings_dailyOcupation_maximumTeaching)
-            - [3.7.1.8.9.3.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > type`](#planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_type)
-            - [3.7.1.8.9.3.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > minutes`](#planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_minutes)
-            - [3.7.1.8.9.3.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > isAssisted`](#planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_isAssisted)
-            - [3.7.1.8.9.3.4. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > variationTime`](#planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_variationTime)
-          - [3.7.1.8.9.4. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumOccupancy`](#planningData_teachers_items_generalSettings_dailyOcupation_minimumOccupancy)
-            - [3.7.1.8.9.4.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > type`](#planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_type)
-            - [3.7.1.8.9.4.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > minutes`](#planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_minutes)
-            - [3.7.1.8.9.4.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > isAssisted`](#planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_isAssisted)
-            - [3.7.1.8.9.4.4. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > variationTime`](#planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_variationTime)
-          - [3.7.1.8.9.5. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > maximumOccupancy`](#planningData_teachers_items_generalSettings_dailyOcupation_maximumOccupancy)
-            - [3.7.1.8.9.5.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > type`](#planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_type)
-            - [3.7.1.8.9.5.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > minutes`](#planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_minutes)
-            - [3.7.1.8.9.5.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > isAssisted`](#planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_isAssisted)
-            - [3.7.1.8.9.5.4. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > variationTime`](#planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_variationTime)
-        - [3.7.1.8.10. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > middayReference`](#planningData_teachers_items_generalSettings_middayReference)
-          - [3.7.1.8.10.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > middayReference > refFrame`](#planningData_teachers_items_generalSettings_middayReference_refFrame)
-          - [3.7.1.8.10.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > middayReference > strict`](#planningData_teachers_items_generalSettings_middayReference_strict)
-        - [3.7.1.8.11. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyBuildingTransfers`](#planningData_teachers_items_generalSettings_dailyBuildingTransfers)
-          - [3.7.1.8.11.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyBuildingTransfers > strict`](#planningData_teachers_items_generalSettings_dailyBuildingTransfers_strict)
-          - [3.7.1.8.11.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyBuildingTransfers > preferable`](#planningData_teachers_items_generalSettings_dailyBuildingTransfers_preferable)
-      - [3.7.1.9. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings`](#planningData_teachers_items_periodsSettings)
-        - [3.7.1.9.1. GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting](#planningData_teachers_items_periodsSettings_items)
-          - [3.7.1.9.1.1. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > refPeriod`](#planningData_teachers_items_periodsSettings_items_refPeriod)
-          - [3.7.1.9.1.2. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > weeklyStay`](#planningData_teachers_items_periodsSettings_items_weeklyStay)
-          - [3.7.1.9.1.3. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > dailyStay`](#planningData_teachers_items_periodsSettings_items_dailyStay)
-          - [3.7.1.9.1.4. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > avoidGapsBetweenSesions`](#planningData_teachers_items_periodsSettings_items_avoidGapsBetweenSesions)
-          - [3.7.1.9.1.5. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > maxContinuousTeaching`](#planningData_teachers_items_periodsSettings_items_maxContinuousTeaching)
-          - [3.7.1.9.1.6. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > avoidClassesAroundBreak`](#planningData_teachers_items_periodsSettings_items_avoidClassesAroundBreak)
-          - [3.7.1.9.1.7. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > freeTimes`](#planningData_teachers_items_periodsSettings_items_freeTimes)
-          - [3.7.1.9.1.8. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > freePartTimes`](#planningData_teachers_items_periodsSettings_items_freePartTimes)
-          - [3.7.1.9.1.9. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > incompatibilities`](#planningData_teachers_items_periodsSettings_items_incompatibilities)
-          - [3.7.1.9.1.10. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > dailyOcupation`](#planningData_teachers_items_periodsSettings_items_dailyOcupation)
-          - [3.7.1.9.1.11. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > middayReference`](#planningData_teachers_items_periodsSettings_items_middayReference)
-          - [3.7.1.9.1.12. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > dailyBuildingTransfers`](#planningData_teachers_items_periodsSettings_items_dailyBuildingTransfers)
-  - [3.8. Property `GhcEngineSchema > planningData > subjects`](#planningData_subjects)
-    - [3.8.1. GhcEngineSchema > planningData > subjects > Subject](#planningData_subjects_items)
-      - [3.8.1.1. Property `GhcEngineSchema > planningData > subjects > Subject > id`](#planningData_subjects_items_id)
-      - [3.8.1.2. Property `GhcEngineSchema > planningData > subjects > Subject > shortName`](#planningData_subjects_items_shortName)
-      - [3.8.1.3. Property `GhcEngineSchema > planningData > subjects > Subject > fullName`](#planningData_subjects_items_fullName)
-      - [3.8.1.4. Property `GhcEngineSchema > planningData > subjects > Subject > exKey`](#planningData_subjects_items_exKey)
-      - [3.8.1.5. Property `GhcEngineSchema > planningData > subjects > Subject > technicalTeacher`](#planningData_subjects_items_technicalTeacher)
-      - [3.8.1.6. Property `GhcEngineSchema > planningData > subjects > Subject > type`](#planningData_subjects_items_type)
-      - [3.8.1.7. Property `GhcEngineSchema > planningData > subjects > Subject > refClassroom`](#planningData_subjects_items_refClassroom)
-      - [3.8.1.8. Property `GhcEngineSchema > planningData > subjects > Subject > refClassRoomSetsList`](#planningData_subjects_items_refClassRoomSetsList)
-        - [3.8.1.8.1. GhcEngineSchema > planningData > subjects > Subject > refClassRoomSetsList > ClassRoomSetRef](#planningData_subjects_items_refClassRoomSetsList_items)
-      - [3.8.1.9. Property `GhcEngineSchema > planningData > subjects > Subject > refColourInResult`](#planningData_subjects_items_refColourInResult)
-      - [3.8.1.10. Property `GhcEngineSchema > planningData > subjects > Subject > frameTemplate`](#planningData_subjects_items_frameTemplate)
-  - [3.9. Property `GhcEngineSchema > planningData > groups`](#planningData_groups)
-    - [3.9.1. GhcEngineSchema > planningData > groups > Group](#planningData_groups_items)
-      - [3.9.1.1. Property `GhcEngineSchema > planningData > groups > Group > id`](#planningData_groups_items_id)
-      - [3.9.1.2. Property `GhcEngineSchema > planningData > groups > Group > shortName`](#planningData_groups_items_shortName)
-      - [3.9.1.3. Property `GhcEngineSchema > planningData > groups > Group > fullName`](#planningData_groups_items_fullName)
-      - [3.9.1.4. Property `GhcEngineSchema > planningData > groups > Group > exKey`](#planningData_groups_items_exKey)
-      - [3.9.1.5. Property `GhcEngineSchema > planningData > groups > Group > refFrame`](#planningData_groups_items_refFrame)
-      - [3.9.1.6. Property `GhcEngineSchema > planningData > groups > Group > frameTemplate`](#planningData_groups_items_frameTemplate)
-      - [3.9.1.7. Property `GhcEngineSchema > planningData > groups > Group > numStudents`](#planningData_groups_items_numStudents)
-      - [3.9.1.8. Property `GhcEngineSchema > planningData > groups > Group > freeAfternoons`](#planningData_groups_items_freeAfternoons)
-      - [3.9.1.9. Property `GhcEngineSchema > planningData > groups > Group > notGaps`](#planningData_groups_items_notGaps)
-      - [3.9.1.10. Property `GhcEngineSchema > planningData > groups > Group > gapsAlwaysInNonPreferred`](#planningData_groups_items_gapsAlwaysInNonPreferred)
-      - [3.9.1.11. Property `GhcEngineSchema > planningData > groups > Group > refCourse`](#planningData_groups_items_refCourse)
-      - [3.9.1.12. Property `GhcEngineSchema > planningData > groups > Group > includedGroups`](#planningData_groups_items_includedGroups)
-        - [3.9.1.12.1. GhcEngineSchema > planningData > groups > Group > includedGroups > refGroups](#planningData_groups_items_includedGroups_items)
-      - [3.9.1.13. Property `GhcEngineSchema > planningData > groups > Group > refTeacher`](#planningData_groups_items_refTeacher)
-      - [3.9.1.14. Property `GhcEngineSchema > planningData > groups > Group > refClassroom`](#planningData_groups_items_refClassroom)
-      - [3.9.1.15. Property `GhcEngineSchema > planningData > groups > Group > refClassRoomSetsList`](#planningData_groups_items_refClassRoomSetsList)
-        - [3.9.1.15.1. GhcEngineSchema > planningData > groups > Group > refClassRoomSetsList > ClassRoomSetRef](#planningData_groups_items_refClassRoomSetsList_items)
-  - [3.10. Property `GhcEngineSchema > planningData > groupSetRelations`](#planningData_groupSetRelations)
-    - [3.10.1. GhcEngineSchema > planningData > groupSetRelations > GroupSetRelation](#planningData_groupSetRelations_items)
-      - [3.10.1.1. Property `GhcEngineSchema > planningData > groupSetRelations > GroupSetRelation > id`](#planningData_groupSetRelations_items_id)
-      - [3.10.1.2. Property `GhcEngineSchema > planningData > groupSetRelations > GroupSetRelation > alias`](#planningData_groupSetRelations_items_alias)
-      - [3.10.1.3. Property `GhcEngineSchema > planningData > groupSetRelations > GroupSetRelation > expression`](#planningData_groupSetRelations_items_expression)
-        - [3.10.1.3.1. Property `GhcEngineSchema > planningData > groupSetRelations > GroupSetRelation > expression > operator`](#planningData_groupSetRelations_items_expression_operator)
-        - [3.10.1.3.2. Property `GhcEngineSchema > planningData > groupSetRelations > GroupSetRelation > expression > refGroupSet`](#planningData_groupSetRelations_items_expression_refGroupSet)
-          - [3.10.1.3.2.1. GhcEngineSchema > planningData > groupSetRelations > GroupSetRelation > expression > refGroupSet > GroupSetReference](#planningData_groupSetRelations_items_expression_refGroupSet_items)
-        - [3.10.1.3.3. Property `GhcEngineSchema > planningData > groupSetRelations > GroupSetRelation > expression > nestedRelationExpressions`](#planningData_groupSetRelations_items_expression_nestedRelationExpressions)
-          - [3.10.1.3.3.1. GhcEngineSchema > planningData > groupSetRelations > GroupSetRelation > expression > nestedRelationExpressions > GroupSetRelationExpression](#planningData_groupSetRelations_items_expression_nestedRelationExpressions_items)
-  - [3.11. Property `GhcEngineSchema > planningData > courses`](#planningData_courses)
-    - [3.11.1. GhcEngineSchema > planningData > courses > Course](#planningData_courses_items)
-      - [3.11.1.1. Property `GhcEngineSchema > planningData > courses > Course > id`](#planningData_courses_items_id)
-      - [3.11.1.2. Property `GhcEngineSchema > planningData > courses > Course > fullName`](#planningData_courses_items_fullName)
-      - [3.11.1.3. Property `GhcEngineSchema > planningData > courses > Course > exKey`](#planningData_courses_items_exKey)
-      - [3.11.1.4. Property `GhcEngineSchema > planningData > courses > Course > courseSubjects`](#planningData_courses_items_courseSubjects)
-        - [3.11.1.4.1. GhcEngineSchema > planningData > courses > Course > courseSubjects > CourseSubject](#planningData_courses_items_courseSubjects_items)
-          - [3.11.1.4.1.1. Property `GhcEngineSchema > planningData > courses > Course > courseSubjects > CourseSubject > numHours`](#planningData_courses_items_courseSubjects_items_numHours)
-          - [3.11.1.4.1.2. Property `GhcEngineSchema > planningData > courses > Course > courseSubjects > CourseSubject > refSubject`](#planningData_courses_items_courseSubjects_items_refSubject)
-  - [3.12. Property `GhcEngineSchema > planningData > departments`](#planningData_departments)
-    - [3.12.1. GhcEngineSchema > planningData > departments > Department](#planningData_departments_items)
-      - [3.12.1.1. Property `GhcEngineSchema > planningData > departments > Department > id`](#planningData_departments_items_id)
-      - [3.12.1.2. Property `GhcEngineSchema > planningData > departments > Department > fullName`](#planningData_departments_items_fullName)
-      - [3.12.1.3. Property `GhcEngineSchema > planningData > departments > Department > messageToDepartment`](#planningData_departments_items_messageToDepartment)
-      - [3.12.1.4. Property `GhcEngineSchema > planningData > departments > Department > isNew`](#planningData_departments_items_isNew)
-      - [3.12.1.5. Property `GhcEngineSchema > planningData > departments > Department > exKey`](#planningData_departments_items_exKey)
-      - [3.12.1.6. Property `GhcEngineSchema > planningData > departments > Department > email`](#planningData_departments_items_email)
-      - [3.12.1.7. Property `GhcEngineSchema > planningData > departments > Department > refTeacher`](#planningData_departments_items_refTeacher)
-        - [3.12.1.7.1. GhcEngineSchema > planningData > departments > Department > refTeacher > refTeacher items](#planningData_departments_items_refTeacher_items)
-      - [3.12.1.8. Property `GhcEngineSchema > planningData > departments > Department > refSubjects`](#planningData_departments_items_refSubjects)
-        - [3.12.1.8.1. GhcEngineSchema > planningData > departments > Department > refSubjects > refSubjects items](#planningData_departments_items_refSubjects_items)
-  - [3.13. Property `GhcEngineSchema > planningData > sessions`](#planningData_sessions)
-    - [3.13.1. GhcEngineSchema > planningData > sessions > Session](#planningData_sessions_items)
-      - [3.13.1.1. Property `GhcEngineSchema > planningData > sessions > Session > id`](#planningData_sessions_items_id)
-      - [3.13.1.2. Property `GhcEngineSchema > planningData > sessions > Session > refFrame`](#planningData_sessions_items_refFrame)
-      - [3.13.1.3. Property `GhcEngineSchema > planningData > sessions > Session > refMainTask`](#planningData_sessions_items_refMainTask)
-      - [3.13.1.4. Property `GhcEngineSchema > planningData > sessions > Session > refMainTeacher`](#planningData_sessions_items_refMainTeacher)
-      - [3.13.1.5. Property `GhcEngineSchema > planningData > sessions > Session > refMainSubject`](#planningData_sessions_items_refMainSubject)
-      - [3.13.1.6. Property `GhcEngineSchema > planningData > sessions > Session > refMainGroup`](#planningData_sessions_items_refMainGroup)
-        - [3.13.1.6.1. Property `GhcEngineSchema > planningData > sessions > Session > refMainGroup > refIdGroup`](#planningData_sessions_items_refMainGroup_refIdGroup)
-        - [3.13.1.6.2. Property `GhcEngineSchema > planningData > sessions > Session > refMainGroup > numStudents`](#planningData_sessions_items_refMainGroup_numStudents)
-      - [3.13.1.7. Property `GhcEngineSchema > planningData > sessions > Session > refColourInResult`](#planningData_sessions_items_refColourInResult)
-      - [3.13.1.8. Property `GhcEngineSchema > planningData > sessions > Session > otherElementsInClassRooms`](#planningData_sessions_items_otherElementsInClassRooms)
-        - [3.13.1.8.1. GhcEngineSchema > planningData > sessions > Session > otherElementsInClassRooms > OtherElementsInClassRooms](#planningData_sessions_items_otherElementsInClassRooms_items)
-          - [3.13.1.8.1.1. Property `GhcEngineSchema > planningData > sessions > Session > otherElementsInClassRooms > OtherElementsInClassRooms > refSubject`](#planningData_sessions_items_otherElementsInClassRooms_items_refSubject)
-          - [3.13.1.8.1.2. Property `GhcEngineSchema > planningData > sessions > Session > otherElementsInClassRooms > OtherElementsInClassRooms > refTeacher`](#planningData_sessions_items_otherElementsInClassRooms_items_refTeacher)
-          - [3.13.1.8.1.3. Property `GhcEngineSchema > planningData > sessions > Session > otherElementsInClassRooms > OtherElementsInClassRooms > refGroup`](#planningData_sessions_items_otherElementsInClassRooms_items_refGroup)
-          - [3.13.1.8.1.4. Property `GhcEngineSchema > planningData > sessions > Session > otherElementsInClassRooms > OtherElementsInClassRooms > refTask`](#planningData_sessions_items_otherElementsInClassRooms_items_refTask)
-      - [3.13.1.9. Property `GhcEngineSchema > planningData > sessions > Session > distribution`](#planningData_sessions_items_distribution)
-        - [3.13.1.9.1. Property `GhcEngineSchema > planningData > sessions > Session > distribution > periods`](#planningData_sessions_items_distribution_periods)
-          - [3.13.1.9.1.1. GhcEngineSchema > planningData > sessions > Session > distribution > periods > RefPeriod](#planningData_sessions_items_distribution_periods_items)
-        - [3.13.1.9.2. Property `GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods`](#planningData_sessions_items_distribution_stablePeriods)
-          - [3.13.1.9.2.1. Property `GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods > stableTiming`](#planningData_sessions_items_distribution_stablePeriods_stableTiming)
-            - [3.13.1.9.2.1.1. GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods > stableTiming > DailyMinutes](#planningData_sessions_items_distribution_stablePeriods_stableTiming_items)
-          - [3.13.1.9.2.2. Property `GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods > variableTiming`](#planningData_sessions_items_distribution_stablePeriods_variableTiming)
-            - [3.13.1.9.2.2.1. Property `GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods > variableTiming > minutesAmount`](#planningData_sessions_items_distribution_stablePeriods_variableTiming_minutesAmount)
-            - [3.13.1.9.2.2.2. Property `GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods > variableTiming > maxMinutesDaily`](#planningData_sessions_items_distribution_stablePeriods_variableTiming_maxMinutesDaily)
-            - [3.13.1.9.2.2.3. Property `GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods > variableTiming > minMinutesDaily`](#planningData_sessions_items_distribution_stablePeriods_variableTiming_minMinutesDaily)
-            - [3.13.1.9.2.2.4. Property `GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods > variableTiming > avoidMaxDuration`](#planningData_sessions_items_distribution_stablePeriods_variableTiming_avoidMaxDuration)
-            - [3.13.1.9.2.2.5. Property `GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods > variableTiming > avoidMinDuration`](#planningData_sessions_items_distribution_stablePeriods_variableTiming_avoidMinDuration)
-            - [3.13.1.9.2.2.6. Property `GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods > variableTiming > allowDiscontinuity`](#planningData_sessions_items_distribution_stablePeriods_variableTiming_allowDiscontinuity)
-          - [3.13.1.9.2.3. Property `GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods > stableTimingList`](#planningData_sessions_items_distribution_stablePeriods_stableTimingList)
-            - [3.13.1.9.2.3.1. GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods > stableTimingList > StableTiming](#planningData_sessions_items_distribution_stablePeriods_stableTimingList_items)
-        - [3.13.1.9.3. Property `GhcEngineSchema > planningData > sessions > Session > distribution > variablePeriods`](#planningData_sessions_items_distribution_variablePeriods)
-          - [3.13.1.9.3.1. Property `GhcEngineSchema > planningData > sessions > Session > distribution > variablePeriods > timing`](#planningData_sessions_items_distribution_variablePeriods_timing)
-            - [3.13.1.9.3.1.1. Property `GhcEngineSchema > planningData > sessions > Session > distribution > variablePeriods > timing > stableTiming`](#planningData_sessions_items_distribution_variablePeriods_timing_stableTiming)
-            - [3.13.1.9.3.1.2. Property `GhcEngineSchema > planningData > sessions > Session > distribution > variablePeriods > timing > variableTiming`](#planningData_sessions_items_distribution_variablePeriods_timing_variableTiming)
-          - [3.13.1.9.3.2. Property `GhcEngineSchema > planningData > sessions > Session > distribution > variablePeriods > maximunTimeInPeriod`](#planningData_sessions_items_distribution_variablePeriods_maximunTimeInPeriod)
-          - [3.13.1.9.3.3. Property `GhcEngineSchema > planningData > sessions > Session > distribution > variablePeriods > minimnunTimeInPeriod`](#planningData_sessions_items_distribution_variablePeriods_minimnunTimeInPeriod)
-          - [3.13.1.9.3.4. Property `GhcEngineSchema > planningData > sessions > Session > distribution > variablePeriods > maximumTimeframe`](#planningData_sessions_items_distribution_variablePeriods_maximumTimeframe)
-      - [3.13.1.10. Property `GhcEngineSchema > planningData > sessions > Session > sessionClassRooms`](#planningData_sessions_items_sessionClassRooms)
-        - [3.13.1.10.1. Property `GhcEngineSchema > planningData > sessions > Session > sessionClassRooms > classRoomsToAssign`](#planningData_sessions_items_sessionClassRooms_classRoomsToAssign)
-          - [3.13.1.10.1.1. GhcEngineSchema > planningData > sessions > Session > sessionClassRooms > classRoomsToAssign > RefClassRoomToAssign](#planningData_sessions_items_sessionClassRooms_classRoomsToAssign_items)
-            - [3.13.1.10.1.1.1. Property `GhcEngineSchema > planningData > sessions > Session > sessionClassRooms > classRoomsToAssign > RefClassRoomToAssign > classRoom`](#planningData_sessions_items_sessionClassRooms_classRoomsToAssign_items_classRoom)
-            - [3.13.1.10.1.1.2. Property `GhcEngineSchema > planningData > sessions > Session > sessionClassRooms > classRoomsToAssign > RefClassRoomToAssign > classRoomsSetsList`](#planningData_sessions_items_sessionClassRooms_classRoomsToAssign_items_classRoomsSetsList)
-              - [3.13.1.10.1.1.2.1. GhcEngineSchema > planningData > sessions > Session > sessionClassRooms > classRoomsToAssign > RefClassRoomToAssign > classRoomsSetsList > ClassRoomSetRef](#planningData_sessions_items_sessionClassRooms_classRoomsToAssign_items_classRoomsSetsList_items)
-        - [3.13.1.10.2. Property `GhcEngineSchema > planningData > sessions > Session > sessionClassRooms > capacityPreference`](#planningData_sessions_items_sessionClassRooms_capacityPreference)
-        - [3.13.1.10.3. Property `GhcEngineSchema > planningData > sessions > Session > sessionClassRooms > capacityType`](#planningData_sessions_items_sessionClassRooms_capacityType)
-        - [3.13.1.10.4. Property `GhcEngineSchema > planningData > sessions > Session > sessionClassRooms > alwaysSameClassRoom`](#planningData_sessions_items_sessionClassRooms_alwaysSameClassRoom)
-      - [3.13.1.11. Property `GhcEngineSchema > planningData > sessions > Session > frameTemplate`](#planningData_sessions_items_frameTemplate)
-        - [3.13.1.11.1. GhcEngineSchema > planningData > sessions > Session > frameTemplate > SessionSectionPreference](#planningData_sessions_items_frameTemplate_items)
-          - [3.13.1.11.1.1. Property `GhcEngineSchema > planningData > sessions > Session > frameTemplate > SessionSectionPreference > day`](#planningData_sessions_items_frameTemplate_items_day)
-          - [3.13.1.11.1.2. Property `GhcEngineSchema > planningData > sessions > Session > frameTemplate > SessionSectionPreference > index`](#planningData_sessions_items_frameTemplate_items_index)
-          - [3.13.1.11.1.3. Property `GhcEngineSchema > planningData > sessions > Session > frameTemplate > SessionSectionPreference > frame`](#planningData_sessions_items_frameTemplate_items_frame)
-          - [3.13.1.11.1.4. Property `GhcEngineSchema > planningData > sessions > Session > frameTemplate > SessionSectionPreference > type`](#planningData_sessions_items_frameTemplate_items_type)
-      - [3.13.1.12. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings`](#planningData_sessions_items_sessionSettings)
-        - [3.13.1.12.1. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings > avoidFirstHourSessions`](#planningData_sessions_items_sessionSettings_avoidFirstHourSessions)
-        - [3.13.1.12.2. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings > avoidLastHourSessions`](#planningData_sessions_items_sessionSettings_avoidLastHourSessions)
-        - [3.13.1.12.3. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings > avoidAssingLastHourAndFirstNextDay`](#planningData_sessions_items_sessionSettings_avoidAssingLastHourAndFirstNextDay)
-        - [3.13.1.12.4. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings > sameHourPreference`](#planningData_sessions_items_sessionSettings_sameHourPreference)
-        - [3.13.1.12.5. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings > avoidAfternoonSessions`](#planningData_sessions_items_sessionSettings_avoidAfternoonSessions)
-        - [3.13.1.12.6. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings > avoidAfterBreakSessions`](#planningData_sessions_items_sessionSettings_avoidAfterBreakSessions)
-        - [3.13.1.12.7. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings > nonBreakInTheMiddleOfConsecutiveSession`](#planningData_sessions_items_sessionSettings_nonBreakInTheMiddleOfConsecutiveSession)
-        - [3.13.1.12.8. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings > nonBreakInTheMiddleOfSession`](#planningData_sessions_items_sessionSettings_nonBreakInTheMiddleOfSession)
-        - [3.13.1.12.9. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings > followedDaysPreference`](#planningData_sessions_items_sessionSettings_followedDaysPreference)
-        - [3.13.1.12.10. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings > consecutiveWeeksBorders`](#planningData_sessions_items_sessionSettings_consecutiveWeeksBorders)
-        - [3.13.1.12.11. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings > samePositionEveryPeriod`](#planningData_sessions_items_sessionSettings_samePositionEveryPeriod)
-      - [3.13.1.13. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations`](#planningData_sessions_items_sessionRelations)
-        - [3.13.1.13.1. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > refSimultaneusGroup`](#planningData_sessions_items_sessionRelations_refSimultaneusGroup)
-        - [3.13.1.13.2. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > differentDays`](#planningData_sessions_items_sessionRelations_differentDays)
-          - [3.13.1.13.2.1. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > differentDays > refSesions`](#planningData_sessions_items_sessionRelations_differentDays_refSesions)
-            - [3.13.1.13.2.1.1. GhcEngineSchema > planningData > sessions > Session > sessionRelations > differentDays > refSesions > SessionRef](#planningData_sessions_items_sessionRelations_differentDays_refSesions_items)
-          - [3.13.1.13.2.2. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > differentDays > daysSetting`](#planningData_sessions_items_sessionRelations_differentDays_daysSetting)
-        - [3.13.1.13.3. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > consecutiveGroup`](#planningData_sessions_items_sessionRelations_consecutiveGroup)
-          - [3.13.1.13.3.1. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > consecutiveGroup > id`](#planningData_sessions_items_sessionRelations_consecutiveGroup_id)
-          - [3.13.1.13.3.2. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > consecutiveGroup > refSessions`](#planningData_sessions_items_sessionRelations_consecutiveGroup_refSessions)
-            - [3.13.1.13.3.2.1. GhcEngineSchema > planningData > sessions > Session > sessionRelations > consecutiveGroup > refSessions > SessionRef](#planningData_sessions_items_sessionRelations_consecutiveGroup_refSessions_items)
-          - [3.13.1.13.3.3. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > consecutiveGroup > order`](#planningData_sessions_items_sessionRelations_consecutiveGroup_order)
-          - [3.13.1.13.3.4. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > consecutiveGroup > allowBreakBetweenSessions`](#planningData_sessions_items_sessionRelations_consecutiveGroup_allowBreakBetweenSessions)
-        - [3.13.1.13.4. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > nonConsecutiveSessions`](#planningData_sessions_items_sessionRelations_nonConsecutiveSessions)
-          - [3.13.1.13.4.1. GhcEngineSchema > planningData > sessions > Session > sessionRelations > nonConsecutiveSessions > SessionRef](#planningData_sessions_items_sessionRelations_nonConsecutiveSessions_items)
-        - [3.13.1.13.5. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > nonSimultaneus`](#planningData_sessions_items_sessionRelations_nonSimultaneus)
-          - [3.13.1.13.5.1. GhcEngineSchema > planningData > sessions > Session > sessionRelations > nonSimultaneus > SessionRef](#planningData_sessions_items_sessionRelations_nonSimultaneus_items)
-        - [3.13.1.13.6. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > previousTo`](#planningData_sessions_items_sessionRelations_previousTo)
-          - [3.13.1.13.6.1. GhcEngineSchema > planningData > sessions > Session > sessionRelations > previousTo > SessionRef](#planningData_sessions_items_sessionRelations_previousTo_items)
-        - [3.13.1.13.7. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > afterTo`](#planningData_sessions_items_sessionRelations_afterTo)
-          - [3.13.1.13.7.1. GhcEngineSchema > planningData > sessions > Session > sessionRelations > afterTo > SessionRef](#planningData_sessions_items_sessionRelations_afterTo_items)
-        - [3.13.1.13.8. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > maximumSeparationTo`](#planningData_sessions_items_sessionRelations_maximumSeparationTo)
-          - [3.13.1.13.8.1. GhcEngineSchema > planningData > sessions > Session > sessionRelations > maximumSeparationTo > MaximumSeparationToSession](#planningData_sessions_items_sessionRelations_maximumSeparationTo_items)
-            - [3.13.1.13.8.1.1. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > maximumSeparationTo > MaximumSeparationToSession > refSessions`](#planningData_sessions_items_sessionRelations_maximumSeparationTo_items_refSessions)
-              - [3.13.1.13.8.1.1.1. GhcEngineSchema > planningData > sessions > Session > sessionRelations > maximumSeparationTo > MaximumSeparationToSession > refSessions > SessionRef](#planningData_sessions_items_sessionRelations_maximumSeparationTo_items_refSessions_items)
-            - [3.13.1.13.8.1.2. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > maximumSeparationTo > MaximumSeparationToSession > days`](#planningData_sessions_items_sessionRelations_maximumSeparationTo_items_days)
-        - [3.13.1.13.9. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > minimumSeparationTo`](#planningData_sessions_items_sessionRelations_minimumSeparationTo)
-          - [3.13.1.13.9.1. GhcEngineSchema > planningData > sessions > Session > sessionRelations > minimumSeparationTo > MinimumSeparationToSession](#planningData_sessions_items_sessionRelations_minimumSeparationTo_items)
-            - [3.13.1.13.9.1.1. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > minimumSeparationTo > MinimumSeparationToSession > refSessions`](#planningData_sessions_items_sessionRelations_minimumSeparationTo_items_refSessions)
-              - [3.13.1.13.9.1.1.1. GhcEngineSchema > planningData > sessions > Session > sessionRelations > minimumSeparationTo > MinimumSeparationToSession > refSessions > SessionRef](#planningData_sessions_items_sessionRelations_minimumSeparationTo_items_refSessions_items)
-            - [3.13.1.13.9.1.2. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > minimumSeparationTo > MinimumSeparationToSession > days`](#planningData_sessions_items_sessionRelations_minimumSeparationTo_items_days)
-      - [3.13.1.14. Property `GhcEngineSchema > planningData > sessions > Session > department`](#planningData_sessions_items_department)
-  - [3.14. Property `GhcEngineSchema > planningData > meetings`](#planningData_meetings)
-    - [3.14.1. GhcEngineSchema > planningData > meetings > Meeting](#planningData_meetings_items)
-      - [3.14.1.1. Property `GhcEngineSchema > planningData > meetings > Meeting > id`](#planningData_meetings_items_id)
-      - [3.14.1.2. Property `GhcEngineSchema > planningData > meetings > Meeting > refFrame`](#planningData_meetings_items_refFrame)
-      - [3.14.1.3. Property `GhcEngineSchema > planningData > meetings > Meeting > refTask`](#planningData_meetings_items_refTask)
-      - [3.14.1.4. Property `GhcEngineSchema > planningData > meetings > Meeting > refTeachers`](#planningData_meetings_items_refTeachers)
-        - [3.14.1.4.1. GhcEngineSchema > planningData > meetings > Meeting > refTeachers > RefTeacher](#planningData_meetings_items_refTeachers_items)
-      - [3.14.1.5. Property `GhcEngineSchema > planningData > meetings > Meeting > refColourInResult`](#planningData_meetings_items_refColourInResult)
-      - [3.14.1.6. Property `GhcEngineSchema > planningData > meetings > Meeting > distribution`](#planningData_meetings_items_distribution)
-      - [3.14.1.7. Property `GhcEngineSchema > planningData > meetings > Meeting > frameTemplate`](#planningData_meetings_items_frameTemplate)
-      - [3.14.1.8. Property `GhcEngineSchema > planningData > meetings > Meeting > refClassRoomToAssign`](#planningData_meetings_items_refClassRoomToAssign)
-      - [3.14.1.9. Property `GhcEngineSchema > planningData > meetings > Meeting > refBuilding`](#planningData_meetings_items_refBuilding)
-      - [3.14.1.10. Property `GhcEngineSchema > planningData > meetings > Meeting > settings`](#planningData_meetings_items_settings)
-        - [3.14.1.10.1. Property `GhcEngineSchema > planningData > meetings > Meeting > settings > computeForMaxMinOccupancy`](#planningData_meetings_items_settings_computeForMaxMinOccupancy)
-        - [3.14.1.10.2. Property `GhcEngineSchema > planningData > meetings > Meeting > settings > samePositionEveryPeriod`](#planningData_meetings_items_settings_samePositionEveryPeriod)
-  - [3.15. Property `GhcEngineSchema > planningData > complementaryActivities`](#planningData_complementaryActivities)
-    - [3.15.1. GhcEngineSchema > planningData > complementaryActivities > Complementary](#planningData_complementaryActivities_items)
-      - [3.15.1.1. Property `GhcEngineSchema > planningData > complementaryActivities > Complementary > id`](#planningData_complementaryActivities_items_id)
-      - [3.15.1.2. Property `GhcEngineSchema > planningData > complementaryActivities > Complementary > refFrame`](#planningData_complementaryActivities_items_refFrame)
-      - [3.15.1.3. Property `GhcEngineSchema > planningData > complementaryActivities > Complementary > refTask`](#planningData_complementaryActivities_items_refTask)
-      - [3.15.1.4. Property `GhcEngineSchema > planningData > complementaryActivities > Complementary > refTeacher`](#planningData_complementaryActivities_items_refTeacher)
-      - [3.15.1.5. Property `GhcEngineSchema > planningData > complementaryActivities > Complementary > refColourInResult`](#planningData_complementaryActivities_items_refColourInResult)
-      - [3.15.1.6. Property `GhcEngineSchema > planningData > complementaryActivities > Complementary > distribution`](#planningData_complementaryActivities_items_distribution)
-      - [3.15.1.7. Property `GhcEngineSchema > planningData > complementaryActivities > Complementary > frameTemplate`](#planningData_complementaryActivities_items_frameTemplate)
-      - [3.15.1.8. Property `GhcEngineSchema > planningData > complementaryActivities > Complementary > refClassRoomToAssign`](#planningData_complementaryActivities_items_refClassRoomToAssign)
-      - [3.15.1.9. Property `GhcEngineSchema > planningData > complementaryActivities > Complementary > refBuilding`](#planningData_complementaryActivities_items_refBuilding)
-      - [3.15.1.10. Property `GhcEngineSchema > planningData > complementaryActivities > Complementary > settings`](#planningData_complementaryActivities_items_settings)
-  - [3.16. Property `GhcEngineSchema > planningData > onCallServices`](#planningData_onCallServices)
-    - [3.16.1. GhcEngineSchema > planningData > onCallServices > OnCallService](#planningData_onCallServices_items)
-      - [3.16.1.1. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > id`](#planningData_onCallServices_items_id)
-      - [3.16.1.2. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refFrame`](#planningData_onCallServices_items_refFrame)
-      - [3.16.1.3. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refPeriods`](#planningData_onCallServices_items_refPeriods)
-        - [3.16.1.3.1. GhcEngineSchema > planningData > onCallServices > OnCallService > refPeriods > RefPeriod](#planningData_onCallServices_items_refPeriods_items)
-      - [3.16.1.4. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refTask`](#planningData_onCallServices_items_refTask)
-      - [3.16.1.5. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > inBreak`](#planningData_onCallServices_items_inBreak)
-      - [3.16.1.6. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > teachersEachSection`](#planningData_onCallServices_items_teachersEachSection)
-        - [3.16.1.6.1. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > teachersEachSection > byDefault`](#planningData_onCallServices_items_teachersEachSection_byDefault)
-        - [3.16.1.6.2. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > teachersEachSection > bySection`](#planningData_onCallServices_items_teachersEachSection_bySection)
-          - [3.16.1.6.2.1. GhcEngineSchema > planningData > onCallServices > OnCallService > teachersEachSection > bySection > TeachersBySection](#planningData_onCallServices_items_teachersEachSection_bySection_items)
-            - [3.16.1.6.2.1.1. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > teachersEachSection > bySection > TeachersBySection > day`](#planningData_onCallServices_items_teachersEachSection_bySection_items_day)
-            - [3.16.1.6.2.1.2. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > teachersEachSection > bySection > TeachersBySection > index`](#planningData_onCallServices_items_teachersEachSection_bySection_items_index)
-            - [3.16.1.6.2.1.3. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > teachersEachSection > bySection > TeachersBySection > numTeachers`](#planningData_onCallServices_items_teachersEachSection_bySection_items_numTeachers)
-      - [3.16.1.7. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refTeachers`](#planningData_onCallServices_items_refTeachers)
-        - [3.16.1.7.1. GhcEngineSchema > planningData > onCallServices > OnCallService > refTeachers > RefTeacher](#planningData_onCallServices_items_refTeachers_items)
-          - [3.16.1.7.1.1. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refTeachers > RefTeacher > teacherId`](#planningData_onCallServices_items_refTeachers_items_teacherId)
-          - [3.16.1.7.1.2. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refTeachers > RefTeacher > numOfSections`](#planningData_onCallServices_items_refTeachers_items_numOfSections)
-          - [3.16.1.7.1.3. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refTeachers > RefTeacher > teacherFrameTemplate`](#planningData_onCallServices_items_refTeachers_items_teacherFrameTemplate)
-            - [3.16.1.7.1.3.1. GhcEngineSchema > planningData > onCallServices > OnCallService > refTeachers > RefTeacher > teacherFrameTemplate > OnCallSectionPreference](#planningData_onCallServices_items_refTeachers_items_teacherFrameTemplate_items)
-              - [3.16.1.7.1.3.1.1. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refTeachers > RefTeacher > teacherFrameTemplate > OnCallSectionPreference > day`](#planningData_onCallServices_items_refTeachers_items_teacherFrameTemplate_items_day)
-              - [3.16.1.7.1.3.1.2. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refTeachers > RefTeacher > teacherFrameTemplate > OnCallSectionPreference > index`](#planningData_onCallServices_items_refTeachers_items_teacherFrameTemplate_items_index)
-              - [3.16.1.7.1.3.1.3. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refTeachers > RefTeacher > teacherFrameTemplate > OnCallSectionPreference > frame`](#planningData_onCallServices_items_refTeachers_items_teacherFrameTemplate_items_frame)
-              - [3.16.1.7.1.3.1.4. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refTeachers > RefTeacher > teacherFrameTemplate > OnCallSectionPreference > type`](#planningData_onCallServices_items_refTeachers_items_teacherFrameTemplate_items_type)
-      - [3.16.1.8. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refColourInResult`](#planningData_onCallServices_items_refColourInResult)
-      - [3.16.1.9. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > frameTemplate`](#planningData_onCallServices_items_frameTemplate)
-      - [3.16.1.10. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refBuilding`](#planningData_onCallServices_items_refBuilding)
-      - [3.16.1.11. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > settings`](#planningData_onCallServices_items_settings)
-  - [3.17. Property `GhcEngineSchema > planningData > optimizationWeights`](#planningData_optimizationWeights)
-    - [3.17.1. Property `GhcEngineSchema > planningData > optimizationWeights > timetableGaps`](#planningData_optimizationWeights_timetableGaps)
-      - [3.17.1.1. Property `GhcEngineSchema > planningData > optimizationWeights > timetableGaps > groupGaps`](#planningData_optimizationWeights_timetableGaps_groupGaps)
-      - [3.17.1.2. Property `GhcEngineSchema > planningData > optimizationWeights > timetableGaps > teacherGaps`](#planningData_optimizationWeights_timetableGaps_teacherGaps)
-    - [3.17.2. Property `GhcEngineSchema > planningData > optimizationWeights > nonPreferredPositions`](#planningData_optimizationWeights_nonPreferredPositions)
-      - [3.17.2.1. Property `GhcEngineSchema > planningData > optimizationWeights > nonPreferredPositions > inGroups`](#planningData_optimizationWeights_nonPreferredPositions_inGroups)
-      - [3.17.2.2. Property `GhcEngineSchema > planningData > optimizationWeights > nonPreferredPositions > inTeachers`](#planningData_optimizationWeights_nonPreferredPositions_inTeachers)
-      - [3.17.2.3. Property `GhcEngineSchema > planningData > optimizationWeights > nonPreferredPositions > inSubjectsAndTask`](#planningData_optimizationWeights_nonPreferredPositions_inSubjectsAndTask)
-      - [3.17.2.4. Property `GhcEngineSchema > planningData > optimizationWeights > nonPreferredPositions > inSessions`](#planningData_optimizationWeights_nonPreferredPositions_inSessions)
-    - [3.17.3. Property `GhcEngineSchema > planningData > optimizationWeights > sessions`](#planningData_optimizationWeights_sessions)
-      - [3.17.3.1. Property `GhcEngineSchema > planningData > optimizationWeights > sessions > nonPreferredClassRoom`](#planningData_optimizationWeights_sessions_nonPreferredClassRoom)
-      - [3.17.3.2. Property `GhcEngineSchema > planningData > optimizationWeights > sessions > samePositionEveryPeriod`](#planningData_optimizationWeights_sessions_samePositionEveryPeriod)
-      - [3.17.3.3. Property `GhcEngineSchema > planningData > optimizationWeights > sessions > consecutiveDays`](#planningData_optimizationWeights_sessions_consecutiveDays)
-      - [3.17.3.4. Property `GhcEngineSchema > planningData > optimizationWeights > sessions > bordersTimetable`](#planningData_optimizationWeights_sessions_bordersTimetable)
-      - [3.17.3.5. Property `GhcEngineSchema > planningData > optimizationWeights > sessions > afternoonOrAfterBreakClasses`](#planningData_optimizationWeights_sessions_afternoonOrAfterBreakClasses)
-      - [3.17.3.6. Property `GhcEngineSchema > planningData > optimizationWeights > sessions > sameHourSessionClasses`](#planningData_optimizationWeights_sessions_sameHourSessionClasses)
-      - [3.17.3.7. Property `GhcEngineSchema > planningData > optimizationWeights > sessions > classRoomsChanges`](#planningData_optimizationWeights_sessions_classRoomsChanges)
-    - [3.17.4. Property `GhcEngineSchema > planningData > optimizationWeights > teachers`](#planningData_optimizationWeights_teachers)
-      - [3.17.4.1. Property `GhcEngineSchema > planningData > optimizationWeights > teachers > teacherIncompatibities`](#planningData_optimizationWeights_teachers_teacherIncompatibities)
-      - [3.17.4.2. Property `GhcEngineSchema > planningData > optimizationWeights > teachers > uniformDailyDistribution`](#planningData_optimizationWeights_teachers_uniformDailyDistribution)
-      - [3.17.4.3. Property `GhcEngineSchema > planningData > optimizationWeights > teachers > excessContinuousTeaching`](#planningData_optimizationWeights_teachers_excessContinuousTeaching)
-      - [3.17.4.4. Property `GhcEngineSchema > planningData > optimizationWeights > teachers > excessPermanence`](#planningData_optimizationWeights_teachers_excessPermanence)
-      - [3.17.4.5. Property `GhcEngineSchema > planningData > optimizationWeights > teachers > continuousSessionsWithGroup`](#planningData_optimizationWeights_teachers_continuousSessionsWithGroup)
-      - [3.17.4.6. Property `GhcEngineSchema > planningData > optimizationWeights > teachers > onCallSectionsOnBorders`](#planningData_optimizationWeights_teachers_onCallSectionsOnBorders)
-      - [3.17.4.7. Property `GhcEngineSchema > planningData > optimizationWeights > teachers > teacherOrder`](#planningData_optimizationWeights_teachers_teacherOrder)
-  - [3.18. Property `GhcEngineSchema > planningData > engineSettings`](#planningData_engineSettings)
-    - [3.18.1. Property `GhcEngineSchema > planningData > engineSettings > teacherBalance`](#planningData_engineSettings_teacherBalance)
-    - [3.18.2. Property `GhcEngineSchema > planningData > engineSettings > countGapsAroundMidday`](#planningData_engineSettings_countGapsAroundMidday)
-- [4. Property `GhcEngineSchema > results`](#results)
-  - [4.1. GhcEngineSchema > results > EngineResult](#results_items)
-    - [4.1.1. Property `GhcEngineSchema > results > GhcResult > date`](#results_items_date)
-    - [4.1.2. Property `GhcEngineSchema > results > GhcResult > weight`](#results_items_weight)
-    - [4.1.3. Property `GhcEngineSchema > results > GhcResult > timetable`](#results_items_timetable)
-      - [4.1.3.1. Property `GhcEngineSchema > results > GhcResult > timetable > anonymousClassRooms`](#results_items_timetable_anonymousClassRooms)
-        - [4.1.3.1.1. GhcEngineSchema > results > GhcResult > timetable > anonymousClassRooms > AnonymousClassRoom](#results_items_timetable_anonymousClassRooms_items)
-          - [4.1.3.1.1.1. Property `GhcEngineSchema > results > GhcResult > timetable > anonymousClassRooms > AnonymousClassRoom > refClassRoomsSet`](#results_items_timetable_anonymousClassRooms_items_refClassRoomsSet)
-          - [4.1.3.1.1.2. Property `GhcEngineSchema > results > GhcResult > timetable > anonymousClassRooms > AnonymousClassRoom > classRoomsCreated`](#results_items_timetable_anonymousClassRooms_items_classRoomsCreated)
-            - [4.1.3.1.1.2.1. GhcEngineSchema > results > GhcResult > timetable > anonymousClassRooms > AnonymousClassRoom > classRoomsCreated > AnonymousRoom](#results_items_timetable_anonymousClassRooms_items_classRoomsCreated_items)
-      - [4.1.3.2. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections`](#results_items_timetable_assignedSections)
-        - [4.1.3.2.1. GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection](#results_items_timetable_assignedSections_items)
-          - [4.1.3.2.1.1. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > refFrame`](#results_items_timetable_assignedSections_items_refFrame)
-          - [4.1.3.2.1.2. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > day`](#results_items_timetable_assignedSections_items_day)
-          - [4.1.3.2.1.3. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > realIndex`](#results_items_timetable_assignedSections_items_realIndex)
-          - [4.1.3.2.1.4. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > fictionalIndex`](#results_items_timetable_assignedSections_items_fictionalIndex)
-          - [4.1.3.2.1.5. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > startTime`](#results_items_timetable_assignedSections_items_startTime)
-          - [4.1.3.2.1.6. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > endTime`](#results_items_timetable_assignedSections_items_endTime)
-          - [4.1.3.2.1.7. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment`](#results_items_timetable_assignedSections_items_assignment)
-            - [4.1.3.2.1.7.1. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions`](#results_items_timetable_assignedSections_items_assignment_teachingSessions)
-              - [4.1.3.2.1.7.1.1. GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items)
-                - [4.1.3.2.1.7.1.1.1. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refSession`](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refSession)
-                - [4.1.3.2.1.7.1.1.2. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refClassRomms`](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refClassRomms)
-                  - [4.1.3.2.1.7.1.1.2.1. GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refClassRomms > RefclassRomm](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refClassRomms_items)
-                - [4.1.3.2.1.7.1.1.3. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refTeachers`](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refTeachers)
-                  - [4.1.3.2.1.7.1.1.3.1. GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refTeachers > RefTeacher](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refTeachers_items)
-                - [4.1.3.2.1.7.1.1.4. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refContinuosBlock`](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refContinuosBlock)
-            - [4.1.3.2.1.7.2. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > meetings`](#results_items_timetable_assignedSections_items_assignment_meetings)
-              - [4.1.3.2.1.7.2.1. GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > meetings > AssignedMeeting](#results_items_timetable_assignedSections_items_assignment_meetings_items)
-                - [4.1.3.2.1.7.2.1.1. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > meetings > AssignedMeeting > refMeeting`](#results_items_timetable_assignedSections_items_assignment_meetings_items_refMeeting)
-                - [4.1.3.2.1.7.2.1.2. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > meetings > AssignedMeeting > refClassRomms`](#results_items_timetable_assignedSections_items_assignment_meetings_items_refClassRomms)
-                - [4.1.3.2.1.7.2.1.3. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > meetings > AssignedMeeting > refContinuosBlock`](#results_items_timetable_assignedSections_items_assignment_meetings_items_refContinuosBlock)
-            - [4.1.3.2.1.7.3. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > complementaryActivities`](#results_items_timetable_assignedSections_items_assignment_complementaryActivities)
-              - [4.1.3.2.1.7.3.1. GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > complementaryActivities > AssignedComplementary](#results_items_timetable_assignedSections_items_assignment_complementaryActivities_items)
-                - [4.1.3.2.1.7.3.1.1. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > complementaryActivities > AssignedComplementary > refComplementary`](#results_items_timetable_assignedSections_items_assignment_complementaryActivities_items_refComplementary)
-                - [4.1.3.2.1.7.3.1.2. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > complementaryActivities > AssignedComplementary > refClassRomms`](#results_items_timetable_assignedSections_items_assignment_complementaryActivities_items_refClassRomms)
-                - [4.1.3.2.1.7.3.1.3. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > complementaryActivities > AssignedComplementary > refContinuosBlock`](#results_items_timetable_assignedSections_items_assignment_complementaryActivities_items_refContinuosBlock)
-            - [4.1.3.2.1.7.4. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > onCallServices`](#results_items_timetable_assignedSections_items_assignment_onCallServices)
-              - [4.1.3.2.1.7.4.1. GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > onCallServices > AssignedOnCallService](#results_items_timetable_assignedSections_items_assignment_onCallServices_items)
-                - [4.1.3.2.1.7.4.1.1. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > onCallServices > AssignedOnCallService > refOnCall`](#results_items_timetable_assignedSections_items_assignment_onCallServices_items_refOnCall)
-                - [4.1.3.2.1.7.4.1.2. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > onCallServices > AssignedOnCallService > refTeacher`](#results_items_timetable_assignedSections_items_assignment_onCallServices_items_refTeacher)
+- [1. Property `GhcEngineSchema > meta`](#meta)
+  - [1.1. Property `GhcEngineSchema > meta > name`](#meta_name)
+  - [1.2. Property `GhcEngineSchema > meta > versionJson`](#meta_versionJson)
+  - [1.3. Property `GhcEngineSchema > meta > createdDate`](#meta_createdDate)
+  - [1.4. Property `GhcEngineSchema > meta > lastModifiedDate`](#meta_lastModifiedDate)
+  - [1.5. Property `GhcEngineSchema > meta > refUser`](#meta_refUser)
+  - [1.6. Property `GhcEngineSchema > meta > source`](#meta_source)
+  - [1.7. Property `GhcEngineSchema > meta > fullMode`](#meta_fullMode)
+- [2. Property `GhcEngineSchema > planningData`](#planningData)
+  - [2.1. Property `GhcEngineSchema > planningData > periods`](#planningData_periods)
+    - [2.1.1. Property `GhcEngineSchema > planningData > periods > followedPeriods`](#planningData_periods_followedPeriods)
+    - [2.1.2. Property `GhcEngineSchema > planningData > periods > periodsList`](#planningData_periods_periodsList)
+      - [2.1.2.1. GhcEngineSchema > planningData > periods > periodsList > Period](#planningData_periods_periodsList_items)
+        - [2.1.2.1.1. Property `GhcEngineSchema > planningData > periods > periodsList > Period > id`](#planningData_periods_periodsList_items_id)
+        - [2.1.2.1.2. Property `GhcEngineSchema > planningData > periods > periodsList > Period > alias`](#planningData_periods_periodsList_items_alias)
+        - [2.1.2.1.3. Property `GhcEngineSchema > planningData > periods > periodsList > Period > lastDay`](#planningData_periods_periodsList_items_lastDay)
+        - [2.1.2.1.4. Property `GhcEngineSchema > planningData > periods > periodsList > Period > dayAliases`](#planningData_periods_periodsList_items_dayAliases)
+          - [2.1.2.1.4.1. GhcEngineSchema > planningData > periods > periodsList > Period > dayAliases > AliasDayDeifinition](#planningData_periods_periodsList_items_dayAliases_items)
+            - [2.1.2.1.4.1.1. Property `GhcEngineSchema > planningData > periods > periodsList > Period > dayAliases > AliasDayDeifinition > dayId`](#planningData_periods_periodsList_items_dayAliases_items_dayId)
+            - [2.1.2.1.4.1.2. Property `GhcEngineSchema > planningData > periods > periodsList > Period > dayAliases > AliasDayDeifinition > alias`](#planningData_periods_periodsList_items_dayAliases_items_alias)
+    - [2.1.3. Property `GhcEngineSchema > planningData > periods > periodsSets`](#planningData_periods_periodsSets)
+      - [2.1.3.1. GhcEngineSchema > planningData > periods > periodsSets > PeriodsSet](#planningData_periods_periodsSets_items)
+        - [2.1.3.1.1. Property `GhcEngineSchema > planningData > periods > periodsSets > PeriodsSet > id`](#planningData_periods_periodsSets_items_id)
+        - [2.1.3.1.2. Property `GhcEngineSchema > planningData > periods > periodsSets > PeriodsSet > periodList`](#planningData_periods_periodsSets_items_periodList)
+          - [2.1.3.1.2.1. GhcEngineSchema > planningData > periods > periodsSets > PeriodsSet > periodList > periodList items](#planningData_periods_periodsSets_items_periodList_items)
+  - [2.2. Property `GhcEngineSchema > planningData > frames`](#planningData_frames)
+    - [2.2.1. GhcEngineSchema > planningData > frames > Frame](#planningData_frames_items)
+      - [2.2.1.1. Property `GhcEngineSchema > planningData > frames > Frame > id`](#planningData_frames_items_id)
+      - [2.2.1.2. Property `GhcEngineSchema > planningData > frames > Frame > exKey`](#planningData_frames_items_exKey)
+      - [2.2.1.3. Property `GhcEngineSchema > planningData > frames > Frame > days`](#planningData_frames_items_days)
+        - [2.2.1.3.1. GhcEngineSchema > planningData > frames > Frame > days > FrameDay](#planningData_frames_items_days_items)
+          - [2.2.1.3.1.1. Property `GhcEngineSchema > planningData > frames > Frame > days > FrameDay > day`](#planningData_frames_items_days_items_day)
+          - [2.2.1.3.1.2. Property `GhcEngineSchema > planningData > frames > Frame > days > FrameDay > sections`](#planningData_frames_items_days_items_sections)
+            - [2.2.1.3.1.2.1. GhcEngineSchema > planningData > frames > Frame > days > FrameDay > sections > Section](#planningData_frames_items_days_items_sections_items)
+              - [2.2.1.3.1.2.1.1. Property `GhcEngineSchema > planningData > frames > Frame > days > FrameDay > sections > Section > index`](#planningData_frames_items_days_items_sections_items_index)
+              - [2.2.1.3.1.2.1.2. Property `GhcEngineSchema > planningData > frames > Frame > days > FrameDay > sections > Section > entryTime`](#planningData_frames_items_days_items_sections_items_entryTime)
+              - [2.2.1.3.1.2.1.3. Property `GhcEngineSchema > planningData > frames > Frame > days > FrameDay > sections > Section > exitTime`](#planningData_frames_items_days_items_sections_items_exitTime)
+              - [2.2.1.3.1.2.1.4. Property `GhcEngineSchema > planningData > frames > Frame > days > FrameDay > sections > Section > exKey`](#planningData_frames_items_days_items_sections_items_exKey)
+              - [2.2.1.3.1.2.1.5. Property `GhcEngineSchema > planningData > frames > Frame > days > FrameDay > sections > Section > duration`](#planningData_frames_items_days_items_sections_items_duration)
+              - [2.2.1.3.1.2.1.6. Property `GhcEngineSchema > planningData > frames > Frame > days > FrameDay > sections > Section > type`](#planningData_frames_items_days_items_sections_items_type)
+              - [2.2.1.3.1.2.1.7. Property `GhcEngineSchema > planningData > frames > Frame > days > FrameDay > sections > Section > allowed`](#planningData_frames_items_days_items_sections_items_allowed)
+  - [2.3. Property `GhcEngineSchema > planningData > buildings`](#planningData_buildings)
+    - [2.3.1. GhcEngineSchema > planningData > buildings > Building](#planningData_buildings_items)
+      - [2.3.1.1. Property `GhcEngineSchema > planningData > buildings > Building > id`](#planningData_buildings_items_id)
+      - [2.3.1.2. Property `GhcEngineSchema > planningData > buildings > Building > fullName`](#planningData_buildings_items_fullName)
+      - [2.3.1.3. Property `GhcEngineSchema > planningData > buildings > Building > distances`](#planningData_buildings_items_distances)
+        - [2.3.1.3.1. GhcEngineSchema > planningData > buildings > Building > distances > Distance](#planningData_buildings_items_distances_items)
+          - [2.3.1.3.1.1. Property `GhcEngineSchema > planningData > buildings > Building > distances > Distance > refBuilding`](#planningData_buildings_items_distances_items_refBuilding)
+          - [2.3.1.3.1.2. Property `GhcEngineSchema > planningData > buildings > Building > distances > Distance > minutes`](#planningData_buildings_items_distances_items_minutes)
+  - [2.4. Property `GhcEngineSchema > planningData > classRooms`](#planningData_classRooms)
+    - [2.4.1. GhcEngineSchema > planningData > classRooms > Classroom](#planningData_classRooms_items)
+      - [2.4.1.1. Property `GhcEngineSchema > planningData > classRooms > Classroom > id`](#planningData_classRooms_items_id)
+      - [2.4.1.2. Property `GhcEngineSchema > planningData > classRooms > Classroom > shortName`](#planningData_classRooms_items_shortName)
+      - [2.4.1.3. Property `GhcEngineSchema > planningData > classRooms > Classroom > fullName`](#planningData_classRooms_items_fullName)
+      - [2.4.1.4. Property `GhcEngineSchema > planningData > classRooms > Classroom > isDedicated`](#planningData_classRooms_items_isDedicated)
+      - [2.4.1.5. Property `GhcEngineSchema > planningData > classRooms > Classroom > exKey`](#planningData_classRooms_items_exKey)
+      - [2.4.1.6. Property `GhcEngineSchema > planningData > classRooms > Classroom > capacity`](#planningData_classRooms_items_capacity)
+      - [2.4.1.7. Property `GhcEngineSchema > planningData > classRooms > Classroom > frameTemplate`](#planningData_classRooms_items_frameTemplate)
+        - [2.4.1.7.1. GhcEngineSchema > planningData > classRooms > Classroom > frameTemplate > BannedSectionPreference](#planningData_classRooms_items_frameTemplate_items)
+          - [2.4.1.7.1.1. Property `GhcEngineSchema > planningData > classRooms > Classroom > frameTemplate > BannedSectionPreference > day`](#planningData_classRooms_items_frameTemplate_items_day)
+          - [2.4.1.7.1.2. Property `GhcEngineSchema > planningData > classRooms > Classroom > frameTemplate > BannedSectionPreference > index`](#planningData_classRooms_items_frameTemplate_items_index)
+          - [2.4.1.7.1.3. Property `GhcEngineSchema > planningData > classRooms > Classroom > frameTemplate > BannedSectionPreference > frame`](#planningData_classRooms_items_frameTemplate_items_frame)
+      - [2.4.1.8. Property `GhcEngineSchema > planningData > classRooms > Classroom > refBuilding`](#planningData_classRooms_items_refBuilding)
+      - [2.4.1.9. Property `GhcEngineSchema > planningData > classRooms > Classroom > fullDay`](#planningData_classRooms_items_fullDay)
+  - [2.5. Property `GhcEngineSchema > planningData > classRoomsSets`](#planningData_classRoomsSets)
+    - [2.5.1. GhcEngineSchema > planningData > classRoomsSets > ClassRoomSet](#planningData_classRoomsSets_items)
+      - [2.5.1.1. Property `GhcEngineSchema > planningData > classRoomsSets > ClassRoomSet > id`](#planningData_classRoomsSets_items_id)
+      - [2.5.1.2. Property `GhcEngineSchema > planningData > classRoomsSets > ClassRoomSet > rooms`](#planningData_classRoomsSets_items_rooms)
+        - [2.5.1.2.1. GhcEngineSchema > planningData > classRoomsSets > ClassRoomSet > rooms > ClassRoomRef](#planningData_classRoomsSets_items_rooms_items)
+      - [2.5.1.3. Property `GhcEngineSchema > planningData > classRoomsSets > ClassRoomSet > anonymousRooms`](#planningData_classRoomsSets_items_anonymousRooms)
+  - [2.6. Property `GhcEngineSchema > planningData > tasks`](#planningData_tasks)
+    - [2.6.1. GhcEngineSchema > planningData > tasks > Task](#planningData_tasks_items)
+      - [2.6.1.1. Property `GhcEngineSchema > planningData > tasks > Task > id`](#planningData_tasks_items_id)
+      - [2.6.1.2. Property `GhcEngineSchema > planningData > tasks > Task > frameTemplate`](#planningData_tasks_items_frameTemplate)
+        - [2.6.1.2.1. GhcEngineSchema > planningData > tasks > Task > frameTemplate > SectionPreference](#planningData_tasks_items_frameTemplate_items)
+          - [2.6.1.2.1.1. Property `GhcEngineSchema > planningData > tasks > Task > frameTemplate > SectionPreference > day`](#planningData_tasks_items_frameTemplate_items_day)
+          - [2.6.1.2.1.2. Property `GhcEngineSchema > planningData > tasks > Task > frameTemplate > SectionPreference > index`](#planningData_tasks_items_frameTemplate_items_index)
+          - [2.6.1.2.1.3. Property `GhcEngineSchema > planningData > tasks > Task > frameTemplate > SectionPreference > frame`](#planningData_tasks_items_frameTemplate_items_frame)
+          - [2.6.1.2.1.4. Property `GhcEngineSchema > planningData > tasks > Task > frameTemplate > SectionPreference > type`](#planningData_tasks_items_frameTemplate_items_type)
+      - [2.6.1.3. Property `GhcEngineSchema > planningData > tasks > Task > fullName`](#planningData_tasks_items_fullName)
+      - [2.6.1.4. Property `GhcEngineSchema > planningData > tasks > Task > exKey`](#planningData_tasks_items_exKey)
+      - [2.6.1.5. Property `GhcEngineSchema > planningData > tasks > Task > refColourInResult`](#planningData_tasks_items_refColourInResult)
+  - [2.7. Property `GhcEngineSchema > planningData > teachers`](#planningData_teachers)
+    - [2.7.1. GhcEngineSchema > planningData > teachers > Teacher](#planningData_teachers_items)
+      - [2.7.1.1. Property `GhcEngineSchema > planningData > teachers > Teacher > id`](#planningData_teachers_items_id)
+      - [2.7.1.2. Property `GhcEngineSchema > planningData > teachers > Teacher > shortName`](#planningData_teachers_items_shortName)
+      - [2.7.1.3. Property `GhcEngineSchema > planningData > teachers > Teacher > fullName`](#planningData_teachers_items_fullName)
+      - [2.7.1.4. Property `GhcEngineSchema > planningData > teachers > Teacher > exKey`](#planningData_teachers_items_exKey)
+      - [2.7.1.5. Property `GhcEngineSchema > planningData > teachers > Teacher > associationIdentifier`](#planningData_teachers_items_associationIdentifier)
+      - [2.7.1.6. Property `GhcEngineSchema > planningData > teachers > Teacher > overlappedAssessment`](#planningData_teachers_items_overlappedAssessment)
+      - [2.7.1.7. Property `GhcEngineSchema > planningData > teachers > Teacher > frameTemplate`](#planningData_teachers_items_frameTemplate)
+      - [2.7.1.8. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings`](#planningData_teachers_items_generalSettings)
+        - [2.7.1.8.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > weeklyStay`](#planningData_teachers_items_generalSettings_weeklyStay)
+          - [2.7.1.8.1.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > weeklyStay > strict`](#planningData_teachers_items_generalSettings_weeklyStay_strict)
+          - [2.7.1.8.1.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > weeklyStay > preferable`](#planningData_teachers_items_generalSettings_weeklyStay_preferable)
+          - [2.7.1.8.1.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > weeklyStay > countAroundMidday`](#planningData_teachers_items_generalSettings_weeklyStay_countAroundMidday)
+        - [2.7.1.8.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyStay`](#planningData_teachers_items_generalSettings_dailyStay)
+          - [2.7.1.8.2.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyStay > strict`](#planningData_teachers_items_generalSettings_dailyStay_strict)
+          - [2.7.1.8.2.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyStay > preferable`](#planningData_teachers_items_generalSettings_dailyStay_preferable)
+          - [2.7.1.8.2.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyStay > countAroundMidday`](#planningData_teachers_items_generalSettings_dailyStay_countAroundMidday)
+        - [2.7.1.8.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > avoidGapsBetweenSesions`](#planningData_teachers_items_generalSettings_avoidGapsBetweenSesions)
+        - [2.7.1.8.4. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > maxContinuousTeaching`](#planningData_teachers_items_generalSettings_maxContinuousTeaching)
+          - [2.7.1.8.4.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > maxContinuousTeaching > type`](#planningData_teachers_items_generalSettings_maxContinuousTeaching_type)
+          - [2.7.1.8.4.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > maxContinuousTeaching > minutes`](#planningData_teachers_items_generalSettings_maxContinuousTeaching_minutes)
+          - [2.7.1.8.4.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > maxContinuousTeaching > minBreak`](#planningData_teachers_items_generalSettings_maxContinuousTeaching_minBreak)
+        - [2.7.1.8.5. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > avoidClassesAroundBreak`](#planningData_teachers_items_generalSettings_avoidClassesAroundBreak)
+        - [2.7.1.8.6. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes`](#planningData_teachers_items_generalSettings_freeTimes)
+          - [2.7.1.8.6.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > fullDay`](#planningData_teachers_items_generalSettings_freeTimes_fullDay)
+            - [2.7.1.8.6.1.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > fullDay > strictDays`](#planningData_teachers_items_generalSettings_freeTimes_fullDay_strictDays)
+            - [2.7.1.8.6.1.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > fullDay > preferredDays`](#planningData_teachers_items_generalSettings_freeTimes_fullDay_preferredDays)
+          - [2.7.1.8.6.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > firstMinutes`](#planningData_teachers_items_generalSettings_freeTimes_firstMinutes)
+            - [2.7.1.8.6.2.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > firstMinutes > strictDays`](#planningData_teachers_items_generalSettings_freeTimes_firstMinutes_strictDays)
+            - [2.7.1.8.6.2.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > firstMinutes > preferredDays`](#planningData_teachers_items_generalSettings_freeTimes_firstMinutes_preferredDays)
+            - [2.7.1.8.6.2.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > firstMinutes > minutes`](#planningData_teachers_items_generalSettings_freeTimes_firstMinutes_minutes)
+          - [2.7.1.8.6.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > lastMinutes`](#planningData_teachers_items_generalSettings_freeTimes_lastMinutes)
+            - [2.7.1.8.6.3.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > lastMinutes > strictDays`](#planningData_teachers_items_generalSettings_freeTimes_lastMinutes_strictDays)
+            - [2.7.1.8.6.3.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > lastMinutes > preferredDays`](#planningData_teachers_items_generalSettings_freeTimes_lastMinutes_preferredDays)
+            - [2.7.1.8.6.3.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > lastMinutes > minutes`](#planningData_teachers_items_generalSettings_freeTimes_lastMinutes_minutes)
+          - [2.7.1.8.6.4. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > consecutiveAnyTime`](#planningData_teachers_items_generalSettings_freeTimes_consecutiveAnyTime)
+            - [2.7.1.8.6.4.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > consecutiveAnyTime > strictDays`](#planningData_teachers_items_generalSettings_freeTimes_consecutiveAnyTime_strictDays)
+            - [2.7.1.8.6.4.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > consecutiveAnyTime > preferredDays`](#planningData_teachers_items_generalSettings_freeTimes_consecutiveAnyTime_preferredDays)
+            - [2.7.1.8.6.4.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > consecutiveAnyTime > minutes`](#planningData_teachers_items_generalSettings_freeTimes_consecutiveAnyTime_minutes)
+        - [2.7.1.8.7. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freePartTimes`](#planningData_teachers_items_generalSettings_freePartTimes)
+          - [2.7.1.8.7.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freePartTimes > mornings`](#planningData_teachers_items_generalSettings_freePartTimes_mornings)
+            - [2.7.1.8.7.1.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freePartTimes > mornings > strict`](#planningData_teachers_items_generalSettings_freePartTimes_mornings_strict)
+            - [2.7.1.8.7.1.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freePartTimes > mornings > preferable`](#planningData_teachers_items_generalSettings_freePartTimes_mornings_preferable)
+          - [2.7.1.8.7.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freePartTimes > afternoons`](#planningData_teachers_items_generalSettings_freePartTimes_afternoons)
+            - [2.7.1.8.7.2.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freePartTimes > afternoons > strict`](#planningData_teachers_items_generalSettings_freePartTimes_afternoons_strict)
+            - [2.7.1.8.7.2.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freePartTimes > afternoons > preferable`](#planningData_teachers_items_generalSettings_freePartTimes_afternoons_preferable)
+          - [2.7.1.8.7.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freePartTimes > indistinctly`](#planningData_teachers_items_generalSettings_freePartTimes_indistinctly)
+            - [2.7.1.8.7.3.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freePartTimes > indistinctly > strict`](#planningData_teachers_items_generalSettings_freePartTimes_indistinctly_strict)
+            - [2.7.1.8.7.3.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freePartTimes > indistinctly > preferable`](#planningData_teachers_items_generalSettings_freePartTimes_indistinctly_preferable)
+        - [2.7.1.8.8. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities`](#planningData_teachers_items_generalSettings_incompatibilities)
+          - [2.7.1.8.8.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeBetweenDayBeforeAndCurrent`](#planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenDayBeforeAndCurrent)
+            - [2.7.1.8.8.1.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeBetweenDayBeforeAndCurrent > type`](#planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenDayBeforeAndCurrent_type)
+            - [2.7.1.8.8.1.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeBetweenDayBeforeAndCurrent > minutes`](#planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenDayBeforeAndCurrent_minutes)
+          - [2.7.1.8.8.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeBetweenEndWeekAndStartWeekDays`](#planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenEndWeekAndStartWeekDays)
+            - [2.7.1.8.8.2.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeBetweenDayBeforeAndCurrent > type`](#planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenDayBeforeAndCurrent_type)
+            - [2.7.1.8.8.2.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeBetweenDayBeforeAndCurrent > minutes`](#planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenDayBeforeAndCurrent_minutes)
+          - [2.7.1.8.8.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeFirstOrLastHoursDay`](#planningData_teachers_items_generalSettings_incompatibilities_freeTimeFirstOrLastHoursDay)
+            - [2.7.1.8.8.3.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeBetweenDayBeforeAndCurrent > type`](#planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenDayBeforeAndCurrent_type)
+            - [2.7.1.8.8.3.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeBetweenDayBeforeAndCurrent > minutes`](#planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenDayBeforeAndCurrent_minutes)
+          - [2.7.1.8.8.4. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > doNotFinishAtLastAfternoonSectionIfStartedAtFirstAfternoonSection`](#planningData_teachers_items_generalSettings_incompatibilities_doNotFinishAtLastAfternoonSectionIfStartedAtFirstAfternoonSection)
+          - [2.7.1.8.8.5. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > doNotFinishAtLastMorningSectionIfStartedAtFirstMorningSection`](#planningData_teachers_items_generalSettings_incompatibilities_doNotFinishAtLastMorningSectionIfStartedAtFirstMorningSection)
+          - [2.7.1.8.8.6. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > doNotFinishAtLastMorningSectionIfStartAtFirstAfternoonSection`](#planningData_teachers_items_generalSettings_incompatibilities_doNotFinishAtLastMorningSectionIfStartAtFirstAfternoonSection)
+          - [2.7.1.8.8.7. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > doNotFinishAtLastMorningSectionIfHasAfternoonAssignment`](#planningData_teachers_items_generalSettings_incompatibilities_doNotFinishAtLastMorningSectionIfHasAfternoonAssignment)
+          - [2.7.1.8.8.8. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > doNotStartAtFirstMorningSectionIfHasAfternoonAssignment`](#planningData_teachers_items_generalSettings_incompatibilities_doNotStartAtFirstMorningSectionIfHasAfternoonAssignment)
+          - [2.7.1.8.8.9. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeAroundMidday`](#planningData_teachers_items_generalSettings_incompatibilities_freeTimeAroundMidday)
+            - [2.7.1.8.8.9.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeBetweenDayBeforeAndCurrent > type`](#planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenDayBeforeAndCurrent_type)
+            - [2.7.1.8.8.9.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeBetweenDayBeforeAndCurrent > minutes`](#planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenDayBeforeAndCurrent_minutes)
+        - [2.7.1.8.9. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation`](#planningData_teachers_items_generalSettings_dailyOcupation)
+          - [2.7.1.8.9.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > allowFreeDays`](#planningData_teachers_items_generalSettings_dailyOcupation_allowFreeDays)
+          - [2.7.1.8.9.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching`](#planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching)
+            - [2.7.1.8.9.2.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > type`](#planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_type)
+            - [2.7.1.8.9.2.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > minutes`](#planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_minutes)
+            - [2.7.1.8.9.2.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > isAssisted`](#planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_isAssisted)
+            - [2.7.1.8.9.2.4. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > variationTime`](#planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_variationTime)
+          - [2.7.1.8.9.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > maximumTeaching`](#planningData_teachers_items_generalSettings_dailyOcupation_maximumTeaching)
+            - [2.7.1.8.9.3.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > type`](#planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_type)
+            - [2.7.1.8.9.3.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > minutes`](#planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_minutes)
+            - [2.7.1.8.9.3.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > isAssisted`](#planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_isAssisted)
+            - [2.7.1.8.9.3.4. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > variationTime`](#planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_variationTime)
+          - [2.7.1.8.9.4. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumOccupancy`](#planningData_teachers_items_generalSettings_dailyOcupation_minimumOccupancy)
+            - [2.7.1.8.9.4.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > type`](#planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_type)
+            - [2.7.1.8.9.4.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > minutes`](#planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_minutes)
+            - [2.7.1.8.9.4.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > isAssisted`](#planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_isAssisted)
+            - [2.7.1.8.9.4.4. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > variationTime`](#planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_variationTime)
+          - [2.7.1.8.9.5. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > maximumOccupancy`](#planningData_teachers_items_generalSettings_dailyOcupation_maximumOccupancy)
+            - [2.7.1.8.9.5.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > type`](#planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_type)
+            - [2.7.1.8.9.5.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > minutes`](#planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_minutes)
+            - [2.7.1.8.9.5.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > isAssisted`](#planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_isAssisted)
+            - [2.7.1.8.9.5.4. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > variationTime`](#planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_variationTime)
+        - [2.7.1.8.10. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > middayReference`](#planningData_teachers_items_generalSettings_middayReference)
+          - [2.7.1.8.10.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > middayReference > refFrame`](#planningData_teachers_items_generalSettings_middayReference_refFrame)
+          - [2.7.1.8.10.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > middayReference > strict`](#planningData_teachers_items_generalSettings_middayReference_strict)
+        - [2.7.1.8.11. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyBuildingTransfers`](#planningData_teachers_items_generalSettings_dailyBuildingTransfers)
+          - [2.7.1.8.11.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyBuildingTransfers > strict`](#planningData_teachers_items_generalSettings_dailyBuildingTransfers_strict)
+          - [2.7.1.8.11.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyBuildingTransfers > preferable`](#planningData_teachers_items_generalSettings_dailyBuildingTransfers_preferable)
+      - [2.7.1.9. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings`](#planningData_teachers_items_periodsSettings)
+        - [2.7.1.9.1. GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting](#planningData_teachers_items_periodsSettings_items)
+          - [2.7.1.9.1.1. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > refPeriod`](#planningData_teachers_items_periodsSettings_items_refPeriod)
+          - [2.7.1.9.1.2. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > weeklyStay`](#planningData_teachers_items_periodsSettings_items_weeklyStay)
+          - [2.7.1.9.1.3. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > dailyStay`](#planningData_teachers_items_periodsSettings_items_dailyStay)
+          - [2.7.1.9.1.4. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > avoidGapsBetweenSesions`](#planningData_teachers_items_periodsSettings_items_avoidGapsBetweenSesions)
+          - [2.7.1.9.1.5. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > maxContinuousTeaching`](#planningData_teachers_items_periodsSettings_items_maxContinuousTeaching)
+          - [2.7.1.9.1.6. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > avoidClassesAroundBreak`](#planningData_teachers_items_periodsSettings_items_avoidClassesAroundBreak)
+          - [2.7.1.9.1.7. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > freeTimes`](#planningData_teachers_items_periodsSettings_items_freeTimes)
+          - [2.7.1.9.1.8. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > freePartTimes`](#planningData_teachers_items_periodsSettings_items_freePartTimes)
+          - [2.7.1.9.1.9. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > incompatibilities`](#planningData_teachers_items_periodsSettings_items_incompatibilities)
+          - [2.7.1.9.1.10. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > dailyOcupation`](#planningData_teachers_items_periodsSettings_items_dailyOcupation)
+          - [2.7.1.9.1.11. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > middayReference`](#planningData_teachers_items_periodsSettings_items_middayReference)
+          - [2.7.1.9.1.12. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > dailyBuildingTransfers`](#planningData_teachers_items_periodsSettings_items_dailyBuildingTransfers)
+  - [2.8. Property `GhcEngineSchema > planningData > subjects`](#planningData_subjects)
+    - [2.8.1. GhcEngineSchema > planningData > subjects > Subject](#planningData_subjects_items)
+      - [2.8.1.1. Property `GhcEngineSchema > planningData > subjects > Subject > id`](#planningData_subjects_items_id)
+      - [2.8.1.2. Property `GhcEngineSchema > planningData > subjects > Subject > shortName`](#planningData_subjects_items_shortName)
+      - [2.8.1.3. Property `GhcEngineSchema > planningData > subjects > Subject > fullName`](#planningData_subjects_items_fullName)
+      - [2.8.1.4. Property `GhcEngineSchema > planningData > subjects > Subject > exKey`](#planningData_subjects_items_exKey)
+      - [2.8.1.5. Property `GhcEngineSchema > planningData > subjects > Subject > technicalTeacher`](#planningData_subjects_items_technicalTeacher)
+      - [2.8.1.6. Property `GhcEngineSchema > planningData > subjects > Subject > type`](#planningData_subjects_items_type)
+      - [2.8.1.7. Property `GhcEngineSchema > planningData > subjects > Subject > refClassroom`](#planningData_subjects_items_refClassroom)
+      - [2.8.1.8. Property `GhcEngineSchema > planningData > subjects > Subject > refClassRoomSetsList`](#planningData_subjects_items_refClassRoomSetsList)
+        - [2.8.1.8.1. GhcEngineSchema > planningData > subjects > Subject > refClassRoomSetsList > ClassRoomSetRef](#planningData_subjects_items_refClassRoomSetsList_items)
+      - [2.8.1.9. Property `GhcEngineSchema > planningData > subjects > Subject > refColourInResult`](#planningData_subjects_items_refColourInResult)
+      - [2.8.1.10. Property `GhcEngineSchema > planningData > subjects > Subject > frameTemplate`](#planningData_subjects_items_frameTemplate)
+  - [2.9. Property `GhcEngineSchema > planningData > groups`](#planningData_groups)
+    - [2.9.1. GhcEngineSchema > planningData > groups > Group](#planningData_groups_items)
+      - [2.9.1.1. Property `GhcEngineSchema > planningData > groups > Group > id`](#planningData_groups_items_id)
+      - [2.9.1.2. Property `GhcEngineSchema > planningData > groups > Group > shortName`](#planningData_groups_items_shortName)
+      - [2.9.1.3. Property `GhcEngineSchema > planningData > groups > Group > fullName`](#planningData_groups_items_fullName)
+      - [2.9.1.4. Property `GhcEngineSchema > planningData > groups > Group > exKey`](#planningData_groups_items_exKey)
+      - [2.9.1.5. Property `GhcEngineSchema > planningData > groups > Group > refFrame`](#planningData_groups_items_refFrame)
+      - [2.9.1.6. Property `GhcEngineSchema > planningData > groups > Group > frameTemplate`](#planningData_groups_items_frameTemplate)
+      - [2.9.1.7. Property `GhcEngineSchema > planningData > groups > Group > numStudents`](#planningData_groups_items_numStudents)
+      - [2.9.1.8. Property `GhcEngineSchema > planningData > groups > Group > freeAfternoons`](#planningData_groups_items_freeAfternoons)
+      - [2.9.1.9. Property `GhcEngineSchema > planningData > groups > Group > notGaps`](#planningData_groups_items_notGaps)
+      - [2.9.1.10. Property `GhcEngineSchema > planningData > groups > Group > gapsAlwaysInNonPreferred`](#planningData_groups_items_gapsAlwaysInNonPreferred)
+      - [2.9.1.11. Property `GhcEngineSchema > planningData > groups > Group > refCourse`](#planningData_groups_items_refCourse)
+      - [2.9.1.12. Property `GhcEngineSchema > planningData > groups > Group > includedGroups`](#planningData_groups_items_includedGroups)
+        - [2.9.1.12.1. GhcEngineSchema > planningData > groups > Group > includedGroups > refGroups](#planningData_groups_items_includedGroups_items)
+      - [2.9.1.13. Property `GhcEngineSchema > planningData > groups > Group > refTeacher`](#planningData_groups_items_refTeacher)
+      - [2.9.1.14. Property `GhcEngineSchema > planningData > groups > Group > refClassroom`](#planningData_groups_items_refClassroom)
+      - [2.9.1.15. Property `GhcEngineSchema > planningData > groups > Group > refClassRoomSetsList`](#planningData_groups_items_refClassRoomSetsList)
+        - [2.9.1.15.1. GhcEngineSchema > planningData > groups > Group > refClassRoomSetsList > ClassRoomSetRef](#planningData_groups_items_refClassRoomSetsList_items)
+  - [2.10. Property `GhcEngineSchema > planningData > groupSetRelations`](#planningData_groupSetRelations)
+    - [2.10.1. GhcEngineSchema > planningData > groupSetRelations > GroupSetRelation](#planningData_groupSetRelations_items)
+      - [2.10.1.1. Property `GhcEngineSchema > planningData > groupSetRelations > GroupSetRelation > id`](#planningData_groupSetRelations_items_id)
+      - [2.10.1.2. Property `GhcEngineSchema > planningData > groupSetRelations > GroupSetRelation > alias`](#planningData_groupSetRelations_items_alias)
+      - [2.10.1.3. Property `GhcEngineSchema > planningData > groupSetRelations > GroupSetRelation > expression`](#planningData_groupSetRelations_items_expression)
+        - [2.10.1.3.1. Property `GhcEngineSchema > planningData > groupSetRelations > GroupSetRelation > expression > operator`](#planningData_groupSetRelations_items_expression_operator)
+        - [2.10.1.3.2. Property `GhcEngineSchema > planningData > groupSetRelations > GroupSetRelation > expression > refGroupSet`](#planningData_groupSetRelations_items_expression_refGroupSet)
+          - [2.10.1.3.2.1. GhcEngineSchema > planningData > groupSetRelations > GroupSetRelation > expression > refGroupSet > GroupSetReference](#planningData_groupSetRelations_items_expression_refGroupSet_items)
+        - [2.10.1.3.3. Property `GhcEngineSchema > planningData > groupSetRelations > GroupSetRelation > expression > nestedRelationExpressions`](#planningData_groupSetRelations_items_expression_nestedRelationExpressions)
+          - [2.10.1.3.3.1. GhcEngineSchema > planningData > groupSetRelations > GroupSetRelation > expression > nestedRelationExpressions > GroupSetRelationExpression](#planningData_groupSetRelations_items_expression_nestedRelationExpressions_items)
+  - [2.11. Property `GhcEngineSchema > planningData > courses`](#planningData_courses)
+    - [2.11.1. GhcEngineSchema > planningData > courses > Course](#planningData_courses_items)
+      - [2.11.1.1. Property `GhcEngineSchema > planningData > courses > Course > id`](#planningData_courses_items_id)
+      - [2.11.1.2. Property `GhcEngineSchema > planningData > courses > Course > fullName`](#planningData_courses_items_fullName)
+      - [2.11.1.3. Property `GhcEngineSchema > planningData > courses > Course > exKey`](#planningData_courses_items_exKey)
+      - [2.11.1.4. Property `GhcEngineSchema > planningData > courses > Course > courseSubjects`](#planningData_courses_items_courseSubjects)
+        - [2.11.1.4.1. GhcEngineSchema > planningData > courses > Course > courseSubjects > CourseSubject](#planningData_courses_items_courseSubjects_items)
+          - [2.11.1.4.1.1. Property `GhcEngineSchema > planningData > courses > Course > courseSubjects > CourseSubject > numHours`](#planningData_courses_items_courseSubjects_items_numHours)
+          - [2.11.1.4.1.2. Property `GhcEngineSchema > planningData > courses > Course > courseSubjects > CourseSubject > refSubject`](#planningData_courses_items_courseSubjects_items_refSubject)
+  - [2.12. Property `GhcEngineSchema > planningData > departments`](#planningData_departments)
+    - [2.12.1. GhcEngineSchema > planningData > departments > Department](#planningData_departments_items)
+      - [2.12.1.1. Property `GhcEngineSchema > planningData > departments > Department > id`](#planningData_departments_items_id)
+      - [2.12.1.2. Property `GhcEngineSchema > planningData > departments > Department > fullName`](#planningData_departments_items_fullName)
+      - [2.12.1.3. Property `GhcEngineSchema > planningData > departments > Department > messageToDepartment`](#planningData_departments_items_messageToDepartment)
+      - [2.12.1.4. Property `GhcEngineSchema > planningData > departments > Department > isNew`](#planningData_departments_items_isNew)
+      - [2.12.1.5. Property `GhcEngineSchema > planningData > departments > Department > exKey`](#planningData_departments_items_exKey)
+      - [2.12.1.6. Property `GhcEngineSchema > planningData > departments > Department > email`](#planningData_departments_items_email)
+      - [2.12.1.7. Property `GhcEngineSchema > planningData > departments > Department > refTeacher`](#planningData_departments_items_refTeacher)
+        - [2.12.1.7.1. GhcEngineSchema > planningData > departments > Department > refTeacher > refTeacher items](#planningData_departments_items_refTeacher_items)
+      - [2.12.1.8. Property `GhcEngineSchema > planningData > departments > Department > refSubjects`](#planningData_departments_items_refSubjects)
+        - [2.12.1.8.1. GhcEngineSchema > planningData > departments > Department > refSubjects > refSubjects items](#planningData_departments_items_refSubjects_items)
+  - [2.13. Property `GhcEngineSchema > planningData > sessions`](#planningData_sessions)
+    - [2.13.1. GhcEngineSchema > planningData > sessions > Session](#planningData_sessions_items)
+      - [2.13.1.1. Property `GhcEngineSchema > planningData > sessions > Session > id`](#planningData_sessions_items_id)
+      - [2.13.1.2. Property `GhcEngineSchema > planningData > sessions > Session > refFrame`](#planningData_sessions_items_refFrame)
+      - [2.13.1.3. Property `GhcEngineSchema > planningData > sessions > Session > refMainTask`](#planningData_sessions_items_refMainTask)
+      - [2.13.1.4. Property `GhcEngineSchema > planningData > sessions > Session > refMainTeacher`](#planningData_sessions_items_refMainTeacher)
+      - [2.13.1.5. Property `GhcEngineSchema > planningData > sessions > Session > refMainSubject`](#planningData_sessions_items_refMainSubject)
+      - [2.13.1.6. Property `GhcEngineSchema > planningData > sessions > Session > refMainGroup`](#planningData_sessions_items_refMainGroup)
+        - [2.13.1.6.1. Property `GhcEngineSchema > planningData > sessions > Session > refMainGroup > refIdGroup`](#planningData_sessions_items_refMainGroup_refIdGroup)
+        - [2.13.1.6.2. Property `GhcEngineSchema > planningData > sessions > Session > refMainGroup > numStudents`](#planningData_sessions_items_refMainGroup_numStudents)
+      - [2.13.1.7. Property `GhcEngineSchema > planningData > sessions > Session > refColourInResult`](#planningData_sessions_items_refColourInResult)
+      - [2.13.1.8. Property `GhcEngineSchema > planningData > sessions > Session > otherElementsInClassRooms`](#planningData_sessions_items_otherElementsInClassRooms)
+        - [2.13.1.8.1. GhcEngineSchema > planningData > sessions > Session > otherElementsInClassRooms > OtherElementsInClassRooms](#planningData_sessions_items_otherElementsInClassRooms_items)
+          - [2.13.1.8.1.1. Property `GhcEngineSchema > planningData > sessions > Session > otherElementsInClassRooms > OtherElementsInClassRooms > refSubject`](#planningData_sessions_items_otherElementsInClassRooms_items_refSubject)
+          - [2.13.1.8.1.2. Property `GhcEngineSchema > planningData > sessions > Session > otherElementsInClassRooms > OtherElementsInClassRooms > refTeacher`](#planningData_sessions_items_otherElementsInClassRooms_items_refTeacher)
+          - [2.13.1.8.1.3. Property `GhcEngineSchema > planningData > sessions > Session > otherElementsInClassRooms > OtherElementsInClassRooms > refGroup`](#planningData_sessions_items_otherElementsInClassRooms_items_refGroup)
+          - [2.13.1.8.1.4. Property `GhcEngineSchema > planningData > sessions > Session > otherElementsInClassRooms > OtherElementsInClassRooms > refTask`](#planningData_sessions_items_otherElementsInClassRooms_items_refTask)
+      - [2.13.1.9. Property `GhcEngineSchema > planningData > sessions > Session > distribution`](#planningData_sessions_items_distribution)
+        - [2.13.1.9.1. Property `GhcEngineSchema > planningData > sessions > Session > distribution > periods`](#planningData_sessions_items_distribution_periods)
+          - [2.13.1.9.1.1. GhcEngineSchema > planningData > sessions > Session > distribution > periods > RefPeriod](#planningData_sessions_items_distribution_periods_items)
+        - [2.13.1.9.2. Property `GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods`](#planningData_sessions_items_distribution_stablePeriods)
+          - [2.13.1.9.2.1. Property `GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods > stableTiming`](#planningData_sessions_items_distribution_stablePeriods_stableTiming)
+            - [2.13.1.9.2.1.1. GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods > stableTiming > DailyMinutes](#planningData_sessions_items_distribution_stablePeriods_stableTiming_items)
+          - [2.13.1.9.2.2. Property `GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods > variableTiming`](#planningData_sessions_items_distribution_stablePeriods_variableTiming)
+            - [2.13.1.9.2.2.1. Property `GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods > variableTiming > minutesAmount`](#planningData_sessions_items_distribution_stablePeriods_variableTiming_minutesAmount)
+            - [2.13.1.9.2.2.2. Property `GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods > variableTiming > maxMinutesDaily`](#planningData_sessions_items_distribution_stablePeriods_variableTiming_maxMinutesDaily)
+            - [2.13.1.9.2.2.3. Property `GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods > variableTiming > minMinutesDaily`](#planningData_sessions_items_distribution_stablePeriods_variableTiming_minMinutesDaily)
+            - [2.13.1.9.2.2.4. Property `GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods > variableTiming > avoidMaxDuration`](#planningData_sessions_items_distribution_stablePeriods_variableTiming_avoidMaxDuration)
+            - [2.13.1.9.2.2.5. Property `GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods > variableTiming > avoidMinDuration`](#planningData_sessions_items_distribution_stablePeriods_variableTiming_avoidMinDuration)
+            - [2.13.1.9.2.2.6. Property `GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods > variableTiming > allowDiscontinuity`](#planningData_sessions_items_distribution_stablePeriods_variableTiming_allowDiscontinuity)
+          - [2.13.1.9.2.3. Property `GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods > stableTimingList`](#planningData_sessions_items_distribution_stablePeriods_stableTimingList)
+            - [2.13.1.9.2.3.1. GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods > stableTimingList > StableTiming](#planningData_sessions_items_distribution_stablePeriods_stableTimingList_items)
+        - [2.13.1.9.3. Property `GhcEngineSchema > planningData > sessions > Session > distribution > variablePeriods`](#planningData_sessions_items_distribution_variablePeriods)
+          - [2.13.1.9.3.1. Property `GhcEngineSchema > planningData > sessions > Session > distribution > variablePeriods > timing`](#planningData_sessions_items_distribution_variablePeriods_timing)
+            - [2.13.1.9.3.1.1. Property `GhcEngineSchema > planningData > sessions > Session > distribution > variablePeriods > timing > stableTiming`](#planningData_sessions_items_distribution_variablePeriods_timing_stableTiming)
+            - [2.13.1.9.3.1.2. Property `GhcEngineSchema > planningData > sessions > Session > distribution > variablePeriods > timing > variableTiming`](#planningData_sessions_items_distribution_variablePeriods_timing_variableTiming)
+          - [2.13.1.9.3.2. Property `GhcEngineSchema > planningData > sessions > Session > distribution > variablePeriods > maximunTimeInPeriod`](#planningData_sessions_items_distribution_variablePeriods_maximunTimeInPeriod)
+          - [2.13.1.9.3.3. Property `GhcEngineSchema > planningData > sessions > Session > distribution > variablePeriods > minimnunTimeInPeriod`](#planningData_sessions_items_distribution_variablePeriods_minimnunTimeInPeriod)
+          - [2.13.1.9.3.4. Property `GhcEngineSchema > planningData > sessions > Session > distribution > variablePeriods > maximumTimeframe`](#planningData_sessions_items_distribution_variablePeriods_maximumTimeframe)
+      - [2.13.1.10. Property `GhcEngineSchema > planningData > sessions > Session > sessionClassRooms`](#planningData_sessions_items_sessionClassRooms)
+        - [2.13.1.10.1. Property `GhcEngineSchema > planningData > sessions > Session > sessionClassRooms > classRoomsToAssign`](#planningData_sessions_items_sessionClassRooms_classRoomsToAssign)
+          - [2.13.1.10.1.1. GhcEngineSchema > planningData > sessions > Session > sessionClassRooms > classRoomsToAssign > RefClassRoomToAssign](#planningData_sessions_items_sessionClassRooms_classRoomsToAssign_items)
+            - [2.13.1.10.1.1.1. Property `GhcEngineSchema > planningData > sessions > Session > sessionClassRooms > classRoomsToAssign > RefClassRoomToAssign > classRoom`](#planningData_sessions_items_sessionClassRooms_classRoomsToAssign_items_classRoom)
+            - [2.13.1.10.1.1.2. Property `GhcEngineSchema > planningData > sessions > Session > sessionClassRooms > classRoomsToAssign > RefClassRoomToAssign > classRoomsSetsList`](#planningData_sessions_items_sessionClassRooms_classRoomsToAssign_items_classRoomsSetsList)
+              - [2.13.1.10.1.1.2.1. GhcEngineSchema > planningData > sessions > Session > sessionClassRooms > classRoomsToAssign > RefClassRoomToAssign > classRoomsSetsList > ClassRoomSetRef](#planningData_sessions_items_sessionClassRooms_classRoomsToAssign_items_classRoomsSetsList_items)
+        - [2.13.1.10.2. Property `GhcEngineSchema > planningData > sessions > Session > sessionClassRooms > capacityPreference`](#planningData_sessions_items_sessionClassRooms_capacityPreference)
+        - [2.13.1.10.3. Property `GhcEngineSchema > planningData > sessions > Session > sessionClassRooms > capacityType`](#planningData_sessions_items_sessionClassRooms_capacityType)
+        - [2.13.1.10.4. Property `GhcEngineSchema > planningData > sessions > Session > sessionClassRooms > alwaysSameClassRoom`](#planningData_sessions_items_sessionClassRooms_alwaysSameClassRoom)
+      - [2.13.1.11. Property `GhcEngineSchema > planningData > sessions > Session > frameTemplate`](#planningData_sessions_items_frameTemplate)
+        - [2.13.1.11.1. GhcEngineSchema > planningData > sessions > Session > frameTemplate > SessionSectionPreference](#planningData_sessions_items_frameTemplate_items)
+          - [2.13.1.11.1.1. Property `GhcEngineSchema > planningData > sessions > Session > frameTemplate > SessionSectionPreference > day`](#planningData_sessions_items_frameTemplate_items_day)
+          - [2.13.1.11.1.2. Property `GhcEngineSchema > planningData > sessions > Session > frameTemplate > SessionSectionPreference > index`](#planningData_sessions_items_frameTemplate_items_index)
+          - [2.13.1.11.1.3. Property `GhcEngineSchema > planningData > sessions > Session > frameTemplate > SessionSectionPreference > frame`](#planningData_sessions_items_frameTemplate_items_frame)
+          - [2.13.1.11.1.4. Property `GhcEngineSchema > planningData > sessions > Session > frameTemplate > SessionSectionPreference > type`](#planningData_sessions_items_frameTemplate_items_type)
+      - [2.13.1.12. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings`](#planningData_sessions_items_sessionSettings)
+        - [2.13.1.12.1. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings > avoidFirstHourSessions`](#planningData_sessions_items_sessionSettings_avoidFirstHourSessions)
+        - [2.13.1.12.2. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings > avoidLastHourSessions`](#planningData_sessions_items_sessionSettings_avoidLastHourSessions)
+        - [2.13.1.12.3. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings > avoidAssingLastHourAndFirstNextDay`](#planningData_sessions_items_sessionSettings_avoidAssingLastHourAndFirstNextDay)
+        - [2.13.1.12.4. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings > sameHourPreference`](#planningData_sessions_items_sessionSettings_sameHourPreference)
+        - [2.13.1.12.5. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings > avoidAfternoonSessions`](#planningData_sessions_items_sessionSettings_avoidAfternoonSessions)
+        - [2.13.1.12.6. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings > avoidAfterBreakSessions`](#planningData_sessions_items_sessionSettings_avoidAfterBreakSessions)
+        - [2.13.1.12.7. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings > nonBreakInTheMiddleOfConsecutiveSession`](#planningData_sessions_items_sessionSettings_nonBreakInTheMiddleOfConsecutiveSession)
+        - [2.13.1.12.8. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings > nonBreakInTheMiddleOfSession`](#planningData_sessions_items_sessionSettings_nonBreakInTheMiddleOfSession)
+        - [2.13.1.12.9. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings > followedDaysPreference`](#planningData_sessions_items_sessionSettings_followedDaysPreference)
+        - [2.13.1.12.10. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings > consecutiveWeeksBorders`](#planningData_sessions_items_sessionSettings_consecutiveWeeksBorders)
+        - [2.13.1.12.11. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings > samePositionEveryPeriod`](#planningData_sessions_items_sessionSettings_samePositionEveryPeriod)
+      - [2.13.1.13. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations`](#planningData_sessions_items_sessionRelations)
+        - [2.13.1.13.1. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > refSimultaneusGroup`](#planningData_sessions_items_sessionRelations_refSimultaneusGroup)
+        - [2.13.1.13.2. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > differentDays`](#planningData_sessions_items_sessionRelations_differentDays)
+          - [2.13.1.13.2.1. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > differentDays > refSesions`](#planningData_sessions_items_sessionRelations_differentDays_refSesions)
+            - [2.13.1.13.2.1.1. GhcEngineSchema > planningData > sessions > Session > sessionRelations > differentDays > refSesions > SessionRef](#planningData_sessions_items_sessionRelations_differentDays_refSesions_items)
+          - [2.13.1.13.2.2. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > differentDays > daysSetting`](#planningData_sessions_items_sessionRelations_differentDays_daysSetting)
+        - [2.13.1.13.3. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > consecutiveGroup`](#planningData_sessions_items_sessionRelations_consecutiveGroup)
+          - [2.13.1.13.3.1. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > consecutiveGroup > id`](#planningData_sessions_items_sessionRelations_consecutiveGroup_id)
+          - [2.13.1.13.3.2. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > consecutiveGroup > refSessions`](#planningData_sessions_items_sessionRelations_consecutiveGroup_refSessions)
+            - [2.13.1.13.3.2.1. GhcEngineSchema > planningData > sessions > Session > sessionRelations > consecutiveGroup > refSessions > SessionRef](#planningData_sessions_items_sessionRelations_consecutiveGroup_refSessions_items)
+          - [2.13.1.13.3.3. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > consecutiveGroup > order`](#planningData_sessions_items_sessionRelations_consecutiveGroup_order)
+          - [2.13.1.13.3.4. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > consecutiveGroup > allowBreakBetweenSessions`](#planningData_sessions_items_sessionRelations_consecutiveGroup_allowBreakBetweenSessions)
+        - [2.13.1.13.4. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > nonConsecutiveSessions`](#planningData_sessions_items_sessionRelations_nonConsecutiveSessions)
+          - [2.13.1.13.4.1. GhcEngineSchema > planningData > sessions > Session > sessionRelations > nonConsecutiveSessions > SessionRef](#planningData_sessions_items_sessionRelations_nonConsecutiveSessions_items)
+        - [2.13.1.13.5. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > nonSimultaneus`](#planningData_sessions_items_sessionRelations_nonSimultaneus)
+          - [2.13.1.13.5.1. GhcEngineSchema > planningData > sessions > Session > sessionRelations > nonSimultaneus > SessionRef](#planningData_sessions_items_sessionRelations_nonSimultaneus_items)
+        - [2.13.1.13.6. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > previousTo`](#planningData_sessions_items_sessionRelations_previousTo)
+          - [2.13.1.13.6.1. GhcEngineSchema > planningData > sessions > Session > sessionRelations > previousTo > SessionRef](#planningData_sessions_items_sessionRelations_previousTo_items)
+        - [2.13.1.13.7. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > afterTo`](#planningData_sessions_items_sessionRelations_afterTo)
+          - [2.13.1.13.7.1. GhcEngineSchema > planningData > sessions > Session > sessionRelations > afterTo > SessionRef](#planningData_sessions_items_sessionRelations_afterTo_items)
+        - [2.13.1.13.8. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > maximumSeparationTo`](#planningData_sessions_items_sessionRelations_maximumSeparationTo)
+          - [2.13.1.13.8.1. GhcEngineSchema > planningData > sessions > Session > sessionRelations > maximumSeparationTo > MaximumSeparationToSession](#planningData_sessions_items_sessionRelations_maximumSeparationTo_items)
+            - [2.13.1.13.8.1.1. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > maximumSeparationTo > MaximumSeparationToSession > refSessions`](#planningData_sessions_items_sessionRelations_maximumSeparationTo_items_refSessions)
+              - [2.13.1.13.8.1.1.1. GhcEngineSchema > planningData > sessions > Session > sessionRelations > maximumSeparationTo > MaximumSeparationToSession > refSessions > SessionRef](#planningData_sessions_items_sessionRelations_maximumSeparationTo_items_refSessions_items)
+            - [2.13.1.13.8.1.2. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > maximumSeparationTo > MaximumSeparationToSession > days`](#planningData_sessions_items_sessionRelations_maximumSeparationTo_items_days)
+        - [2.13.1.13.9. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > minimumSeparationTo`](#planningData_sessions_items_sessionRelations_minimumSeparationTo)
+          - [2.13.1.13.9.1. GhcEngineSchema > planningData > sessions > Session > sessionRelations > minimumSeparationTo > MinimumSeparationToSession](#planningData_sessions_items_sessionRelations_minimumSeparationTo_items)
+            - [2.13.1.13.9.1.1. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > minimumSeparationTo > MinimumSeparationToSession > refSessions`](#planningData_sessions_items_sessionRelations_minimumSeparationTo_items_refSessions)
+              - [2.13.1.13.9.1.1.1. GhcEngineSchema > planningData > sessions > Session > sessionRelations > minimumSeparationTo > MinimumSeparationToSession > refSessions > SessionRef](#planningData_sessions_items_sessionRelations_minimumSeparationTo_items_refSessions_items)
+            - [2.13.1.13.9.1.2. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > minimumSeparationTo > MinimumSeparationToSession > days`](#planningData_sessions_items_sessionRelations_minimumSeparationTo_items_days)
+      - [2.13.1.14. Property `GhcEngineSchema > planningData > sessions > Session > department`](#planningData_sessions_items_department)
+  - [2.14. Property `GhcEngineSchema > planningData > meetings`](#planningData_meetings)
+    - [2.14.1. GhcEngineSchema > planningData > meetings > Meeting](#planningData_meetings_items)
+      - [2.14.1.1. Property `GhcEngineSchema > planningData > meetings > Meeting > id`](#planningData_meetings_items_id)
+      - [2.14.1.2. Property `GhcEngineSchema > planningData > meetings > Meeting > refFrame`](#planningData_meetings_items_refFrame)
+      - [2.14.1.3. Property `GhcEngineSchema > planningData > meetings > Meeting > refTask`](#planningData_meetings_items_refTask)
+      - [2.14.1.4. Property `GhcEngineSchema > planningData > meetings > Meeting > refTeachers`](#planningData_meetings_items_refTeachers)
+        - [2.14.1.4.1. GhcEngineSchema > planningData > meetings > Meeting > refTeachers > RefTeacher](#planningData_meetings_items_refTeachers_items)
+      - [2.14.1.5. Property `GhcEngineSchema > planningData > meetings > Meeting > refColourInResult`](#planningData_meetings_items_refColourInResult)
+      - [2.14.1.6. Property `GhcEngineSchema > planningData > meetings > Meeting > distribution`](#planningData_meetings_items_distribution)
+      - [2.14.1.7. Property `GhcEngineSchema > planningData > meetings > Meeting > frameTemplate`](#planningData_meetings_items_frameTemplate)
+      - [2.14.1.8. Property `GhcEngineSchema > planningData > meetings > Meeting > refClassRoomToAssign`](#planningData_meetings_items_refClassRoomToAssign)
+      - [2.14.1.9. Property `GhcEngineSchema > planningData > meetings > Meeting > refBuilding`](#planningData_meetings_items_refBuilding)
+      - [2.14.1.10. Property `GhcEngineSchema > planningData > meetings > Meeting > settings`](#planningData_meetings_items_settings)
+        - [2.14.1.10.1. Property `GhcEngineSchema > planningData > meetings > Meeting > settings > computeForMaxMinOccupancy`](#planningData_meetings_items_settings_computeForMaxMinOccupancy)
+        - [2.14.1.10.2. Property `GhcEngineSchema > planningData > meetings > Meeting > settings > samePositionEveryPeriod`](#planningData_meetings_items_settings_samePositionEveryPeriod)
+  - [2.15. Property `GhcEngineSchema > planningData > complementaryActivities`](#planningData_complementaryActivities)
+    - [2.15.1. GhcEngineSchema > planningData > complementaryActivities > Complementary](#planningData_complementaryActivities_items)
+      - [2.15.1.1. Property `GhcEngineSchema > planningData > complementaryActivities > Complementary > id`](#planningData_complementaryActivities_items_id)
+      - [2.15.1.2. Property `GhcEngineSchema > planningData > complementaryActivities > Complementary > refFrame`](#planningData_complementaryActivities_items_refFrame)
+      - [2.15.1.3. Property `GhcEngineSchema > planningData > complementaryActivities > Complementary > refTask`](#planningData_complementaryActivities_items_refTask)
+      - [2.15.1.4. Property `GhcEngineSchema > planningData > complementaryActivities > Complementary > refTeacher`](#planningData_complementaryActivities_items_refTeacher)
+      - [2.15.1.5. Property `GhcEngineSchema > planningData > complementaryActivities > Complementary > refColourInResult`](#planningData_complementaryActivities_items_refColourInResult)
+      - [2.15.1.6. Property `GhcEngineSchema > planningData > complementaryActivities > Complementary > distribution`](#planningData_complementaryActivities_items_distribution)
+      - [2.15.1.7. Property `GhcEngineSchema > planningData > complementaryActivities > Complementary > frameTemplate`](#planningData_complementaryActivities_items_frameTemplate)
+      - [2.15.1.8. Property `GhcEngineSchema > planningData > complementaryActivities > Complementary > refClassRoomToAssign`](#planningData_complementaryActivities_items_refClassRoomToAssign)
+      - [2.15.1.9. Property `GhcEngineSchema > planningData > complementaryActivities > Complementary > refBuilding`](#planningData_complementaryActivities_items_refBuilding)
+      - [2.15.1.10. Property `GhcEngineSchema > planningData > complementaryActivities > Complementary > settings`](#planningData_complementaryActivities_items_settings)
+  - [2.16. Property `GhcEngineSchema > planningData > onCallServices`](#planningData_onCallServices)
+    - [2.16.1. GhcEngineSchema > planningData > onCallServices > OnCallService](#planningData_onCallServices_items)
+      - [2.16.1.1. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > id`](#planningData_onCallServices_items_id)
+      - [2.16.1.2. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refFrame`](#planningData_onCallServices_items_refFrame)
+      - [2.16.1.3. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refPeriods`](#planningData_onCallServices_items_refPeriods)
+        - [2.16.1.3.1. GhcEngineSchema > planningData > onCallServices > OnCallService > refPeriods > RefPeriod](#planningData_onCallServices_items_refPeriods_items)
+      - [2.16.1.4. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refTask`](#planningData_onCallServices_items_refTask)
+      - [2.16.1.5. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > inBreak`](#planningData_onCallServices_items_inBreak)
+      - [2.16.1.6. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > teachersEachSection`](#planningData_onCallServices_items_teachersEachSection)
+        - [2.16.1.6.1. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > teachersEachSection > byDefault`](#planningData_onCallServices_items_teachersEachSection_byDefault)
+        - [2.16.1.6.2. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > teachersEachSection > bySection`](#planningData_onCallServices_items_teachersEachSection_bySection)
+          - [2.16.1.6.2.1. GhcEngineSchema > planningData > onCallServices > OnCallService > teachersEachSection > bySection > TeachersBySection](#planningData_onCallServices_items_teachersEachSection_bySection_items)
+            - [2.16.1.6.2.1.1. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > teachersEachSection > bySection > TeachersBySection > day`](#planningData_onCallServices_items_teachersEachSection_bySection_items_day)
+            - [2.16.1.6.2.1.2. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > teachersEachSection > bySection > TeachersBySection > index`](#planningData_onCallServices_items_teachersEachSection_bySection_items_index)
+            - [2.16.1.6.2.1.3. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > teachersEachSection > bySection > TeachersBySection > numTeachers`](#planningData_onCallServices_items_teachersEachSection_bySection_items_numTeachers)
+      - [2.16.1.7. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refTeachers`](#planningData_onCallServices_items_refTeachers)
+        - [2.16.1.7.1. GhcEngineSchema > planningData > onCallServices > OnCallService > refTeachers > RefTeacher](#planningData_onCallServices_items_refTeachers_items)
+          - [2.16.1.7.1.1. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refTeachers > RefTeacher > teacherId`](#planningData_onCallServices_items_refTeachers_items_teacherId)
+          - [2.16.1.7.1.2. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refTeachers > RefTeacher > numOfSections`](#planningData_onCallServices_items_refTeachers_items_numOfSections)
+          - [2.16.1.7.1.3. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refTeachers > RefTeacher > teacherFrameTemplate`](#planningData_onCallServices_items_refTeachers_items_teacherFrameTemplate)
+            - [2.16.1.7.1.3.1. GhcEngineSchema > planningData > onCallServices > OnCallService > refTeachers > RefTeacher > teacherFrameTemplate > OnCallSectionPreference](#planningData_onCallServices_items_refTeachers_items_teacherFrameTemplate_items)
+              - [2.16.1.7.1.3.1.1. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refTeachers > RefTeacher > teacherFrameTemplate > OnCallSectionPreference > day`](#planningData_onCallServices_items_refTeachers_items_teacherFrameTemplate_items_day)
+              - [2.16.1.7.1.3.1.2. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refTeachers > RefTeacher > teacherFrameTemplate > OnCallSectionPreference > index`](#planningData_onCallServices_items_refTeachers_items_teacherFrameTemplate_items_index)
+              - [2.16.1.7.1.3.1.3. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refTeachers > RefTeacher > teacherFrameTemplate > OnCallSectionPreference > frame`](#planningData_onCallServices_items_refTeachers_items_teacherFrameTemplate_items_frame)
+              - [2.16.1.7.1.3.1.4. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refTeachers > RefTeacher > teacherFrameTemplate > OnCallSectionPreference > type`](#planningData_onCallServices_items_refTeachers_items_teacherFrameTemplate_items_type)
+      - [2.16.1.8. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refColourInResult`](#planningData_onCallServices_items_refColourInResult)
+      - [2.16.1.9. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > frameTemplate`](#planningData_onCallServices_items_frameTemplate)
+      - [2.16.1.10. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refBuilding`](#planningData_onCallServices_items_refBuilding)
+      - [2.16.1.11. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > settings`](#planningData_onCallServices_items_settings)
+  - [2.17. Property `GhcEngineSchema > planningData > optimizationWeights`](#planningData_optimizationWeights)
+    - [2.17.1. Property `GhcEngineSchema > planningData > optimizationWeights > timetableGaps`](#planningData_optimizationWeights_timetableGaps)
+      - [2.17.1.1. Property `GhcEngineSchema > planningData > optimizationWeights > timetableGaps > groupGaps`](#planningData_optimizationWeights_timetableGaps_groupGaps)
+      - [2.17.1.2. Property `GhcEngineSchema > planningData > optimizationWeights > timetableGaps > teacherGaps`](#planningData_optimizationWeights_timetableGaps_teacherGaps)
+    - [2.17.2. Property `GhcEngineSchema > planningData > optimizationWeights > nonPreferredPositions`](#planningData_optimizationWeights_nonPreferredPositions)
+      - [2.17.2.1. Property `GhcEngineSchema > planningData > optimizationWeights > nonPreferredPositions > inGroups`](#planningData_optimizationWeights_nonPreferredPositions_inGroups)
+      - [2.17.2.2. Property `GhcEngineSchema > planningData > optimizationWeights > nonPreferredPositions > inTeachers`](#planningData_optimizationWeights_nonPreferredPositions_inTeachers)
+      - [2.17.2.3. Property `GhcEngineSchema > planningData > optimizationWeights > nonPreferredPositions > inSubjectsAndTask`](#planningData_optimizationWeights_nonPreferredPositions_inSubjectsAndTask)
+      - [2.17.2.4. Property `GhcEngineSchema > planningData > optimizationWeights > nonPreferredPositions > inSessions`](#planningData_optimizationWeights_nonPreferredPositions_inSessions)
+    - [2.17.3. Property `GhcEngineSchema > planningData > optimizationWeights > sessions`](#planningData_optimizationWeights_sessions)
+      - [2.17.3.1. Property `GhcEngineSchema > planningData > optimizationWeights > sessions > nonPreferredClassRoom`](#planningData_optimizationWeights_sessions_nonPreferredClassRoom)
+      - [2.17.3.2. Property `GhcEngineSchema > planningData > optimizationWeights > sessions > samePositionEveryPeriod`](#planningData_optimizationWeights_sessions_samePositionEveryPeriod)
+      - [2.17.3.3. Property `GhcEngineSchema > planningData > optimizationWeights > sessions > consecutiveDays`](#planningData_optimizationWeights_sessions_consecutiveDays)
+      - [2.17.3.4. Property `GhcEngineSchema > planningData > optimizationWeights > sessions > bordersTimetable`](#planningData_optimizationWeights_sessions_bordersTimetable)
+      - [2.17.3.5. Property `GhcEngineSchema > planningData > optimizationWeights > sessions > afternoonOrAfterBreakClasses`](#planningData_optimizationWeights_sessions_afternoonOrAfterBreakClasses)
+      - [2.17.3.6. Property `GhcEngineSchema > planningData > optimizationWeights > sessions > sameHourSessionClasses`](#planningData_optimizationWeights_sessions_sameHourSessionClasses)
+      - [2.17.3.7. Property `GhcEngineSchema > planningData > optimizationWeights > sessions > classRoomsChanges`](#planningData_optimizationWeights_sessions_classRoomsChanges)
+    - [2.17.4. Property `GhcEngineSchema > planningData > optimizationWeights > teachers`](#planningData_optimizationWeights_teachers)
+      - [2.17.4.1. Property `GhcEngineSchema > planningData > optimizationWeights > teachers > teacherIncompatibities`](#planningData_optimizationWeights_teachers_teacherIncompatibities)
+      - [2.17.4.2. Property `GhcEngineSchema > planningData > optimizationWeights > teachers > uniformDailyDistribution`](#planningData_optimizationWeights_teachers_uniformDailyDistribution)
+      - [2.17.4.3. Property `GhcEngineSchema > planningData > optimizationWeights > teachers > excessContinuousTeaching`](#planningData_optimizationWeights_teachers_excessContinuousTeaching)
+      - [2.17.4.4. Property `GhcEngineSchema > planningData > optimizationWeights > teachers > excessPermanence`](#planningData_optimizationWeights_teachers_excessPermanence)
+      - [2.17.4.5. Property `GhcEngineSchema > planningData > optimizationWeights > teachers > continuousSessionsWithGroup`](#planningData_optimizationWeights_teachers_continuousSessionsWithGroup)
+      - [2.17.4.6. Property `GhcEngineSchema > planningData > optimizationWeights > teachers > onCallSectionsOnBorders`](#planningData_optimizationWeights_teachers_onCallSectionsOnBorders)
+      - [2.17.4.7. Property `GhcEngineSchema > planningData > optimizationWeights > teachers > teacherOrder`](#planningData_optimizationWeights_teachers_teacherOrder)
+  - [2.18. Property `GhcEngineSchema > planningData > engineSettings`](#planningData_engineSettings)
+    - [2.18.1. Property `GhcEngineSchema > planningData > engineSettings > teacherBalance`](#planningData_engineSettings_teacherBalance)
+    - [2.18.2. Property `GhcEngineSchema > planningData > engineSettings > countGapsAroundMidday`](#planningData_engineSettings_countGapsAroundMidday)
+- [3. Property `GhcEngineSchema > results`](#results)
+  - [3.1. GhcEngineSchema > results > EngineResult](#results_items)
+    - [3.1.1. Property `GhcEngineSchema > results > GhcResult > date`](#results_items_date)
+    - [3.1.2. Property `GhcEngineSchema > results > GhcResult > weight`](#results_items_weight)
+    - [3.1.3. Property `GhcEngineSchema > results > GhcResult > timetable`](#results_items_timetable)
+      - [3.1.3.1. Property `GhcEngineSchema > results > GhcResult > timetable > anonymousClassRooms`](#results_items_timetable_anonymousClassRooms)
+        - [3.1.3.1.1. GhcEngineSchema > results > GhcResult > timetable > anonymousClassRooms > AnonymousClassRoom](#results_items_timetable_anonymousClassRooms_items)
+          - [3.1.3.1.1.1. Property `GhcEngineSchema > results > GhcResult > timetable > anonymousClassRooms > AnonymousClassRoom > refClassRoomsSet`](#results_items_timetable_anonymousClassRooms_items_refClassRoomsSet)
+          - [3.1.3.1.1.2. Property `GhcEngineSchema > results > GhcResult > timetable > anonymousClassRooms > AnonymousClassRoom > classRoomsCreated`](#results_items_timetable_anonymousClassRooms_items_classRoomsCreated)
+            - [3.1.3.1.1.2.1. GhcEngineSchema > results > GhcResult > timetable > anonymousClassRooms > AnonymousClassRoom > classRoomsCreated > AnonymousRoom](#results_items_timetable_anonymousClassRooms_items_classRoomsCreated_items)
+      - [3.1.3.2. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections`](#results_items_timetable_assignedSections)
+        - [3.1.3.2.1. GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection](#results_items_timetable_assignedSections_items)
+          - [3.1.3.2.1.1. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > refFrame`](#results_items_timetable_assignedSections_items_refFrame)
+          - [3.1.3.2.1.2. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > day`](#results_items_timetable_assignedSections_items_day)
+          - [3.1.3.2.1.3. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > realIndex`](#results_items_timetable_assignedSections_items_realIndex)
+          - [3.1.3.2.1.4. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > fictionalIndex`](#results_items_timetable_assignedSections_items_fictionalIndex)
+          - [3.1.3.2.1.5. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > startTime`](#results_items_timetable_assignedSections_items_startTime)
+          - [3.1.3.2.1.6. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > endTime`](#results_items_timetable_assignedSections_items_endTime)
+          - [3.1.3.2.1.7. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment`](#results_items_timetable_assignedSections_items_assignment)
+            - [3.1.3.2.1.7.1. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions`](#results_items_timetable_assignedSections_items_assignment_teachingSessions)
+              - [3.1.3.2.1.7.1.1. GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items)
+                - [3.1.3.2.1.7.1.1.1. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refSession`](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refSession)
+                - [3.1.3.2.1.7.1.1.2. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refClassRomms`](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refClassRomms)
+                  - [3.1.3.2.1.7.1.1.2.1. GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refClassRomms > RefclassRomm](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refClassRomms_items)
+                - [3.1.3.2.1.7.1.1.3. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refTeachers`](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refTeachers)
+                  - [3.1.3.2.1.7.1.1.3.1. GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refTeachers > RefTeacher](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refTeachers_items)
+                - [3.1.3.2.1.7.1.1.4. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refContinuosBlock`](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refContinuosBlock)
+            - [3.1.3.2.1.7.2. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > meetings`](#results_items_timetable_assignedSections_items_assignment_meetings)
+              - [3.1.3.2.1.7.2.1. GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > meetings > AssignedMeeting](#results_items_timetable_assignedSections_items_assignment_meetings_items)
+                - [3.1.3.2.1.7.2.1.1. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > meetings > AssignedMeeting > refMeeting`](#results_items_timetable_assignedSections_items_assignment_meetings_items_refMeeting)
+                - [3.1.3.2.1.7.2.1.2. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > meetings > AssignedMeeting > refClassRomms`](#results_items_timetable_assignedSections_items_assignment_meetings_items_refClassRomms)
+                - [3.1.3.2.1.7.2.1.3. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > meetings > AssignedMeeting > refContinuosBlock`](#results_items_timetable_assignedSections_items_assignment_meetings_items_refContinuosBlock)
+            - [3.1.3.2.1.7.3. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > complementaryActivities`](#results_items_timetable_assignedSections_items_assignment_complementaryActivities)
+              - [3.1.3.2.1.7.3.1. GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > complementaryActivities > AssignedComplementary](#results_items_timetable_assignedSections_items_assignment_complementaryActivities_items)
+                - [3.1.3.2.1.7.3.1.1. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > complementaryActivities > AssignedComplementary > refComplementary`](#results_items_timetable_assignedSections_items_assignment_complementaryActivities_items_refComplementary)
+                - [3.1.3.2.1.7.3.1.2. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > complementaryActivities > AssignedComplementary > refClassRomms`](#results_items_timetable_assignedSections_items_assignment_complementaryActivities_items_refClassRomms)
+                - [3.1.3.2.1.7.3.1.3. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > complementaryActivities > AssignedComplementary > refContinuosBlock`](#results_items_timetable_assignedSections_items_assignment_complementaryActivities_items_refContinuosBlock)
+            - [3.1.3.2.1.7.4. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > onCallServices`](#results_items_timetable_assignedSections_items_assignment_onCallServices)
+              - [3.1.3.2.1.7.4.1. GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > onCallServices > AssignedOnCallService](#results_items_timetable_assignedSections_items_assignment_onCallServices_items)
+                - [3.1.3.2.1.7.4.1.1. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > onCallServices > AssignedOnCallService > refOnCall`](#results_items_timetable_assignedSections_items_assignment_onCallServices_items_refOnCall)
+                - [3.1.3.2.1.7.4.1.2. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > onCallServices > AssignedOnCallService > refTeacher`](#results_items_timetable_assignedSections_items_assignment_onCallServices_items_refTeacher)
 
 **Title:** GhcEngineSchema
 
@@ -491,23 +490,11 @@
 
 | Property                         | Pattern | Type            | Deprecated | Definition                            | Title/Description |
 | -------------------------------- | ------- | --------------- | ---------- | ------------------------------------- | ----------------- |
-| - [id](#id )                     | No      | integer         | No         | -                                     | IdFile            |
 | + [meta](#meta )                 | No      | object          | No         | -                                     | FileMetadata      |
 | + [planningData](#planningData ) | No      | object          | No         | In ../common/planningData.schema.json | PlanningGhcData   |
 | - [results](#results )           | No      | array of object | No         | -                                     | EngineResults     |
 
-## <a name="id"></a>1. Property `GhcEngineSchema > id`
-
-**Title:** IdFile
-
-|              |           |
-| ------------ | --------- |
-| **Type**     | `integer` |
-| **Required** | No        |
-
-**Description:** Indicates the id number of the file at the Penalara Server.
-
-## <a name="meta"></a>2. Property `GhcEngineSchema > meta`
+## <a name="meta"></a>1. Property `GhcEngineSchema > meta`
 
 **Title:** FileMetadata
 
@@ -529,7 +516,7 @@
 | + [source](#meta_source )                     | No      | enum (of string) | No         | -          | SourceModule       |
 | - [fullMode](#meta_fullMode )                 | No      | boolean          | No         | -          | FullPlannerMode    |
 
-### <a name="meta_name"></a>2.1. Property `GhcEngineSchema > meta > name`
+### <a name="meta_name"></a>1.1. Property `GhcEngineSchema > meta > name`
 
 **Title:** TimetableName
 
@@ -540,7 +527,7 @@
 
 **Description:** Name of the Timetable
 
-### <a name="meta_versionJson"></a>2.2. Property `GhcEngineSchema > meta > versionJson`
+### <a name="meta_versionJson"></a>1.2. Property `GhcEngineSchema > meta > versionJson`
 
 **Title:** SchemaVersion
 
@@ -551,7 +538,7 @@
 
 **Description:** Version of multiplatformGHCSchema used
 
-### <a name="meta_createdDate"></a>2.3. Property `GhcEngineSchema > meta > createdDate`
+### <a name="meta_createdDate"></a>1.3. Property `GhcEngineSchema > meta > createdDate`
 
 **Title:** JsonCreatedDate
 
@@ -563,7 +550,7 @@
 
 **Description:** Json generation date.
 
-### <a name="meta_lastModifiedDate"></a>2.4. Property `GhcEngineSchema > meta > lastModifiedDate`
+### <a name="meta_lastModifiedDate"></a>1.4. Property `GhcEngineSchema > meta > lastModifiedDate`
 
 **Title:** JsonGenerationDate
 
@@ -575,7 +562,7 @@
 
 **Description:** Json last modification date.
 
-### <a name="meta_refUser"></a>2.5. Property `GhcEngineSchema > meta > refUser`
+### <a name="meta_refUser"></a>1.5. Property `GhcEngineSchema > meta > refUser`
 
 **Title:** UserReference
 
@@ -586,7 +573,7 @@
 
 **Description:** Contains a user reference who owns the file.
 
-### <a name="meta_source"></a>2.6. Property `GhcEngineSchema > meta > source`
+### <a name="meta_source"></a>1.6. Property `GhcEngineSchema > meta > source`
 
 **Title:** SourceModule
 
@@ -602,7 +589,7 @@ Must be one of:
 * "je"
 * "examenes"
 
-### <a name="meta_fullMode"></a>2.7. Property `GhcEngineSchema > meta > fullMode`
+### <a name="meta_fullMode"></a>1.7. Property `GhcEngineSchema > meta > fullMode`
 
 **Title:** FullPlannerMode
 
@@ -614,7 +601,7 @@ Must be one of:
 
 **Description:** Indicates if the planner must use the full mode.
 
-## <a name="planningData"></a>3. Property `GhcEngineSchema > planningData`
+## <a name="planningData"></a>2. Property `GhcEngineSchema > planningData`
 
 **Title:** PlanningGhcData
 
@@ -648,7 +635,7 @@ Must be one of:
 | - [optimizationWeights](#planningData_optimizationWeights )         | No      | object          | No         | -          | OptimizationWeights     |
 | - [engineSettings](#planningData_engineSettings )                   | No      | object          | No         | -          | EngineSettings          |
 
-### <a name="planningData_periods"></a>3.1. Property `GhcEngineSchema > planningData > periods`
+### <a name="planningData_periods"></a>2.1. Property `GhcEngineSchema > planningData > periods`
 
 **Title:** Periods
 
@@ -666,7 +653,7 @@ Must be one of:
 | + [periodsList](#planningData_periods_periodsList )         | No      | array of object | No         | -          | PeriodsList       |
 | - [periodsSets](#planningData_periods_periodsSets )         | No      | array of object | No         | -          | PeriodsSets       |
 
-#### <a name="planningData_periods_followedPeriods"></a>3.1.1. Property `GhcEngineSchema > planningData > periods > followedPeriods`
+#### <a name="planningData_periods_followedPeriods"></a>2.1.1. Property `GhcEngineSchema > planningData > periods > followedPeriods`
 
 **Title:** FollowedPeriods
 
@@ -678,7 +665,7 @@ Must be one of:
 
 **Description:** It indicates whether periods or weeks consider the last day of the previous period or week as consecutive days with the first day of the following period or week.
 
-#### <a name="planningData_periods_periodsList"></a>3.1.2. Property `GhcEngineSchema > planningData > periods > periodsList`
+#### <a name="planningData_periods_periodsList"></a>2.1.2. Property `GhcEngineSchema > planningData > periods > periodsList`
 
 **Title:** PeriodsList
 
@@ -701,7 +688,7 @@ Must be one of:
 | ------------------------------------------------- | ----------- |
 | [Period](#planningData_periods_periodsList_items) | -           |
 
-##### <a name="planningData_periods_periodsList_items"></a>3.1.2.1. GhcEngineSchema > planningData > periods > periodsList > Period
+##### <a name="planningData_periods_periodsList_items"></a>2.1.2.1. GhcEngineSchema > planningData > periods > periodsList > Period
 
 **Title:** Period
 
@@ -718,7 +705,7 @@ Must be one of:
 | + [lastDay](#planningData_periods_periodsList_items_lastDay )       | No      | integer         | No         | -          | The end day of the period (included).                                                                                                                                                          |
 | - [dayAliases](#planningData_periods_periodsList_items_dayAliases ) | No      | array of object | No         | -          | AliasDayList                                                                                                                                                                                   |
 
-###### <a name="planningData_periods_periodsList_items_id"></a>3.1.2.1.1. Property `GhcEngineSchema > planningData > periods > periodsList > Period > id`
+###### <a name="planningData_periods_periodsList_items_id"></a>2.1.2.1.1. Property `GhcEngineSchema > planningData > periods > periodsList > Period > id`
 
 |              |          |
 | ------------ | -------- |
@@ -727,7 +714,7 @@ Must be one of:
 
 **Description:** Period identifier.
 
-###### <a name="planningData_periods_periodsList_items_alias"></a>3.1.2.1.2. Property `GhcEngineSchema > planningData > periods > periodsList > Period > alias`
+###### <a name="planningData_periods_periodsList_items_alias"></a>2.1.2.1.2. Property `GhcEngineSchema > planningData > periods > periodsList > Period > alias`
 
 |              |          |
 | ------------ | -------- |
@@ -736,7 +723,7 @@ Must be one of:
 
 **Description:** Identifier assigned to the period based on how it corresponds to the dates in a calendar. It is an interval that indicates which actual calendar day the first and the last day correspond to.
 
-###### <a name="planningData_periods_periodsList_items_lastDay"></a>3.1.2.1.3. Property `GhcEngineSchema > planningData > periods > periodsList > Period > lastDay`
+###### <a name="planningData_periods_periodsList_items_lastDay"></a>2.1.2.1.3. Property `GhcEngineSchema > planningData > periods > periodsList > Period > lastDay`
 
 |              |           |
 | ------------ | --------- |
@@ -745,7 +732,7 @@ Must be one of:
 
 **Description:** The end day of the period (included).
 
-###### <a name="planningData_periods_periodsList_items_dayAliases"></a>3.1.2.1.4. Property `GhcEngineSchema > planningData > periods > periodsList > Period > dayAliases`
+###### <a name="planningData_periods_periodsList_items_dayAliases"></a>2.1.2.1.4. Property `GhcEngineSchema > planningData > periods > periodsList > Period > dayAliases`
 
 **Title:** AliasDayList
 
@@ -768,7 +755,7 @@ Must be one of:
 | ------------------------------------------------------------------------------- | ----------- |
 | [AliasDayDeifinition](#planningData_periods_periodsList_items_dayAliases_items) | -           |
 
-###### <a name="planningData_periods_periodsList_items_dayAliases_items"></a>3.1.2.1.4.1. GhcEngineSchema > planningData > periods > periodsList > Period > dayAliases > AliasDayDeifinition
+###### <a name="planningData_periods_periodsList_items_dayAliases_items"></a>2.1.2.1.4.1. GhcEngineSchema > planningData > periods > periodsList > Period > dayAliases > AliasDayDeifinition
 
 **Title:** AliasDayDeifinition
 
@@ -783,7 +770,7 @@ Must be one of:
 | + [dayId](#planningData_periods_periodsList_items_dayAliases_items_dayId ) | No      | integer | No         | -          | Identifier of the day of the week, it is unique across all weeks.     |
 | + [alias](#planningData_periods_periodsList_items_dayAliases_items_alias ) | No      | string  | No         | -          | Header to identify the day in the results table and the frame column. |
 
-###### <a name="planningData_periods_periodsList_items_dayAliases_items_dayId"></a>3.1.2.1.4.1.1. Property `GhcEngineSchema > planningData > periods > periodsList > Period > dayAliases > AliasDayDeifinition > dayId`
+###### <a name="planningData_periods_periodsList_items_dayAliases_items_dayId"></a>2.1.2.1.4.1.1. Property `GhcEngineSchema > planningData > periods > periodsList > Period > dayAliases > AliasDayDeifinition > dayId`
 
 |              |           |
 | ------------ | --------- |
@@ -792,7 +779,7 @@ Must be one of:
 
 **Description:** Identifier of the day of the week, it is unique across all weeks.
 
-###### <a name="planningData_periods_periodsList_items_dayAliases_items_alias"></a>3.1.2.1.4.1.2. Property `GhcEngineSchema > planningData > periods > periodsList > Period > dayAliases > AliasDayDeifinition > alias`
+###### <a name="planningData_periods_periodsList_items_dayAliases_items_alias"></a>2.1.2.1.4.1.2. Property `GhcEngineSchema > planningData > periods > periodsList > Period > dayAliases > AliasDayDeifinition > alias`
 
 |              |          |
 | ------------ | -------- |
@@ -801,7 +788,7 @@ Must be one of:
 
 **Description:** Header to identify the day in the results table and the frame column.
 
-#### <a name="planningData_periods_periodsSets"></a>3.1.3. Property `GhcEngineSchema > planningData > periods > periodsSets`
+#### <a name="planningData_periods_periodsSets"></a>2.1.3. Property `GhcEngineSchema > planningData > periods > periodsSets`
 
 **Title:** PeriodsSets
 
@@ -824,7 +811,7 @@ Must be one of:
 | ----------------------------------------------------- | ----------- |
 | [PeriodsSet](#planningData_periods_periodsSets_items) | -           |
 
-##### <a name="planningData_periods_periodsSets_items"></a>3.1.3.1. GhcEngineSchema > planningData > periods > periodsSets > PeriodsSet
+##### <a name="planningData_periods_periodsSets_items"></a>2.1.3.1. GhcEngineSchema > planningData > periods > periodsSets > PeriodsSet
 
 **Title:** PeriodsSet
 
@@ -839,7 +826,7 @@ Must be one of:
 | + [id](#planningData_periods_periodsSets_items_id )                 | No      | string          | No         | -          | Period identifier.                                       |
 | + [periodList](#planningData_periods_periodsSets_items_periodList ) | No      | array of string | No         | -          | List of identifiers of the weeks that belong to the set. |
 
-###### <a name="planningData_periods_periodsSets_items_id"></a>3.1.3.1.1. Property `GhcEngineSchema > planningData > periods > periodsSets > PeriodsSet > id`
+###### <a name="planningData_periods_periodsSets_items_id"></a>2.1.3.1.1. Property `GhcEngineSchema > planningData > periods > periodsSets > PeriodsSet > id`
 
 |              |          |
 | ------------ | -------- |
@@ -848,7 +835,7 @@ Must be one of:
 
 **Description:** Period identifier.
 
-###### <a name="planningData_periods_periodsSets_items_periodList"></a>3.1.3.1.2. Property `GhcEngineSchema > planningData > periods > periodsSets > PeriodsSet > periodList`
+###### <a name="planningData_periods_periodsSets_items_periodList"></a>2.1.3.1.2. Property `GhcEngineSchema > planningData > periods > periodsSets > PeriodsSet > periodList`
 
 |              |                   |
 | ------------ | ----------------- |
@@ -869,14 +856,14 @@ Must be one of:
 | ---------------------------------------------------------------------------- | ----------- |
 | [periodList items](#planningData_periods_periodsSets_items_periodList_items) | -           |
 
-###### <a name="planningData_periods_periodsSets_items_periodList_items"></a>3.1.3.1.2.1. GhcEngineSchema > planningData > periods > periodsSets > PeriodsSet > periodList > periodList items
+###### <a name="planningData_periods_periodsSets_items_periodList_items"></a>2.1.3.1.2.1. GhcEngineSchema > planningData > periods > periodsSets > PeriodsSet > periodList > periodList items
 
 |              |          |
 | ------------ | -------- |
 | **Type**     | `string` |
 | **Required** | No       |
 
-### <a name="planningData_frames"></a>3.2. Property `GhcEngineSchema > planningData > frames`
+### <a name="planningData_frames"></a>2.2. Property `GhcEngineSchema > planningData > frames`
 
 **Title:** Frames
 
@@ -899,7 +886,7 @@ Must be one of:
 | ----------------------------------- | ----------- |
 | [Frame](#planningData_frames_items) | -           |
 
-#### <a name="planningData_frames_items"></a>3.2.1. GhcEngineSchema > planningData > frames > Frame
+#### <a name="planningData_frames_items"></a>2.2.1. GhcEngineSchema > planningData > frames > Frame
 
 **Title:** Frame
 
@@ -915,7 +902,7 @@ Must be one of:
 | - [exKey](#planningData_frames_items_exKey ) | No      | string          | No         | -          | External key of the frame. |
 | + [days](#planningData_frames_items_days )   | No      | array of object | No         | -          | Days                       |
 
-##### <a name="planningData_frames_items_id"></a>3.2.1.1. Property `GhcEngineSchema > planningData > frames > Frame > id`
+##### <a name="planningData_frames_items_id"></a>2.2.1.1. Property `GhcEngineSchema > planningData > frames > Frame > id`
 
 |              |          |
 | ------------ | -------- |
@@ -924,7 +911,7 @@ Must be one of:
 
 **Description:** Frame identifier.
 
-##### <a name="planningData_frames_items_exKey"></a>3.2.1.2. Property `GhcEngineSchema > planningData > frames > Frame > exKey`
+##### <a name="planningData_frames_items_exKey"></a>2.2.1.2. Property `GhcEngineSchema > planningData > frames > Frame > exKey`
 
 |              |          |
 | ------------ | -------- |
@@ -933,7 +920,7 @@ Must be one of:
 
 **Description:** External key of the frame.
 
-##### <a name="planningData_frames_items_days"></a>3.2.1.3. Property `GhcEngineSchema > planningData > frames > Frame > days`
+##### <a name="planningData_frames_items_days"></a>2.2.1.3. Property `GhcEngineSchema > planningData > frames > Frame > days`
 
 **Title:** Days
 
@@ -956,7 +943,7 @@ Must be one of:
 | ------------------------------------------------- | ---------------------- |
 | [FrameDay](#planningData_frames_items_days_items) | Day with its sections. |
 
-###### <a name="planningData_frames_items_days_items"></a>3.2.1.3.1. GhcEngineSchema > planningData > frames > Frame > days > FrameDay
+###### <a name="planningData_frames_items_days_items"></a>2.2.1.3.1. GhcEngineSchema > planningData > frames > Frame > days > FrameDay
 
 **Title:** FrameDay
 
@@ -973,7 +960,7 @@ Must be one of:
 | + [day](#planningData_frames_items_days_items_day )           | No      | integer         | No         | -          | Day of the week.  |
 | + [sections](#planningData_frames_items_days_items_sections ) | No      | array of object | No         | -          | Sections          |
 
-###### <a name="planningData_frames_items_days_items_day"></a>3.2.1.3.1.1. Property `GhcEngineSchema > planningData > frames > Frame > days > FrameDay > day`
+###### <a name="planningData_frames_items_days_items_day"></a>2.2.1.3.1.1. Property `GhcEngineSchema > planningData > frames > Frame > days > FrameDay > day`
 
 |              |           |
 | ------------ | --------- |
@@ -982,7 +969,7 @@ Must be one of:
 
 **Description:** Day of the week.
 
-###### <a name="planningData_frames_items_days_items_sections"></a>3.2.1.3.1.2. Property `GhcEngineSchema > planningData > frames > Frame > days > FrameDay > sections`
+###### <a name="planningData_frames_items_days_items_sections"></a>2.2.1.3.1.2. Property `GhcEngineSchema > planningData > frames > Frame > days > FrameDay > sections`
 
 **Title:** Sections
 
@@ -1005,7 +992,7 @@ Must be one of:
 | --------------------------------------------------------------- | ----------- |
 | [Section](#planningData_frames_items_days_items_sections_items) | -           |
 
-###### <a name="planningData_frames_items_days_items_sections_items"></a>3.2.1.3.1.2.1. GhcEngineSchema > planningData > frames > Frame > days > FrameDay > sections > Section
+###### <a name="planningData_frames_items_days_items_sections_items"></a>2.2.1.3.1.2.1. GhcEngineSchema > planningData > frames > Frame > days > FrameDay > sections > Section
 
 **Title:** Section
 
@@ -1025,7 +1012,7 @@ Must be one of:
 | + [type](#planningData_frames_items_days_items_sections_items_type )           | No      | enum (of string) | No         | -          | SectionType                                                                 |
 | - [allowed](#planningData_frames_items_days_items_sections_items_allowed )     | No      | boolean          | No         | -          | It indicates if the section is available to assign.                         |
 
-###### <a name="planningData_frames_items_days_items_sections_items_index"></a>3.2.1.3.1.2.1.1. Property `GhcEngineSchema > planningData > frames > Frame > days > FrameDay > sections > Section > index`
+###### <a name="planningData_frames_items_days_items_sections_items_index"></a>2.2.1.3.1.2.1.1. Property `GhcEngineSchema > planningData > frames > Frame > days > FrameDay > sections > Section > index`
 
 |              |           |
 | ------------ | --------- |
@@ -1034,7 +1021,7 @@ Must be one of:
 
 **Description:** Index built into the day where the section is located.
 
-###### <a name="planningData_frames_items_days_items_sections_items_entryTime"></a>3.2.1.3.1.2.1.2. Property `GhcEngineSchema > planningData > frames > Frame > days > FrameDay > sections > Section > entryTime`
+###### <a name="planningData_frames_items_days_items_sections_items_entryTime"></a>2.2.1.3.1.2.1.2. Property `GhcEngineSchema > planningData > frames > Frame > days > FrameDay > sections > Section > entryTime`
 
 |              |          |
 | ------------ | -------- |
@@ -1044,7 +1031,7 @@ Must be one of:
 
 **Description:** Start time of the section.
 
-###### <a name="planningData_frames_items_days_items_sections_items_exitTime"></a>3.2.1.3.1.2.1.3. Property `GhcEngineSchema > planningData > frames > Frame > days > FrameDay > sections > Section > exitTime`
+###### <a name="planningData_frames_items_days_items_sections_items_exitTime"></a>2.2.1.3.1.2.1.3. Property `GhcEngineSchema > planningData > frames > Frame > days > FrameDay > sections > Section > exitTime`
 
 |              |          |
 | ------------ | -------- |
@@ -1054,7 +1041,7 @@ Must be one of:
 
 **Description:** End time of the section.
 
-###### <a name="planningData_frames_items_days_items_sections_items_exKey"></a>3.2.1.3.1.2.1.4. Property `GhcEngineSchema > planningData > frames > Frame > days > FrameDay > sections > Section > exKey`
+###### <a name="planningData_frames_items_days_items_sections_items_exKey"></a>2.2.1.3.1.2.1.4. Property `GhcEngineSchema > planningData > frames > Frame > days > FrameDay > sections > Section > exKey`
 
 |              |          |
 | ------------ | -------- |
@@ -1063,7 +1050,7 @@ Must be one of:
 
 **Description:** External key of the section.
 
-###### <a name="planningData_frames_items_days_items_sections_items_duration"></a>3.2.1.3.1.2.1.5. Property `GhcEngineSchema > planningData > frames > Frame > days > FrameDay > sections > Section > duration`
+###### <a name="planningData_frames_items_days_items_sections_items_duration"></a>2.2.1.3.1.2.1.5. Property `GhcEngineSchema > planningData > frames > Frame > days > FrameDay > sections > Section > duration`
 
 |              |           |
 | ------------ | --------- |
@@ -1072,7 +1059,7 @@ Must be one of:
 
 **Description:** It indicates the duration (real or proportional) of the section in minutes.
 
-###### <a name="planningData_frames_items_days_items_sections_items_type"></a>3.2.1.3.1.2.1.6. Property `GhcEngineSchema > planningData > frames > Frame > days > FrameDay > sections > Section > type`
+###### <a name="planningData_frames_items_days_items_sections_items_type"></a>2.2.1.3.1.2.1.6. Property `GhcEngineSchema > planningData > frames > Frame > days > FrameDay > sections > Section > type`
 
 **Title:** SectionType
 
@@ -1088,7 +1075,7 @@ Must be one of:
 * "break"
 * "midday"
 
-###### <a name="planningData_frames_items_days_items_sections_items_allowed"></a>3.2.1.3.1.2.1.7. Property `GhcEngineSchema > planningData > frames > Frame > days > FrameDay > sections > Section > allowed`
+###### <a name="planningData_frames_items_days_items_sections_items_allowed"></a>2.2.1.3.1.2.1.7. Property `GhcEngineSchema > planningData > frames > Frame > days > FrameDay > sections > Section > allowed`
 
 |              |           |
 | ------------ | --------- |
@@ -1098,7 +1085,7 @@ Must be one of:
 
 **Description:** It indicates if the section is available to assign.
 
-### <a name="planningData_buildings"></a>3.3. Property `GhcEngineSchema > planningData > buildings`
+### <a name="planningData_buildings"></a>2.3. Property `GhcEngineSchema > planningData > buildings`
 
 **Title:** Buildings
 
@@ -1121,7 +1108,7 @@ Must be one of:
 | ----------------------------------------- | ----------- |
 | [Building](#planningData_buildings_items) | -           |
 
-#### <a name="planningData_buildings_items"></a>3.3.1. GhcEngineSchema > planningData > buildings > Building
+#### <a name="planningData_buildings_items"></a>2.3.1. GhcEngineSchema > planningData > buildings > Building
 
 **Title:** Building
 
@@ -1137,7 +1124,7 @@ Must be one of:
 | - [fullName](#planningData_buildings_items_fullName )   | No      | string          | No         | -          | Building full name.  |
 | - [distances](#planningData_buildings_items_distances ) | No      | array of object | No         | -          | Distances            |
 
-##### <a name="planningData_buildings_items_id"></a>3.3.1.1. Property `GhcEngineSchema > planningData > buildings > Building > id`
+##### <a name="planningData_buildings_items_id"></a>2.3.1.1. Property `GhcEngineSchema > planningData > buildings > Building > id`
 
 |              |          |
 | ------------ | -------- |
@@ -1146,7 +1133,7 @@ Must be one of:
 
 **Description:** Building identifier.
 
-##### <a name="planningData_buildings_items_fullName"></a>3.3.1.2. Property `GhcEngineSchema > planningData > buildings > Building > fullName`
+##### <a name="planningData_buildings_items_fullName"></a>2.3.1.2. Property `GhcEngineSchema > planningData > buildings > Building > fullName`
 
 |              |          |
 | ------------ | -------- |
@@ -1155,7 +1142,7 @@ Must be one of:
 
 **Description:** Building full name.
 
-##### <a name="planningData_buildings_items_distances"></a>3.3.1.3. Property `GhcEngineSchema > planningData > buildings > Building > distances`
+##### <a name="planningData_buildings_items_distances"></a>2.3.1.3. Property `GhcEngineSchema > planningData > buildings > Building > distances`
 
 **Title:** Distances
 
@@ -1178,7 +1165,7 @@ Must be one of:
 | --------------------------------------------------------- | ----------- |
 | [Distance](#planningData_buildings_items_distances_items) | -           |
 
-###### <a name="planningData_buildings_items_distances_items"></a>3.3.1.3.1. GhcEngineSchema > planningData > buildings > Building > distances > Distance
+###### <a name="planningData_buildings_items_distances_items"></a>2.3.1.3.1. GhcEngineSchema > planningData > buildings > Building > distances > Distance
 
 **Title:** Distance
 
@@ -1193,7 +1180,7 @@ Must be one of:
 | + [refBuilding](#planningData_buildings_items_distances_items_refBuilding ) | No      | string  | No         | -          | Identifier of the other building that refers to the distance.   |
 | + [minutes](#planningData_buildings_items_distances_items_minutes )         | No      | integer | No         | -          | Distance in minutes from the building of the referred building. |
 
-###### <a name="planningData_buildings_items_distances_items_refBuilding"></a>3.3.1.3.1.1. Property `GhcEngineSchema > planningData > buildings > Building > distances > Distance > refBuilding`
+###### <a name="planningData_buildings_items_distances_items_refBuilding"></a>2.3.1.3.1.1. Property `GhcEngineSchema > planningData > buildings > Building > distances > Distance > refBuilding`
 
 |              |          |
 | ------------ | -------- |
@@ -1202,7 +1189,7 @@ Must be one of:
 
 **Description:** Identifier of the other building that refers to the distance.
 
-###### <a name="planningData_buildings_items_distances_items_minutes"></a>3.3.1.3.1.2. Property `GhcEngineSchema > planningData > buildings > Building > distances > Distance > minutes`
+###### <a name="planningData_buildings_items_distances_items_minutes"></a>2.3.1.3.1.2. Property `GhcEngineSchema > planningData > buildings > Building > distances > Distance > minutes`
 
 |              |           |
 | ------------ | --------- |
@@ -1211,7 +1198,7 @@ Must be one of:
 
 **Description:** Distance in minutes from the building of the referred building.
 
-### <a name="planningData_classRooms"></a>3.4. Property `GhcEngineSchema > planningData > classRooms`
+### <a name="planningData_classRooms"></a>2.4. Property `GhcEngineSchema > planningData > classRooms`
 
 **Title:** ClassRooms
 
@@ -1234,7 +1221,7 @@ Must be one of:
 | ------------------------------------------- | ----------- |
 | [Classroom](#planningData_classRooms_items) | -           |
 
-#### <a name="planningData_classRooms_items"></a>3.4.1. GhcEngineSchema > planningData > classRooms > Classroom
+#### <a name="planningData_classRooms_items"></a>2.4.1. GhcEngineSchema > planningData > classRooms > Classroom
 
 **Title:** Classroom
 
@@ -1256,7 +1243,7 @@ Must be one of:
 | - [refBuilding](#planningData_classRooms_items_refBuilding )     | No      | string          | No         | -          | Building identifier where the class is located.                                                 |
 | - [fullDay](#planningData_classRooms_items_fullDay )             | No      | boolean         | No         | -          | This indicates whether the classroom should be booked all day after holding a subject.          |
 
-##### <a name="planningData_classRooms_items_id"></a>3.4.1.1. Property `GhcEngineSchema > planningData > classRooms > Classroom > id`
+##### <a name="planningData_classRooms_items_id"></a>2.4.1.1. Property `GhcEngineSchema > planningData > classRooms > Classroom > id`
 
 |              |          |
 | ------------ | -------- |
@@ -1265,7 +1252,7 @@ Must be one of:
 
 **Description:** Identifier name of the classroom.
 
-##### <a name="planningData_classRooms_items_shortName"></a>3.4.1.2. Property `GhcEngineSchema > planningData > classRooms > Classroom > shortName`
+##### <a name="planningData_classRooms_items_shortName"></a>2.4.1.2. Property `GhcEngineSchema > planningData > classRooms > Classroom > shortName`
 
 |              |          |
 | ------------ | -------- |
@@ -1274,7 +1261,7 @@ Must be one of:
 
 **Description:** Short name of the classroom
 
-##### <a name="planningData_classRooms_items_fullName"></a>3.4.1.3. Property `GhcEngineSchema > planningData > classRooms > Classroom > fullName`
+##### <a name="planningData_classRooms_items_fullName"></a>2.4.1.3. Property `GhcEngineSchema > planningData > classRooms > Classroom > fullName`
 
 |              |          |
 | ------------ | -------- |
@@ -1283,7 +1270,7 @@ Must be one of:
 
 **Description:** Complete name of the classroom.
 
-##### <a name="planningData_classRooms_items_isDedicated"></a>3.4.1.4. Property `GhcEngineSchema > planningData > classRooms > Classroom > isDedicated`
+##### <a name="planningData_classRooms_items_isDedicated"></a>2.4.1.4. Property `GhcEngineSchema > planningData > classRooms > Classroom > isDedicated`
 
 |              |           |
 | ------------ | --------- |
@@ -1292,7 +1279,7 @@ Must be one of:
 
 **Description:** Indicates if the classroom is of a special-dedicated type, or is it a general purpose classroom
 
-##### <a name="planningData_classRooms_items_exKey"></a>3.4.1.5. Property `GhcEngineSchema > planningData > classRooms > Classroom > exKey`
+##### <a name="planningData_classRooms_items_exKey"></a>2.4.1.5. Property `GhcEngineSchema > planningData > classRooms > Classroom > exKey`
 
 |              |          |
 | ------------ | -------- |
@@ -1301,7 +1288,7 @@ Must be one of:
 
 **Description:** External key of the classroom
 
-##### <a name="planningData_classRooms_items_capacity"></a>3.4.1.6. Property `GhcEngineSchema > planningData > classRooms > Classroom > capacity`
+##### <a name="planningData_classRooms_items_capacity"></a>2.4.1.6. Property `GhcEngineSchema > planningData > classRooms > Classroom > capacity`
 
 |              |           |
 | ------------ | --------- |
@@ -1310,7 +1297,7 @@ Must be one of:
 
 **Description:** The maximum number of students the classroom can hold.
 
-##### <a name="planningData_classRooms_items_frameTemplate"></a>3.4.1.7. Property `GhcEngineSchema > planningData > classRooms > Classroom > frameTemplate`
+##### <a name="planningData_classRooms_items_frameTemplate"></a>2.4.1.7. Property `GhcEngineSchema > planningData > classRooms > Classroom > frameTemplate`
 
 **Title:** BannedFrameTemplate
 
@@ -1333,7 +1320,7 @@ Must be one of:
 | ----------------------------------------------------------------------------- | -------------------------------------------------------- |
 | [BannedSectionPreference](#planningData_classRooms_items_frameTemplate_items) | Template with only banned section assignment preference. |
 
-###### <a name="planningData_classRooms_items_frameTemplate_items"></a>3.4.1.7.1. GhcEngineSchema > planningData > classRooms > Classroom > frameTemplate > BannedSectionPreference
+###### <a name="planningData_classRooms_items_frameTemplate_items"></a>2.4.1.7.1. GhcEngineSchema > planningData > classRooms > Classroom > frameTemplate > BannedSectionPreference
 
 **Title:** BannedSectionPreference
 
@@ -1351,7 +1338,7 @@ Must be one of:
 | + [index](#planningData_classRooms_items_frameTemplate_items_index ) | No      | integer | No         | -          | Index built into the day where the section is located. |
 | + [frame](#planningData_classRooms_items_frameTemplate_items_frame ) | No      | string  | No         | -          | Frame identifier.                                      |
 
-###### <a name="planningData_classRooms_items_frameTemplate_items_day"></a>3.4.1.7.1.1. Property `GhcEngineSchema > planningData > classRooms > Classroom > frameTemplate > BannedSectionPreference > day`
+###### <a name="planningData_classRooms_items_frameTemplate_items_day"></a>2.4.1.7.1.1. Property `GhcEngineSchema > planningData > classRooms > Classroom > frameTemplate > BannedSectionPreference > day`
 
 |              |           |
 | ------------ | --------- |
@@ -1360,7 +1347,7 @@ Must be one of:
 
 **Description:** Day of the week when the section is located.
 
-###### <a name="planningData_classRooms_items_frameTemplate_items_index"></a>3.4.1.7.1.2. Property `GhcEngineSchema > planningData > classRooms > Classroom > frameTemplate > BannedSectionPreference > index`
+###### <a name="planningData_classRooms_items_frameTemplate_items_index"></a>2.4.1.7.1.2. Property `GhcEngineSchema > planningData > classRooms > Classroom > frameTemplate > BannedSectionPreference > index`
 
 |              |           |
 | ------------ | --------- |
@@ -1369,7 +1356,7 @@ Must be one of:
 
 **Description:** Index built into the day where the section is located.
 
-###### <a name="planningData_classRooms_items_frameTemplate_items_frame"></a>3.4.1.7.1.3. Property `GhcEngineSchema > planningData > classRooms > Classroom > frameTemplate > BannedSectionPreference > frame`
+###### <a name="planningData_classRooms_items_frameTemplate_items_frame"></a>2.4.1.7.1.3. Property `GhcEngineSchema > planningData > classRooms > Classroom > frameTemplate > BannedSectionPreference > frame`
 
 |              |          |
 | ------------ | -------- |
@@ -1378,7 +1365,7 @@ Must be one of:
 
 **Description:** Frame identifier.
 
-##### <a name="planningData_classRooms_items_refBuilding"></a>3.4.1.8. Property `GhcEngineSchema > planningData > classRooms > Classroom > refBuilding`
+##### <a name="planningData_classRooms_items_refBuilding"></a>2.4.1.8. Property `GhcEngineSchema > planningData > classRooms > Classroom > refBuilding`
 
 |              |          |
 | ------------ | -------- |
@@ -1387,7 +1374,7 @@ Must be one of:
 
 **Description:** Building identifier where the class is located.
 
-##### <a name="planningData_classRooms_items_fullDay"></a>3.4.1.9. Property `GhcEngineSchema > planningData > classRooms > Classroom > fullDay`
+##### <a name="planningData_classRooms_items_fullDay"></a>2.4.1.9. Property `GhcEngineSchema > planningData > classRooms > Classroom > fullDay`
 
 |              |           |
 | ------------ | --------- |
@@ -1397,7 +1384,7 @@ Must be one of:
 
 **Description:** This indicates whether the classroom should be booked all day after holding a subject.
 
-### <a name="planningData_classRoomsSets"></a>3.5. Property `GhcEngineSchema > planningData > classRoomsSets`
+### <a name="planningData_classRoomsSets"></a>2.5. Property `GhcEngineSchema > planningData > classRoomsSets`
 
 **Title:** ClassRoomsSets
 
@@ -1420,7 +1407,7 @@ Must be one of:
 | -------------------------------------------------- | ----------- |
 | [ClassRoomSet](#planningData_classRoomsSets_items) | -           |
 
-#### <a name="planningData_classRoomsSets_items"></a>3.5.1. GhcEngineSchema > planningData > classRoomsSets > ClassRoomSet
+#### <a name="planningData_classRoomsSets_items"></a>2.5.1. GhcEngineSchema > planningData > classRoomsSets > ClassRoomSet
 
 **Title:** ClassRoomSet
 
@@ -1436,7 +1423,7 @@ Must be one of:
 | + [rooms](#planningData_classRoomsSets_items_rooms )                   | No      | array of string | No         | -          | ClassRoomEntries                                                   |
 | - [anonymousRooms](#planningData_classRoomsSets_items_anonymousRooms ) | No      | integer         | No         | -          | Number of non-specific defined classrooms that the group contains. |
 
-##### <a name="planningData_classRoomsSets_items_id"></a>3.5.1.1. Property `GhcEngineSchema > planningData > classRoomsSets > ClassRoomSet > id`
+##### <a name="planningData_classRoomsSets_items_id"></a>2.5.1.1. Property `GhcEngineSchema > planningData > classRoomsSets > ClassRoomSet > id`
 
 |              |          |
 | ------------ | -------- |
@@ -1445,7 +1432,7 @@ Must be one of:
 
 **Description:** ClassRooms group identifier.
 
-##### <a name="planningData_classRoomsSets_items_rooms"></a>3.5.1.2. Property `GhcEngineSchema > planningData > classRoomsSets > ClassRoomSet > rooms`
+##### <a name="planningData_classRoomsSets_items_rooms"></a>2.5.1.2. Property `GhcEngineSchema > planningData > classRoomsSets > ClassRoomSet > rooms`
 
 **Title:** ClassRoomEntries
 
@@ -1468,7 +1455,7 @@ Must be one of:
 | -------------------------------------------------------------- | --------------------- |
 | [ClassRoomRef](#planningData_classRoomsSets_items_rooms_items) | Classroom identifier. |
 
-###### <a name="planningData_classRoomsSets_items_rooms_items"></a>3.5.1.2.1. GhcEngineSchema > planningData > classRoomsSets > ClassRoomSet > rooms > ClassRoomRef
+###### <a name="planningData_classRoomsSets_items_rooms_items"></a>2.5.1.2.1. GhcEngineSchema > planningData > classRoomsSets > ClassRoomSet > rooms > ClassRoomRef
 
 **Title:** ClassRoomRef
 
@@ -1479,7 +1466,7 @@ Must be one of:
 
 **Description:** Classroom identifier.
 
-##### <a name="planningData_classRoomsSets_items_anonymousRooms"></a>3.5.1.3. Property `GhcEngineSchema > planningData > classRoomsSets > ClassRoomSet > anonymousRooms`
+##### <a name="planningData_classRoomsSets_items_anonymousRooms"></a>2.5.1.3. Property `GhcEngineSchema > planningData > classRoomsSets > ClassRoomSet > anonymousRooms`
 
 |              |           |
 | ------------ | --------- |
@@ -1489,7 +1476,7 @@ Must be one of:
 
 **Description:** Number of non-specific defined classrooms that the group contains.
 
-### <a name="planningData_tasks"></a>3.6. Property `GhcEngineSchema > planningData > tasks`
+### <a name="planningData_tasks"></a>2.6. Property `GhcEngineSchema > planningData > tasks`
 
 **Title:** Tasks
 
@@ -1512,7 +1499,7 @@ Must be one of:
 | --------------------------------- | ---------------------- |
 | [Task](#planningData_tasks_items) | Teacher activity type. |
 
-#### <a name="planningData_tasks_items"></a>3.6.1. GhcEngineSchema > planningData > tasks > Task
+#### <a name="planningData_tasks_items"></a>2.6.1. GhcEngineSchema > planningData > tasks > Task
 
 **Title:** Task
 
@@ -1532,7 +1519,7 @@ Must be one of:
 | - [exKey](#planningData_tasks_items_exKey )                         | No      | string          | No         | -                        | External key of the task                              |
 | - [refColourInResult](#planningData_tasks_items_refColourInResult ) | No      | string          | No         | -                        | Colour code used to represent the task in the result. |
 
-##### <a name="planningData_tasks_items_id"></a>3.6.1.1. Property `GhcEngineSchema > planningData > tasks > Task > id`
+##### <a name="planningData_tasks_items_id"></a>2.6.1.1. Property `GhcEngineSchema > planningData > tasks > Task > id`
 
 |              |          |
 | ------------ | -------- |
@@ -1541,7 +1528,7 @@ Must be one of:
 
 **Description:** Task identifier.
 
-##### <a name="planningData_tasks_items_frameTemplate"></a>3.6.1.2. Property `GhcEngineSchema > planningData > tasks > Task > frameTemplate`
+##### <a name="planningData_tasks_items_frameTemplate"></a>2.6.1.2. Property `GhcEngineSchema > planningData > tasks > Task > frameTemplate`
 
 **Title:** FrameTemplate
 
@@ -1565,7 +1552,7 @@ Must be one of:
 | ------------------------------------------------------------------ | ---------------------------------------------- |
 | [SectionPreference](#planningData_tasks_items_frameTemplate_items) | Template with a section assignment preference. |
 
-###### <a name="planningData_tasks_items_frameTemplate_items"></a>3.6.1.2.1. GhcEngineSchema > planningData > tasks > Task > frameTemplate > SectionPreference
+###### <a name="planningData_tasks_items_frameTemplate_items"></a>2.6.1.2.1. GhcEngineSchema > planningData > tasks > Task > frameTemplate > SectionPreference
 
 **Title:** SectionPreference
 
@@ -1584,7 +1571,7 @@ Must be one of:
 | + [frame](#planningData_tasks_items_frameTemplate_items_frame ) | No      | string           | No         | -          | Identifier name of the frame.                      |
 | + [type](#planningData_tasks_items_frameTemplate_items_type )   | No      | enum (of string) | No         | -          | SectionPreferenceTypeWithOutPreset                 |
 
-###### <a name="planningData_tasks_items_frameTemplate_items_day"></a>3.6.1.2.1.1. Property `GhcEngineSchema > planningData > tasks > Task > frameTemplate > SectionPreference > day`
+###### <a name="planningData_tasks_items_frameTemplate_items_day"></a>2.6.1.2.1.1. Property `GhcEngineSchema > planningData > tasks > Task > frameTemplate > SectionPreference > day`
 
 |              |           |
 | ------------ | --------- |
@@ -1593,7 +1580,7 @@ Must be one of:
 
 **Description:** Day of the week when is located the section.
 
-###### <a name="planningData_tasks_items_frameTemplate_items_index"></a>3.6.1.2.1.2. Property `GhcEngineSchema > planningData > tasks > Task > frameTemplate > SectionPreference > index`
+###### <a name="planningData_tasks_items_frameTemplate_items_index"></a>2.6.1.2.1.2. Property `GhcEngineSchema > planningData > tasks > Task > frameTemplate > SectionPreference > index`
 
 |              |           |
 | ------------ | --------- |
@@ -1602,7 +1589,7 @@ Must be one of:
 
 **Description:** Index inside the day where is located the section.
 
-###### <a name="planningData_tasks_items_frameTemplate_items_frame"></a>3.6.1.2.1.3. Property `GhcEngineSchema > planningData > tasks > Task > frameTemplate > SectionPreference > frame`
+###### <a name="planningData_tasks_items_frameTemplate_items_frame"></a>2.6.1.2.1.3. Property `GhcEngineSchema > planningData > tasks > Task > frameTemplate > SectionPreference > frame`
 
 |              |          |
 | ------------ | -------- |
@@ -1611,7 +1598,7 @@ Must be one of:
 
 **Description:** Identifier name of the frame.
 
-###### <a name="planningData_tasks_items_frameTemplate_items_type"></a>3.6.1.2.1.4. Property `GhcEngineSchema > planningData > tasks > Task > frameTemplate > SectionPreference > type`
+###### <a name="planningData_tasks_items_frameTemplate_items_type"></a>2.6.1.2.1.4. Property `GhcEngineSchema > planningData > tasks > Task > frameTemplate > SectionPreference > type`
 
 **Title:** SectionPreferenceTypeWithOutPreset
 
@@ -1627,7 +1614,7 @@ Must be one of:
 * "strong-non-preferred"
 * "weak-non-preferred"
 
-##### <a name="planningData_tasks_items_fullName"></a>3.6.1.3. Property `GhcEngineSchema > planningData > tasks > Task > fullName`
+##### <a name="planningData_tasks_items_fullName"></a>2.6.1.3. Property `GhcEngineSchema > planningData > tasks > Task > fullName`
 
 |              |          |
 | ------------ | -------- |
@@ -1636,7 +1623,7 @@ Must be one of:
 
 **Description:** Complete name of the task.
 
-##### <a name="planningData_tasks_items_exKey"></a>3.6.1.4. Property `GhcEngineSchema > planningData > tasks > Task > exKey`
+##### <a name="planningData_tasks_items_exKey"></a>2.6.1.4. Property `GhcEngineSchema > planningData > tasks > Task > exKey`
 
 |              |          |
 | ------------ | -------- |
@@ -1645,7 +1632,7 @@ Must be one of:
 
 **Description:** External key of the task
 
-##### <a name="planningData_tasks_items_refColourInResult"></a>3.6.1.5. Property `GhcEngineSchema > planningData > tasks > Task > refColourInResult`
+##### <a name="planningData_tasks_items_refColourInResult"></a>2.6.1.5. Property `GhcEngineSchema > planningData > tasks > Task > refColourInResult`
 
 |              |          |
 | ------------ | -------- |
@@ -1654,7 +1641,7 @@ Must be one of:
 
 **Description:** Colour code used to represent the task in the result.
 
-### <a name="planningData_teachers"></a>3.7. Property `GhcEngineSchema > planningData > teachers`
+### <a name="planningData_teachers"></a>2.7. Property `GhcEngineSchema > planningData > teachers`
 
 **Title:** Teachers
 
@@ -1677,7 +1664,7 @@ Must be one of:
 | --------------------------------------- | ----------------------------------------------------------- |
 | [Teacher](#planningData_teachers_items) | Object with personal information and teachers' preferences. |
 
-#### <a name="planningData_teachers_items"></a>3.7.1. GhcEngineSchema > planningData > teachers > Teacher
+#### <a name="planningData_teachers_items"></a>2.7.1. GhcEngineSchema > planningData > teachers > Teacher
 
 **Title:** Teacher
 
@@ -1701,7 +1688,7 @@ Must be one of:
 | - [generalSettings](#planningData_teachers_items_generalSettings )             | No      | object          | No         | -                                                                 | GeneralSettings                                                                                                                                      |
 | - [periodsSettings](#planningData_teachers_items_periodsSettings )             | No      | array of object | No         | -                                                                 | PeriodsSettings                                                                                                                                      |
 
-##### <a name="planningData_teachers_items_id"></a>3.7.1.1. Property `GhcEngineSchema > planningData > teachers > Teacher > id`
+##### <a name="planningData_teachers_items_id"></a>2.7.1.1. Property `GhcEngineSchema > planningData > teachers > Teacher > id`
 
 |              |          |
 | ------------ | -------- |
@@ -1710,7 +1697,7 @@ Must be one of:
 
 **Description:** Identifier of the teacher.
 
-##### <a name="planningData_teachers_items_shortName"></a>3.7.1.2. Property `GhcEngineSchema > planningData > teachers > Teacher > shortName`
+##### <a name="planningData_teachers_items_shortName"></a>2.7.1.2. Property `GhcEngineSchema > planningData > teachers > Teacher > shortName`
 
 |              |          |
 | ------------ | -------- |
@@ -1719,7 +1706,7 @@ Must be one of:
 
 **Description:** Short name of the teacher.
 
-##### <a name="planningData_teachers_items_fullName"></a>3.7.1.3. Property `GhcEngineSchema > planningData > teachers > Teacher > fullName`
+##### <a name="planningData_teachers_items_fullName"></a>2.7.1.3. Property `GhcEngineSchema > planningData > teachers > Teacher > fullName`
 
 |              |          |
 | ------------ | -------- |
@@ -1728,7 +1715,7 @@ Must be one of:
 
 **Description:** Complete name of the teacher.
 
-##### <a name="planningData_teachers_items_exKey"></a>3.7.1.4. Property `GhcEngineSchema > planningData > teachers > Teacher > exKey`
+##### <a name="planningData_teachers_items_exKey"></a>2.7.1.4. Property `GhcEngineSchema > planningData > teachers > Teacher > exKey`
 
 |              |          |
 | ------------ | -------- |
@@ -1737,7 +1724,7 @@ Must be one of:
 
 **Description:** External key of the teacher
 
-##### <a name="planningData_teachers_items_associationIdentifier"></a>3.7.1.5. Property `GhcEngineSchema > planningData > teachers > Teacher > associationIdentifier`
+##### <a name="planningData_teachers_items_associationIdentifier"></a>2.7.1.5. Property `GhcEngineSchema > planningData > teachers > Teacher > associationIdentifier`
 
 |              |          |
 | ------------ | -------- |
@@ -1746,7 +1733,7 @@ Must be one of:
 
 **Description:** Group or association of teachers who should have similar check-in and check-out times, if possible. This is useful for teachers who share transport.
 
-##### <a name="planningData_teachers_items_overlappedAssessment"></a>3.7.1.6. Property `GhcEngineSchema > planningData > teachers > Teacher > overlappedAssessment`
+##### <a name="planningData_teachers_items_overlappedAssessment"></a>2.7.1.6. Property `GhcEngineSchema > planningData > teachers > Teacher > overlappedAssessment`
 
 |              |           |
 | ------------ | --------- |
@@ -1760,7 +1747,7 @@ Must be one of:
 | ------------ | ------ |
 | **Minimum**  | &ge; 1 |
 
-##### <a name="planningData_teachers_items_frameTemplate"></a>3.7.1.7. Property `GhcEngineSchema > planningData > teachers > Teacher > frameTemplate`
+##### <a name="planningData_teachers_items_frameTemplate"></a>2.7.1.7. Property `GhcEngineSchema > planningData > teachers > Teacher > frameTemplate`
 
 **Title:** FrameTemplate
 
@@ -1772,7 +1759,7 @@ Must be one of:
 
 **Description:** Templates with frame sections assignment preferences.
 
-##### <a name="planningData_teachers_items_generalSettings"></a>3.7.1.8. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings`
+##### <a name="planningData_teachers_items_generalSettings"></a>2.7.1.8. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings`
 
 **Title:** GeneralSettings
 
@@ -1798,7 +1785,7 @@ Must be one of:
 | - [middayReference](#planningData_teachers_items_generalSettings_middayReference )                 | No      | object           | No         | In #/$defs/middayReference         | MiddayReference                                                                                                 |
 | - [dailyBuildingTransfers](#planningData_teachers_items_generalSettings_dailyBuildingTransfers )   | No      | object           | No         | In #/$defs/dailyBuildingTransfers  | DailyBuildingTransfers                                                                                          |
 
-###### <a name="planningData_teachers_items_generalSettings_weeklyStay"></a>3.7.1.8.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > weeklyStay`
+###### <a name="planningData_teachers_items_generalSettings_weeklyStay"></a>2.7.1.8.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > weeklyStay`
 
 **Title:** WeeklyStay
 
@@ -1817,7 +1804,7 @@ Must be one of:
 | - [preferable](#planningData_teachers_items_generalSettings_weeklyStay_preferable )               | No      | integer | No         | -          | Ponderable Time in minutes of maximum weeekly stay.                                                                                          |
 | - [countAroundMidday](#planningData_teachers_items_generalSettings_weeklyStay_countAroundMidday ) | No      | boolean | No         | -          | It indicates, in the case of split shifts, that the unoccupied intervals between the morning and afternoon class units are counted each day. |
 
-###### <a name="planningData_teachers_items_generalSettings_weeklyStay_strict"></a>3.7.1.8.1.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > weeklyStay > strict`
+###### <a name="planningData_teachers_items_generalSettings_weeklyStay_strict"></a>2.7.1.8.1.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > weeklyStay > strict`
 
 |              |           |
 | ------------ | --------- |
@@ -1826,7 +1813,7 @@ Must be one of:
 
 **Description:** Strict time in minutes of maximum weekly stay.
 
-###### <a name="planningData_teachers_items_generalSettings_weeklyStay_preferable"></a>3.7.1.8.1.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > weeklyStay > preferable`
+###### <a name="planningData_teachers_items_generalSettings_weeklyStay_preferable"></a>2.7.1.8.1.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > weeklyStay > preferable`
 
 |              |           |
 | ------------ | --------- |
@@ -1835,7 +1822,7 @@ Must be one of:
 
 **Description:** Ponderable Time in minutes of maximum weeekly stay.
 
-###### <a name="planningData_teachers_items_generalSettings_weeklyStay_countAroundMidday"></a>3.7.1.8.1.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > weeklyStay > countAroundMidday`
+###### <a name="planningData_teachers_items_generalSettings_weeklyStay_countAroundMidday"></a>2.7.1.8.1.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > weeklyStay > countAroundMidday`
 
 |              |           |
 | ------------ | --------- |
@@ -1845,7 +1832,7 @@ Must be one of:
 
 **Description:** It indicates, in the case of split shifts, that the unoccupied intervals between the morning and afternoon class units are counted each day.
 
-###### <a name="planningData_teachers_items_generalSettings_dailyStay"></a>3.7.1.8.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyStay`
+###### <a name="planningData_teachers_items_generalSettings_dailyStay"></a>2.7.1.8.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyStay`
 
 **Title:** DailyStay
 
@@ -1864,7 +1851,7 @@ Must be one of:
 | - [preferable](#planningData_teachers_items_generalSettings_dailyStay_preferable )               | No      | integer | No         | -          | Ponderable Time in minutes of maximum daily stay.                                                                                            |
 | - [countAroundMidday](#planningData_teachers_items_generalSettings_dailyStay_countAroundMidday ) | No      | boolean | No         | -          | It indicates, in the case of split shifts, that the unoccupied intervals between the morning and afternoon class units are counted each day. |
 
-###### <a name="planningData_teachers_items_generalSettings_dailyStay_strict"></a>3.7.1.8.2.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyStay > strict`
+###### <a name="planningData_teachers_items_generalSettings_dailyStay_strict"></a>2.7.1.8.2.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyStay > strict`
 
 |              |           |
 | ------------ | --------- |
@@ -1873,7 +1860,7 @@ Must be one of:
 
 **Description:** Strict time in minutes of maximum daily stay.
 
-###### <a name="planningData_teachers_items_generalSettings_dailyStay_preferable"></a>3.7.1.8.2.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyStay > preferable`
+###### <a name="planningData_teachers_items_generalSettings_dailyStay_preferable"></a>2.7.1.8.2.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyStay > preferable`
 
 |              |           |
 | ------------ | --------- |
@@ -1882,7 +1869,7 @@ Must be one of:
 
 **Description:** Ponderable Time in minutes of maximum daily stay.
 
-###### <a name="planningData_teachers_items_generalSettings_dailyStay_countAroundMidday"></a>3.7.1.8.2.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyStay > countAroundMidday`
+###### <a name="planningData_teachers_items_generalSettings_dailyStay_countAroundMidday"></a>2.7.1.8.2.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyStay > countAroundMidday`
 
 |              |           |
 | ------------ | --------- |
@@ -1892,7 +1879,7 @@ Must be one of:
 
 **Description:** It indicates, in the case of split shifts, that the unoccupied intervals between the morning and afternoon class units are counted each day.
 
-###### <a name="planningData_teachers_items_generalSettings_avoidGapsBetweenSesions"></a>3.7.1.8.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > avoidGapsBetweenSesions`
+###### <a name="planningData_teachers_items_generalSettings_avoidGapsBetweenSesions"></a>2.7.1.8.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > avoidGapsBetweenSesions`
 
 |                |                                 |
 | -------------- | ------------------------------- |
@@ -1903,7 +1890,7 @@ Must be one of:
 
 **Description:** It indicates whether gaps between class units for the teacher should be avoided. This is a weighting condition.
 
-###### <a name="planningData_teachers_items_generalSettings_maxContinuousTeaching"></a>3.7.1.8.4. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > maxContinuousTeaching`
+###### <a name="planningData_teachers_items_generalSettings_maxContinuousTeaching"></a>2.7.1.8.4. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > maxContinuousTeaching`
 
 **Title:** MaxContinuousTeaching
 
@@ -1922,7 +1909,7 @@ Must be one of:
 | - [minutes](#planningData_teachers_items_generalSettings_maxContinuousTeaching_minutes )   | No      | integer          | No         | -                        | Maximum continuous teaching time in minutes.       |
 | - [minBreak](#planningData_teachers_items_generalSettings_maxContinuousTeaching_minBreak ) | No      | integer          | No         | -                        | Minimum time period to be considered as break time |
 
-###### <a name="planningData_teachers_items_generalSettings_maxContinuousTeaching_type"></a>3.7.1.8.4.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > maxContinuousTeaching > type`
+###### <a name="planningData_teachers_items_generalSettings_maxContinuousTeaching_type"></a>2.7.1.8.4.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > maxContinuousTeaching > type`
 
 **Title:** ConditionType
 
@@ -1939,7 +1926,7 @@ Must be one of:
 * "avoid"
 * "strict"
 
-###### <a name="planningData_teachers_items_generalSettings_maxContinuousTeaching_minutes"></a>3.7.1.8.4.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > maxContinuousTeaching > minutes`
+###### <a name="planningData_teachers_items_generalSettings_maxContinuousTeaching_minutes"></a>2.7.1.8.4.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > maxContinuousTeaching > minutes`
 
 |              |           |
 | ------------ | --------- |
@@ -1948,7 +1935,7 @@ Must be one of:
 
 **Description:** Maximum continuous teaching time in minutes.
 
-###### <a name="planningData_teachers_items_generalSettings_maxContinuousTeaching_minBreak"></a>3.7.1.8.4.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > maxContinuousTeaching > minBreak`
+###### <a name="planningData_teachers_items_generalSettings_maxContinuousTeaching_minBreak"></a>2.7.1.8.4.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > maxContinuousTeaching > minBreak`
 
 |              |           |
 | ------------ | --------- |
@@ -1957,7 +1944,7 @@ Must be one of:
 
 **Description:** Minimum time period to be considered as break time
 
-###### <a name="planningData_teachers_items_generalSettings_avoidClassesAroundBreak"></a>3.7.1.8.5. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > avoidClassesAroundBreak`
+###### <a name="planningData_teachers_items_generalSettings_avoidClassesAroundBreak"></a>2.7.1.8.5. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > avoidClassesAroundBreak`
 
 **Title:** ConditionType
 
@@ -1975,7 +1962,7 @@ Must be one of:
 * "avoid"
 * "strict"
 
-###### <a name="planningData_teachers_items_generalSettings_freeTimes"></a>3.7.1.8.6. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes`
+###### <a name="planningData_teachers_items_generalSettings_freeTimes"></a>2.7.1.8.6. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes`
 
 **Title:** FreeTimes
 
@@ -1995,7 +1982,7 @@ Must be one of:
 | - [lastMinutes](#planningData_teachers_items_generalSettings_freeTimes_lastMinutes )               | No      | object | No         | -          | LastMinutesFreeTimes        |
 | - [consecutiveAnyTime](#planningData_teachers_items_generalSettings_freeTimes_consecutiveAnyTime ) | No      | object | No         | -          | ConsecutiveAnyTimeFreeTimes |
 
-###### <a name="planningData_teachers_items_generalSettings_freeTimes_fullDay"></a>3.7.1.8.6.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > fullDay`
+###### <a name="planningData_teachers_items_generalSettings_freeTimes_fullDay"></a>2.7.1.8.6.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > fullDay`
 
 **Title:** FullDaysFreeTimes
 
@@ -2012,7 +1999,7 @@ Must be one of:
 | - [strictDays](#planningData_teachers_items_generalSettings_freeTimes_fullDay_strictDays )       | No      | integer | No         | -          | Number of strict days when teacher should be free.    |
 | - [preferredDays](#planningData_teachers_items_generalSettings_freeTimes_fullDay_preferredDays ) | No      | integer | No         | -          | Number of preferred days when teacher should be free. |
 
-###### <a name="planningData_teachers_items_generalSettings_freeTimes_fullDay_strictDays"></a>3.7.1.8.6.1.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > fullDay > strictDays`
+###### <a name="planningData_teachers_items_generalSettings_freeTimes_fullDay_strictDays"></a>2.7.1.8.6.1.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > fullDay > strictDays`
 
 |              |           |
 | ------------ | --------- |
@@ -2022,7 +2009,7 @@ Must be one of:
 
 **Description:** Number of strict days when teacher should be free.
 
-###### <a name="planningData_teachers_items_generalSettings_freeTimes_fullDay_preferredDays"></a>3.7.1.8.6.1.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > fullDay > preferredDays`
+###### <a name="planningData_teachers_items_generalSettings_freeTimes_fullDay_preferredDays"></a>2.7.1.8.6.1.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > fullDay > preferredDays`
 
 |              |           |
 | ------------ | --------- |
@@ -2032,7 +2019,7 @@ Must be one of:
 
 **Description:** Number of preferred days when teacher should be free.
 
-###### <a name="planningData_teachers_items_generalSettings_freeTimes_firstMinutes"></a>3.7.1.8.6.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > firstMinutes`
+###### <a name="planningData_teachers_items_generalSettings_freeTimes_firstMinutes"></a>2.7.1.8.6.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > firstMinutes`
 
 **Title:** FirstMinutesFreeTimes
 
@@ -2050,7 +2037,7 @@ Must be one of:
 | - [preferredDays](#planningData_teachers_items_generalSettings_freeTimes_firstMinutes_preferredDays ) | No      | integer | No         | -          | Preferred number of days on which the teacher should have the interval free at the beginning of the day. |
 | + [minutes](#planningData_teachers_items_generalSettings_freeTimes_firstMinutes_minutes )             | No      | integer | No         | -          | Minutes of free time at the beginning of the day.                                                        |
 
-###### <a name="planningData_teachers_items_generalSettings_freeTimes_firstMinutes_strictDays"></a>3.7.1.8.6.2.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > firstMinutes > strictDays`
+###### <a name="planningData_teachers_items_generalSettings_freeTimes_firstMinutes_strictDays"></a>2.7.1.8.6.2.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > firstMinutes > strictDays`
 
 |              |           |
 | ------------ | --------- |
@@ -2060,7 +2047,7 @@ Must be one of:
 
 **Description:** Strict number of days on which the teacher must have the interval free at the beginning of the day.
 
-###### <a name="planningData_teachers_items_generalSettings_freeTimes_firstMinutes_preferredDays"></a>3.7.1.8.6.2.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > firstMinutes > preferredDays`
+###### <a name="planningData_teachers_items_generalSettings_freeTimes_firstMinutes_preferredDays"></a>2.7.1.8.6.2.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > firstMinutes > preferredDays`
 
 |              |           |
 | ------------ | --------- |
@@ -2070,7 +2057,7 @@ Must be one of:
 
 **Description:** Preferred number of days on which the teacher should have the interval free at the beginning of the day.
 
-###### <a name="planningData_teachers_items_generalSettings_freeTimes_firstMinutes_minutes"></a>3.7.1.8.6.2.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > firstMinutes > minutes`
+###### <a name="planningData_teachers_items_generalSettings_freeTimes_firstMinutes_minutes"></a>2.7.1.8.6.2.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > firstMinutes > minutes`
 
 |              |           |
 | ------------ | --------- |
@@ -2079,7 +2066,7 @@ Must be one of:
 
 **Description:** Minutes of free time at the beginning of the day.
 
-###### <a name="planningData_teachers_items_generalSettings_freeTimes_lastMinutes"></a>3.7.1.8.6.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > lastMinutes`
+###### <a name="planningData_teachers_items_generalSettings_freeTimes_lastMinutes"></a>2.7.1.8.6.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > lastMinutes`
 
 **Title:** LastMinutesFreeTimes
 
@@ -2097,7 +2084,7 @@ Must be one of:
 | - [preferredDays](#planningData_teachers_items_generalSettings_freeTimes_lastMinutes_preferredDays ) | No      | integer | No         | -          | Preferred number of days on which the teacher should have the interval free at the end of the day. . |
 | + [minutes](#planningData_teachers_items_generalSettings_freeTimes_lastMinutes_minutes )             | No      | integer | No         | -          | Minutes of free time at the end of the day.                                                          |
 
-###### <a name="planningData_teachers_items_generalSettings_freeTimes_lastMinutes_strictDays"></a>3.7.1.8.6.3.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > lastMinutes > strictDays`
+###### <a name="planningData_teachers_items_generalSettings_freeTimes_lastMinutes_strictDays"></a>2.7.1.8.6.3.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > lastMinutes > strictDays`
 
 |              |           |
 | ------------ | --------- |
@@ -2107,7 +2094,7 @@ Must be one of:
 
 **Description:** Strict number of days on which the teacher must have the interval free at the end of the day.
 
-###### <a name="planningData_teachers_items_generalSettings_freeTimes_lastMinutes_preferredDays"></a>3.7.1.8.6.3.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > lastMinutes > preferredDays`
+###### <a name="planningData_teachers_items_generalSettings_freeTimes_lastMinutes_preferredDays"></a>2.7.1.8.6.3.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > lastMinutes > preferredDays`
 
 |              |           |
 | ------------ | --------- |
@@ -2117,7 +2104,7 @@ Must be one of:
 
 **Description:** Preferred number of days on which the teacher should have the interval free at the end of the day. .
 
-###### <a name="planningData_teachers_items_generalSettings_freeTimes_lastMinutes_minutes"></a>3.7.1.8.6.3.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > lastMinutes > minutes`
+###### <a name="planningData_teachers_items_generalSettings_freeTimes_lastMinutes_minutes"></a>2.7.1.8.6.3.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > lastMinutes > minutes`
 
 |              |           |
 | ------------ | --------- |
@@ -2126,7 +2113,7 @@ Must be one of:
 
 **Description:** Minutes of free time at the end of the day.
 
-###### <a name="planningData_teachers_items_generalSettings_freeTimes_consecutiveAnyTime"></a>3.7.1.8.6.4. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > consecutiveAnyTime`
+###### <a name="planningData_teachers_items_generalSettings_freeTimes_consecutiveAnyTime"></a>2.7.1.8.6.4. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > consecutiveAnyTime`
 
 **Title:** ConsecutiveAnyTimeFreeTimes
 
@@ -2144,7 +2131,7 @@ Must be one of:
 | - [preferredDays](#planningData_teachers_items_generalSettings_freeTimes_consecutiveAnyTime_preferredDays ) | No      | integer | No         | -          | Preferred number of days on which the teacher should have the interval free.  |
 | + [minutes](#planningData_teachers_items_generalSettings_freeTimes_consecutiveAnyTime_minutes )             | No      | integer | No         | -          | Minutes of free time interval.                                                |
 
-###### <a name="planningData_teachers_items_generalSettings_freeTimes_consecutiveAnyTime_strictDays"></a>3.7.1.8.6.4.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > consecutiveAnyTime > strictDays`
+###### <a name="planningData_teachers_items_generalSettings_freeTimes_consecutiveAnyTime_strictDays"></a>2.7.1.8.6.4.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > consecutiveAnyTime > strictDays`
 
 |              |           |
 | ------------ | --------- |
@@ -2154,7 +2141,7 @@ Must be one of:
 
 **Description:** Strict number of days on which the teacher must have the interval free. 
 
-###### <a name="planningData_teachers_items_generalSettings_freeTimes_consecutiveAnyTime_preferredDays"></a>3.7.1.8.6.4.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > consecutiveAnyTime > preferredDays`
+###### <a name="planningData_teachers_items_generalSettings_freeTimes_consecutiveAnyTime_preferredDays"></a>2.7.1.8.6.4.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > consecutiveAnyTime > preferredDays`
 
 |              |           |
 | ------------ | --------- |
@@ -2164,7 +2151,7 @@ Must be one of:
 
 **Description:** Preferred number of days on which the teacher should have the interval free. 
 
-###### <a name="planningData_teachers_items_generalSettings_freeTimes_consecutiveAnyTime_minutes"></a>3.7.1.8.6.4.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > consecutiveAnyTime > minutes`
+###### <a name="planningData_teachers_items_generalSettings_freeTimes_consecutiveAnyTime_minutes"></a>2.7.1.8.6.4.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freeTimes > consecutiveAnyTime > minutes`
 
 |              |           |
 | ------------ | --------- |
@@ -2173,7 +2160,7 @@ Must be one of:
 
 **Description:** Minutes of free time interval.
 
-###### <a name="planningData_teachers_items_generalSettings_freePartTimes"></a>3.7.1.8.7. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freePartTimes`
+###### <a name="planningData_teachers_items_generalSettings_freePartTimes"></a>2.7.1.8.7. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freePartTimes`
 
 **Title:** FreePartTime
 
@@ -2192,7 +2179,7 @@ Must be one of:
 | - [afternoons](#planningData_teachers_items_generalSettings_freePartTimes_afternoons )     | No      | object | No         | -          | AfternoonFreePartTimes    |
 | - [indistinctly](#planningData_teachers_items_generalSettings_freePartTimes_indistinctly ) | No      | object | No         | -          | IndistinctlyFreePartTimes |
 
-###### <a name="planningData_teachers_items_generalSettings_freePartTimes_mornings"></a>3.7.1.8.7.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freePartTimes > mornings`
+###### <a name="planningData_teachers_items_generalSettings_freePartTimes_mornings"></a>2.7.1.8.7.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freePartTimes > mornings`
 
 **Title:** MorningsFreePartTimes
 
@@ -2209,7 +2196,7 @@ Must be one of:
 | - [strict](#planningData_teachers_items_generalSettings_freePartTimes_mornings_strict )         | No      | integer | No         | -          | Strict number of mornings off.     |
 | - [preferable](#planningData_teachers_items_generalSettings_freePartTimes_mornings_preferable ) | No      | integer | No         | -          | Preferable number of mornings off. |
 
-###### <a name="planningData_teachers_items_generalSettings_freePartTimes_mornings_strict"></a>3.7.1.8.7.1.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freePartTimes > mornings > strict`
+###### <a name="planningData_teachers_items_generalSettings_freePartTimes_mornings_strict"></a>2.7.1.8.7.1.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freePartTimes > mornings > strict`
 
 |              |           |
 | ------------ | --------- |
@@ -2218,7 +2205,7 @@ Must be one of:
 
 **Description:** Strict number of mornings off.
 
-###### <a name="planningData_teachers_items_generalSettings_freePartTimes_mornings_preferable"></a>3.7.1.8.7.1.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freePartTimes > mornings > preferable`
+###### <a name="planningData_teachers_items_generalSettings_freePartTimes_mornings_preferable"></a>2.7.1.8.7.1.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freePartTimes > mornings > preferable`
 
 |              |           |
 | ------------ | --------- |
@@ -2227,7 +2214,7 @@ Must be one of:
 
 **Description:** Preferable number of mornings off.
 
-###### <a name="planningData_teachers_items_generalSettings_freePartTimes_afternoons"></a>3.7.1.8.7.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freePartTimes > afternoons`
+###### <a name="planningData_teachers_items_generalSettings_freePartTimes_afternoons"></a>2.7.1.8.7.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freePartTimes > afternoons`
 
 **Title:** AfternoonFreePartTimes
 
@@ -2244,7 +2231,7 @@ Must be one of:
 | - [strict](#planningData_teachers_items_generalSettings_freePartTimes_afternoons_strict )         | No      | integer | No         | -          | Strict number of afternoons off..    |
 | - [preferable](#planningData_teachers_items_generalSettings_freePartTimes_afternoons_preferable ) | No      | integer | No         | -          | Preferable number of afternoons off. |
 
-###### <a name="planningData_teachers_items_generalSettings_freePartTimes_afternoons_strict"></a>3.7.1.8.7.2.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freePartTimes > afternoons > strict`
+###### <a name="planningData_teachers_items_generalSettings_freePartTimes_afternoons_strict"></a>2.7.1.8.7.2.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freePartTimes > afternoons > strict`
 
 |              |           |
 | ------------ | --------- |
@@ -2253,7 +2240,7 @@ Must be one of:
 
 **Description:** Strict number of afternoons off..
 
-###### <a name="planningData_teachers_items_generalSettings_freePartTimes_afternoons_preferable"></a>3.7.1.8.7.2.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freePartTimes > afternoons > preferable`
+###### <a name="planningData_teachers_items_generalSettings_freePartTimes_afternoons_preferable"></a>2.7.1.8.7.2.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freePartTimes > afternoons > preferable`
 
 |              |           |
 | ------------ | --------- |
@@ -2262,7 +2249,7 @@ Must be one of:
 
 **Description:** Preferable number of afternoons off.
 
-###### <a name="planningData_teachers_items_generalSettings_freePartTimes_indistinctly"></a>3.7.1.8.7.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freePartTimes > indistinctly`
+###### <a name="planningData_teachers_items_generalSettings_freePartTimes_indistinctly"></a>2.7.1.8.7.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freePartTimes > indistinctly`
 
 **Title:** IndistinctlyFreePartTimes
 
@@ -2279,7 +2266,7 @@ Must be one of:
 | - [strict](#planningData_teachers_items_generalSettings_freePartTimes_indistinctly_strict )         | No      | integer | No         | -          | Strict number of mornings or afternoons indistinctly off.     |
 | - [preferable](#planningData_teachers_items_generalSettings_freePartTimes_indistinctly_preferable ) | No      | integer | No         | -          | Preferable number of mornings or afternoons indistinctly off. |
 
-###### <a name="planningData_teachers_items_generalSettings_freePartTimes_indistinctly_strict"></a>3.7.1.8.7.3.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freePartTimes > indistinctly > strict`
+###### <a name="planningData_teachers_items_generalSettings_freePartTimes_indistinctly_strict"></a>2.7.1.8.7.3.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freePartTimes > indistinctly > strict`
 
 |              |           |
 | ------------ | --------- |
@@ -2288,7 +2275,7 @@ Must be one of:
 
 **Description:** Strict number of mornings or afternoons indistinctly off.
 
-###### <a name="planningData_teachers_items_generalSettings_freePartTimes_indistinctly_preferable"></a>3.7.1.8.7.3.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freePartTimes > indistinctly > preferable`
+###### <a name="planningData_teachers_items_generalSettings_freePartTimes_indistinctly_preferable"></a>2.7.1.8.7.3.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > freePartTimes > indistinctly > preferable`
 
 |              |           |
 | ------------ | --------- |
@@ -2297,7 +2284,7 @@ Must be one of:
 
 **Description:** Preferable number of mornings or afternoons indistinctly off.
 
-###### <a name="planningData_teachers_items_generalSettings_incompatibilities"></a>3.7.1.8.8. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities`
+###### <a name="planningData_teachers_items_generalSettings_incompatibilities"></a>2.7.1.8.8. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities`
 
 **Title:** Incompatibilities
 
@@ -2322,7 +2309,7 @@ Must be one of:
 | - [doNotStartAtFirstMorningSectionIfHasAfternoonAssignment](#planningData_teachers_items_generalSettings_incompatibilities_doNotStartAtFirstMorningSectionIfHasAfternoonAssignment )                     | No      | enum (of string) | No         | -                                | DoNotStartAtFirstMorningSection                        |
 | - [freeTimeAroundMidday](#planningData_teachers_items_generalSettings_incompatibilities_freeTimeAroundMidday )                                                                                           | No      | object           | No         | In #/$defs/conditionTypeWithTime | FreeTimeAroundMidday                                   |
 
-###### <a name="planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenDayBeforeAndCurrent"></a>3.7.1.8.8.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeBetweenDayBeforeAndCurrent`
+###### <a name="planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenDayBeforeAndCurrent"></a>2.7.1.8.8.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeBetweenDayBeforeAndCurrent`
 
 **Title:** FreeTimeBetweenDays
 
@@ -2340,7 +2327,7 @@ Must be one of:
 | + [type](#planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenDayBeforeAndCurrent_type )       | No      | enum (of string) | No         | Same as [type](#planningData_teachers_items_generalSettings_maxContinuousTeaching_type ) | ConditionType                         |
 | - [minutes](#planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenDayBeforeAndCurrent_minutes ) | No      | integer          | No         | -                                                                                        | Custom time in minutes for condition. |
 
-###### <a name="planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenDayBeforeAndCurrent_type"></a>3.7.1.8.8.1.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeBetweenDayBeforeAndCurrent > type`
+###### <a name="planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenDayBeforeAndCurrent_type"></a>2.7.1.8.8.1.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeBetweenDayBeforeAndCurrent > type`
 
 **Title:** ConditionType
 
@@ -2352,7 +2339,7 @@ Must be one of:
 
 **Description:** Indicate whether the incompatibility is strict, avoid (penalisable in optimisation) or ignored.
 
-###### <a name="planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenDayBeforeAndCurrent_minutes"></a>3.7.1.8.8.1.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeBetweenDayBeforeAndCurrent > minutes`
+###### <a name="planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenDayBeforeAndCurrent_minutes"></a>2.7.1.8.8.1.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeBetweenDayBeforeAndCurrent > minutes`
 
 |              |           |
 | ------------ | --------- |
@@ -2361,7 +2348,7 @@ Must be one of:
 
 **Description:** Custom time in minutes for condition.
 
-###### <a name="planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenEndWeekAndStartWeekDays"></a>3.7.1.8.8.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeBetweenEndWeekAndStartWeekDays`
+###### <a name="planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenEndWeekAndStartWeekDays"></a>2.7.1.8.8.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeBetweenEndWeekAndStartWeekDays`
 
 **Title:** FreeTimeBetweenWeeksBorders
 
@@ -2379,7 +2366,7 @@ Must be one of:
 | + [type](#planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenDayBeforeAndCurrent_type )       | No      | enum (of string) | No         | Same as [type](#planningData_teachers_items_generalSettings_maxContinuousTeaching_type ) | ConditionType                         |
 | - [minutes](#planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenDayBeforeAndCurrent_minutes ) | No      | integer          | No         | -                                                                                        | Custom time in minutes for condition. |
 
-###### <a name="planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenDayBeforeAndCurrent_type"></a>3.7.1.8.8.2.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeBetweenDayBeforeAndCurrent > type`
+###### <a name="planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenDayBeforeAndCurrent_type"></a>2.7.1.8.8.2.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeBetweenDayBeforeAndCurrent > type`
 
 **Title:** ConditionType
 
@@ -2391,7 +2378,7 @@ Must be one of:
 
 **Description:** Indicate whether the incompatibility is strict, avoid (penalisable in optimisation) or ignored.
 
-###### <a name="planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenDayBeforeAndCurrent_minutes"></a>3.7.1.8.8.2.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeBetweenDayBeforeAndCurrent > minutes`
+###### <a name="planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenDayBeforeAndCurrent_minutes"></a>2.7.1.8.8.2.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeBetweenDayBeforeAndCurrent > minutes`
 
 |              |           |
 | ------------ | --------- |
@@ -2400,7 +2387,7 @@ Must be one of:
 
 **Description:** Custom time in minutes for condition.
 
-###### <a name="planningData_teachers_items_generalSettings_incompatibilities_freeTimeFirstOrLastHoursDay"></a>3.7.1.8.8.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeFirstOrLastHoursDay`
+###### <a name="planningData_teachers_items_generalSettings_incompatibilities_freeTimeFirstOrLastHoursDay"></a>2.7.1.8.8.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeFirstOrLastHoursDay`
 
 **Title:** FreeTimeFirstOrLastHoursDay
 
@@ -2418,7 +2405,7 @@ Must be one of:
 | + [type](#planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenDayBeforeAndCurrent_type )       | No      | enum (of string) | No         | Same as [type](#planningData_teachers_items_generalSettings_maxContinuousTeaching_type ) | ConditionType                         |
 | - [minutes](#planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenDayBeforeAndCurrent_minutes ) | No      | integer          | No         | -                                                                                        | Custom time in minutes for condition. |
 
-###### <a name="planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenDayBeforeAndCurrent_type"></a>3.7.1.8.8.3.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeBetweenDayBeforeAndCurrent > type`
+###### <a name="planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenDayBeforeAndCurrent_type"></a>2.7.1.8.8.3.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeBetweenDayBeforeAndCurrent > type`
 
 **Title:** ConditionType
 
@@ -2430,7 +2417,7 @@ Must be one of:
 
 **Description:** Indicate whether the incompatibility is strict, avoid (penalisable in optimisation) or ignored.
 
-###### <a name="planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenDayBeforeAndCurrent_minutes"></a>3.7.1.8.8.3.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeBetweenDayBeforeAndCurrent > minutes`
+###### <a name="planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenDayBeforeAndCurrent_minutes"></a>2.7.1.8.8.3.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeBetweenDayBeforeAndCurrent > minutes`
 
 |              |           |
 | ------------ | --------- |
@@ -2439,7 +2426,7 @@ Must be one of:
 
 **Description:** Custom time in minutes for condition.
 
-###### <a name="planningData_teachers_items_generalSettings_incompatibilities_doNotFinishAtLastAfternoonSectionIfStartedAtFirstAfternoonSection"></a>3.7.1.8.8.4. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > doNotFinishAtLastAfternoonSectionIfStartedAtFirstAfternoonSection`
+###### <a name="planningData_teachers_items_generalSettings_incompatibilities_doNotFinishAtLastAfternoonSectionIfStartedAtFirstAfternoonSection"></a>2.7.1.8.8.4. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > doNotFinishAtLastAfternoonSectionIfStartedAtFirstAfternoonSection`
 
 **Title:** DoNotFinishAtLastAfternoonSection
 
@@ -2455,7 +2442,7 @@ Must be one of:
 * "avoid"
 * "strict"
 
-###### <a name="planningData_teachers_items_generalSettings_incompatibilities_doNotFinishAtLastMorningSectionIfStartedAtFirstMorningSection"></a>3.7.1.8.8.5. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > doNotFinishAtLastMorningSectionIfStartedAtFirstMorningSection`
+###### <a name="planningData_teachers_items_generalSettings_incompatibilities_doNotFinishAtLastMorningSectionIfStartedAtFirstMorningSection"></a>2.7.1.8.8.5. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > doNotFinishAtLastMorningSectionIfStartedAtFirstMorningSection`
 
 **Title:** DoNotFinishAtLastMorningSection
 
@@ -2471,7 +2458,7 @@ Must be one of:
 * "avoid"
 * "strict"
 
-###### <a name="planningData_teachers_items_generalSettings_incompatibilities_doNotFinishAtLastMorningSectionIfStartAtFirstAfternoonSection"></a>3.7.1.8.8.6. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > doNotFinishAtLastMorningSectionIfStartAtFirstAfternoonSection`
+###### <a name="planningData_teachers_items_generalSettings_incompatibilities_doNotFinishAtLastMorningSectionIfStartAtFirstAfternoonSection"></a>2.7.1.8.8.6. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > doNotFinishAtLastMorningSectionIfStartAtFirstAfternoonSection`
 
 **Title:** DoNotFinishAtLastMorningSectionIfStartAtFirstAfternoon
 
@@ -2487,7 +2474,7 @@ Must be one of:
 * "avoid"
 * "strict"
 
-###### <a name="planningData_teachers_items_generalSettings_incompatibilities_doNotFinishAtLastMorningSectionIfHasAfternoonAssignment"></a>3.7.1.8.8.7. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > doNotFinishAtLastMorningSectionIfHasAfternoonAssignment`
+###### <a name="planningData_teachers_items_generalSettings_incompatibilities_doNotFinishAtLastMorningSectionIfHasAfternoonAssignment"></a>2.7.1.8.8.7. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > doNotFinishAtLastMorningSectionIfHasAfternoonAssignment`
 
 **Title:** DoNotFinishAtLastMorningSectionIfHasAfternoon
 
@@ -2503,7 +2490,7 @@ Must be one of:
 * "avoid"
 * "strict"
 
-###### <a name="planningData_teachers_items_generalSettings_incompatibilities_doNotStartAtFirstMorningSectionIfHasAfternoonAssignment"></a>3.7.1.8.8.8. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > doNotStartAtFirstMorningSectionIfHasAfternoonAssignment`
+###### <a name="planningData_teachers_items_generalSettings_incompatibilities_doNotStartAtFirstMorningSectionIfHasAfternoonAssignment"></a>2.7.1.8.8.8. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > doNotStartAtFirstMorningSectionIfHasAfternoonAssignment`
 
 **Title:** DoNotStartAtFirstMorningSection
 
@@ -2519,7 +2506,7 @@ Must be one of:
 * "avoid"
 * "strict"
 
-###### <a name="planningData_teachers_items_generalSettings_incompatibilities_freeTimeAroundMidday"></a>3.7.1.8.8.9. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeAroundMidday`
+###### <a name="planningData_teachers_items_generalSettings_incompatibilities_freeTimeAroundMidday"></a>2.7.1.8.8.9. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeAroundMidday`
 
 **Title:** FreeTimeAroundMidday
 
@@ -2537,7 +2524,7 @@ Must be one of:
 | + [type](#planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenDayBeforeAndCurrent_type )       | No      | enum (of string) | No         | Same as [type](#planningData_teachers_items_generalSettings_maxContinuousTeaching_type ) | ConditionType                         |
 | - [minutes](#planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenDayBeforeAndCurrent_minutes ) | No      | integer          | No         | -                                                                                        | Custom time in minutes for condition. |
 
-###### <a name="planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenDayBeforeAndCurrent_type"></a>3.7.1.8.8.9.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeBetweenDayBeforeAndCurrent > type`
+###### <a name="planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenDayBeforeAndCurrent_type"></a>2.7.1.8.8.9.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeBetweenDayBeforeAndCurrent > type`
 
 **Title:** ConditionType
 
@@ -2549,7 +2536,7 @@ Must be one of:
 
 **Description:** Indicate whether the incompatibility is strict, avoid (penalisable in optimisation) or ignored.
 
-###### <a name="planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenDayBeforeAndCurrent_minutes"></a>3.7.1.8.8.9.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeBetweenDayBeforeAndCurrent > minutes`
+###### <a name="planningData_teachers_items_generalSettings_incompatibilities_freeTimeBetweenDayBeforeAndCurrent_minutes"></a>2.7.1.8.8.9.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > incompatibilities > freeTimeBetweenDayBeforeAndCurrent > minutes`
 
 |              |           |
 | ------------ | --------- |
@@ -2558,7 +2545,7 @@ Must be one of:
 
 **Description:** Custom time in minutes for condition.
 
-###### <a name="planningData_teachers_items_generalSettings_dailyOcupation"></a>3.7.1.8.9. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation`
+###### <a name="planningData_teachers_items_generalSettings_dailyOcupation"></a>2.7.1.8.9. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation`
 
 **Title:** DailyOcupation
 
@@ -2579,7 +2566,7 @@ Must be one of:
 | - [minimumOccupancy](#planningData_teachers_items_generalSettings_dailyOcupation_minimumOccupancy ) | No      | object  | No         | In #/$defs/conditionOcupancy | MinimumOccupancy                                                                                                         |
 | - [maximumOccupancy](#planningData_teachers_items_generalSettings_dailyOcupation_maximumOccupancy ) | No      | object  | No         | In #/$defs/conditionOcupancy | MaximumOccupancy                                                                                                         |
 
-###### <a name="planningData_teachers_items_generalSettings_dailyOcupation_allowFreeDays"></a>3.7.1.8.9.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > allowFreeDays`
+###### <a name="planningData_teachers_items_generalSettings_dailyOcupation_allowFreeDays"></a>2.7.1.8.9.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > allowFreeDays`
 
 |              |           |
 | ------------ | --------- |
@@ -2588,7 +2575,7 @@ Must be one of:
 
 **Description:** It indicates whether checking of minimums is omitted in the case of non-assigned days. Forbidden days are never checked.
 
-###### <a name="planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching"></a>3.7.1.8.9.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching`
+###### <a name="planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching"></a>2.7.1.8.9.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching`
 
 **Title:** MinimumTeaching
 
@@ -2608,7 +2595,7 @@ Must be one of:
 | - [isAssisted](#planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_isAssisted )       | No      | boolean          | No         | -                                                                                        | Indicates if the field is assigned manualy or with the assisted mode        |
 | - [variationTime](#planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_variationTime ) | No      | integer          | No         | -                                                                                        | time in minutes you add to the assisted time so you generate the total time |
 
-###### <a name="planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_type"></a>3.7.1.8.9.2.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > type`
+###### <a name="planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_type"></a>2.7.1.8.9.2.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > type`
 
 **Title:** ConditionType
 
@@ -2620,7 +2607,7 @@ Must be one of:
 
 **Description:** Indicate whether the incompatibility is strict, avoid (penalisable in optimisation) or ignored.
 
-###### <a name="planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_minutes"></a>3.7.1.8.9.2.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > minutes`
+###### <a name="planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_minutes"></a>2.7.1.8.9.2.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > minutes`
 
 |              |           |
 | ------------ | --------- |
@@ -2629,7 +2616,7 @@ Must be one of:
 
 **Description:** Custom total time in minutes for the ocupancy.
 
-###### <a name="planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_isAssisted"></a>3.7.1.8.9.2.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > isAssisted`
+###### <a name="planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_isAssisted"></a>2.7.1.8.9.2.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > isAssisted`
 
 |              |           |
 | ------------ | --------- |
@@ -2638,7 +2625,7 @@ Must be one of:
 
 **Description:** Indicates if the field is assigned manualy or with the assisted mode
 
-###### <a name="planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_variationTime"></a>3.7.1.8.9.2.4. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > variationTime`
+###### <a name="planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_variationTime"></a>2.7.1.8.9.2.4. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > variationTime`
 
 |              |           |
 | ------------ | --------- |
@@ -2647,7 +2634,7 @@ Must be one of:
 
 **Description:** time in minutes you add to the assisted time so you generate the total time
 
-###### <a name="planningData_teachers_items_generalSettings_dailyOcupation_maximumTeaching"></a>3.7.1.8.9.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > maximumTeaching`
+###### <a name="planningData_teachers_items_generalSettings_dailyOcupation_maximumTeaching"></a>2.7.1.8.9.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > maximumTeaching`
 
 **Title:** MaximumTeaching
 
@@ -2667,7 +2654,7 @@ Must be one of:
 | - [isAssisted](#planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_isAssisted )       | No      | boolean          | No         | -                                                                                        | Indicates if the field is assigned manualy or with the assisted mode        |
 | - [variationTime](#planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_variationTime ) | No      | integer          | No         | -                                                                                        | time in minutes you add to the assisted time so you generate the total time |
 
-###### <a name="planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_type"></a>3.7.1.8.9.3.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > type`
+###### <a name="planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_type"></a>2.7.1.8.9.3.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > type`
 
 **Title:** ConditionType
 
@@ -2679,7 +2666,7 @@ Must be one of:
 
 **Description:** Indicate whether the incompatibility is strict, avoid (penalisable in optimisation) or ignored.
 
-###### <a name="planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_minutes"></a>3.7.1.8.9.3.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > minutes`
+###### <a name="planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_minutes"></a>2.7.1.8.9.3.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > minutes`
 
 |              |           |
 | ------------ | --------- |
@@ -2688,7 +2675,7 @@ Must be one of:
 
 **Description:** Custom total time in minutes for the ocupancy.
 
-###### <a name="planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_isAssisted"></a>3.7.1.8.9.3.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > isAssisted`
+###### <a name="planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_isAssisted"></a>2.7.1.8.9.3.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > isAssisted`
 
 |              |           |
 | ------------ | --------- |
@@ -2697,7 +2684,7 @@ Must be one of:
 
 **Description:** Indicates if the field is assigned manualy or with the assisted mode
 
-###### <a name="planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_variationTime"></a>3.7.1.8.9.3.4. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > variationTime`
+###### <a name="planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_variationTime"></a>2.7.1.8.9.3.4. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > variationTime`
 
 |              |           |
 | ------------ | --------- |
@@ -2706,7 +2693,7 @@ Must be one of:
 
 **Description:** time in minutes you add to the assisted time so you generate the total time
 
-###### <a name="planningData_teachers_items_generalSettings_dailyOcupation_minimumOccupancy"></a>3.7.1.8.9.4. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumOccupancy`
+###### <a name="planningData_teachers_items_generalSettings_dailyOcupation_minimumOccupancy"></a>2.7.1.8.9.4. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumOccupancy`
 
 **Title:** MinimumOccupancy
 
@@ -2726,7 +2713,7 @@ Must be one of:
 | - [isAssisted](#planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_isAssisted )       | No      | boolean          | No         | -                                                                                        | Indicates if the field is assigned manualy or with the assisted mode        |
 | - [variationTime](#planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_variationTime ) | No      | integer          | No         | -                                                                                        | time in minutes you add to the assisted time so you generate the total time |
 
-###### <a name="planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_type"></a>3.7.1.8.9.4.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > type`
+###### <a name="planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_type"></a>2.7.1.8.9.4.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > type`
 
 **Title:** ConditionType
 
@@ -2738,7 +2725,7 @@ Must be one of:
 
 **Description:** Indicate whether the incompatibility is strict, avoid (penalisable in optimisation) or ignored.
 
-###### <a name="planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_minutes"></a>3.7.1.8.9.4.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > minutes`
+###### <a name="planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_minutes"></a>2.7.1.8.9.4.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > minutes`
 
 |              |           |
 | ------------ | --------- |
@@ -2747,7 +2734,7 @@ Must be one of:
 
 **Description:** Custom total time in minutes for the ocupancy.
 
-###### <a name="planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_isAssisted"></a>3.7.1.8.9.4.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > isAssisted`
+###### <a name="planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_isAssisted"></a>2.7.1.8.9.4.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > isAssisted`
 
 |              |           |
 | ------------ | --------- |
@@ -2756,7 +2743,7 @@ Must be one of:
 
 **Description:** Indicates if the field is assigned manualy or with the assisted mode
 
-###### <a name="planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_variationTime"></a>3.7.1.8.9.4.4. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > variationTime`
+###### <a name="planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_variationTime"></a>2.7.1.8.9.4.4. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > variationTime`
 
 |              |           |
 | ------------ | --------- |
@@ -2765,7 +2752,7 @@ Must be one of:
 
 **Description:** time in minutes you add to the assisted time so you generate the total time
 
-###### <a name="planningData_teachers_items_generalSettings_dailyOcupation_maximumOccupancy"></a>3.7.1.8.9.5. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > maximumOccupancy`
+###### <a name="planningData_teachers_items_generalSettings_dailyOcupation_maximumOccupancy"></a>2.7.1.8.9.5. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > maximumOccupancy`
 
 **Title:** MaximumOccupancy
 
@@ -2785,7 +2772,7 @@ Must be one of:
 | - [isAssisted](#planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_isAssisted )       | No      | boolean          | No         | -                                                                                        | Indicates if the field is assigned manualy or with the assisted mode        |
 | - [variationTime](#planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_variationTime ) | No      | integer          | No         | -                                                                                        | time in minutes you add to the assisted time so you generate the total time |
 
-###### <a name="planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_type"></a>3.7.1.8.9.5.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > type`
+###### <a name="planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_type"></a>2.7.1.8.9.5.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > type`
 
 **Title:** ConditionType
 
@@ -2797,7 +2784,7 @@ Must be one of:
 
 **Description:** Indicate whether the incompatibility is strict, avoid (penalisable in optimisation) or ignored.
 
-###### <a name="planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_minutes"></a>3.7.1.8.9.5.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > minutes`
+###### <a name="planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_minutes"></a>2.7.1.8.9.5.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > minutes`
 
 |              |           |
 | ------------ | --------- |
@@ -2806,7 +2793,7 @@ Must be one of:
 
 **Description:** Custom total time in minutes for the ocupancy.
 
-###### <a name="planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_isAssisted"></a>3.7.1.8.9.5.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > isAssisted`
+###### <a name="planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_isAssisted"></a>2.7.1.8.9.5.3. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > isAssisted`
 
 |              |           |
 | ------------ | --------- |
@@ -2815,7 +2802,7 @@ Must be one of:
 
 **Description:** Indicates if the field is assigned manualy or with the assisted mode
 
-###### <a name="planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_variationTime"></a>3.7.1.8.9.5.4. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > variationTime`
+###### <a name="planningData_teachers_items_generalSettings_dailyOcupation_minimumTeaching_variationTime"></a>2.7.1.8.9.5.4. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyOcupation > minimumTeaching > variationTime`
 
 |              |           |
 | ------------ | --------- |
@@ -2824,7 +2811,7 @@ Must be one of:
 
 **Description:** time in minutes you add to the assisted time so you generate the total time
 
-###### <a name="planningData_teachers_items_generalSettings_middayReference"></a>3.7.1.8.10. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > middayReference`
+###### <a name="planningData_teachers_items_generalSettings_middayReference"></a>2.7.1.8.10. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > middayReference`
 
 **Title:** MiddayReference
 
@@ -2842,7 +2829,7 @@ Must be one of:
 | - [refFrame](#planningData_teachers_items_generalSettings_middayReference_refFrame ) | No      | string  | No         | -          | Identifier of a frame where the teacher takes noon pause. If not specified, the engine shall take the noon pause of the frame with the highest allocation.                        |
 | - [strict](#planningData_teachers_items_generalSettings_middayReference_strict )     | No      | boolean | No         | -          | It indicates whether the teacher's noon pause should be respected without placing his or her class units in sections of other frameworks that overlap with his or her noon pause. |
 
-###### <a name="planningData_teachers_items_generalSettings_middayReference_refFrame"></a>3.7.1.8.10.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > middayReference > refFrame`
+###### <a name="planningData_teachers_items_generalSettings_middayReference_refFrame"></a>2.7.1.8.10.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > middayReference > refFrame`
 
 |              |          |
 | ------------ | -------- |
@@ -2851,7 +2838,7 @@ Must be one of:
 
 **Description:** Identifier of a frame where the teacher takes noon pause. If not specified, the engine shall take the noon pause of the frame with the highest allocation.
 
-###### <a name="planningData_teachers_items_generalSettings_middayReference_strict"></a>3.7.1.8.10.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > middayReference > strict`
+###### <a name="planningData_teachers_items_generalSettings_middayReference_strict"></a>2.7.1.8.10.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > middayReference > strict`
 
 |              |           |
 | ------------ | --------- |
@@ -2861,7 +2848,7 @@ Must be one of:
 
 **Description:** It indicates whether the teacher's noon pause should be respected without placing his or her class units in sections of other frameworks that overlap with his or her noon pause.
 
-###### <a name="planningData_teachers_items_generalSettings_dailyBuildingTransfers"></a>3.7.1.8.11. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyBuildingTransfers`
+###### <a name="planningData_teachers_items_generalSettings_dailyBuildingTransfers"></a>2.7.1.8.11. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyBuildingTransfers`
 
 **Title:** DailyBuildingTransfers
 
@@ -2879,7 +2866,7 @@ Must be one of:
 | - [strict](#planningData_teachers_items_generalSettings_dailyBuildingTransfers_strict )         | No      | integer | No         | -          | Strict maximum number of movements per day.                         |
 | - [preferable](#planningData_teachers_items_generalSettings_dailyBuildingTransfers_preferable ) | No      | integer | No         | -          | Maximum number of movements per day that can be weighted/preferred. |
 
-###### <a name="planningData_teachers_items_generalSettings_dailyBuildingTransfers_strict"></a>3.7.1.8.11.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyBuildingTransfers > strict`
+###### <a name="planningData_teachers_items_generalSettings_dailyBuildingTransfers_strict"></a>2.7.1.8.11.1. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyBuildingTransfers > strict`
 
 |              |           |
 | ------------ | --------- |
@@ -2888,7 +2875,7 @@ Must be one of:
 
 **Description:** Strict maximum number of movements per day.
 
-###### <a name="planningData_teachers_items_generalSettings_dailyBuildingTransfers_preferable"></a>3.7.1.8.11.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyBuildingTransfers > preferable`
+###### <a name="planningData_teachers_items_generalSettings_dailyBuildingTransfers_preferable"></a>2.7.1.8.11.2. Property `GhcEngineSchema > planningData > teachers > Teacher > generalSettings > dailyBuildingTransfers > preferable`
 
 |              |           |
 | ------------ | --------- |
@@ -2897,7 +2884,7 @@ Must be one of:
 
 **Description:** Maximum number of movements per day that can be weighted/preferred.
 
-##### <a name="planningData_teachers_items_periodsSettings"></a>3.7.1.9. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings`
+##### <a name="planningData_teachers_items_periodsSettings"></a>2.7.1.9. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings`
 
 **Title:** PeriodsSettings
 
@@ -2920,7 +2907,7 @@ Must be one of:
 | -------------------------------------------------------------------- | ----------- |
 | [PeriodsSetting](#planningData_teachers_items_periodsSettings_items) | -           |
 
-###### <a name="planningData_teachers_items_periodsSettings_items"></a>3.7.1.9.1. GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting
+###### <a name="planningData_teachers_items_periodsSettings_items"></a>2.7.1.9.1. GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting
 
 **Title:** PeriodsSetting
 
@@ -2945,7 +2932,7 @@ Must be one of:
 | - [middayReference](#planningData_teachers_items_periodsSettings_items_middayReference )                 | No      | object           | No         | Same as [middayReference](#planningData_teachers_items_generalSettings_middayReference )                 | MiddayReference                                                                                                 |
 | - [dailyBuildingTransfers](#planningData_teachers_items_periodsSettings_items_dailyBuildingTransfers )   | No      | object           | No         | Same as [dailyBuildingTransfers](#planningData_teachers_items_generalSettings_dailyBuildingTransfers )   | DailyBuildingTransfers                                                                                          |
 
-###### <a name="planningData_teachers_items_periodsSettings_items_refPeriod"></a>3.7.1.9.1.1. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > refPeriod`
+###### <a name="planningData_teachers_items_periodsSettings_items_refPeriod"></a>2.7.1.9.1.1. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > refPeriod`
 
 |              |          |
 | ------------ | -------- |
@@ -2954,7 +2941,7 @@ Must be one of:
 
 **Description:** Identifier of the period to which the settings affect.
 
-###### <a name="planningData_teachers_items_periodsSettings_items_weeklyStay"></a>3.7.1.9.1.2. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > weeklyStay`
+###### <a name="planningData_teachers_items_periodsSettings_items_weeklyStay"></a>2.7.1.9.1.2. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > weeklyStay`
 
 **Title:** WeeklyStay
 
@@ -2967,7 +2954,7 @@ Must be one of:
 
 **Description:** It indicates the maximum preferential and strict teacher's stay, for the weekly stay that the teacher can be in the academic institution.
 
-###### <a name="planningData_teachers_items_periodsSettings_items_dailyStay"></a>3.7.1.9.1.3. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > dailyStay`
+###### <a name="planningData_teachers_items_periodsSettings_items_dailyStay"></a>2.7.1.9.1.3. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > dailyStay`
 
 **Title:** DailyStay
 
@@ -2980,7 +2967,7 @@ Must be one of:
 
 **Description:** This indicates the maximum preferential and strict time of stay of the teacher, for the daily stay that the teacher can be in the educational institution.
 
-###### <a name="planningData_teachers_items_periodsSettings_items_avoidGapsBetweenSesions"></a>3.7.1.9.1.4. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > avoidGapsBetweenSesions`
+###### <a name="planningData_teachers_items_periodsSettings_items_avoidGapsBetweenSesions"></a>2.7.1.9.1.4. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > avoidGapsBetweenSesions`
 
 |                        |                                                                                                 |
 | ---------------------- | ----------------------------------------------------------------------------------------------- |
@@ -2991,7 +2978,7 @@ Must be one of:
 
 **Description:** It indicates whether gaps between class units for the teacher should be avoided. This is a weighting condition.
 
-###### <a name="planningData_teachers_items_periodsSettings_items_maxContinuousTeaching"></a>3.7.1.9.1.5. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > maxContinuousTeaching`
+###### <a name="planningData_teachers_items_periodsSettings_items_maxContinuousTeaching"></a>2.7.1.9.1.5. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > maxContinuousTeaching`
 
 **Title:** MaxContinuousTeaching
 
@@ -3004,7 +2991,7 @@ Must be one of:
 
 **Description:** It indicates the maximum continuous time of class units, which are allowed without having a gap or a non-class units between them.
 
-###### <a name="planningData_teachers_items_periodsSettings_items_avoidClassesAroundBreak"></a>3.7.1.9.1.6. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > avoidClassesAroundBreak`
+###### <a name="planningData_teachers_items_periodsSettings_items_avoidClassesAroundBreak"></a>2.7.1.9.1.6. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > avoidClassesAroundBreak`
 
 **Title:** ConditionType
 
@@ -3017,7 +3004,7 @@ Must be one of:
 
 **Description:** It indicates whether the existence of class units on both sides of a playground supervision taught by this teacher will be penalised or forbidden.
 
-###### <a name="planningData_teachers_items_periodsSettings_items_freeTimes"></a>3.7.1.9.1.7. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > freeTimes`
+###### <a name="planningData_teachers_items_periodsSettings_items_freeTimes"></a>2.7.1.9.1.7. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > freeTimes`
 
 **Title:** FreeTimes
 
@@ -3030,7 +3017,7 @@ Must be one of:
 
 **Description:** It contains the free time spaces that the teacher must have.
 
-###### <a name="planningData_teachers_items_periodsSettings_items_freePartTimes"></a>3.7.1.9.1.8. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > freePartTimes`
+###### <a name="planningData_teachers_items_periodsSettings_items_freePartTimes"></a>2.7.1.9.1.8. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > freePartTimes`
 
 **Title:** FreePartTime
 
@@ -3043,7 +3030,7 @@ Must be one of:
 
 **Description:** Free half-time periods .
 
-###### <a name="planningData_teachers_items_periodsSettings_items_incompatibilities"></a>3.7.1.9.1.9. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > incompatibilities`
+###### <a name="planningData_teachers_items_periodsSettings_items_incompatibilities"></a>2.7.1.9.1.9. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > incompatibilities`
 
 **Title:** Incompatibilities
 
@@ -3056,7 +3043,7 @@ Must be one of:
 
 **Description:** It contains the teacher's incompatibilities on the allocation of class units and rest periods.
 
-###### <a name="planningData_teachers_items_periodsSettings_items_dailyOcupation"></a>3.7.1.9.1.10. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > dailyOcupation`
+###### <a name="planningData_teachers_items_periodsSettings_items_dailyOcupation"></a>2.7.1.9.1.10. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > dailyOcupation`
 
 **Title:** DailyOcupation
 
@@ -3069,7 +3056,7 @@ Must be one of:
 
 **Description:** Maximum and minimum values of teaching or activity time for teachers. This object indicates the type of condition (strict or weighting) and whether the automatic calculation in minutes in the engine should be set.
 
-###### <a name="planningData_teachers_items_periodsSettings_items_middayReference"></a>3.7.1.9.1.11. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > middayReference`
+###### <a name="planningData_teachers_items_periodsSettings_items_middayReference"></a>2.7.1.9.1.11. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > middayReference`
 
 **Title:** MiddayReference
 
@@ -3082,7 +3069,7 @@ Must be one of:
 
 **Description:** It indicate the frame where the teacher takes noon pause.
 
-###### <a name="planningData_teachers_items_periodsSettings_items_dailyBuildingTransfers"></a>3.7.1.9.1.12. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > dailyBuildingTransfers`
+###### <a name="planningData_teachers_items_periodsSettings_items_dailyBuildingTransfers"></a>2.7.1.9.1.12. Property `GhcEngineSchema > planningData > teachers > Teacher > periodsSettings > PeriodsSetting > dailyBuildingTransfers`
 
 **Title:** DailyBuildingTransfers
 
@@ -3095,7 +3082,7 @@ Must be one of:
 
 **Description:** Maximum number of movements between buildings that the teacher can make per day.
 
-### <a name="planningData_subjects"></a>3.8. Property `GhcEngineSchema > planningData > subjects`
+### <a name="planningData_subjects"></a>2.8. Property `GhcEngineSchema > planningData > subjects`
 
 **Title:** Subjects
 
@@ -3118,7 +3105,7 @@ Must be one of:
 | --------------------------------------- | ----------- |
 | [Subject](#planningData_subjects_items) | -           |
 
-#### <a name="planningData_subjects_items"></a>3.8.1. GhcEngineSchema > planningData > subjects > Subject
+#### <a name="planningData_subjects_items"></a>2.8.1. GhcEngineSchema > planningData > subjects > Subject
 
 **Title:** Subject
 
@@ -3141,7 +3128,7 @@ Must be one of:
 | - [refColourInResult](#planningData_subjects_items_refColourInResult )       | No      | string           | No         | -                                                                 | Colour code used to represent the subject in the result.             |
 | - [frameTemplate](#planningData_subjects_items_frameTemplate )               | No      | array of object  | No         | Same as [frameTemplate](#planningData_tasks_items_frameTemplate ) | FrameTemplate                                                        |
 
-##### <a name="planningData_subjects_items_id"></a>3.8.1.1. Property `GhcEngineSchema > planningData > subjects > Subject > id`
+##### <a name="planningData_subjects_items_id"></a>2.8.1.1. Property `GhcEngineSchema > planningData > subjects > Subject > id`
 
 |              |          |
 | ------------ | -------- |
@@ -3150,7 +3137,7 @@ Must be one of:
 
 **Description:** Subject identifier.
 
-##### <a name="planningData_subjects_items_shortName"></a>3.8.1.2. Property `GhcEngineSchema > planningData > subjects > Subject > shortName`
+##### <a name="planningData_subjects_items_shortName"></a>2.8.1.2. Property `GhcEngineSchema > planningData > subjects > Subject > shortName`
 
 |              |          |
 | ------------ | -------- |
@@ -3159,7 +3146,7 @@ Must be one of:
 
 **Description:** Short name of the subject.
 
-##### <a name="planningData_subjects_items_fullName"></a>3.8.1.3. Property `GhcEngineSchema > planningData > subjects > Subject > fullName`
+##### <a name="planningData_subjects_items_fullName"></a>2.8.1.3. Property `GhcEngineSchema > planningData > subjects > Subject > fullName`
 
 |              |          |
 | ------------ | -------- |
@@ -3168,7 +3155,7 @@ Must be one of:
 
 **Description:** Complete name of the subject.
 
-##### <a name="planningData_subjects_items_exKey"></a>3.8.1.4. Property `GhcEngineSchema > planningData > subjects > Subject > exKey`
+##### <a name="planningData_subjects_items_exKey"></a>2.8.1.4. Property `GhcEngineSchema > planningData > subjects > Subject > exKey`
 
 |              |          |
 | ------------ | -------- |
@@ -3177,7 +3164,7 @@ Must be one of:
 
 **Description:** External key of the subject
 
-##### <a name="planningData_subjects_items_technicalTeacher"></a>3.8.1.5. Property `GhcEngineSchema > planningData > subjects > Subject > technicalTeacher`
+##### <a name="planningData_subjects_items_technicalTeacher"></a>2.8.1.5. Property `GhcEngineSchema > planningData > subjects > Subject > technicalTeacher`
 
 |              |           |
 | ------------ | --------- |
@@ -3187,7 +3174,7 @@ Must be one of:
 
 **Description:** It indicates whether the subject is teach by technical teacher.
 
-##### <a name="planningData_subjects_items_type"></a>3.8.1.6. Property `GhcEngineSchema > planningData > subjects > Subject > type`
+##### <a name="planningData_subjects_items_type"></a>2.8.1.6. Property `GhcEngineSchema > planningData > subjects > Subject > type`
 
 **Title:** SubjectType
 
@@ -3204,7 +3191,7 @@ Must be one of:
 * "elective"
 * "mentoring"
 
-##### <a name="planningData_subjects_items_refClassroom"></a>3.8.1.7. Property `GhcEngineSchema > planningData > subjects > Subject > refClassroom`
+##### <a name="planningData_subjects_items_refClassroom"></a>2.8.1.7. Property `GhcEngineSchema > planningData > subjects > Subject > refClassroom`
 
 |              |          |
 | ------------ | -------- |
@@ -3213,7 +3200,7 @@ Must be one of:
 
 **Description:** Id of the classroom assigned to teach the subject.
 
-##### <a name="planningData_subjects_items_refClassRoomSetsList"></a>3.8.1.8. Property `GhcEngineSchema > planningData > subjects > Subject > refClassRoomSetsList`
+##### <a name="planningData_subjects_items_refClassRoomSetsList"></a>2.8.1.8. Property `GhcEngineSchema > planningData > subjects > Subject > refClassRoomSetsList`
 
 |              |                   |
 | ------------ | ----------------- |
@@ -3234,7 +3221,7 @@ Must be one of:
 | -------------------------------------------------------------------------- | ------------------------- |
 | [ClassRoomSetRef](#planningData_subjects_items_refClassRoomSetsList_items) | Classroom set identifier. |
 
-###### <a name="planningData_subjects_items_refClassRoomSetsList_items"></a>3.8.1.8.1. GhcEngineSchema > planningData > subjects > Subject > refClassRoomSetsList > ClassRoomSetRef
+###### <a name="planningData_subjects_items_refClassRoomSetsList_items"></a>2.8.1.8.1. GhcEngineSchema > planningData > subjects > Subject > refClassRoomSetsList > ClassRoomSetRef
 
 **Title:** ClassRoomSetRef
 
@@ -3245,7 +3232,7 @@ Must be one of:
 
 **Description:** Classroom set identifier.
 
-##### <a name="planningData_subjects_items_refColourInResult"></a>3.8.1.9. Property `GhcEngineSchema > planningData > subjects > Subject > refColourInResult`
+##### <a name="planningData_subjects_items_refColourInResult"></a>2.8.1.9. Property `GhcEngineSchema > planningData > subjects > Subject > refColourInResult`
 
 |              |          |
 | ------------ | -------- |
@@ -3254,7 +3241,7 @@ Must be one of:
 
 **Description:** Colour code used to represent the subject in the result.
 
-##### <a name="planningData_subjects_items_frameTemplate"></a>3.8.1.10. Property `GhcEngineSchema > planningData > subjects > Subject > frameTemplate`
+##### <a name="planningData_subjects_items_frameTemplate"></a>2.8.1.10. Property `GhcEngineSchema > planningData > subjects > Subject > frameTemplate`
 
 **Title:** FrameTemplate
 
@@ -3266,7 +3253,7 @@ Must be one of:
 
 **Description:** Templates with frame sections assignment preferences.
 
-### <a name="planningData_groups"></a>3.9. Property `GhcEngineSchema > planningData > groups`
+### <a name="planningData_groups"></a>2.9. Property `GhcEngineSchema > planningData > groups`
 
 **Title:** Groups
 
@@ -3289,7 +3276,7 @@ Must be one of:
 | ----------------------------------- | ----------- |
 | [Group](#planningData_groups_items) | -           |
 
-#### <a name="planningData_groups_items"></a>3.9.1. GhcEngineSchema > planningData > groups > Group
+#### <a name="planningData_groups_items"></a>2.9.1. GhcEngineSchema > planningData > groups > Group
 
 **Title:** Group
 
@@ -3317,7 +3304,7 @@ Must be one of:
 | - [refClassroom](#planningData_groups_items_refClassroom )                         | No      | string           | No         | -                                                                                        | Id of the classroom assigned to the group                                                                                        |
 | - [refClassRoomSetsList](#planningData_groups_items_refClassRoomSetsList )         | No      | array of string  | No         | -                                                                                        | List of classroom sets assigned to the group.                                                                                    |
 
-##### <a name="planningData_groups_items_id"></a>3.9.1.1. Property `GhcEngineSchema > planningData > groups > Group > id`
+##### <a name="planningData_groups_items_id"></a>2.9.1.1. Property `GhcEngineSchema > planningData > groups > Group > id`
 
 |              |          |
 | ------------ | -------- |
@@ -3326,7 +3313,7 @@ Must be one of:
 
 **Description:** Group identifier.
 
-##### <a name="planningData_groups_items_shortName"></a>3.9.1.2. Property `GhcEngineSchema > planningData > groups > Group > shortName`
+##### <a name="planningData_groups_items_shortName"></a>2.9.1.2. Property `GhcEngineSchema > planningData > groups > Group > shortName`
 
 |              |          |
 | ------------ | -------- |
@@ -3335,7 +3322,7 @@ Must be one of:
 
 **Description:** Short name of the group.
 
-##### <a name="planningData_groups_items_fullName"></a>3.9.1.3. Property `GhcEngineSchema > planningData > groups > Group > fullName`
+##### <a name="planningData_groups_items_fullName"></a>2.9.1.3. Property `GhcEngineSchema > planningData > groups > Group > fullName`
 
 |              |          |
 | ------------ | -------- |
@@ -3344,7 +3331,7 @@ Must be one of:
 
 **Description:** Complete name of the group.
 
-##### <a name="planningData_groups_items_exKey"></a>3.9.1.4. Property `GhcEngineSchema > planningData > groups > Group > exKey`
+##### <a name="planningData_groups_items_exKey"></a>2.9.1.4. Property `GhcEngineSchema > planningData > groups > Group > exKey`
 
 |              |          |
 | ------------ | -------- |
@@ -3353,7 +3340,7 @@ Must be one of:
 
 **Description:** External key of the subject
 
-##### <a name="planningData_groups_items_refFrame"></a>3.9.1.5. Property `GhcEngineSchema > planningData > groups > Group > refFrame`
+##### <a name="planningData_groups_items_refFrame"></a>2.9.1.5. Property `GhcEngineSchema > planningData > groups > Group > refFrame`
 
 |              |          |
 | ------------ | -------- |
@@ -3362,7 +3349,7 @@ Must be one of:
 
 **Description:** Group's frame identifier.
 
-##### <a name="planningData_groups_items_frameTemplate"></a>3.9.1.6. Property `GhcEngineSchema > planningData > groups > Group > frameTemplate`
+##### <a name="planningData_groups_items_frameTemplate"></a>2.9.1.6. Property `GhcEngineSchema > planningData > groups > Group > frameTemplate`
 
 **Title:** FrameTemplate
 
@@ -3374,7 +3361,7 @@ Must be one of:
 
 **Description:** Templates with frame sections assignment preferences.
 
-##### <a name="planningData_groups_items_numStudents"></a>3.9.1.7. Property `GhcEngineSchema > planningData > groups > Group > numStudents`
+##### <a name="planningData_groups_items_numStudents"></a>2.9.1.7. Property `GhcEngineSchema > planningData > groups > Group > numStudents`
 
 |              |           |
 | ------------ | --------- |
@@ -3383,7 +3370,7 @@ Must be one of:
 
 **Description:** Number of students in the group.
 
-##### <a name="planningData_groups_items_freeAfternoons"></a>3.9.1.8. Property `GhcEngineSchema > planningData > groups > Group > freeAfternoons`
+##### <a name="planningData_groups_items_freeAfternoons"></a>2.9.1.8. Property `GhcEngineSchema > planningData > groups > Group > freeAfternoons`
 
 |              |           |
 | ------------ | --------- |
@@ -3392,7 +3379,7 @@ Must be one of:
 
 **Description:** Stric number of free afternoons for the group.
 
-##### <a name="planningData_groups_items_notGaps"></a>3.9.1.9. Property `GhcEngineSchema > planningData > groups > Group > notGaps`
+##### <a name="planningData_groups_items_notGaps"></a>2.9.1.9. Property `GhcEngineSchema > planningData > groups > Group > notGaps`
 
 **Title:** ConditionType
 
@@ -3404,7 +3391,7 @@ Must be one of:
 
 **Description:** It indicates if the group can have gaps in its timetable.
 
-##### <a name="planningData_groups_items_gapsAlwaysInNonPreferred"></a>3.9.1.10. Property `GhcEngineSchema > planningData > groups > Group > gapsAlwaysInNonPreferred`
+##### <a name="planningData_groups_items_gapsAlwaysInNonPreferred"></a>2.9.1.10. Property `GhcEngineSchema > planningData > groups > Group > gapsAlwaysInNonPreferred`
 
 |              |           |
 | ------------ | --------- |
@@ -3413,7 +3400,7 @@ Must be one of:
 
 **Description:** This indicates whether the engine should be in the positions marked as non-preferred in the template for free intervals or gaps.
 
-##### <a name="planningData_groups_items_refCourse"></a>3.9.1.11. Property `GhcEngineSchema > planningData > groups > Group > refCourse`
+##### <a name="planningData_groups_items_refCourse"></a>2.9.1.11. Property `GhcEngineSchema > planningData > groups > Group > refCourse`
 
 |              |          |
 | ------------ | -------- |
@@ -3422,7 +3409,7 @@ Must be one of:
 
 **Description:** Course identifier to which the group belongs.
 
-##### <a name="planningData_groups_items_includedGroups"></a>3.9.1.12. Property `GhcEngineSchema > planningData > groups > Group > includedGroups`
+##### <a name="planningData_groups_items_includedGroups"></a>2.9.1.12. Property `GhcEngineSchema > planningData > groups > Group > includedGroups`
 
 |              |                   |
 | ------------ | ----------------- |
@@ -3443,7 +3430,7 @@ Must be one of:
 | ------------------------------------------------------------ | ------------------ |
 | [refGroups](#planningData_groups_items_includedGroups_items) | Groups identifier. |
 
-###### <a name="planningData_groups_items_includedGroups_items"></a>3.9.1.12.1. GhcEngineSchema > planningData > groups > Group > includedGroups > refGroups
+###### <a name="planningData_groups_items_includedGroups_items"></a>2.9.1.12.1. GhcEngineSchema > planningData > groups > Group > includedGroups > refGroups
 
 **Title:** refGroups
 
@@ -3454,7 +3441,7 @@ Must be one of:
 
 **Description:** Groups identifier.
 
-##### <a name="planningData_groups_items_refTeacher"></a>3.9.1.13. Property `GhcEngineSchema > planningData > groups > Group > refTeacher`
+##### <a name="planningData_groups_items_refTeacher"></a>2.9.1.13. Property `GhcEngineSchema > planningData > groups > Group > refTeacher`
 
 |              |          |
 | ------------ | -------- |
@@ -3463,7 +3450,7 @@ Must be one of:
 
 **Description:** Id of the tutor teacher assigned to the group
 
-##### <a name="planningData_groups_items_refClassroom"></a>3.9.1.14. Property `GhcEngineSchema > planningData > groups > Group > refClassroom`
+##### <a name="planningData_groups_items_refClassroom"></a>2.9.1.14. Property `GhcEngineSchema > planningData > groups > Group > refClassroom`
 
 |              |          |
 | ------------ | -------- |
@@ -3472,7 +3459,7 @@ Must be one of:
 
 **Description:** Id of the classroom assigned to the group
 
-##### <a name="planningData_groups_items_refClassRoomSetsList"></a>3.9.1.15. Property `GhcEngineSchema > planningData > groups > Group > refClassRoomSetsList`
+##### <a name="planningData_groups_items_refClassRoomSetsList"></a>2.9.1.15. Property `GhcEngineSchema > planningData > groups > Group > refClassRoomSetsList`
 
 |              |                   |
 | ------------ | ----------------- |
@@ -3493,7 +3480,7 @@ Must be one of:
 | ------------------------------------------------------------------------ | ------------------------- |
 | [ClassRoomSetRef](#planningData_groups_items_refClassRoomSetsList_items) | Classroom set identifier. |
 
-###### <a name="planningData_groups_items_refClassRoomSetsList_items"></a>3.9.1.15.1. GhcEngineSchema > planningData > groups > Group > refClassRoomSetsList > ClassRoomSetRef
+###### <a name="planningData_groups_items_refClassRoomSetsList_items"></a>2.9.1.15.1. GhcEngineSchema > planningData > groups > Group > refClassRoomSetsList > ClassRoomSetRef
 
 **Title:** ClassRoomSetRef
 
@@ -3504,7 +3491,7 @@ Must be one of:
 
 **Description:** Classroom set identifier.
 
-### <a name="planningData_groupSetRelations"></a>3.10. Property `GhcEngineSchema > planningData > groupSetRelations`
+### <a name="planningData_groupSetRelations"></a>2.10. Property `GhcEngineSchema > planningData > groupSetRelations`
 
 **Title:** GroupSetRelations
 
@@ -3527,7 +3514,7 @@ Must be one of:
 | --------------------------------------------------------- | --------------------------------------------------------------------------------- |
 | [GroupSetRelation](#planningData_groupSetRelations_items) | Relationship between group sets represented by Group objects with includedGroups. |
 
-#### <a name="planningData_groupSetRelations_items"></a>3.10.1. GhcEngineSchema > planningData > groupSetRelations > GroupSetRelation
+#### <a name="planningData_groupSetRelations_items"></a>2.10.1. GhcEngineSchema > planningData > groupSetRelations > GroupSetRelation
 
 **Title:** GroupSetRelation
 
@@ -3546,7 +3533,7 @@ Must be one of:
 | - [alias](#planningData_groupSetRelations_items_alias )           | No      | string  | No         | -                                     | Optional name used to identify the group set relationship. |
 | + [expression](#planningData_groupSetRelations_items_expression ) | No      | object  | No         | In #/$defs/groupSetRelationExpression | GroupSetRelationExpression                                 |
 
-##### <a name="planningData_groupSetRelations_items_id"></a>3.10.1.1. Property `GhcEngineSchema > planningData > groupSetRelations > GroupSetRelation > id`
+##### <a name="planningData_groupSetRelations_items_id"></a>2.10.1.1. Property `GhcEngineSchema > planningData > groupSetRelations > GroupSetRelation > id`
 
 |              |           |
 | ------------ | --------- |
@@ -3555,7 +3542,7 @@ Must be one of:
 
 **Description:** Group set relationship identifier.
 
-##### <a name="planningData_groupSetRelations_items_alias"></a>3.10.1.2. Property `GhcEngineSchema > planningData > groupSetRelations > GroupSetRelation > alias`
+##### <a name="planningData_groupSetRelations_items_alias"></a>2.10.1.2. Property `GhcEngineSchema > planningData > groupSetRelations > GroupSetRelation > alias`
 
 |              |          |
 | ------------ | -------- |
@@ -3564,7 +3551,7 @@ Must be one of:
 
 **Description:** Optional name used to identify the group set relationship.
 
-##### <a name="planningData_groupSetRelations_items_expression"></a>3.10.1.3. Property `GhcEngineSchema > planningData > groupSetRelations > GroupSetRelation > expression`
+##### <a name="planningData_groupSetRelations_items_expression"></a>2.10.1.3. Property `GhcEngineSchema > planningData > groupSetRelations > GroupSetRelation > expression`
 
 **Title:** GroupSetRelationExpression
 
@@ -3583,7 +3570,7 @@ Must be one of:
 | - [refGroupSet](#planningData_groupSetRelations_items_expression_refGroupSet )                             | No      | array of string  | No         | -          | GroupSetRelationMembers                                                                                                                                          |
 | - [nestedRelationExpressions](#planningData_groupSetRelations_items_expression_nestedRelationExpressions ) | No      | array            | No         | -          | NestedRelationExpressions                                                                                                                                        |
 
-###### <a name="planningData_groupSetRelations_items_expression_operator"></a>3.10.1.3.1. Property `GhcEngineSchema > planningData > groupSetRelations > GroupSetRelation > expression > operator`
+###### <a name="planningData_groupSetRelations_items_expression_operator"></a>2.10.1.3.1. Property `GhcEngineSchema > planningData > groupSetRelations > GroupSetRelation > expression > operator`
 
 |              |                    |
 | ------------ | ------------------ |
@@ -3596,7 +3583,7 @@ Must be one of:
 * "COMPATIBLE"
 * "EXCLUSIVE"
 
-###### <a name="planningData_groupSetRelations_items_expression_refGroupSet"></a>3.10.1.3.2. Property `GhcEngineSchema > planningData > groupSetRelations > GroupSetRelation > expression > refGroupSet`
+###### <a name="planningData_groupSetRelations_items_expression_refGroupSet"></a>2.10.1.3.2. Property `GhcEngineSchema > planningData > groupSetRelations > GroupSetRelation > expression > refGroupSet`
 
 **Title:** GroupSetRelationMembers
 
@@ -3619,7 +3606,7 @@ Must be one of:
 | --------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
 | [GroupSetReference](#planningData_groupSetRelations_items_expression_refGroupSet_items) | Identifier of a Group that represents a group set through its includedGroups property. |
 
-###### <a name="planningData_groupSetRelations_items_expression_refGroupSet_items"></a>3.10.1.3.2.1. GhcEngineSchema > planningData > groupSetRelations > GroupSetRelation > expression > refGroupSet > GroupSetReference
+###### <a name="planningData_groupSetRelations_items_expression_refGroupSet_items"></a>2.10.1.3.2.1. GhcEngineSchema > planningData > groupSetRelations > GroupSetRelation > expression > refGroupSet > GroupSetReference
 
 **Title:** GroupSetReference
 
@@ -3630,7 +3617,7 @@ Must be one of:
 
 **Description:** Identifier of a Group that represents a group set through its includedGroups property.
 
-###### <a name="planningData_groupSetRelations_items_expression_nestedRelationExpressions"></a>3.10.1.3.3. Property `GhcEngineSchema > planningData > groupSetRelations > GroupSetRelation > expression > nestedRelationExpressions`
+###### <a name="planningData_groupSetRelations_items_expression_nestedRelationExpressions"></a>2.10.1.3.3. Property `GhcEngineSchema > planningData > groupSetRelations > GroupSetRelation > expression > nestedRelationExpressions`
 
 **Title:** NestedRelationExpressions
 
@@ -3653,7 +3640,7 @@ Must be one of:
 | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
 | [GroupSetRelationExpression](#planningData_groupSetRelations_items_expression_nestedRelationExpressions_items) | Expression that indicates whether its referenced group sets or nested expressions can be scheduled simultaneously. |
 
-###### <a name="planningData_groupSetRelations_items_expression_nestedRelationExpressions_items"></a>3.10.1.3.3.1. GhcEngineSchema > planningData > groupSetRelations > GroupSetRelation > expression > nestedRelationExpressions > GroupSetRelationExpression
+###### <a name="planningData_groupSetRelations_items_expression_nestedRelationExpressions_items"></a>2.10.1.3.3.1. GhcEngineSchema > planningData > groupSetRelations > GroupSetRelation > expression > nestedRelationExpressions > GroupSetRelationExpression
 
 **Title:** GroupSetRelationExpression
 
@@ -3666,7 +3653,7 @@ Must be one of:
 
 **Description:** Expression that indicates whether its referenced group sets or nested expressions can be scheduled simultaneously.
 
-### <a name="planningData_courses"></a>3.11. Property `GhcEngineSchema > planningData > courses`
+### <a name="planningData_courses"></a>2.11. Property `GhcEngineSchema > planningData > courses`
 
 **Title:** Courses
 
@@ -3689,7 +3676,7 @@ Must be one of:
 | ------------------------------------- | ----------- |
 | [Course](#planningData_courses_items) | -           |
 
-#### <a name="planningData_courses_items"></a>3.11.1. GhcEngineSchema > planningData > courses > Course
+#### <a name="planningData_courses_items"></a>2.11.1. GhcEngineSchema > planningData > courses > Course
 
 **Title:** Course
 
@@ -3706,7 +3693,7 @@ Must be one of:
 | - [exKey](#planningData_courses_items_exKey )                   | No      | string          | No         | -          | External key of the course               |
 | - [courseSubjects](#planningData_courses_items_courseSubjects ) | No      | array of object | No         | -          | List of subjects assigned to the course. |
 
-##### <a name="planningData_courses_items_id"></a>3.11.1.1. Property `GhcEngineSchema > planningData > courses > Course > id`
+##### <a name="planningData_courses_items_id"></a>2.11.1.1. Property `GhcEngineSchema > planningData > courses > Course > id`
 
 |              |          |
 | ------------ | -------- |
@@ -3715,7 +3702,7 @@ Must be one of:
 
 **Description:** Course identifier.
 
-##### <a name="planningData_courses_items_fullName"></a>3.11.1.2. Property `GhcEngineSchema > planningData > courses > Course > fullName`
+##### <a name="planningData_courses_items_fullName"></a>2.11.1.2. Property `GhcEngineSchema > planningData > courses > Course > fullName`
 
 |              |          |
 | ------------ | -------- |
@@ -3724,7 +3711,7 @@ Must be one of:
 
 **Description:** Full name of the course.
 
-##### <a name="planningData_courses_items_exKey"></a>3.11.1.3. Property `GhcEngineSchema > planningData > courses > Course > exKey`
+##### <a name="planningData_courses_items_exKey"></a>2.11.1.3. Property `GhcEngineSchema > planningData > courses > Course > exKey`
 
 |              |          |
 | ------------ | -------- |
@@ -3733,7 +3720,7 @@ Must be one of:
 
 **Description:** External key of the course
 
-##### <a name="planningData_courses_items_courseSubjects"></a>3.11.1.4. Property `GhcEngineSchema > planningData > courses > Course > courseSubjects`
+##### <a name="planningData_courses_items_courseSubjects"></a>2.11.1.4. Property `GhcEngineSchema > planningData > courses > Course > courseSubjects`
 
 |              |                   |
 | ------------ | ----------------- |
@@ -3754,7 +3741,7 @@ Must be one of:
 | ----------------------------------------------------------------- | ----------- |
 | [CourseSubject](#planningData_courses_items_courseSubjects_items) | -           |
 
-###### <a name="planningData_courses_items_courseSubjects_items"></a>3.11.1.4.1. GhcEngineSchema > planningData > courses > Course > courseSubjects > CourseSubject
+###### <a name="planningData_courses_items_courseSubjects_items"></a>2.11.1.4.1. GhcEngineSchema > planningData > courses > Course > courseSubjects > CourseSubject
 
 **Title:** CourseSubject
 
@@ -3769,7 +3756,7 @@ Must be one of:
 | + [numHours](#planningData_courses_items_courseSubjects_items_numHours )     | No      | integer | No         | -          | Number of hours that this subject is taught. By default, it is 1. |
 | + [refSubject](#planningData_courses_items_courseSubjects_items_refSubject ) | No      | string  | No         | -          | Subject of the course.                                            |
 
-###### <a name="planningData_courses_items_courseSubjects_items_numHours"></a>3.11.1.4.1.1. Property `GhcEngineSchema > planningData > courses > Course > courseSubjects > CourseSubject > numHours`
+###### <a name="planningData_courses_items_courseSubjects_items_numHours"></a>2.11.1.4.1.1. Property `GhcEngineSchema > planningData > courses > Course > courseSubjects > CourseSubject > numHours`
 
 |              |           |
 | ------------ | --------- |
@@ -3778,7 +3765,7 @@ Must be one of:
 
 **Description:** Number of hours that this subject is taught. By default, it is 1.
 
-###### <a name="planningData_courses_items_courseSubjects_items_refSubject"></a>3.11.1.4.1.2. Property `GhcEngineSchema > planningData > courses > Course > courseSubjects > CourseSubject > refSubject`
+###### <a name="planningData_courses_items_courseSubjects_items_refSubject"></a>2.11.1.4.1.2. Property `GhcEngineSchema > planningData > courses > Course > courseSubjects > CourseSubject > refSubject`
 
 |              |          |
 | ------------ | -------- |
@@ -3787,7 +3774,7 @@ Must be one of:
 
 **Description:** Subject of the course.
 
-### <a name="planningData_departments"></a>3.12. Property `GhcEngineSchema > planningData > departments`
+### <a name="planningData_departments"></a>2.12. Property `GhcEngineSchema > planningData > departments`
 
 **Title:** Departments
 
@@ -3810,7 +3797,7 @@ Must be one of:
 | --------------------------------------------- | ----------- |
 | [Department](#planningData_departments_items) | -           |
 
-#### <a name="planningData_departments_items"></a>3.12.1. GhcEngineSchema > planningData > departments > Department
+#### <a name="planningData_departments_items"></a>2.12.1. GhcEngineSchema > planningData > departments > Department
 
 **Title:** Department
 
@@ -3831,7 +3818,7 @@ Must be one of:
 | - [refTeacher](#planningData_departments_items_refTeacher )                   | No      | array of string | No         | -          | Identifier of the list of teachers who are in this department                                     |
 | - [refSubjects](#planningData_departments_items_refSubjects )                 | No      | array of string | No         | -          | Identifier of the list of subjects who are in this department                                     |
 
-##### <a name="planningData_departments_items_id"></a>3.12.1.1. Property `GhcEngineSchema > planningData > departments > Department > id`
+##### <a name="planningData_departments_items_id"></a>2.12.1.1. Property `GhcEngineSchema > planningData > departments > Department > id`
 
 |              |          |
 | ------------ | -------- |
@@ -3840,7 +3827,7 @@ Must be one of:
 
 **Description:** Department identifier.
 
-##### <a name="planningData_departments_items_fullName"></a>3.12.1.2. Property `GhcEngineSchema > planningData > departments > Department > fullName`
+##### <a name="planningData_departments_items_fullName"></a>2.12.1.2. Property `GhcEngineSchema > planningData > departments > Department > fullName`
 
 |              |          |
 | ------------ | -------- |
@@ -3849,7 +3836,7 @@ Must be one of:
 
 **Description:** Full name of the department.
 
-##### <a name="planningData_departments_items_messageToDepartment"></a>3.12.1.3. Property `GhcEngineSchema > planningData > departments > Department > messageToDepartment`
+##### <a name="planningData_departments_items_messageToDepartment"></a>2.12.1.3. Property `GhcEngineSchema > planningData > departments > Department > messageToDepartment`
 
 |              |          |
 | ------------ | -------- |
@@ -3858,7 +3845,7 @@ Must be one of:
 
 **Description:** Message that will be shown to the Department in the desiderata capture program.
 
-##### <a name="planningData_departments_items_isNew"></a>3.12.1.4. Property `GhcEngineSchema > planningData > departments > Department > isNew`
+##### <a name="planningData_departments_items_isNew"></a>2.12.1.4. Property `GhcEngineSchema > planningData > departments > Department > isNew`
 
 |              |           |
 | ------------ | --------- |
@@ -3867,7 +3854,7 @@ Must be one of:
 
 **Description:** Boolean that indicates if the Department has been newly created in the desiderata capture module.
 
-##### <a name="planningData_departments_items_exKey"></a>3.12.1.5. Property `GhcEngineSchema > planningData > departments > Department > exKey`
+##### <a name="planningData_departments_items_exKey"></a>2.12.1.5. Property `GhcEngineSchema > planningData > departments > Department > exKey`
 
 |              |          |
 | ------------ | -------- |
@@ -3876,7 +3863,7 @@ Must be one of:
 
 **Description:** Identifier of the Department in external application or academic manager.
 
-##### <a name="planningData_departments_items_email"></a>3.12.1.6. Property `GhcEngineSchema > planningData > departments > Department > email`
+##### <a name="planningData_departments_items_email"></a>2.12.1.6. Property `GhcEngineSchema > planningData > departments > Department > email`
 
 |              |          |
 | ------------ | -------- |
@@ -3885,7 +3872,7 @@ Must be one of:
 
 **Description:** It is an email type that is associated with the Department
 
-##### <a name="planningData_departments_items_refTeacher"></a>3.12.1.7. Property `GhcEngineSchema > planningData > departments > Department > refTeacher`
+##### <a name="planningData_departments_items_refTeacher"></a>2.12.1.7. Property `GhcEngineSchema > planningData > departments > Department > refTeacher`
 
 |              |                   |
 | ------------ | ----------------- |
@@ -3906,14 +3893,14 @@ Must be one of:
 | -------------------------------------------------------------------- | ----------- |
 | [refTeacher items](#planningData_departments_items_refTeacher_items) | -           |
 
-###### <a name="planningData_departments_items_refTeacher_items"></a>3.12.1.7.1. GhcEngineSchema > planningData > departments > Department > refTeacher > refTeacher items
+###### <a name="planningData_departments_items_refTeacher_items"></a>2.12.1.7.1. GhcEngineSchema > planningData > departments > Department > refTeacher > refTeacher items
 
 |              |          |
 | ------------ | -------- |
 | **Type**     | `string` |
 | **Required** | No       |
 
-##### <a name="planningData_departments_items_refSubjects"></a>3.12.1.8. Property `GhcEngineSchema > planningData > departments > Department > refSubjects`
+##### <a name="planningData_departments_items_refSubjects"></a>2.12.1.8. Property `GhcEngineSchema > planningData > departments > Department > refSubjects`
 
 |              |                   |
 | ------------ | ----------------- |
@@ -3934,14 +3921,14 @@ Must be one of:
 | ---------------------------------------------------------------------- | ----------- |
 | [refSubjects items](#planningData_departments_items_refSubjects_items) | -           |
 
-###### <a name="planningData_departments_items_refSubjects_items"></a>3.12.1.8.1. GhcEngineSchema > planningData > departments > Department > refSubjects > refSubjects items
+###### <a name="planningData_departments_items_refSubjects_items"></a>2.12.1.8.1. GhcEngineSchema > planningData > departments > Department > refSubjects > refSubjects items
 
 |              |          |
 | ------------ | -------- |
 | **Type**     | `string` |
 | **Required** | No       |
 
-### <a name="planningData_sessions"></a>3.13. Property `GhcEngineSchema > planningData > sessions`
+### <a name="planningData_sessions"></a>2.13. Property `GhcEngineSchema > planningData > sessions`
 
 **Title:** Sessions
 
@@ -3964,7 +3951,7 @@ Must be one of:
 | --------------------------------------- | ----------- |
 | [Session](#planningData_sessions_items) | -           |
 
-#### <a name="planningData_sessions_items"></a>3.13.1. GhcEngineSchema > planningData > sessions > Session
+#### <a name="planningData_sessions_items"></a>2.13.1. GhcEngineSchema > planningData > sessions > Session
 
 **Title:** Session
 
@@ -3991,7 +3978,7 @@ Must be one of:
 | - [sessionRelations](#planningData_sessions_items_sessionRelations )                   | No      | object          | No         | -                               | SessionRelations                                         |
 | - [department](#planningData_sessions_items_department )                               | No      | string          | No         | -                               | Contains the reference of the department of the session. |
 
-##### <a name="planningData_sessions_items_id"></a>3.13.1.1. Property `GhcEngineSchema > planningData > sessions > Session > id`
+##### <a name="planningData_sessions_items_id"></a>2.13.1.1. Property `GhcEngineSchema > planningData > sessions > Session > id`
 
 |              |           |
 | ------------ | --------- |
@@ -4000,7 +3987,7 @@ Must be one of:
 
 **Description:** Session identifier.
 
-##### <a name="planningData_sessions_items_refFrame"></a>3.13.1.2. Property `GhcEngineSchema > planningData > sessions > Session > refFrame`
+##### <a name="planningData_sessions_items_refFrame"></a>2.13.1.2. Property `GhcEngineSchema > planningData > sessions > Session > refFrame`
 
 |              |          |
 | ------------ | -------- |
@@ -4009,7 +3996,7 @@ Must be one of:
 
 **Description:** Session's frame identifier.
 
-##### <a name="planningData_sessions_items_refMainTask"></a>3.13.1.3. Property `GhcEngineSchema > planningData > sessions > Session > refMainTask`
+##### <a name="planningData_sessions_items_refMainTask"></a>2.13.1.3. Property `GhcEngineSchema > planningData > sessions > Session > refMainTask`
 
 **Title:** RefMainTask
 
@@ -4020,7 +4007,7 @@ Must be one of:
 
 **Description:** Main Task identifier.
 
-##### <a name="planningData_sessions_items_refMainTeacher"></a>3.13.1.4. Property `GhcEngineSchema > planningData > sessions > Session > refMainTeacher`
+##### <a name="planningData_sessions_items_refMainTeacher"></a>2.13.1.4. Property `GhcEngineSchema > planningData > sessions > Session > refMainTeacher`
 
 **Title:** RefMainTeacher
 
@@ -4031,7 +4018,7 @@ Must be one of:
 
 **Description:** Main Teacher identifier.
 
-##### <a name="planningData_sessions_items_refMainSubject"></a>3.13.1.5. Property `GhcEngineSchema > planningData > sessions > Session > refMainSubject`
+##### <a name="planningData_sessions_items_refMainSubject"></a>2.13.1.5. Property `GhcEngineSchema > planningData > sessions > Session > refMainSubject`
 
 **Title:** RefMainSubject
 
@@ -4042,7 +4029,7 @@ Must be one of:
 
 **Description:** Identifier name of the main subject.
 
-##### <a name="planningData_sessions_items_refMainGroup"></a>3.13.1.6. Property `GhcEngineSchema > planningData > sessions > Session > refMainGroup`
+##### <a name="planningData_sessions_items_refMainGroup"></a>2.13.1.6. Property `GhcEngineSchema > planningData > sessions > Session > refMainGroup`
 
 **Title:** GroupReferenceType
 
@@ -4060,7 +4047,7 @@ Must be one of:
 | + [refIdGroup](#planningData_sessions_items_refMainGroup_refIdGroup )   | No      | string  | No         | -          | Group identifier.                                                                                                                    |
 | - [numStudents](#planningData_sessions_items_refMainGroup_numStudents ) | No      | integer | No         | -          | Custom number of students that are in the class units. If it is not specified, the engine defaults to the value of the Group object. |
 
-###### <a name="planningData_sessions_items_refMainGroup_refIdGroup"></a>3.13.1.6.1. Property `GhcEngineSchema > planningData > sessions > Session > refMainGroup > refIdGroup`
+###### <a name="planningData_sessions_items_refMainGroup_refIdGroup"></a>2.13.1.6.1. Property `GhcEngineSchema > planningData > sessions > Session > refMainGroup > refIdGroup`
 
 |              |          |
 | ------------ | -------- |
@@ -4069,7 +4056,7 @@ Must be one of:
 
 **Description:** Group identifier.
 
-###### <a name="planningData_sessions_items_refMainGroup_numStudents"></a>3.13.1.6.2. Property `GhcEngineSchema > planningData > sessions > Session > refMainGroup > numStudents`
+###### <a name="planningData_sessions_items_refMainGroup_numStudents"></a>2.13.1.6.2. Property `GhcEngineSchema > planningData > sessions > Session > refMainGroup > numStudents`
 
 |              |           |
 | ------------ | --------- |
@@ -4078,7 +4065,7 @@ Must be one of:
 
 **Description:** Custom number of students that are in the class units. If it is not specified, the engine defaults to the value of the Group object.
 
-##### <a name="planningData_sessions_items_refColourInResult"></a>3.13.1.7. Property `GhcEngineSchema > planningData > sessions > Session > refColourInResult`
+##### <a name="planningData_sessions_items_refColourInResult"></a>2.13.1.7. Property `GhcEngineSchema > planningData > sessions > Session > refColourInResult`
 
 **Title:** RefColourInResult
 
@@ -4089,7 +4076,7 @@ Must be one of:
 
 **Description:** Colour code used to represent the session in the result.
 
-##### <a name="planningData_sessions_items_otherElementsInClassRooms"></a>3.13.1.8. Property `GhcEngineSchema > planningData > sessions > Session > otherElementsInClassRooms`
+##### <a name="planningData_sessions_items_otherElementsInClassRooms"></a>2.13.1.8. Property `GhcEngineSchema > planningData > sessions > Session > otherElementsInClassRooms`
 
 **Title:** OtherElementsInClassRoomsList
 
@@ -4112,7 +4099,7 @@ Must be one of:
 | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | [OtherElementsInClassRooms](#planningData_sessions_items_otherElementsInClassRooms_items) | It contains interrelated elements that are present in the session in addition to the main ones. |
 
-###### <a name="planningData_sessions_items_otherElementsInClassRooms_items"></a>3.13.1.8.1. GhcEngineSchema > planningData > sessions > Session > otherElementsInClassRooms > OtherElementsInClassRooms
+###### <a name="planningData_sessions_items_otherElementsInClassRooms_items"></a>2.13.1.8.1. GhcEngineSchema > planningData > sessions > Session > otherElementsInClassRooms > OtherElementsInClassRooms
 
 **Title:** OtherElementsInClassRooms
 
@@ -4131,7 +4118,7 @@ Must be one of:
 | - [refGroup](#planningData_sessions_items_otherElementsInClassRooms_items_refGroup )     | No      | object | No         | Same as [refMainGroup](#planningData_sessions_items_refMainGroup ) | GroupReferenceType |
 | - [refTask](#planningData_sessions_items_otherElementsInClassRooms_items_refTask )       | No      | string | No         | -                                                                  | TaskReference      |
 
-###### <a name="planningData_sessions_items_otherElementsInClassRooms_items_refSubject"></a>3.13.1.8.1.1. Property `GhcEngineSchema > planningData > sessions > Session > otherElementsInClassRooms > OtherElementsInClassRooms > refSubject`
+###### <a name="planningData_sessions_items_otherElementsInClassRooms_items_refSubject"></a>2.13.1.8.1.1. Property `GhcEngineSchema > planningData > sessions > Session > otherElementsInClassRooms > OtherElementsInClassRooms > refSubject`
 
 **Title:** SubjectReference
 
@@ -4142,7 +4129,7 @@ Must be one of:
 
 **Description:** Identifier name of other subject in the classroom.
 
-###### <a name="planningData_sessions_items_otherElementsInClassRooms_items_refTeacher"></a>3.13.1.8.1.2. Property `GhcEngineSchema > planningData > sessions > Session > otherElementsInClassRooms > OtherElementsInClassRooms > refTeacher`
+###### <a name="planningData_sessions_items_otherElementsInClassRooms_items_refTeacher"></a>2.13.1.8.1.2. Property `GhcEngineSchema > planningData > sessions > Session > otherElementsInClassRooms > OtherElementsInClassRooms > refTeacher`
 
 **Title:** TeacherReference
 
@@ -4153,7 +4140,7 @@ Must be one of:
 
 **Description:** Identifier name of other teacher in the classroom.
 
-###### <a name="planningData_sessions_items_otherElementsInClassRooms_items_refGroup"></a>3.13.1.8.1.3. Property `GhcEngineSchema > planningData > sessions > Session > otherElementsInClassRooms > OtherElementsInClassRooms > refGroup`
+###### <a name="planningData_sessions_items_otherElementsInClassRooms_items_refGroup"></a>2.13.1.8.1.3. Property `GhcEngineSchema > planningData > sessions > Session > otherElementsInClassRooms > OtherElementsInClassRooms > refGroup`
 
 **Title:** GroupReferenceType
 
@@ -4166,7 +4153,7 @@ Must be one of:
 
 **Description:** Contains the reference to a group of the session, and optionally, the number of students of the group that attend the session.
 
-###### <a name="planningData_sessions_items_otherElementsInClassRooms_items_refTask"></a>3.13.1.8.1.4. Property `GhcEngineSchema > planningData > sessions > Session > otherElementsInClassRooms > OtherElementsInClassRooms > refTask`
+###### <a name="planningData_sessions_items_otherElementsInClassRooms_items_refTask"></a>2.13.1.8.1.4. Property `GhcEngineSchema > planningData > sessions > Session > otherElementsInClassRooms > OtherElementsInClassRooms > refTask`
 
 **Title:** TaskReference
 
@@ -4177,7 +4164,7 @@ Must be one of:
 
 **Description:** Identifier name of the task of the other teacher.
 
-##### <a name="planningData_sessions_items_distribution"></a>3.13.1.9. Property `GhcEngineSchema > planningData > sessions > Session > distribution`
+##### <a name="planningData_sessions_items_distribution"></a>2.13.1.9. Property `GhcEngineSchema > planningData > sessions > Session > distribution`
 
 **Title:** Distribution
 
@@ -4196,7 +4183,7 @@ Must be one of:
 | - [stablePeriods](#planningData_sessions_items_distribution_stablePeriods )     | No      | object          | No         | -          | StablePeriods     |
 | - [variablePeriods](#planningData_sessions_items_distribution_variablePeriods ) | No      | object          | No         | -          | VariablePeriods   |
 
-###### <a name="planningData_sessions_items_distribution_periods"></a>3.13.1.9.1. Property `GhcEngineSchema > planningData > sessions > Session > distribution > periods`
+###### <a name="planningData_sessions_items_distribution_periods"></a>2.13.1.9.1. Property `GhcEngineSchema > planningData > sessions > Session > distribution > periods`
 
 **Title:** RefPeriods
 
@@ -4219,7 +4206,7 @@ Must be one of:
 | -------------------------------------------------------------------- | ------------------ |
 | [RefPeriod](#planningData_sessions_items_distribution_periods_items) | Period identifier. |
 
-###### <a name="planningData_sessions_items_distribution_periods_items"></a>3.13.1.9.1.1. GhcEngineSchema > planningData > sessions > Session > distribution > periods > RefPeriod
+###### <a name="planningData_sessions_items_distribution_periods_items"></a>2.13.1.9.1.1. GhcEngineSchema > planningData > sessions > Session > distribution > periods > RefPeriod
 
 **Title:** RefPeriod
 
@@ -4230,7 +4217,7 @@ Must be one of:
 
 **Description:** Period identifier.
 
-###### <a name="planningData_sessions_items_distribution_stablePeriods"></a>3.13.1.9.2. Property `GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods`
+###### <a name="planningData_sessions_items_distribution_stablePeriods"></a>2.13.1.9.2. Property `GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods`
 
 **Title:** StablePeriods
 
@@ -4248,7 +4235,7 @@ Must be one of:
 | - [variableTiming](#planningData_sessions_items_distribution_stablePeriods_variableTiming )     | No      | object           | No         | In #/$defs/variableTiming | VariableTiming    |
 | - [stableTimingList](#planningData_sessions_items_distribution_stablePeriods_stableTimingList ) | No      | array            | No         | -                         | StableTimingList  |
 
-###### <a name="planningData_sessions_items_distribution_stablePeriods_stableTiming"></a>3.13.1.9.2.1. Property `GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods > stableTiming`
+###### <a name="planningData_sessions_items_distribution_stablePeriods_stableTiming"></a>2.13.1.9.2.1. Property `GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods > stableTiming`
 
 **Title:** StableTiming
 
@@ -4272,7 +4259,7 @@ Must be one of:
 | ------------------------------------------------------------------------------------------ | --------------------------------------------------------------- |
 | [DailyMinutes](#planningData_sessions_items_distribution_stablePeriods_stableTiming_items) | Indicates the number of minutes to be allocated on a given day. |
 
-###### <a name="planningData_sessions_items_distribution_stablePeriods_stableTiming_items"></a>3.13.1.9.2.1.1. GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods > stableTiming > DailyMinutes
+###### <a name="planningData_sessions_items_distribution_stablePeriods_stableTiming_items"></a>2.13.1.9.2.1.1. GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods > stableTiming > DailyMinutes
 
 **Title:** DailyMinutes
 
@@ -4283,7 +4270,7 @@ Must be one of:
 
 **Description:** Indicates the number of minutes to be allocated on a given day.
 
-###### <a name="planningData_sessions_items_distribution_stablePeriods_variableTiming"></a>3.13.1.9.2.2. Property `GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods > variableTiming`
+###### <a name="planningData_sessions_items_distribution_stablePeriods_variableTiming"></a>2.13.1.9.2.2. Property `GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods > variableTiming`
 
 **Title:** VariableTiming
 
@@ -4305,7 +4292,7 @@ Must be one of:
 | - [avoidMinDuration](#planningData_sessions_items_distribution_stablePeriods_variableTiming_avoidMinDuration )     | No      | boolean | No         | -          | It indicates the preference for class units of minimun duration.                                                                  |
 | - [allowDiscontinuity](#planningData_sessions_items_distribution_stablePeriods_variableTiming_allowDiscontinuity ) | No      | boolean | No         | -          | It indicates whether discontinuous sections are allowed, that is, having sections of other class units or breaks in between them. |
 
-###### <a name="planningData_sessions_items_distribution_stablePeriods_variableTiming_minutesAmount"></a>3.13.1.9.2.2.1. Property `GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods > variableTiming > minutesAmount`
+###### <a name="planningData_sessions_items_distribution_stablePeriods_variableTiming_minutesAmount"></a>2.13.1.9.2.2.1. Property `GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods > variableTiming > minutesAmount`
 
 |              |           |
 | ------------ | --------- |
@@ -4314,7 +4301,7 @@ Must be one of:
 
 **Description:** Total of session's minutes.
 
-###### <a name="planningData_sessions_items_distribution_stablePeriods_variableTiming_maxMinutesDaily"></a>3.13.1.9.2.2.2. Property `GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods > variableTiming > maxMinutesDaily`
+###### <a name="planningData_sessions_items_distribution_stablePeriods_variableTiming_maxMinutesDaily"></a>2.13.1.9.2.2.2. Property `GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods > variableTiming > maxMinutesDaily`
 
 |              |           |
 | ------------ | --------- |
@@ -4323,7 +4310,7 @@ Must be one of:
 
 **Description:** Maximum of minutes per day.
 
-###### <a name="planningData_sessions_items_distribution_stablePeriods_variableTiming_minMinutesDaily"></a>3.13.1.9.2.2.3. Property `GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods > variableTiming > minMinutesDaily`
+###### <a name="planningData_sessions_items_distribution_stablePeriods_variableTiming_minMinutesDaily"></a>2.13.1.9.2.2.3. Property `GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods > variableTiming > minMinutesDaily`
 
 |              |           |
 | ------------ | --------- |
@@ -4332,7 +4319,7 @@ Must be one of:
 
 **Description:** Minimun of minutes per day.
 
-###### <a name="planningData_sessions_items_distribution_stablePeriods_variableTiming_avoidMaxDuration"></a>3.13.1.9.2.2.4. Property `GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods > variableTiming > avoidMaxDuration`
+###### <a name="planningData_sessions_items_distribution_stablePeriods_variableTiming_avoidMaxDuration"></a>2.13.1.9.2.2.4. Property `GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods > variableTiming > avoidMaxDuration`
 
 |              |           |
 | ------------ | --------- |
@@ -4342,7 +4329,7 @@ Must be one of:
 
 **Description:** It indicates the preference for class units of maximum duration.
 
-###### <a name="planningData_sessions_items_distribution_stablePeriods_variableTiming_avoidMinDuration"></a>3.13.1.9.2.2.5. Property `GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods > variableTiming > avoidMinDuration`
+###### <a name="planningData_sessions_items_distribution_stablePeriods_variableTiming_avoidMinDuration"></a>2.13.1.9.2.2.5. Property `GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods > variableTiming > avoidMinDuration`
 
 |              |           |
 | ------------ | --------- |
@@ -4352,7 +4339,7 @@ Must be one of:
 
 **Description:** It indicates the preference for class units of minimun duration.
 
-###### <a name="planningData_sessions_items_distribution_stablePeriods_variableTiming_allowDiscontinuity"></a>3.13.1.9.2.2.6. Property `GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods > variableTiming > allowDiscontinuity`
+###### <a name="planningData_sessions_items_distribution_stablePeriods_variableTiming_allowDiscontinuity"></a>2.13.1.9.2.2.6. Property `GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods > variableTiming > allowDiscontinuity`
 
 |              |           |
 | ------------ | --------- |
@@ -4362,7 +4349,7 @@ Must be one of:
 
 **Description:** It indicates whether discontinuous sections are allowed, that is, having sections of other class units or breaks in between them.
 
-###### <a name="planningData_sessions_items_distribution_stablePeriods_stableTimingList"></a>3.13.1.9.2.3. Property `GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods > stableTimingList`
+###### <a name="planningData_sessions_items_distribution_stablePeriods_stableTimingList"></a>2.13.1.9.2.3. Property `GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods > stableTimingList`
 
 **Title:** StableTimingList
 
@@ -4385,7 +4372,7 @@ Must be one of:
 | ---------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
 | [StableTiming](#planningData_sessions_items_distribution_stablePeriods_stableTimingList_items) | It contains the fixed way of allocating time across the days of the period. |
 
-###### <a name="planningData_sessions_items_distribution_stablePeriods_stableTimingList_items"></a>3.13.1.9.2.3.1. GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods > stableTimingList > StableTiming
+###### <a name="planningData_sessions_items_distribution_stablePeriods_stableTimingList_items"></a>2.13.1.9.2.3.1. GhcEngineSchema > planningData > sessions > Session > distribution > stablePeriods > stableTimingList > StableTiming
 
 **Title:** StableTiming
 
@@ -4397,7 +4384,7 @@ Must be one of:
 
 **Description:** It contains the fixed way of allocating time across the days of the period.
 
-###### <a name="planningData_sessions_items_distribution_variablePeriods"></a>3.13.1.9.3. Property `GhcEngineSchema > planningData > sessions > Session > distribution > variablePeriods`
+###### <a name="planningData_sessions_items_distribution_variablePeriods"></a>2.13.1.9.3. Property `GhcEngineSchema > planningData > sessions > Session > distribution > variablePeriods`
 
 **Title:** VariablePeriods
 
@@ -4416,7 +4403,7 @@ Must be one of:
 | - [minimnunTimeInPeriod](#planningData_sessions_items_distribution_variablePeriods_minimnunTimeInPeriod ) | No      | integer | No         | -          | Minimum number of minutes to be allocated in each Period.                                                                                                                                                                                                                                 |
 | - [maximumTimeframe](#planningData_sessions_items_distribution_variablePeriods_maximumTimeframe )         | No      | integer | No         | -          | Indicates the maximum interval of periods that can be used to assign the session, counting from the first period with a session assignment to the last period with a session assignment. That is, the periods in between are also considered even if they do not have a session assigned. |
 
-###### <a name="planningData_sessions_items_distribution_variablePeriods_timing"></a>3.13.1.9.3.1. Property `GhcEngineSchema > planningData > sessions > Session > distribution > variablePeriods > timing`
+###### <a name="planningData_sessions_items_distribution_variablePeriods_timing"></a>2.13.1.9.3.1. Property `GhcEngineSchema > planningData > sessions > Session > distribution > variablePeriods > timing`
 
 **Title:** TimeAllocation
 
@@ -4433,7 +4420,7 @@ Must be one of:
 | - [stableTiming](#planningData_sessions_items_distribution_variablePeriods_timing_stableTiming )     | No      | array of integer | No         | Same as [stableTiming](#planningData_sessions_items_distribution_stablePeriods_stableTiming )     | StableTiming      |
 | - [variableTiming](#planningData_sessions_items_distribution_variablePeriods_timing_variableTiming ) | No      | object           | No         | Same as [variableTiming](#planningData_sessions_items_distribution_stablePeriods_variableTiming ) | VariableTiming    |
 
-###### <a name="planningData_sessions_items_distribution_variablePeriods_timing_stableTiming"></a>3.13.1.9.3.1.1. Property `GhcEngineSchema > planningData > sessions > Session > distribution > variablePeriods > timing > stableTiming`
+###### <a name="planningData_sessions_items_distribution_variablePeriods_timing_stableTiming"></a>2.13.1.9.3.1.1. Property `GhcEngineSchema > planningData > sessions > Session > distribution > variablePeriods > timing > stableTiming`
 
 **Title:** StableTiming
 
@@ -4445,7 +4432,7 @@ Must be one of:
 
 **Description:** It contains the fixed way of allocating time across the days of the period.
 
-###### <a name="planningData_sessions_items_distribution_variablePeriods_timing_variableTiming"></a>3.13.1.9.3.1.2. Property `GhcEngineSchema > planningData > sessions > Session > distribution > variablePeriods > timing > variableTiming`
+###### <a name="planningData_sessions_items_distribution_variablePeriods_timing_variableTiming"></a>2.13.1.9.3.1.2. Property `GhcEngineSchema > planningData > sessions > Session > distribution > variablePeriods > timing > variableTiming`
 
 **Title:** VariableTiming
 
@@ -4458,7 +4445,7 @@ Must be one of:
 
 **Description:** It defines the allocating time as a total of time, maximum and minimun range of sections per day.
 
-###### <a name="planningData_sessions_items_distribution_variablePeriods_maximunTimeInPeriod"></a>3.13.1.9.3.2. Property `GhcEngineSchema > planningData > sessions > Session > distribution > variablePeriods > maximunTimeInPeriod`
+###### <a name="planningData_sessions_items_distribution_variablePeriods_maximunTimeInPeriod"></a>2.13.1.9.3.2. Property `GhcEngineSchema > planningData > sessions > Session > distribution > variablePeriods > maximunTimeInPeriod`
 
 |              |           |
 | ------------ | --------- |
@@ -4467,7 +4454,7 @@ Must be one of:
 
 **Description:** Maximum number of minutes to be allocated in each Period. If not defined, it is considered that there is no maximum limit.
 
-###### <a name="planningData_sessions_items_distribution_variablePeriods_minimnunTimeInPeriod"></a>3.13.1.9.3.3. Property `GhcEngineSchema > planningData > sessions > Session > distribution > variablePeriods > minimnunTimeInPeriod`
+###### <a name="planningData_sessions_items_distribution_variablePeriods_minimnunTimeInPeriod"></a>2.13.1.9.3.3. Property `GhcEngineSchema > planningData > sessions > Session > distribution > variablePeriods > minimnunTimeInPeriod`
 
 |              |           |
 | ------------ | --------- |
@@ -4477,7 +4464,7 @@ Must be one of:
 
 **Description:** Minimum number of minutes to be allocated in each Period.
 
-###### <a name="planningData_sessions_items_distribution_variablePeriods_maximumTimeframe"></a>3.13.1.9.3.4. Property `GhcEngineSchema > planningData > sessions > Session > distribution > variablePeriods > maximumTimeframe`
+###### <a name="planningData_sessions_items_distribution_variablePeriods_maximumTimeframe"></a>2.13.1.9.3.4. Property `GhcEngineSchema > planningData > sessions > Session > distribution > variablePeriods > maximumTimeframe`
 
 |              |           |
 | ------------ | --------- |
@@ -4486,7 +4473,7 @@ Must be one of:
 
 **Description:** Indicates the maximum interval of periods that can be used to assign the session, counting from the first period with a session assignment to the last period with a session assignment. That is, the periods in between are also considered even if they do not have a session assigned.
 
-##### <a name="planningData_sessions_items_sessionClassRooms"></a>3.13.1.10. Property `GhcEngineSchema > planningData > sessions > Session > sessionClassRooms`
+##### <a name="planningData_sessions_items_sessionClassRooms"></a>2.13.1.10. Property `GhcEngineSchema > planningData > sessions > Session > sessionClassRooms`
 
 **Title:** SessionClassRooms
 
@@ -4505,7 +4492,7 @@ Must be one of:
 | - [capacityType](#planningData_sessions_items_sessionClassRooms_capacityType )               | No      | enum (of string) | No         | -          | It indicates whether all students in the class units should fit in each classroom, or in the amount of all classrooms.                  |
 | - [alwaysSameClassRoom](#planningData_sessions_items_sessionClassRooms_alwaysSameClassRoom ) | No      | boolean          | No         | -          | Indicates if the session must be always in the same classroom the hole week or it can be given on different classrooms during the week. |
 
-###### <a name="planningData_sessions_items_sessionClassRooms_classRoomsToAssign"></a>3.13.1.10.1. Property `GhcEngineSchema > planningData > sessions > Session > sessionClassRooms > classRoomsToAssign`
+###### <a name="planningData_sessions_items_sessionClassRooms_classRoomsToAssign"></a>2.13.1.10.1. Property `GhcEngineSchema > planningData > sessions > Session > sessionClassRooms > classRoomsToAssign`
 
 **Title:** ClassRoomsToAssign
 
@@ -4528,7 +4515,7 @@ Must be one of:
 | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
 | [RefClassRoomToAssign](#planningData_sessions_items_sessionClassRooms_classRoomsToAssign_items) | Object, with classrooms and/or set of classrooms, where the engine should assign classroom to each class unit of the session. |
 
-###### <a name="planningData_sessions_items_sessionClassRooms_classRoomsToAssign_items"></a>3.13.1.10.1.1. GhcEngineSchema > planningData > sessions > Session > sessionClassRooms > classRoomsToAssign > RefClassRoomToAssign
+###### <a name="planningData_sessions_items_sessionClassRooms_classRoomsToAssign_items"></a>2.13.1.10.1.1. GhcEngineSchema > planningData > sessions > Session > sessionClassRooms > classRoomsToAssign > RefClassRoomToAssign
 
 **Title:** RefClassRoomToAssign
 
@@ -4546,7 +4533,7 @@ Must be one of:
 | - [classRoom](#planningData_sessions_items_sessionClassRooms_classRoomsToAssign_items_classRoom )                   | No      | string          | No         | -          | ClassRoomRef       |
 | - [classRoomsSetsList](#planningData_sessions_items_sessionClassRooms_classRoomsToAssign_items_classRoomsSetsList ) | No      | array of string | No         | -          | ClassRoomsSetsList |
 
-###### <a name="planningData_sessions_items_sessionClassRooms_classRoomsToAssign_items_classRoom"></a>3.13.1.10.1.1.1. Property `GhcEngineSchema > planningData > sessions > Session > sessionClassRooms > classRoomsToAssign > RefClassRoomToAssign > classRoom`
+###### <a name="planningData_sessions_items_sessionClassRooms_classRoomsToAssign_items_classRoom"></a>2.13.1.10.1.1.1. Property `GhcEngineSchema > planningData > sessions > Session > sessionClassRooms > classRoomsToAssign > RefClassRoomToAssign > classRoom`
 
 **Title:** ClassRoomRef
 
@@ -4557,7 +4544,7 @@ Must be one of:
 
 **Description:** Classroom identifier.
 
-###### <a name="planningData_sessions_items_sessionClassRooms_classRoomsToAssign_items_classRoomsSetsList"></a>3.13.1.10.1.1.2. Property `GhcEngineSchema > planningData > sessions > Session > sessionClassRooms > classRoomsToAssign > RefClassRoomToAssign > classRoomsSetsList`
+###### <a name="planningData_sessions_items_sessionClassRooms_classRoomsToAssign_items_classRoomsSetsList"></a>2.13.1.10.1.1.2. Property `GhcEngineSchema > planningData > sessions > Session > sessionClassRooms > classRoomsToAssign > RefClassRoomToAssign > classRoomsSetsList`
 
 **Title:** ClassRoomsSetsList
 
@@ -4580,7 +4567,7 @@ Must be one of:
 | ------------------------------------------------------------------------------------------------------------------- | ------------------------- |
 | [ClassRoomSetRef](#planningData_sessions_items_sessionClassRooms_classRoomsToAssign_items_classRoomsSetsList_items) | Classroom set identifier. |
 
-###### <a name="planningData_sessions_items_sessionClassRooms_classRoomsToAssign_items_classRoomsSetsList_items"></a>3.13.1.10.1.1.2.1. GhcEngineSchema > planningData > sessions > Session > sessionClassRooms > classRoomsToAssign > RefClassRoomToAssign > classRoomsSetsList > ClassRoomSetRef
+###### <a name="planningData_sessions_items_sessionClassRooms_classRoomsToAssign_items_classRoomsSetsList_items"></a>2.13.1.10.1.1.2.1. GhcEngineSchema > planningData > sessions > Session > sessionClassRooms > classRoomsToAssign > RefClassRoomToAssign > classRoomsSetsList > ClassRoomSetRef
 
 **Title:** ClassRoomSetRef
 
@@ -4591,7 +4578,7 @@ Must be one of:
 
 **Description:** Classroom set identifier.
 
-###### <a name="planningData_sessions_items_sessionClassRooms_capacityPreference"></a>3.13.1.10.2. Property `GhcEngineSchema > planningData > sessions > Session > sessionClassRooms > capacityPreference`
+###### <a name="planningData_sessions_items_sessionClassRooms_capacityPreference"></a>2.13.1.10.2. Property `GhcEngineSchema > planningData > sessions > Session > sessionClassRooms > capacityPreference`
 
 |              |                    |
 | ------------ | ------------------ |
@@ -4606,7 +4593,7 @@ Must be one of:
 * "strict"
 * "ignore"
 
-###### <a name="planningData_sessions_items_sessionClassRooms_capacityType"></a>3.13.1.10.3. Property `GhcEngineSchema > planningData > sessions > Session > sessionClassRooms > capacityType`
+###### <a name="planningData_sessions_items_sessionClassRooms_capacityType"></a>2.13.1.10.3. Property `GhcEngineSchema > planningData > sessions > Session > sessionClassRooms > capacityType`
 
 |              |                    |
 | ------------ | ------------------ |
@@ -4620,7 +4607,7 @@ Must be one of:
 * "individual"
 * "collective"
 
-###### <a name="planningData_sessions_items_sessionClassRooms_alwaysSameClassRoom"></a>3.13.1.10.4. Property `GhcEngineSchema > planningData > sessions > Session > sessionClassRooms > alwaysSameClassRoom`
+###### <a name="planningData_sessions_items_sessionClassRooms_alwaysSameClassRoom"></a>2.13.1.10.4. Property `GhcEngineSchema > planningData > sessions > Session > sessionClassRooms > alwaysSameClassRoom`
 
 |              |           |
 | ------------ | --------- |
@@ -4630,7 +4617,7 @@ Must be one of:
 
 **Description:** Indicates if the session must be always in the same classroom the hole week or it can be given on different classrooms during the week.
 
-##### <a name="planningData_sessions_items_frameTemplate"></a>3.13.1.11. Property `GhcEngineSchema > planningData > sessions > Session > frameTemplate`
+##### <a name="planningData_sessions_items_frameTemplate"></a>2.13.1.11. Property `GhcEngineSchema > planningData > sessions > Session > frameTemplate`
 
 **Title:** SessionFrameTemplate
 
@@ -4654,7 +4641,7 @@ Must be one of:
 | ---------------------------------------------------------------------------- | ------------------------------ |
 | [SessionSectionPreference](#planningData_sessions_items_frameTemplate_items) | Section assignment preference. |
 
-###### <a name="planningData_sessions_items_frameTemplate_items"></a>3.13.1.11.1. GhcEngineSchema > planningData > sessions > Session > frameTemplate > SessionSectionPreference
+###### <a name="planningData_sessions_items_frameTemplate_items"></a>2.13.1.11.1. GhcEngineSchema > planningData > sessions > Session > frameTemplate > SessionSectionPreference
 
 **Title:** SessionSectionPreference
 
@@ -4673,7 +4660,7 @@ Must be one of:
 | + [frame](#planningData_sessions_items_frameTemplate_items_frame ) | No      | string           | No         | -          | Frame identifier.                                      |
 | + [type](#planningData_sessions_items_frameTemplate_items_type )   | No      | enum (of string) | No         | -          | SectionPreferenceTypeWithPreset                        |
 
-###### <a name="planningData_sessions_items_frameTemplate_items_day"></a>3.13.1.11.1.1. Property `GhcEngineSchema > planningData > sessions > Session > frameTemplate > SessionSectionPreference > day`
+###### <a name="planningData_sessions_items_frameTemplate_items_day"></a>2.13.1.11.1.1. Property `GhcEngineSchema > planningData > sessions > Session > frameTemplate > SessionSectionPreference > day`
 
 |              |           |
 | ------------ | --------- |
@@ -4682,7 +4669,7 @@ Must be one of:
 
 **Description:** Day of the week when the section is located.
 
-###### <a name="planningData_sessions_items_frameTemplate_items_index"></a>3.13.1.11.1.2. Property `GhcEngineSchema > planningData > sessions > Session > frameTemplate > SessionSectionPreference > index`
+###### <a name="planningData_sessions_items_frameTemplate_items_index"></a>2.13.1.11.1.2. Property `GhcEngineSchema > planningData > sessions > Session > frameTemplate > SessionSectionPreference > index`
 
 |              |           |
 | ------------ | --------- |
@@ -4691,7 +4678,7 @@ Must be one of:
 
 **Description:** Index built into the day where the section is located.
 
-###### <a name="planningData_sessions_items_frameTemplate_items_frame"></a>3.13.1.11.1.3. Property `GhcEngineSchema > planningData > sessions > Session > frameTemplate > SessionSectionPreference > frame`
+###### <a name="planningData_sessions_items_frameTemplate_items_frame"></a>2.13.1.11.1.3. Property `GhcEngineSchema > planningData > sessions > Session > frameTemplate > SessionSectionPreference > frame`
 
 |              |          |
 | ------------ | -------- |
@@ -4700,7 +4687,7 @@ Must be one of:
 
 **Description:** Frame identifier.
 
-###### <a name="planningData_sessions_items_frameTemplate_items_type"></a>3.13.1.11.1.4. Property `GhcEngineSchema > planningData > sessions > Session > frameTemplate > SessionSectionPreference > type`
+###### <a name="planningData_sessions_items_frameTemplate_items_type"></a>2.13.1.11.1.4. Property `GhcEngineSchema > planningData > sessions > Session > frameTemplate > SessionSectionPreference > type`
 
 **Title:** SectionPreferenceTypeWithPreset
 
@@ -4717,7 +4704,7 @@ Must be one of:
 * "weak-non-preferred"
 * "preset"
 
-##### <a name="planningData_sessions_items_sessionSettings"></a>3.13.1.12. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings`
+##### <a name="planningData_sessions_items_sessionSettings"></a>2.13.1.12. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings`
 
 **Title:** SessionSettings
 
@@ -4743,7 +4730,7 @@ Must be one of:
 | - [consecutiveWeeksBorders](#planningData_sessions_items_sessionSettings_consecutiveWeeksBorders )                                 | No      | boolean          | No         | -                                  | It considers the end-of-week day, and the start-of-week day, as consecutive days for 'followedDaysPreference'. |
 | - [samePositionEveryPeriod](#planningData_sessions_items_sessionSettings_samePositionEveryPeriod )                                 | No      | enum (of string) | No         | In #/$defs/samePositionEveryPeriod | SamePositionEveryPeriod                                                                                        |
 
-###### <a name="planningData_sessions_items_sessionSettings_avoidFirstHourSessions"></a>3.13.1.12.1. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings > avoidFirstHourSessions`
+###### <a name="planningData_sessions_items_sessionSettings_avoidFirstHourSessions"></a>2.13.1.12.1. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings > avoidFirstHourSessions`
 
 |              |           |
 | ------------ | --------- |
@@ -4753,7 +4740,7 @@ Must be one of:
 
 **Description:** It penalises the position of the class units if more than 50% of the class units are at first hour.
 
-###### <a name="planningData_sessions_items_sessionSettings_avoidLastHourSessions"></a>3.13.1.12.2. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings > avoidLastHourSessions`
+###### <a name="planningData_sessions_items_sessionSettings_avoidLastHourSessions"></a>2.13.1.12.2. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings > avoidLastHourSessions`
 
 |              |           |
 | ------------ | --------- |
@@ -4763,7 +4750,7 @@ Must be one of:
 
 **Description:** It penalises the position of the class units if more than 50% of the class units are at last hour.
 
-###### <a name="planningData_sessions_items_sessionSettings_avoidAssingLastHourAndFirstNextDay"></a>3.13.1.12.3. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings > avoidAssingLastHourAndFirstNextDay`
+###### <a name="planningData_sessions_items_sessionSettings_avoidAssingLastHourAndFirstNextDay"></a>2.13.1.12.3. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings > avoidAssingLastHourAndFirstNextDay`
 
 |              |           |
 | ------------ | --------- |
@@ -4773,7 +4760,7 @@ Must be one of:
 
 **Description:** It penalises if the last hour and the first hour of the following day match.
 
-###### <a name="planningData_sessions_items_sessionSettings_sameHourPreference"></a>3.13.1.12.4. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings > sameHourPreference`
+###### <a name="planningData_sessions_items_sessionSettings_sameHourPreference"></a>2.13.1.12.4. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings > sameHourPreference`
 
 |              |                    |
 | ------------ | ------------------ |
@@ -4788,7 +4775,7 @@ Must be one of:
 * "avoid"
 * "same"
 
-###### <a name="planningData_sessions_items_sessionSettings_avoidAfternoonSessions"></a>3.13.1.12.5. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings > avoidAfternoonSessions`
+###### <a name="planningData_sessions_items_sessionSettings_avoidAfternoonSessions"></a>2.13.1.12.5. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings > avoidAfternoonSessions`
 
 |              |           |
 | ------------ | --------- |
@@ -4798,7 +4785,7 @@ Must be one of:
 
 **Description:** It penalises if there is more than one class unit after noon stop..
 
-###### <a name="planningData_sessions_items_sessionSettings_avoidAfterBreakSessions"></a>3.13.1.12.6. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings > avoidAfterBreakSessions`
+###### <a name="planningData_sessions_items_sessionSettings_avoidAfterBreakSessions"></a>2.13.1.12.6. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings > avoidAfterBreakSessions`
 
 |              |           |
 | ------------ | --------- |
@@ -4808,7 +4795,7 @@ Must be one of:
 
 **Description:** It penalises if more than 50% of the class unit are after the last break of the day.
 
-###### <a name="planningData_sessions_items_sessionSettings_nonBreakInTheMiddleOfConsecutiveSession"></a>3.13.1.12.7. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings > nonBreakInTheMiddleOfConsecutiveSession`
+###### <a name="planningData_sessions_items_sessionSettings_nonBreakInTheMiddleOfConsecutiveSession"></a>2.13.1.12.7. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings > nonBreakInTheMiddleOfConsecutiveSession`
 
 |              |           |
 | ------------ | --------- |
@@ -4818,7 +4805,7 @@ Must be one of:
 
 **Description:** Do not allow breaks between consecutive class units (class duration of more than one section).
 
-###### <a name="planningData_sessions_items_sessionSettings_nonBreakInTheMiddleOfSession"></a>3.13.1.12.8. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings > nonBreakInTheMiddleOfSession`
+###### <a name="planningData_sessions_items_sessionSettings_nonBreakInTheMiddleOfSession"></a>2.13.1.12.8. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings > nonBreakInTheMiddleOfSession`
 
 |              |           |
 | ------------ | --------- |
@@ -4828,7 +4815,7 @@ Must be one of:
 
 **Description:** Do not allow breaks between class units of multiple duration (class duration of more than one section).
 
-###### <a name="planningData_sessions_items_sessionSettings_followedDaysPreference"></a>3.13.1.12.9. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings > followedDaysPreference`
+###### <a name="planningData_sessions_items_sessionSettings_followedDaysPreference"></a>2.13.1.12.9. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings > followedDaysPreference`
 
 |              |                    |
 | ------------ | ------------------ |
@@ -4845,7 +4832,7 @@ Must be one of:
 * "strict"
 * "forbidden"
 
-###### <a name="planningData_sessions_items_sessionSettings_consecutiveWeeksBorders"></a>3.13.1.12.10. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings > consecutiveWeeksBorders`
+###### <a name="planningData_sessions_items_sessionSettings_consecutiveWeeksBorders"></a>2.13.1.12.10. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings > consecutiveWeeksBorders`
 
 |              |           |
 | ------------ | --------- |
@@ -4855,7 +4842,7 @@ Must be one of:
 
 **Description:** It considers the end-of-week day, and the start-of-week day, as consecutive days for 'followedDaysPreference'.
 
-###### <a name="planningData_sessions_items_sessionSettings_samePositionEveryPeriod"></a>3.13.1.12.11. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings > samePositionEveryPeriod`
+###### <a name="planningData_sessions_items_sessionSettings_samePositionEveryPeriod"></a>2.13.1.12.11. Property `GhcEngineSchema > planningData > sessions > Session > sessionSettings > samePositionEveryPeriod`
 
 **Title:** SamePositionEveryPeriod
 
@@ -4875,7 +4862,7 @@ Must be one of:
 * "strict"
 * "forbidden"
 
-##### <a name="planningData_sessions_items_sessionRelations"></a>3.13.1.13. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations`
+##### <a name="planningData_sessions_items_sessionRelations"></a>2.13.1.13. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations`
 
 **Title:** SessionRelations
 
@@ -4899,7 +4886,7 @@ Must be one of:
 | - [maximumSeparationTo](#planningData_sessions_items_sessionRelations_maximumSeparationTo )       | No      | array of object  | No         | -          | MaximumSeparationTo    |
 | - [minimumSeparationTo](#planningData_sessions_items_sessionRelations_minimumSeparationTo )       | No      | array of object  | No         | -          | MinimumSeparationTo    |
 
-###### <a name="planningData_sessions_items_sessionRelations_refSimultaneusGroup"></a>3.13.1.13.1. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > refSimultaneusGroup`
+###### <a name="planningData_sessions_items_sessionRelations_refSimultaneusGroup"></a>2.13.1.13.1. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > refSimultaneusGroup`
 
 **Title:** RefSimultaneusGroup
 
@@ -4910,7 +4897,7 @@ Must be one of:
 
 **Description:** Identifier of the group of simultaneous class units of the subject. Indicates that the class units are to be taught at the same time as the group class units. 
 
-###### <a name="planningData_sessions_items_sessionRelations_differentDays"></a>3.13.1.13.2. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > differentDays`
+###### <a name="planningData_sessions_items_sessionRelations_differentDays"></a>2.13.1.13.2. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > differentDays`
 
 **Title:** DifferentDays
 
@@ -4927,7 +4914,7 @@ Must be one of:
 | + [refSesions](#planningData_sessions_items_sessionRelations_differentDays_refSesions )   | No      | array of integer | No         | -          | RefSesions                                                      |
 | + [daysSetting](#planningData_sessions_items_sessionRelations_differentDays_daysSetting ) | No      | enum (of string) | No         | -          | Keep the same position each week or period for the class units. |
 
-###### <a name="planningData_sessions_items_sessionRelations_differentDays_refSesions"></a>3.13.1.13.2.1. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > differentDays > refSesions`
+###### <a name="planningData_sessions_items_sessionRelations_differentDays_refSesions"></a>2.13.1.13.2.1. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > differentDays > refSesions`
 
 **Title:** RefSesions
 
@@ -4950,7 +4937,7 @@ Must be one of:
 | ------------------------------------------------------------------------------------------ | ------------------- |
 | [SessionRef](#planningData_sessions_items_sessionRelations_differentDays_refSesions_items) | Session identifier. |
 
-###### <a name="planningData_sessions_items_sessionRelations_differentDays_refSesions_items"></a>3.13.1.13.2.1.1. GhcEngineSchema > planningData > sessions > Session > sessionRelations > differentDays > refSesions > SessionRef
+###### <a name="planningData_sessions_items_sessionRelations_differentDays_refSesions_items"></a>2.13.1.13.2.1.1. GhcEngineSchema > planningData > sessions > Session > sessionRelations > differentDays > refSesions > SessionRef
 
 **Title:** SessionRef
 
@@ -4961,7 +4948,7 @@ Must be one of:
 
 **Description:** Session identifier.
 
-###### <a name="planningData_sessions_items_sessionRelations_differentDays_daysSetting"></a>3.13.1.13.2.2. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > differentDays > daysSetting`
+###### <a name="planningData_sessions_items_sessionRelations_differentDays_daysSetting"></a>2.13.1.13.2.2. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > differentDays > daysSetting`
 
 |              |                              |
 | ------------ | ---------------------------- |
@@ -4977,7 +4964,7 @@ Must be one of:
 * "strictNonConsecutiveDays"
 * "strictConsecutiveDays"
 
-###### <a name="planningData_sessions_items_sessionRelations_consecutiveGroup"></a>3.13.1.13.3. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > consecutiveGroup`
+###### <a name="planningData_sessions_items_sessionRelations_consecutiveGroup"></a>2.13.1.13.3. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > consecutiveGroup`
 
 **Title:** ConsecutiveGroup
 
@@ -4996,7 +4983,7 @@ Must be one of:
 | - [order](#planningData_sessions_items_sessionRelations_consecutiveGroup_order )                                         | No      | enum (of string) | No         | -          | Indicates if the sessions must be 'ordered', 'unordered' or 'sameDay'  (it does not matter as long as they are allocated on the same day). |
 | - [allowBreakBetweenSessions](#planningData_sessions_items_sessionRelations_consecutiveGroup_allowBreakBetweenSessions ) | No      | boolean          | No         | -          | Indicates if break between sessions is allowed to keep the relation.                                                                       |
 
-###### <a name="planningData_sessions_items_sessionRelations_consecutiveGroup_id"></a>3.13.1.13.3.1. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > consecutiveGroup > id`
+###### <a name="planningData_sessions_items_sessionRelations_consecutiveGroup_id"></a>2.13.1.13.3.1. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > consecutiveGroup > id`
 
 |              |           |
 | ------------ | --------- |
@@ -5005,7 +4992,7 @@ Must be one of:
 
 **Description:** Continuous sessions group identifier.
 
-###### <a name="planningData_sessions_items_sessionRelations_consecutiveGroup_refSessions"></a>3.13.1.13.3.2. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > consecutiveGroup > refSessions`
+###### <a name="planningData_sessions_items_sessionRelations_consecutiveGroup_refSessions"></a>2.13.1.13.3.2. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > consecutiveGroup > refSessions`
 
 **Title:** SessionRefs
 
@@ -5028,7 +5015,7 @@ Must be one of:
 | ---------------------------------------------------------------------------------------------- | ------------------- |
 | [SessionRef](#planningData_sessions_items_sessionRelations_consecutiveGroup_refSessions_items) | Session identifier. |
 
-###### <a name="planningData_sessions_items_sessionRelations_consecutiveGroup_refSessions_items"></a>3.13.1.13.3.2.1. GhcEngineSchema > planningData > sessions > Session > sessionRelations > consecutiveGroup > refSessions > SessionRef
+###### <a name="planningData_sessions_items_sessionRelations_consecutiveGroup_refSessions_items"></a>2.13.1.13.3.2.1. GhcEngineSchema > planningData > sessions > Session > sessionRelations > consecutiveGroup > refSessions > SessionRef
 
 **Title:** SessionRef
 
@@ -5039,7 +5026,7 @@ Must be one of:
 
 **Description:** Session identifier.
 
-###### <a name="planningData_sessions_items_sessionRelations_consecutiveGroup_order"></a>3.13.1.13.3.3. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > consecutiveGroup > order`
+###### <a name="planningData_sessions_items_sessionRelations_consecutiveGroup_order"></a>2.13.1.13.3.3. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > consecutiveGroup > order`
 
 |              |                    |
 | ------------ | ------------------ |
@@ -5054,7 +5041,7 @@ Must be one of:
 * "ordered"
 * "sameDay"
 
-###### <a name="planningData_sessions_items_sessionRelations_consecutiveGroup_allowBreakBetweenSessions"></a>3.13.1.13.3.4. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > consecutiveGroup > allowBreakBetweenSessions`
+###### <a name="planningData_sessions_items_sessionRelations_consecutiveGroup_allowBreakBetweenSessions"></a>2.13.1.13.3.4. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > consecutiveGroup > allowBreakBetweenSessions`
 
 |              |           |
 | ------------ | --------- |
@@ -5064,7 +5051,7 @@ Must be one of:
 
 **Description:** Indicates if break between sessions is allowed to keep the relation.
 
-###### <a name="planningData_sessions_items_sessionRelations_nonConsecutiveSessions"></a>3.13.1.13.4. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > nonConsecutiveSessions`
+###### <a name="planningData_sessions_items_sessionRelations_nonConsecutiveSessions"></a>2.13.1.13.4. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > nonConsecutiveSessions`
 
 **Title:** NonConsecutiveSessions
 
@@ -5087,7 +5074,7 @@ Must be one of:
 | ---------------------------------------------------------------------------------------- | ------------------- |
 | [SessionRef](#planningData_sessions_items_sessionRelations_nonConsecutiveSessions_items) | Session identifier. |
 
-###### <a name="planningData_sessions_items_sessionRelations_nonConsecutiveSessions_items"></a>3.13.1.13.4.1. GhcEngineSchema > planningData > sessions > Session > sessionRelations > nonConsecutiveSessions > SessionRef
+###### <a name="planningData_sessions_items_sessionRelations_nonConsecutiveSessions_items"></a>2.13.1.13.4.1. GhcEngineSchema > planningData > sessions > Session > sessionRelations > nonConsecutiveSessions > SessionRef
 
 **Title:** SessionRef
 
@@ -5098,7 +5085,7 @@ Must be one of:
 
 **Description:** Session identifier.
 
-###### <a name="planningData_sessions_items_sessionRelations_nonSimultaneus"></a>3.13.1.13.5. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > nonSimultaneus`
+###### <a name="planningData_sessions_items_sessionRelations_nonSimultaneus"></a>2.13.1.13.5. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > nonSimultaneus`
 
 **Title:** NonSimultaneus
 
@@ -5121,7 +5108,7 @@ Must be one of:
 | -------------------------------------------------------------------------------- | ------------------- |
 | [SessionRef](#planningData_sessions_items_sessionRelations_nonSimultaneus_items) | Session identifier. |
 
-###### <a name="planningData_sessions_items_sessionRelations_nonSimultaneus_items"></a>3.13.1.13.5.1. GhcEngineSchema > planningData > sessions > Session > sessionRelations > nonSimultaneus > SessionRef
+###### <a name="planningData_sessions_items_sessionRelations_nonSimultaneus_items"></a>2.13.1.13.5.1. GhcEngineSchema > planningData > sessions > Session > sessionRelations > nonSimultaneus > SessionRef
 
 **Title:** SessionRef
 
@@ -5132,7 +5119,7 @@ Must be one of:
 
 **Description:** Session identifier.
 
-###### <a name="planningData_sessions_items_sessionRelations_previousTo"></a>3.13.1.13.6. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > previousTo`
+###### <a name="planningData_sessions_items_sessionRelations_previousTo"></a>2.13.1.13.6. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > previousTo`
 
 **Title:** PreviousTo
 
@@ -5155,7 +5142,7 @@ Must be one of:
 | ---------------------------------------------------------------------------- | ------------------- |
 | [SessionRef](#planningData_sessions_items_sessionRelations_previousTo_items) | Session identifier. |
 
-###### <a name="planningData_sessions_items_sessionRelations_previousTo_items"></a>3.13.1.13.6.1. GhcEngineSchema > planningData > sessions > Session > sessionRelations > previousTo > SessionRef
+###### <a name="planningData_sessions_items_sessionRelations_previousTo_items"></a>2.13.1.13.6.1. GhcEngineSchema > planningData > sessions > Session > sessionRelations > previousTo > SessionRef
 
 **Title:** SessionRef
 
@@ -5166,7 +5153,7 @@ Must be one of:
 
 **Description:** Session identifier.
 
-###### <a name="planningData_sessions_items_sessionRelations_afterTo"></a>3.13.1.13.7. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > afterTo`
+###### <a name="planningData_sessions_items_sessionRelations_afterTo"></a>2.13.1.13.7. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > afterTo`
 
 **Title:** AfterTo
 
@@ -5189,7 +5176,7 @@ Must be one of:
 | ------------------------------------------------------------------------- | ------------------- |
 | [SessionRef](#planningData_sessions_items_sessionRelations_afterTo_items) | Session identifier. |
 
-###### <a name="planningData_sessions_items_sessionRelations_afterTo_items"></a>3.13.1.13.7.1. GhcEngineSchema > planningData > sessions > Session > sessionRelations > afterTo > SessionRef
+###### <a name="planningData_sessions_items_sessionRelations_afterTo_items"></a>2.13.1.13.7.1. GhcEngineSchema > planningData > sessions > Session > sessionRelations > afterTo > SessionRef
 
 **Title:** SessionRef
 
@@ -5200,7 +5187,7 @@ Must be one of:
 
 **Description:** Session identifier.
 
-###### <a name="planningData_sessions_items_sessionRelations_maximumSeparationTo"></a>3.13.1.13.8. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > maximumSeparationTo`
+###### <a name="planningData_sessions_items_sessionRelations_maximumSeparationTo"></a>2.13.1.13.8. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > maximumSeparationTo`
 
 **Title:** MaximumSeparationTo
 
@@ -5223,7 +5210,7 @@ Must be one of:
 | ----------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
 | [MaximumSeparationToSession](#planningData_sessions_items_sessionRelations_maximumSeparationTo_items) | It contains the session identifier of the class unit to be taught with a number of days in between, and maximum days. |
 
-###### <a name="planningData_sessions_items_sessionRelations_maximumSeparationTo_items"></a>3.13.1.13.8.1. GhcEngineSchema > planningData > sessions > Session > sessionRelations > maximumSeparationTo > MaximumSeparationToSession
+###### <a name="planningData_sessions_items_sessionRelations_maximumSeparationTo_items"></a>2.13.1.13.8.1. GhcEngineSchema > planningData > sessions > Session > sessionRelations > maximumSeparationTo > MaximumSeparationToSession
 
 **Title:** MaximumSeparationToSession
 
@@ -5240,7 +5227,7 @@ Must be one of:
 | + [refSessions](#planningData_sessions_items_sessionRelations_maximumSeparationTo_items_refSessions ) | No      | array of integer | No         | -          | SessionRefs                   |
 | + [days](#planningData_sessions_items_sessionRelations_maximumSeparationTo_items_days )               | No      | integer          | No         | -          | Days of separation condition. |
 
-###### <a name="planningData_sessions_items_sessionRelations_maximumSeparationTo_items_refSessions"></a>3.13.1.13.8.1.1. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > maximumSeparationTo > MaximumSeparationToSession > refSessions`
+###### <a name="planningData_sessions_items_sessionRelations_maximumSeparationTo_items_refSessions"></a>2.13.1.13.8.1.1. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > maximumSeparationTo > MaximumSeparationToSession > refSessions`
 
 **Title:** SessionRefs
 
@@ -5263,7 +5250,7 @@ Must be one of:
 | ------------------------------------------------------------------------------------------------------- | ------------------- |
 | [SessionRef](#planningData_sessions_items_sessionRelations_maximumSeparationTo_items_refSessions_items) | Session identifier. |
 
-###### <a name="planningData_sessions_items_sessionRelations_maximumSeparationTo_items_refSessions_items"></a>3.13.1.13.8.1.1.1. GhcEngineSchema > planningData > sessions > Session > sessionRelations > maximumSeparationTo > MaximumSeparationToSession > refSessions > SessionRef
+###### <a name="planningData_sessions_items_sessionRelations_maximumSeparationTo_items_refSessions_items"></a>2.13.1.13.8.1.1.1. GhcEngineSchema > planningData > sessions > Session > sessionRelations > maximumSeparationTo > MaximumSeparationToSession > refSessions > SessionRef
 
 **Title:** SessionRef
 
@@ -5274,7 +5261,7 @@ Must be one of:
 
 **Description:** Session identifier.
 
-###### <a name="planningData_sessions_items_sessionRelations_maximumSeparationTo_items_days"></a>3.13.1.13.8.1.2. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > maximumSeparationTo > MaximumSeparationToSession > days`
+###### <a name="planningData_sessions_items_sessionRelations_maximumSeparationTo_items_days"></a>2.13.1.13.8.1.2. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > maximumSeparationTo > MaximumSeparationToSession > days`
 
 |              |           |
 | ------------ | --------- |
@@ -5283,7 +5270,7 @@ Must be one of:
 
 **Description:** Days of separation condition.
 
-###### <a name="planningData_sessions_items_sessionRelations_minimumSeparationTo"></a>3.13.1.13.9. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > minimumSeparationTo`
+###### <a name="planningData_sessions_items_sessionRelations_minimumSeparationTo"></a>2.13.1.13.9. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > minimumSeparationTo`
 
 **Title:** MinimumSeparationTo
 
@@ -5306,7 +5293,7 @@ Must be one of:
 | ----------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
 | [MinimumSeparationToSession](#planningData_sessions_items_sessionRelations_minimumSeparationTo_items) | It contains session identifier of the class unit to be taught with a number of days apart, and the minimum days. |
 
-###### <a name="planningData_sessions_items_sessionRelations_minimumSeparationTo_items"></a>3.13.1.13.9.1. GhcEngineSchema > planningData > sessions > Session > sessionRelations > minimumSeparationTo > MinimumSeparationToSession
+###### <a name="planningData_sessions_items_sessionRelations_minimumSeparationTo_items"></a>2.13.1.13.9.1. GhcEngineSchema > planningData > sessions > Session > sessionRelations > minimumSeparationTo > MinimumSeparationToSession
 
 **Title:** MinimumSeparationToSession
 
@@ -5323,7 +5310,7 @@ Must be one of:
 | + [refSessions](#planningData_sessions_items_sessionRelations_minimumSeparationTo_items_refSessions ) | No      | array of integer | No         | -          | SessionRefs                                                                                             |
 | + [days](#planningData_sessions_items_sessionRelations_minimumSeparationTo_items_days )               | No      | integer          | No         | -          | Days of separation condition. If the value is 0 or 1 it is equivalent to the condition 'DifferentDays'. |
 
-###### <a name="planningData_sessions_items_sessionRelations_minimumSeparationTo_items_refSessions"></a>3.13.1.13.9.1.1. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > minimumSeparationTo > MinimumSeparationToSession > refSessions`
+###### <a name="planningData_sessions_items_sessionRelations_minimumSeparationTo_items_refSessions"></a>2.13.1.13.9.1.1. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > minimumSeparationTo > MinimumSeparationToSession > refSessions`
 
 **Title:** SessionRefs
 
@@ -5346,7 +5333,7 @@ Must be one of:
 | ------------------------------------------------------------------------------------------------------- | ------------------- |
 | [SessionRef](#planningData_sessions_items_sessionRelations_minimumSeparationTo_items_refSessions_items) | Session identifier. |
 
-###### <a name="planningData_sessions_items_sessionRelations_minimumSeparationTo_items_refSessions_items"></a>3.13.1.13.9.1.1.1. GhcEngineSchema > planningData > sessions > Session > sessionRelations > minimumSeparationTo > MinimumSeparationToSession > refSessions > SessionRef
+###### <a name="planningData_sessions_items_sessionRelations_minimumSeparationTo_items_refSessions_items"></a>2.13.1.13.9.1.1.1. GhcEngineSchema > planningData > sessions > Session > sessionRelations > minimumSeparationTo > MinimumSeparationToSession > refSessions > SessionRef
 
 **Title:** SessionRef
 
@@ -5357,7 +5344,7 @@ Must be one of:
 
 **Description:** Session identifier.
 
-###### <a name="planningData_sessions_items_sessionRelations_minimumSeparationTo_items_days"></a>3.13.1.13.9.1.2. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > minimumSeparationTo > MinimumSeparationToSession > days`
+###### <a name="planningData_sessions_items_sessionRelations_minimumSeparationTo_items_days"></a>2.13.1.13.9.1.2. Property `GhcEngineSchema > planningData > sessions > Session > sessionRelations > minimumSeparationTo > MinimumSeparationToSession > days`
 
 |              |           |
 | ------------ | --------- |
@@ -5366,7 +5353,7 @@ Must be one of:
 
 **Description:** Days of separation condition. If the value is 0 or 1 it is equivalent to the condition 'DifferentDays'.
 
-##### <a name="planningData_sessions_items_department"></a>3.13.1.14. Property `GhcEngineSchema > planningData > sessions > Session > department`
+##### <a name="planningData_sessions_items_department"></a>2.13.1.14. Property `GhcEngineSchema > planningData > sessions > Session > department`
 
 |              |          |
 | ------------ | -------- |
@@ -5375,7 +5362,7 @@ Must be one of:
 
 **Description:** Contains the reference of the department of the session.
 
-### <a name="planningData_meetings"></a>3.14. Property `GhcEngineSchema > planningData > meetings`
+### <a name="planningData_meetings"></a>2.14. Property `GhcEngineSchema > planningData > meetings`
 
 **Title:** Meetings
 
@@ -5398,7 +5385,7 @@ Must be one of:
 | --------------------------------------- | ----------------------------------- |
 | [Meeting](#planningData_meetings_items) | Sevice of meeting between teachers. |
 
-#### <a name="planningData_meetings_items"></a>3.14.1. GhcEngineSchema > planningData > meetings > Meeting
+#### <a name="planningData_meetings_items"></a>2.14.1. GhcEngineSchema > planningData > meetings > Meeting
 
 **Title:** Meeting
 
@@ -5423,7 +5410,7 @@ Must be one of:
 | - [refBuilding](#planningData_meetings_items_refBuilding )                   | No      | string          | No         | -                                                                                                        | Building identifier of the building where the class unit takes place. This is used to know the moving time and the number of moves between buildings for teachers without specifying a classroom. |
 | - [settings](#planningData_meetings_items_settings )                         | No      | object          | No         | In #/$defs/nonClassSessionSettings                                                                       | NonClassSessionSettings                                                                                                                                                                           |
 
-##### <a name="planningData_meetings_items_id"></a>3.14.1.1. Property `GhcEngineSchema > planningData > meetings > Meeting > id`
+##### <a name="planningData_meetings_items_id"></a>2.14.1.1. Property `GhcEngineSchema > planningData > meetings > Meeting > id`
 
 |              |          |
 | ------------ | -------- |
@@ -5432,7 +5419,7 @@ Must be one of:
 
 **Description:** Session identifier.
 
-##### <a name="planningData_meetings_items_refFrame"></a>3.14.1.2. Property `GhcEngineSchema > planningData > meetings > Meeting > refFrame`
+##### <a name="planningData_meetings_items_refFrame"></a>2.14.1.2. Property `GhcEngineSchema > planningData > meetings > Meeting > refFrame`
 
 |              |          |
 | ------------ | -------- |
@@ -5441,7 +5428,7 @@ Must be one of:
 
 **Description:** Session's frame identifier.
 
-##### <a name="planningData_meetings_items_refTask"></a>3.14.1.3. Property `GhcEngineSchema > planningData > meetings > Meeting > refTask`
+##### <a name="planningData_meetings_items_refTask"></a>2.14.1.3. Property `GhcEngineSchema > planningData > meetings > Meeting > refTask`
 
 **Title:** RefTask
 
@@ -5452,7 +5439,7 @@ Must be one of:
 
 **Description:** Task identifier.
 
-##### <a name="planningData_meetings_items_refTeachers"></a>3.14.1.4. Property `GhcEngineSchema > planningData > meetings > Meeting > refTeachers`
+##### <a name="planningData_meetings_items_refTeachers"></a>2.14.1.4. Property `GhcEngineSchema > planningData > meetings > Meeting > refTeachers`
 
 **Title:** RefTeachers
 
@@ -5475,7 +5462,7 @@ Must be one of:
 | ------------------------------------------------------------ | ------------------- |
 | [RefTeacher](#planningData_meetings_items_refTeachers_items) | Teacher identifier. |
 
-###### <a name="planningData_meetings_items_refTeachers_items"></a>3.14.1.4.1. GhcEngineSchema > planningData > meetings > Meeting > refTeachers > RefTeacher
+###### <a name="planningData_meetings_items_refTeachers_items"></a>2.14.1.4.1. GhcEngineSchema > planningData > meetings > Meeting > refTeachers > RefTeacher
 
 **Title:** RefTeacher
 
@@ -5486,7 +5473,7 @@ Must be one of:
 
 **Description:** Teacher identifier.
 
-##### <a name="planningData_meetings_items_refColourInResult"></a>3.14.1.5. Property `GhcEngineSchema > planningData > meetings > Meeting > refColourInResult`
+##### <a name="planningData_meetings_items_refColourInResult"></a>2.14.1.5. Property `GhcEngineSchema > planningData > meetings > Meeting > refColourInResult`
 
 |              |          |
 | ------------ | -------- |
@@ -5495,7 +5482,7 @@ Must be one of:
 
 **Description:** Colour code used to represent the meeting in the result.
 
-##### <a name="planningData_meetings_items_distribution"></a>3.14.1.6. Property `GhcEngineSchema > planningData > meetings > Meeting > distribution`
+##### <a name="planningData_meetings_items_distribution"></a>2.14.1.6. Property `GhcEngineSchema > planningData > meetings > Meeting > distribution`
 
 **Title:** Distribution
 
@@ -5508,7 +5495,7 @@ Must be one of:
 
 **Description:** It contains information on how the class units of the session are distributed throughout the week. It must contain only one element between 'stablePeriods' and 'variablePeriods'.
 
-##### <a name="planningData_meetings_items_frameTemplate"></a>3.14.1.7. Property `GhcEngineSchema > planningData > meetings > Meeting > frameTemplate`
+##### <a name="planningData_meetings_items_frameTemplate"></a>2.14.1.7. Property `GhcEngineSchema > planningData > meetings > Meeting > frameTemplate`
 
 **Title:** SessionFrameTemplate
 
@@ -5520,7 +5507,7 @@ Must be one of:
 
 **Description:** Complete template of preferences.
 
-##### <a name="planningData_meetings_items_refClassRoomToAssign"></a>3.14.1.8. Property `GhcEngineSchema > planningData > meetings > Meeting > refClassRoomToAssign`
+##### <a name="planningData_meetings_items_refClassRoomToAssign"></a>2.14.1.8. Property `GhcEngineSchema > planningData > meetings > Meeting > refClassRoomToAssign`
 
 **Title:** RefClassRoomToAssign
 
@@ -5533,7 +5520,7 @@ Must be one of:
 
 **Description:** Object, with classrooms and/or set of classrooms, where the engine should assign classroom to each class unit of the session.
 
-##### <a name="planningData_meetings_items_refBuilding"></a>3.14.1.9. Property `GhcEngineSchema > planningData > meetings > Meeting > refBuilding`
+##### <a name="planningData_meetings_items_refBuilding"></a>2.14.1.9. Property `GhcEngineSchema > planningData > meetings > Meeting > refBuilding`
 
 |              |          |
 | ------------ | -------- |
@@ -5542,7 +5529,7 @@ Must be one of:
 
 **Description:** Building identifier of the building where the class unit takes place. This is used to know the moving time and the number of moves between buildings for teachers without specifying a classroom.
 
-##### <a name="planningData_meetings_items_settings"></a>3.14.1.10. Property `GhcEngineSchema > planningData > meetings > Meeting > settings`
+##### <a name="planningData_meetings_items_settings"></a>2.14.1.10. Property `GhcEngineSchema > planningData > meetings > Meeting > settings`
 
 **Title:** NonClassSessionSettings
 
@@ -5560,7 +5547,7 @@ Must be one of:
 | - [computeForMaxMinOccupancy](#planningData_meetings_items_settings_computeForMaxMinOccupancy ) | No      | boolean          | No         | -                                                                                                        |  It indicates whether the class unit counts for the maximum and minimum daily teacher occupancy. By default, the engine computes class units with students. |
 | - [samePositionEveryPeriod](#planningData_meetings_items_settings_samePositionEveryPeriod )     | No      | enum (of string) | No         | Same as [samePositionEveryPeriod](#planningData_sessions_items_sessionSettings_samePositionEveryPeriod ) | SamePositionEveryPeriod                                                                                                                                     |
 
-###### <a name="planningData_meetings_items_settings_computeForMaxMinOccupancy"></a>3.14.1.10.1. Property `GhcEngineSchema > planningData > meetings > Meeting > settings > computeForMaxMinOccupancy`
+###### <a name="planningData_meetings_items_settings_computeForMaxMinOccupancy"></a>2.14.1.10.1. Property `GhcEngineSchema > planningData > meetings > Meeting > settings > computeForMaxMinOccupancy`
 
 |              |           |
 | ------------ | --------- |
@@ -5570,7 +5557,7 @@ Must be one of:
 
 **Description:**  It indicates whether the class unit counts for the maximum and minimum daily teacher occupancy. By default, the engine computes class units with students.
 
-###### <a name="planningData_meetings_items_settings_samePositionEveryPeriod"></a>3.14.1.10.2. Property `GhcEngineSchema > planningData > meetings > Meeting > settings > samePositionEveryPeriod`
+###### <a name="planningData_meetings_items_settings_samePositionEveryPeriod"></a>2.14.1.10.2. Property `GhcEngineSchema > planningData > meetings > Meeting > settings > samePositionEveryPeriod`
 
 **Title:** SamePositionEveryPeriod
 
@@ -5583,7 +5570,7 @@ Must be one of:
 
 **Description:** Keep the same position every week or period for the class units.
 
-### <a name="planningData_complementaryActivities"></a>3.15. Property `GhcEngineSchema > planningData > complementaryActivities`
+### <a name="planningData_complementaryActivities"></a>2.15. Property `GhcEngineSchema > planningData > complementaryActivities`
 
 **Title:** ComplementaryActivities
 
@@ -5606,7 +5593,7 @@ Must be one of:
 | ------------------------------------------------------------ | -------------------------------------------- |
 | [Complementary](#planningData_complementaryActivities_items) | Service of teacher's complementary activity. |
 
-#### <a name="planningData_complementaryActivities_items"></a>3.15.1. GhcEngineSchema > planningData > complementaryActivities > Complementary
+#### <a name="planningData_complementaryActivities_items"></a>2.15.1. GhcEngineSchema > planningData > complementaryActivities > Complementary
 
 **Title:** Complementary
 
@@ -5631,7 +5618,7 @@ Must be one of:
 | - [refBuilding](#planningData_complementaryActivities_items_refBuilding )                   | No      | string          | No         | -                                                                                                        | Building identifier of the building where the class unit takes place. This is used to know the moving time and the number of moves between buildings for teachers without specifying a classroom. |
 | - [settings](#planningData_complementaryActivities_items_settings )                         | No      | object          | No         | Same as [settings](#planningData_meetings_items_settings )                                               | NonClassSessionSettings                                                                                                                                                                           |
 
-##### <a name="planningData_complementaryActivities_items_id"></a>3.15.1.1. Property `GhcEngineSchema > planningData > complementaryActivities > Complementary > id`
+##### <a name="planningData_complementaryActivities_items_id"></a>2.15.1.1. Property `GhcEngineSchema > planningData > complementaryActivities > Complementary > id`
 
 |              |           |
 | ------------ | --------- |
@@ -5640,7 +5627,7 @@ Must be one of:
 
 **Description:** Session identifier.
 
-##### <a name="planningData_complementaryActivities_items_refFrame"></a>3.15.1.2. Property `GhcEngineSchema > planningData > complementaryActivities > Complementary > refFrame`
+##### <a name="planningData_complementaryActivities_items_refFrame"></a>2.15.1.2. Property `GhcEngineSchema > planningData > complementaryActivities > Complementary > refFrame`
 
 |              |          |
 | ------------ | -------- |
@@ -5649,7 +5636,7 @@ Must be one of:
 
 **Description:** Session's frame identifier.
 
-##### <a name="planningData_complementaryActivities_items_refTask"></a>3.15.1.3. Property `GhcEngineSchema > planningData > complementaryActivities > Complementary > refTask`
+##### <a name="planningData_complementaryActivities_items_refTask"></a>2.15.1.3. Property `GhcEngineSchema > planningData > complementaryActivities > Complementary > refTask`
 
 **Title:** RefTask
 
@@ -5660,7 +5647,7 @@ Must be one of:
 
 **Description:** Task identifier.
 
-##### <a name="planningData_complementaryActivities_items_refTeacher"></a>3.15.1.4. Property `GhcEngineSchema > planningData > complementaryActivities > Complementary > refTeacher`
+##### <a name="planningData_complementaryActivities_items_refTeacher"></a>2.15.1.4. Property `GhcEngineSchema > planningData > complementaryActivities > Complementary > refTeacher`
 
 **Title:** RefTeacher
 
@@ -5671,7 +5658,7 @@ Must be one of:
 
 **Description:** Teacher identifier.
 
-##### <a name="planningData_complementaryActivities_items_refColourInResult"></a>3.15.1.5. Property `GhcEngineSchema > planningData > complementaryActivities > Complementary > refColourInResult`
+##### <a name="planningData_complementaryActivities_items_refColourInResult"></a>2.15.1.5. Property `GhcEngineSchema > planningData > complementaryActivities > Complementary > refColourInResult`
 
 |              |          |
 | ------------ | -------- |
@@ -5680,7 +5667,7 @@ Must be one of:
 
 **Description:** Colour code used to represent the complementary activity in the result.
 
-##### <a name="planningData_complementaryActivities_items_distribution"></a>3.15.1.6. Property `GhcEngineSchema > planningData > complementaryActivities > Complementary > distribution`
+##### <a name="planningData_complementaryActivities_items_distribution"></a>2.15.1.6. Property `GhcEngineSchema > planningData > complementaryActivities > Complementary > distribution`
 
 **Title:** Distribution
 
@@ -5693,7 +5680,7 @@ Must be one of:
 
 **Description:** It contains information on how the class units of the session are distributed throughout the week. It must contain only one element between 'stablePeriods' and 'variablePeriods'.
 
-##### <a name="planningData_complementaryActivities_items_frameTemplate"></a>3.15.1.7. Property `GhcEngineSchema > planningData > complementaryActivities > Complementary > frameTemplate`
+##### <a name="planningData_complementaryActivities_items_frameTemplate"></a>2.15.1.7. Property `GhcEngineSchema > planningData > complementaryActivities > Complementary > frameTemplate`
 
 **Title:** SessionFrameTemplate
 
@@ -5705,7 +5692,7 @@ Must be one of:
 
 **Description:** Complete template of preferences.
 
-##### <a name="planningData_complementaryActivities_items_refClassRoomToAssign"></a>3.15.1.8. Property `GhcEngineSchema > planningData > complementaryActivities > Complementary > refClassRoomToAssign`
+##### <a name="planningData_complementaryActivities_items_refClassRoomToAssign"></a>2.15.1.8. Property `GhcEngineSchema > planningData > complementaryActivities > Complementary > refClassRoomToAssign`
 
 **Title:** RefClassRoomToAssign
 
@@ -5718,7 +5705,7 @@ Must be one of:
 
 **Description:** Object, with classrooms and/or set of classrooms, where the engine should assign classroom to each class unit of the session.
 
-##### <a name="planningData_complementaryActivities_items_refBuilding"></a>3.15.1.9. Property `GhcEngineSchema > planningData > complementaryActivities > Complementary > refBuilding`
+##### <a name="planningData_complementaryActivities_items_refBuilding"></a>2.15.1.9. Property `GhcEngineSchema > planningData > complementaryActivities > Complementary > refBuilding`
 
 |              |          |
 | ------------ | -------- |
@@ -5727,7 +5714,7 @@ Must be one of:
 
 **Description:** Building identifier of the building where the class unit takes place. This is used to know the moving time and the number of moves between buildings for teachers without specifying a classroom.
 
-##### <a name="planningData_complementaryActivities_items_settings"></a>3.15.1.10. Property `GhcEngineSchema > planningData > complementaryActivities > Complementary > settings`
+##### <a name="planningData_complementaryActivities_items_settings"></a>2.15.1.10. Property `GhcEngineSchema > planningData > complementaryActivities > Complementary > settings`
 
 **Title:** NonClassSessionSettings
 
@@ -5740,7 +5727,7 @@ Must be one of:
 
 **Description:** Settings of the meeting.
 
-### <a name="planningData_onCallServices"></a>3.16. Property `GhcEngineSchema > planningData > onCallServices`
+### <a name="planningData_onCallServices"></a>2.16. Property `GhcEngineSchema > planningData > onCallServices`
 
 **Title:** OnCallServices
 
@@ -5763,7 +5750,7 @@ Must be one of:
 | --------------------------------------------------- | -------------------------------------------------------------------- |
 | [OnCallService](#planningData_onCallServices_items) | On-call service of teachers who supervise the free time of students. |
 
-#### <a name="planningData_onCallServices_items"></a>3.16.1. GhcEngineSchema > planningData > onCallServices > OnCallService
+#### <a name="planningData_onCallServices_items"></a>2.16.1. GhcEngineSchema > planningData > onCallServices > OnCallService
 
 **Title:** OnCallService
 
@@ -5789,7 +5776,7 @@ Must be one of:
 | - [refBuilding](#planningData_onCallServices_items_refBuilding )                 | No      | string          | No         | -                                                                                                          | Identifier of the building where the service is located. It is used to know the transfer time and the number of transfers between buildings for teachers. |
 | - [settings](#planningData_onCallServices_items_settings )                       | No      | object          | No         | Same as [settings](#planningData_meetings_items_settings )                                                 | NonClassSessionSettings                                                                                                                                   |
 
-##### <a name="planningData_onCallServices_items_id"></a>3.16.1.1. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > id`
+##### <a name="planningData_onCallServices_items_id"></a>2.16.1.1. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > id`
 
 |              |          |
 | ------------ | -------- |
@@ -5798,7 +5785,7 @@ Must be one of:
 
 **Description:** On-Call service identifier.
 
-##### <a name="planningData_onCallServices_items_refFrame"></a>3.16.1.2. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refFrame`
+##### <a name="planningData_onCallServices_items_refFrame"></a>2.16.1.2. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refFrame`
 
 |              |          |
 | ------------ | -------- |
@@ -5807,7 +5794,7 @@ Must be one of:
 
 **Description:** Identifier of the frame where the service will be set.
 
-##### <a name="planningData_onCallServices_items_refPeriods"></a>3.16.1.3. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refPeriods`
+##### <a name="planningData_onCallServices_items_refPeriods"></a>2.16.1.3. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refPeriods`
 
 **Title:** RefPeriods
 
@@ -5830,7 +5817,7 @@ Must be one of:
 | ---------------------------------------------------------------- | ------------------ |
 | [RefPeriod](#planningData_onCallServices_items_refPeriods_items) | Period identifier. |
 
-###### <a name="planningData_onCallServices_items_refPeriods_items"></a>3.16.1.3.1. GhcEngineSchema > planningData > onCallServices > OnCallService > refPeriods > RefPeriod
+###### <a name="planningData_onCallServices_items_refPeriods_items"></a>2.16.1.3.1. GhcEngineSchema > planningData > onCallServices > OnCallService > refPeriods > RefPeriod
 
 **Title:** RefPeriod
 
@@ -5841,7 +5828,7 @@ Must be one of:
 
 **Description:** Period identifier.
 
-##### <a name="planningData_onCallServices_items_refTask"></a>3.16.1.4. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refTask`
+##### <a name="planningData_onCallServices_items_refTask"></a>2.16.1.4. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refTask`
 
 |              |          |
 | ------------ | -------- |
@@ -5850,7 +5837,7 @@ Must be one of:
 
 **Description:** Task identifier.
 
-##### <a name="planningData_onCallServices_items_inBreak"></a>3.16.1.5. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > inBreak`
+##### <a name="planningData_onCallServices_items_inBreak"></a>2.16.1.5. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > inBreak`
 
 |              |           |
 | ------------ | --------- |
@@ -5860,7 +5847,7 @@ Must be one of:
 
 **Description:** It indicates whether it is a break supervision.
 
-##### <a name="planningData_onCallServices_items_teachersEachSection"></a>3.16.1.6. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > teachersEachSection`
+##### <a name="planningData_onCallServices_items_teachersEachSection"></a>2.16.1.6. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > teachersEachSection`
 
 **Title:** TeachersEachSection
 
@@ -5877,7 +5864,7 @@ Must be one of:
 | - [byDefault](#planningData_onCallServices_items_teachersEachSection_byDefault ) | No      | integer         | No         | -          | Default value for number of teacher in all sections. |
 | - [bySection](#planningData_onCallServices_items_teachersEachSection_bySection ) | No      | array of object | No         | -          | TeachersBySections                                   |
 
-###### <a name="planningData_onCallServices_items_teachersEachSection_byDefault"></a>3.16.1.6.1. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > teachersEachSection > byDefault`
+###### <a name="planningData_onCallServices_items_teachersEachSection_byDefault"></a>2.16.1.6.1. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > teachersEachSection > byDefault`
 
 |              |           |
 | ------------ | --------- |
@@ -5886,7 +5873,7 @@ Must be one of:
 
 **Description:** Default value for number of teacher in all sections.
 
-###### <a name="planningData_onCallServices_items_teachersEachSection_bySection"></a>3.16.1.6.2. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > teachersEachSection > bySection`
+###### <a name="planningData_onCallServices_items_teachersEachSection_bySection"></a>2.16.1.6.2. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > teachersEachSection > bySection`
 
 **Title:** TeachersBySections
 
@@ -5909,7 +5896,7 @@ Must be one of:
 | ------------------------------------------------------------------------------------------- | --------------------------------------------------- |
 | [TeachersBySection](#planningData_onCallServices_items_teachersEachSection_bySection_items) | Custom number of teachers in one timetable section. |
 
-###### <a name="planningData_onCallServices_items_teachersEachSection_bySection_items"></a>3.16.1.6.2.1. GhcEngineSchema > planningData > onCallServices > OnCallService > teachersEachSection > bySection > TeachersBySection
+###### <a name="planningData_onCallServices_items_teachersEachSection_bySection_items"></a>2.16.1.6.2.1. GhcEngineSchema > planningData > onCallServices > OnCallService > teachersEachSection > bySection > TeachersBySection
 
 **Title:** TeachersBySection
 
@@ -5927,7 +5914,7 @@ Must be one of:
 | + [index](#planningData_onCallServices_items_teachersEachSection_bySection_items_index )             | No      | integer | No         | -          | Index of the section.                                    |
 | + [numTeachers](#planningData_onCallServices_items_teachersEachSection_bySection_items_numTeachers ) | No      | integer | No         | -          | Custom number of teachers to be assigned in the section. |
 
-###### <a name="planningData_onCallServices_items_teachersEachSection_bySection_items_day"></a>3.16.1.6.2.1.1. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > teachersEachSection > bySection > TeachersBySection > day`
+###### <a name="planningData_onCallServices_items_teachersEachSection_bySection_items_day"></a>2.16.1.6.2.1.1. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > teachersEachSection > bySection > TeachersBySection > day`
 
 |              |           |
 | ------------ | --------- |
@@ -5936,7 +5923,7 @@ Must be one of:
 
 **Description:** Day of the week.
 
-###### <a name="planningData_onCallServices_items_teachersEachSection_bySection_items_index"></a>3.16.1.6.2.1.2. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > teachersEachSection > bySection > TeachersBySection > index`
+###### <a name="planningData_onCallServices_items_teachersEachSection_bySection_items_index"></a>2.16.1.6.2.1.2. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > teachersEachSection > bySection > TeachersBySection > index`
 
 |              |           |
 | ------------ | --------- |
@@ -5945,7 +5932,7 @@ Must be one of:
 
 **Description:** Index of the section.
 
-###### <a name="planningData_onCallServices_items_teachersEachSection_bySection_items_numTeachers"></a>3.16.1.6.2.1.3. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > teachersEachSection > bySection > TeachersBySection > numTeachers`
+###### <a name="planningData_onCallServices_items_teachersEachSection_bySection_items_numTeachers"></a>2.16.1.6.2.1.3. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > teachersEachSection > bySection > TeachersBySection > numTeachers`
 
 |              |           |
 | ------------ | --------- |
@@ -5954,7 +5941,7 @@ Must be one of:
 
 **Description:** Custom number of teachers to be assigned in the section.
 
-##### <a name="planningData_onCallServices_items_refTeachers"></a>3.16.1.7. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refTeachers`
+##### <a name="planningData_onCallServices_items_refTeachers"></a>2.16.1.7. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refTeachers`
 
 **Title:** RefTeachersOnCall
 
@@ -5977,7 +5964,7 @@ Must be one of:
 | ------------------------------------------------------------------ | --------------------------------------------------------------------- |
 | [RefTeacher](#planningData_onCallServices_items_refTeachers_items) | It contains a teacher reference and the number of section oversight . |
 
-###### <a name="planningData_onCallServices_items_refTeachers_items"></a>3.16.1.7.1. GhcEngineSchema > planningData > onCallServices > OnCallService > refTeachers > RefTeacher
+###### <a name="planningData_onCallServices_items_refTeachers_items"></a>2.16.1.7.1. GhcEngineSchema > planningData > onCallServices > OnCallService > refTeachers > RefTeacher
 
 **Title:** RefTeacher
 
@@ -5995,7 +5982,7 @@ Must be one of:
 | + [numOfSections](#planningData_onCallServices_items_refTeachers_items_numOfSections )               | No      | integer         | No         | -                                     | Number of on-call services to be done weekly by the teacher. |
 | - [teacherFrameTemplate](#planningData_onCallServices_items_refTeachers_items_teacherFrameTemplate ) | No      | array of object | No         | In #/$defs/onCallServiceframeTemplate | OnCallTemplate                                               |
 
-###### <a name="planningData_onCallServices_items_refTeachers_items_teacherId"></a>3.16.1.7.1.1. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refTeachers > RefTeacher > teacherId`
+###### <a name="planningData_onCallServices_items_refTeachers_items_teacherId"></a>2.16.1.7.1.1. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refTeachers > RefTeacher > teacherId`
 
 |              |          |
 | ------------ | -------- |
@@ -6004,7 +5991,7 @@ Must be one of:
 
 **Description:** Teacher identifier.
 
-###### <a name="planningData_onCallServices_items_refTeachers_items_numOfSections"></a>3.16.1.7.1.2. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refTeachers > RefTeacher > numOfSections`
+###### <a name="planningData_onCallServices_items_refTeachers_items_numOfSections"></a>2.16.1.7.1.2. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refTeachers > RefTeacher > numOfSections`
 
 |              |           |
 | ------------ | --------- |
@@ -6014,7 +6001,7 @@ Must be one of:
 
 **Description:** Number of on-call services to be done weekly by the teacher.
 
-###### <a name="planningData_onCallServices_items_refTeachers_items_teacherFrameTemplate"></a>3.16.1.7.1.3. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refTeachers > RefTeacher > teacherFrameTemplate`
+###### <a name="planningData_onCallServices_items_refTeachers_items_teacherFrameTemplate"></a>2.16.1.7.1.3. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refTeachers > RefTeacher > teacherFrameTemplate`
 
 **Title:** OnCallTemplate
 
@@ -6038,7 +6025,7 @@ Must be one of:
 | ---------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
 | [OnCallSectionPreference](#planningData_onCallServices_items_refTeachers_items_teacherFrameTemplate_items) | Template with a teacher section assignment preference about the service. |
 
-###### <a name="planningData_onCallServices_items_refTeachers_items_teacherFrameTemplate_items"></a>3.16.1.7.1.3.1. GhcEngineSchema > planningData > onCallServices > OnCallService > refTeachers > RefTeacher > teacherFrameTemplate > OnCallSectionPreference
+###### <a name="planningData_onCallServices_items_refTeachers_items_teacherFrameTemplate_items"></a>2.16.1.7.1.3.1. GhcEngineSchema > planningData > onCallServices > OnCallService > refTeachers > RefTeacher > teacherFrameTemplate > OnCallSectionPreference
 
 **Title:** OnCallSectionPreference
 
@@ -6057,7 +6044,7 @@ Must be one of:
 | + [frame](#planningData_onCallServices_items_refTeachers_items_teacherFrameTemplate_items_frame ) | No      | string           | No         | -          | Identifier name of the frame.                      |
 | + [type](#planningData_onCallServices_items_refTeachers_items_teacherFrameTemplate_items_type )   | No      | enum (of string) | No         | -          | SectionPreferenceTypeBannedPreset                  |
 
-###### <a name="planningData_onCallServices_items_refTeachers_items_teacherFrameTemplate_items_day"></a>3.16.1.7.1.3.1.1. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refTeachers > RefTeacher > teacherFrameTemplate > OnCallSectionPreference > day`
+###### <a name="planningData_onCallServices_items_refTeachers_items_teacherFrameTemplate_items_day"></a>2.16.1.7.1.3.1.1. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refTeachers > RefTeacher > teacherFrameTemplate > OnCallSectionPreference > day`
 
 |              |           |
 | ------------ | --------- |
@@ -6066,7 +6053,7 @@ Must be one of:
 
 **Description:** Day of the week when is located the section.
 
-###### <a name="planningData_onCallServices_items_refTeachers_items_teacherFrameTemplate_items_index"></a>3.16.1.7.1.3.1.2. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refTeachers > RefTeacher > teacherFrameTemplate > OnCallSectionPreference > index`
+###### <a name="planningData_onCallServices_items_refTeachers_items_teacherFrameTemplate_items_index"></a>2.16.1.7.1.3.1.2. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refTeachers > RefTeacher > teacherFrameTemplate > OnCallSectionPreference > index`
 
 |              |           |
 | ------------ | --------- |
@@ -6075,7 +6062,7 @@ Must be one of:
 
 **Description:** Index inside the day where is located the section.
 
-###### <a name="planningData_onCallServices_items_refTeachers_items_teacherFrameTemplate_items_frame"></a>3.16.1.7.1.3.1.3. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refTeachers > RefTeacher > teacherFrameTemplate > OnCallSectionPreference > frame`
+###### <a name="planningData_onCallServices_items_refTeachers_items_teacherFrameTemplate_items_frame"></a>2.16.1.7.1.3.1.3. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refTeachers > RefTeacher > teacherFrameTemplate > OnCallSectionPreference > frame`
 
 |              |          |
 | ------------ | -------- |
@@ -6084,7 +6071,7 @@ Must be one of:
 
 **Description:** Identifier name of the frame.
 
-###### <a name="planningData_onCallServices_items_refTeachers_items_teacherFrameTemplate_items_type"></a>3.16.1.7.1.3.1.4. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refTeachers > RefTeacher > teacherFrameTemplate > OnCallSectionPreference > type`
+###### <a name="planningData_onCallServices_items_refTeachers_items_teacherFrameTemplate_items_type"></a>2.16.1.7.1.3.1.4. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refTeachers > RefTeacher > teacherFrameTemplate > OnCallSectionPreference > type`
 
 **Title:** SectionPreferenceTypeBannedPreset
 
@@ -6099,7 +6086,7 @@ Must be one of:
 * "banned"
 * "preset"
 
-##### <a name="planningData_onCallServices_items_refColourInResult"></a>3.16.1.8. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refColourInResult`
+##### <a name="planningData_onCallServices_items_refColourInResult"></a>2.16.1.8. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refColourInResult`
 
 |              |          |
 | ------------ | -------- |
@@ -6108,7 +6095,7 @@ Must be one of:
 
 **Description:** Colour code used to represent the on-call service in the result.
 
-##### <a name="planningData_onCallServices_items_frameTemplate"></a>3.16.1.9. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > frameTemplate`
+##### <a name="planningData_onCallServices_items_frameTemplate"></a>2.16.1.9. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > frameTemplate`
 
 **Title:** OnCallTemplate
 
@@ -6120,7 +6107,7 @@ Must be one of:
 
 **Description:** Template with teacher's preferences in the on-call service.
 
-##### <a name="planningData_onCallServices_items_refBuilding"></a>3.16.1.10. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refBuilding`
+##### <a name="planningData_onCallServices_items_refBuilding"></a>2.16.1.10. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > refBuilding`
 
 |              |          |
 | ------------ | -------- |
@@ -6129,7 +6116,7 @@ Must be one of:
 
 **Description:** Identifier of the building where the service is located. It is used to know the transfer time and the number of transfers between buildings for teachers.
 
-##### <a name="planningData_onCallServices_items_settings"></a>3.16.1.11. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > settings`
+##### <a name="planningData_onCallServices_items_settings"></a>2.16.1.11. Property `GhcEngineSchema > planningData > onCallServices > OnCallService > settings`
 
 **Title:** NonClassSessionSettings
 
@@ -6142,7 +6129,7 @@ Must be one of:
 
 **Description:** Settings of the meeting.
 
-### <a name="planningData_optimizationWeights"></a>3.17. Property `GhcEngineSchema > planningData > optimizationWeights`
+### <a name="planningData_optimizationWeights"></a>2.17. Property `GhcEngineSchema > planningData > optimizationWeights`
 
 **Title:** OptimizationWeights
 
@@ -6161,7 +6148,7 @@ Must be one of:
 | - [sessions](#planningData_optimizationWeights_sessions )                           | No      | object | No         | -          | SessionsOptimization              |
 | - [teachers](#planningData_optimizationWeights_teachers )                           | No      | object | No         | -          | TeachersOptimization              |
 
-#### <a name="planningData_optimizationWeights_timetableGaps"></a>3.17.1. Property `GhcEngineSchema > planningData > optimizationWeights > timetableGaps`
+#### <a name="planningData_optimizationWeights_timetableGaps"></a>2.17.1. Property `GhcEngineSchema > planningData > optimizationWeights > timetableGaps`
 
 **Title:** TimetableGaps
 
@@ -6178,7 +6165,7 @@ Must be one of:
 | - [groupGaps](#planningData_optimizationWeights_timetableGaps_groupGaps )     | No      | integer | No         | -          | It indicates the weight given to the fact of leaving gaps in groups' timetables.   |
 | - [teacherGaps](#planningData_optimizationWeights_timetableGaps_teacherGaps ) | No      | integer | No         | -          | It indicates the weight given to the fact of leaving gaps in teachers' timetables. |
 
-##### <a name="planningData_optimizationWeights_timetableGaps_groupGaps"></a>3.17.1.1. Property `GhcEngineSchema > planningData > optimizationWeights > timetableGaps > groupGaps`
+##### <a name="planningData_optimizationWeights_timetableGaps_groupGaps"></a>2.17.1.1. Property `GhcEngineSchema > planningData > optimizationWeights > timetableGaps > groupGaps`
 
 |              |           |
 | ------------ | --------- |
@@ -6188,7 +6175,7 @@ Must be one of:
 
 **Description:** It indicates the weight given to the fact of leaving gaps in groups' timetables.
 
-##### <a name="planningData_optimizationWeights_timetableGaps_teacherGaps"></a>3.17.1.2. Property `GhcEngineSchema > planningData > optimizationWeights > timetableGaps > teacherGaps`
+##### <a name="planningData_optimizationWeights_timetableGaps_teacherGaps"></a>2.17.1.2. Property `GhcEngineSchema > planningData > optimizationWeights > timetableGaps > teacherGaps`
 
 |              |           |
 | ------------ | --------- |
@@ -6198,7 +6185,7 @@ Must be one of:
 
 **Description:** It indicates the weight given to the fact of leaving gaps in teachers' timetables.
 
-#### <a name="planningData_optimizationWeights_nonPreferredPositions"></a>3.17.2. Property `GhcEngineSchema > planningData > optimizationWeights > nonPreferredPositions`
+#### <a name="planningData_optimizationWeights_nonPreferredPositions"></a>2.17.2. Property `GhcEngineSchema > planningData > optimizationWeights > nonPreferredPositions`
 
 **Title:** NonPreferredPositionsOptimization
 
@@ -6217,7 +6204,7 @@ Must be one of:
 | - [inSubjectsAndTask](#planningData_optimizationWeights_nonPreferredPositions_inSubjectsAndTask ) | No      | integer | No         | -          | It indicates the weight to be placed in a non-preferential section of a subject or a task. |
 | - [inSessions](#planningData_optimizationWeights_nonPreferredPositions_inSessions )               | No      | integer | No         | -          | Indicates the weight to be placed in a non-preferential section of a session.              |
 
-##### <a name="planningData_optimizationWeights_nonPreferredPositions_inGroups"></a>3.17.2.1. Property `GhcEngineSchema > planningData > optimizationWeights > nonPreferredPositions > inGroups`
+##### <a name="planningData_optimizationWeights_nonPreferredPositions_inGroups"></a>2.17.2.1. Property `GhcEngineSchema > planningData > optimizationWeights > nonPreferredPositions > inGroups`
 
 |              |           |
 | ------------ | --------- |
@@ -6227,7 +6214,7 @@ Must be one of:
 
 **Description:** It indicates the weight to be placed in a non-preferential section of a group.
 
-##### <a name="planningData_optimizationWeights_nonPreferredPositions_inTeachers"></a>3.17.2.2. Property `GhcEngineSchema > planningData > optimizationWeights > nonPreferredPositions > inTeachers`
+##### <a name="planningData_optimizationWeights_nonPreferredPositions_inTeachers"></a>2.17.2.2. Property `GhcEngineSchema > planningData > optimizationWeights > nonPreferredPositions > inTeachers`
 
 |              |           |
 | ------------ | --------- |
@@ -6237,7 +6224,7 @@ Must be one of:
 
 **Description:** It indicates the weight to be placed in a non-preferential section of a teacher.
 
-##### <a name="planningData_optimizationWeights_nonPreferredPositions_inSubjectsAndTask"></a>3.17.2.3. Property `GhcEngineSchema > planningData > optimizationWeights > nonPreferredPositions > inSubjectsAndTask`
+##### <a name="planningData_optimizationWeights_nonPreferredPositions_inSubjectsAndTask"></a>2.17.2.3. Property `GhcEngineSchema > planningData > optimizationWeights > nonPreferredPositions > inSubjectsAndTask`
 
 |              |           |
 | ------------ | --------- |
@@ -6247,7 +6234,7 @@ Must be one of:
 
 **Description:** It indicates the weight to be placed in a non-preferential section of a subject or a task.
 
-##### <a name="planningData_optimizationWeights_nonPreferredPositions_inSessions"></a>3.17.2.4. Property `GhcEngineSchema > planningData > optimizationWeights > nonPreferredPositions > inSessions`
+##### <a name="planningData_optimizationWeights_nonPreferredPositions_inSessions"></a>2.17.2.4. Property `GhcEngineSchema > planningData > optimizationWeights > nonPreferredPositions > inSessions`
 
 |              |           |
 | ------------ | --------- |
@@ -6257,7 +6244,7 @@ Must be one of:
 
 **Description:** Indicates the weight to be placed in a non-preferential section of a session.
 
-#### <a name="planningData_optimizationWeights_sessions"></a>3.17.3. Property `GhcEngineSchema > planningData > optimizationWeights > sessions`
+#### <a name="planningData_optimizationWeights_sessions"></a>2.17.3. Property `GhcEngineSchema > planningData > optimizationWeights > sessions`
 
 **Title:** SessionsOptimization
 
@@ -6279,7 +6266,7 @@ Must be one of:
 | - [sameHourSessionClasses](#planningData_optimizationWeights_sessions_sameHourSessionClasses )             | No      | integer | No         | -          | It indicates the weight of the penalty for not complying with the preference allocation on consecutive days.                                                                                                                                               |
 | - [classRoomsChanges](#planningData_optimizationWeights_sessions_classRoomsChanges )                       | No      | integer | No         | -          | It indicates the weight of all class units of each subject not taught in the same classroom, and also to avoid classroom changes of groups. This means a change of classrooms of a group only between consecutive intervals, not those divided by a break. |
 
-##### <a name="planningData_optimizationWeights_sessions_nonPreferredClassRoom"></a>3.17.3.1. Property `GhcEngineSchema > planningData > optimizationWeights > sessions > nonPreferredClassRoom`
+##### <a name="planningData_optimizationWeights_sessions_nonPreferredClassRoom"></a>2.17.3.1. Property `GhcEngineSchema > planningData > optimizationWeights > sessions > nonPreferredClassRoom`
 
 |              |           |
 | ------------ | --------- |
@@ -6289,7 +6276,7 @@ Must be one of:
 
 **Description:** It indicates the weight if the class units are configured with a preferred classroom and with a set of alternative classrooms, the weight placed in one of the alternative classrooms will be penalised.
 
-##### <a name="planningData_optimizationWeights_sessions_samePositionEveryPeriod"></a>3.17.3.2. Property `GhcEngineSchema > planningData > optimizationWeights > sessions > samePositionEveryPeriod`
+##### <a name="planningData_optimizationWeights_sessions_samePositionEveryPeriod"></a>2.17.3.2. Property `GhcEngineSchema > planningData > optimizationWeights > sessions > samePositionEveryPeriod`
 
 |              |           |
 | ------------ | --------- |
@@ -6299,7 +6286,7 @@ Must be one of:
 
 **Description:** It indicates the weight of placing the entities of a class unit belonging to several periods in the same positions or not (also affects on-call services).
 
-##### <a name="planningData_optimizationWeights_sessions_consecutiveDays"></a>3.17.3.3. Property `GhcEngineSchema > planningData > optimizationWeights > sessions > consecutiveDays`
+##### <a name="planningData_optimizationWeights_sessions_consecutiveDays"></a>2.17.3.3. Property `GhcEngineSchema > planningData > optimizationWeights > sessions > consecutiveDays`
 
 |              |           |
 | ------------ | --------- |
@@ -6309,7 +6296,7 @@ Must be one of:
 
 **Description:** It indicates the weight of the condition that has been set in each case on the properties of each class unit to place two or three class units, that is, all of them on consecutive days.
 
-##### <a name="planningData_optimizationWeights_sessions_bordersTimetable"></a>3.17.3.4. Property `GhcEngineSchema > planningData > optimizationWeights > sessions > bordersTimetable`
+##### <a name="planningData_optimizationWeights_sessions_bordersTimetable"></a>2.17.3.4. Property `GhcEngineSchema > planningData > optimizationWeights > sessions > bordersTimetable`
 
 |              |           |
 | ------------ | --------- |
@@ -6319,7 +6306,7 @@ Must be one of:
 
 **Description:** It indicates the weight of the class units assigned at the ends of the timetable.
 
-##### <a name="planningData_optimizationWeights_sessions_afternoonOrAfterBreakClasses"></a>3.17.3.5. Property `GhcEngineSchema > planningData > optimizationWeights > sessions > afternoonOrAfterBreakClasses`
+##### <a name="planningData_optimizationWeights_sessions_afternoonOrAfterBreakClasses"></a>2.17.3.5. Property `GhcEngineSchema > planningData > optimizationWeights > sessions > afternoonOrAfterBreakClasses`
 
 |              |           |
 | ------------ | --------- |
@@ -6329,7 +6316,7 @@ Must be one of:
 
 **Description:** It indicates the weight of the penalty of having class units after the last break or in the afternoon.
 
-##### <a name="planningData_optimizationWeights_sessions_sameHourSessionClasses"></a>3.17.3.6. Property `GhcEngineSchema > planningData > optimizationWeights > sessions > sameHourSessionClasses`
+##### <a name="planningData_optimizationWeights_sessions_sameHourSessionClasses"></a>2.17.3.6. Property `GhcEngineSchema > planningData > optimizationWeights > sessions > sameHourSessionClasses`
 
 |              |           |
 | ------------ | --------- |
@@ -6339,7 +6326,7 @@ Must be one of:
 
 **Description:** It indicates the weight of the penalty for not complying with the preference allocation on consecutive days.
 
-##### <a name="planningData_optimizationWeights_sessions_classRoomsChanges"></a>3.17.3.7. Property `GhcEngineSchema > planningData > optimizationWeights > sessions > classRoomsChanges`
+##### <a name="planningData_optimizationWeights_sessions_classRoomsChanges"></a>2.17.3.7. Property `GhcEngineSchema > planningData > optimizationWeights > sessions > classRoomsChanges`
 
 |              |           |
 | ------------ | --------- |
@@ -6349,7 +6336,7 @@ Must be one of:
 
 **Description:** It indicates the weight of all class units of each subject not taught in the same classroom, and also to avoid classroom changes of groups. This means a change of classrooms of a group only between consecutive intervals, not those divided by a break.
 
-#### <a name="planningData_optimizationWeights_teachers"></a>3.17.4. Property `GhcEngineSchema > planningData > optimizationWeights > teachers`
+#### <a name="planningData_optimizationWeights_teachers"></a>2.17.4. Property `GhcEngineSchema > planningData > optimizationWeights > teachers`
 
 **Title:** TeachersOptimization
 
@@ -6371,7 +6358,7 @@ Must be one of:
 | - [onCallSectionsOnBorders](#planningData_optimizationWeights_teachers_onCallSectionsOnBorders )         | No      | integer | No         | -          | It indicates the weight of the teacher being assigned an on-call hour within the limits of his or her timetable, thus trying to fit it into the gaps in his or her class units. |
 | - [teacherOrder](#planningData_optimizationWeights_teachers_teacherOrder )                               | No      | integer | No         | -          | It indicates the weight of the teacher order not being assigned with a preference besides other teachers.                                                                       |
 
-##### <a name="planningData_optimizationWeights_teachers_teacherIncompatibities"></a>3.17.4.1. Property `GhcEngineSchema > planningData > optimizationWeights > teachers > teacherIncompatibities`
+##### <a name="planningData_optimizationWeights_teachers_teacherIncompatibities"></a>2.17.4.1. Property `GhcEngineSchema > planningData > optimizationWeights > teachers > teacherIncompatibities`
 
 |              |           |
 | ------------ | --------- |
@@ -6381,7 +6368,7 @@ Must be one of:
 
 **Description:** It indicates the weight of the teacher's incompatibilities that can be optimised.
 
-##### <a name="planningData_optimizationWeights_teachers_uniformDailyDistribution"></a>3.17.4.2. Property `GhcEngineSchema > planningData > optimizationWeights > teachers > uniformDailyDistribution`
+##### <a name="planningData_optimizationWeights_teachers_uniformDailyDistribution"></a>2.17.4.2. Property `GhcEngineSchema > planningData > optimizationWeights > teachers > uniformDailyDistribution`
 
 |              |           |
 | ------------ | --------- |
@@ -6391,7 +6378,7 @@ Must be one of:
 
 **Description:** It indicates the weight of placing a teacher's class units in a non-uniform way during the week.
 
-##### <a name="planningData_optimizationWeights_teachers_excessContinuousTeaching"></a>3.17.4.3. Property `GhcEngineSchema > planningData > optimizationWeights > teachers > excessContinuousTeaching`
+##### <a name="planningData_optimizationWeights_teachers_excessContinuousTeaching"></a>2.17.4.3. Property `GhcEngineSchema > planningData > optimizationWeights > teachers > excessContinuousTeaching`
 
 |              |           |
 | ------------ | --------- |
@@ -6401,7 +6388,7 @@ Must be one of:
 
 **Description:** It indicates the weight of placing more continuous class units than those declared in the settings.
 
-##### <a name="planningData_optimizationWeights_teachers_excessPermanence"></a>3.17.4.4. Property `GhcEngineSchema > planningData > optimizationWeights > teachers > excessPermanence`
+##### <a name="planningData_optimizationWeights_teachers_excessPermanence"></a>2.17.4.4. Property `GhcEngineSchema > planningData > optimizationWeights > teachers > excessPermanence`
 
 |              |           |
 | ------------ | --------- |
@@ -6411,7 +6398,7 @@ Must be one of:
 
 **Description:** It indicates the weight of assigning more daily or weekly stay than the declared in the settings.
 
-##### <a name="planningData_optimizationWeights_teachers_continuousSessionsWithGroup"></a>3.17.4.5. Property `GhcEngineSchema > planningData > optimizationWeights > teachers > continuousSessionsWithGroup`
+##### <a name="planningData_optimizationWeights_teachers_continuousSessionsWithGroup"></a>2.17.4.5. Property `GhcEngineSchema > planningData > optimizationWeights > teachers > continuousSessionsWithGroup`
 
 |              |           |
 | ------------ | --------- |
@@ -6421,7 +6408,7 @@ Must be one of:
 
 **Description:** It indicates the weight of having consecutive class units taught to the same group.
 
-##### <a name="planningData_optimizationWeights_teachers_onCallSectionsOnBorders"></a>3.17.4.6. Property `GhcEngineSchema > planningData > optimizationWeights > teachers > onCallSectionsOnBorders`
+##### <a name="planningData_optimizationWeights_teachers_onCallSectionsOnBorders"></a>2.17.4.6. Property `GhcEngineSchema > planningData > optimizationWeights > teachers > onCallSectionsOnBorders`
 
 |              |           |
 | ------------ | --------- |
@@ -6431,7 +6418,7 @@ Must be one of:
 
 **Description:** It indicates the weight of the teacher being assigned an on-call hour within the limits of his or her timetable, thus trying to fit it into the gaps in his or her class units.
 
-##### <a name="planningData_optimizationWeights_teachers_teacherOrder"></a>3.17.4.7. Property `GhcEngineSchema > planningData > optimizationWeights > teachers > teacherOrder`
+##### <a name="planningData_optimizationWeights_teachers_teacherOrder"></a>2.17.4.7. Property `GhcEngineSchema > planningData > optimizationWeights > teachers > teacherOrder`
 
 |              |           |
 | ------------ | --------- |
@@ -6441,7 +6428,7 @@ Must be one of:
 
 **Description:** It indicates the weight of the teacher order not being assigned with a preference besides other teachers.
 
-### <a name="planningData_engineSettings"></a>3.18. Property `GhcEngineSchema > planningData > engineSettings`
+### <a name="planningData_engineSettings"></a>2.18. Property `GhcEngineSchema > planningData > engineSettings`
 
 **Title:** EngineSettings
 
@@ -6458,7 +6445,7 @@ Must be one of:
 | - [teacherBalance](#planningData_engineSettings_teacherBalance )               | No      | boolean | No         | -          | It indicates whether the optimiser should balance the timetables of different teachers, to avoid very bad timetables for a particular teacher.                                                                                                               |
 | - [countGapsAroundMidday](#planningData_engineSettings_countGapsAroundMidday ) | No      | boolean | No         | -          | It indicates, in the case of a split day (with a noon pause), that the unoccupied intervals between the morning and afternoon class units should be counted. This option affects the weighting in the teacher's optimisation of the gaps in their timetable. |
 
-#### <a name="planningData_engineSettings_teacherBalance"></a>3.18.1. Property `GhcEngineSchema > planningData > engineSettings > teacherBalance`
+#### <a name="planningData_engineSettings_teacherBalance"></a>2.18.1. Property `GhcEngineSchema > planningData > engineSettings > teacherBalance`
 
 |              |           |
 | ------------ | --------- |
@@ -6468,7 +6455,7 @@ Must be one of:
 
 **Description:** It indicates whether the optimiser should balance the timetables of different teachers, to avoid very bad timetables for a particular teacher.
 
-#### <a name="planningData_engineSettings_countGapsAroundMidday"></a>3.18.2. Property `GhcEngineSchema > planningData > engineSettings > countGapsAroundMidday`
+#### <a name="planningData_engineSettings_countGapsAroundMidday"></a>2.18.2. Property `GhcEngineSchema > planningData > engineSettings > countGapsAroundMidday`
 
 |              |           |
 | ------------ | --------- |
@@ -6478,7 +6465,7 @@ Must be one of:
 
 **Description:** It indicates, in the case of a split day (with a noon pause), that the unoccupied intervals between the morning and afternoon class units should be counted. This option affects the weighting in the teacher's optimisation of the gaps in their timetable.
 
-## <a name="results"></a>4. Property `GhcEngineSchema > results`
+## <a name="results"></a>3. Property `GhcEngineSchema > results`
 
 **Title:** EngineResults
 
@@ -6501,16 +6488,16 @@ Must be one of:
 | ------------------------------- | ------------------------------------- |
 | [EngineResult](#results_items)  | GHC engine result from specification. |
 
-### <a name="results_items"></a>4.1. GhcEngineSchema > results > EngineResult
+### <a name="results_items"></a>3.1. GhcEngineSchema > results > EngineResult
 
 **Title:** EngineResult
 
-|                           |                                       |
-| ------------------------- | ------------------------------------- |
-| **Type**                  | `object`                              |
-| **Required**              | No                                    |
-| **Additional properties** | Not allowed                           |
-| **Defined in**            | ../common/ghcEngineOutput.schema.json |
+|                           |                                 |
+| ------------------------- | ------------------------------- |
+| **Type**                  | `object`                        |
+| **Required**              | No                              |
+| **Additional properties** | Not allowed                     |
+| **Defined in**            | ../common/ghcResult.schema.json |
 
 **Description:** GHC engine result from specification.
 
@@ -6520,7 +6507,7 @@ Must be one of:
 | + [weight](#results_items_weight )       | No      | integer | No         | -          | ResultWeight           |
 | + [timetable](#results_items_timetable ) | No      | object  | No         | -          | GeneratedJSONTimetable |
 
-#### <a name="results_items_date"></a>4.1.1. Property `GhcEngineSchema > results > GhcResult > date`
+#### <a name="results_items_date"></a>3.1.1. Property `GhcEngineSchema > results > GhcResult > date`
 
 **Title:** JsonGenerationDate
 
@@ -6531,7 +6518,7 @@ Must be one of:
 
 **Description:** Date of result creation.
 
-#### <a name="results_items_weight"></a>4.1.2. Property `GhcEngineSchema > results > GhcResult > weight`
+#### <a name="results_items_weight"></a>3.1.2. Property `GhcEngineSchema > results > GhcResult > weight`
 
 **Title:** ResultWeight
 
@@ -6542,7 +6529,7 @@ Must be one of:
 
 **Description:** Weight of the result according to the non-mandatory conditions not fulfilled.
 
-#### <a name="results_items_timetable"></a>4.1.3. Property `GhcEngineSchema > results > GhcResult > timetable`
+#### <a name="results_items_timetable"></a>3.1.3. Property `GhcEngineSchema > results > GhcResult > timetable`
 
 **Title:** GeneratedJSONTimetable
 
@@ -6559,7 +6546,7 @@ Must be one of:
 | - [anonymousClassRooms](#results_items_timetable_anonymousClassRooms ) | No      | array of object | No         | -          | SetOfAnonymousClassRooms |
 | + [assignedSections](#results_items_timetable_assignedSections )       | No      | array of object | No         | -          | AssignedSections         |
 
-##### <a name="results_items_timetable_anonymousClassRooms"></a>4.1.3.1. Property `GhcEngineSchema > results > GhcResult > timetable > anonymousClassRooms`
+##### <a name="results_items_timetable_anonymousClassRooms"></a>3.1.3.1. Property `GhcEngineSchema > results > GhcResult > timetable > anonymousClassRooms`
 
 **Title:** SetOfAnonymousClassRooms
 
@@ -6582,7 +6569,7 @@ Must be one of:
 | ------------------------------------------------------------------------ | ---------------------------------------------------------------- |
 | [AnonymousClassRoom](#results_items_timetable_anonymousClassRooms_items) | Object with anonymous classrooms created in a set of classrooms. |
 
-###### <a name="results_items_timetable_anonymousClassRooms_items"></a>4.1.3.1.1. GhcEngineSchema > results > GhcResult > timetable > anonymousClassRooms > AnonymousClassRoom
+###### <a name="results_items_timetable_anonymousClassRooms_items"></a>3.1.3.1.1. GhcEngineSchema > results > GhcResult > timetable > anonymousClassRooms > AnonymousClassRoom
 
 **Title:** AnonymousClassRoom
 
@@ -6599,7 +6586,7 @@ Must be one of:
 | + [refClassRoomsSet](#results_items_timetable_anonymousClassRooms_items_refClassRoomsSet )   | No      | string          | No         | -          | Identifier of the ClassRooms group. |
 | + [classRoomsCreated](#results_items_timetable_anonymousClassRooms_items_classRoomsCreated ) | No      | array of string | No         | -          | ListOfAnonymousRooms                |
 
-###### <a name="results_items_timetable_anonymousClassRooms_items_refClassRoomsSet"></a>4.1.3.1.1.1. Property `GhcEngineSchema > results > GhcResult > timetable > anonymousClassRooms > AnonymousClassRoom > refClassRoomsSet`
+###### <a name="results_items_timetable_anonymousClassRooms_items_refClassRoomsSet"></a>3.1.3.1.1.1. Property `GhcEngineSchema > results > GhcResult > timetable > anonymousClassRooms > AnonymousClassRoom > refClassRoomsSet`
 
 |              |          |
 | ------------ | -------- |
@@ -6608,7 +6595,7 @@ Must be one of:
 
 **Description:** Identifier of the ClassRooms group.
 
-###### <a name="results_items_timetable_anonymousClassRooms_items_classRoomsCreated"></a>4.1.3.1.1.2. Property `GhcEngineSchema > results > GhcResult > timetable > anonymousClassRooms > AnonymousClassRoom > classRoomsCreated`
+###### <a name="results_items_timetable_anonymousClassRooms_items_classRoomsCreated"></a>3.1.3.1.1.2. Property `GhcEngineSchema > results > GhcResult > timetable > anonymousClassRooms > AnonymousClassRoom > classRoomsCreated`
 
 **Title:** ListOfAnonymousRooms
 
@@ -6631,7 +6618,7 @@ Must be one of:
 | ------------------------------------------------------------------------------------------- | -------------------------------------- |
 | [AnonymousRoom](#results_items_timetable_anonymousClassRooms_items_classRoomsCreated_items) | Identifier of the anonymous classroom. |
 
-###### <a name="results_items_timetable_anonymousClassRooms_items_classRoomsCreated_items"></a>4.1.3.1.1.2.1. GhcEngineSchema > results > GhcResult > timetable > anonymousClassRooms > AnonymousClassRoom > classRoomsCreated > AnonymousRoom
+###### <a name="results_items_timetable_anonymousClassRooms_items_classRoomsCreated_items"></a>3.1.3.1.1.2.1. GhcEngineSchema > results > GhcResult > timetable > anonymousClassRooms > AnonymousClassRoom > classRoomsCreated > AnonymousRoom
 
 **Title:** AnonymousRoom
 
@@ -6642,7 +6629,7 @@ Must be one of:
 
 **Description:** Identifier of the anonymous classroom.
 
-##### <a name="results_items_timetable_assignedSections"></a>4.1.3.2. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections`
+##### <a name="results_items_timetable_assignedSections"></a>3.1.3.2. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections`
 
 **Title:** AssignedSections
 
@@ -6665,7 +6652,7 @@ Must be one of:
 | ------------------------------------------------------------------ | --------------------------------------------------------- |
 | [AssignedSection](#results_items_timetable_assignedSections_items) | Section with one class units (or on call hours) assigned. |
 
-###### <a name="results_items_timetable_assignedSections_items"></a>4.1.3.2.1. GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection
+###### <a name="results_items_timetable_assignedSections_items"></a>3.1.3.2.1. GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection
 
 **Title:** AssignedSection
 
@@ -6687,7 +6674,7 @@ Must be one of:
 | + [endTime](#results_items_timetable_assignedSections_items_endTime )               | No      | string  | No         | -          | End time of the section with a fictional index where sessions are assigned.  |
 | + [assignment](#results_items_timetable_assignedSections_items_assignment )         | No      | object  | No         | -          | Assignment                                                                   |
 
-###### <a name="results_items_timetable_assignedSections_items_refFrame"></a>4.1.3.2.1.1. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > refFrame`
+###### <a name="results_items_timetable_assignedSections_items_refFrame"></a>3.1.3.2.1.1. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > refFrame`
 
 |              |          |
 | ------------ | -------- |
@@ -6696,7 +6683,7 @@ Must be one of:
 
 **Description:** Frame timetable section with assignment.
 
-###### <a name="results_items_timetable_assignedSections_items_day"></a>4.1.3.2.1.2. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > day`
+###### <a name="results_items_timetable_assignedSections_items_day"></a>3.1.3.2.1.2. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > day`
 
 |              |           |
 | ------------ | --------- |
@@ -6705,7 +6692,7 @@ Must be one of:
 
 **Description:** Day of the week when the section is located.
 
-###### <a name="results_items_timetable_assignedSections_items_realIndex"></a>4.1.3.2.1.3. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > realIndex`
+###### <a name="results_items_timetable_assignedSections_items_realIndex"></a>3.1.3.2.1.3. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > realIndex`
 
 |              |           |
 | ------------ | --------- |
@@ -6714,7 +6701,7 @@ Must be one of:
 
 **Description:** Position on the day, of the real section, in the frame.
 
-###### <a name="results_items_timetable_assignedSections_items_fictionalIndex"></a>4.1.3.2.1.4. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > fictionalIndex`
+###### <a name="results_items_timetable_assignedSections_items_fictionalIndex"></a>3.1.3.2.1.4. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > fictionalIndex`
 
 |              |           |
 | ------------ | --------- |
@@ -6723,7 +6710,7 @@ Must be one of:
 
 **Description:** Position on the day, of the fictional section, in the frame.
 
-###### <a name="results_items_timetable_assignedSections_items_startTime"></a>4.1.3.2.1.5. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > startTime`
+###### <a name="results_items_timetable_assignedSections_items_startTime"></a>3.1.3.2.1.5. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > startTime`
 
 |              |          |
 | ------------ | -------- |
@@ -6733,7 +6720,7 @@ Must be one of:
 
 **Description:** Start time of the section with a fictional index where sessions are assigned
 
-###### <a name="results_items_timetable_assignedSections_items_endTime"></a>4.1.3.2.1.6. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > endTime`
+###### <a name="results_items_timetable_assignedSections_items_endTime"></a>3.1.3.2.1.6. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > endTime`
 
 |              |          |
 | ------------ | -------- |
@@ -6743,7 +6730,7 @@ Must be one of:
 
 **Description:** End time of the section with a fictional index where sessions are assigned.
 
-###### <a name="results_items_timetable_assignedSections_items_assignment"></a>4.1.3.2.1.7. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment`
+###### <a name="results_items_timetable_assignedSections_items_assignment"></a>3.1.3.2.1.7. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment`
 
 **Title:** Assignment
 
@@ -6762,7 +6749,7 @@ Must be one of:
 | - [complementaryActivities](#results_items_timetable_assignedSections_items_assignment_complementaryActivities ) | No      | array of object | No         | -          | ComplementaryActivitiesAssigned |
 | - [onCallServices](#results_items_timetable_assignedSections_items_assignment_onCallServices )                   | No      | array of object | No         | -          | OnCallServices                  |
 
-###### <a name="results_items_timetable_assignedSections_items_assignment_teachingSessions"></a>4.1.3.2.1.7.1. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions`
+###### <a name="results_items_timetable_assignedSections_items_assignment_teachingSessions"></a>3.1.3.2.1.7.1. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions`
 
 **Title:** TeachingSessions
 
@@ -6785,7 +6772,7 @@ Must be one of:
 | ------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------- |
 | [AssignedTeachingSession](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items) | Class unit or on call hour assigned in the timetable. |
 
-###### <a name="results_items_timetable_assignedSections_items_assignment_teachingSessions_items"></a>4.1.3.2.1.7.1.1. GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession
+###### <a name="results_items_timetable_assignedSections_items_assignment_teachingSessions_items"></a>3.1.3.2.1.7.1.1. GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession
 
 **Title:** AssignedTeachingSession
 
@@ -6804,7 +6791,7 @@ Must be one of:
 | - [refTeachers](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refTeachers )             | No      | array of string | No         | -                        | RefTeachers                                                                                                                                                                                                     |
 | - [refContinuosBlock](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refContinuosBlock ) | No      | string          | No         | -                        | Optional. For fixed distribution entities, a common reference is created for the allocation information of the entities that have been placed together in a block due to the temporality of their distribution. |
 
-###### <a name="results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refSession"></a>4.1.3.2.1.7.1.1.1. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refSession`
+###### <a name="results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refSession"></a>3.1.3.2.1.7.1.1.1. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refSession`
 
 |              |           |
 | ------------ | --------- |
@@ -6813,7 +6800,7 @@ Must be one of:
 
 **Description:** Identifier of the teaching session assigned.
 
-###### <a name="results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refClassRomms"></a>4.1.3.2.1.7.1.1.2. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refClassRomms`
+###### <a name="results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refClassRomms"></a>3.1.3.2.1.7.1.1.2. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refClassRomms`
 
 **Title:** RefclassRomms
 
@@ -6837,7 +6824,7 @@ Must be one of:
 | --------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
 | [RefclassRomm](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refClassRomms_items) | Identifier of the classroom in the input file. |
 
-###### <a name="results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refClassRomms_items"></a>4.1.3.2.1.7.1.1.2.1. GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refClassRomms > RefclassRomm
+###### <a name="results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refClassRomms_items"></a>3.1.3.2.1.7.1.1.2.1. GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refClassRomms > RefclassRomm
 
 **Title:** RefclassRomm
 
@@ -6848,7 +6835,7 @@ Must be one of:
 
 **Description:** Identifier of the classroom in the input file.
 
-###### <a name="results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refTeachers"></a>4.1.3.2.1.7.1.1.3. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refTeachers`
+###### <a name="results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refTeachers"></a>3.1.3.2.1.7.1.1.3. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refTeachers`
 
 **Title:** RefTeachers
 
@@ -6871,7 +6858,7 @@ Must be one of:
 | ----------------------------------------------------------------------------------------------------------------- | -------------------------------------------- |
 | [RefTeacher](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refTeachers_items) | Identifier of the teacher in the input file. |
 
-###### <a name="results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refTeachers_items"></a>4.1.3.2.1.7.1.1.3.1. GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refTeachers > RefTeacher
+###### <a name="results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refTeachers_items"></a>3.1.3.2.1.7.1.1.3.1. GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refTeachers > RefTeacher
 
 **Title:** RefTeacher
 
@@ -6882,7 +6869,7 @@ Must be one of:
 
 **Description:** Identifier of the teacher in the input file.
 
-###### <a name="results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refContinuosBlock"></a>4.1.3.2.1.7.1.1.4. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refContinuosBlock`
+###### <a name="results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refContinuosBlock"></a>3.1.3.2.1.7.1.1.4. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > teachingSessions > AssignedTeachingSession > refContinuosBlock`
 
 |              |          |
 | ------------ | -------- |
@@ -6891,7 +6878,7 @@ Must be one of:
 
 **Description:** Optional. For fixed distribution entities, a common reference is created for the allocation information of the entities that have been placed together in a block due to the temporality of their distribution.
 
-###### <a name="results_items_timetable_assignedSections_items_assignment_meetings"></a>4.1.3.2.1.7.2. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > meetings`
+###### <a name="results_items_timetable_assignedSections_items_assignment_meetings"></a>3.1.3.2.1.7.2. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > meetings`
 
 **Title:** AssignedMeetings
 
@@ -6914,7 +6901,7 @@ Must be one of:
 | -------------------------------------------------------------------------------------------- | ---------------------------------------------- |
 | [AssignedMeeting](#results_items_timetable_assignedSections_items_assignment_meetings_items) | Meeting of teachers assigned in the timetable. |
 
-###### <a name="results_items_timetable_assignedSections_items_assignment_meetings_items"></a>4.1.3.2.1.7.2.1. GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > meetings > AssignedMeeting
+###### <a name="results_items_timetable_assignedSections_items_assignment_meetings_items"></a>3.1.3.2.1.7.2.1. GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > meetings > AssignedMeeting
 
 **Title:** AssignedMeeting
 
@@ -6932,7 +6919,7 @@ Must be one of:
 | - [refClassRomms](#results_items_timetable_assignedSections_items_assignment_meetings_items_refClassRomms )         | No      | array of string | No         | Same as [refClassRomms](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refClassRomms ) | RefclassRomms                                                                                                                                                                                                   |
 | - [refContinuosBlock](#results_items_timetable_assignedSections_items_assignment_meetings_items_refContinuosBlock ) | No      | string          | No         | -                                                                                                                         | Optional. For fixed distribution entities, a common reference is created for the allocation information of the entities that have been placed together in a block due to the temporality of their distribution. |
 
-###### <a name="results_items_timetable_assignedSections_items_assignment_meetings_items_refMeeting"></a>4.1.3.2.1.7.2.1.1. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > meetings > AssignedMeeting > refMeeting`
+###### <a name="results_items_timetable_assignedSections_items_assignment_meetings_items_refMeeting"></a>3.1.3.2.1.7.2.1.1. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > meetings > AssignedMeeting > refMeeting`
 
 |              |          |
 | ------------ | -------- |
@@ -6941,7 +6928,7 @@ Must be one of:
 
 **Description:** Identifier of the meeting assigned.
 
-###### <a name="results_items_timetable_assignedSections_items_assignment_meetings_items_refClassRomms"></a>4.1.3.2.1.7.2.1.2. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > meetings > AssignedMeeting > refClassRomms`
+###### <a name="results_items_timetable_assignedSections_items_assignment_meetings_items_refClassRomms"></a>3.1.3.2.1.7.2.1.2. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > meetings > AssignedMeeting > refClassRomms`
 
 **Title:** RefclassRomms
 
@@ -6953,7 +6940,7 @@ Must be one of:
 
 **Description:** List of classrooms assigned to teach the class unit.
 
-###### <a name="results_items_timetable_assignedSections_items_assignment_meetings_items_refContinuosBlock"></a>4.1.3.2.1.7.2.1.3. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > meetings > AssignedMeeting > refContinuosBlock`
+###### <a name="results_items_timetable_assignedSections_items_assignment_meetings_items_refContinuosBlock"></a>3.1.3.2.1.7.2.1.3. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > meetings > AssignedMeeting > refContinuosBlock`
 
 |              |          |
 | ------------ | -------- |
@@ -6962,7 +6949,7 @@ Must be one of:
 
 **Description:** Optional. For fixed distribution entities, a common reference is created for the allocation information of the entities that have been placed together in a block due to the temporality of their distribution.
 
-###### <a name="results_items_timetable_assignedSections_items_assignment_complementaryActivities"></a>4.1.3.2.1.7.3. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > complementaryActivities`
+###### <a name="results_items_timetable_assignedSections_items_assignment_complementaryActivities"></a>3.1.3.2.1.7.3. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > complementaryActivities`
 
 **Title:** ComplementaryActivitiesAssigned
 
@@ -6985,7 +6972,7 @@ Must be one of:
 | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
 | [AssignedComplementary](#results_items_timetable_assignedSections_items_assignment_complementaryActivities_items) | Teacher's complementary activity assigned in the timetable. |
 
-###### <a name="results_items_timetable_assignedSections_items_assignment_complementaryActivities_items"></a>4.1.3.2.1.7.3.1. GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > complementaryActivities > AssignedComplementary
+###### <a name="results_items_timetable_assignedSections_items_assignment_complementaryActivities_items"></a>3.1.3.2.1.7.3.1. GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > complementaryActivities > AssignedComplementary
 
 **Title:** AssignedComplementary
 
@@ -7003,7 +6990,7 @@ Must be one of:
 | - [refClassRomms](#results_items_timetable_assignedSections_items_assignment_complementaryActivities_items_refClassRomms )         | No      | array of string | No         | Same as [refClassRomms](#results_items_timetable_assignedSections_items_assignment_teachingSessions_items_refClassRomms ) | RefclassRomms                                                                                                                                                                                                   |
 | - [refContinuosBlock](#results_items_timetable_assignedSections_items_assignment_complementaryActivities_items_refContinuosBlock ) | No      | string          | No         | -                                                                                                                         | Optional. For fixed distribution entities, a common reference is created for the allocation information of the entities that have been placed together in a block due to the temporality of their distribution. |
 
-###### <a name="results_items_timetable_assignedSections_items_assignment_complementaryActivities_items_refComplementary"></a>4.1.3.2.1.7.3.1.1. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > complementaryActivities > AssignedComplementary > refComplementary`
+###### <a name="results_items_timetable_assignedSections_items_assignment_complementaryActivities_items_refComplementary"></a>3.1.3.2.1.7.3.1.1. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > complementaryActivities > AssignedComplementary > refComplementary`
 
 |              |           |
 | ------------ | --------- |
@@ -7012,7 +6999,7 @@ Must be one of:
 
 **Description:** Identifier of the Complementary Activity assigned.
 
-###### <a name="results_items_timetable_assignedSections_items_assignment_complementaryActivities_items_refClassRomms"></a>4.1.3.2.1.7.3.1.2. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > complementaryActivities > AssignedComplementary > refClassRomms`
+###### <a name="results_items_timetable_assignedSections_items_assignment_complementaryActivities_items_refClassRomms"></a>3.1.3.2.1.7.3.1.2. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > complementaryActivities > AssignedComplementary > refClassRomms`
 
 **Title:** RefclassRomms
 
@@ -7024,7 +7011,7 @@ Must be one of:
 
 **Description:** List of classrooms assigned to teach the class unit.
 
-###### <a name="results_items_timetable_assignedSections_items_assignment_complementaryActivities_items_refContinuosBlock"></a>4.1.3.2.1.7.3.1.3. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > complementaryActivities > AssignedComplementary > refContinuosBlock`
+###### <a name="results_items_timetable_assignedSections_items_assignment_complementaryActivities_items_refContinuosBlock"></a>3.1.3.2.1.7.3.1.3. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > complementaryActivities > AssignedComplementary > refContinuosBlock`
 
 |              |          |
 | ------------ | -------- |
@@ -7033,7 +7020,7 @@ Must be one of:
 
 **Description:** Optional. For fixed distribution entities, a common reference is created for the allocation information of the entities that have been placed together in a block due to the temporality of their distribution.
 
-###### <a name="results_items_timetable_assignedSections_items_assignment_onCallServices"></a>4.1.3.2.1.7.4. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > onCallServices`
+###### <a name="results_items_timetable_assignedSections_items_assignment_onCallServices"></a>3.1.3.2.1.7.4. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > onCallServices`
 
 **Title:** OnCallServices
 
@@ -7056,7 +7043,7 @@ Must be one of:
 | -------------------------------------------------------------------------------------------------------- | ------------------------------------ |
 | [AssignedOnCallService](#results_items_timetable_assignedSections_items_assignment_onCallServices_items) | Call hour assigned in the timetable. |
 
-###### <a name="results_items_timetable_assignedSections_items_assignment_onCallServices_items"></a>4.1.3.2.1.7.4.1. GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > onCallServices > AssignedOnCallService
+###### <a name="results_items_timetable_assignedSections_items_assignment_onCallServices_items"></a>3.1.3.2.1.7.4.1. GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > onCallServices > AssignedOnCallService
 
 **Title:** AssignedOnCallService
 
@@ -7073,7 +7060,7 @@ Must be one of:
 | + [refOnCall](#results_items_timetable_assignedSections_items_assignment_onCallServices_items_refOnCall )   | No      | string | No         | -          | Identifier of the teaching session assigned. |
 | + [refTeacher](#results_items_timetable_assignedSections_items_assignment_onCallServices_items_refTeacher ) | No      | string | No         | -          | RefTeachers                                  |
 
-###### <a name="results_items_timetable_assignedSections_items_assignment_onCallServices_items_refOnCall"></a>4.1.3.2.1.7.4.1.1. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > onCallServices > AssignedOnCallService > refOnCall`
+###### <a name="results_items_timetable_assignedSections_items_assignment_onCallServices_items_refOnCall"></a>3.1.3.2.1.7.4.1.1. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > onCallServices > AssignedOnCallService > refOnCall`
 
 |              |          |
 | ------------ | -------- |
@@ -7082,7 +7069,7 @@ Must be one of:
 
 **Description:** Identifier of the teaching session assigned.
 
-###### <a name="results_items_timetable_assignedSections_items_assignment_onCallServices_items_refTeacher"></a>4.1.3.2.1.7.4.1.2. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > onCallServices > AssignedOnCallService > refTeacher`
+###### <a name="results_items_timetable_assignedSections_items_assignment_onCallServices_items_refTeacher"></a>3.1.3.2.1.7.4.1.2. Property `GhcEngineSchema > results > GhcResult > timetable > assignedSections > AssignedSection > assignment > onCallServices > AssignedOnCallService > refTeacher`
 
 **Title:** RefTeachers
 
@@ -7094,4 +7081,4 @@ Must be one of:
 **Description:** Teacher assigned in section on call service.
 
 ----------------------------------------------------------------------------------------------------------------------------
-Generated using [json-schema-for-humans](https://github.com/coveooss/json-schema-for-humans) on 2026-11-09 at 14:56:28 +0100
+Generated using [json-schema-for-humans](https://github.com/coveooss/json-schema-for-humans) on 2026-11-25 at 18:19:22 +0100

@@ -17,22 +17,12 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "id",
     "meta",
     "planningData",
     "results"
 })
 public class GhcEngineSchema {
 
-    /**
-     * IdFile
-     * <p>
-     * Indicates the id number of the file at the Penalara Server.
-     * 
-     */
-    @JsonProperty("id")
-    @JsonPropertyDescription("Indicates the id number of the file at the Penalara Server.")
-    private Integer id;
     /**
      * FileMetadata
      * <p>
@@ -61,29 +51,7 @@ public class GhcEngineSchema {
      */
     @JsonProperty("results")
     @JsonPropertyDescription("Tables of the timetable that contain sections where the class units are located.")
-    private List<EngineOutputGHCSchema> results = new ArrayList<EngineOutputGHCSchema>();
-
-    /**
-     * IdFile
-     * <p>
-     * Indicates the id number of the file at the Penalara Server.
-     * 
-     */
-    @JsonProperty("id")
-    public Integer getId() {
-        return id;
-    }
-
-    /**
-     * IdFile
-     * <p>
-     * Indicates the id number of the file at the Penalara Server.
-     * 
-     */
-    @JsonProperty("id")
-    public void setId(Integer id) {
-        this.id = id;
-    }
+    private List<GhcResult> results = new ArrayList<GhcResult>();
 
     /**
      * FileMetadata
@@ -140,7 +108,7 @@ public class GhcEngineSchema {
      * 
      */
     @JsonProperty("results")
-    public List<EngineOutputGHCSchema> getResults() {
+    public List<GhcResult> getResults() {
         return results;
     }
 
@@ -151,7 +119,7 @@ public class GhcEngineSchema {
      * 
      */
     @JsonProperty("results")
-    public void setResults(List<EngineOutputGHCSchema> results) {
+    public void setResults(List<GhcResult> results) {
         this.results = results;
     }
 

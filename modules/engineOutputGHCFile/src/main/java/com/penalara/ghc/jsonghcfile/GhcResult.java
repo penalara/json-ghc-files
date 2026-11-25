@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
 /**
- * EngineOutputGHCSchema
+ * GhcResult
  * <p>
  * Schema document to format in Json the timetable created by PenalaraGHC.
  * 
@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "weight",
     "timetable"
 })
-public class EngineOutputGHCSchema {
+public class GhcResult {
 
     /**
      * JsonGenerationDate

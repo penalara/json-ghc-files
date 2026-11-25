@@ -10,11 +10,6 @@
     ],
     "additionalProperties": false,
 	"properties": {
-		"id":{
-			"title": "IdFile",
-			"description":"Indicates the id number of the file at the Penalara Server.",
-			"type":"integer"
-		},
 		"meta": {
 			"title": "FileMetadata",
             "description": "Information about the file.",
@@ -80,7 +75,7 @@
 			"items": {
 				"title": "EngineResult",
 				"description": "GHC engine result from specification.",
-				"$ref": "../common/ghcEngineOutput.schema.json",
+				"$ref": "../common/ghcResult.schema.json",
 				"type": "object"
 
 			}

@@ -17,21 +17,11 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "id",
     "meta",
     "specifications"
 })
 public class GhcMultiplatformSchema {
 
-    /**
-     * IdFile
-     * <p>
-     * Indicates the id number of the file at the Penalara Server.
-     * 
-     */
-    @JsonProperty("id")
-    @JsonPropertyDescription("Indicates the id number of the file at the Penalara Server.")
-    private Integer id;
     /**
      * FileMetadata
      * <p>
@@ -52,28 +42,6 @@ public class GhcMultiplatformSchema {
     @JsonProperty("specifications")
     @JsonPropertyDescription("List of specification versions of the scheduling plan and the results associated with each one, if it has been resolved by the ghc engine.")
     private List<PlannerSpecification> specifications = new ArrayList<PlannerSpecification>();
-
-    /**
-     * IdFile
-     * <p>
-     * Indicates the id number of the file at the Penalara Server.
-     * 
-     */
-    @JsonProperty("id")
-    public Integer getId() {
-        return id;
-    }
-
-    /**
-     * IdFile
-     * <p>
-     * Indicates the id number of the file at the Penalara Server.
-     * 
-     */
-    @JsonProperty("id")
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     /**
      * FileMetadata

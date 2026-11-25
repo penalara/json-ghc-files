@@ -1,0 +1,19 @@
+{
+    "meta": {
+        "name": "Weekly timetable",
+        "versionJson": "3.5.1-SNAPSHOT",
+        "createdDate": "2026-11-25T09:00:00Z",
+        "lastModifiedDate": "2026-11-25T10:00:00Z",
+        "refUser": "example",
+        "source": "horarios"
+    },
+    "planningData": {
+        "buildings": [{ "id": "A" }]
+    },
+    "results": [
+        {
+            "weight": 0,
+            "timetable": { "assignedSections": [] }
+        }
+    ]
+}

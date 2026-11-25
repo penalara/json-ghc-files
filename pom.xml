@@ -91,7 +91,7 @@
 			          </goals>
 			          <configuration>
 			            <sourceDirectory>${basedir}/src/main/resources/schemas/common</sourceDirectory>
-			            <includes>ghcEngineOutput.schema.json</includes>
+			            <includes>ghcResult.schema.json</includes>
 			            <targetPackage>com.penalara.ghc.jsonghcfile</targetPackage>
 			            <outputDirectory>${basedir}/modules/engineOutputGHCFile/src/main/java</outputDirectory>
     				    <removeOldOutput>true</removeOldOutput>
@@ -323,7 +323,7 @@
                                         <argument>--out</argument>
                                         <argument>${directorioConfigurado}/ghc-result.interface.ts</argument>
                                         <argument>--src</argument>
-                                        <argument>src/main/resources/schemas/common/ghcEngineOutput.schema.json</argument>
+                                        <argument>src/main/resources/schemas/common/ghcResult.schema.json</argument>
                                     </arguments>
                                 </configuration>
                             </execution>

@@ -1,5 +1,5 @@
 {
-	"$id": "https://github.com/penalara/jsonGhcSchemas/blob/main/schemas/common/ghcEngineOutput.schema.json",
+	"$id": "https://github.com/penalara/jsonGhcSchemas/blob/main/schemas/common/ghcResult.schema.json",
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "title": "GhcResult",
     "description": "Schema document to format in Json the timetable created by PenalaraGHC.",

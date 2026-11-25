@@ -16,5 +16,5 @@ The documentation is generated from the JSON Schemas using JSON Schema for Human
 
 - [Planning data](docs/planningData.schema.md)
 - [Engine input and results](docs/ghcEngine.schema.md)
-- [Engine output](docs/ghcEngineOutput.schema.md)
+- [Engine result](docs/ghcResult.schema.md)
 - [Multiplatform planner](docs/ghcMultiplatform.schema.md)
